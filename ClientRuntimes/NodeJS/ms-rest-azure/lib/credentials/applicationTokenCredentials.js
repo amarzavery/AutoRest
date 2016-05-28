@@ -6,6 +6,7 @@ var msrest = require('ms-rest');
 var adal = require('adal-node');
 var Constants = msrest.Constants;
 
+var FileTokenCache = require('../fileTokenCache');
 var AzureEnvironment = require('../azureEnvironment');
 
 /**
@@ -19,7 +20,7 @@ var AzureEnvironment = require('../azureEnvironment');
 * @param {object} [options] Object representing optional parameters.
 * @param {AzureEnvironment} [options.environment] The azure environment to authenticate with.
 * @param {string} [options.authorizationScheme] The authorization scheme. Default value is 'bearer'.
-* @param {object} [options.tokenCache] The token cache. Default value is the MemoryCache object from adal.
+* @param {object} [options.tokenCache] The token cache. Default value is the FileTokenCache.
 */
 function ApplicationTokenCredentials(clientId, domain, secret, options) {
   if (!Boolean(clientId) || typeof clientId.valueOf() !== 'string') {
@@ -47,7 +48,7 @@ function ApplicationTokenCredentials(clientId, domain, secret, options) {
   }
 
   if (!options.tokenCache) {
-    options.tokenCache = new adal.MemoryCache();
+    options.tokenCache = new adal.MemoryCache(); //new FileTokenCache();
   }
 
   this.environment = options.environment;
@@ -69,6 +70,17 @@ function _retrieveTokenFromCache (callback) {
   });
 }
 
+function _saveServicePrincipalKey(appId, tenantId, secretOrCertInfo, callback) {
+  var entry = {
+    servicePrincipalId: appId,
+    servicePrincipalTenant: tenantId,
+    resource: 'Azure Cli Service Principal Key Cache'
+  };
+  //'accessToken' is a misleading name, but can't change for compatibility.
+  entry.accessToken = secretOrCertInfo;
+  this.tokenCache.add([entry], callback);
+}
+
 /**
  * Tries to get the token from cache initially. If that is unsuccessfull then it tries to get the token from ADAL.
  * @param  {function} callback  The callback in the form (err, result)
@@ -83,9 +95,12 @@ ApplicationTokenCredentials.prototype.getToken = function (callback) {
       //Some error occured in retrieving the token from cache. May be the cache was empty or the access token expired. Let's try again.
       self.context.acquireTokenWithClientCredentials(self.environment.activeDirectoryResourceId, self.clientId, self.secret, function (err, tokenResponse) {
         if (err) {
-          return callback(new Error('Failed to acquire token for application with the provided secret. \n' + err));
+          return callback(new Error('Failed to acquire token for application with the provided secret. \n' + util.inspect(err)));
         }
-        return callback(null, tokenResponse);
+        _saveServicePrincipalKey.call(self, self.clientId, self.domain, self.secret, function (err, saveKeyresult) {
+          if (err) return callback(new Error('Failed to save the Service Principal key in the token cache. \n' + util.inspect(err)));
+          return callback(null, tokenResponse);
+        });
       });
     } else {
       return callback(null, result);
