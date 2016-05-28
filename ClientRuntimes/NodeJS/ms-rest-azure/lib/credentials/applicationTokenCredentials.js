@@ -46,11 +46,11 @@ function ApplicationTokenCredentials(clientId, domain, secret, options) {
   if (!options.authorizationScheme) {
     options.authorizationScheme = Constants.HeaderConstants.AUTHORIZATION_SCHEME;
   }
-
+  
   if (!options.tokenCache) {
-    options.tokenCache = new adal.MemoryCache(); //new FileTokenCache();
+    options.tokenCache = new FileTokenCache(); //new adal.MemoryCache();
   }
-
+  
   this.environment = options.environment;
   this.authorizationScheme = options.authorizationScheme;
   this.tokenCache = options.tokenCache;
@@ -61,7 +61,7 @@ function ApplicationTokenCredentials(clientId, domain, secret, options) {
   this.context = new adal.AuthenticationContext(authorityUrl, this.environment.validateAuthority, this.tokenCache);
 }
 
-function _retrieveTokenFromCache (callback) {
+function _retrieveTokenFromCache(callback) {
   //For service principal userId and clientId are the same thing. Since the token has _clientId property we shall 
   //retrieve token using it.
   this.context.acquireToken(this.environment.activeDirectoryResourceId, null, this.clientId, function (err, result) {

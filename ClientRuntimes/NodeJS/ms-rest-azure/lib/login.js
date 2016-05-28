@@ -11,7 +11,8 @@ var UserTokenCredentials = require('./credentials/userTokenCredentials');
 var AzureEnvironment = require('./azureEnvironment');
 var SubscriptionClient = require('azure-arm-resource').SubscriptionClient;
 
-function _createDeviceCredentials(parameters) {
+// It will create a DeviceTokenCredentials object by default
+function _createCredentials(parameters) {
   var options = {};
   options.environment = this.environment;
   options.domain = this.domain;
@@ -33,8 +34,59 @@ function _createDeviceCredentials(parameters) {
       options.tokenCache = parameters.tokenCache;
     }
   }
-  var credentials = new DeviceTokenCredentials(options);
+  var credentials;
+  if (UserTokenCredentials.prototype.isPrototypeOf(this)) {
+    credentials = new UserTokenCredentials(options.clientId, options.domain, options.username, this.password, options);
+  } else if (ApplicationTokenCredentials.prototype.isPrototypeOf(this)) {
+    credentials = new ApplicationTokenCredentials(options.clientId, options.domain, this.secret, options);
+  } else {
+    credentials = new DeviceTokenCredentials(options);
+  }
   return credentials;
+}
+
+function buildTenantList(credentials, callback) {
+  var tenants = [];
+  if (credentials.domain && credentials.domain !== azureConstants.AAD_COMMON_TENANT) {
+    return callback(null, [credentials.domain]);
+  }
+  var client = new SubscriptionClient(credentials, credentials.environment.resourceManagerEndpointUrl);
+  client.tenants.list(function (err, result) {
+    async.eachSeries(result, function (tenantInfo, cb) {
+      tenants.push(tenantInfo.tenantId);
+      cb(err);
+    }, function (err) {
+      callback(err, tenants);
+    });
+  });
+}
+
+function getSubscriptionsFromTenants(tenantList, callback) {
+  var self = this;
+  var subscriptions = [];
+  var userType = 'user';
+  var username = self.username;
+  if (ApplicationTokenCredentials.prototype.isPrototypeOf(self)) {
+    userType = 'servicePrincipal';
+    username = self.clientId;
+  }
+  async.eachSeries(tenantList, function (tenant, cb) {
+    var creds = _createCredentials.call(self, { domain: tenant });
+    var client = new SubscriptionClient(creds, creds.environment.resourceManagerEndpointUrl);
+    client.subscriptions.list(function (err, result) {
+      if (!err) {
+        subscriptions = subscriptions.concat(result.map(function (s) {
+          s.tenantId = tenant;
+          s.username = username;
+          s.userType = userType;
+          return s;
+        }));
+      }
+      return cb(err);
+    });
+  }, function (err) {
+    callback(err, subscriptions);
+  });
 }
 
 function _turnOnLogging() {
@@ -53,6 +105,17 @@ function _turnOnLogging() {
 
 if (process.env['AZURE_ADAL_LOGGING_ENABLED']) {
   _turnOnLogging();
+}
+
+function _crossCheckUserNameWithToken(usernameFromMethodCall, userIdFromToken) {
+  //to maintain the casing consistency between 'azureprofile.json' and token cache. (RD 1996587)
+  //use the 'userId' here, which should be the same with "username" except the casing.
+  if (usernameFromMethodCall.toLowerCase() === userIdFromToken.toLowerCase()) {
+    return userIdFromToken;
+  } else {
+    throw new Error(util.format('The userId of \'%s\' in access token doesn\'t match the username from method call \'%s\'', 
+      userIdFromToken, usernameFromMethodCall));
+  }
 }
 
 /**
@@ -135,24 +198,19 @@ exports.interactive = function interactive(options, callback) {
     },
     //get the list of tenants
     function (callback) {
-      var credentials = _createDeviceCredentials.call(self);
-      exports.buildTenantList(credentials, function(err, tenants) {
-        if (err) return callback(err);
-        return callback(null, tenants);
-      });
+      var credentials = _createCredentials.call(self);
+      buildTenantList(credentials, callback);
     },
     //build the token cache by getting tokens for all the tenants. We will acquire token from adal only when a request is sent. This is good as we also need
     //to build the list of subscriptions across all tenants. So let's build both at the same time :).
     function(tenants, callback) {
-      getSubscriptionsFromTenants.call(self, tenants, function (err, subscriptions) {
-        if (err) return callback(err);
-        return callback(null, subscriptions);
-      })
+      getSubscriptionsFromTenants.call(self, tenants, callback);
     }
   ], function(err, subscriptions) {
     if (err) return callback(err);
-    console.log(util.inspect(self.tokenCache, { depth: null }));
-    return callback(null, _createDeviceCredentials.call(self));
+    //finally you got all the tokens and all the subscriptions across all the tenants for this userid. Time to make azureProfile out of it and save it to a file.
+    var profile = subscriptions;
+    return callback(null, _createCredentials.call(self), profile);
   });
 };
 
@@ -197,7 +255,22 @@ exports.withUsernamePassword = function withUsernamePassword(username, password,
   } catch (err) {
     return callback(err);
   }
-  return callback(null, creds);
+  creds.getToken(function (err, result) {
+    if (err) return callback(err);
+    creds.username = _crossCheckUserNameWithToken(username, result.userId);
+    async.waterfall([
+      function (callback) {
+        buildTenantList(creds, callback);
+      },
+      function (tenants, callback) {
+        getSubscriptionsFromTenants.call(creds, tenants, callback);
+      },
+    ], function (err, subscriptions) {
+      //Create the final Profile as you have all the metadata
+      var profile = subscriptions;
+      return callback(null, creds, profile);
+    });
+  });
 };
 
 /**
@@ -231,52 +304,15 @@ exports.withServicePrincipalSecret = function withServicePrincipalSecret(clientI
   } catch (err) {
     return callback(err);
   }
-  return callback(null, creds);
-};
-
-exports.buildTenantList = function buildTenantList(credentials, callback) {
-  var tenants = [];
-  var client = new SubscriptionClient(credentials);
-  client.tenants.list(function (err, result) {
-    async.eachSeries(result, function (tenantInfo, cb) {
-      tenants.push(tenantInfo.tenantId);
-      cb(err);
-    }, function (err) {
-      callback(err, tenants);
+  creds.getToken(function (err, result) {
+    if (err) return callback(err);
+    getSubscriptionsFromTenants.call(creds, [domain], function (err, subscriptions) {
+      if (err) return callback(err);
+      //Create the final Profile as you have all the metadata
+      var profile = subscriptions;
+      return callback(null, creds, profile);
     });
   });
 };
-
-function _crossCheckUserNameWithToken(usernameFromMethodCall, userIdFromToken) {
-  //to maintain the casing consistency between 'azureprofile.json' and token cache. (RD 1996587)
-  //use the 'userId' here, which should be the same with "username" except the casing.
-  if (usernameFromMethodCall.toLowerCase() === userIdFromToken.toLowerCase()) {
-    return userIdFromToken;
-  } else {
-    throw new Error(util.format('The userId of \'%s\' in access token doesn\'t match the username from method call \'%s\'', 
-      userIdFromToken, usernameFromMethodCall));
-  }
-}
-
-function getSubscriptionsFromTenants(tenantList, callback) {
-  var self = this;
-  var subscriptions = [];
-  async.eachSeries(tenantList, function (tenant, cb) {
-    var creds = _createDeviceCredentials.call(self, { domain: tenant });
-    var client = new SubscriptionClient(creds);
-    client.subscriptions.list(function (err, result) {
-      if (!err) {
-        subscriptions = subscriptions.concat(result.map(function (s) {
-          s.tenantId = tenant;
-          s.username = self.username;
-          return s;
-        }));
-      }
-      return cb(err);
-    });
-  }, function (err) {
-    callback(err, subscriptions);
-  });
-}
 
 exports = module.exports;

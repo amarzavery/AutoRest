@@ -39,11 +39,11 @@ function UserTokenCredentials(clientId, domain, username, password, options) {
   if (!Boolean(password) || typeof password.valueOf() !== 'string') {
     throw new Error('password must be a non empty string.');
   }
-
+  
   if (!options) {
     options = {};
   }
-
+  
   if (!options.environment) {
     options.environment = AzureEnvironment.Azure;
   }
@@ -51,7 +51,7 @@ function UserTokenCredentials(clientId, domain, username, password, options) {
   if (!options.authorizationScheme) {
     options.authorizationScheme = Constants.HeaderConstants.AUTHORIZATION_SCHEME;
   }
-
+  
   if (!options.tokenCache) {
     options.tokenCache = new adal.MemoryCache();
   }
