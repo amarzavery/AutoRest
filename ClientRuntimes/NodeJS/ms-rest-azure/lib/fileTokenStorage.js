@@ -77,8 +77,10 @@ FileTokenStorage.prototype.loadEntries = function loadEntries() {
   try {
     var content = this._readFile();
     entries = JSON.parse(content);
-    for (var i=0; i < entries.length; i++) {
-      entries[i].expiresOn = new Date(entries[i].expiresOn);
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].expiresOn) {
+        entries[i].expiresOn = new Date(entries[i].expiresOn);
+      }
     }
   } catch (ex) {
     var err = new Error ();
