@@ -363,7 +363,31 @@ function serializeDateTypes(typeName, value, objectName) {
         (typeof value.valueOf() === 'string' && !isNaN(Date.parse(value))))) {
         throw new Error(util.format('%s must be an instanceof Date or a string in ISO8601 format.', objectName));
       }
-      value = (value instanceof Date) ? value.toISOString() :  new Date(value).toISOString();
+      //value = (value instanceof Date) ? value.toISOString() :  new Date(value).toISOString();
+      var result = '';
+      if (value isntanceof Date) {
+        result = value.toISOString();
+        if (value.hasOwnProperty('originalValue') && (value.originalValue !== null || value.originalValue !== undefined)) {
+          var constructedValue = value.originalValue.slice(0, 23) + 'Z';
+          if (value.toISOString().toLowerCase() === constructedValue.toLowerCase()) {
+            result = value.originalValue;
+          }
+        }
+      } else {
+        var tempDate = new Date(value);
+        result = new Date(value).toISOString();
+        //if string is in ISO8601 format and it contains a dot as timesec-fragment is optional 
+        //as per https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14
+        if (value.match(/.*Z$/ig) !== null && value.indexOf('.') !== -1) {
+          if (value.slice(value.indexOf('.')).length > 5) {
+            var constructedValue = value.slice(0, 23) + 'Z';
+            if (result.toLowerCase() === constructedValue.toLowerCase()) {
+              result = value;
+            }
+          }
+        }
+      }
+      value = result;
     } else if (typeName.match(/^DateTimeRfc1123$/ig) !== null) {
       if (!(value instanceof Date || 
         (typeof value.valueOf() === 'string' && !isNaN(Date.parse(value))))) {
@@ -409,6 +433,14 @@ exports.deserialize = function (mapper, responseBody, objectName) {
     payload = responseBody;
   } else if (mapperType.match(/^(Date|DateTime|DateTimeRfc1123)$/ig) !== null) {
     payload = new Date(responseBody);
+    if (mapperType.match(/^DateTime$/ig) !== null && responseBody.match(/.*\.\d{4,}Z$/ig) !== null) {
+      Object.defineProperty(payload, 'originalValue', {
+        value: responseBody,
+        enumerable: true,
+        configurable: false,
+        writable: false
+      });
+    }
   } else if (mapperType.match(/^TimeSpan$/ig) !== null) {
     payload = moment.duration(responseBody);
   } else if (mapperType.match(/^UnixTime$/ig) !== null) {
