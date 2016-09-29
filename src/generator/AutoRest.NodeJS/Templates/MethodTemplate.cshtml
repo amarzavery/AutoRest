@@ -11,17 +11,17 @@
 /**
 @if (!String.IsNullOrEmpty(Model.Summary))
 {
-  @WrapComment(" * ", "@summary " + Model.Summary)@:
-@: *
+    @WrapComment(" * ", "@summary " + Model.Summary)@:
+    @: *
 }
 @if (!String.IsNullOrEmpty(Model.Description))
 {
-  @WrapComment(" * ", Model.Description)@:
-@: *
+    @WrapComment(" * ", Model.Description)@:
+    @: *
 }
 @foreach (var parameter in Model.DocumentationParameters)
 {
- @MethodTemplateModel.ConstructParameterDocumentation(
+    @MethodTemplateModel.ConstructParameterDocumentation(
                       WrapComment(" * ", "@param {"
                                         + MethodTemplateModel.GetParameterDocumentationType(parameter)
                                         + "} " + MethodTemplateModel.GetParameterDocumentationName(parameter)
@@ -50,16 +50,16 @@
     throw new Error('callback cannot be null.');
   }
 
-  @if (((CompositeType)Model.OptionsParameterTemplateModel.Type).Properties.Count > 1)
-  {
-  @:@(Model.BuildOptionalMappings())
+@if (((CompositeType)Model.OptionsParameterTemplateModel.Type).Properties.Count > 1)
+{
+    @:@(Model.BuildOptionalMappings())
   }
 
-  @foreach(var parameter in Model.ParameterTemplateModels)
-  {
+@foreach (var parameter in Model.ParameterTemplateModels)
+{
     if (parameter.IsConstant && parameter.ClientProperty == null)
     {
-  @:var @(parameter.Name) = @(parameter.DefaultValue);
+        @:var @(parameter.Name) = @(parameter.DefaultValue);
     }
 
     if (parameter.Type is CompositeType
@@ -68,42 +68,42 @@
       && parameter.ClientProperty == null
       && ((CompositeType)parameter.Type).ContainsConstantProperties)
     {
-  @:if (@(parameter.Name) === null || @(parameter.Name) === undefined)
-  @:{
-  @:  @(parameter.Name) = {};
-  @:}
+        @:if (@(parameter.Name) === null || @(parameter.Name) === undefined)
+        @:{
+        @:  @(parameter.Name) = {};
+        @:}
     }
-  }
+}
 
-  @if (Model.ParameterTemplateModels.Any())
-  {
-      var validationBlock = Model.ValidationString;
-  if (!string.IsNullOrWhiteSpace(validationBlock))
-  {
-  <text>
-  // Validate
-  try {
-    @(validationBlock)
-  } catch (error) {
-    return callback(error);
-  }
-  </text>
-  }
-  }
-  @(Model.BuildInputMappings())
-  @EmptyLine
+@if (Model.ParameterTemplateModels.Any())
+{
+    var validationBlock = Model.ValidationString;
+    if (!string.IsNullOrWhiteSpace(validationBlock))
+    {
+        <text>
+        // Validate
+        try {
+        @(validationBlock)
+        } catch (error) {
+        return callback(error);
+        }
+        </text>
+    }
+}
+@(Model.BuildInputMappings())
+@EmptyLine
   // Construct URL
-  @if (Model.IsAbsoluteUrl)
-  {
-  @:var requestUrl = '@(Model.Url.EscapeSingleQuotes())';
+@if (Model.IsAbsoluteUrl)
+{
+    @:var requestUrl = '@(Model.Url.EscapeSingleQuotes())';
   }
-  else
-  {
-  @:var requestUrl = @(Model.ClientReference).baseUri +
-  @:                 '/@(Model.Url.EscapeSingleQuotes())';
+else
+{
+    @:var baseUrl = @(Model.ClientReference).baseUri;
+    @:var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + '@((Model.Url.StartsWith("/") ? Model.Url.TrimStart('/') : Model.Url).EscapeSingleQuotes())';
   }
-  @(Model.BuildUrl("requestUrl"))
-  @EmptyLine
+@(Model.BuildUrl("requestUrl"))
+@EmptyLine
   // Create HTTP transport objects
   var httpRequest = new WebResource();
   httpRequest.method = '@(Model.HttpMethod.ToString().ToUpper())';
@@ -111,12 +111,12 @@
   httpRequest.url = requestUrl;
 
   // Set Headers
-  @(Model.SetDefaultHeaders)
-  @foreach (var parameter in Model.LogicalParameters.Where(p => p.Location == ParameterLocation.Header))
-  {
-  @:if (@(parameter.Name) !== undefined && @(parameter.Name) !== null) {
-  @:  httpRequest.headers['@(parameter.SerializedName)'] = @parameter.Type.ToString(parameter.Name);
-  @:}
+@(Model.SetDefaultHeaders)
+@foreach (var parameter in Model.LogicalParameters.Where(p => p.Location == ParameterLocation.Header))
+{
+    @:if (@(parameter.Name) !== undefined && @(parameter.Name) !== null) {
+    @:  httpRequest.headers['@(parameter.SerializedName)'] = @parameter.Type.ToString(parameter.Name);
+    @:}
   }
   if(options) {
     for(var headerName in options['customHeaders']) {
@@ -127,72 +127,72 @@
   }
   httpRequest.headers['Content-Type'] = '@(Model.RequestContentType)';
 
-  @if (Model.RequestBody != null)
-  {
-      if (Model.RequestBody.Type.IsPrimaryType(KnownPrimaryType.Stream))
-      {
-  <text>
-  // Serialize Request  
-  var requestContent = @(Model.RequestBody.Name);
-  httpRequest.body = requestContent;
-  </text>
-      }
-      else
-      { 
-  <text>
-  // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
-  try {
-    if (@(Model.RequestBody.Name) !== null && @(Model.RequestBody.Name) !== undefined) {
-      @(Model.ConstructRequestBodyMapper)
-      requestModel = client.serialize(requestModelMapper, @(Model.RequestBody.Name), '@(Model.RequestBody.Name)');
-      requestContent = JSON.stringify(requestModel);
+@if (Model.RequestBody != null)
+{
+    if (Model.RequestBody.Type.IsPrimaryType(KnownPrimaryType.Stream))
+    {
+        <text>
+        // Serialize Request
+        var requestContent = @(Model.RequestBody.Name);
+        httpRequest.body = requestContent;
+        </text>
     }
-  } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' + 
+    else
+    {
+        <text>
+        // Serialize Request
+        var requestContent = null;
+        var requestModel = null;
+        try {
+        if (@(Model.RequestBody.Name) !== null && @(Model.RequestBody.Name) !== undefined) {
+        @(Model.ConstructRequestBodyMapper)
+        requestModel = client.serialize(requestModelMapper, @(Model.RequestBody.Name), '@(Model.RequestBody.Name)');
+        requestContent = JSON.stringify(requestModel);
+        }
+        } catch (error) {
+        var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
         'payload - "%s"', error.message, util.inspect(@(Model.RequestBody.Name), {depth: null})));
-    return callback(serializationError);
-  }
+        return callback(serializationError);
+        }
 
-  httpRequest.body = requestContent;
-  </text>
-      }
-  }
-  else if (Model.LogicalParameters.Where(p => p.Location == ParameterLocation.FormData).Any())
-  {      
-  <text>
-  // Serialize Request  
-  var formData = {};  
-      @foreach (var parameter in Model.LogicalParameters.Where(p => p.Location == ParameterLocation.FormData))
-      {
-  @:if (@(parameter.Name) !== undefined && @(parameter.Name) !== null) {
+        httpRequest.body = requestContent;
+        </text>
+    }
+}
+else if (Model.LogicalParameters.Where(p => p.Location == ParameterLocation.FormData).Any())
+{
+    <text>
+    // Serialize Request
+    var formData = {};
+    @foreach (var parameter in Model.LogicalParameters.Where(p => p.Location == ParameterLocation.FormData))
+    {
+        @:if (@(parameter.Name) !== undefined && @(parameter.Name) !== null) {
           if (parameter.Type.IsPrimaryType(KnownPrimaryType.Stream))
-          {  
-    @:formData['@(parameter.SerializedName)'] = @(parameter.Name);  
+        {
+            @:formData['@(parameter.SerializedName)'] = @(parameter.Name);
           }
-          else
-          {
-    @:formData['@(parameter.SerializedName)'] = @(parameter.Type.ToString(parameter.Name));
+        else
+        {
+            @:formData['@(parameter.SerializedName)'] = @(parameter.Type.ToString(parameter.Name));
           }
-  @:}
-      }  
-  httpRequest.formData = formData;
-  </text>      
-  }
-  else
-  {
-  <text>
-  httpRequest.body = null;
-  </text>
-  }
+        @:}
+      }
+    httpRequest.formData = formData;
+    </text>
+}
+else
+{
+    <text>
+    httpRequest.body = null;
+    </text>
+}
 
-  @if (Model.Responses.Any(r => r.Value.Body.IsPrimaryType(KnownPrimaryType.Stream)))
-  {
-@:  @Include(new MethodStreamPipelineTemplate(), Model)
+@if (Model.Responses.Any(r => r.Value.Body.IsPrimaryType(KnownPrimaryType.Stream)))
+{
+    @:  @Include(new MethodStreamPipelineTemplate(), Model)
   }
-  else
-  {
-@:  @Include(new MethodJsonPipelineTemplate(), Model)
+else
+{
+    @:  @Include(new MethodJsonPipelineTemplate(), Model)
   }
 };
