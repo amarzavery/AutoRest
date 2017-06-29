@@ -8,31 +8,29 @@
  * regenerated.
  */
 
-import * as msRestAzure from 'ms-rest-azure';
-exports.BaseResource = msRestAzure.BaseResource;
-exports.CloudError = msRestAzure.CloudError;
+import { BaseResource } from 'ms-rest-azure';
+import { CloudError } from 'ms-rest-azure';
+
+export { BaseResource } from 'ms-rest-azure';
+export { CloudError } from 'ms-rest-azure';
+
 
 /**
  * @class
  * Initializes a new instance of the Resource class.
  * @constructor
  * @member {string} [id] Resource Id
- *
  * @member {string} [type] Resource Type
- *
  * @member {object} [tags]
- *
  * @member {string} [location] Resource Location
- *
  * @member {string} [name] Resource Name
- *
  */
 export interface Resource extends BaseResource {
-  id?: string;
-  type?: string;
+  readonly id?: string;
+  readonly type?: string;
   tags?: { [propertyName: string]: string };
   location?: string;
-  name?: string;
+  readonly name?: string;
 }
 
 /**
@@ -40,9 +38,7 @@ export interface Resource extends BaseResource {
  * Initializes a new instance of the Sku class.
  * @constructor
  * @member {string} [name]
- *
  * @member {string} [id]
- *
  */
 export interface Sku {
   name?: string;
@@ -54,15 +50,13 @@ export interface Sku {
  * Initializes a new instance of the Product class.
  * @constructor
  * @member {string} [provisioningState]
- *
  * @member {string} [provisioningStateValues] Possible values include:
  * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
  * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
  */
 export interface Product extends Resource {
   provisioningState?: string;
-  provisioningStateValues?: string;
+  readonly provisioningStateValues?: string;
 }
 
 /**
@@ -70,10 +64,9 @@ export interface Product extends Resource {
  * Initializes a new instance of the SubResource class.
  * @constructor
  * @member {string} [id] Sub Resource Id
- *
  */
 export interface SubResource extends BaseResource {
-  id?: string;
+  readonly id?: string;
 }
 
 /**
@@ -81,15 +74,13 @@ export interface SubResource extends BaseResource {
  * Initializes a new instance of the SubProduct class.
  * @constructor
  * @member {string} [provisioningState]
- *
  * @member {string} [provisioningStateValues] Possible values include:
  * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
  * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
  */
 export interface SubProduct extends SubResource {
   provisioningState?: string;
-  provisioningStateValues?: string;
+  readonly provisioningStateValues?: string;
 }
 
 /**
@@ -97,9 +88,7 @@ export interface SubProduct extends SubResource {
  * Initializes a new instance of the OperationResultError class.
  * @constructor
  * @member {number} [code] The error code for an operation failure
- *
  * @member {string} [message] The detailed arror message
- *
  */
 export interface OperationResultError {
   code?: number;
@@ -113,13 +102,9 @@ export interface OperationResultError {
  * @member {string} [status] The status of the request. Possible values
  * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
  * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
  * @member {object} [error]
- *
  * @member {number} [error.code] The error code for an operation failure
- *
  * @member {string} [error.message] The detailed arror message
- *
  */
 export interface OperationResult {
   status?: string;

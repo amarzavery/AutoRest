@@ -10,136 +10,130 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the Product class.
- * @constructor
  * The product documentation.
  *
- * @member {array} [displayNames] Non required array of unique items from 0 to
- * 6 elements.
- *
- * @member {number} [capacity] Non required int betwen 0 and 100 exclusive.
- *
- * @member {string} [image] Image URL representing the product.
- *
- * @member {object} child
- *
- * @member {number} [child.count] Count
- *
- * @member {string} [constStringAsEnum] Constant string as Enum. Possible
- * values include: 'constant_string_as_enum'
- *
  */
-function Product() {
-}
+class Product {
+  /**
+   * Create a Product.
+   * @member {array} [displayNames] Non required array of unique items from 0
+   * to 6 elements.
+   * @member {number} [capacity] Non required int betwen 0 and 100 exclusive.
+   * @member {string} [image] Image URL representing the product.
+   * @member {object} child
+   * @member {number} [child.count] Count
+   * @member {string} [constStringAsEnum] Constant string as Enum. Possible
+   * values include: 'constant_string_as_enum'
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Product
- *
- * @returns {object} metadata of Product
- *
- */
-Product.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Product',
-    type: {
-      name: 'Composite',
-      className: 'Product',
-      modelProperties: {
-        displayNames: {
-          required: false,
-          serializedName: 'display_names',
-          constraints: {
-            MaxItems: 6,
-            MinItems: 0,
-            UniqueItems: true
-          },
-          type: {
-            name: 'Sequence',
-            element: {
-                required: false,
-                serializedName: 'StringElementType',
-                type: {
-                  name: 'String'
-                }
+  /**
+   * Defines the metadata of Product
+   *
+   * @returns {object} metadata of Product
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Product',
+      type: {
+        name: 'Composite',
+        className: 'Product',
+        modelProperties: {
+          displayNames: {
+            required: false,
+            serializedName: 'display_names',
+            constraints: {
+              MaxItems: 6,
+              MinItems: 0,
+              UniqueItems: true
+            },
+            type: {
+              name: 'Sequence',
+              element: {
+                  required: false,
+                  serializedName: 'StringElementType',
+                  type: {
+                    name: 'String'
+                  }
+              }
             }
-          }
-        },
-        capacity: {
-          required: false,
-          serializedName: 'capacity',
-          constraints: {
-            ExclusiveMaximum: 100,
-            ExclusiveMinimum: 0
           },
-          type: {
-            name: 'Number'
-          }
-        },
-        image: {
-          required: false,
-          serializedName: 'image',
-          constraints: {
-            Pattern: 'http://\w+'
+          capacity: {
+            required: false,
+            serializedName: 'capacity',
+            constraints: {
+              ExclusiveMaximum: 100,
+              ExclusiveMinimum: 0
+            },
+            type: {
+              name: 'Number'
+            }
           },
-          type: {
-            name: 'String'
-          }
-        },
-        child: {
-          required: true,
-          serializedName: 'child',
-          defaultValue: {},
-          type: {
-            name: 'Composite',
-            className: 'ChildProduct'
-          }
-        },
-        constChild: {
-          required: true,
-          isConstant: true,
-          serializedName: 'constChild',
-          defaultValue: {},
-          type: {
-            name: 'Composite',
-            className: 'ConstantProduct'
-          }
-        },
-        constInt: {
-          required: true,
-          isConstant: true,
-          serializedName: 'constInt',
-          defaultValue: 0,
-          type: {
-            name: 'Number'
-          }
-        },
-        constString: {
-          required: true,
-          isConstant: true,
-          serializedName: 'constString',
-          defaultValue: 'constant',
-          type: {
-            name: 'String'
-          }
-        },
-        constStringAsEnum: {
-          required: false,
-          serializedName: 'constStringAsEnum',
-          type: {
-            name: 'Enum',
-            allowedValues: [ 'constant_string_as_enum' ]
+          image: {
+            required: false,
+            serializedName: 'image',
+            constraints: {
+              Pattern: 'http://\w+'
+            },
+            type: {
+              name: 'String'
+            }
+          },
+          child: {
+            required: true,
+            serializedName: 'child',
+            defaultValue: {},
+            type: {
+              name: 'Composite',
+              className: 'ChildProduct'
+            }
+          },
+          constChild: {
+            required: true,
+            isConstant: true,
+            serializedName: 'constChild',
+            defaultValue: {},
+            type: {
+              name: 'Composite',
+              className: 'ConstantProduct'
+            }
+          },
+          constInt: {
+            required: true,
+            isConstant: true,
+            serializedName: 'constInt',
+            defaultValue: 0,
+            type: {
+              name: 'Number'
+            }
+          },
+          constString: {
+            required: true,
+            isConstant: true,
+            serializedName: 'constString',
+            defaultValue: 'constant',
+            type: {
+              name: 'String'
+            }
+          },
+          constStringAsEnum: {
+            required: false,
+            serializedName: 'constStringAsEnum',
+            type: {
+              name: 'Enum',
+              allowedValues: [ 'constant_string_as_enum' ]
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Product;

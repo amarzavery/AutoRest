@@ -2,7 +2,7 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 using AutoRest.Core.Logging;
-using AutoRest.Core.Validation;
+using AutoRest.Swagger.Validation.Core;
 using System.Collections.Generic;
 
 namespace AutoRest.Swagger.Validation
@@ -16,6 +16,8 @@ namespace AutoRest.Swagger.Validation
 
         /// <summary>
         /// Overridable method that lets a child rule return multiple validation messages for the <paramref name="entity"/>
+        /// Override this method when trying to apply a rule for a composite/array type object or when manipulating the path
+        /// where violation occurs. Eg.: LROStatusCodesReturnTypeSchema.
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -25,7 +27,7 @@ namespace AutoRest.Swagger.Validation
             // Only try to validate an object with this extension rule if the extension name matches the key
             if (context.Key == ExtensionName && !IsValid(entity, context, out formatParams))
             {
-                yield return new ValidationMessage(context.Path, this, formatParams);
+                yield return new ValidationMessage(new FileObjectPath(context.File, context.Path), this, formatParams);
             }
         }
 
@@ -44,6 +46,8 @@ namespace AutoRest.Swagger.Validation
 
         /// <summary>
         /// Overridable method that lets a child rule specify if <paramref name="entity"/> passes validation
+        /// IsValid is to be overridden for leaf nodes where the path to be reported is the same as the node
+        /// on which the validation rule is being set as an attribute. Eg.: A description for a property/parameter
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>

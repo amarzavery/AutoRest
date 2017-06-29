@@ -11,50 +11,50 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the ParameterGroupingPostMultiParamGroupsSecondParamGroup class.
- * @constructor
  * Additional parameters for the ParameterGrouping_postMultiParamGroups
  * operation.
  *
- * @member {string} [headerTwo]
- *
- * @member {number} [queryTwo] Query parameter with default. Default value: 30
- * .
- *
  */
-function ParameterGroupingPostMultiParamGroupsSecondParamGroup() {
-}
+class ParameterGroupingPostMultiParamGroupsSecondParamGroup {
+  /**
+   * Create a ParameterGroupingPostMultiParamGroupsSecondParamGroup.
+   * @member {string} [headerTwo]
+   * @member {number} [queryTwo] Query parameter with default. Default value:
+   * 30 .
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ParameterGroupingPostMultiParamGroupsSecondParamGroup
- *
- * @returns {object} metadata of ParameterGroupingPostMultiParamGroupsSecondParamGroup
- *
- */
-ParameterGroupingPostMultiParamGroupsSecondParamGroup.prototype.mapper = function () {
-  return {
-    required: false,
-    type: {
-      name: 'Composite',
-      className: 'ParameterGroupingPostMultiParamGroupsSecondParamGroup',
-      modelProperties: {
-        headerTwo: {
-          required: false,
-          type: {
-            name: 'String'
-          }
-        },
-        queryTwo: {
-          required: false,
-          defaultValue: 30,
-          type: {
-            name: 'Number'
+  /**
+   * Defines the metadata of ParameterGroupingPostMultiParamGroupsSecondParamGroup
+   *
+   * @returns {object} metadata of ParameterGroupingPostMultiParamGroupsSecondParamGroup
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      type: {
+        name: 'Composite',
+        className: 'ParameterGroupingPostMultiParamGroupsSecondParamGroup',
+        modelProperties: {
+          headerTwo: {
+            required: false,
+            type: {
+              name: 'String'
+            }
+          },
+          queryTwo: {
+            required: false,
+            defaultValue: 30,
+            type: {
+              name: 'Number'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ParameterGroupingPostMultiParamGroupsSecondParamGroup;

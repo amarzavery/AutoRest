@@ -2,7 +2,8 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 using AutoRest.Core.Logging;
-using AutoRest.Core.Validation;
+using AutoRest.Swagger.Model;
+using AutoRest.Swagger.Validation.Core;
 using Newtonsoft.Json.Linq;
 
 namespace AutoRest.Swagger.Validation
@@ -10,6 +11,27 @@ namespace AutoRest.Swagger.Validation
     public class NextLinkPropertyMustExist : PageableExtensionRule
     {
         private const string ExtensionNextLinkPropertyName = "nextLinkName";
+
+        /// <summary>
+        /// Id of the Rule.
+        /// </summary>
+        public override string Id => "R2025";
+
+        /// <summary>
+        /// Violation category of the Rule.
+        /// </summary>
+        public override ValidationCategory ValidationCategory => ValidationCategory.SDKViolation;
+
+        /// <summary>
+        /// What kind of open api document type this rule should be applied to
+        /// </summary>
+        public override ServiceDefinitionDocumentType ServiceDefinitionDocumentType => ServiceDefinitionDocumentType.ARM | ServiceDefinitionDocumentType.DataPlane;
+
+        /// <summary>
+        /// The rule could be violated by a model referenced by many jsons belonging to the same
+        /// composed state, to reduce duplicate messages, run validation rule in composed state
+        /// </summary>
+        public override ServiceDefinitionDocumentState ValidationRuleMergeState => ServiceDefinitionDocumentState.Composed;
 
         /// <summary>
         /// An x-ms-pageable extension passes this rule if the value for nextLinkName refers to a string property
@@ -39,16 +61,16 @@ namespace AutoRest.Swagger.Validation
         }
 
         /// <summary>
-        /// The template message for this Rule. 
+        /// The template message for this Rule.
         /// </summary>
         /// <remarks>
         /// This may contain placeholders '{0}' for parameterized messages.
         /// </remarks>
-        public override string MessageTemplate => "The property '{0}' specified by nextLinkName does not exist in the 200 response schema.";
+        public override string MessageTemplate => "The property '{0}' specified by nextLinkName does not exist in the 200 response schema. \nPlease, specify the name of the property that provides the nextLink. If the model does not have the nextLink property then specify null.";
 
         /// <summary>
         /// The severity of this message (ie, debug/info/warning/error/fatal, etc)
         /// </summary>
-        public override Category Severity => Category.Warning;
+        public override Category Severity => Category.Error;
     }
 }

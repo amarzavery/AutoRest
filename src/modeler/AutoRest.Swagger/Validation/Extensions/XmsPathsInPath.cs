@@ -8,14 +8,24 @@ using System.Globalization;
 using System.Linq;
 using AutoRest.Core.Logging;
 using AutoRest.Core.Properties;
-using AutoRest.Core.Validation;
 using AutoRest.Swagger.Model;
+using AutoRest.Swagger.Validation.Core;
 
 namespace AutoRest.Swagger.Validation
 {
     [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Xms")]
     public class XmsPathsMustOverloadPaths : TypedRule<Dictionary<string, Operation>>
     {
+        /// <summary>
+        /// Id of the Rule.
+        /// </summary>
+        public override string Id => "R2058";
+
+        /// <summary>
+        /// Violation category of the Rule.
+        /// </summary>
+        public override ValidationCategory ValidationCategory => ValidationCategory.SDKViolation;
+
         /// <summary>
         /// The template message for this Rule. 
         /// </summary>
@@ -27,7 +37,18 @@ namespace AutoRest.Swagger.Validation
         /// <summary>
         /// The severity of this message (ie, debug/info/warning/error/fatal, etc)
         /// </summary>
-        public override Category Severity => Category.Warning;
+        public override Category Severity => Category.Error;
+
+        /// <summary>
+        /// What kind of open api document type this rule should be applied to
+        /// </summary>
+        public override ServiceDefinitionDocumentType ServiceDefinitionDocumentType => ServiceDefinitionDocumentType.ARM | ServiceDefinitionDocumentType.DataPlane;
+
+        /// <summary>
+        /// x-ms-paths could theoretically overload a path in another json 
+        /// (however this is unlikely since we usually have one resource path per json)
+        /// </summary>
+        public override ServiceDefinitionDocumentState ValidationRuleMergeState => ServiceDefinitionDocumentState.Composed;
 
         public override bool IsValid(Dictionary<string, Operation> xmsPath, RuleContext context)
         {

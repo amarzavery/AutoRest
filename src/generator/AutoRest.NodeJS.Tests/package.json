@@ -18,17 +18,20 @@
     }
   ],
   "dependencies": {
-    "ms-rest": "1.15.2",
-    "jshint": "2.8.0",
+    "@types/mocha": "^2.2.39",
+    "@types/should": "^8.1.30",
+    "@types/node": "^6.0.66",
+    "ms-rest": "^2.0.0",
+    "jshint": "2.9.4",
     "xunit-file": "0.0.5",
-    "mocha": "2.2.5",
+    "mocha": "^3.2.0",
     "moment": "^2.14.1",
     "should": "5.2.0",
     "underscore": "*"
   },
   "devDependencies": {
     "tslint": "^2.5.1",
-    "typescript": "^2.1.4"
+    "typescript": "^2.2.1"
   },
   "homepage": "https://github.com/Azure/AutoRest/src/generator/AutoRest.NodeJS.Tests",
   "repository": {

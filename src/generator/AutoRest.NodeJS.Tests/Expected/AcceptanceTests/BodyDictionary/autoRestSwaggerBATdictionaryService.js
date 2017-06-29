@@ -14,45 +14,42 @@
 
 'use strict';
 
-var util = require('util');
-var msRest = require('ms-rest');
-var ServiceClient = msRest.ServiceClient;
+const msRest = require('ms-rest');
+const ServiceClient = msRest.ServiceClient;
 
-var models = require('./models');
-var operations = require('./operations');
+const models = require('./models');
+const operations = require('./operations');
 
-/**
- * @class
- * Initializes a new instance of the AutoRestSwaggerBATdictionaryService class.
- * @constructor
- *
- * @param {string} [baseUri] - The base URI of the service.
- *
- * @param {object} [options] - The parameter options
- *
- * @param {Array} [options.filters] - Filters to be added to the request pipeline
- *
- * @param {object} [options.requestOptions] - Options for the underlying request object
- * {@link https://github.com/request/request#requestoptions-callback Options doc}
- *
- * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
- *
- */
-function AutoRestSwaggerBATdictionaryService(baseUri, options) {
 
-  if (!options) options = {};
+/** Class representing a AutoRestSwaggerBATdictionaryService. */
+class AutoRestSwaggerBATdictionaryService extends ServiceClient {
+  /**
+   * Create a AutoRestSwaggerBATdictionaryService.
+   * @param {string} [baseUri] - The base URI of the service.
+   * @param {object} [options] - The parameter options
+   * @param {Array} [options.filters] - Filters to be added to the request pipeline
+   * @param {object} [options.requestOptions] - Options for the underlying request object
+   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
+   */
+  constructor(baseUri, options) {
 
-  AutoRestSwaggerBATdictionaryService['super_'].call(this, null, options);
-  this.baseUri = baseUri;
-  if (!this.baseUri) {
-    this.baseUri = 'http://localhost';
+    if (!options) options = {};
+
+    super(null, options);
+
+    this.baseUri = baseUri;
+    if (!this.baseUri) {
+      this.baseUri = 'http://localhost';
+    }
+
+    let packageInfo = this.getPackageJsonInfo(__dirname);
+    this.addUserAgentInfo(`${packageInfo.name}/${packageInfo.version}`);
+    this.dictionary = new operations.Dictionary(this);
+    this.models = models;
+    msRest.addSerializationMixin(this);
   }
 
-  this.dictionary = new operations.Dictionary(this);
-  this.models = models;
-  msRest.addSerializationMixin(this);
 }
-
-util.inherits(AutoRestSwaggerBATdictionaryService, ServiceClient);
 
 module.exports = AutoRestSwaggerBATdictionaryService;

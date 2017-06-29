@@ -10,52 +10,52 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the CatalogArray class.
- * @constructor
- * @member {array} [productArray] Array of products
- *
+ * Class representing a CatalogArray.
  */
-function CatalogArray() {
-}
+class CatalogArray {
+  /**
+   * Create a CatalogArray.
+   * @member {array} [productArray] Array of products
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of CatalogArray
- *
- * @returns {object} metadata of CatalogArray
- *
- */
-CatalogArray.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'CatalogArray',
-    type: {
-      name: 'Composite',
-      className: 'CatalogArray',
-      modelProperties: {
-        productArray: {
-          required: false,
-          serializedName: 'productArray',
-          type: {
-            name: 'Sequence',
-            element: {
-                required: false,
-                serializedName: 'ProductElementType',
-                type: {
-                  name: 'Composite',
-                  className: 'Product'
-                }
+  /**
+   * Defines the metadata of CatalogArray
+   *
+   * @returns {object} metadata of CatalogArray
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'CatalogArray',
+      type: {
+        name: 'Composite',
+        className: 'CatalogArray',
+        modelProperties: {
+          productArray: {
+            required: false,
+            serializedName: 'productArray',
+            type: {
+              name: 'Sequence',
+              element: {
+                  required: false,
+                  serializedName: 'ProductElementType',
+                  type: {
+                    name: 'Composite',
+                    className: 'Product'
+                  }
+              }
             }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = CatalogArray;

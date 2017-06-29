@@ -11,50 +11,51 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the ChildProduct class.
- * @constructor
  * The product documentation.
  *
- * @member {number} [count] Count
- *
  */
-function ChildProduct() {
-}
+class ChildProduct {
+  /**
+   * Create a ChildProduct.
+   * @member {number} [count] Count
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ChildProduct
- *
- * @returns {object} metadata of ChildProduct
- *
- */
-ChildProduct.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'ChildProduct',
-    type: {
-      name: 'Composite',
-      className: 'ChildProduct',
-      modelProperties: {
-        constProperty: {
-          required: true,
-          isConstant: true,
-          serializedName: 'constProperty',
-          defaultValue: 'constant',
-          type: {
-            name: 'String'
-          }
-        },
-        count: {
-          required: false,
-          serializedName: 'count',
-          type: {
-            name: 'Number'
+  /**
+   * Defines the metadata of ChildProduct
+   *
+   * @returns {object} metadata of ChildProduct
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'ChildProduct',
+      type: {
+        name: 'Composite',
+        className: 'ChildProduct',
+        modelProperties: {
+          constProperty: {
+            required: true,
+            isConstant: true,
+            serializedName: 'constProperty',
+            defaultValue: 'constant',
+            type: {
+              name: 'String'
+            }
+          },
+          count: {
+            required: false,
+            serializedName: 'count',
+            type: {
+              name: 'Number'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ChildProduct;

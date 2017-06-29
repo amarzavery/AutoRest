@@ -11,52 +11,52 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the BaseProduct class.
- * @constructor
  * The product documentation.
  *
- * @member {string} productId Unique identifier representing a specific product
- * for a given latitude & longitude. For example, uberX in San Francisco will
- * have a different product_id than uberX in Los Angeles.
- *
- * @member {string} [description] Description of product.
- *
  */
-function BaseProduct() {
-}
+class BaseProduct {
+  /**
+   * Create a BaseProduct.
+   * @member {string} productId Unique identifier representing a specific
+   * product for a given latitude & longitude. For example, uberX in San
+   * Francisco will have a different product_id than uberX in Los Angeles.
+   * @member {string} [description] Description of product.
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of BaseProduct
- *
- * @returns {object} metadata of BaseProduct
- *
- */
-BaseProduct.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'BaseProduct',
-    type: {
-      name: 'Composite',
-      className: 'BaseProduct',
-      modelProperties: {
-        productId: {
-          required: true,
-          serializedName: 'base_product_id',
-          type: {
-            name: 'String'
-          }
-        },
-        description: {
-          required: false,
-          serializedName: 'base_product_description',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of BaseProduct
+   *
+   * @returns {object} metadata of BaseProduct
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'BaseProduct',
+      type: {
+        name: 'Composite',
+        className: 'BaseProduct',
+        modelProperties: {
+          productId: {
+            required: true,
+            serializedName: 'base_product_id',
+            type: {
+              name: 'String'
+            }
+          },
+          description: {
+            required: false,
+            serializedName: 'base_product_description',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = BaseProduct;

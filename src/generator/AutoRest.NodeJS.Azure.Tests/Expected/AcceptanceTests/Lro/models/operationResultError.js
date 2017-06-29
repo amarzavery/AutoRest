@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the OperationResultError class.
- * @constructor
- * @member {number} [code] The error code for an operation failure
- *
- * @member {string} [message] The detailed arror message
- *
+ * Class representing a OperationResultError.
  */
-function OperationResultError() {
-}
+class OperationResultError {
+  /**
+   * Create a OperationResultError.
+   * @member {number} [code] The error code for an operation failure
+   * @member {string} [message] The detailed arror message
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of OperationResultError
- *
- * @returns {object} metadata of OperationResultError
- *
- */
-OperationResultError.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'OperationResult_error',
-    type: {
-      name: 'Composite',
-      className: 'OperationResultError',
-      modelProperties: {
-        code: {
-          required: false,
-          serializedName: 'code',
-          type: {
-            name: 'Number'
-          }
-        },
-        message: {
-          required: false,
-          serializedName: 'message',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of OperationResultError
+   *
+   * @returns {object} metadata of OperationResultError
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'OperationResult_error',
+      type: {
+        name: 'Composite',
+        className: 'OperationResultError',
+        modelProperties: {
+          code: {
+            required: false,
+            serializedName: 'code',
+            type: {
+              name: 'Number'
+            }
+          },
+          message: {
+            required: false,
+            serializedName: 'message',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = OperationResultError;

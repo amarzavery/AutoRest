@@ -11,59 +11,59 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the Basic class.
- * @constructor
- * @member {number} [id] Basic Id
- *
- * @member {string} [name] Name property with a very long description that does
- * not fit on a single line and a line break.
- *
- * @member {string} [color] Possible values include: 'cyan', 'Magenta',
- * 'YELLOW', 'blacK'
- *
+ * Class representing a Basic.
  */
-function Basic() {
-}
+class Basic {
+  /**
+   * Create a Basic.
+   * @member {number} [id] Basic Id
+   * @member {string} [name] Name property with a very long description that
+   * does not fit on a single line and a line break.
+   * @member {string} [color] Possible values include: 'cyan', 'Magenta',
+   * 'YELLOW', 'blacK'
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Basic
- *
- * @returns {object} metadata of Basic
- *
- */
-Basic.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'basic',
-    type: {
-      name: 'Composite',
-      className: 'Basic',
-      modelProperties: {
-        id: {
-          required: false,
-          serializedName: 'id',
-          type: {
-            name: 'Number'
-          }
-        },
-        name: {
-          required: false,
-          serializedName: 'name',
-          type: {
-            name: 'String'
-          }
-        },
-        color: {
-          required: false,
-          serializedName: 'color',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of Basic
+   *
+   * @returns {object} metadata of Basic
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'basic',
+      type: {
+        name: 'Composite',
+        className: 'Basic',
+        modelProperties: {
+          id: {
+            required: false,
+            serializedName: 'id',
+            type: {
+              name: 'Number'
+            }
+          },
+          name: {
+            required: false,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
+          },
+          color: {
+            required: false,
+            serializedName: 'color',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Basic;

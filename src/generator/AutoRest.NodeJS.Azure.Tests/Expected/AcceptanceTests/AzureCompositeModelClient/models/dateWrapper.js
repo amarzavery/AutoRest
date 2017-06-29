@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the DateWrapper class.
- * @constructor
- * @member {date} [field]
- *
- * @member {date} [leap]
- *
+ * Class representing a DateWrapper.
  */
-function DateWrapper() {
-}
+class DateWrapper {
+  /**
+   * Create a DateWrapper.
+   * @member {date} [field]
+   * @member {date} [leap]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of DateWrapper
- *
- * @returns {object} metadata of DateWrapper
- *
- */
-DateWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'date-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'DateWrapper',
-      modelProperties: {
-        field: {
-          required: false,
-          serializedName: 'field',
-          type: {
-            name: 'Date'
-          }
-        },
-        leap: {
-          required: false,
-          serializedName: 'leap',
-          type: {
-            name: 'Date'
+  /**
+   * Defines the metadata of DateWrapper
+   *
+   * @returns {object} metadata of DateWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'date-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'DateWrapper',
+        modelProperties: {
+          field: {
+            required: false,
+            serializedName: 'field',
+            type: {
+              name: 'Date'
+            }
+          },
+          leap: {
+            required: false,
+            serializedName: 'leap',
+            type: {
+              name: 'Date'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = DateWrapper;

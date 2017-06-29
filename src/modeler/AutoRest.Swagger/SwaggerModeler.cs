@@ -14,8 +14,8 @@ using AutoRest.Core.Utilities.Collections;
 using AutoRest.Swagger.Model;
 using AutoRest.Swagger.Properties;
 using ParameterLocation = AutoRest.Swagger.Model.ParameterLocation;
-using AutoRest.Core.Validation;
 using static AutoRest.Core.Utilities.DependencyInjection;
+using AutoRest.Swagger.Validation.Core;
 
 namespace AutoRest.Swagger
 {
@@ -33,8 +33,6 @@ namespace AutoRest.Swagger
             {
                 throw new ArgumentNullException("settings");
             }
-
-            DefaultProtocol = TransferProtocolScheme.Http;
         }
 
         public override string Name
@@ -53,11 +51,6 @@ namespace AutoRest.Swagger
         public CodeModel CodeModel { get; set; }
 
         /// <summary>
-        /// Default protocol when no protocol is specified in the schema
-        /// </summary>
-        public TransferProtocolScheme DefaultProtocol { get; set; }
-
-        /// <summary>
         /// Builds service model from swagger file.
         /// </summary>
         /// <returns></returns>
@@ -68,7 +61,7 @@ namespace AutoRest.Swagger
             {
                 throw ErrorManager.CreateError(Resources.InputRequired);
             }
-            var serviceDefinition = SwaggerParser.Load(Settings.Input, Settings.FileSystem);
+            var serviceDefinition = SwaggerParser.Load(Settings.Input, Settings.FileSystemInput);
             return Build(serviceDefinition);
         }
 
@@ -76,14 +69,19 @@ namespace AutoRest.Swagger
         public CodeModel Build(ServiceDefinition serviceDefinition)
         {
             ServiceDefinition = serviceDefinition;
-            if (!Settings.SkipValidation)
+            if (Settings.Instance.CodeGenerator.EqualsIgnoreCase("None"))
             {
                 // Look for semantic errors and warnings in the document.
                 var validator = new RecursiveObjectValidator(PropertyNameResolver.JsonName);
-                foreach (var validationEx in validator.GetValidationExceptions(ServiceDefinition))
+                foreach (var validationEx in validator.GetValidationExceptions(ServiceDefinition.FilePath, ServiceDefinition, new ServiceDefinitionMetadata
+                {   // LEGACY MODE! set defaults for the metadata, marked to be deprecated
+                    ServiceDefinitionDocumentType = ServiceDefinitionDocumentType.ARM, 
+                    MergeState = ServiceDefinitionDocumentState.Composed
+                }))
                 {
                     Logger.Instance.Log(validationEx);
                 }
+                return New<CodeModel>();
             }
 
             Logger.Instance.Log(Category.Info, Resources.GeneratingClient);
@@ -163,42 +161,9 @@ namespace AutoRest.Swagger
             return CodeModel;
         }
 
-        /// <summary>
-        /// Copares two versions of the same service specification.
-        /// </summary>
-        /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
-        public override IEnumerable<ComparisonMessage> Compare()
-        {
-            Logger.Instance.Log(Category.Info, Resources.ParsingSwagger);
-            if (string.IsNullOrWhiteSpace(Settings.Input) || string.IsNullOrWhiteSpace(Settings.Previous))
-            {
-                throw ErrorManager.CreateError(Resources.InputRequired);
-            }
-
-            var oldDefintion = SwaggerParser.Load(Settings.Previous, Settings.FileSystem);
-            var newDefintion = SwaggerParser.Load(Settings.Input, Settings.FileSystem);
-
-            var context = new ComparisonContext(oldDefintion, newDefintion);
-
-            // Look for semantic errors and warnings in the new document.
-            var validator = new RecursiveObjectValidator(PropertyNameResolver.JsonName);
-            var LogMessages = validator.GetValidationExceptions(newDefintion).ToList();
-
-            // Only compare versions if the new version is correct.
-            var comparisonMessages = 
-                !LogMessages.Any(m => m.Severity > Category.Error) ? 
-                newDefintion.Compare(context, oldDefintion) : 
-                Enumerable.Empty<ComparisonMessage>();
-
-            return LogMessages
-                .Select(msg => new ComparisonMessage(new MessageTemplate { Id = 0, Message = msg.Message }, msg.Path, msg.Severity))
-                .Concat(comparisonMessages);
-        }
-
         private void UpdateSettings()
         {
-            if (ServiceDefinition.Info.CodeGenerationSettings != null)
+            if (ServiceDefinition?.Info?.CodeGenerationSettings != null)
             {
                 foreach (var key in ServiceDefinition.Info.CodeGenerationSettings.Extensions.Keys)
                 {
@@ -239,16 +204,8 @@ namespace AutoRest.Swagger
             CodeModel.ModelsName = Settings.ModelsName;
             CodeModel.ApiVersion = ServiceDefinition.Info.Version;
             CodeModel.Documentation = ServiceDefinition.Info.Description;
-            if (ServiceDefinition.Schemes == null || ServiceDefinition.Schemes.Count != 1)
-            {
-                ServiceDefinition.Schemes = new List<TransferProtocolScheme> { DefaultProtocol };
-            }
-            if (string.IsNullOrEmpty(ServiceDefinition.Host))
-            {
-                ServiceDefinition.Host = "localhost";
-            }
             CodeModel.BaseUrl = string.Format(CultureInfo.InvariantCulture, "{0}://{1}{2}",
-                ServiceDefinition.Schemes[0].ToString().ToLower(CultureInfo.InvariantCulture),
+                ServiceDefinition.Schemes[0].ToString().ToLower(),
                 ServiceDefinition.Host, ServiceDefinition.BasePath);
 
             // Copy extensions

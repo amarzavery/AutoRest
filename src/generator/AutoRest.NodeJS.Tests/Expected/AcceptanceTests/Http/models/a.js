@@ -11,39 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the A class.
- * @constructor
- * @member {string} [statusCode]
- *
+ * Class representing a A.
  */
-function A() {
-}
+class A {
+  /**
+   * Create a A.
+   * @member {string} [statusCode]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of A
- *
- * @returns {object} metadata of A
- *
- */
-A.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'A',
-    type: {
-      name: 'Composite',
-      className: 'A',
-      modelProperties: {
-        statusCode: {
-          required: false,
-          serializedName: 'statusCode',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of A
+   *
+   * @returns {object} metadata of A
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'A',
+      type: {
+        name: 'Composite',
+        className: 'A',
+        modelProperties: {
+          statusCode: {
+            required: false,
+            serializedName: 'statusCode',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = A;

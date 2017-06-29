@@ -11,41 +11,43 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the OperationResult class.
- * @constructor
- * @member {string} [status] The status of the request. Possible values
- * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
- * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
+ * Class representing a OperationResult.
  */
-function OperationResult() {
-}
+class OperationResult {
+  /**
+   * Create a OperationResult.
+   * @member {string} [status] The status of the request. Possible values
+   * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
+   * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of OperationResult
- *
- * @returns {object} metadata of OperationResult
- *
- */
-OperationResult.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'OperationResult',
-    type: {
-      name: 'Composite',
-      className: 'OperationResult',
-      modelProperties: {
-        status: {
-          required: false,
-          serializedName: 'status',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of OperationResult
+   *
+   * @returns {object} metadata of OperationResult
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'OperationResult',
+      type: {
+        name: 'Composite',
+        className: 'OperationResult',
+        modelProperties: {
+          status: {
+            required: false,
+            serializedName: 'status',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = OperationResult;

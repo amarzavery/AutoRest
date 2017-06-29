@@ -11,40 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the HeaderCustomNamedRequestIdParamGroupingParameters class.
- * @constructor
  * Additional parameters for the Header_customNamedRequestIdParamGrouping
  * operation.
  *
- * @member {string} fooClientRequestId The fooRequestId
- *
  */
-function HeaderCustomNamedRequestIdParamGroupingParameters() {
-}
+class HeaderCustomNamedRequestIdParamGroupingParameters {
+  /**
+   * Create a HeaderCustomNamedRequestIdParamGroupingParameters.
+   * @member {string} fooClientRequestId The fooRequestId
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of HeaderCustomNamedRequestIdParamGroupingParameters
- *
- * @returns {object} metadata of HeaderCustomNamedRequestIdParamGroupingParameters
- *
- */
-HeaderCustomNamedRequestIdParamGroupingParameters.prototype.mapper = function () {
-  return {
-    required: false,
-    type: {
-      name: 'Composite',
-      className: 'HeaderCustomNamedRequestIdParamGroupingParameters',
-      modelProperties: {
-        fooClientRequestId: {
-          required: true,
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of HeaderCustomNamedRequestIdParamGroupingParameters
+   *
+   * @returns {object} metadata of HeaderCustomNamedRequestIdParamGroupingParameters
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      type: {
+        name: 'Composite',
+        className: 'HeaderCustomNamedRequestIdParamGroupingParameters',
+        modelProperties: {
+          fooClientRequestId: {
+            required: true,
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = HeaderCustomNamedRequestIdParamGroupingParameters;

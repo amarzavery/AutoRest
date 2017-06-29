@@ -2,14 +2,10 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 using System;
-using System.Configuration;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using Microsoft.Extensions.Logging;
-#if PORTABLE
-
-#endif
 
 namespace AutoRest.CSharp.Tests.Utilities
 {
@@ -32,7 +28,6 @@ namespace AutoRest.CSharp.Tests.Utilities
             EnsureService();
         }
 
-#if PORTABLE
         private static readonly ILogger _logger;
         static ServiceController()
         {
@@ -40,7 +35,7 @@ namespace AutoRest.CSharp.Tests.Utilities
             _logger = factory.CreateLogger<ServiceController>();
             factory.AddConsole();
         }
-#endif
+
         /// <summary>
         /// Directory containing the acceptance test files.
         /// </summary>
@@ -53,7 +48,7 @@ namespace AutoRest.CSharp.Tests.Utilities
                 if (!serverPath.DirectoryExists())
                 {
                     // otherwise walk up the path till we find a folder 
-                    serverPath = @"dev\TestServer\server".FindFolderByWalkingUpPath();
+                    serverPath = Path.Combine("dev", "TestServer", "server").FindFolderByWalkingUpPath();
                     if (serverPath == null)
                     {
                         throw new Exception("Unable to find TestServerPath.\r\n");
@@ -74,10 +69,7 @@ namespace AutoRest.CSharp.Tests.Utilities
         /// </summary>
         public int Port { get; set; }
 
-        public Uri Uri
-        {
-            get { return new Uri(string.Format(CultureInfo.InvariantCulture, "http://localhost:{0}", Port)); }
-        }
+        public Uri Uri => new Uri($"http://localhost:{Port}");
 
         /// <summary>
         /// The process running the service.
@@ -211,11 +203,7 @@ namespace AutoRest.CSharp.Tests.Utilities
             startInfo.UseShellExecute = false;
             startInfo.FileName = path;
             startInfo.Arguments = arguments;
-#if PORTABLE
             startInfo.Environment["PORT"] = Port.ToString(CultureInfo.InvariantCulture);
-#else
-            startInfo.EnvironmentVariables["PORT"] = Port.ToString(CultureInfo.InvariantCulture);
-#endif
             process.OutputDataReceived += _listener.ProcessOutput;
             process.ErrorDataReceived += _listener.ProcessError;
             process.Start();

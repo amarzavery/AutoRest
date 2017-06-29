@@ -8,7 +8,7 @@
 
 namespace Fixtures.AcceptanceTestsValidation.Models
 {
-    using AcceptanceTestsValidation;
+    using Fixtures.AcceptanceTestsValidation;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using System.Runtime;
@@ -23,5 +23,29 @@ namespace Fixtures.AcceptanceTestsValidation.Models
         [EnumMember(Value = "constant_string_as_enum")]
         ConstantStringAsEnum
     }
-}
+    internal static class EnumConstEnumExtension
+    {
+        internal static string ToSerializedValue(this EnumConst? value)  =>
+            value == null ? null : ((EnumConst)value).ToSerializedValue();
 
+        internal static string ToSerializedValue(this EnumConst value)
+        {
+            switch( value )
+            {
+                case EnumConst.ConstantStringAsEnum:
+                    return "constant_string_as_enum";
+            }
+            return null;
+        }
+
+        internal static EnumConst? ParseEnumConst(this string value)
+        {
+            switch( value )
+            {
+                case "constant_string_as_enum":
+                    return EnumConst.ConstantStringAsEnum;
+            }
+            return null;
+        }
+    }
+}

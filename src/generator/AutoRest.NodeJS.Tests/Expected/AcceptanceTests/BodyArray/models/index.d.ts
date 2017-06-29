@@ -8,15 +8,15 @@
  * regenerated.
  */
 
+import * as moment from "moment";
+
 
 /**
  * @class
  * Initializes a new instance of the Product class.
  * @constructor
  * @member {number} [integer]
- *
  * @member {string} [string]
- *
  */
 export interface Product {
   integer?: number;
@@ -28,9 +28,7 @@ export interface Product {
  * Initializes a new instance of the ErrorModel class.
  * @constructor
  * @member {number} [status]
- *
  * @member {string} [message]
- *
  */
 export interface ErrorModel {
   status?: number;

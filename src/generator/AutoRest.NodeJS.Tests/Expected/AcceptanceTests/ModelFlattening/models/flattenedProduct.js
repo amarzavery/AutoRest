@@ -10,124 +10,119 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the FlattenedProduct class.
- * @constructor
  * Flattened product.
  *
- * @member {string} [pname]
- *
- * @member {string} [flattenedProductType]
- *
- * @member {string} [provisioningStateValues] Possible values include:
- * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
- * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
- * @member {string} [provisioningState]
- *
+ * @extends models['Resource']
  */
-function FlattenedProduct() {
-  FlattenedProduct['super_'].call(this);
-}
+class FlattenedProduct extends models['Resource'] {
+  /**
+   * Create a FlattenedProduct.
+   * @member {string} [pname]
+   * @member {string} [flattenedProductType]
+   * @member {string} [provisioningStateValues] Possible values include:
+   * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
+   * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+   * @member {string} [provisioningState]
+   */
+  constructor() {
+    super();
+  }
 
-util.inherits(FlattenedProduct, models['Resource']);
-
-/**
- * Defines the metadata of FlattenedProduct
- *
- * @returns {object} metadata of FlattenedProduct
- *
- */
-FlattenedProduct.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'FlattenedProduct',
-    type: {
-      name: 'Composite',
-      className: 'FlattenedProduct',
-      modelProperties: {
-        id: {
-          required: false,
-          readOnly: true,
-          serializedName: 'id',
-          type: {
-            name: 'String'
-          }
-        },
-        type: {
-          required: false,
-          readOnly: true,
-          serializedName: 'type',
-          type: {
-            name: 'String'
-          }
-        },
-        tags: {
-          required: false,
-          serializedName: 'tags',
-          type: {
-            name: 'Dictionary',
-            value: {
-                required: false,
-                serializedName: 'StringElementType',
-                type: {
-                  name: 'String'
-                }
+  /**
+   * Defines the metadata of FlattenedProduct
+   *
+   * @returns {object} metadata of FlattenedProduct
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'FlattenedProduct',
+      type: {
+        name: 'Composite',
+        className: 'FlattenedProduct',
+        modelProperties: {
+          id: {
+            required: false,
+            readOnly: true,
+            serializedName: 'id',
+            type: {
+              name: 'String'
             }
-          }
-        },
-        location: {
-          required: false,
-          serializedName: 'location',
+          },
           type: {
-            name: 'String'
-          }
-        },
-        name: {
-          required: false,
-          readOnly: true,
-          serializedName: 'name',
-          type: {
-            name: 'String'
-          }
-        },
-        pname: {
-          required: false,
-          serializedName: 'properties.p\\.name',
-          type: {
-            name: 'String'
-          }
-        },
-        flattenedProductType: {
-          required: false,
-          serializedName: 'properties.type',
-          type: {
-            name: 'String'
-          }
-        },
-        provisioningStateValues: {
-          required: false,
-          readOnly: true,
-          serializedName: 'properties.provisioningStateValues',
-          type: {
-            name: 'String'
-          }
-        },
-        provisioningState: {
-          required: false,
-          serializedName: 'properties.provisioningState',
-          type: {
-            name: 'String'
+            required: false,
+            readOnly: true,
+            serializedName: 'type',
+            type: {
+              name: 'String'
+            }
+          },
+          tags: {
+            required: false,
+            serializedName: 'tags',
+            type: {
+              name: 'Dictionary',
+              value: {
+                  required: false,
+                  serializedName: 'StringElementType',
+                  type: {
+                    name: 'String'
+                  }
+              }
+            }
+          },
+          location: {
+            required: false,
+            serializedName: 'location',
+            type: {
+              name: 'String'
+            }
+          },
+          name: {
+            required: false,
+            readOnly: true,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
+          },
+          pname: {
+            required: false,
+            serializedName: 'properties.p\\.name',
+            type: {
+              name: 'String'
+            }
+          },
+          flattenedProductType: {
+            required: false,
+            serializedName: 'properties.type',
+            type: {
+              name: 'String'
+            }
+          },
+          provisioningStateValues: {
+            required: false,
+            readOnly: true,
+            serializedName: 'properties.provisioningStateValues',
+            type: {
+              name: 'String'
+            }
+          },
+          provisioningState: {
+            required: false,
+            serializedName: 'properties.provisioningState',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = FlattenedProduct;

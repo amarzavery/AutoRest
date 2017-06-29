@@ -8,15 +8,15 @@
  * regenerated.
  */
 
+import * as moment from "moment";
+
 
 /**
  * @class
  * Initializes a new instance of the ErrorModel class.
  * @constructor
  * @member {number} [status]
- *
  * @member {string} [message]
- *
  */
 export interface ErrorModel {
   status?: number;
@@ -28,7 +28,6 @@ export interface ErrorModel {
  * Initializes a new instance of the A class.
  * @constructor
  * @member {string} [statusCode]
- *
  */
 export interface A {
   statusCode?: string;
@@ -39,7 +38,6 @@ export interface A {
  * Initializes a new instance of the B class.
  * @constructor
  * @member {string} [textStatusCode]
- *
  */
 export interface B extends A {
   textStatusCode?: string;
@@ -50,7 +48,6 @@ export interface B extends A {
  * Initializes a new instance of the C class.
  * @constructor
  * @member {string} [httpCode]
- *
  */
 export interface C {
   httpCode?: string;
@@ -61,7 +58,6 @@ export interface C {
  * Initializes a new instance of the D class.
  * @constructor
  * @member {string} [httpStatusCode]
- *
  */
 export interface D {
   httpStatusCode?: string;

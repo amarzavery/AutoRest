@@ -1,10 +1,15 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "noImplicitAny": true
-    },
-    "exclude": [
-        "node_modules/typescript",
-        "node_modules/tslint"
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": [
+      "es2016"
     ]
+  },
+  "include": [
+    "AcceptanceTests/**/*"
+  ],
+  "exclude": [
+    "node_modules/typescript",
+    "node_modules/tslint"
+  ]
 }

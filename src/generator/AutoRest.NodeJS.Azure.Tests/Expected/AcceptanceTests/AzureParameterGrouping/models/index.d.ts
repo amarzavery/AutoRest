@@ -8,18 +8,19 @@
  * regenerated.
  */
 
-import * as msRestAzure from 'ms-rest-azure';
-exports.BaseResource = msRestAzure.BaseResource;
-exports.CloudError = msRestAzure.CloudError;
+import { BaseResource } from 'ms-rest-azure';
+import { CloudError } from 'ms-rest-azure';
+
+export { BaseResource } from 'ms-rest-azure';
+export { CloudError } from 'ms-rest-azure';
+
 
 /**
  * @class
  * Initializes a new instance of the ErrorModel class.
  * @constructor
  * @member {number} [status]
- *
  * @member {string} [message]
- *
  */
 export interface ErrorModel {
   status?: number;
@@ -33,13 +34,9 @@ export interface ErrorModel {
  * Additional parameters for the ParameterGrouping_postRequired operation.
  *
  * @member {number} body
- *
  * @member {string} [customHeader]
- *
  * @member {number} [query] Query parameter with default. Default value: 30 .
- *
  * @member {string} path Path parameter
- *
  */
 export interface ParameterGroupingPostRequiredParameters {
   body: number;
@@ -55,9 +52,7 @@ export interface ParameterGroupingPostRequiredParameters {
  * Additional parameters for the ParameterGrouping_postOptional operation.
  *
  * @member {string} [customHeader]
- *
  * @member {number} [query] Query parameter with default. Default value: 30 .
- *
  */
 export interface ParameterGroupingPostOptionalParameters {
   customHeader?: string;
@@ -73,10 +68,8 @@ export interface ParameterGroupingPostOptionalParameters {
  * ParameterGrouping_postSharedParameterGroupObject.
  *
  * @member {string} [headerOne]
- *
  * @member {number} [queryOne] Query parameter with default. Default value: 30
  * .
- *
  */
 export interface FirstParameterGroup {
   headerOne?: string;
@@ -91,10 +84,8 @@ export interface FirstParameterGroup {
  * operation.
  *
  * @member {string} [headerTwo]
- *
  * @member {number} [queryTwo] Query parameter with default. Default value: 30
  * .
- *
  */
 export interface ParameterGroupingPostMultiParamGroupsSecondParamGroup {
   headerTwo?: string;

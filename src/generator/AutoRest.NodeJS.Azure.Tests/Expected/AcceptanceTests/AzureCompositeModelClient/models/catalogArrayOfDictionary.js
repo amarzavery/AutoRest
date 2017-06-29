@@ -10,59 +10,59 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the CatalogArrayOfDictionary class.
- * @constructor
- * @member {array} [productArrayOfDictionary] Array of dictionary of products
- *
+ * Class representing a CatalogArrayOfDictionary.
  */
-function CatalogArrayOfDictionary() {
-}
+class CatalogArrayOfDictionary {
+  /**
+   * Create a CatalogArrayOfDictionary.
+   * @member {array} [productArrayOfDictionary] Array of dictionary of products
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of CatalogArrayOfDictionary
- *
- * @returns {object} metadata of CatalogArrayOfDictionary
- *
- */
-CatalogArrayOfDictionary.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'CatalogArrayOfDictionary',
-    type: {
-      name: 'Composite',
-      className: 'CatalogArrayOfDictionary',
-      modelProperties: {
-        productArrayOfDictionary: {
-          required: false,
-          serializedName: 'productArrayOfDictionary',
-          type: {
-            name: 'Sequence',
-            element: {
-                required: false,
-                serializedName: 'ObjectElementType',
-                type: {
-                  name: 'Dictionary',
-                  value: {
-                      required: false,
-                      serializedName: 'ProductElementType',
-                      type: {
-                        name: 'Composite',
-                        className: 'Product'
-                      }
+  /**
+   * Defines the metadata of CatalogArrayOfDictionary
+   *
+   * @returns {object} metadata of CatalogArrayOfDictionary
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'CatalogArrayOfDictionary',
+      type: {
+        name: 'Composite',
+        className: 'CatalogArrayOfDictionary',
+        modelProperties: {
+          productArrayOfDictionary: {
+            required: false,
+            serializedName: 'productArrayOfDictionary',
+            type: {
+              name: 'Sequence',
+              element: {
+                  required: false,
+                  serializedName: 'ObjectElementType',
+                  type: {
+                    name: 'Dictionary',
+                    value: {
+                        required: false,
+                        serializedName: 'ProductElementType',
+                        type: {
+                          name: 'Composite',
+                          className: 'Product'
+                        }
+                    }
                   }
-                }
+              }
             }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = CatalogArrayOfDictionary;

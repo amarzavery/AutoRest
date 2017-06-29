@@ -11,57 +11,57 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the StringWrapper class.
- * @constructor
- * @member {string} [field]
- *
- * @member {string} [empty]
- *
- * @member {string} [nullProperty]
- *
+ * Class representing a StringWrapper.
  */
-function StringWrapper() {
-}
+class StringWrapper {
+  /**
+   * Create a StringWrapper.
+   * @member {string} [field]
+   * @member {string} [empty]
+   * @member {string} [nullProperty]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of StringWrapper
- *
- * @returns {object} metadata of StringWrapper
- *
- */
-StringWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'string-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'StringWrapper',
-      modelProperties: {
-        field: {
-          required: false,
-          serializedName: 'field',
-          type: {
-            name: 'String'
-          }
-        },
-        empty: {
-          required: false,
-          serializedName: 'empty',
-          type: {
-            name: 'String'
-          }
-        },
-        nullProperty: {
-          required: false,
-          serializedName: 'null',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of StringWrapper
+   *
+   * @returns {object} metadata of StringWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'string-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'StringWrapper',
+        modelProperties: {
+          field: {
+            required: false,
+            serializedName: 'field',
+            type: {
+              name: 'String'
+            }
+          },
+          empty: {
+            required: false,
+            serializedName: 'empty',
+            type: {
+              name: 'String'
+            }
+          },
+          nullProperty: {
+            required: false,
+            serializedName: 'null',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = StringWrapper;

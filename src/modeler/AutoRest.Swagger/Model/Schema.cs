@@ -6,7 +6,7 @@ using System.Linq;
 using System.Globalization;
 
 using AutoRest.Core.Model;
-using AutoRest.Core.Validation;
+using AutoRest.Swagger.Validation.Core;
 using AutoRest.Swagger.Validation;
 using System.Collections.Generic;
 
@@ -17,8 +17,6 @@ namespace AutoRest.Swagger.Model
     /// <summary>
     /// Swagger schema object.
     /// </summary>
-    [Serializable]
-    [Rule(typeof(ModelTypeIncomplete))]
     public class Schema : SwaggerObject
     {
         public string Title { get; set; }
@@ -37,7 +35,9 @@ namespace AutoRest.Swagger.Model
         /// Key is a type serviceTypeName.
         /// </summary>
         [CollectionRule(typeof(AvoidNestedProperties))]
-        [Rule(typeof(XmsClientNameValidation))]
+        [Rule(typeof(XmsClientNameProperty))]
+        [Rule(typeof(DescriptionAndTitleMissing))]
+        [CollectionRule(typeof(RequiredReadOnlyProperties))]
         public Dictionary<string, Schema> Properties { get; set; }
 
         public bool ReadOnly { get; set; }
@@ -61,7 +61,6 @@ namespace AutoRest.Swagger.Model
         //For now (till the PBI gets addressed for the refactoring work), a generic field is used
         //for the reason that SwaggerParameter inherits from this class, but per spec, it's 'IsRequired' 
         //field should be boolean, not an array.
-        [CollectionRule(typeof(RequiredPropertiesMustExist))]
         public IList<string> Required { get; set; }
 
         /// <summary>
@@ -73,161 +72,6 @@ namespace AutoRest.Swagger.Model
         /// A metadata object that allows for more fine-tuned XML model definitions.
         /// </summary>
         public XmlProperties Xml { get; set; }
-
-        [JsonIgnore]
-        internal bool IsReferenced { get; set; }
-
-        private DataDirection _compareDirection = DataDirection.None;
-
-        /// <summary>
-        /// Compare a modified document node (this) to a previous one and look for breaking as well as non-breaking changes.
-        /// </summary>
-        /// <param name="context">The modified document context.</param>
-        /// <param name="previous">The original document model.</param>
-        /// <returns>A list of messages from the comparison.</returns>
-        public override IEnumerable<ComparisonMessage> Compare(ComparisonContext context, SwaggerBase previous)
-        {
-            var priorSchema = previous as Schema;
-
-            if (priorSchema == null)
-            {
-                throw new ArgumentNullException("priorVersion");
-            }
-            if (context == null)
-            {
-                throw new ArgumentNullException("context");
-            }
-
-            int referenced = 0;
-
-            var thisSchema = this;
-
-            if (!string.IsNullOrWhiteSpace(thisSchema.Reference))
-            {
-                thisSchema = FindReferencedSchema(thisSchema.Reference, (context.CurrentRoot as ServiceDefinition).Definitions);
-                referenced += 1;
-            }
-            if (!string.IsNullOrWhiteSpace(priorSchema.Reference))
-            {
-                priorSchema = FindReferencedSchema(priorSchema.Reference, (context.PreviousRoot as ServiceDefinition).Definitions);
-                referenced += 1;
-            }
-
-            // Avoid doing the comparison repeatedly by marking for which direction it's already been done.
-
-            if (context.Direction != DataDirection.None && referenced == 2)
-            {
-                // Comparing two referenced schemas in the context of a parameter or response -- did we already do this?
-
-                if (thisSchema._compareDirection == context.Direction || thisSchema._compareDirection == DataDirection.Both)
-                {
-                    return new ComparisonMessage[0];
-                }
-                _compareDirection |= context.Direction;
-            }
-
-            if (thisSchema != this || priorSchema != previous)
-            {
-                return thisSchema.Compare(context, priorSchema);
-            }
-
-            base.Compare(context, previous);
-
-            if (priorSchema.ReadOnly != ReadOnly)
-            {
-                context.LogBreakingChange(ComparisonMessages.ReadonlyPropertyChanged2, priorSchema.ReadOnly.ToString().ToLower(CultureInfo.CurrentCulture), ReadOnly.ToString().ToLower(CultureInfo.CurrentCulture));
-            }
-
-            if ((priorSchema.Discriminator == null && Discriminator != null) ||
-                (priorSchema.Discriminator != null && !priorSchema.Discriminator.Equals(Discriminator)))
-            {
-                context.LogBreakingChange(ComparisonMessages.DifferentDiscriminator);
-            }
-
-            if ((priorSchema.Extends == null && Extends != null) ||
-                (priorSchema.Extends != null && !priorSchema.Extends.Equals(Extends)))
-            {
-                context.LogBreakingChange(ComparisonMessages.DifferentExtends);
-            }
-
-            if ((priorSchema.AllOf == null && AllOf != null) ||
-                (priorSchema.AllOf != null && AllOf == null))
-            {
-                context.LogBreakingChange(ComparisonMessages.DifferentAllOf);
-            }
-            else if (priorSchema.AllOf != null)
-            {
-                CompareAllOfs(context, priorSchema);
-            }
-
-            context.PushProperty("properties");
-            CompareProperties(context, priorSchema);
-            context.Pop();
-
-            return context.Messages;
-        }
-
-
-        private void CompareAllOfs(ComparisonContext context, Schema priorSchema)
-        {
-            var different = 0;
-            foreach (var schema in priorSchema.AllOf)
-            {
-                if (!AllOf.Select(s => s.Reference).ToArray().Contains(schema.Reference))
-                {
-                    different += 1;
-                }
-            }
-            foreach (var schema in AllOf)
-            {
-                if (!priorSchema.AllOf.Select(s => s.Reference).ToArray().Contains(schema.Reference))
-                {
-                    different += 1;
-                }
-            }
-
-            if (different > 0)
-            {
-                context.LogBreakingChange(ComparisonMessages.DifferentAllOf);
-            }
-        }
-
-        private void CompareProperties(ComparisonContext context, Schema priorSchema)
-        {
-            // Were any properties removed?
-
-            if (priorSchema.Properties != null)
-            {
-                foreach (var def in priorSchema.Properties)
-                {
-                    Schema model = null;
-                    if (Properties == null || !Properties.TryGetValue(def.Key, out model))
-                    {
-                        context.LogBreakingChange(ComparisonMessages.RemovedProperty1, def.Key);
-                    }
-                    else
-                    {
-                        context.PushProperty(def.Key);
-                        model.Compare(context, def.Value);
-                        context.Pop();
-                    }
-                }
-            }
-
-            // Were any required properties added?
-
-            if (Properties != null)
-            {
-                foreach (var def in Properties.Keys)
-                {
-                    Schema model = null;
-                    if (priorSchema.Properties == null || !priorSchema.Properties.TryGetValue(def, out model) && Required.Contains(def))
-                    {
-                        context.LogBreakingChange(ComparisonMessages.AddedRequiredProperty1, def);
-                    }
-                }
-            }
-        }
 
         public static Schema FindReferencedSchema(string reference, IDictionary<string, Schema> definitions)
         {

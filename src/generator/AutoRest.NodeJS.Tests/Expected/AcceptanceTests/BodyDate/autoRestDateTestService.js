@@ -14,45 +14,42 @@
 
 'use strict';
 
-var util = require('util');
-var msRest = require('ms-rest');
-var ServiceClient = msRest.ServiceClient;
+const msRest = require('ms-rest');
+const ServiceClient = msRest.ServiceClient;
 
-var models = require('./models');
-var operations = require('./operations');
+const models = require('./models');
+const operations = require('./operations');
 
-/**
- * @class
- * Initializes a new instance of the AutoRestDateTestService class.
- * @constructor
- *
- * @param {string} [baseUri] - The base URI of the service.
- *
- * @param {object} [options] - The parameter options
- *
- * @param {Array} [options.filters] - Filters to be added to the request pipeline
- *
- * @param {object} [options.requestOptions] - Options for the underlying request object
- * {@link https://github.com/request/request#requestoptions-callback Options doc}
- *
- * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
- *
- */
-function AutoRestDateTestService(baseUri, options) {
 
-  if (!options) options = {};
+/** Class representing a AutoRestDateTestService. */
+class AutoRestDateTestService extends ServiceClient {
+  /**
+   * Create a AutoRestDateTestService.
+   * @param {string} [baseUri] - The base URI of the service.
+   * @param {object} [options] - The parameter options
+   * @param {Array} [options.filters] - Filters to be added to the request pipeline
+   * @param {object} [options.requestOptions] - Options for the underlying request object
+   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
+   */
+  constructor(baseUri, options) {
 
-  AutoRestDateTestService['super_'].call(this, null, options);
-  this.baseUri = baseUri;
-  if (!this.baseUri) {
-    this.baseUri = 'https://localhost';
+    if (!options) options = {};
+
+    super(null, options);
+
+    this.baseUri = baseUri;
+    if (!this.baseUri) {
+      this.baseUri = 'https://localhost';
+    }
+
+    let packageInfo = this.getPackageJsonInfo(__dirname);
+    this.addUserAgentInfo(`${packageInfo.name}/${packageInfo.version}`);
+    this.dateModel = new operations.DateModel(this);
+    this.models = models;
+    msRest.addSerializationMixin(this);
   }
 
-  this.dateModel = new operations.DateModel(this);
-  this.models = models;
-  msRest.addSerializationMixin(this);
 }
-
-util.inherits(AutoRestDateTestService, ServiceClient);
 
 module.exports = AutoRestDateTestService;

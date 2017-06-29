@@ -10,54 +10,53 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the UsageListResult class.
- * @constructor
  * The List Usages operation response.
  *
- * @member {array} [value] Gets or sets the list Storage Resource Usages.
- *
  */
-function UsageListResult() {
-}
+class UsageListResult {
+  /**
+   * Create a UsageListResult.
+   * @member {array} [value] Gets or sets the list Storage Resource Usages.
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of UsageListResult
- *
- * @returns {object} metadata of UsageListResult
- *
- */
-UsageListResult.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'UsageListResult',
-    type: {
-      name: 'Composite',
-      className: 'UsageListResult',
-      modelProperties: {
-        value: {
-          required: false,
-          serializedName: 'value',
-          type: {
-            name: 'Sequence',
-            element: {
-                required: false,
-                serializedName: 'UsageElementType',
-                type: {
-                  name: 'Composite',
-                  className: 'Usage'
-                }
+  /**
+   * Defines the metadata of UsageListResult
+   *
+   * @returns {object} metadata of UsageListResult
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'UsageListResult',
+      type: {
+        name: 'Composite',
+        className: 'UsageListResult',
+        modelProperties: {
+          value: {
+            required: false,
+            serializedName: 'value',
+            type: {
+              name: 'Sequence',
+              element: {
+                  required: false,
+                  serializedName: 'UsageElementType',
+                  type: {
+                    name: 'Composite',
+                    className: 'Usage'
+                  }
+              }
             }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = UsageListResult;

@@ -10,47 +10,47 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the ClassOptionalWrapper class.
- * @constructor
- * @member {object} [value]
- *
- * @member {number} [value.id]
- *
- * @member {string} [value.name]
- *
+ * Class representing a ClassOptionalWrapper.
  */
-function ClassOptionalWrapper() {
-}
+class ClassOptionalWrapper {
+  /**
+   * Create a ClassOptionalWrapper.
+   * @member {object} [value]
+   * @member {number} [value.id]
+   * @member {string} [value.name]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ClassOptionalWrapper
- *
- * @returns {object} metadata of ClassOptionalWrapper
- *
- */
-ClassOptionalWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'class-optional-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'ClassOptionalWrapper',
-      modelProperties: {
-        value: {
-          required: false,
-          serializedName: 'value',
-          type: {
-            name: 'Composite',
-            className: 'Product'
+  /**
+   * Defines the metadata of ClassOptionalWrapper
+   *
+   * @returns {object} metadata of ClassOptionalWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'class-optional-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'ClassOptionalWrapper',
+        modelProperties: {
+          value: {
+            required: false,
+            serializedName: 'value',
+            type: {
+              name: 'Composite',
+              className: 'Product'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ClassOptionalWrapper;

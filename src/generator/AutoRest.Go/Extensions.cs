@@ -19,7 +19,11 @@ namespace AutoRest.Go
         public const string NullConstraint = "Null";
 
         public const string ReadOnlyConstraint = "ReadOnly";
-        
+
+        private static readonly Regex IsApiVersionPattern = new Regex(@"^api[^a-zA-Z0-9_]?version", RegexOptions.IgnoreCase);
+
+        private static readonly Regex UnwrapAnchorTagsPattern = new Regex("([^<>]*)<a\\s*.*\\shref\\s*=\\s*[\'\"]([^\'\"]*)[\'\"][^>]*>(.*)</a>");
+
         private static readonly Regex WordSplitPattern = new Regex(@"(\p{Lu}\p{Ll}+)");
 
         private static Dictionary<string, string> plural = new Dictionary<string, string>()
@@ -36,7 +40,7 @@ namespace AutoRest.Go
 
         /// <summary>
         /// This method changes string to sentence where is make the first word 
-        /// of sentence to lowercase. The sentence is coming directly from swagger.
+        /// of sentence to lowercase (unless it is an acronym). The sentence is coming directly from swagger.
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -49,8 +53,24 @@ namespace AutoRest.Go
             else
             {
                 value = value.Trim();
+                if (value.StartsWithAcronym())
+                {
+                    return value;
+                }                
                 return value.First().ToString().ToLowerInvariant() + (value.Length > 1 ? value.Substring(1) : "");
             }
+        }
+
+        /// <summary>
+        /// Determines if the first word in a string is an acronym
+        /// (acronym defined as all caps and more than 1 char)
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool StartsWithAcronym(this string value)
+        {
+            string firstWord = value.Trim().Split(' ', '-', '_').First();
+            return firstWord.Length > 1 && firstWord.All(c => char.IsUpper(c));
         }
 
         /// <summary>
@@ -82,7 +102,7 @@ namespace AutoRest.Go
             }
             return string.Join(" ", words.ToArray());
         }
-        
+
         /// <summary>
         /// Split sentence into words.
         /// </summary>
@@ -115,7 +135,7 @@ namespace AutoRest.Go
         /// <returns></returns>
         public static string TrimStartsWith(this string value, string s)
         {
-            if (!string.IsNullOrEmpty(s) && s.Length < value.Length && value.StartsWith(s, StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(s) && s.Length < value.Length && value.StartsWith(s, StringComparison.OrdinalIgnoreCase))
             {
                 value = value.Substring(s.Length);
             }
@@ -184,9 +204,8 @@ namespace AutoRest.Go
         // Still, nobody uses this...
         public static string UnwrapAnchorTags(this string comments)
         {
-            string pattern = "([^<>]*)<a\\s*.*\\shref\\s*=\\s*[\'\"]([^\'\"]*)[\'\"][^>]*>(.*)</a>";
-            Regex r = new Regex(pattern);
-            Match match = r.Match(comments);
+
+            Match match = UnwrapAnchorTagsPattern.Match(comments);
 
             if (match.Success)
             {
@@ -227,8 +246,7 @@ namespace AutoRest.Go
 
         public static bool IsApiVersion(this string name)
         {
-            string rgx = @"^api[^a-zA-Z0-9_]?version";
-            return Regex.IsMatch(name, rgx, RegexOptions.IgnoreCase);
+            return IsApiVersionPattern.IsMatch(name);
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////
@@ -242,7 +260,6 @@ namespace AutoRest.Go
             var r = body as CompositeTypeGo;
             return r != null && (r.BaseType.PrimaryType(KnownPrimaryType.Stream));
         }
-
 
         public static bool PrimaryType(this IModelType type, KnownPrimaryType typeToMatch)
         {
@@ -263,7 +280,7 @@ namespace AutoRest.Go
             var enumType = type as EnumType;
 
             return dictionaryType != null
-                || (    primaryType != null
+                || (primaryType != null
                  && (primaryType.KnownPrimaryType == KnownPrimaryType.ByteArray
                         || primaryType.KnownPrimaryType == KnownPrimaryType.Stream
                         || primaryType.KnownPrimaryType == KnownPrimaryType.String))
@@ -289,7 +306,7 @@ namespace AutoRest.Go
                       || primaryType.KnownPrimaryType == KnownPrimaryType.Stream))
                 || sequenceType != null;
         }
-        
+
         public static string GetEmptyCheck(this IModelType type, string valueReference, bool asEmpty = true)
         {
             if (type is PrimaryTypeGo)
@@ -430,8 +447,8 @@ namespace AutoRest.Go
                             ancestors.Add(composite.Name);
                             x.AddRange(prop.ValidateCompositeType($"{name}.{propName}", method, ancestors, true));
                             ancestors.Remove(composite.Name);
-                        }  
-                    }   
+                        }
+                    }
                 }
             }
 
@@ -488,7 +505,7 @@ namespace AutoRest.Go
         /// <returns></returns>
         // Check if type is not a null or pointer type.
         public static bool CheckNull(this IVariable p)
-        { 
+        {
             return p is Parameter && (p.ModelType.IsNullValueType() || !(p.IsRequired || p.ModelType.CanBeEmpty()));
         }
 
@@ -529,7 +546,7 @@ namespace AutoRest.Go
         /// <returns></returns>
         public static string GetConstraint(string name, string constraintName, string constraintValue, bool chain = false)
         {
-            var value = constraintName == Constraint.Pattern.ToString()  
+            var value = constraintName == Constraint.Pattern.ToString()
                                           ? $"`{constraintValue}`"
                                           : constraintValue;
             return string.Format(chain

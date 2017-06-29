@@ -14,80 +14,14 @@
 
 'use strict';
 
-var util = require('util');
-var msRest = require('ms-rest');
-var msRestAzure = require('ms-rest-azure');
-var ServiceClient = msRestAzure.AzureServiceClient;
-var WebResource = msRest.WebResource;
+const msRest = require('ms-rest');
+const msRestAzure = require('ms-rest-azure');
+const ServiceClient = msRestAzure.AzureServiceClient;
+const WebResource = msRest.WebResource;
 
-var models = require('./models');
-var operations = require('./operations');
+const models = require('./models');
+const operations = require('./operations');
 
-/**
- * @class
- * Initializes a new instance of the AzureCompositeModel class.
- * @constructor
- *
- * @param {credentials} credentials - Credentials needed for the client to connect to Azure.
- *
- * @param {string} [baseUri] - The base URI of the service.
- *
- * @param {object} [options] - The parameter options
- *
- * @param {Array} [options.filters] - Filters to be added to the request pipeline
- *
- * @param {object} [options.requestOptions] - Options for the underlying request object
- * {@link https://github.com/request/request#requestoptions-callback Options doc}
- *
- * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
- *
- * @param {string} [options.acceptLanguage] - Gets or sets the preferred language for the response.
- *
- * @param {number} [options.longRunningOperationRetryTimeout] - Gets or sets the retry timeout in seconds for Long Running Operations. Default value is 30.
- *
- * @param {boolean} [options.generateClientRequestId] - When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true.
- *
- */
-function AzureCompositeModel(credentials, baseUri, options) {
-  this.subscriptionId = '123456';
-  this.acceptLanguage = 'en-US';
-  this.longRunningOperationRetryTimeout = 30;
-  this.generateClientRequestId = true;
-  if (credentials === null || credentials === undefined) {
-    throw new Error('\'credentials\' cannot be null.');
-  }
-
-  if (!options) options = {};
-
-  AzureCompositeModel['super_'].call(this, credentials, options);
-  this.baseUri = baseUri;
-  if (!this.baseUri) {
-    this.baseUri = 'http://localhost';
-  }
-  this.credentials = credentials;
-
-  if(options.acceptLanguage !== null && options.acceptLanguage !== undefined) {
-    this.acceptLanguage = options.acceptLanguage;
-  }
-  if(options.longRunningOperationRetryTimeout !== null && options.longRunningOperationRetryTimeout !== undefined) {
-    this.longRunningOperationRetryTimeout = options.longRunningOperationRetryTimeout;
-  }
-  if(options.generateClientRequestId !== null && options.generateClientRequestId !== undefined) {
-    this.generateClientRequestId = options.generateClientRequestId;
-  }
-  this.basicOperations = new operations.BasicOperations(this);
-  this.primitive = new operations.Primitive(this);
-  this.arrayModel = new operations.ArrayModel(this);
-  this.dictionary = new operations.Dictionary(this);
-  this.inheritance = new operations.Inheritance(this);
-  this.polymorphism = new operations.Polymorphism(this);
-  this.polymorphicrecursive = new operations.Polymorphicrecursive(this);
-  this.readonlyproperty = new operations.Readonlyproperty(this);
-  this.models = models;
-  msRest.addSerializationMixin(this);
-}
-
-util.inherits(AzureCompositeModel, ServiceClient);
 
 /**
  * @summary Product Types
@@ -103,21 +37,22 @@ util.inherits(AzureCompositeModel, ServiceClient);
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link CatalogArray} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-AzureCompositeModel.prototype.list = function (resourceGroupName, options, callback) {
-  var client = this;
+function _list(resourceGroupName, options, callback) {
+   /* jshint validthis: true */
+  let client = this;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -125,7 +60,7 @@ AzureCompositeModel.prototype.list = function (resourceGroupName, options, callb
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var apiVersion = '2014-04-01-preview';
+  let apiVersion = '2014-04-01-preview';
   // Validate
   try {
     if (resourceGroupName === null || resourceGroupName === undefined || typeof resourceGroupName.valueOf() !== 'string') {
@@ -139,18 +74,18 @@ AzureCompositeModel.prototype.list = function (resourceGroupName, options, callb
   }
 
   // Construct URL
-  var baseUrl = this.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
+  let baseUrl = this.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
   requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
   requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-  var queryParameters = [];
+  let queryParameters = [];
   queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'GET';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -162,7 +97,7 @@ AzureCompositeModel.prototype.list = function (resourceGroupName, options, callb
     httpRequest.headers['accept-language'] = this.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -171,52 +106,52 @@ AzureCompositeModel.prototype.list = function (resourceGroupName, options, callb
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   httpRequest.body = null;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 200) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
-          var internalError = null;
+          let internalError = null;
           if (parsedErrorResponse.error) internalError = parsedErrorResponse.error;
           error.code = internalError ? internalError.code : parsedErrorResponse.code;
           error.message = internalError ? internalError.message : parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['ErrorModel']().mapper();
+          let resultMapper = new client.models['ErrorModel']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
     // Deserialize Response
     if (statusCode === 200) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['CatalogArray']().mapper();
+          let resultMapper = new client.models['CatalogArray']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -225,7 +160,7 @@ AzureCompositeModel.prototype.list = function (resourceGroupName, options, callb
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * @summary Create products
@@ -244,21 +179,22 @@ AzureCompositeModel.prototype.list = function (resourceGroupName, options, callb
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link CatalogDictionary} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupName, options, callback) {
-  var client = this;
+function _create(subscriptionId, resourceGroupName, options, callback) {
+   /* jshint validthis: true */
+  let client = this;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -266,8 +202,8 @@ AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupNa
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var productDictionaryOfArray = (options && options.productDictionaryOfArray !== undefined) ? options.productDictionaryOfArray : undefined;
-  var apiVersion = '2014-04-01-preview';
+  let productDictionaryOfArray = (options && options.productDictionaryOfArray !== undefined) ? options.productDictionaryOfArray : undefined;
+  let apiVersion = '2014-04-01-preview';
   // Validate
   try {
     if (subscriptionId === null || subscriptionId === undefined || typeof subscriptionId.valueOf() !== 'string') {
@@ -282,25 +218,25 @@ AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupNa
   } catch (error) {
     return callback(error);
   }
-  var bodyParameter;
+  let bodyParameter;
   if (productDictionaryOfArray !== null && productDictionaryOfArray !== undefined) {
-      bodyParameter = new client.models['CatalogDictionaryOfArray']();
-      bodyParameter.productDictionaryOfArray = productDictionaryOfArray;
+    bodyParameter = new client.models['CatalogDictionaryOfArray']();
+    bodyParameter.productDictionaryOfArray = productDictionaryOfArray;
   }
 
   // Construct URL
-  var baseUrl = this.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
+  let baseUrl = this.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
   requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
   requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-  var queryParameters = [];
+  let queryParameters = [];
   queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'POST';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -312,7 +248,7 @@ AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupNa
     httpRequest.headers['accept-language'] = this.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -320,67 +256,67 @@ AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupNa
   }
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
+  let requestContent = null;
+  let requestModel = null;
   try {
     if (bodyParameter !== null && bodyParameter !== undefined) {
-      var requestModelMapper = new client.models['CatalogDictionaryOfArray']().mapper();
+      let requestModelMapper = new client.models['CatalogDictionaryOfArray']().mapper();
       requestModel = client.serialize(requestModelMapper, bodyParameter, 'bodyParameter');
       requestContent = JSON.stringify(requestModel);
     }
   } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
-        'payload - "%s"', error.message, util.inspect(bodyParameter, {depth: null})));
+    let serializationError = new Error(`Error "${error.message}" occurred in serializing the ` +
+        `payload - ${JSON.stringify(bodyParameter, null, 2)}.`);
     return callback(serializationError);
   }
   httpRequest.body = requestContent;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 200) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
-          var internalError = null;
+          let internalError = null;
           if (parsedErrorResponse.error) internalError = parsedErrorResponse.error;
           error.code = internalError ? internalError.code : parsedErrorResponse.code;
           error.message = internalError ? internalError.message : parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['ErrorModel']().mapper();
+          let resultMapper = new client.models['ErrorModel']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
     // Deserialize Response
     if (statusCode === 200) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['CatalogDictionary']().mapper();
+          let resultMapper = new client.models['CatalogDictionary']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -389,7 +325,7 @@ AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupNa
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * @summary Update products
@@ -408,21 +344,22 @@ AzureCompositeModel.prototype.create = function (subscriptionId, resourceGroupNa
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link CatalogArray} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-AzureCompositeModel.prototype.update = function (subscriptionId, resourceGroupName, options, callback) {
-  var client = this;
+function _update(subscriptionId, resourceGroupName, options, callback) {
+   /* jshint validthis: true */
+  let client = this;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -430,8 +367,8 @@ AzureCompositeModel.prototype.update = function (subscriptionId, resourceGroupNa
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var productArrayOfDictionary = (options && options.productArrayOfDictionary !== undefined) ? options.productArrayOfDictionary : undefined;
-  var apiVersion = '2014-04-01-preview';
+  let productArrayOfDictionary = (options && options.productArrayOfDictionary !== undefined) ? options.productArrayOfDictionary : undefined;
+  let apiVersion = '2014-04-01-preview';
   // Validate
   try {
     if (subscriptionId === null || subscriptionId === undefined || typeof subscriptionId.valueOf() !== 'string') {
@@ -446,25 +383,25 @@ AzureCompositeModel.prototype.update = function (subscriptionId, resourceGroupNa
   } catch (error) {
     return callback(error);
   }
-  var bodyParameter;
+  let bodyParameter;
   if (productArrayOfDictionary !== null && productArrayOfDictionary !== undefined) {
-      bodyParameter = new client.models['CatalogArrayOfDictionary']();
-      bodyParameter.productArrayOfDictionary = productArrayOfDictionary;
+    bodyParameter = new client.models['CatalogArrayOfDictionary']();
+    bodyParameter.productArrayOfDictionary = productArrayOfDictionary;
   }
 
   // Construct URL
-  var baseUrl = this.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
+  let baseUrl = this.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
   requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
   requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-  var queryParameters = [];
+  let queryParameters = [];
   queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'PUT';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -476,7 +413,7 @@ AzureCompositeModel.prototype.update = function (subscriptionId, resourceGroupNa
     httpRequest.headers['accept-language'] = this.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -484,67 +421,67 @@ AzureCompositeModel.prototype.update = function (subscriptionId, resourceGroupNa
   }
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
+  let requestContent = null;
+  let requestModel = null;
   try {
     if (bodyParameter !== null && bodyParameter !== undefined) {
-      var requestModelMapper = new client.models['CatalogArrayOfDictionary']().mapper();
+      let requestModelMapper = new client.models['CatalogArrayOfDictionary']().mapper();
       requestModel = client.serialize(requestModelMapper, bodyParameter, 'bodyParameter');
       requestContent = JSON.stringify(requestModel);
     }
   } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
-        'payload - "%s"', error.message, util.inspect(bodyParameter, {depth: null})));
+    let serializationError = new Error(`Error "${error.message}" occurred in serializing the ` +
+        `payload - ${JSON.stringify(bodyParameter, null, 2)}.`);
     return callback(serializationError);
   }
   httpRequest.body = requestContent;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 200) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
-          var internalError = null;
+          let internalError = null;
           if (parsedErrorResponse.error) internalError = parsedErrorResponse.error;
           error.code = internalError ? internalError.code : parsedErrorResponse.code;
           error.message = internalError ? internalError.message : parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['ErrorModel']().mapper();
+          let resultMapper = new client.models['ErrorModel']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
     // Deserialize Response
     if (statusCode === 200) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['CatalogArray']().mapper();
+          let resultMapper = new client.models['CatalogArray']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -553,6 +490,350 @@ AzureCompositeModel.prototype.update = function (subscriptionId, resourceGroupNa
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
+
+/** Class representing a AzureCompositeModel. */
+class AzureCompositeModel extends ServiceClient {
+  /**
+   * Create a AzureCompositeModel.
+   * @param {credentials} credentials - Credentials needed for the client to connect to Azure.
+   * @param {string} [baseUri] - The base URI of the service.
+   * @param {object} [options] - The parameter options
+   * @param {Array} [options.filters] - Filters to be added to the request pipeline
+   * @param {object} [options.requestOptions] - Options for the underlying request object
+   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
+   * @param {string} [options.acceptLanguage] - Gets or sets the preferred language for the response.
+   * @param {number} [options.longRunningOperationRetryTimeout] - Gets or sets the retry timeout in seconds for Long Running Operations. Default value is 30.
+   * @param {boolean} [options.generateClientRequestId] - When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true.
+   */
+  constructor(credentials, baseUri, options) {
+    if (credentials === null || credentials === undefined) {
+      throw new Error('\'credentials\' cannot be null.');
+    }
+
+    if (!options) options = {};
+
+    super(credentials, options);
+
+    this.subscriptionId = '123456';
+    this.acceptLanguage = 'en-US';
+    this.longRunningOperationRetryTimeout = 30;
+    this.generateClientRequestId = true;
+    this.baseUri = baseUri;
+    if (!this.baseUri) {
+      this.baseUri = 'http://localhost';
+    }
+    this.credentials = credentials;
+
+    let packageInfo = this.getPackageJsonInfo(__dirname);
+    this.addUserAgentInfo(`${packageInfo.name}/${packageInfo.version}`);
+    if(options.acceptLanguage !== null && options.acceptLanguage !== undefined) {
+      this.acceptLanguage = options.acceptLanguage;
+    }
+    if(options.longRunningOperationRetryTimeout !== null && options.longRunningOperationRetryTimeout !== undefined) {
+      this.longRunningOperationRetryTimeout = options.longRunningOperationRetryTimeout;
+    }
+    if(options.generateClientRequestId !== null && options.generateClientRequestId !== undefined) {
+      this.generateClientRequestId = options.generateClientRequestId;
+    }
+    this.basicOperations = new operations.BasicOperations(this);
+    this.primitive = new operations.Primitive(this);
+    this.arrayModel = new operations.ArrayModel(this);
+    this.dictionary = new operations.Dictionary(this);
+    this.inheritance = new operations.Inheritance(this);
+    this.polymorphism = new operations.Polymorphism(this);
+    this.polymorphicrecursive = new operations.Polymorphicrecursive(this);
+    this.readonlyproperty = new operations.Readonlyproperty(this);
+    this.models = models;
+    this._list = _list;
+    this._create = _create;
+    this._update = _update;
+    msRest.addSerializationMixin(this);
+  }
+
+  /**
+   * @summary Product Types
+   *
+   * The Products endpoint returns information about the Uber products offered at
+   * a given location. The response includes the display name and other details
+   * about each product, and lists the products in the proper display order.
+   *
+   * @param {string} resourceGroupName Resource Group ID.
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<CatalogArray>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  listWithHttpOperationResponse(resourceGroupName, options) {
+    let client = this;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._list(resourceGroupName, options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * @summary Product Types
+   *
+   * The Products endpoint returns information about the Uber products offered at
+   * a given location. The response includes the display name and other details
+   * about each product, and lists the products in the proper display order.
+   *
+   * @param {string} resourceGroupName Resource Group ID.
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {CatalogArray} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link CatalogArray} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  list(resourceGroupName, options, optionalCallback) {
+    let client = this;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._list(resourceGroupName, options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._list(resourceGroupName, options, optionalCallback);
+    }
+  }
+
+  /**
+   * @summary Create products
+   *
+   * Resets products.
+   *
+   * @param {string} subscriptionId Subscription ID.
+   *
+   * @param {string} resourceGroupName Resource Group ID.
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.productDictionaryOfArray] Dictionary of Array of
+   * product
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<CatalogDictionary>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  createWithHttpOperationResponse(subscriptionId, resourceGroupName, options) {
+    let client = this;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._create(subscriptionId, resourceGroupName, options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * @summary Create products
+   *
+   * Resets products.
+   *
+   * @param {string} subscriptionId Subscription ID.
+   *
+   * @param {string} resourceGroupName Resource Group ID.
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.productDictionaryOfArray] Dictionary of Array of
+   * product
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {CatalogDictionary} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link CatalogDictionary} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  create(subscriptionId, resourceGroupName, options, optionalCallback) {
+    let client = this;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._create(subscriptionId, resourceGroupName, options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._create(subscriptionId, resourceGroupName, options, optionalCallback);
+    }
+  }
+
+  /**
+   * @summary Update products
+   *
+   * Resets products.
+   *
+   * @param {string} subscriptionId Subscription ID.
+   *
+   * @param {string} resourceGroupName Resource Group ID.
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {array} [options.productArrayOfDictionary] Array of dictionary of
+   * products
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<CatalogArray>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  updateWithHttpOperationResponse(subscriptionId, resourceGroupName, options) {
+    let client = this;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._update(subscriptionId, resourceGroupName, options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * @summary Update products
+   *
+   * Resets products.
+   *
+   * @param {string} subscriptionId Subscription ID.
+   *
+   * @param {string} resourceGroupName Resource Group ID.
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {array} [options.productArrayOfDictionary] Array of dictionary of
+   * products
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {CatalogArray} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link CatalogArray} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  update(subscriptionId, resourceGroupName, options, optionalCallback) {
+    let client = this;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._update(subscriptionId, resourceGroupName, options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._update(subscriptionId, resourceGroupName, options, optionalCallback);
+    }
+  }
+
+}
 
 module.exports = AzureCompositeModel;

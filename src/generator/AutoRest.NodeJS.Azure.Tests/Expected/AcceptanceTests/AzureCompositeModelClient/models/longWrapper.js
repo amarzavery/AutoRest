@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the LongWrapper class.
- * @constructor
- * @member {number} [field1]
- *
- * @member {number} [field2]
- *
+ * Class representing a LongWrapper.
  */
-function LongWrapper() {
-}
+class LongWrapper {
+  /**
+   * Create a LongWrapper.
+   * @member {number} [field1]
+   * @member {number} [field2]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of LongWrapper
- *
- * @returns {object} metadata of LongWrapper
- *
- */
-LongWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'long-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'LongWrapper',
-      modelProperties: {
-        field1: {
-          required: false,
-          serializedName: 'field1',
-          type: {
-            name: 'Number'
-          }
-        },
-        field2: {
-          required: false,
-          serializedName: 'field2',
-          type: {
-            name: 'Number'
+  /**
+   * Defines the metadata of LongWrapper
+   *
+   * @returns {object} metadata of LongWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'long-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'LongWrapper',
+        modelProperties: {
+          field1: {
+            required: false,
+            serializedName: 'field1',
+            type: {
+              name: 'Number'
+            }
+          },
+          field2: {
+            required: false,
+            serializedName: 'field2',
+            type: {
+              name: 'Number'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = LongWrapper;

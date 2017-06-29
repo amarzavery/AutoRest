@@ -11,51 +11,51 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the FirstParameterGroup class.
- * @constructor
  * Additional parameters for a set of operations, such as:
  * ParameterGrouping_postMultiParamGroups,
  * ParameterGrouping_postSharedParameterGroupObject.
  *
- * @member {string} [headerOne]
- *
- * @member {number} [queryOne] Query parameter with default. Default value: 30
- * .
- *
  */
-function FirstParameterGroup() {
-}
+class FirstParameterGroup {
+  /**
+   * Create a FirstParameterGroup.
+   * @member {string} [headerOne]
+   * @member {number} [queryOne] Query parameter with default. Default value:
+   * 30 .
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of FirstParameterGroup
- *
- * @returns {object} metadata of FirstParameterGroup
- *
- */
-FirstParameterGroup.prototype.mapper = function () {
-  return {
-    required: false,
-    type: {
-      name: 'Composite',
-      className: 'FirstParameterGroup',
-      modelProperties: {
-        headerOne: {
-          required: false,
-          type: {
-            name: 'String'
-          }
-        },
-        queryOne: {
-          required: false,
-          defaultValue: 30,
-          type: {
-            name: 'Number'
+  /**
+   * Defines the metadata of FirstParameterGroup
+   *
+   * @returns {object} metadata of FirstParameterGroup
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      type: {
+        name: 'Composite',
+        className: 'FirstParameterGroup',
+        modelProperties: {
+          headerOne: {
+            required: false,
+            type: {
+              name: 'String'
+            }
+          },
+          queryOne: {
+            required: false,
+            defaultValue: 30,
+            type: {
+              name: 'Number'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = FirstParameterGroup;

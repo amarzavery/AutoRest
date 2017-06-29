@@ -154,7 +154,7 @@ namespace AutoRest.Go
                 {
                     if (!cmg.PagedTypes.ContainsKey(m.ReturnValue().Body))
                     {
-                        cmg.PagedTypes.Add(m.ReturnValue().Body, m.NextLink());
+                        cmg.PagedTypes.Add(m.ReturnValue().Body, m.NextLink);
                     }
 
                     if (!m.NextMethodExists(cmg.Methods.Cast<MethodGo>()))
@@ -226,8 +226,8 @@ namespace AutoRest.Go
 
             var stutteringTypes = exportedTypes
                                     .Where(exported =>
-                                        (exported is IModelType && (exported as IModelType).Name.FixedValue.StartsWith(cmg.Namespace, StringComparison.InvariantCultureIgnoreCase)) ||
-                                        (exported is Method && (exported as Method).Name.FixedValue.StartsWith(cmg.Namespace, StringComparison.InvariantCultureIgnoreCase)));
+                                        (exported is IModelType && (exported as IModelType).Name.FixedValue.StartsWith(cmg.Namespace, StringComparison.OrdinalIgnoreCase)) ||
+                                        (exported is Method && (exported as Method).Name.FixedValue.StartsWith(cmg.Namespace, StringComparison.OrdinalIgnoreCase)));
 
             if (stutteringTypes.Any())
             {

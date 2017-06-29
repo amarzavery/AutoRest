@@ -11,46 +11,48 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the AvailabilitySetUpdateParameters class.
- * @constructor
- * @member {object} tags A set of tags. A description about the set of tags.
- *
+ * Class representing a AvailabilitySetUpdateParameters.
  */
-function AvailabilitySetUpdateParameters() {
-}
+class AvailabilitySetUpdateParameters {
+  /**
+   * Create a AvailabilitySetUpdateParameters.
+   * @member {object} tags A set of tags. A description about the set of tags.
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of AvailabilitySetUpdateParameters
- *
- * @returns {object} metadata of AvailabilitySetUpdateParameters
- *
- */
-AvailabilitySetUpdateParameters.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'AvailabilitySetUpdateParameters',
-    type: {
-      name: 'Composite',
-      className: 'AvailabilitySetUpdateParameters',
-      modelProperties: {
-        tags: {
-          required: true,
-          serializedName: 'tags',
-          type: {
-            name: 'Dictionary',
-            value: {
-                required: false,
-                serializedName: 'StringElementType',
-                type: {
-                  name: 'String'
-                }
+  /**
+   * Defines the metadata of AvailabilitySetUpdateParameters
+   *
+   * @returns {object} metadata of AvailabilitySetUpdateParameters
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'AvailabilitySetUpdateParameters',
+      type: {
+        name: 'Composite',
+        className: 'AvailabilitySetUpdateParameters',
+        modelProperties: {
+          tags: {
+            required: true,
+            serializedName: 'tags',
+            type: {
+              name: 'Dictionary',
+              value: {
+                  required: false,
+                  serializedName: 'StringElementType',
+                  type: {
+                    name: 'String'
+                  }
+              }
             }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = AvailabilitySetUpdateParameters;

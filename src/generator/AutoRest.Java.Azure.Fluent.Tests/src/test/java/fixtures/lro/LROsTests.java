@@ -1,6 +1,8 @@
 package fixtures.lro;
 
+import com.microsoft.azure.AzureResponseBuilder;
 import com.microsoft.azure.CloudException;
+import com.microsoft.azure.serializer.AzureJacksonAdapter;
 import com.microsoft.rest.RestClient;
 import com.microsoft.rest.ServiceCallback;
 import fixtures.lro.implementation.AutoRestLongRunningOperationTestServiceImpl;
@@ -26,9 +28,11 @@ public class LROsTests {
     public static void setup() {
         RestClient restClient = new RestClient.Builder()
             .withBaseUrl("http://localhost:3000")
+            .withSerializerAdapter(new AzureJacksonAdapter())
+            .withResponseBuilderFactory(new AzureResponseBuilder.Factory())
             .build();
         client = new AutoRestLongRunningOperationTestServiceImpl(restClient);
-        client.getAzureClient().withLongRunningOperationRetryTimeout(0);
+        client.getAzureClient().setLongRunningOperationRetryTimeout(0);
     }
 
     @Test
@@ -94,7 +98,7 @@ public class LROsTests {
         final long[] callbackTime = new long[1];
         ProductInner product = new ProductInner();
         product.withLocation("West US");
-        client.getAzureClient().withLongRunningOperationRetryTimeout(1);
+        client.getAzureClient().setLongRunningOperationRetryTimeout(1);
         client.lROs().put202Retry200Async(product, new ServiceCallback<ProductInner>() {
             @Override
             public void failure(Throwable t) {
@@ -111,7 +115,7 @@ public class LROsTests {
         long endTime = System.currentTimeMillis();
         Assert.assertTrue(500 > endTime - startTime);
         Assert.assertTrue(lock.await(3000, TimeUnit.MILLISECONDS));
-        client.getAzureClient().withLongRunningOperationRetryTimeout(0);
+        client.getAzureClient().setLongRunningOperationRetryTimeout(0);
         Assert.assertTrue(1000 < callbackTime[0] - startTime);
     }
 

@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the Product class.
- * @constructor
- * @member {number} id
- *
- * @member {string} [name]
- *
+ * Class representing a Product.
  */
-function Product() {
-}
+class Product {
+  /**
+   * Create a Product.
+   * @member {number} id
+   * @member {string} [name]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Product
- *
- * @returns {object} metadata of Product
- *
- */
-Product.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'product',
-    type: {
-      name: 'Composite',
-      className: 'Product',
-      modelProperties: {
-        id: {
-          required: true,
-          serializedName: 'id',
-          type: {
-            name: 'Number'
-          }
-        },
-        name: {
-          required: false,
-          serializedName: 'name',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of Product
+   *
+   * @returns {object} metadata of Product
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'product',
+      type: {
+        name: 'Composite',
+        className: 'Product',
+        modelProperties: {
+          id: {
+            required: true,
+            serializedName: 'id',
+            type: {
+              name: 'Number'
+            }
+          },
+          name: {
+            required: false,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Product;

@@ -3,7 +3,7 @@
 
 using AutoRest.Core.Logging;
 using AutoRest.Core.Properties;
-using AutoRest.Core.Validation;
+using AutoRest.Swagger.Validation.Core;
 using AutoRest.Swagger.Model;
 
 namespace AutoRest.Swagger.Validation
@@ -11,11 +11,19 @@ namespace AutoRest.Swagger.Validation
     public class AvoidAnonymousTypes : TypedRule<SwaggerObject>
     {
         /// <summary>
-        /// An <paramref name="entity"/> fails this rule if it doesn't have a reference (meaning it's defined inline)
+        /// Id of the Rule.
         /// </summary>
-        /// <param name="entity">The entity to validate</param>
-        /// <returns></returns>
-        public override bool IsValid(SwaggerObject entity) => entity == null || !string.IsNullOrEmpty(entity.Reference);
+        public override string Id => "R2026";
+
+        /// <summary>
+        /// Violation category of the Rule.
+        /// </summary>
+        public override ValidationCategory ValidationCategory => ValidationCategory.SDKViolation;
+
+        /// <summary>
+        /// The severity of this message (ie, debug/info/warning/error/fatal, etc)
+        /// </summary>
+        public override Category Severity => Category.Error;
 
         /// <summary>
         /// The template message for this Rule. 
@@ -26,9 +34,22 @@ namespace AutoRest.Swagger.Validation
         public override string MessageTemplate => Resources.AnonymousTypesDiscouraged;
 
         /// <summary>
-        /// The severity of this message (ie, debug/info/warning/error/fatal, etc)
+        /// What kind of open api document type this rule should be applied to
         /// </summary>
-        public override Category Severity => Category.Info;
+        public override ServiceDefinitionDocumentType ServiceDefinitionDocumentType => ServiceDefinitionDocumentType.ARM | ServiceDefinitionDocumentType.DataPlane;
+
+        /// <summary>
+        /// The rule runs on each operation's parameters in isolation irrespective of the state and can be run in individual state
+        /// </summary>
+        public override ServiceDefinitionDocumentState ValidationRuleMergeState => ServiceDefinitionDocumentState.Individual;
+
+        /// <summary>
+        /// An <paramref name="entity"/> fails this rule if it doesn't have a reference (meaning it's defined inline)
+        /// </summary>
+        /// <param name="entity">The entity to validate</param>
+        /// <returns></returns>
+        public override bool IsValid(SwaggerObject entity) => (entity?.GetType() == typeof(Schema) &&
+            ((((Schema)entity).Properties == null) || ((Schema)entity).Properties?.Count == 0));
 
     }
 }

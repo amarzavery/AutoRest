@@ -11,85 +11,83 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the Resource class.
- * @constructor
- * @member {string} [id] Resource Id
- *
- * @member {string} [type] Resource Type
- *
- * @member {object} [tags]
- *
- * @member {string} [location] Resource Location
- *
- * @member {string} [name] Resource Name
- *
+ * Class representing a Resource.
  */
-function Resource() {
-}
+class Resource {
+  /**
+   * Create a Resource.
+   * @member {string} [id] Resource Id
+   * @member {string} [type] Resource Type
+   * @member {object} [tags]
+   * @member {string} [location] Resource Location
+   * @member {string} [name] Resource Name
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Resource
- *
- * @returns {object} metadata of Resource
- *
- */
-Resource.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Resource',
-    type: {
-      name: 'Composite',
-      className: 'Resource',
-      modelProperties: {
-        id: {
-          required: false,
-          readOnly: true,
-          serializedName: 'id',
-          type: {
-            name: 'String'
-          }
-        },
-        type: {
-          required: false,
-          readOnly: true,
-          serializedName: 'type',
-          type: {
-            name: 'String'
-          }
-        },
-        tags: {
-          required: false,
-          serializedName: 'tags',
-          type: {
-            name: 'Dictionary',
-            value: {
-                required: false,
-                serializedName: 'StringElementType',
-                type: {
-                  name: 'String'
-                }
+  /**
+   * Defines the metadata of Resource
+   *
+   * @returns {object} metadata of Resource
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Resource',
+      type: {
+        name: 'Composite',
+        className: 'Resource',
+        modelProperties: {
+          id: {
+            required: false,
+            readOnly: true,
+            serializedName: 'id',
+            type: {
+              name: 'String'
             }
-          }
-        },
-        location: {
-          required: false,
-          serializedName: 'location',
+          },
           type: {
-            name: 'String'
-          }
-        },
-        name: {
-          required: false,
-          readOnly: true,
-          serializedName: 'name',
-          type: {
-            name: 'String'
+            required: false,
+            readOnly: true,
+            serializedName: 'type',
+            type: {
+              name: 'String'
+            }
+          },
+          tags: {
+            required: false,
+            serializedName: 'tags',
+            type: {
+              name: 'Dictionary',
+              value: {
+                  required: false,
+                  serializedName: 'StringElementType',
+                  type: {
+                    name: 'String'
+                  }
+              }
+            }
+          },
+          location: {
+            required: false,
+            serializedName: 'location',
+            type: {
+              name: 'String'
+            }
+          },
+          name: {
+            required: false,
+            readOnly: true,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Resource;

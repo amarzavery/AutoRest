@@ -11,39 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the StringWrapper class.
- * @constructor
- * @member {string} value
- *
+ * Class representing a StringWrapper.
  */
-function StringWrapper() {
-}
+class StringWrapper {
+  /**
+   * Create a StringWrapper.
+   * @member {string} value
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of StringWrapper
- *
- * @returns {object} metadata of StringWrapper
- *
- */
-StringWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'string-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'StringWrapper',
-      modelProperties: {
-        value: {
-          required: true,
-          serializedName: 'value',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of StringWrapper
+   *
+   * @returns {object} metadata of StringWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'string-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'StringWrapper',
+        modelProperties: {
+          value: {
+            required: true,
+            serializedName: 'value',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = StringWrapper;

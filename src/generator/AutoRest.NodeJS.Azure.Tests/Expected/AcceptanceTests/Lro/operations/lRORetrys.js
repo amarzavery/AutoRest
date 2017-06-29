@@ -10,27 +10,12 @@
 
 'use strict';
 
-var util = require('util');
-var msRest = require('ms-rest');
-var msRestAzure = require('ms-rest-azure');
-var WebResource = msRest.WebResource;
+const msRest = require('ms-rest');
+const msRestAzure = require('ms-rest-azure');
+const WebResource = msRest.WebResource;
+
 
 /**
- * @class
- * LRORetrys
- * __NOTE__: An instance of this class is automatically created for an
- * instance of the AutoRestLongRunningOperationTestService.
- * Initializes a new instance of the LRORetrys class.
- * @constructor
- *
- * @param {AutoRestLongRunningOperationTestService} client Reference to the service client.
- */
-function LRORetrys(client) {
-  this.client = client;
-}
-
-/**
- *
  * Long running put request, service returns a 500, then a 201 to the initial
  * request, with an entity that contains ProvisioningState=’Creating’.  Polls
  * return this value until the last poll returns a ‘200’ with
@@ -49,21 +34,22 @@ function LRORetrys(client) {
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link Product} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.put201CreatingSucceeded200 = function (options, callback) {
-  var client = this.client;
+function _put201CreatingSucceeded200(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -74,34 +60,35 @@ LRORetrys.prototype.put201CreatingSucceeded200 = function (options, callback) {
   }
 
   // Send request
-  this.beginPut201CreatingSucceeded200(options, function (err, parsedResult, httpRequest, response){
+  this.beginPut201CreatingSucceeded200(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -110,10 +97,10 @@ LRORetrys.prototype.put201CreatingSucceeded200 = function (options, callback) {
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
+
 
 /**
- *
  * Long running put request, service returns a 500, then a 200 to the initial
  * request, with an entity that contains ProvisioningState=’Creating’. Poll the
  * endpoint indicated in the Azure-AsyncOperation header for operation status
@@ -131,21 +118,22 @@ LRORetrys.prototype.put201CreatingSucceeded200 = function (options, callback) {
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link Product} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.putAsyncRelativeRetrySucceeded = function (options, callback) {
-  var client = this.client;
+function _putAsyncRelativeRetrySucceeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -156,34 +144,35 @@ LRORetrys.prototype.putAsyncRelativeRetrySucceeded = function (options, callback
   }
 
   // Send request
-  this.beginPutAsyncRelativeRetrySucceeded(options, function (err, parsedResult, httpRequest, response){
+  this.beginPutAsyncRelativeRetrySucceeded(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -192,10 +181,10 @@ LRORetrys.prototype.putAsyncRelativeRetrySucceeded = function (options, callback
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
+
 
 /**
- *
  * Long running delete request, service returns a 500, then a  202 to the
  * initial request, with an entity that contains ProvisioningState=’Accepted’.
  * Polls return this value until the last poll returns a ‘200’ with
@@ -206,21 +195,22 @@ LRORetrys.prototype.putAsyncRelativeRetrySucceeded = function (options, callback
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link Product} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.deleteProvisioning202Accepted200Succeeded = function (options, callback) {
-  var client = this.client;
+function _deleteProvisioning202Accepted200Succeeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -231,34 +221,35 @@ LRORetrys.prototype.deleteProvisioning202Accepted200Succeeded = function (option
   }
 
   // Send request
-  this.beginDeleteProvisioning202Accepted200Succeeded(options, function (err, parsedResult, httpRequest, response){
+  this.beginDeleteProvisioning202Accepted200Succeeded(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -267,10 +258,10 @@ LRORetrys.prototype.deleteProvisioning202Accepted200Succeeded = function (option
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
+
 
 /**
- *
  * Long running delete request, service returns a 500, then a 202 to the
  * initial request. Polls return this value until the last poll returns a ‘200’
  * with ProvisioningState=’Succeeded’
@@ -280,20 +271,21 @@ LRORetrys.prototype.deleteProvisioning202Accepted200Succeeded = function (option
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.delete202Retry200 = function (options, callback) {
-  var client = this.client;
+function _delete202Retry200(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -304,21 +296,22 @@ LRORetrys.prototype.delete202Retry200 = function (options, callback) {
   }
 
   // Send request
-  this.beginDelete202Retry200(options, function (err, parsedResult, httpRequest, response){
+  this.beginDelete202Retry200(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
@@ -326,10 +319,10 @@ LRORetrys.prototype.delete202Retry200 = function (options, callback) {
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
+
 
 /**
- *
  * Long running delete request, service returns a 500, then a 202 to the
  * initial request. Poll the endpoint indicated in the Azure-AsyncOperation
  * header for operation status
@@ -339,20 +332,21 @@ LRORetrys.prototype.delete202Retry200 = function (options, callback) {
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.deleteAsyncRelativeRetrySucceeded = function (options, callback) {
-  var client = this.client;
+function _deleteAsyncRelativeRetrySucceeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -363,21 +357,22 @@ LRORetrys.prototype.deleteAsyncRelativeRetrySucceeded = function (options, callb
   }
 
   // Send request
-  this.beginDeleteAsyncRelativeRetrySucceeded(options, function (err, parsedResult, httpRequest, response){
+  this.beginDeleteAsyncRelativeRetrySucceeded(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
@@ -385,10 +380,10 @@ LRORetrys.prototype.deleteAsyncRelativeRetrySucceeded = function (options, callb
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
+
 
 /**
- *
  * Long running post request, service returns a 500, then a 202 to the initial
  * request, with 'Location' and 'Retry-After' headers, Polls return a 200 with
  * a response body after success
@@ -406,20 +401,21 @@ LRORetrys.prototype.deleteAsyncRelativeRetrySucceeded = function (options, callb
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.post202Retry200 = function (options, callback) {
-  var client = this.client;
+function _post202Retry200(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -430,21 +426,22 @@ LRORetrys.prototype.post202Retry200 = function (options, callback) {
   }
 
   // Send request
-  this.beginPost202Retry200(options, function (err, parsedResult, httpRequest, response){
+  this.beginPost202Retry200(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
@@ -452,10 +449,10 @@ LRORetrys.prototype.post202Retry200 = function (options, callback) {
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
+
 
 /**
- *
  * Long running post request, service returns a 500, then a 202 to the initial
  * request, with an entity that contains ProvisioningState=’Creating’. Poll the
  * endpoint indicated in the Azure-AsyncOperation header for operation status
@@ -473,20 +470,21 @@ LRORetrys.prototype.post202Retry200 = function (options, callback) {
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.postAsyncRelativeRetrySucceeded = function (options, callback) {
-  var client = this.client;
+function _postAsyncRelativeRetrySucceeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -497,21 +495,22 @@ LRORetrys.prototype.postAsyncRelativeRetrySucceeded = function (options, callbac
   }
 
   // Send request
-  this.beginPostAsyncRelativeRetrySucceeded(options, function (err, parsedResult, httpRequest, response){
+  this.beginPostAsyncRelativeRetrySucceeded(options, (err, parsedResult, httpRequest, response) => {
     if (err) return callback(err);
 
-    var initialResult = new msRest.HttpOperationResponse();
+    let initialResult = new msRest.HttpOperationResponse();
     initialResult.request = httpRequest;
     initialResult.response = response;
     initialResult.body = response.body;
-    client.getLongRunningOperationResult(initialResult, options, function (err, pollingResult) {
+    client.getLongRunningOperationResult(initialResult, options, (err, pollingResult) => {
       if (err) return callback(err);
 
       // Create Result
-      var result = null;
+      let result = null;
+
       httpRequest = pollingResult.request;
       response = pollingResult.response;
-      var responseBody = pollingResult.body;
+      let responseBody = pollingResult.body;
       if (responseBody === '') responseBody = null;
 
       // Deserialize Response
@@ -519,7 +518,7 @@ LRORetrys.prototype.postAsyncRelativeRetrySucceeded = function (options, callbac
       return callback(null, result, httpRequest, response);
     });
   });
-};
+}
 
 /**
  * Long running put request, service returns a 500, then a 201 to the initial
@@ -540,21 +539,22 @@ LRORetrys.prototype.postAsyncRelativeRetrySucceeded = function (options, callbac
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link Product} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callback) {
-  var client = this.client;
+function _beginPut201CreatingSucceeded200(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -562,7 +562,7 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var product = (options && options.product !== undefined) ? options.product : undefined;
+  let product = (options && options.product !== undefined) ? options.product : undefined;
   // Validate
   try {
     if (this.client.acceptLanguage !== null && this.client.acceptLanguage !== undefined && typeof this.client.acceptLanguage.valueOf() !== 'string') {
@@ -573,15 +573,15 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/put/201/creating/succeeded/200';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/put/201/creating/succeeded/200';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'PUT';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -593,7 +593,7 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -601,33 +601,33 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
   }
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
+  let requestContent = null;
+  let requestModel = null;
   try {
     if (product !== null && product !== undefined) {
-      var requestModelMapper = new client.models['Product']().mapper();
+      let requestModelMapper = new client.models['Product']().mapper();
       requestModel = client.serialize(requestModelMapper, product, 'product');
       requestContent = JSON.stringify(requestModel);
     }
   } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
-        'payload - "%s"', error.message, util.inspect(product, {depth: null})));
+    let serializationError = new Error(`Error "${error.message}" occurred in serializing the ` +
+        `payload - ${JSON.stringify(product, null, 2)}.`);
     return callback(serializationError);
   }
   httpRequest.body = requestContent;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 200 && statusCode !== 201) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -636,31 +636,31 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
     // Deserialize Response
     if (statusCode === 200) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -668,16 +668,16 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
     }
     // Deserialize Response
     if (statusCode === 201) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError1 = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError1 = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError1.request = msRest.stripRequest(httpRequest);
         deserializationError1.response = msRest.stripResponse(response);
         return callback(deserializationError1);
@@ -686,7 +686,7 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * Long running put request, service returns a 500, then a 200 to the initial
@@ -706,21 +706,22 @@ LRORetrys.prototype.beginPut201CreatingSucceeded200 = function (options, callbac
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link Product} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, callback) {
-  var client = this.client;
+function _beginPutAsyncRelativeRetrySucceeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -728,7 +729,7 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var product = (options && options.product !== undefined) ? options.product : undefined;
+  let product = (options && options.product !== undefined) ? options.product : undefined;
   // Validate
   try {
     if (this.client.acceptLanguage !== null && this.client.acceptLanguage !== undefined && typeof this.client.acceptLanguage.valueOf() !== 'string') {
@@ -739,15 +740,15 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/putasync/retry/succeeded';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/putasync/retry/succeeded';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'PUT';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -759,7 +760,7 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -767,33 +768,33 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
   }
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
+  let requestContent = null;
+  let requestModel = null;
   try {
     if (product !== null && product !== undefined) {
-      var requestModelMapper = new client.models['Product']().mapper();
+      let requestModelMapper = new client.models['Product']().mapper();
       requestModel = client.serialize(requestModelMapper, product, 'product');
       requestContent = JSON.stringify(requestModel);
     }
   } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
-        'payload - "%s"', error.message, util.inspect(product, {depth: null})));
+    let serializationError = new Error(`Error "${error.message}" occurred in serializing the ` +
+        `payload - ${JSON.stringify(product, null, 2)}.`);
     return callback(serializationError);
   }
   httpRequest.body = requestContent;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 200) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -802,31 +803,31 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
     // Deserialize Response
     if (statusCode === 200) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -835,7 +836,7 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * Long running delete request, service returns a 500, then a  202 to the
@@ -848,21 +849,22 @@ LRORetrys.prototype.beginPutAsyncRelativeRetrySucceeded = function (options, cal
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {object} [result]   - The deserialized result object.
+ *                      {object} [result]   - The deserialized result object if an error did not occur.
  *                      See {@link Product} for more information.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (options, callback) {
-  var client = this.client;
+function _beginDeleteProvisioning202Accepted200Succeeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -880,15 +882,15 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/provisioning/202/accepted/200/succeeded';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/provisioning/202/accepted/200/succeeded';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'DELETE';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -900,7 +902,7 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -909,18 +911,18 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   httpRequest.body = null;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 200 && statusCode !== 202) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -929,31 +931,31 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
     // Deserialize Response
     if (statusCode === 200) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError.request = msRest.stripRequest(httpRequest);
         deserializationError.response = msRest.stripResponse(response);
         return callback(deserializationError);
@@ -961,16 +963,16 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
     }
     // Deserialize Response
     if (statusCode === 202) {
-      var parsedResponse = null;
+      let parsedResponse = null;
       try {
         parsedResponse = JSON.parse(responseBody);
         result = JSON.parse(responseBody);
         if (parsedResponse !== null && parsedResponse !== undefined) {
-          var resultMapper = new client.models['Product']().mapper();
+          let resultMapper = new client.models['Product']().mapper();
           result = client.deserialize(resultMapper, parsedResponse, 'result');
         }
       } catch (error) {
-        var deserializationError1 = new Error(util.format('Error "%s" occurred in deserializing the responseBody - "%s"', error, responseBody));
+        let deserializationError1 = new Error(`Error ${error} occurred in deserializing the responseBody - ${responseBody}`);
         deserializationError1.request = msRest.stripRequest(httpRequest);
         deserializationError1.response = msRest.stripResponse(response);
         return callback(deserializationError1);
@@ -979,7 +981,7 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * Long running delete request, service returns a 500, then a 202 to the
@@ -991,20 +993,21 @@ LRORetrys.prototype.beginDeleteProvisioning202Accepted200Succeeded = function (o
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginDelete202Retry200 = function (options, callback) {
-  var client = this.client;
+function _beginDelete202Retry200(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -1022,15 +1025,15 @@ LRORetrys.prototype.beginDelete202Retry200 = function (options, callback) {
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/202/retry/200';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/202/retry/200';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'DELETE';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -1042,7 +1045,7 @@ LRORetrys.prototype.beginDelete202Retry200 = function (options, callback) {
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -1051,18 +1054,18 @@ LRORetrys.prototype.beginDelete202Retry200 = function (options, callback) {
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   httpRequest.body = null;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 202) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -1071,23 +1074,23 @@ LRORetrys.prototype.beginDelete202Retry200 = function (options, callback) {
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * Long running delete request, service returns a 500, then a 202 to the
@@ -1099,20 +1102,21 @@ LRORetrys.prototype.beginDelete202Retry200 = function (options, callback) {
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginDeleteAsyncRelativeRetrySucceeded = function (options, callback) {
-  var client = this.client;
+function _beginDeleteAsyncRelativeRetrySucceeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -1130,15 +1134,15 @@ LRORetrys.prototype.beginDeleteAsyncRelativeRetrySucceeded = function (options, 
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/deleteasync/retry/succeeded';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/deleteasync/retry/succeeded';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'DELETE';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -1150,7 +1154,7 @@ LRORetrys.prototype.beginDeleteAsyncRelativeRetrySucceeded = function (options, 
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -1159,18 +1163,18 @@ LRORetrys.prototype.beginDeleteAsyncRelativeRetrySucceeded = function (options, 
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   httpRequest.body = null;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 202) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -1179,23 +1183,23 @@ LRORetrys.prototype.beginDeleteAsyncRelativeRetrySucceeded = function (options, 
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * Long running post request, service returns a 500, then a 202 to the initial
@@ -1215,20 +1219,21 @@ LRORetrys.prototype.beginDeleteAsyncRelativeRetrySucceeded = function (options, 
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
-  var client = this.client;
+function _beginPost202Retry200(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -1236,7 +1241,7 @@ LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var product = (options && options.product !== undefined) ? options.product : undefined;
+  let product = (options && options.product !== undefined) ? options.product : undefined;
   // Validate
   try {
     if (this.client.acceptLanguage !== null && this.client.acceptLanguage !== undefined && typeof this.client.acceptLanguage.valueOf() !== 'string') {
@@ -1247,15 +1252,15 @@ LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/post/202/retry/200';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/post/202/retry/200';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'POST';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -1267,7 +1272,7 @@ LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -1275,33 +1280,33 @@ LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
   }
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
+  let requestContent = null;
+  let requestModel = null;
   try {
     if (product !== null && product !== undefined) {
-      var requestModelMapper = new client.models['Product']().mapper();
+      let requestModelMapper = new client.models['Product']().mapper();
       requestModel = client.serialize(requestModelMapper, product, 'product');
       requestContent = JSON.stringify(requestModel);
     }
   } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
-        'payload - "%s"', error.message, util.inspect(product, {depth: null})));
+    let serializationError = new Error(`Error "${error.message}" occurred in serializing the ` +
+        `payload - ${JSON.stringify(product, null, 2)}.`);
     return callback(serializationError);
   }
   httpRequest.body = requestContent;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 202) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -1310,23 +1315,23 @@ LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
 /**
  * Long running post request, service returns a 500, then a 202 to the initial
@@ -1346,20 +1351,21 @@ LRORetrys.prototype.beginPost202Retry200 = function (options, callback) {
  * @param {object} [options.customHeaders] Headers that will be added to the
  * request
  *
- * @param {function} callback
+ * @param {function} callback - The callback.
  *
  * @returns {function} callback(err, result, request, response)
  *
  *                      {Error}  err        - The Error object if an error occurred, null otherwise.
  *
- *                      {null} [result]   - The deserialized result object.
+ *                      {null} [result]   - The deserialized result object if an error did not occur.
  *
  *                      {object} [request]  - The HTTP Request object if an error did not occur.
  *
  *                      {stream} [response] - The HTTP Response stream if an error did not occur.
  */
-LRORetrys.prototype.beginPostAsyncRelativeRetrySucceeded = function (options, callback) {
-  var client = this.client;
+function _beginPostAsyncRelativeRetrySucceeded(options, callback) {
+   /* jshint validthis: true */
+  let client = this.client;
   if(!callback && typeof options === 'function') {
     callback = options;
     options = null;
@@ -1367,7 +1373,7 @@ LRORetrys.prototype.beginPostAsyncRelativeRetrySucceeded = function (options, ca
   if (!callback) {
     throw new Error('callback cannot be null.');
   }
-  var product = (options && options.product !== undefined) ? options.product : undefined;
+  let product = (options && options.product !== undefined) ? options.product : undefined;
   // Validate
   try {
     if (this.client.acceptLanguage !== null && this.client.acceptLanguage !== undefined && typeof this.client.acceptLanguage.valueOf() !== 'string') {
@@ -1378,15 +1384,15 @@ LRORetrys.prototype.beginPostAsyncRelativeRetrySucceeded = function (options, ca
   }
 
   // Construct URL
-  var baseUrl = this.client.baseUri;
-  var requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/postasync/retry/succeeded';
-  var queryParameters = [];
+  let baseUrl = this.client.baseUri;
+  let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/postasync/retry/succeeded';
+  let queryParameters = [];
   if (queryParameters.length > 0) {
     requestUrl += '?' + queryParameters.join('&');
   }
 
   // Create HTTP transport objects
-  var httpRequest = new WebResource();
+  let httpRequest = new WebResource();
   httpRequest.method = 'POST';
   httpRequest.headers = {};
   httpRequest.url = requestUrl;
@@ -1398,7 +1404,7 @@ LRORetrys.prototype.beginPostAsyncRelativeRetrySucceeded = function (options, ca
     httpRequest.headers['accept-language'] = this.client.acceptLanguage;
   }
   if(options) {
-    for(var headerName in options['customHeaders']) {
+    for(let headerName in options['customHeaders']) {
       if (options['customHeaders'].hasOwnProperty(headerName)) {
         httpRequest.headers[headerName] = options['customHeaders'][headerName];
       }
@@ -1406,33 +1412,33 @@ LRORetrys.prototype.beginPostAsyncRelativeRetrySucceeded = function (options, ca
   }
   httpRequest.headers['Content-Type'] = 'application/json; charset=utf-8';
   // Serialize Request
-  var requestContent = null;
-  var requestModel = null;
+  let requestContent = null;
+  let requestModel = null;
   try {
     if (product !== null && product !== undefined) {
-      var requestModelMapper = new client.models['Product']().mapper();
+      let requestModelMapper = new client.models['Product']().mapper();
       requestModel = client.serialize(requestModelMapper, product, 'product');
       requestContent = JSON.stringify(requestModel);
     }
   } catch (error) {
-    var serializationError = new Error(util.format('Error "%s" occurred in serializing the ' +
-        'payload - "%s"', error.message, util.inspect(product, {depth: null})));
+    let serializationError = new Error(`Error "${error.message}" occurred in serializing the ` +
+        `payload - ${JSON.stringify(product, null, 2)}.`);
     return callback(serializationError);
   }
   httpRequest.body = requestContent;
   // Send Request
-  return client.pipeline(httpRequest, function (err, response, responseBody) {
+  return client.pipeline(httpRequest, (err, response, responseBody) => {
     if (err) {
       return callback(err);
     }
-    var statusCode = response.statusCode;
+    let statusCode = response.statusCode;
     if (statusCode !== 202) {
-      var error = new Error(responseBody);
+      let error = new Error(responseBody);
       error.statusCode = response.statusCode;
       error.request = msRest.stripRequest(httpRequest);
       error.response = msRest.stripResponse(response);
       if (responseBody === '') responseBody = null;
-      var parsedErrorResponse;
+      let parsedErrorResponse;
       try {
         parsedErrorResponse = JSON.parse(responseBody);
         if (parsedErrorResponse) {
@@ -1441,23 +1447,1324 @@ LRORetrys.prototype.beginPostAsyncRelativeRetrySucceeded = function (options, ca
           if (parsedErrorResponse.message) error.message = parsedErrorResponse.message;
         }
         if (parsedErrorResponse !== null && parsedErrorResponse !== undefined) {
-          var resultMapper = new client.models['CloudError']().mapper();
+          let resultMapper = new client.models['CloudError']().mapper();
           error.body = client.deserialize(resultMapper, parsedErrorResponse, 'error.body');
         }
       } catch (defaultError) {
-        error.message = util.format('Error "%s" occurred in deserializing the responseBody ' +
-                         '- "%s" for the default response.', defaultError.message, responseBody);
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` +
+                         `- "${responseBody}" for the default response.`;
         return callback(error);
       }
       return callback(error);
     }
     // Create Result
-    var result = null;
+    let result = null;
     if (responseBody === '') responseBody = null;
 
     return callback(null, result, httpRequest, response);
   });
-};
+}
 
+/** Class representing a LRORetrys. */
+class LRORetrys {
+  /**
+   * Create a LRORetrys.
+   * @param {AutoRestLongRunningOperationTestService} client Reference to the service client.
+   */
+  constructor(client) {
+    this.client = client;
+    this._put201CreatingSucceeded200 = _put201CreatingSucceeded200;
+    this._putAsyncRelativeRetrySucceeded = _putAsyncRelativeRetrySucceeded;
+    this._deleteProvisioning202Accepted200Succeeded = _deleteProvisioning202Accepted200Succeeded;
+    this._delete202Retry200 = _delete202Retry200;
+    this._deleteAsyncRelativeRetrySucceeded = _deleteAsyncRelativeRetrySucceeded;
+    this._post202Retry200 = _post202Retry200;
+    this._postAsyncRelativeRetrySucceeded = _postAsyncRelativeRetrySucceeded;
+    this._beginPut201CreatingSucceeded200 = _beginPut201CreatingSucceeded200;
+    this._beginPutAsyncRelativeRetrySucceeded = _beginPutAsyncRelativeRetrySucceeded;
+    this._beginDeleteProvisioning202Accepted200Succeeded = _beginDeleteProvisioning202Accepted200Succeeded;
+    this._beginDelete202Retry200 = _beginDelete202Retry200;
+    this._beginDeleteAsyncRelativeRetrySucceeded = _beginDeleteAsyncRelativeRetrySucceeded;
+    this._beginPost202Retry200 = _beginPost202Retry200;
+    this._beginPostAsyncRelativeRetrySucceeded = _beginPostAsyncRelativeRetrySucceeded;
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 201 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’.  Polls
+   * return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  put201CreatingSucceeded200WithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._put201CreatingSucceeded200(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 201 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’.  Polls
+   * return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {Product} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Product} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  put201CreatingSucceeded200(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._put201CreatingSucceeded200(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._put201CreatingSucceeded200(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 200 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  putAsyncRelativeRetrySucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._putAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 200 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {Product} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Product} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  putAsyncRelativeRetrySucceeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._putAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._putAsyncRelativeRetrySucceeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a  202 to the
+   * initial request, with an entity that contains ProvisioningState=’Accepted’.
+   * Polls return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  deleteProvisioning202Accepted200SucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._deleteProvisioning202Accepted200Succeeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a  202 to the
+   * initial request, with an entity that contains ProvisioningState=’Accepted’.
+   * Polls return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {Product} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Product} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  deleteProvisioning202Accepted200Succeeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._deleteProvisioning202Accepted200Succeeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._deleteProvisioning202Accepted200Succeeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Polls return this value until the last poll returns a ‘200’
+   * with ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  delete202Retry200WithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._delete202Retry200(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Polls return this value until the last poll returns a ‘200’
+   * with ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  delete202Retry200(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._delete202Retry200(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._delete202Retry200(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Poll the endpoint indicated in the Azure-AsyncOperation
+   * header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  deleteAsyncRelativeRetrySucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._deleteAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Poll the endpoint indicated in the Azure-AsyncOperation
+   * header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  deleteAsyncRelativeRetrySucceeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._deleteAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._deleteAsyncRelativeRetrySucceeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with 'Location' and 'Retry-After' headers, Polls return a 200 with
+   * a response body after success
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  post202Retry200WithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._post202Retry200(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with 'Location' and 'Retry-After' headers, Polls return a 200 with
+   * a response body after success
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  post202Retry200(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._post202Retry200(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._post202Retry200(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  postAsyncRelativeRetrySucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._postAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  postAsyncRelativeRetrySucceeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._postAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._postAsyncRelativeRetrySucceeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 201 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’.  Polls
+   * return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginPut201CreatingSucceeded200WithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginPut201CreatingSucceeded200(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 201 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’.  Polls
+   * return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {Product} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Product} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginPut201CreatingSucceeded200(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginPut201CreatingSucceeded200(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginPut201CreatingSucceeded200(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 200 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginPutAsyncRelativeRetrySucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginPutAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running put request, service returns a 500, then a 200 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {Product} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Product} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginPutAsyncRelativeRetrySucceeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginPutAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginPutAsyncRelativeRetrySucceeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a  202 to the
+   * initial request, with an entity that contains ProvisioningState=’Accepted’.
+   * Polls return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginDeleteProvisioning202Accepted200SucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginDeleteProvisioning202Accepted200Succeeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a  202 to the
+   * initial request, with an entity that contains ProvisioningState=’Accepted’.
+   * Polls return this value until the last poll returns a ‘200’ with
+   * ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {Product} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {object} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Product} for more information.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginDeleteProvisioning202Accepted200Succeeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginDeleteProvisioning202Accepted200Succeeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginDeleteProvisioning202Accepted200Succeeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Polls return this value until the last poll returns a ‘200’
+   * with ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginDelete202Retry200WithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginDelete202Retry200(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Polls return this value until the last poll returns a ‘200’
+   * with ProvisioningState=’Succeeded’
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginDelete202Retry200(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginDelete202Retry200(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginDelete202Retry200(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Poll the endpoint indicated in the Azure-AsyncOperation
+   * header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginDeleteAsyncRelativeRetrySucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginDeleteAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running delete request, service returns a 500, then a 202 to the
+   * initial request. Poll the endpoint indicated in the Azure-AsyncOperation
+   * header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginDeleteAsyncRelativeRetrySucceeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginDeleteAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginDeleteAsyncRelativeRetrySucceeded(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with 'Location' and 'Retry-After' headers, Polls return a 200 with
+   * a response body after success
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginPost202Retry200WithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginPost202Retry200(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with 'Location' and 'Retry-After' headers, Polls return a 200 with
+   * a response body after success
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginPost202Retry200(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginPost202Retry200(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginPost202Retry200(options, optionalCallback);
+    }
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @returns {Promise} A promise is returned
+   *
+   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   *
+   * @reject {Error} - The error object.
+   */
+  beginPostAsyncRelativeRetrySucceededWithHttpOperationResponse(options) {
+    let client = this.client;
+    let self = this;
+    return new Promise((resolve, reject) => {
+      self._beginPostAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+        let httpOperationResponse = new msRest.HttpOperationResponse(request, response);
+        httpOperationResponse.body = result;
+        if (err) { reject(err); }
+        else { resolve(httpOperationResponse); }
+        return;
+      });
+    });
+  }
+
+  /**
+   * Long running post request, service returns a 500, then a 202 to the initial
+   * request, with an entity that contains ProvisioningState=’Creating’. Poll the
+   * endpoint indicated in the Azure-AsyncOperation header for operation status
+   *
+   * @param {object} [options] Optional Parameters.
+   *
+   * @param {object} [options.product] Product to put
+   *
+   * @param {string} [options.product.provisioningState]
+   *
+   * @param {object} [options.product.tags]
+   *
+   * @param {string} [options.product.location] Resource Location
+   *
+   * @param {object} [options.customHeaders] Headers that will be added to the
+   * request
+   *
+   * @param {function} [optionalCallback] - The optional callback.
+   *
+   * @returns {function|Promise} If a callback was passed as the last parameter
+   * then it returns the callback else returns a Promise.
+   *
+   * {Promise} A promise is returned
+   *
+   *                      @resolve {null} - The deserialized result object.
+   *
+   *                      @reject {Error} - The error object.
+   *
+   * {function} optionalCallback(err, result, request, response)
+   *
+   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
+   *
+   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *
+   *                      {object} [request]  - The HTTP Request object if an error did not occur.
+   *
+   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   */
+  beginPostAsyncRelativeRetrySucceeded(options, optionalCallback) {
+    let client = this.client;
+    let self = this;
+    if (!optionalCallback && typeof options === 'function') {
+      optionalCallback = options;
+      options = null;
+    }
+    if (!optionalCallback) {
+      return new Promise((resolve, reject) => {
+        self._beginPostAsyncRelativeRetrySucceeded(options, (err, result, request, response) => {
+          if (err) { reject(err); }
+          else { resolve(result); }
+          return;
+        });
+      });
+    } else {
+      return self._beginPostAsyncRelativeRetrySucceeded(options, optionalCallback);
+    }
+  }
+
+}
 
 module.exports = LRORetrys;

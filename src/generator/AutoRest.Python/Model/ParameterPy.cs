@@ -13,21 +13,21 @@ namespace AutoRest.Python.Model
     {
         public ParameterPy()
         {
-            // constant properties should be prefixed with ".self"
             Name.OnGet += value =>
             {
                 if (!value.StartsWith("self."))
                 {
+                    // api_version is always at the first level, operation group or client
+                    // if it's a client property (could be a method property)
+                    if (value == "api_version" && IsClientProperty)
+                    {
+                        return $"self.{value}";
+                    }
+
                     if (IsClientProperty)
                     {
                         return $"self.config.{value}";
                     }
-
-                    if (IsConstant && IsClientProperty)
-                    {
-                        return $"self.{value}";
-                    }
-                   
                 }
                 return value;
             };

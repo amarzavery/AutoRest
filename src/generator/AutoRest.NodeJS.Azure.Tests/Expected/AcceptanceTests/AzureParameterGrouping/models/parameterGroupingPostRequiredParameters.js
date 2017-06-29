@@ -11,64 +11,62 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the ParameterGroupingPostRequiredParameters class.
- * @constructor
  * Additional parameters for the ParameterGrouping_postRequired operation.
  *
- * @member {number} body
- *
- * @member {string} [customHeader]
- *
- * @member {number} [query] Query parameter with default. Default value: 30 .
- *
- * @member {string} path Path parameter
- *
  */
-function ParameterGroupingPostRequiredParameters() {
-}
+class ParameterGroupingPostRequiredParameters {
+  /**
+   * Create a ParameterGroupingPostRequiredParameters.
+   * @member {number} body
+   * @member {string} [customHeader]
+   * @member {number} [query] Query parameter with default. Default value: 30 .
+   * @member {string} path Path parameter
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ParameterGroupingPostRequiredParameters
- *
- * @returns {object} metadata of ParameterGroupingPostRequiredParameters
- *
- */
-ParameterGroupingPostRequiredParameters.prototype.mapper = function () {
-  return {
-    required: false,
-    type: {
-      name: 'Composite',
-      className: 'ParameterGroupingPostRequiredParameters',
-      modelProperties: {
-        body: {
-          required: true,
-          type: {
-            name: 'Number'
-          }
-        },
-        customHeader: {
-          required: false,
-          type: {
-            name: 'String'
-          }
-        },
-        query: {
-          required: false,
-          defaultValue: 30,
-          type: {
-            name: 'Number'
-          }
-        },
-        path: {
-          required: true,
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of ParameterGroupingPostRequiredParameters
+   *
+   * @returns {object} metadata of ParameterGroupingPostRequiredParameters
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      type: {
+        name: 'Composite',
+        className: 'ParameterGroupingPostRequiredParameters',
+        modelProperties: {
+          body: {
+            required: true,
+            type: {
+              name: 'Number'
+            }
+          },
+          customHeader: {
+            required: false,
+            type: {
+              name: 'String'
+            }
+          },
+          query: {
+            required: false,
+            defaultValue: 30,
+            type: {
+              name: 'Number'
+            }
+          },
+          path: {
+            required: true,
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ParameterGroupingPostRequiredParameters;

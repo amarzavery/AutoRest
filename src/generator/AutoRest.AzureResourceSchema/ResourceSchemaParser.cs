@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using AutoRest.Core.Model;
+using AutoRest.Core.Utilities;
 
 namespace AutoRest.AzureResourceSchema
 {
@@ -23,22 +24,16 @@ namespace AutoRest.AzureResourceSchema
         /// </summary>
         /// <param name="serviceClient"></param>
         /// <returns></returns>
-        public static IDictionary<string, ResourceSchema> Parse(CodeModel serviceClient)
+        public static IDictionary<string, ResourceSchema> Parse(CodeModel serviceClient, string version)
         {
             if (serviceClient == null)
             {
                 throw new ArgumentNullException(nameof(serviceClient));
             }
 
-            string apiVersion = serviceClient.ApiVersion;
-            if (string.IsNullOrWhiteSpace(apiVersion))
-            {
-                throw new ArgumentException("No API version is provided in the swagger document.");
-            }
-
             Dictionary<string, ResourceSchema> resourceSchemas = new Dictionary<string, ResourceSchema>();
 
-            foreach (Method method in serviceClient.Methods)
+            foreach (Method method in serviceClient.Methods.Where( method => method.Parameters.FirstOrDefault(p => p.SerializedName == "api-version")?.DefaultValue.Value == version || version == serviceClient.ApiVersion))
             {
                 if (method.HttpMethod != HttpMethod.Put ||
                     string.IsNullOrWhiteSpace(method.Url) ||
@@ -59,11 +54,18 @@ namespace AutoRest.AzureResourceSchema
                     continue;
                 }
 
+                // extract API version
+                string apiVersion = serviceClient.ApiVersion.Else(method.Parameters.FirstOrDefault(p => p.SerializedName == "api-version")?.DefaultValue);
+                if (string.IsNullOrWhiteSpace(apiVersion))
+                {
+                    throw new ArgumentException("No API version is provided in the swagger document or the method.");
+                }
+
                 ResourceSchema resourceSchema;
                 if (!resourceSchemas.ContainsKey(resourceProvider))
                 {
                     resourceSchema = new ResourceSchema();
-                    resourceSchema.Id = string.Format(CultureInfo.InvariantCulture, "http://schema.management.azure.com/schemas/{0}/{1}.json#", apiVersion, resourceProvider);
+                    resourceSchema.Id = string.Format(CultureInfo.InvariantCulture, "https://schema.management.azure.com/schemas/{0}/{1}.json#", apiVersion, resourceProvider);
                     resourceSchema.Title = resourceProvider;
                     resourceSchema.Description = resourceProvider.Replace('.', ' ') + " Resource Types";
                     resourceSchema.Schema = "http://json-schema.org/draft-04/schema#";
@@ -91,7 +93,7 @@ namespace AutoRest.AzureResourceSchema
                         resNameParam = resNameParam.Trim(new[] { '{', '}' });
 
                         // look up the type
-                        var param = method.Parameters.Where(p => p.Name == resNameParam).FirstOrDefault();
+                        var param = method.Parameters.Where(p => p.SerializedName == resNameParam).FirstOrDefault();
                         if (param != null)
                         {
                             // create a schema for it
@@ -114,12 +116,12 @@ namespace AutoRest.AzureResourceSchema
                         {
                             foreach (Property property in body.ComposedProperties)
                             {
-                                if (!resourceDefinition.Properties.Keys.Contains(property.Name.RawValue))
+                                if (!resourceDefinition.Properties.Keys.Contains(property.SerializedName))
                                 {
                                     JsonSchema propertyDefinition = ParseType(property, property.ModelType, resourceSchema.Definitions, serviceClient.ModelTypes);
                                     if (propertyDefinition != null)
                                     {
-                                        resourceDefinition.AddProperty(property.Name.RawValue, propertyDefinition, property.IsRequired || property.Name.RawValue == "properties");
+                                        resourceDefinition.AddProperty(property.SerializedName, propertyDefinition, property.IsRequired || property.SerializedName == "properties");
                                     }
                                 }
                             }
@@ -205,7 +207,7 @@ namespace AutoRest.AzureResourceSchema
                 if (IsPathVariable(pathSegment))
                 {
                     string parameterName = pathSegment.Substring(1, pathSegment.Length - 2);
-                    Parameter parameter = method.Parameters.FirstOrDefault(methodParameter => methodParameter.Name.RawValue == parameterName);
+                    Parameter parameter = method.Parameters.FirstOrDefault(methodParameter => methodParameter.SerializedName == parameterName);
                     if (parameter == null)
                     {
                         throw new ArgumentException(string.Format(CultureInfo.CurrentCulture, "Found undefined parameter reference {0} in create resource method \"{1}/{2}/{3}\".", pathSegment, resourceMethodPrefix, resourceProvider, methodUrlPathAfterProvider));
@@ -236,7 +238,7 @@ namespace AutoRest.AzureResourceSchema
                     {
                         foreach (EnumValue parameterValue in parameterType.Values)
                         {
-                            newResourceTypes.Add(string.Join("/", resourceType, parameterValue.Name));
+                            newResourceTypes.Add(string.Join("/", resourceType, parameterValue.SerializedName));
                         }
                     }
 
@@ -317,7 +319,7 @@ namespace AutoRest.AzureResourceSchema
 
         private static JsonSchema ParseCompositeType(Property property, CompositeType compositeType, bool includeBaseModelTypeProperties, IDictionary<string, JsonSchema> definitions, IEnumerable<CompositeType> modelTypes)
         {
-            string definitionName = compositeType.Name.RawValue;
+            string definitionName = compositeType.SerializedName;
 
             if (!definitions.ContainsKey(definitionName))
             {
@@ -366,7 +368,7 @@ namespace AutoRest.AzureResourceSchema
 
                                 derivedTypeDefinitionRefs.AddAnyOf(new JsonSchema()
                                 {
-                                    Ref = "#/definitions/" + subType.Name,
+                                    Ref = "#/definitions/" + subType.SerializedName,
                                 });
 
                                 const string discriminatorValueExtensionName = "x-ms-discriminator-value";
@@ -393,7 +395,7 @@ namespace AutoRest.AzureResourceSchema
                     JsonSchema subPropertyDefinition = ParseType(subProperty, subProperty.ModelType, definitions, modelTypes);
                     if (subPropertyDefinition != null)
                     {
-                        baseTypeDefinition.AddProperty(subProperty.Name.RawValue, subPropertyDefinition, subProperty.IsRequired);
+                        baseTypeDefinition.AddProperty(subProperty.SerializedName.Else(subProperty.Name.RawValue) , subPropertyDefinition, subProperty.IsRequired);
                     }
                 }
             }
@@ -436,7 +438,7 @@ namespace AutoRest.AzureResourceSchema
 
             foreach (EnumValue enumValue in enumType.Values)
             {
-                result.AddEnum(enumValue.Name);
+                result.AddEnum(enumValue.SerializedName);
             }
 
             if (property != null)
@@ -466,6 +468,7 @@ namespace AutoRest.AzureResourceSchema
                     break;
 
                 case KnownPrimaryType.Double:
+                case KnownPrimaryType.Decimal:
                     result.JsonType = "number";
                     break;
 
@@ -473,6 +476,16 @@ namespace AutoRest.AzureResourceSchema
                     result.JsonType = "object";
                     break;
 
+                case KnownPrimaryType.ByteArray:
+                    result.JsonType = "array";
+                    result.Items =  new JsonSchema()
+                    {
+                        JsonType = "integer"
+                    };
+                    break;
+
+                case KnownPrimaryType.Base64Url:
+                case KnownPrimaryType.Date:
                 case KnownPrimaryType.DateTime:
                 case KnownPrimaryType.String:
                 case KnownPrimaryType.TimeSpan:

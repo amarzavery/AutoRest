@@ -10,49 +10,49 @@
 
 'use strict';
 
-var util = require('util');
-
 /**
- * @class
- * Initializes a new instance of the ArrayWrapper class.
- * @constructor
- * @member {array} value
- *
+ * Class representing a ArrayWrapper.
  */
-function ArrayWrapper() {
-}
+class ArrayWrapper {
+  /**
+   * Create a ArrayWrapper.
+   * @member {array} value
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ArrayWrapper
- *
- * @returns {object} metadata of ArrayWrapper
- *
- */
-ArrayWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'array-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'ArrayWrapper',
-      modelProperties: {
-        value: {
-          required: true,
-          serializedName: 'value',
-          type: {
-            name: 'Sequence',
-            element: {
-                required: false,
-                serializedName: 'StringElementType',
-                type: {
-                  name: 'String'
-                }
+  /**
+   * Defines the metadata of ArrayWrapper
+   *
+   * @returns {object} metadata of ArrayWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'array-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'ArrayWrapper',
+        modelProperties: {
+          value: {
+            required: true,
+            serializedName: 'value',
+            type: {
+              name: 'Sequence',
+              element: {
+                  required: false,
+                  serializedName: 'StringElementType',
+                  type: {
+                    name: 'String'
+                  }
+              }
             }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ArrayWrapper;

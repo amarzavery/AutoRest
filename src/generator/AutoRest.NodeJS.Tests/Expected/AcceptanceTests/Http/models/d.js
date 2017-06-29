@@ -11,39 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the D class.
- * @constructor
- * @member {string} [httpStatusCode]
- *
+ * Class representing a D.
  */
-function D() {
-}
+class D {
+  /**
+   * Create a D.
+   * @member {string} [httpStatusCode]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of D
- *
- * @returns {object} metadata of D
- *
- */
-D.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'D',
-    type: {
-      name: 'Composite',
-      className: 'D',
-      modelProperties: {
-        httpStatusCode: {
-          required: false,
-          serializedName: 'httpStatusCode',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of D
+   *
+   * @returns {object} metadata of D
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'D',
+      type: {
+        name: 'Composite',
+        className: 'D',
+        modelProperties: {
+          httpStatusCode: {
+            required: false,
+            serializedName: 'httpStatusCode',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = D;

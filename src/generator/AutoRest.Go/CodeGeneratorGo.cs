@@ -35,10 +35,10 @@ namespace AutoRest.Go
         /// <returns></returns>
         public override async Task Generate(CodeModel cm)
         {
-            
+
             var codeModel = cm as CodeModelGo;
             if (codeModel == null)
-            {                
+            {
                 throw new Exception("Code model is not a Go Code Model");
             }
 
@@ -59,7 +59,7 @@ namespace AutoRest.Go
             {
                 Model = codeModel
             };
-            
+
             await Write(serviceClientTemplate, FormatFileName("client"));
 
             // by convention the methods in the method group with an empty

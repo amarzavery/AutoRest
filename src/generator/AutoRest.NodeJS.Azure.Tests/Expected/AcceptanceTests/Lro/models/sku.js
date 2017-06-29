@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the Sku class.
- * @constructor
- * @member {string} [name]
- *
- * @member {string} [id]
- *
+ * Class representing a Sku.
  */
-function Sku() {
-}
+class Sku {
+  /**
+   * Create a Sku.
+   * @member {string} [name]
+   * @member {string} [id]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Sku
- *
- * @returns {object} metadata of Sku
- *
- */
-Sku.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Sku',
-    type: {
-      name: 'Composite',
-      className: 'Sku',
-      modelProperties: {
-        name: {
-          required: false,
-          serializedName: 'name',
-          type: {
-            name: 'String'
-          }
-        },
-        id: {
-          required: false,
-          serializedName: 'id',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of Sku
+   *
+   * @returns {object} metadata of Sku
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Sku',
+      type: {
+        name: 'Composite',
+        className: 'Sku',
+        modelProperties: {
+          name: {
+            required: false,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
+          },
+          id: {
+            required: false,
+            serializedName: 'id',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Sku;

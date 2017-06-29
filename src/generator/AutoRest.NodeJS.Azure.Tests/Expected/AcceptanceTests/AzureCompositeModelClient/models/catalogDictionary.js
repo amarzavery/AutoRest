@@ -10,50 +10,52 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the CatalogDictionary class.
- * @constructor
- * @member {object} [productDictionary] Dictionary of products
- *
+ * Class representing a CatalogDictionary.
  */
-function CatalogDictionary() {
-}
+class CatalogDictionary {
+  /**
+   * Create a CatalogDictionary.
+   * @member {object} [productDictionary] Dictionary of products
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of CatalogDictionary
- *
- * @returns {object} metadata of CatalogDictionary
- *
- */
-CatalogDictionary.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'CatalogDictionary',
-    type: {
-      name: 'Composite',
-      className: 'CatalogDictionary',
-      modelProperties: {
-        productDictionary: {
-          required: false,
-          serializedName: 'productDictionary',
-          type: {
-            name: 'Dictionary',
-            value: {
-                required: false,
-                serializedName: 'ProductElementType',
-                type: {
-                  name: 'Composite',
-                  className: 'Product'
-                }
+  /**
+   * Defines the metadata of CatalogDictionary
+   *
+   * @returns {object} metadata of CatalogDictionary
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'CatalogDictionary',
+      type: {
+        name: 'Composite',
+        className: 'CatalogDictionary',
+        modelProperties: {
+          productDictionary: {
+            required: false,
+            serializedName: 'productDictionary',
+            type: {
+              name: 'Dictionary',
+              value: {
+                  required: false,
+                  serializedName: 'ProductElementType',
+                  type: {
+                    name: 'Composite',
+                    className: 'Product'
+                  }
+              }
             }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = CatalogDictionary;

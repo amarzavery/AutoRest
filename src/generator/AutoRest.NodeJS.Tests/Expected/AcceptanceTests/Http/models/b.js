@@ -10,54 +10,53 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the B class.
- * @constructor
- * @member {string} [textStatusCode]
- *
+ * Class representing a B.
+ * @extends models['A']
  */
-function B() {
-  B['super_'].call(this);
-}
+class B extends models['A'] {
+  /**
+   * Create a B.
+   * @member {string} [textStatusCode]
+   */
+  constructor() {
+    super();
+  }
 
-util.inherits(B, models['A']);
-
-/**
- * Defines the metadata of B
- *
- * @returns {object} metadata of B
- *
- */
-B.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'B',
-    type: {
-      name: 'Composite',
-      className: 'B',
-      modelProperties: {
-        statusCode: {
-          required: false,
-          serializedName: 'statusCode',
-          type: {
-            name: 'String'
-          }
-        },
-        textStatusCode: {
-          required: false,
-          serializedName: 'textStatusCode',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of B
+   *
+   * @returns {object} metadata of B
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'B',
+      type: {
+        name: 'Composite',
+        className: 'B',
+        modelProperties: {
+          statusCode: {
+            required: false,
+            serializedName: 'statusCode',
+            type: {
+              name: 'String'
+            }
+          },
+          textStatusCode: {
+            required: false,
+            serializedName: 'textStatusCode',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = B;

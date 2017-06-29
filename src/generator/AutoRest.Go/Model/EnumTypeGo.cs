@@ -11,7 +11,7 @@ namespace AutoRest.Go.Model
     public class EnumTypeGo : EnumType
     {
         public bool HasUniqueNames { get; set; }
-        
+
         public EnumTypeGo()
         {
             // the default value for unnamed enums is "enum"

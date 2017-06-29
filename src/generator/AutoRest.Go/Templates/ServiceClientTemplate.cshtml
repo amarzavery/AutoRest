@@ -20,24 +20,18 @@ package @Model.Namespace
 import (
 @foreach (var import in imports)
 {
-    @:"@(import)"
+    @:@(import)
 }
 )
 
 @EmptyLine
 const (
-    // APIVersion is the version of the @(Model.ServiceName)
-    APIVersion = "@Model.ApiVersion"
     @if (!Model.IsCustomBaseUri)
     {
-        @EmptyLine
         @:// DefaultBaseURI is the default URI used for the service @(Model.ServiceName)
         @:DefaultBaseURI = "@Model.BaseUrl"
     }
-    else
-    {
         @(Model.ConstGlobalDefaultParameters)
-    }
 )
 
 @EmptyLine
@@ -47,8 +41,7 @@ type @(Model.BaseClient) struct {
     @if (!Model.IsCustomBaseUri)
     {
         @:BaseURI string
-    }    
-    APIVersion string
+    }
     @foreach (var p in Model.Properties)
     {
         if (!p.SerializedName.FixedValue.IsApiVersion())
@@ -83,12 +76,18 @@ func New(@(Model.GlobalParameters))@(Model.BaseClient) {
         return @(Model.BaseClient){
             Client: autorest.NewClientWithUserAgent(UserAgent()),
             BaseURI: baseURI,
-            APIVersion: APIVersion,
             @foreach (var p in Model.Properties)
             {
                 if (!p.SerializedName.Value.IsApiVersion())
                 {
-                @:@(string.Format("{0}: {1},", p.Name, p.Name.Value.ToSentence()))
+                    if (p.DefaultValue.FixedValue.IsNullOrEmpty())
+                    {
+                        @:@(string.Format("{0}: {1},", p.Name, p.Name.Value.ToSentence()))
+                    }
+                    else
+                    {
+                        @:@(string.Format("{0}: Default{1},", p.Name, p.Name.Value.ToPascalCase()))
+                    }
                 }
             }
         }
@@ -103,7 +102,6 @@ else
     func NewWithoutDefaults(@(Model.AllGlobalParameters)) @(Model.BaseClient) {
         return @(Model.BaseClient){
             Client: autorest.NewClientWithUserAgent(UserAgent()),
-            APIVersion: APIVersion,
             @foreach(var p in Model.Properties)
             {
                 if (!p.SerializedName.Value.IsApiVersion())

@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the DatetimeWrapper class.
- * @constructor
- * @member {date} [field]
- *
- * @member {date} [now]
- *
+ * Class representing a DatetimeWrapper.
  */
-function DatetimeWrapper() {
-}
+class DatetimeWrapper {
+  /**
+   * Create a DatetimeWrapper.
+   * @member {date} [field]
+   * @member {date} [now]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of DatetimeWrapper
- *
- * @returns {object} metadata of DatetimeWrapper
- *
- */
-DatetimeWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'datetime-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'DatetimeWrapper',
-      modelProperties: {
-        field: {
-          required: false,
-          serializedName: 'field',
-          type: {
-            name: 'DateTime'
-          }
-        },
-        now: {
-          required: false,
-          serializedName: 'now',
-          type: {
-            name: 'DateTime'
+  /**
+   * Defines the metadata of DatetimeWrapper
+   *
+   * @returns {object} metadata of DatetimeWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'datetime-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'DatetimeWrapper',
+        modelProperties: {
+          field: {
+            required: false,
+            serializedName: 'field',
+            type: {
+              name: 'DateTime'
+            }
+          },
+          now: {
+            required: false,
+            serializedName: 'now',
+            type: {
+              name: 'DateTime'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = DatetimeWrapper;

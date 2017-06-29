@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the SampleResourceGroup class.
- * @constructor
- * @member {string} [name] resource group name 'testgroup101'
- *
- * @member {string} [location] resource group location 'West US'
- *
+ * Class representing a SampleResourceGroup.
  */
-function SampleResourceGroup() {
-}
+class SampleResourceGroup {
+  /**
+   * Create a SampleResourceGroup.
+   * @member {string} [name] resource group name 'testgroup101'
+   * @member {string} [location] resource group location 'West US'
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of SampleResourceGroup
- *
- * @returns {object} metadata of SampleResourceGroup
- *
- */
-SampleResourceGroup.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'SampleResourceGroup',
-    type: {
-      name: 'Composite',
-      className: 'SampleResourceGroup',
-      modelProperties: {
-        name: {
-          required: false,
-          serializedName: 'name',
-          type: {
-            name: 'String'
-          }
-        },
-        location: {
-          required: false,
-          serializedName: 'location',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of SampleResourceGroup
+   *
+   * @returns {object} metadata of SampleResourceGroup
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'SampleResourceGroup',
+      type: {
+        name: 'Composite',
+        className: 'SampleResourceGroup',
+        modelProperties: {
+          name: {
+            required: false,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
+          },
+          location: {
+            required: false,
+            serializedName: 'location',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = SampleResourceGroup;

@@ -14,10 +14,8 @@ namespace AutoRest.Core
     /// <summary>
     /// Base code generation template.
     /// </summary>
-    public abstract class Template<T> : ITemplate
+    public class Template<T> : ITemplate
     {
-        protected const int MaximumCommentColumn = 80;
-
         private string _indentation;
         private string _lastLiteral = String.Empty;
 
@@ -34,6 +32,13 @@ namespace AutoRest.Core
             get { return TemplateConstants.EmptyLine + "\r\n"; }
         }
 
+        public virtual void BeginWriteAttribute(string name, string prefix, int prefixOffset, string suffix, int suffixOffset, int attributeValuesCount) {
+        }
+        public virtual void EndWriteAttribute() {
+        }
+        public void WriteAttributeValue(string prefix, int prefixOffset, object value, int valueOffset, int valueLength, bool isLiteral) {
+        }
+        
         /// <summary>
         /// Gets or sets settings.
         /// </summary>
@@ -217,7 +222,7 @@ namespace AutoRest.Core
         /// <param name="prefix"></param>
         /// <param name="comment"></param>
         /// <returns></returns>
-        protected virtual string WrapComment(string prefix, string comment)
+        public virtual string WrapComment(string prefix, string comment)
         {
             if (string.IsNullOrWhiteSpace(comment))
             {
@@ -225,7 +230,7 @@ namespace AutoRest.Core
             }
 
             int available =
-                MaximumCommentColumn - // Maximum desired width
+                (Settings.Instance?.MaximumCommentColumns ?? Settings.DefaultMaximumCommentColumns) - // Maximum desired width
                 Indentation.Length - // - Space used for indent
                 prefix.Length - // - Prefix //'s length
                 1; // - Extra space between prefix and text

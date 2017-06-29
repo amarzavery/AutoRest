@@ -10,47 +10,47 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the ClassWrapper class.
- * @constructor
- * @member {object} value
- *
- * @member {number} [value.id]
- *
- * @member {string} [value.name]
- *
+ * Class representing a ClassWrapper.
  */
-function ClassWrapper() {
-}
+class ClassWrapper {
+  /**
+   * Create a ClassWrapper.
+   * @member {object} value
+   * @member {number} [value.id]
+   * @member {string} [value.name]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ClassWrapper
- *
- * @returns {object} metadata of ClassWrapper
- *
- */
-ClassWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'class-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'ClassWrapper',
-      modelProperties: {
-        value: {
-          required: true,
-          serializedName: 'value',
-          type: {
-            name: 'Composite',
-            className: 'Product'
+  /**
+   * Defines the metadata of ClassWrapper
+   *
+   * @returns {object} metadata of ClassWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'class-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'ClassWrapper',
+        modelProperties: {
+          value: {
+            required: true,
+            serializedName: 'value',
+            type: {
+              name: 'Composite',
+              className: 'Product'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ClassWrapper;

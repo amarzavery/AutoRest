@@ -12,7 +12,6 @@ using AutoRest.Core.Model;
 using AutoRest.Core.Properties;
 using AutoRest.Core.Utilities;
 using AutoRest.Core.Utilities.Collections;
-using AutoRest.Core.Validation;
 using static AutoRest.Core.Utilities.DependencyInjection;
 
 namespace AutoRest.Core
@@ -515,21 +514,6 @@ namespace AutoRest.Core
             {
                 return desiredName;
             }
-
-#if refactoring_out
-            // special case: properties can actually have the same name as a composite type 
-            // as long as that type is not the parent class of the property itself.
-            if (whoIsAsking is Property)
-            {
-                reservedNames = reservedNames.Where(each => !(each is CompositeType));
-
-                var parent = (whoIsAsking as IChild)?.Parent as IIdentifier;
-                if (parent != null)
-                {
-                    reservedNames = reservedNames.ConcatSingleItem(parent);
-                }
-            }
-#endif 
 
             var names = new HashSet<IIdentifier>(reservedNames.Where(each => !IsSpecialCase(whoIsAsking, each)));
 

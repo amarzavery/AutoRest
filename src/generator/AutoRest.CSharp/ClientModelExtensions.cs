@@ -51,7 +51,7 @@ namespace AutoRest.CSharp
 
         public static bool ShouldValidateChain(this IModelType model)
         {
-            if (model == null)
+            if (model == null || !Singleton<GeneratorSettingsCs>.Instance.ClientSideValidation)
             {
                 return false;
             }
@@ -94,7 +94,7 @@ namespace AutoRest.CSharp
 
         private static bool ShouldValidate(this IModelType model)
         {
-            if (model == null)
+            if (model == null || !Singleton<GeneratorSettingsCs>.Instance.ClientSideValidation)
             {
                 return false;
             }
@@ -169,13 +169,13 @@ namespace AutoRest.CSharp
                 string firstWord = summary.TrimStart().Split(' ').First();
                 if (firstWord.Length <= 1)
                 {
-                    documentation += char.ToLower(summary[0], CultureInfo.InvariantCulture) + summary.Substring(1);
+                    documentation += char.ToLower(summary[0]) + summary.Substring(1);
                 }
                 else
                 {
-                    documentation += firstWord.ToUpper(CultureInfo.InvariantCulture) == firstWord
+                    documentation += firstWord.ToUpper() == firstWord
                         ? summary
-                        : char.ToLower(summary[0], CultureInfo.InvariantCulture) + summary.Substring(1);
+                        : char.ToLower(summary[0]) + summary.Substring(1);
                 }
             }
             return documentation.EscapeXmlComment();
@@ -205,14 +205,6 @@ namespace AutoRest.CSharp
             if (enumType != null && enumType.ModelAsString)
             {
                 primaryType = New<PrimaryType>(KnownPrimaryType.String);
-            }
-
-            if (primaryType == null || primaryType.KnownPrimaryType != KnownPrimaryType.String)
-            {
-                throw new InvalidOperationException(
-                    string.Format(CultureInfo.InvariantCulture, 
-                    "Cannot generate a formatted sequence from a " +
-                                  "non-string List parameter {0}", parameter));
             }
 
             return string.Format(CultureInfo.InvariantCulture,
@@ -391,14 +383,7 @@ namespace AutoRest.CSharp
         /// </summary>
         private static string ToLiteral(string input)
         {
-            using (var writer = new StringWriter())
-            {
-                using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-                {
-                    provider.GenerateCodeFromExpression(new CodePrimitiveExpression(input), writer, null);
-                    return writer.ToString();
-                }
-            }
+            return "\"" + input.Replace("\\", "\\\\").Replace("\"", "\\\"") + "\"";
         }
 
         private static void AppendConstraintValidations(string valueReference, Dictionary<Constraint, string> constraints, IndentedStringBuilder sb, IModelType type)
@@ -406,7 +391,11 @@ namespace AutoRest.CSharp
             foreach (var constraint in constraints.Keys)
             {
                 string constraintCheck;
-                string constraintValue = ((type as PrimaryType)?.KnownFormat == KnownFormat.@char) ?$"'{constraints[constraint]}'" : constraints[constraint];
+                var knownFormat = (type as PrimaryType)?.KnownFormat;
+                string constraintValue =
+                    knownFormat == KnownFormat.@char ? $"'{constraints[constraint]}'" :
+                    knownFormat == KnownFormat.@decimal ? $"{constraints[constraint]}m" :
+                    constraints[constraint];
                 switch (constraint)
                 {
                     case Constraint.ExclusiveMaximum:

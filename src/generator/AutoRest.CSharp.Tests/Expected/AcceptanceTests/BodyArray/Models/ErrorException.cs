@@ -8,18 +8,12 @@
 
 namespace Fixtures.AcceptanceTestsBodyArray.Models
 {
-    using AcceptanceTestsBodyArray;
+    using Fixtures.AcceptanceTestsBodyArray;
     using Microsoft.Rest;
-    using System.Runtime;
-    using System.Runtime.Serialization;
-    using System.Security;
 
     /// <summary>
     /// Exception thrown for an invalid response with Error information.
     /// </summary>
-#if !PORTABLE
-    [System.Serializable]
-#endif
     public class ErrorException : RestException
     {
         /// <summary>
@@ -62,40 +56,5 @@ namespace Fixtures.AcceptanceTestsBodyArray.Models
             : base(message, innerException)
         {
         }
-
-#if !PORTABLE
-        /// <summary>
-        /// Initializes a new instance of the ErrorException class.
-        /// </summary>
-        /// <param name="info">Serialization info.</param>
-        /// <param name="context">Streaming context.</param>
-        protected ErrorException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
-        /// Serializes content of the exception.
-        /// </summary>
-        /// <param name="info">Serialization info.</param>
-        /// <param name="context">Streaming context.</param>
-        /// <exception cref="System.ArgumentNullException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        [System.Security.Permissions.SecurityPermission(System.Security.Permissions.SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            if (info == null)
-            {
-                throw new System.ArgumentNullException("info");
-            }
-
-            info.AddValue("Request", Request);
-            info.AddValue("Response", Response);
-            info.AddValue("Body", Body);
-        }
-#endif
     }
 }
-

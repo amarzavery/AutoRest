@@ -1,8 +1,8 @@
 package fixtures.lro;
 
-import com.microsoft.azure.CustomHeaderInterceptor;
-
 import com.microsoft.rest.credentials.BasicAuthenticationCredentials;
+import fixtures.lro.implementation.AutoRestLongRunningOperationTestServiceImpl;
+import fixtures.lro.models.Product;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -10,19 +10,15 @@ import org.junit.Test;
 
 import java.util.Map;
 
-import fixtures.lro.implementation.AutoRestLongRunningOperationTestServiceImpl;
-import fixtures.lro.models.Product;
-
 public class LROsCustomHeaderTests {
     private static AutoRestLongRunningOperationTestServiceImpl client;
     private static Map<String, String> customHeaders;
-    private static CustomHeaderInterceptor customHeaderInterceptor;
 
     @BeforeClass
     public static void setup() {
         client = new AutoRestLongRunningOperationTestServiceImpl("http://localhost:3000", new BasicAuthenticationCredentials(null, null));
         client.restClient().headers().addHeader("x-ms-client-request-id", "9C4D50EE-2D56-4CD3-8152-34347DC9F2B0");
-        client.getAzureClient().withLongRunningOperationRetryTimeout(0);
+        client.getAzureClient().setLongRunningOperationRetryTimeout(0);
     }
 
     @AfterClass

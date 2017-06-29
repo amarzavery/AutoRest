@@ -10,58 +10,57 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the OperationResult class.
- * @constructor
- * @member {string} [status] The status of the request. Possible values
- * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
- * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
- * @member {object} [error]
- *
- * @member {number} [error.code] The error code for an operation failure
- *
- * @member {string} [error.message] The detailed arror message
- *
+ * Class representing a OperationResult.
  */
-function OperationResult() {
-}
+class OperationResult {
+  /**
+   * Create a OperationResult.
+   * @member {string} [status] The status of the request. Possible values
+   * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
+   * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+   * @member {object} [error]
+   * @member {number} [error.code] The error code for an operation failure
+   * @member {string} [error.message] The detailed arror message
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of OperationResult
- *
- * @returns {object} metadata of OperationResult
- *
- */
-OperationResult.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'OperationResult',
-    type: {
-      name: 'Composite',
-      className: 'OperationResult',
-      modelProperties: {
-        status: {
-          required: false,
-          serializedName: 'status',
-          type: {
-            name: 'String'
-          }
-        },
-        error: {
-          required: false,
-          serializedName: 'error',
-          type: {
-            name: 'Composite',
-            className: 'OperationResultError'
+  /**
+   * Defines the metadata of OperationResult
+   *
+   * @returns {object} metadata of OperationResult
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'OperationResult',
+      type: {
+        name: 'Composite',
+        className: 'OperationResult',
+        modelProperties: {
+          status: {
+            required: false,
+            serializedName: 'status',
+            type: {
+              name: 'String'
+            }
+          },
+          error: {
+            required: false,
+            serializedName: 'error',
+            type: {
+              name: 'Composite',
+              className: 'OperationResultError'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = OperationResult;

@@ -14,46 +14,43 @@
 
 'use strict';
 
-var util = require('util');
-var msRest = require('ms-rest');
-var ServiceClient = msRest.ServiceClient;
+const msRest = require('ms-rest');
+const ServiceClient = msRest.ServiceClient;
 
-var models = require('./models');
-var operations = require('./operations');
+const models = require('./models');
+const operations = require('./operations');
 
-/**
- * @class
- * Initializes a new instance of the AutoRestParameterizedHostTestClient class.
- * @constructor
- *
- * @param {object} [options] - The parameter options
- *
- * @param {Array} [options.filters] - Filters to be added to the request pipeline
- *
- * @param {object} [options.requestOptions] - Options for the underlying request object
- * {@link https://github.com/request/request#requestoptions-callback Options doc}
- *
- * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
- *
- * @param {string} [options.host] - A string value that is used as a global part of the parameterized host
- *
- */
-function AutoRestParameterizedHostTestClient(options) {
-  this.host = 'host';
 
-  if (!options) options = {};
+/** Class representing a AutoRestParameterizedHostTestClient. */
+class AutoRestParameterizedHostTestClient extends ServiceClient {
+  /**
+   * Create a AutoRestParameterizedHostTestClient.
+   * @param {object} [options] - The parameter options
+   * @param {Array} [options.filters] - Filters to be added to the request pipeline
+   * @param {object} [options.requestOptions] - Options for the underlying request object
+   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
+       * @param {string} [options.host] - A string value that is used as a global part of the parameterized host
+   */
+  constructor(options) {
 
-  AutoRestParameterizedHostTestClient['super_'].call(this, null, options);
-  this.baseUri = 'http://{accountName}{host}';
+    if (!options) options = {};
 
-  if(options.host !== null && options.host !== undefined) {
-    this.host = options.host;
+    super(null, options);
+
+    this.host = 'host';
+    this.baseUri = 'http://{accountName}{host}';
+
+    let packageInfo = this.getPackageJsonInfo(__dirname);
+    this.addUserAgentInfo(`${packageInfo.name}/${packageInfo.version}`);
+    if(options.host !== null && options.host !== undefined) {
+      this.host = options.host;
+    }
+    this.paths = new operations.Paths(this);
+    this.models = models;
+    msRest.addSerializationMixin(this);
   }
-  this.paths = new operations.Paths(this);
-  this.models = models;
-  msRest.addSerializationMixin(this);
-}
 
-util.inherits(AutoRestParameterizedHostTestClient, ServiceClient);
+}
 
 module.exports = AutoRestParameterizedHostTestClient;

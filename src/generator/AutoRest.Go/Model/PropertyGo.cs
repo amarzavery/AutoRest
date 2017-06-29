@@ -10,7 +10,7 @@ namespace AutoRest.Go.Model
     {
         public PropertyGo()
         {
-            
+
         }
 
         public string JsonTag(bool omitEmpty = true)

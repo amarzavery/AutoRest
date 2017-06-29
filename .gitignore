@@ -3,8 +3,6 @@ PackageTest/NugetPackageTest/Generated
 src/generator/AutoRest.NodeJS.Tests/AcceptanceTests/*.js
 
 ## Ignore user-specific files, temporary files, build results, etc.
-AutoRest/**/Templates/*.cs
-src/**/Templates/**/*.cs
 compare-results/*
 
 # User-specific files
@@ -12,7 +10,6 @@ compare-results/*
 *.user
 *.sln.docstates
 .vs
-developer/
 launchSettings.json
 
 # Build results
@@ -201,5 +198,27 @@ src/generator/AutoRest.Go.Tests/src/tests/generated/*
 src/generator/AutoRest.Go.Tests/src/tests/vendor/*
 src/generator/AutoRest.Go.Tests/src/tests/glide.lock
 
+src/autorest/**/*.js
+src/autorest-core/**/*.js
+src/vscode-autorest/**/*.js
+
+*.js.map
+
+# backup files
+*~
+
 #client runtime
 src/client/**/*
+
+src/extension/old/**/*
+*.d.ts
+
+src/bootstrapper
+src/extension/out
+src/next-gen
+
+package/nuget/tools
+package/chocolatey/*.nupkg
+
+# npm (we do want to test for most recent versions)
+**/package-lock.json

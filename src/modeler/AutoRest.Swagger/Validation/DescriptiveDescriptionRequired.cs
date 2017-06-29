@@ -1,12 +1,14 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
-using AutoRest.Core.Validation;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AutoRest.Core.Logging;
 using AutoRest.Core.Properties;
+using AutoRest.Core.Utilities;
+using AutoRest.Swagger.Validation.Core;
+using AutoRest.Swagger.Model;
 
 namespace AutoRest.Swagger.Validation
 {
@@ -22,11 +24,11 @@ namespace AutoRest.Swagger.Validation
         /// </summary>
         internal static bool IsImpermissibleValue(this string description)
         {
-            return ImpermissibleDescriptions.Any(s => s.Equals(description, System.StringComparison.InvariantCultureIgnoreCase));
+            return ImpermissibleDescriptions.Any(s => s.EqualsIgnoreCase(description));
         }
     }
 
-    public class DescriptiveDescriptionRequired : TypedRule<string>
+    public class DescriptiveDescriptionRequired : DescriptionRequired<string>
     {
         /// <summary>
         /// This test passes if the <paramref name="description"/> is not just empty or whitespace and not explictly blocked
@@ -45,9 +47,14 @@ namespace AutoRest.Swagger.Validation
         public override string MessageTemplate => Resources.DescriptionNotDescriptive;
 
         /// <summary>
-        /// The severity of this message (ie, debug/info/warning/error/fatal, etc)
+        /// What kind of open api document type this rule should be applied to
         /// </summary>
-        public override Category Severity => Category.Warning;
+        public override ServiceDefinitionDocumentType ServiceDefinitionDocumentType => ServiceDefinitionDocumentType.ARM | ServiceDefinitionDocumentType.DataPlane;
 
+        /// <summary>
+        /// The rule could be violated by a model/property referenced by many jsons belonging to the same
+        /// composed state, to reduce duplicate messages, run validation rule in composed state
+        /// </summary>
+        public override ServiceDefinitionDocumentState ValidationRuleMergeState => ServiceDefinitionDocumentState.Composed;
     }
 }

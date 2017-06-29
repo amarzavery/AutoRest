@@ -10,61 +10,61 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- *
- * @member {string} [message]
- *
- * @member {object} [parentError]
- *
+ * Class representing a ErrorModel.
  */
-function ErrorModel() {
-}
+class ErrorModel {
+  /**
+   * Create a ErrorModel.
+   * @member {number} [status]
+   * @member {string} [message]
+   * @member {object} [parentError]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ErrorModel
- *
- * @returns {object} metadata of ErrorModel
- *
- */
-ErrorModel.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Error',
-    type: {
-      name: 'Composite',
-      className: 'ErrorModel',
-      modelProperties: {
-        status: {
-          required: false,
-          serializedName: 'status',
-          type: {
-            name: 'Number'
-          }
-        },
-        message: {
-          required: false,
-          serializedName: 'message',
-          type: {
-            name: 'String'
-          }
-        },
-        parentError: {
-          required: false,
-          serializedName: 'parentError',
-          type: {
-            name: 'Composite',
-            className: 'ErrorModel'
+  /**
+   * Defines the metadata of ErrorModel
+   *
+   * @returns {object} metadata of ErrorModel
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Error',
+      type: {
+        name: 'Composite',
+        className: 'ErrorModel',
+        modelProperties: {
+          status: {
+            required: false,
+            serializedName: 'status',
+            type: {
+              name: 'Number'
+            }
+          },
+          message: {
+            required: false,
+            serializedName: 'message',
+            type: {
+              name: 'String'
+            }
+          },
+          parentError: {
+            required: false,
+            serializedName: 'parentError',
+            type: {
+              name: 'Composite',
+              className: 'ErrorModel'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ErrorModel;

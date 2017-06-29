@@ -11,39 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the IntWrapper class.
- * @constructor
- * @member {number} value
- *
+ * Class representing a IntWrapper.
  */
-function IntWrapper() {
-}
+class IntWrapper {
+  /**
+   * Create a IntWrapper.
+   * @member {number} value
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of IntWrapper
- *
- * @returns {object} metadata of IntWrapper
- *
- */
-IntWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'int-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'IntWrapper',
-      modelProperties: {
-        value: {
-          required: true,
-          serializedName: 'value',
-          type: {
-            name: 'Number'
+  /**
+   * Defines the metadata of IntWrapper
+   *
+   * @returns {object} metadata of IntWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'int-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'IntWrapper',
+        modelProperties: {
+          value: {
+            required: true,
+            serializedName: 'value',
+            type: {
+              name: 'Number'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = IntWrapper;

@@ -11,39 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the C class.
- * @constructor
- * @member {string} [httpCode]
- *
+ * Class representing a C.
  */
-function C() {
-}
+class C {
+  /**
+   * Create a C.
+   * @member {string} [httpCode]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of C
- *
- * @returns {object} metadata of C
- *
- */
-C.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'C',
-    type: {
-      name: 'Composite',
-      className: 'C',
-      modelProperties: {
-        httpCode: {
-          required: false,
-          serializedName: 'httpCode',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of C
+   *
+   * @returns {object} metadata of C
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'C',
+      type: {
+        name: 'Composite',
+        className: 'C',
+        modelProperties: {
+          httpCode: {
+            required: false,
+            serializedName: 'httpCode',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = C;

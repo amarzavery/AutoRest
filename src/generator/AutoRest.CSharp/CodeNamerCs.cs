@@ -43,6 +43,11 @@ namespace AutoRest.CSharp
                 });
         }
 
+        public override string GetEnumMemberName(string name)
+        {
+            return base.GetEnumMemberName(name.Replace('/', '-'));
+        }
+
         /// <summary>
         /// Returns true when the name comparison is a special case and should not 
         /// be used to determine name conflicts.
@@ -86,6 +91,10 @@ namespace AutoRest.CSharp
                 }
                 if (primaryType != null)
                 {
+                    if (primaryType.KnownPrimaryType == KnownPrimaryType.Double)
+                    {
+                        return double.Parse(defaultValue).ToString();
+                    }
                     if (primaryType.KnownPrimaryType == KnownPrimaryType.String)
                     {
                         return Instance.QuoteValue(defaultValue);

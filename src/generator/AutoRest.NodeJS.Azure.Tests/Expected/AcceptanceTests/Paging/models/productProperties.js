@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the ProductProperties class.
- * @constructor
- * @member {number} [id]
- *
- * @member {string} [name]
- *
+ * Class representing a ProductProperties.
  */
-function ProductProperties() {
-}
+class ProductProperties {
+  /**
+   * Create a ProductProperties.
+   * @member {number} [id]
+   * @member {string} [name]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of ProductProperties
- *
- * @returns {object} metadata of ProductProperties
- *
- */
-ProductProperties.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Product_properties',
-    type: {
-      name: 'Composite',
-      className: 'ProductProperties',
-      modelProperties: {
-        id: {
-          required: false,
-          serializedName: 'id',
-          type: {
-            name: 'Number'
-          }
-        },
-        name: {
-          required: false,
-          serializedName: 'name',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of ProductProperties
+   *
+   * @returns {object} metadata of ProductProperties
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Product_properties',
+      type: {
+        name: 'Composite',
+        className: 'ProductProperties',
+        modelProperties: {
+          id: {
+            required: false,
+            serializedName: 'id',
+            type: {
+              name: 'Number'
+            }
+          },
+          name: {
+            required: false,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = ProductProperties;

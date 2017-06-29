@@ -10,67 +10,65 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the SubProduct class.
- * @constructor
- * @member {string} [provisioningState]
- *
- * @member {string} [provisioningStateValues] Possible values include:
- * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
- * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- *
+ * Class representing a SubProduct.
+ * @extends models['SubResource']
  */
-function SubProduct() {
-  SubProduct['super_'].call(this);
-}
+class SubProduct extends models['SubResource'] {
+  /**
+   * Create a SubProduct.
+   * @member {string} [provisioningState]
+   * @member {string} [provisioningStateValues] Possible values include:
+   * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
+   * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+   */
+  constructor() {
+    super();
+  }
 
-util.inherits(SubProduct, models['SubResource']);
-
-/**
- * Defines the metadata of SubProduct
- *
- * @returns {object} metadata of SubProduct
- *
- */
-SubProduct.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'SubProduct',
-    type: {
-      name: 'Composite',
-      className: 'SubProduct',
-      modelProperties: {
-        id: {
-          required: false,
-          readOnly: true,
-          serializedName: 'id',
-          type: {
-            name: 'String'
-          }
-        },
-        provisioningState: {
-          required: false,
-          serializedName: 'properties.provisioningState',
-          type: {
-            name: 'String'
-          }
-        },
-        provisioningStateValues: {
-          required: false,
-          readOnly: true,
-          serializedName: 'properties.provisioningStateValues',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of SubProduct
+   *
+   * @returns {object} metadata of SubProduct
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'SubProduct',
+      type: {
+        name: 'Composite',
+        className: 'SubProduct',
+        modelProperties: {
+          id: {
+            required: false,
+            readOnly: true,
+            serializedName: 'id',
+            type: {
+              name: 'String'
+            }
+          },
+          provisioningState: {
+            required: false,
+            serializedName: 'properties.provisioningState',
+            type: {
+              name: 'String'
+            }
+          },
+          provisioningStateValues: {
+            required: false,
+            readOnly: true,
+            serializedName: 'properties.provisioningStateValues',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = SubProduct;

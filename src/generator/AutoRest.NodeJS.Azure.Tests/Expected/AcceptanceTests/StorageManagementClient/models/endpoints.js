@@ -10,87 +10,82 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the Endpoints class.
- * @constructor
  * The URIs that are used to perform a retrieval of a public blob, queue or
  * table object.
  *
- * @member {string} [blob] Gets the blob endpoint.
- *
- * @member {string} [queue] Gets the queue endpoint.
- *
- * @member {string} [table] Gets the table endpoint.
- *
- * @member {object} [dummyEndPoint] Dummy EndPoint
- *
- * @member {object} [fooPoint] Foo point
- *
- * @member {object} [fooPoint.barPoint] Bar point
- *
- * @member {object} [fooPoint.barPoint.recursivePoint] Recursive Endpoints
- *
  */
-function Endpoints() {
-}
+class Endpoints {
+  /**
+   * Create a Endpoints.
+   * @member {string} [blob] Gets the blob endpoint.
+   * @member {string} [queue] Gets the queue endpoint.
+   * @member {string} [table] Gets the table endpoint.
+   * @member {object} [dummyEndPoint] Dummy EndPoint
+   * @member {object} [fooPoint] Foo point
+   * @member {object} [fooPoint.barPoint] Bar point
+   * @member {object} [fooPoint.barPoint.recursivePoint] Recursive Endpoints
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Endpoints
- *
- * @returns {object} metadata of Endpoints
- *
- */
-Endpoints.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Endpoints',
-    type: {
-      name: 'Composite',
-      className: 'Endpoints',
-      modelProperties: {
-        blob: {
-          required: false,
-          serializedName: 'blob',
-          type: {
-            name: 'String'
-          }
-        },
-        queue: {
-          required: false,
-          serializedName: 'queue',
-          type: {
-            name: 'String'
-          }
-        },
-        table: {
-          required: false,
-          serializedName: 'table',
-          type: {
-            name: 'String'
-          }
-        },
-        dummyEndPoint: {
-          required: false,
-          serializedName: 'dummyEndPoint',
-          type: {
-            name: 'Composite',
-            className: 'Endpoints'
-          }
-        },
-        fooPoint: {
-          required: false,
-          serializedName: 'FooPoint',
-          type: {
-            name: 'Composite',
-            className: 'Foo'
+  /**
+   * Defines the metadata of Endpoints
+   *
+   * @returns {object} metadata of Endpoints
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Endpoints',
+      type: {
+        name: 'Composite',
+        className: 'Endpoints',
+        modelProperties: {
+          blob: {
+            required: false,
+            serializedName: 'blob',
+            type: {
+              name: 'String'
+            }
+          },
+          queue: {
+            required: false,
+            serializedName: 'queue',
+            type: {
+              name: 'String'
+            }
+          },
+          table: {
+            required: false,
+            serializedName: 'table',
+            type: {
+              name: 'String'
+            }
+          },
+          dummyEndPoint: {
+            required: false,
+            serializedName: 'dummyEndPoint',
+            type: {
+              name: 'Composite',
+              className: 'Endpoints'
+            }
+          },
+          fooPoint: {
+            required: false,
+            serializedName: 'FooPoint',
+            type: {
+              name: 'Composite',
+              className: 'Foo'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Endpoints;

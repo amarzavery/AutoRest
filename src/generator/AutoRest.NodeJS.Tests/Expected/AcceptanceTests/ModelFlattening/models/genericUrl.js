@@ -11,41 +11,42 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the GenericUrl class.
- * @constructor
  * The Generic URL.
  *
- * @member {string} [genericValue] Generic URL value.
- *
  */
-function GenericUrl() {
-}
+class GenericUrl {
+  /**
+   * Create a GenericUrl.
+   * @member {string} [genericValue] Generic URL value.
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of GenericUrl
- *
- * @returns {object} metadata of GenericUrl
- *
- */
-GenericUrl.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'GenericUrl',
-    type: {
-      name: 'Composite',
-      className: 'GenericUrl',
-      modelProperties: {
-        genericValue: {
-          required: false,
-          serializedName: 'generic_value',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of GenericUrl
+   *
+   * @returns {object} metadata of GenericUrl
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'GenericUrl',
+      type: {
+        name: 'Composite',
+        className: 'GenericUrl',
+        modelProperties: {
+          genericValue: {
+            required: false,
+            serializedName: 'generic_value',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = GenericUrl;

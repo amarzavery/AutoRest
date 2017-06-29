@@ -8,7 +8,7 @@
 
 namespace Fixtures.AcceptanceTestsBodyString.Models
 {
-    using AcceptanceTestsBodyString;
+    using Fixtures.AcceptanceTestsBodyString;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using System.Runtime;
@@ -27,5 +27,37 @@ namespace Fixtures.AcceptanceTestsBodyString.Models
         [EnumMember(Value = "blue_color")]
         BlueColor
     }
-}
+    internal static class ColorsEnumExtension
+    {
+        internal static string ToSerializedValue(this Colors? value)  =>
+            value == null ? null : ((Colors)value).ToSerializedValue();
 
+        internal static string ToSerializedValue(this Colors value)
+        {
+            switch( value )
+            {
+                case Colors.Redcolor:
+                    return "red color";
+                case Colors.GreenColor:
+                    return "green-color";
+                case Colors.BlueColor:
+                    return "blue_color";
+            }
+            return null;
+        }
+
+        internal static Colors? ParseColors(this string value)
+        {
+            switch( value )
+            {
+                case "red color":
+                    return Colors.Redcolor;
+                case "green-color":
+                    return Colors.GreenColor;
+                case "blue_color":
+                    return Colors.BlueColor;
+            }
+            return null;
+        }
+    }
+}

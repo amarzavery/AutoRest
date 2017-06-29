@@ -11,48 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the Pet class.
- * @constructor
- * @member {number} [id]
- *
- * @member {string} [name]
- *
+ * Class representing a Pet.
  */
-function Pet() {
-}
+class Pet {
+  /**
+   * Create a Pet.
+   * @member {number} [id]
+   * @member {string} [name]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Pet
- *
- * @returns {object} metadata of Pet
- *
- */
-Pet.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'pet',
-    type: {
-      name: 'Composite',
-      className: 'Pet',
-      modelProperties: {
-        id: {
-          required: false,
-          serializedName: 'id',
-          type: {
-            name: 'Number'
-          }
-        },
-        name: {
-          required: false,
-          serializedName: 'name',
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of Pet
+   *
+   * @returns {object} metadata of Pet
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'pet',
+      type: {
+        name: 'Composite',
+        className: 'Pet',
+        modelProperties: {
+          id: {
+            required: false,
+            serializedName: 'id',
+            type: {
+              name: 'Number'
+            }
+          },
+          name: {
+            required: false,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Pet;

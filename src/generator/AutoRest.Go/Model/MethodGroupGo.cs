@@ -28,7 +28,7 @@ namespace AutoRest.Go.Model
         public string ConstGlobalDefaultParameters;
         public IEnumerable<string> Imports { get; private set; }
 
-        public MethodGroupGo(string name): base(name)
+        public MethodGroupGo(string name) : base(name)
         {
         }
 

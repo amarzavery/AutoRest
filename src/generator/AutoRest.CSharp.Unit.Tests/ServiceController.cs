@@ -2,14 +2,10 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 using System;
-using System.Configuration;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using Microsoft.Extensions.Logging;
-#if PORTABLE
-
-#endif
 
 namespace AutoRest.CSharp.Unit.Tests
 {
@@ -86,15 +82,6 @@ namespace AutoRest.CSharp.Unit.Tests
             EnsureService();
         }
 
-#if PORTABLE
-        private static readonly ILogger _logger;
-        static ServiceController()
-        {
-            var factory = new LoggerFactory();
-            _logger = factory.CreateLogger<ServiceController>();
-            factory.AddConsole();
-        }
-#endif
         /// <summary>
         /// Directory containing the acceptance test files.
         /// </summary>
@@ -106,7 +93,7 @@ namespace AutoRest.CSharp.Unit.Tests
                 if (!Directory.Exists(serverPath))
                 {
                     // otherwise walk up the path till we find a folder 
-                    serverPath = FindFolderByWalkingUpPath(@"dev\TestServer\server");
+                    serverPath = FindFolderByWalkingUpPath(Path.Combine("dev", "TestServer", "server"));
                     if (serverPath == null)
                     {
                         throw new Exception("Unable to find TestServerPath.\r\n");
@@ -121,7 +108,7 @@ namespace AutoRest.CSharp.Unit.Tests
         {
             try
             {
-                currentDirectory = currentDirectory ?? Environment.CurrentDirectory;
+                currentDirectory = currentDirectory ?? System.IO.Directory.GetCurrentDirectory();
                 if (!string.IsNullOrEmpty(currentDirectory))
                 {
                     try
@@ -285,11 +272,7 @@ namespace AutoRest.CSharp.Unit.Tests
             startInfo.UseShellExecute = false;
             startInfo.FileName = path;
             startInfo.Arguments = arguments;
-#if PORTABLE
             startInfo.Environment["PORT"] = Port.ToString(CultureInfo.InvariantCulture);
-#else
-            startInfo.EnvironmentVariables["PORT"] = Port.ToString(CultureInfo.InvariantCulture);
-#endif
             process.OutputDataReceived += _listener.ProcessOutput;
             process.ErrorDataReceived += _listener.ProcessError;
             process.Start();

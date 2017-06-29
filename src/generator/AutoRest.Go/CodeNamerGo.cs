@@ -26,17 +26,25 @@ namespace AutoRest.Go
             }
         }
 
-        public virtual IEnumerable<string> AutorestImports => new string[] { "github.com/Azure/go-autorest/autorest" };
+        public virtual IEnumerable<string> AutorestImports => new string[] { PrimaryTypeGo.GetImportLine(package: "github.com/Azure/go-autorest/autorest") };
 
-        public virtual IEnumerable<string> StandardImports => new string[] { "github.com/Azure/go-autorest/autorest/azure", "net/http" };
+        public virtual IEnumerable<string> StandardImports => new string[] 
+        { 
+            PrimaryTypeGo.GetImportLine(package: "github.com/Azure/go-autorest/autorest/azure"), 
+            PrimaryTypeGo.GetImportLine(package: "net/http") 
+        };
 
-        public virtual IEnumerable<string> PageableImports => new string[] { "net/http", "github.com/Azure/go-autorest/autorest/to" };
+        public virtual IEnumerable<string> PageableImports => new string[] 
+        { 
+            PrimaryTypeGo.GetImportLine(package: "net/http"), 
+            PrimaryTypeGo.GetImportLine(package: "github.com/Azure/go-autorest/autorest/to") 
+        };
 
-        public virtual IEnumerable<string> ValidationImport => new string[] { "github.com/Azure/go-autorest/autorest/validation" };
+        public virtual IEnumerable<string> ValidationImport => new string[] { PrimaryTypeGo.GetImportLine(package: "github.com/Azure/go-autorest/autorest/validation") };
 
         // CommonInitialisms are those "words" within a name that Golint expects to be uppercase.
         // See https://github.com/golang/lint/blob/master/lint.go for detail.
-        private string[] CommonInitialisms => new string[] {
+        private HashSet<string> CommonInitialisms => new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
                                                             "Acl",
                                                             "Api",
                                                             "Ascii",
@@ -90,7 +98,6 @@ namespace AutoRest.Go
         public IReadOnlyDictionary<HttpStatusCode, string> StatusCodeToGoString;
 
 
-        private static readonly Regex semVerPattern = new Regex(@"^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)(?:-(?<tag>\S+))?$", RegexOptions.Compiled);
 
         /// <summary>
         /// Initializes a new instance of CodeNamerGo.
@@ -324,7 +331,7 @@ namespace AutoRest.Go
         }
 
         /// <summary>
-        /// Formats a string for naming method parameters using GetVariableName Camel case by default.
+        /// Formats a string for naming method parameters using Camel case by default.
         /// </summary>
         /// <param name="name"></param>
         /// <returns>The formatted string.</returns>
@@ -333,6 +340,10 @@ namespace AutoRest.Go
             if (string.IsNullOrWhiteSpace(name))
             {
                 return name;
+            }
+            if (Extensions.StartsWithAcronym(name))
+            {
+                return EnsureNameCase(GetEscapedReservedName((RemoveInvalidCharacters(name).ToLower()), "Parameter"));
             }
             return EnsureNameCase(GetEscapedReservedName(CamelCase(RemoveInvalidCharacters(name)), "Parameter"));
         }
@@ -419,32 +430,28 @@ namespace AutoRest.Go
         private string EnsureNameCase(string name)
         {
             var builder = new StringBuilder();
-            foreach (var s in name.ToWords())
+            var words = name.ToWords();
+            for (int i = 0; i < words.Length; i++)
             {
-                builder.Append(CommonInitialisms.Contains(s) ? s.ToUpper() : s);
+                string word = words[i];
+                if (CommonInitialisms.Contains(word))
+                {
+                    word = word.ToUpper();
+                }
+                else if (i < words.Length-1)
+                {
+                    // This ensures that names like `ClusterUsersGroupDNs`
+                    // get propery cased to `ClusterUsersGroupDNS`
+                    var concat = words[i] + words[i+1];
+                    if (CommonInitialisms.Contains(concat.ToLower()))
+                    {
+                        word = concat.ToUpper();
+                        i++;
+                    }
+                }
+                builder.Append(word);
             }
             return builder.ToString();
-        }
-
-        public static string[] SDKVersionFromPackageVersion(string v)
-        {
-            if (string.IsNullOrEmpty(v))
-            {
-                throw new ArgumentNullException("package version");
-            }
-
-            var ver = semVerPattern.Match(v);
-
-            if (ver.Success)
-            {
-                var tagVal = ver.Groups["tag"].Success ? ver.Groups["tag"].Value : "";
-                return new[] { ver.Groups["major"].Value, ver.Groups["minor"].Value, ver.Groups["patch"].Value, tagVal };
-                 
-            }
-            throw new ArgumentException(
-                paramName: nameof(v),
-                message: "Version strings should be either of the format \"<major>.<minor>.<patch>\" or \"<major>.<minor>.<patch>-<tag>\". Where major, minor, and patch are decimal numbers and tag does not include whitespace.");
-
         }
 
         public override string EscapeDefaultValue(string defaultValue, IModelType type)

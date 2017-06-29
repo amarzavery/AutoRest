@@ -10,47 +10,47 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the Product class.
- * @constructor
- * @member {object} [properties]
- *
- * @member {number} [properties.id]
- *
- * @member {string} [properties.name]
- *
+ * Class representing a Product.
  */
-function Product() {
-}
+class Product {
+  /**
+   * Create a Product.
+   * @member {object} [properties]
+   * @member {number} [properties.id]
+   * @member {string} [properties.name]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Product
- *
- * @returns {object} metadata of Product
- *
- */
-Product.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Product',
-    type: {
-      name: 'Composite',
-      className: 'Product',
-      modelProperties: {
-        properties: {
-          required: false,
-          serializedName: 'properties',
-          type: {
-            name: 'Composite',
-            className: 'ProductProperties'
+  /**
+   * Defines the metadata of Product
+   *
+   * @returns {object} metadata of Product
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Product',
+      type: {
+        name: 'Composite',
+        className: 'Product',
+        modelProperties: {
+          properties: {
+            required: false,
+            serializedName: 'properties',
+            type: {
+              name: 'Composite',
+              className: 'ProductProperties'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Product;

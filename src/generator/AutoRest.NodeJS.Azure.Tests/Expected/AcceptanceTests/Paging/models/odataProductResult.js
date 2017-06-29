@@ -10,61 +10,59 @@
 
 'use strict';
 
-var util = require('util');
-
 /**
- * @class
- * Initializes a new instance of the OdataProductResult class.
- * @constructor
- * @member {array} [values]
- *
- * @member {string} [odatanextLink]
- *
+ * Class representing a OdataProductResult.
  */
-function OdataProductResult() {
-}
+class OdataProductResult extends Array {
+  /**
+   * Create a OdataProductResult.
+   * @member {array} [values]
+   * @member {string} [odatanextLink]
+   */
+  constructor() {
+    super();
+  }
 
-util.inherits(OdataProductResult, Array);
-
-/**
- * Defines the metadata of OdataProductResult
- *
- * @returns {object} metadata of OdataProductResult
- *
- */
-OdataProductResult.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'OdataProductResult',
-    type: {
-      name: 'Composite',
-      className: 'OdataProductResult',
-      modelProperties: {
-        values: {
-          required: false,
-          serializedName: '',
-          type: {
-            name: 'Sequence',
-            element: {
-                required: false,
-                serializedName: 'ProductElementType',
-                type: {
-                  name: 'Composite',
-                  className: 'Product'
-                }
+  /**
+   * Defines the metadata of OdataProductResult
+   *
+   * @returns {object} metadata of OdataProductResult
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'OdataProductResult',
+      type: {
+        name: 'Composite',
+        className: 'OdataProductResult',
+        modelProperties: {
+          values: {
+            required: false,
+            serializedName: '',
+            type: {
+              name: 'Sequence',
+              element: {
+                  required: false,
+                  serializedName: 'ProductElementType',
+                  type: {
+                    name: 'Composite',
+                    className: 'Product'
+                  }
+              }
             }
-          }
-        },
-        odatanextLink: {
-          required: false,
-          serializedName: 'odata\\.nextLink',
-          type: {
-            name: 'String'
+          },
+          odatanextLink: {
+            required: false,
+            serializedName: 'odata\\.nextLink',
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = OdataProductResult;

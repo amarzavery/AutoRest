@@ -11,49 +11,49 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the CustomParameterGroup class.
- * @constructor
  * Additional parameters for a set of operations, such as:
  * Paging_getMultiplePagesFragmentWithGroupingNextLink,
  * Paging_nextFragmentWithGrouping.
  *
- * @member {string} apiVersion Sets the api version to use.
- *
- * @member {string} tenant Sets the tenant to use.
- *
  */
-function CustomParameterGroup() {
-}
+class CustomParameterGroup {
+  /**
+   * Create a CustomParameterGroup.
+   * @member {string} apiVersion Sets the api version to use.
+   * @member {string} tenant Sets the tenant to use.
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of CustomParameterGroup
- *
- * @returns {object} metadata of CustomParameterGroup
- *
- */
-CustomParameterGroup.prototype.mapper = function () {
-  return {
-    required: false,
-    type: {
-      name: 'Composite',
-      className: 'CustomParameterGroup',
-      modelProperties: {
-        apiVersion: {
-          required: true,
-          type: {
-            name: 'String'
-          }
-        },
-        tenant: {
-          required: true,
-          type: {
-            name: 'String'
+  /**
+   * Defines the metadata of CustomParameterGroup
+   *
+   * @returns {object} metadata of CustomParameterGroup
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      type: {
+        name: 'Composite',
+        className: 'CustomParameterGroup',
+        modelProperties: {
+          apiVersion: {
+            required: true,
+            type: {
+              name: 'String'
+            }
+          },
+          tenant: {
+            required: true,
+            type: {
+              name: 'String'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = CustomParameterGroup;

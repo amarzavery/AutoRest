@@ -11,39 +11,41 @@
 'use strict';
 
 /**
- * @class
- * Initializes a new instance of the DurationWrapper class.
- * @constructor
- * @member {moment.duration} [field]
- *
+ * Class representing a DurationWrapper.
  */
-function DurationWrapper() {
-}
+class DurationWrapper {
+  /**
+   * Create a DurationWrapper.
+   * @member {moment.duration} [field]
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of DurationWrapper
- *
- * @returns {object} metadata of DurationWrapper
- *
- */
-DurationWrapper.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'duration-wrapper',
-    type: {
-      name: 'Composite',
-      className: 'DurationWrapper',
-      modelProperties: {
-        field: {
-          required: false,
-          serializedName: 'field',
-          type: {
-            name: 'TimeSpan'
+  /**
+   * Defines the metadata of DurationWrapper
+   *
+   * @returns {object} metadata of DurationWrapper
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'duration-wrapper',
+      type: {
+        name: 'Composite',
+        className: 'DurationWrapper',
+        modelProperties: {
+          field: {
+            required: false,
+            serializedName: 'field',
+            type: {
+              name: 'TimeSpan'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = DurationWrapper;

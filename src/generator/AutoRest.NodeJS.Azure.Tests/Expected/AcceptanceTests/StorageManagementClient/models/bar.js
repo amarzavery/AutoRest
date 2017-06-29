@@ -10,58 +10,53 @@
 
 'use strict';
 
-var models = require('./index');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the Bar class.
- * @constructor
  * The URIs that are used to perform a retrieval of a public blob, queue or
  * table object.
  *
- * @member {object} [recursivePoint] Recursive Endpoints
- *
- * @member {string} [recursivePoint.blob] Gets the blob endpoint.
- *
- * @member {string} [recursivePoint.queue] Gets the queue endpoint.
- *
- * @member {string} [recursivePoint.table] Gets the table endpoint.
- *
- * @member {object} [recursivePoint.dummyEndPoint] Dummy EndPoint
- *
- * @member {object} [recursivePoint.fooPoint] Foo point
- *
- * @member {object} [recursivePoint.fooPoint.barPoint] Bar point
- *
  */
-function Bar() {
-}
+class Bar {
+  /**
+   * Create a Bar.
+   * @member {object} [recursivePoint] Recursive Endpoints
+   * @member {string} [recursivePoint.blob] Gets the blob endpoint.
+   * @member {string} [recursivePoint.queue] Gets the queue endpoint.
+   * @member {string} [recursivePoint.table] Gets the table endpoint.
+   * @member {object} [recursivePoint.dummyEndPoint] Dummy EndPoint
+   * @member {object} [recursivePoint.fooPoint] Foo point
+   * @member {object} [recursivePoint.fooPoint.barPoint] Bar point
+   */
+  constructor() {
+  }
 
-/**
- * Defines the metadata of Bar
- *
- * @returns {object} metadata of Bar
- *
- */
-Bar.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'Bar',
-    type: {
-      name: 'Composite',
-      className: 'Bar',
-      modelProperties: {
-        recursivePoint: {
-          required: false,
-          serializedName: 'RecursivePoint',
-          type: {
-            name: 'Composite',
-            className: 'Endpoints'
+  /**
+   * Defines the metadata of Bar
+   *
+   * @returns {object} metadata of Bar
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'Bar',
+      type: {
+        name: 'Composite',
+        className: 'Bar',
+        modelProperties: {
+          recursivePoint: {
+            required: false,
+            serializedName: 'RecursivePoint',
+            type: {
+              name: 'Composite',
+              className: 'Endpoints'
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = Bar;

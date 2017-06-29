@@ -161,8 +161,7 @@ namespace AutoRest.NodeJS.Model
         public static string ConstructPropertyDocumentation(string propertyDocumentation)
         {
             var builder = new IndentedStringBuilder("  ");
-            return builder.AppendLine(propertyDocumentation)
-                          .AppendLine(" * ").ToString();
+            return builder.AppendLine(propertyDocumentation).ToString();
         }
 
         public bool ContainsPropertiesInSequenceType()
@@ -223,10 +222,14 @@ namespace AutoRest.NodeJS.Model
             }
 
             string typeString = property.ModelType.TSType(inModelsModule);
-
-            if (! property.IsRequired)
-                return property.Name + "?: " + typeString;
-            else return property.Name + ": " + typeString;
+            var propertyName = property.Name;
+            if (property.IsReadOnly)
+            {
+                propertyName = "readonly " + propertyName;
+            }
+            if (!property.IsRequired)
+                return propertyName + "?: " + typeString;
+            else return propertyName + ": " + typeString;
         }
 
         public virtual string ConstructModelMapper()
@@ -297,7 +300,7 @@ namespace AutoRest.NodeJS.Model
                 typeName = "string";
             }
 
-            return typeName.ToLower(CultureInfo.InvariantCulture);
+            return typeName.ToLowerInvariant();
         }
     }
 }

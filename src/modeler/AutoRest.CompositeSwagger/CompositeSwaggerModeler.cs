@@ -13,9 +13,6 @@ using AutoRest.Core.Logging;
 using AutoRest.Core.Utilities;
 using AutoRest.Swagger;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using AutoRest.Core.Validation;
-using System.Collections.Generic;
 using static AutoRest.Core.Utilities.DependencyInjection;
 using YamlDotNet.RepresentationModel;
 using AutoRest.Core.Parsing;
@@ -56,21 +53,21 @@ namespace AutoRest.CompositeSwagger
             for (var i = 0; i < compositeSwaggerModel.Documents.Count; i++)
             {
                 var compositeDocument = compositeSwaggerModel.Documents[i];
-                if (!Settings.FileSystem.IsCompletePath(compositeDocument) || !Settings.FileSystem.FileExists(compositeDocument))
+                if (!Settings.FileSystemInput.IsCompletePath(compositeDocument) || !Settings.FileSystemInput.FileExists(compositeDocument))
                 {
                     // Otherwise, root it from the current path
-                    compositeSwaggerModel.Documents[i] = Settings.FileSystem.MakePathRooted(Settings.InputFolder, compositeDocument);
+                    compositeSwaggerModel.Documents[i] = Settings.FileSystemInput.MakePathRooted(Settings.FileSystemInput.GetParentDir(Settings.Input), compositeDocument);
                 }
             }
 
             // construct merged swagger document
             var mergedSwagger = new YamlMappingNode();
-            mergedSwagger.Set("info", (Settings.FileSystem.ReadFileAsText(Settings.Input).ParseYaml() as YamlMappingNode)?.Get("info") as YamlMappingNode);
+            mergedSwagger.Set("info", (Settings.FileSystemInput.ReadAllText(Settings.Input).ParseYaml() as YamlMappingNode)?.Get("info") as YamlMappingNode);
 
             // merge child swaggers
             foreach (var childSwaggerPath in compositeSwaggerModel.Documents)
             {
-                var childSwaggerRaw = Settings.FileSystem.ReadFileAsText(childSwaggerPath);
+                var childSwaggerRaw = Settings.FileSystemInput.ReadAllText(childSwaggerPath);
                 childSwaggerRaw = SwaggerParser.Normalize(childSwaggerPath, childSwaggerRaw);
                 var childSwagger = childSwaggerRaw.ParseYaml() as YamlMappingNode;
                 if (childSwagger == null)
@@ -128,7 +125,7 @@ namespace AutoRest.CompositeSwagger
         
         private CompositeServiceDefinition Parse(string input)
         {
-            var inputBody = Settings.FileSystem.ReadFileAsText(input);
+            var inputBody = Settings.FileSystemInput.ReadAllText(input);
             try
             {
                 var settings = new JsonSerializerSettings
@@ -143,15 +140,6 @@ namespace AutoRest.CompositeSwagger
                 throw ErrorManager.CreateError(string.Format(CultureInfo.InvariantCulture, "{0}. {1}",
                     Resources.ErrorParsingSpec, ex.Message), ex);
             }
-        }
-        
-        /// <summary>
-        /// Copares two versions of the same service specification.
-        /// </summary>
-        /// <returns></returns>
-        public override IEnumerable<ComparisonMessage> Compare()
-        {
-            throw new NotImplementedException("Version comparison of compositions. Please run the comparison on individual specifications");
         }
     }
 }

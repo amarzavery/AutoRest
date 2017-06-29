@@ -10,97 +10,95 @@
 
 'use strict';
 
-var models = require('./index');
-
-var util = require('util');
+const models = require('./index');
 
 /**
- * @class
- * Initializes a new instance of the StorageAccountCreateParameters class.
- * @constructor
  * The parameters to provide for the account.
  *
- * @member {string} [accountType] Gets or sets the account type. Possible
- * values include: 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS',
- * 'Standard_RAGRS', 'Premium_LRS'
- *
+ * @extends models['Resource']
  */
-function StorageAccountCreateParameters() {
-  StorageAccountCreateParameters['super_'].call(this);
-}
+class StorageAccountCreateParameters extends models['Resource'] {
+  /**
+   * Create a StorageAccountCreateParameters.
+   * @member {string} [accountType] Gets or sets the account type. Possible
+   * values include: 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS',
+   * 'Standard_RAGRS', 'Premium_LRS'
+   */
+  constructor() {
+    super();
+  }
 
-util.inherits(StorageAccountCreateParameters, models['Resource']);
-
-/**
- * Defines the metadata of StorageAccountCreateParameters
- *
- * @returns {object} metadata of StorageAccountCreateParameters
- *
- */
-StorageAccountCreateParameters.prototype.mapper = function () {
-  return {
-    required: false,
-    serializedName: 'StorageAccountCreateParameters',
-    type: {
-      name: 'Composite',
-      className: 'StorageAccountCreateParameters',
-      modelProperties: {
-        id: {
-          required: false,
-          readOnly: true,
-          serializedName: 'id',
-          type: {
-            name: 'String'
-          }
-        },
-        name: {
-          required: false,
-          readOnly: true,
-          serializedName: 'name',
-          type: {
-            name: 'String'
-          }
-        },
-        type: {
-          required: false,
-          readOnly: true,
-          serializedName: 'type',
-          type: {
-            name: 'String'
-          }
-        },
-        location: {
-          required: true,
-          serializedName: 'location',
-          type: {
-            name: 'String'
-          }
-        },
-        tags: {
-          required: false,
-          serializedName: 'tags',
-          type: {
-            name: 'Dictionary',
-            value: {
-                required: false,
-                serializedName: 'StringElementType',
-                type: {
-                  name: 'String'
-                }
+  /**
+   * Defines the metadata of StorageAccountCreateParameters
+   *
+   * @returns {object} metadata of StorageAccountCreateParameters
+   *
+   */
+  mapper() {
+    return {
+      required: false,
+      serializedName: 'StorageAccountCreateParameters',
+      type: {
+        name: 'Composite',
+        className: 'StorageAccountCreateParameters',
+        modelProperties: {
+          id: {
+            required: false,
+            readOnly: true,
+            serializedName: 'id',
+            type: {
+              name: 'String'
             }
-          }
-        },
-        accountType: {
-          required: false,
-          serializedName: 'properties.accountType',
+          },
+          name: {
+            required: false,
+            readOnly: true,
+            serializedName: 'name',
+            type: {
+              name: 'String'
+            }
+          },
           type: {
-            name: 'Enum',
-            allowedValues: [ 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS', 'Standard_RAGRS', 'Premium_LRS' ]
+            required: false,
+            readOnly: true,
+            serializedName: 'type',
+            type: {
+              name: 'String'
+            }
+          },
+          location: {
+            required: true,
+            serializedName: 'location',
+            type: {
+              name: 'String'
+            }
+          },
+          tags: {
+            required: false,
+            serializedName: 'tags',
+            type: {
+              name: 'Dictionary',
+              value: {
+                  required: false,
+                  serializedName: 'StringElementType',
+                  type: {
+                    name: 'String'
+                  }
+              }
+            }
+          },
+          accountType: {
+            required: false,
+            serializedName: 'properties.accountType',
+            type: {
+              name: 'Enum',
+              allowedValues: [ 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS', 'Standard_RAGRS', 'Premium_LRS' ]
+            }
           }
         }
       }
-    }
-  };
-};
+    };
+  }
+}
 
 module.exports = StorageAccountCreateParameters;

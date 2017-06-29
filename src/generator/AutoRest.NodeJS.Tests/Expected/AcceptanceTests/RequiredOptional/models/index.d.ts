@@ -8,15 +8,15 @@
  * regenerated.
  */
 
+import * as moment from "moment";
+
 
 /**
  * @class
  * Initializes a new instance of the ErrorModel class.
  * @constructor
  * @member {number} [status]
- *
  * @member {string} [message]
- *
  */
 export interface ErrorModel {
   status?: number;
@@ -28,7 +28,6 @@ export interface ErrorModel {
  * Initializes a new instance of the IntWrapper class.
  * @constructor
  * @member {number} value
- *
  */
 export interface IntWrapper {
   value: number;
@@ -39,7 +38,6 @@ export interface IntWrapper {
  * Initializes a new instance of the IntOptionalWrapper class.
  * @constructor
  * @member {number} [value]
- *
  */
 export interface IntOptionalWrapper {
   value?: number;
@@ -50,7 +48,6 @@ export interface IntOptionalWrapper {
  * Initializes a new instance of the StringWrapper class.
  * @constructor
  * @member {string} value
- *
  */
 export interface StringWrapper {
   value: string;
@@ -61,7 +58,6 @@ export interface StringWrapper {
  * Initializes a new instance of the StringOptionalWrapper class.
  * @constructor
  * @member {string} [value]
- *
  */
 export interface StringOptionalWrapper {
   value?: string;
@@ -72,7 +68,6 @@ export interface StringOptionalWrapper {
  * Initializes a new instance of the ArrayWrapper class.
  * @constructor
  * @member {array} value
- *
  */
 export interface ArrayWrapper {
   value: string[];
@@ -83,7 +78,6 @@ export interface ArrayWrapper {
  * Initializes a new instance of the ArrayOptionalWrapper class.
  * @constructor
  * @member {array} [value]
- *
  */
 export interface ArrayOptionalWrapper {
   value?: string[];
@@ -94,9 +88,7 @@ export interface ArrayOptionalWrapper {
  * Initializes a new instance of the Product class.
  * @constructor
  * @member {number} id
- *
  * @member {string} [name]
- *
  */
 export interface Product {
   id: number;
@@ -108,11 +100,8 @@ export interface Product {
  * Initializes a new instance of the ClassWrapper class.
  * @constructor
  * @member {object} value
- *
  * @member {number} [value.id]
- *
  * @member {string} [value.name]
- *
  */
 export interface ClassWrapper {
   value: Product;
@@ -123,11 +112,8 @@ export interface ClassWrapper {
  * Initializes a new instance of the ClassOptionalWrapper class.
  * @constructor
  * @member {object} [value]
- *
  * @member {number} [value.id]
- *
  * @member {string} [value.name]
- *
  */
 export interface ClassOptionalWrapper {
   value?: Product;
