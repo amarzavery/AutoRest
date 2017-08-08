@@ -1,0 +1,14 @@
+﻿@using System.Linq
+@using AutoRest.TypeScript.Templates
+@inherits AutoRest.Core.Template<AutoRest.TypeScript.Model.CodeModelTS>
+/*
+@Header(" * ")
+ */
+@EmptyLine
+var internalMappers: any = {};
+@foreach (var model in Model.OrderedModelTemplateModels)
+{
+@EmptyLine
+@:@(Include(new MapperTemplate(), model))
+}
+export const Mappers = internalMappers;
