@@ -46,7 +46,8 @@ namespace AutoRest
         "java",
         "azureresourceschema",
         "csharp-simplifier",
-        "jsonrpcclient"
+        "jsonrpcclient",
+        "typescript"
       };
     }
 
@@ -59,6 +60,7 @@ namespace AutoRest
         case "csharp":
         case "ruby":
         case "nodejs":
+        case "typescript":
         case "python":
         case "go":
         case "java":

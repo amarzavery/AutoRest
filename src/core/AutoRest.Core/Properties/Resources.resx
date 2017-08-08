@@ -136,6 +136,8 @@
     TypeName: PluginRba, AutoRest.Ruby.Azure
   NodeJS:
     TypeName: PluginJs, AutoRest.NodeJS
+  TypeScript:
+    TypeName: PluginTS, AutoRest.TypeScript
   Azure.NodeJS:
     TypeName: PluginJsa, AutoRest.NodeJS.Azure
   Python:

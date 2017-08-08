@@ -55,7 +55,8 @@ public class Generator : NewPlugin
             "Go",
             "Java",
             "AzureResourceSchema",
-            "JsonRpcClient" }
+            "JsonRpcClient",
+            "TypeScript" }
           .Where(x => x.ToLowerInvariant() == codeGenerator)
           .FirstOrDefault();
 

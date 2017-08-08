@@ -196,6 +196,44 @@ output-artifact:
 - source-file-nodejs
 ```
 
+## TypeScript
+
+``` yaml
+pipeline:
+  typescript/modeler:
+    input: swagger-document/identity
+    output-artifact: code-model-v1
+    scope: typescript
+  typescript/commonmarker:
+    input: modeler
+    output-artifact: code-model-v1
+  typescript/cm/transform:
+    input: commonmarker
+    output-artifact: code-model-v1
+  typescript/cm/emitter:
+    input: transform
+    scope: scope-cm/emitter
+  typescript/generate:
+    plugin: typescript
+    input: 
+      - swagger-document/identity
+      - cm/transform
+    output-artifact: source-file-typescript
+  typescript/transform:
+    input: generate
+    output-artifact: source-file-typescript
+  typescript/emitter:
+    input: transform
+    scope: scope-typescript/emitter
+
+scope-typescript/emitter:
+  input-artifact: source-file-typescript
+  output-uri-expr: $key.split("/output/")[1]
+
+output-artifact:
+- source-file-typescript
+```
+
 ## Ruby
 
 ``` yaml
