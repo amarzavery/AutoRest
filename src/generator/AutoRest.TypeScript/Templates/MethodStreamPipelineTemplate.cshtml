@@ -1,23 +1,20 @@
 ﻿@using System.Linq;
 @inherits AutoRest.Core.Template<AutoRest.TypeScript.Model.MethodTS>
 // Send Request
-httpRequest.streamedResponse = true;
-return client.pipeline(httpRequest, (err, response, responseBody) => {
-  if (err) {
-    return callback(err);
-  }
-@EmptyLine
-
-  let statusCode = response.statusCode;
+httpRequest.rawResponse = true;
+let operationRes: msRest.HttpOperationResponse;
+try {
+  operationRes = await client.pipeline(httpRequest);
+  let response = operationRes.response;
+  let statusCode = response.status;
+  @EmptyLine
   if (@(Model.FailureStatusCodePredicate)) {
-    let error = new Error(`Unexpected status code: ${statusCode}`);
-    error.statusCode = response.statusCode;
+    let error = new msRest.RestError(`Unexpected status code: ${statusCode}`);
+    error.statusCode = response.status;
     error.request = msRest.stripRequest(httpRequest);
     error.response = msRest.stripResponse(response);
-    if (responseBody === '') responseBody = null;
-    let parsedErrorResponse;
+    let parsedErrorResponse = operationRes.bodyAsJson as { [key: string]: any };
     try {
-      if (responseBody !== undefined) parsedErrorResponse = JSON.parse(responseBody);
       if (parsedErrorResponse) {
         @(Model.PopulateErrorCodeAndMessage())
       }
@@ -33,14 +30,15 @@ return client.pipeline(httpRequest, (err, response, responseBody) => {
   }
     } catch (defaultError) {
       error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody ` + 
-                       `- "${responseBody}" for the default response.`;
-      return callback(error);
+                       `- "${operationRes.bodyAsText}" for the default response.`;
+      return Promise.reject(error);
     }
-    return callback(error);
+    @EmptyLine
+    return Promise.reject(error);
   }
 @EmptyLine
-
-  // Create Result
-  let result = response;
-  return callback(null, result, httpRequest, response);
-});
+} catch(error) {
+  return Promise.reject(error);
+}
+@EmptyLine
+return Promise.resolve(operationRes);

@@ -198,7 +198,7 @@ namespace AutoRest.TypeScript
                     return ConstructValidationCheck(builder, requiredTypeErrorMessage, valueReference, primary.Name).ToString();
                 }
 
-                builder.AppendLine("if ({0} !== null && {0} !== undefined && typeof {0}.valueOf() !== '{1}') {{", valueReference, lowercaseTypeName);
+                builder.AppendLine("if ({0} !== null && {0} !== undefined && msRest.isStream({0})) {{", valueReference);
                 return ConstructValidationCheck(builder, typeErrorMessage, valueReference, primary.Name).ToString();
             }
             else if (primary.KnownPrimaryType == KnownPrimaryType.String)
@@ -299,11 +299,11 @@ namespace AutoRest.TypeScript
             else if (primary.KnownPrimaryType == KnownPrimaryType.ByteArray || primary.KnownPrimaryType == KnownPrimaryType.Base64Url)  
                 return "Buffer";  
             else if (primary.KnownPrimaryType == KnownPrimaryType.Stream)  
-                return "stream.Readable";
+                return "ReadableStream";
             else if (primary.KnownPrimaryType == KnownPrimaryType.TimeSpan)
                 return "moment.Duration"; //TODO: test this, add include for it
             else if (primary.KnownPrimaryType == KnownPrimaryType.Credentials)
-                return "ServiceClientCredentials"; //TODO: test this, add include for it
+                return "msRest.ServiceClientCredentials"; //TODO: test this, add include for it
             else {
                 throw new NotImplementedException($"Type '{primary}' not implemented");
             }

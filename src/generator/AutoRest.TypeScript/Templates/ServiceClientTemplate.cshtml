@@ -8,7 +8,7 @@
 @Header(" * ")
  */
 @EmptyLine
-@Model.ConstructImport()
+import * as msRest from "ms-rest";
 import * as Models from "./models";
 import { Mappers } from "./models/mappers";
 @if (Model.MethodGroupModels.Any()) {
@@ -19,13 +19,13 @@ const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
 @{var requiredParameters = Model.Properties.Where(p => p.IsRequired && !p.IsConstant && string.IsNullOrEmpty(p.DefaultValue));}
 @{var optionalParameters = Model.Properties.Where(p => (!p.IsRequired || p.IsRequired && !string.IsNullOrEmpty(p.DefaultValue)) && !p.IsConstant);}
-@{var clientOptionType = optionalParameters.Count() > 0 ? Model.Name + "Options" : "ServiceClientOptions"; }
+@{var clientOptionType = optionalParameters.Count() > 0 ? Model.Name + "Options" : "msRest.ServiceClientOptions"; }
 @if (optionalParameters.Count() > 0)
 {
 @:/**
  @:* @(Model.Name)Options for @(Model.Name).
  @:*/
-@:interface @(Model.Name)Options extends ServiceClientOptions {
+@:interface @(Model.Name)Options extends msRest.ServiceClientOptions {
     foreach (var param in optionalParameters)
     {
   @:/**
@@ -36,15 +36,12 @@ const packageVersion = '3.0.0-preview';
 @:}
 @EmptyLine
 }
-class @(Model.Name) extends ServiceClient {
+class @(Model.Name) extends msRest.ServiceClient {
 @foreach (var property in Model.Properties)
 {
   @:@(property.Name): @property.ModelType.TSType(false);
 }
-@if (!Model.IsCustomBaseUri)
-{
-  @:baseUri: string;
-}
+  baseUri: string;
 @if (Model.MethodGroupModels.Any())
 {
   @EmptyLine
@@ -59,7 +56,7 @@ foreach (var methodGroup in Model.MethodGroupModels)
   @EmptyLine
   @:@(Include(new MethodTemplate(), method))
 }
-  serializer: Serializer;
+  serializer: msRest.Serializer;
   /**
    * @@class
    * Initializes a new instance of the @Model.Name class.
@@ -137,7 +134,7 @@ else
   {
     @:this.@(methodGroup.NameForProperty) = new operations.@(methodGroup.TypeName)(this);
   }
-    this.serializer = new Serializer(Mappers);
+    this.serializer = new msRest.Serializer(Mappers);
   }
 @foreach (var method in Model.MethodTemplateModels)
 {
