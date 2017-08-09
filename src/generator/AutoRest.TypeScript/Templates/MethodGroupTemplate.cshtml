@@ -1,0 +1,42 @@
+﻿@using System.Linq;
+@using AutoRest.TypeScript.Templates
+@inherits AutoRest.Core.Template<AutoRest.TypeScript.Model.MethodGroupTS>
+/*
+@Header(" * ")
+ */
+@EmptyLine
+'use strict';
+@EmptyLine
+import * as msRest from 'ms-rest';
+import * as Models from '../models';
+import { Mappers } from '../models/mappers';
+import { @(Model.CodeModel.Name) } from '../@(Model.CodeModel.Name.Value.Substring(0, 1).ToLower() + Model.CodeModel.Name.Value.Substring(1))';
+
+const WebResource = msRest.WebResource;
+@if (Model.ContainsTimeSpan)
+{
+@:import * as moment from 'moment';
+}
+@EmptyLine
+/** Class representing a @(Model.TypeName). */
+export class @(Model.TypeName) {
+  private readonly client: StorageManagementClient;
+  /**
+   * Create a @Model.TypeName.
+   * @@param {@Model.CodeModel.Name} client Reference to the service client.
+   */
+  constructor(client: @(Model.CodeModel.Name)) {
+    this.client = client;
+  }
+@EmptyLine
+@foreach (var method in Model.MethodTemplateModels)
+{
+    @:@(Include(new MethodTemplate(), method))
+    @EmptyLine
+}
+@foreach (var method in Model.MethodTemplateModels)
+{
+  @:@(Include(new MethodCallbackWrapperTemplate(), method))
+  @EmptyLine
+}
+}

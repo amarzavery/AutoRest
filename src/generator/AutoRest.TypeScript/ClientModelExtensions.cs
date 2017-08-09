@@ -530,7 +530,7 @@ namespace AutoRest.TypeScript
                     tsType = compositeName.Substring(compositeName.IndexOf('.') + 1);
                 else if (inModelsModule || compositeName.Contains('.'))
                     tsType = compositeName;
-                else tsType = "models." + compositeName;
+                else tsType = "Models." + compositeName;
             }
             else if (sequence != null)
             {

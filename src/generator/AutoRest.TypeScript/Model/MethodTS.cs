@@ -265,7 +265,7 @@ namespace AutoRest.TypeScript.Model
                 {
                     parameters.Append(", ");
                 }
-                parameters.Append("callback: ServiceCallback<" + ReturnTypeTSString + ">");
+                parameters.Append("callback: msRest.ServiceCallback<" + ReturnTypeTSString + ">");
             }
             return parameters.ToString();
         }
@@ -416,11 +416,11 @@ namespace AutoRest.TypeScript.Model
             {
                 var builder = new IndentedStringBuilder("  ");
                 var errorVariable = this.GetUniqueName("deserializationError");
-                return builder.AppendLine("let {0} = new Error(`Error ${{error}} occurred in " +
-                    "deserializing the responseBody - ${{responseBody}}`);", errorVariable)
+                return builder.AppendLine("let {0} = new msRest.RestError(`Error ${{error}} occurred in " +
+                    "deserializing the responseBody - ${{operationRes.bodyAsText}}`);", errorVariable)
                     .AppendLine("{0}.request = msRest.stripRequest(httpRequest);", errorVariable)
                     .AppendLine("{0}.response = msRest.stripResponse(response);", errorVariable)
-                    .AppendLine("return callback({0});", errorVariable).ToString();
+                    .AppendLine("return Promise.reject({0});", errorVariable).ToString();
             }
         }
 
@@ -494,13 +494,13 @@ namespace AutoRest.TypeScript.Model
             var builder = new IndentedStringBuilder("  ");
             if (type is CompositeType)
             {
-                builder.AppendLine("let resultMapper = new client.models['{0}']().mapper();", type.Name);
+                builder.AppendLine("let resultMapper = Mappers.{0};", type.Name);
             }
             else
             {
                 builder.AppendLine("let resultMapper = {{{0}}};", type.ConstructMapper(responseVariable, null, false, false));
             }
-            builder.AppendLine("{1} = client.deserialize(resultMapper, {0}, '{1}');", responseVariable, valueReference);
+            builder.AppendLine("{1} = client.serializer.deserialize(resultMapper, {0}, '{1}');", responseVariable, valueReference);
             return builder.ToString();
         }
 
@@ -546,11 +546,9 @@ namespace AutoRest.TypeScript.Model
             }
 
             var builder = new IndentedStringBuilder("  ");
-            builder.AppendLine("let {0} = null;", responseVariable)
+            builder.AppendLine("let {0} = operationRes.bodyAsJson as {{ [key: string]: any }};", responseVariable)
                    .AppendLine("try {")
-                   .Indent()
-                     .AppendLine("{0} = JSON.parse(responseBody);", responseVariable)
-                     .AppendLine("{0} = JSON.parse(responseBody);", valueReference);
+                   .Indent();
             var deserializeBody = GetDeserializationString(type, valueReference, responseVariable);
             if (!string.IsNullOrWhiteSpace(deserializeBody))
             {
@@ -715,7 +713,7 @@ namespace AutoRest.TypeScript.Model
                 var builder = new IndentedStringBuilder("  ");
                 if (RequestBody.ModelType is CompositeType)
                 {
-                    builder.AppendLine("let requestModelMapper = new client.models['{0}']().mapper();", RequestBody.ModelType.Name);
+                    builder.AppendLine("let requestModelMapper = Mappers.{0};", RequestBody.ModelType.Name);
                 }
                 else
                 {
@@ -855,7 +853,7 @@ namespace AutoRest.TypeScript.Model
             var builder = new IndentedStringBuilder("  ");
             foreach (var transformation in InputParameterTransformation)
             {
-                builder.AppendLine("let {0};",
+                builder.AppendLine("let {0}: any",
                         transformation.OutputParameter.Name);
 
                 builder.AppendLine("if ({0}) {{", BuildNullCheckExpression(transformation))
@@ -864,9 +862,8 @@ namespace AutoRest.TypeScript.Model
                 if (transformation.ParameterMappings.Any(m => !string.IsNullOrEmpty(m.OutputParameterProperty)) &&
                     transformation.OutputParameter.ModelType is CompositeType)
                 {
-                    builder.AppendLine("{0} = new client.models['{1}']();",
-                        transformation.OutputParameter.Name,
-                        transformation.OutputParameter.ModelType.Name);
+                    builder.AppendLine("{0} = {{}};",
+                        transformation.OutputParameter.Name);
                 }
 
                 foreach (var mapping in transformation.ParameterMappings)
@@ -892,13 +889,13 @@ namespace AutoRest.TypeScript.Model
                     if (transformation.OutputParameter.ModelType is CompositeType &&
                         transformation.OutputParameter.IsRequired)
                     {
-                        builder.AppendLine("let {0} = new client.models['{1}']();",
+                        builder.AppendLine("let {0}: any = {{}};",
                             transformation.OutputParameter.Name,
                             transformation.OutputParameter.ModelType.Name);
                     }
                     else
                     {
-                        builder.AppendLine("let {0};", transformation.OutputParameter.Name);
+                        builder.AppendLine("let {0}: any;", transformation.OutputParameter.Name);
                     }
 
                 }
@@ -915,7 +912,7 @@ namespace AutoRest.TypeScript.Model
                         //required outputParameter is initialized at the time of declaration
                         if (!transformation.OutputParameter.IsRequired)
                         {
-                            builder.AppendLine("{0} = new client.models['{1}']();",
+                            builder.AppendLine("{0}: any = {{}};",
                                 transformation.OutputParameter.Name,
                                 transformation.OutputParameter.ModelType.Name);
                         }
@@ -939,7 +936,7 @@ namespace AutoRest.TypeScript.Model
                 builder.Outdent()
                        .AppendLine("} catch (error) {")
                          .Indent()
-                         .AppendLine("return callback(error);")
+                         .AppendLine("return Promise.reject(error);")
                        .Outdent()
                        .AppendLine("}");
             }

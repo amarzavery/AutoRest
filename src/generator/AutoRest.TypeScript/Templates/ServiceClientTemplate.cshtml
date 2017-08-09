@@ -57,7 +57,7 @@ foreach (var methodGroup in Model.MethodGroupModels)
 @foreach (var method in Model.MethodTemplateModels)
 {
   @EmptyLine
-  @:@(Include(new MethodTemplateTS(), method))
+  @:@(Include(new MethodTemplate(), method))
 }
   serializer: Serializer;
   /**
@@ -142,7 +142,7 @@ else
 @foreach (var method in Model.MethodTemplateModels)
 {
   @EmptyLine
-  @:@(Include(new MethodTemplateTS(), method))
+  @:@(Include(new MethodTemplate(), method))
 }
 }
 @EmptyLine

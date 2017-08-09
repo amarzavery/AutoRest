@@ -218,5 +218,24 @@ namespace AutoRest.TypeScript.Model
         }
 
         public override IEnumerable<string> MyReservedNames => new[] { Name.Value };
+
+        public string ExportMethodGroupNames()
+        {
+            var builder = new IndentedStringBuilder("  ");
+            var methodGroups = MethodGroupModels.ToArray();
+            var length = methodGroups.Count();
+            for (var i = 0; i < methodGroups.Count(); i++)
+            {
+                if (i == length-1)
+                {
+                    builder.Append(methodGroups[i].TypeName);
+                }
+                else
+                {
+                    builder.Append(methodGroups[i].TypeName + ", ");
+                } 
+            }
+            return builder.ToString();
+        }
     }
 }

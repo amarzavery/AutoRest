@@ -39,7 +39,6 @@ namespace AutoRest.TypeScript.Model
                     (p.ModelType is Core.Model.SequenceType && (p.ModelType as Core.Model.SequenceType).ElementType.IsPrimaryType(KnownPrimaryType.TimeSpan)) ||
                     (p.ModelType is Core.Model.DictionaryType && (p.ModelType as Core.Model.DictionaryType).ValueType.IsPrimaryType(KnownPrimaryType.TimeSpan)) ||
                     (p.ModelType is CompositeType && (p.ModelType as CompositeType).ContainsTimeSpan())) != null);
-                
                 return  method != null;
             }
         }
@@ -51,5 +50,7 @@ namespace AutoRest.TypeScript.Model
                 return this.Methods.Any(m => m.Parameters.FirstOrDefault(p => p.ModelType.IsPrimaryType(KnownPrimaryType.Stream)) != null ||
                         m.ReturnType.Body.IsPrimaryType(KnownPrimaryType.Stream)); }
         }
+
+        
     }
 }

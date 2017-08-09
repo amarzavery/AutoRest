@@ -59,12 +59,12 @@ namespace AutoRest.TypeScript
             //MethodGroups
             if (codeModel.MethodGroupModels.Any())
             {
-                var methodGroupIndexTemplate = new MethodGroupIndexTemplateTS {Model = codeModel};
+                var methodGroupIndexTemplate = new MethodGroupIndexTemplate {Model = codeModel};
                 await Write(methodGroupIndexTemplate, Path.Combine("operations", "index.ts"));
 
                 foreach (var methodGroupModel in codeModel.MethodGroupModels)
                 {
-                    var methodGroupTemplate = new MethodGroupTemplateTS {Model = methodGroupModel};
+                    var methodGroupTemplate = new MethodGroupTemplate {Model = methodGroupModel};
                     await
                         Write(methodGroupTemplate,
                             Path.Combine("operations", methodGroupModel.TypeName.ToCamelCase() + ".ts"));
