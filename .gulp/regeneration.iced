@@ -240,6 +240,67 @@ task 'regenerate-node', '', ['regenerate-nodecomposite'], (done) ->
   },done
   return null
 
+task 'regenerate-tscomposite', '', (done) ->
+  regenExpected {
+    'outputBaseDir': 'src/generator/AutoRest.TypeScript.Tests',
+    'inputBaseDir': 'src/dev/TestServer/swagger',
+    'mappings': compositeMappings,
+    'modeler': 'CompositeSwagger',
+    'outputDir': 'Expected',
+    'language': 'typescript',
+    'nsPrefix': 'Fixtures',
+    'flatteningThreshold': '1',
+    'override-info.title': "Composite Bool Int",
+    'override-info.description': "Composite Swagger Client that represents merging body boolean and body integer swagger clients"
+  },done
+  return null
+
+task 'regenerate-tsazurecomposite', '', (done) ->
+  regenExpected {
+    'outputBaseDir': 'src/generator/AutoRest.TypeScript.Azure.Tests',
+    'inputBaseDir': 'src/dev/TestServer/swagger',
+    'mappings': azureCompositeMappings,
+    'modeler': 'CompositeSwagger',
+    'outputDir': 'Expected',
+    'language': 'typescript',
+    'azureArm': true,
+    'nsPrefix': 'Fixtures',
+    'flatteningThreshold': '1',
+    'override-info.version': "1.0.0",
+    'override-info.title': "Azure Composite Model",
+    'override-info.description': "Composite Swagger Client that represents merging body complex and complex model swagger clients"
+  },done
+  return null
+
+task 'regenerate-tsazure', '', ['regenerate-tsazurecomposite'], (done) ->
+  for p of defaultAzureMappings
+    nodeAzureMappings[p] = defaultAzureMappings[p]
+  regenExpected {
+    'outputBaseDir': 'src/generator/AutoRest.TypeScript.Azure.Tests',
+    'inputBaseDir': 'src/dev/TestServer/swagger',
+    'mappings': nodeAzureMappings,
+    'outputDir': 'Expected',
+    'language': 'typescript',
+    'azureArm': true,
+    'nsPrefix': 'Fixtures',
+    'flatteningThreshold': '1'
+  },done
+  return null
+
+task 'regenerate-ts', '', ['regenerate-tscomposite'], (done) ->
+  for p of defaultMappings
+    nodeMappings[p] = defaultMappings[p]
+  regenExpected {
+    'outputBaseDir': 'src/generator/AutoRest.TypeScript.Tests',
+    'inputBaseDir': 'src/dev/TestServer/swagger',
+    'mappings': nodeMappings,
+    'outputDir': 'Expected',
+    'language': 'typescript',
+    'nsPrefix': 'Fixtures',
+    'flatteningThreshold': '1'
+  },done
+  return null
+
 task 'regenerate-python', '', (done) ->
   mappings = Object.assign({ 
     'AcceptanceTests/UrlMultiCollectionFormat' : 'url-multi-collectionFormat.json'
@@ -660,6 +721,8 @@ task 'regenerate', "regenerate expected code for tests", ['regenerate-delete'], 
         'regenerate-javaazurefluent'
         'regenerate-node'
         'regenerate-nodeazure'
+        'regenerate-ts'
+        'regenerate-tsazure'
         'regenerate-python'
         'regenerate-pythonazure'
         'regenerate-ruby'
@@ -681,6 +744,8 @@ task 'regenerate-delete', '', (done)->
     'src/generator/AutoRest.Java.Azure.Fluent.Tests/src/main/java'
     'src/generator/AutoRest.NodeJS.Tests/Expected'
     'src/generator/AutoRest.NodeJS.Azure.Tests/Expected'
+    'src/generator/AutoRest.TypeScript.Tests/Expected'
+    'src/generator/AutoRest.TypeScript.Azure.Tests/Expected'
     'src/generator/AutoRest.Python.Tests/Expected'
     'src/generator/AutoRest.Python.Azure.Tests/Expected'
     'src/generator/AutoRest.AzureResourceSchema.Tests/Resource/Expected'
