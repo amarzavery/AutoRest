@@ -14,6 +14,15 @@ import { Mappers } from "./models/mappers";
 @if (Model.MethodGroupModels.Any()) {
 @:import * as operations from "./operations";
 }
+@if (Model.ContainsDurationProperty())
+{
+@:import * as moment from "moment";
+@EmptyLine
+}
+@if (Model.MethodTemplateModels.Any())
+{
+@:const WebResource = msRest.WebResource;
+}
 @EmptyLine
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
@@ -50,11 +59,6 @@ foreach (var methodGroup in Model.MethodGroupModels)
 {
   @:@(methodGroup.NameForProperty): operations.@(methodGroup.TypeName);
 }
-}
-@foreach (var method in Model.MethodTemplateModels)
-{
-  @EmptyLine
-  @:@(Include(new MethodTemplate(), method))
 }
   serializer: msRest.Serializer;
   /**
@@ -97,7 +101,7 @@ foreach (var methodGroup in Model.MethodGroupModels)
 @EmptyLine
     if (!options) options = {};
 @EmptyLine
-    super(@(requiredParameters.Any(p => p.ModelType.IsPrimaryType(KnownPrimaryType.Credentials)) ? "credentials" : "null"), options);
+    super(@(requiredParameters.Any(p => p.ModelType.IsPrimaryType(KnownPrimaryType.Credentials)) ? "credentials" : "undefined"), options);
     @EmptyLine
 @foreach (var property in Model.Properties.Where(p => p.DefaultValue != null))
 {
@@ -138,8 +142,14 @@ else
   }
 @foreach (var method in Model.MethodTemplateModels)
 {
+  @:// methods on the client.
   @EmptyLine
   @:@(Include(new MethodTemplate(), method))
+}
+@foreach (var method in Model.MethodTemplateModels)
+{
+  @EmptyLine
+  @:@(Include(new MethodCallbackWrapperTemplate(), method))
 }
 }
 @EmptyLine

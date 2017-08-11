@@ -104,18 +104,18 @@ namespace AutoRest.TypeScript
                 switch (known.KnownPrimaryType)
                 {
                     case KnownPrimaryType.Date:
-                        return $"client.serializeObject({reference}).replace(/[Tt].*[Zz]/, '')";
+                        return $"msRest.serializeObject({reference}).replace(/[Tt].*[Zz]/, '')";
                     case KnownPrimaryType.DateTimeRfc1123:
-                        return $"{reference}.toUTCString()";
+                        return $"{reference} instanceof Date ? {reference}.toUTCString() : {reference}";
                     case KnownPrimaryType.DateTime:
                     case KnownPrimaryType.ByteArray:
-                        return $"client.serializeObject({reference})";
+                        return $"msRest.serializeObject({reference})";
                     case KnownPrimaryType.TimeSpan:
                         return $"{reference}.toISOString()";
                     case KnownPrimaryType.Base64Url:
-                        return $"client.serialize({{required: true, serializedName: '{reference}', type: {{name: 'Base64Url'}}}}, {reference}, '{reference}')";
+                        return $"client.serializer.serialize({{required: true, serializedName: '{reference}', type: {{name: 'Base64Url'}}}}, {reference}, '{reference}')";
                     case KnownPrimaryType.UnixTime:
-                        return $"client.serialize({{required: true, serializedName: '{reference}', type: {{name: 'UnixTime'}}}}, {reference}, '{reference}')";
+                        return $"client.serializer.serialize({{required: true, serializedName: '{reference}', type: {{name: 'UnixTime'}}}}, {reference}, '{reference}')";
                 }
             }
 
@@ -245,14 +245,14 @@ namespace AutoRest.TypeScript
                     builder.AppendLine("if(!{0} || !({0} instanceof Date || ", valueReference)
                                                   .Indent()
                                                   .Indent()
-                                                  .AppendLine("(typeof {0}.valueOf() === 'string' && !isNaN(Date.parse({0}))))) {{", valueReference);
+                                                  .AppendLine("(typeof {0}.valueOf() === 'string' && !isNaN(Date.parse({0} as string))))) {{", valueReference);
                     return ConstructValidationCheck(builder, requiredTypeErrorMessage, valueReference, primary.Name).ToString();
                 }
 
                 builder = builder.AppendLine("if ({0} && !({0} instanceof Date || ", valueReference)
                                               .Indent()
                                               .Indent()
-                                              .AppendLine("(typeof {0}.valueOf() === 'string' && !isNaN(Date.parse({0}))))) {{", valueReference);
+                                              .AppendLine("(typeof {0}.valueOf() === 'string' && !isNaN(Date.parse({0} as string))))) {{", valueReference);
                 return ConstructValidationCheck(builder, typeErrorMessage, valueReference, primary.Name).ToString();
             }
             else if (primary.KnownPrimaryType == KnownPrimaryType.TimeSpan)
@@ -498,7 +498,23 @@ namespace AutoRest.TypeScript
 
             return null;
         }
-		
+
+        public static bool IsSequenceContainingDateKind(this IModelType type)
+        {
+            return type.IsSequenceContainingType(KnownPrimaryType.Date) || 
+                   type.IsSequenceContainingType(KnownPrimaryType.DateTime) ||
+                   type.IsSequenceContainingType(KnownPrimaryType.DateTimeRfc1123) || 
+                   type.IsSequenceContainingType(KnownPrimaryType.UnixTime);
+        }
+
+        public static bool IsDictionaryContainingDateKind(this IModelType type)
+        {
+            return type.IsDictionaryContainingType(KnownPrimaryType.Date) ||
+                   type.IsDictionaryContainingType(KnownPrimaryType.DateTime) ||
+                   type.IsDictionaryContainingType(KnownPrimaryType.DateTimeRfc1123) ||
+                   type.IsDictionaryContainingType(KnownPrimaryType.UnixTime);
+        }
+
         /// <summary>
         /// Return the TypeScript type (as a string) for specified type.
         /// </summary>
@@ -534,14 +550,20 @@ namespace AutoRest.TypeScript
             }
             else if (sequence != null)
             {
-                tsType = sequence.ElementType.TSType(inModelsModule) + "[]";
+                if (sequence.IsSequenceContainingDateKind())
+                    tsType = sequence.ElementType.TSType(inModelsModule) + "[]" + " | string[]";
+                else
+                    tsType = sequence.ElementType.TSType(inModelsModule) + "[]";
             }
             else if (dictionary != null)
             {
                 // TODO: Confirm with Mark exactly what cases for additionalProperties AutoRest intends to handle (what about
                 // additonalProperties combined with explicit properties?) and add support for those if needed to at least match
                 // C# target level of functionality
-                tsType = "{ [propertyName: string]: " + dictionary.ValueType.TSType(inModelsModule) + " }";
+                if (dictionary.IsDictionaryContainingDateKind()) //then provide a union of Date and string
+                    tsType = "{ [propertyName: string]: " + dictionary.ValueType.TSType(inModelsModule) + " }" + " | { [propertyName: string]: string }";
+                else
+                    tsType = "{ [propertyName: string]: " + dictionary.ValueType.TSType(inModelsModule) + " }";
             }
             else throw new NotImplementedException($"Type '{type}' not implemented");
 

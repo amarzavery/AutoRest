@@ -58,6 +58,14 @@ namespace AutoRest.TypeScript.Model
             return prop != null;
         }
 
+        public bool ContainsDurationPropertyInModels()
+        {
+             return OrderedModelTemplateModels.Any(m => m.Properties.FirstOrDefault(p =>
+                (p.ModelType is PrimaryTypeTS && (p.ModelType as PrimaryTypeTS).KnownPrimaryType == KnownPrimaryType.TimeSpan) ||
+                (p.ModelType is SequenceType && (p.ModelType as SequenceType).ElementType.IsPrimaryType(KnownPrimaryType.TimeSpan)) ||
+                (p.ModelType is DictionaryType && (p.ModelType as DictionaryType).ValueType.IsPrimaryType(KnownPrimaryType.TimeSpan))) != null);
+        }
+
         private void constructOrderedList(CompositeTypeTS model, List<CompositeTypeTS> orderedList)
         {
             if (model == null)
@@ -113,14 +121,14 @@ namespace AutoRest.TypeScript.Model
                             polymorphicType.Name,
                             polymorphicTypes.ElementAt(i).SerializedName);
                         builder.Append(string.Format(CultureInfo.InvariantCulture,
-                        "'{0}' : exports.{1}",
+                        "'{0}' : internalMappers.{1}",
                             discriminatorField,
                             polymorphicTypes.ElementAt(i).Name));
                     }
                     else
                     {
                         builder.Append(string.Format(CultureInfo.InvariantCulture,
-                        "'{0}' : exports.{1}",
+                        "'{0}' : internalMappers.{1}",
                             discriminatorField,
                             polymorphicTypes.ElementAt(i).Name));
                     }

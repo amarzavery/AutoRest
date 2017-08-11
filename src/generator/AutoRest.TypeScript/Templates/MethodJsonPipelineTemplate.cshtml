@@ -46,7 +46,7 @@ try {
   }
   @if (Model.ReturnType.Body != null && Model.DefaultResponse.Body != null && !Model.Responses.Any())
   {
-    @(Model.DeserializeResponse(Model.DefaultResponse.Body))
+    @(Model.DeserializeResponse(Model.DefaultResponse.Body, "operationRes.bodyAsJson"))
   }
 @EmptyLine
 } catch(err) {

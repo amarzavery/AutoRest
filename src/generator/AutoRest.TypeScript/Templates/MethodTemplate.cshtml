@@ -125,7 +125,7 @@ async @(Model.Name.ToCamelCase())WithHttpOperationResponse(@(Model.MethodParamet
   {      
   <text>
   // Serialize Request  
-  let formData = {};  
+  let formData: any = {};  
       @foreach (var parameter in Model.LogicalParameters.Where(p => p.Location == ParameterLocation.FormData))
       {
   @:if (@(parameter.Name) !== undefined && @(parameter.Name) !== null) {

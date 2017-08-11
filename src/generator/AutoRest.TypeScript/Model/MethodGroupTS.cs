@@ -51,6 +51,19 @@ namespace AutoRest.TypeScript.Model
                         m.ReturnType.Body.IsPrimaryType(KnownPrimaryType.Stream)); }
         }
 
-        
+        public bool ContainsCompositeTypeInParametersOrReturnType()
+        {
+            bool parameters = this.MethodTemplateModels.Any(m => m.Parameters.FirstOrDefault(
+                p => p.ModelType is CompositeType ||
+                (p.ModelType is SequenceType && (p.ModelType as SequenceType).ElementType is CompositeType) ||
+                (p.ModelType is DictionaryType && (p.ModelType as DictionaryType).ValueType is CompositeType)) != null);
+            if (!parameters)
+            {
+                return this.MethodTemplateModels.Any(m => m.ReturnType.Body is CompositeType ||
+                (m.ReturnType.Body is SequenceType && (m.ReturnType.Body as SequenceType).ElementType is CompositeType) ||
+                (m.ReturnType.Body is DictionaryType && (m.ReturnType.Body as DictionaryType).ValueType is CompositeType));
+            }
+            return parameters;
+        }
     }
 }

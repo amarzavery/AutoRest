@@ -146,6 +146,28 @@ namespace AutoRest.TypeScript.Model
             }
         }
 
+        public string ProvideParameterType(IModelType type)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException("type");
+            }
+
+            var builder = new StringBuilder("");
+
+            if (type.IsPrimaryType(KnownPrimaryType.Date) ||
+                type.IsPrimaryType(KnownPrimaryType.DateTime) ||
+                type.IsPrimaryType(KnownPrimaryType.DateTimeRfc1123) ||
+                type.IsPrimaryType(KnownPrimaryType.UnixTime))
+                builder.Append("Date | string");
+            else if (type.IsSequenceContainingDateKind())
+                builder.Append("Array<Date> | Array<string>");
+            else if (type.IsDictionaryContainingDateKind())
+                builder.Append("{ [key: string]: Date } | { [key: string]: string }");
+            else builder.Append(type.TSType(false));
+            return builder.ToString();
+        }
+
         /// <summary>
         /// Generate the method parameter declarations for a method, using TypeScript declaration syntax
         /// <param name="includeOptions">whether the ServiceClientOptions parameter should be included</param>
@@ -167,9 +189,7 @@ namespace AutoRest.TypeScript.Model
 
                 // For date/datetime parameters, use a union type to reflect that they can be passed as a JS Date or a string.
                 var type = parameter.ModelType;
-                if (type.IsPrimaryType(KnownPrimaryType.Date) || type.IsPrimaryType(KnownPrimaryType.DateTime))
-                    declarations.Append("Date|string");
-                else declarations.Append(type.TSType(false));
+                declarations.Append(ProvideParameterType(type));
 
                 first = false;
             }
@@ -201,7 +221,7 @@ namespace AutoRest.TypeScript.Model
                     }
                     else
                     {
-                        declarations.Append(optionalParameters[i].ModelType.TSType(false));
+                        declarations.Append(ProvideParameterType(optionalParameters[i].ModelType));
                     }
                 }
                 declarations.Append(" }");
@@ -912,7 +932,7 @@ namespace AutoRest.TypeScript.Model
                         //required outputParameter is initialized at the time of declaration
                         if (!transformation.OutputParameter.IsRequired)
                         {
-                            builder.AppendLine("{0}: any = {{}};",
+                            builder.AppendLine("{0} = {{}};",
                                 transformation.OutputParameter.Name,
                                 transformation.OutputParameter.ModelType.Name);
                         }
@@ -1066,6 +1086,19 @@ namespace AutoRest.TypeScript.Model
             }
             builder.AppendLine(" */");
             return builder.ToString();
+        }
+
+        public string BuildResultInitialization(string resultReference)
+        {
+            if (resultReference == null)
+            {
+                throw new ArgumentNullException("resultReference");
+            }
+            var sb = new StringBuilder("");
+            string rType = "";
+            rType = ReturnType.Body.IsPrimaryType(KnownPrimaryType.Stream) ? "Stream" : "Json";
+            sb.AppendFormat("{0}.bodyAs{1} as {2}", resultReference, rType, ReturnTypeTSString);
+            return sb.ToString();
         }
     }
 }

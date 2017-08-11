@@ -10,5 +10,11 @@ var internalMappers: any = {};
 {
 @EmptyLine
 @:@(Include(new MapperTemplate(), model))
+    if (!string.IsNullOrWhiteSpace(Model.PolymorphicDictionary))
+    {
+@:internalMappers.discriminators = {
+@:  @(Model.PolymorphicDictionary)
+@:};
+    }
 }
 export const Mappers = internalMappers;
