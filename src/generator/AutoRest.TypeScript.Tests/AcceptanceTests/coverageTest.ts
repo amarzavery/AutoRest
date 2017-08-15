@@ -17,14 +17,14 @@ var credentials = new msRest.TokenCredentials(dummyToken);
 var clientOptions = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
 
   describe('Swagger BAT coverage report', function () {
     var testClient = new AutoRestReportService(baseUri, clientOptions);
     it('should have 100% coverage', function (done) {
       testClient.getReport(function (error, result) {
         should.not.exist(error);
-        var total = _.keys(result).length;
+        var total = _.keys(result).length - 2;
         var passed = 0;
         _.keys(result).forEach(function (item: string) {
           if (result[item] > 0) {

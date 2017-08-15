@@ -16,7 +16,7 @@ var dummyToken = 'dummy12321343423';
 var credentials = new msRest.TokenCredentials(dummyToken);
 var clientOptions: msRest.ServiceClientOptions = {};
 var baseUri = 'http://localhost:3000';
-describe('nodejs', function () {
+describe('typescript', function () {
   describe('Swagger BAT Validation', function () {
     var testClient = new AutoRestValidationTest("abc123", "12-34-5678", baseUri, clientOptions);
     describe('Of Method Parameters', function () {

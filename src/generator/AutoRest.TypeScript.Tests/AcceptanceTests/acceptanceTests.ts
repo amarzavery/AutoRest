@@ -2244,55 +2244,60 @@ describe('nodejs', function () {
               testClient.httpRedirects.get301(function (error, result, request, response) {
                 should.not.exist(error);
                 response.status.should.equal(200);
-                testClient.httpRedirects.put301({ booleanValue: true }, function (error, result, request, response) {
+                // Clients relying on newer version of the HTTP spec redirect a request that 
+                //received a 301 response if it contains a location header. Older clients did 
+                //not do that. Our test server is designed to conform to the old behavior 
+                //hence we are commenting this test.
+                //testClient.httpRedirects.put301({ booleanValue: true }, function (error, result, request, response) {
+                //  should.not.exist(error);
+                //  response.status.should.equal(301);
+                testClient.httpRedirects.head302(function (error, result, request, response) {
                   should.not.exist(error);
-                  response.status.should.equal(301);
-                  testClient.httpRedirects.head302(function (error, result, request, response) {
+                  response.status.should.equal(200);
+                  testClient.httpRedirects.get302(function (error, result, request, response) {
                     should.not.exist(error);
                     response.status.should.equal(200);
-                    testClient.httpRedirects.get302(function (error, result, request, response) {
+                    // same as put 301
+                    //testClient.httpRedirects.patch302({ booleanValue: true }, function (error, result, request, response) {
+                    //  should.not.exist(error);
+                    //  response.status.should.equal(302);
+                    testClient.httpRedirects.post303({ booleanValue: true }, function (error, result, request, response) {
                       should.not.exist(error);
                       response.status.should.equal(200);
-                      testClient.httpRedirects.patch302({ booleanValue: true }, function (error, result, request, response) {
+                      testClient.httpRedirects.head307(function (error, result, request, response) {
                         should.not.exist(error);
-                        response.status.should.equal(302);
-                        testClient.httpRedirects.post303({ booleanValue: true }, function (error, result, request, response) {
+                        response.status.should.equal(200);
+                        testClient.httpRedirects.get307(function (error, result, request, response) {
                           should.not.exist(error);
                           response.status.should.equal(200);
-                          testClient.httpRedirects.head307(function (error, result, request, response) {
+                          //TODO, 4042586: Support options operations in swagger modeler
+                          //testClient.httpRedirects.options307(function (error, result, request, response) {
+                          //  should.not.exist(error);
+                          testClient.httpRedirects.put307({ booleanValue: true }, function (error, result, request, response) {
                             should.not.exist(error);
                             response.status.should.equal(200);
-                            testClient.httpRedirects.get307(function (error, result, request, response) {
+                            testClient.httpRedirects.post307({ booleanValue: true }, function (error, result, request, response) {
                               should.not.exist(error);
                               response.status.should.equal(200);
-                              //TODO, 4042586: Support options operations in swagger modeler
-                              //testClient.httpRedirects.options307(function (error, result, request, response) {
-                              //  should.not.exist(error);
-                              testClient.httpRedirects.put307({ booleanValue: true }, function (error, result, request, response) {
+                              testClient.httpRedirects.patch307({ booleanValue: true }, function (error, result, request, response) {
                                 should.not.exist(error);
                                 response.status.should.equal(200);
-                                testClient.httpRedirects.post307({ booleanValue: true }, function (error, result, request, response) {
+                                testClient.httpRedirects.delete307({ booleanValue: true }, function (error, result, request, response) {
                                   should.not.exist(error);
                                   response.status.should.equal(200);
-                                  testClient.httpRedirects.patch307({ booleanValue: true }, function (error, result, request, response) {
-                                    should.not.exist(error);
-                                    response.status.should.equal(200);
-                                    testClient.httpRedirects.delete307({ booleanValue: true }, function (error, result, request, response) {
-                                      should.not.exist(error);
-                                      response.status.should.equal(200);
-                                      done();
-                                    });
-                                  });
+                                  done();
                                 });
                               });
                             });
-                            //});
                           });
                         });
+                        //});
                       });
                     });
+                    //});
                   });
                 });
+                //});
               });
             });
           });
@@ -2426,7 +2431,7 @@ describe('nodejs', function () {
         });
       });
 
-      it.skip('should properly perform the Http retry', function (done) {
+      it('should properly perform the Http retry', function (done) {
         testClient.httpRetry.head408(function (error, result, request, response) {
           should.not.exist(error);
           response.status.should.equal(200);

@@ -15,7 +15,7 @@ import { AutoRestResourceFlatteningTestService, Models } from '../Expected/Accep
 var clientOptions = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
 
   describe('Swagger ModelFlattening BAT', function () {
 
