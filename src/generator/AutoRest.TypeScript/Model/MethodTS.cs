@@ -566,7 +566,7 @@ namespace AutoRest.TypeScript.Model
             }
 
             var builder = new IndentedStringBuilder("  ");
-            builder.AppendLine("let {0} = operationRes.bodyAsJson as {{ [key: string]: any }};", responseVariable)
+            builder.AppendLine("let {0} = {1} as {{ [key: string]: any }};", responseVariable, valueReference)
                    .AppendLine("try {")
                    .Indent();
             var deserializeBody = GetDeserializationString(type, valueReference, responseVariable);

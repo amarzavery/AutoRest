@@ -5,12 +5,6 @@
 @Header(" * ")
  */
 @EmptyLine
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-@EmptyLine
-'use strict';
-@EmptyLine
 @foreach (var methodGroup in Model.MethodGroupModels)
 {
 @:import { @(methodGroup.TypeName) } from './@(methodGroup.TypeName.ToCamelCase())';

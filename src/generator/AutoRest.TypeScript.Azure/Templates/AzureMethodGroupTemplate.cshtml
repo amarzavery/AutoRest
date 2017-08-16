@@ -1,5 +1,7 @@
-﻿@using System.Linq;
+﻿@using System.Linq
+@using AutoRest.TypeScript.Azure.Model
 @using AutoRest.TypeScript.Templates
+@using AutoRest.TypeScript.Azure.Templates
 @inherits AutoRest.Core.Template<AutoRest.TypeScript.Model.MethodGroupTS>
 /*
 @Header(" * ")
@@ -32,7 +34,7 @@ export class @(Model.TypeName) {
 @EmptyLine
 @foreach (var method in Model.MethodTemplateModels)
 {
-  @:@(Include(new MethodTemplate(), method))
+  @:@(Include(new AzureMethodTemplate(), method as MethodTSa))
   @EmptyLine
 }
 @foreach (var method in Model.MethodTemplateModels)

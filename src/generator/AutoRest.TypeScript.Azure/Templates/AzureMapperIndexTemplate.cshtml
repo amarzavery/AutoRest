@@ -1,6 +1,9 @@
 ﻿@using System.Linq
 @using AutoRest.TypeScript.Templates
-@inherits AutoRest.Core.Template<AutoRest.TypeScript.Model.CodeModelTS>
+@using AutoRest.TypeScript.Azure.Templates
+@using AutoRest.TypeScript.Model
+@using AutoRest.TypeScript.Azure.Model
+@inherits AutoRest.Core.Template<AutoRest.TypeScript.Azure.Model.CodeModelTSa>
 /*
 @Header(" * ")
  */
@@ -10,6 +13,11 @@ var internalMappers: any = {};
 {
 @EmptyLine
 @:@(Include(new MapperTemplate(), model))
+}
+@foreach (var model in Model.PageTemplateModels)
+{
+@EmptyLine
+@:@(Include(new MapperTemplate(), model as CompositeTypeTS))
 }
 @if (!string.IsNullOrWhiteSpace(Model.PolymorphicDictionary))
 {

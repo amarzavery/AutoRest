@@ -203,19 +203,6 @@ namespace AutoRest.TypeScript.Model
             }
         }
 
-        public string ConstructImport()
-        {
-            IndentedStringBuilder builder = new IndentedStringBuilder(IndentedStringBuilder.TwoSpaces);
-            builder.Append("import { ServiceClient, ServiceClientOptions, RequestOptions, ServiceCallback, HttpOperationResponse, Serializer");
-            if (Properties.Any(p => p.Name.EqualsIgnoreCase("credentials")))
-            {
-                builder.Append(", ServiceClientCredentials");
-            }
-
-            builder.Append(" } from 'ms-rest';");
-            return builder.ToString();
-        }
-
         public bool ContainsTimeSpan
         {
             get
