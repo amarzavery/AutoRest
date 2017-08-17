@@ -8,10 +8,8 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestUrlTestService } from '../autoRestUrlTestService';
 
 const WebResource = msRest.WebResource;
@@ -90,7 +88,7 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
       queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
@@ -219,7 +217,7 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
       queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
@@ -347,7 +345,7 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
       queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
@@ -474,7 +472,7 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
       queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }

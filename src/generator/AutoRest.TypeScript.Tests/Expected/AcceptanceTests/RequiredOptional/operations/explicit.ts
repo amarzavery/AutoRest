@@ -8,11 +8,9 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestRequiredOptionalTestService } from '../autoRestRequiredOptionalTestService';
 
 const WebResource = msRest.WebResource;

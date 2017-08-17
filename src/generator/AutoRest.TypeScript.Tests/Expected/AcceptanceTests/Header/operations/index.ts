@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { Header } from './header';
 
 export { Header };

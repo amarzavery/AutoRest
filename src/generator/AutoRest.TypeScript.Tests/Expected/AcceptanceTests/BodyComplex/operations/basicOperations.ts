@@ -8,11 +8,9 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestComplexTestService } from '../autoRestComplexTestService';
 
 const WebResource = msRest.WebResource;
@@ -156,7 +154,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/valid';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');

@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { Implicit } from './implicit';
 import { Explicit } from './explicit';
 

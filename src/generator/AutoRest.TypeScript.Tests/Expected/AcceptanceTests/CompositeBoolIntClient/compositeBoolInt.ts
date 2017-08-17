@@ -10,7 +10,7 @@
 
 import * as msRest from "ms-rest";
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as operations from "./operations";
 
 const packageName = 'foo';
@@ -22,6 +22,7 @@ class CompositeBoolInt extends msRest.ServiceClient {
   bool: operations.Bool;
   intModel: operations.IntModel;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the CompositeBoolInt class.

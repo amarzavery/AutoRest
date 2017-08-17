@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.Widget = {
+export const Widget = {
   required: false,
   serializedName: 'Widget',
   type: {
@@ -35,7 +34,7 @@ internalMappers.Widget = {
   }
 };
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -59,4 +58,3 @@ internalMappers.ErrorModel = {
     }
   }
 };
-export const Mappers = internalMappers;

@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.ChildProduct = {
+export const ChildProduct = {
   required: false,
   serializedName: 'ChildProduct',
   type: {
@@ -37,7 +36,7 @@ internalMappers.ChildProduct = {
   }
 };
 
-internalMappers.ConstantProduct = {
+export const ConstantProduct = {
   required: false,
   serializedName: 'ConstantProduct',
   type: {
@@ -66,7 +65,7 @@ internalMappers.ConstantProduct = {
   }
 };
 
-internalMappers.Product = {
+export const Product = {
   required: false,
   serializedName: 'Product',
   type: {
@@ -162,7 +161,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -193,4 +192,3 @@ internalMappers.ErrorModel = {
     }
   }
 };
-export const Mappers = internalMappers;

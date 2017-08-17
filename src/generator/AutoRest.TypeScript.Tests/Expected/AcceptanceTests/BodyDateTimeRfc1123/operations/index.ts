@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { Datetimerfc1123 } from './datetimerfc1123';
 
 export { Datetimerfc1123 };

@@ -8,11 +8,9 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestSwaggerBATdictionaryService } from '../autoRestSwaggerBATdictionaryService';
 import * as moment from 'moment';
 

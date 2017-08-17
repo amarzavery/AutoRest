@@ -8,11 +8,9 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestRequiredOptionalTestService } from '../autoRestRequiredOptionalTestService';
 
 const WebResource = msRest.WebResource;
@@ -156,7 +154,7 @@ export class Implicit {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'reqopt/implicit/optional/query';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameter !== null && queryParameter !== undefined) {
       queryParameters.push('queryParameter=' + encodeURIComponent(queryParameter));
     }
@@ -533,7 +531,7 @@ export class Implicit {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'reqopt/global/required/query';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('required-global-query=' + encodeURIComponent(this.client.requiredGlobalQuery));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -632,7 +630,7 @@ export class Implicit {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'reqopt/global/optional/query';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (this.client.optionalGlobalQuery !== null && this.client.optionalGlobalQuery !== undefined) {
       queryParameters.push('optional-global-query=' + encodeURIComponent(this.client.optionalGlobalQuery.toString()));
     }

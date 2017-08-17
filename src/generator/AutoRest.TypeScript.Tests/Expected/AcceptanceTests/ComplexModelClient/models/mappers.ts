@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.Product = {
+export const Product = {
   required: false,
   serializedName: 'Product',
   type: {
@@ -57,7 +56,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.CatalogDictionary = {
+export const CatalogDictionary = {
   required: false,
   serializedName: 'CatalogDictionary',
   type: {
@@ -83,7 +82,7 @@ internalMappers.CatalogDictionary = {
   }
 };
 
-internalMappers.CatalogArray = {
+export const CatalogArray = {
   required: false,
   serializedName: 'CatalogArray',
   type: {
@@ -109,7 +108,7 @@ internalMappers.CatalogArray = {
   }
 };
 
-internalMappers.CatalogArrayOfDictionary = {
+export const CatalogArrayOfDictionary = {
   required: false,
   serializedName: 'CatalogArrayOfDictionary',
   type: {
@@ -142,7 +141,7 @@ internalMappers.CatalogArrayOfDictionary = {
   }
 };
 
-internalMappers.CatalogDictionaryOfArray = {
+export const CatalogDictionaryOfArray = {
   required: false,
   serializedName: 'CatalogDictionaryOfArray',
   type: {
@@ -175,7 +174,7 @@ internalMappers.CatalogDictionaryOfArray = {
   }
 };
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -199,4 +198,3 @@ internalMappers.ErrorModel = {
     }
   }
 };
-export const Mappers = internalMappers;

@@ -10,7 +10,7 @@
 
 import * as msRest from "ms-rest";
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
@@ -18,6 +18,7 @@ const packageVersion = '3.0.0-preview';
 class AutoRestReportService extends msRest.ServiceClient {
   baseUri: string;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestReportService class.

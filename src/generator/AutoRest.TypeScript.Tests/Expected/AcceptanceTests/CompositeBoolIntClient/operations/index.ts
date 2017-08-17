@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { Bool } from './bool';
 import { IntModel } from './intModel';
 

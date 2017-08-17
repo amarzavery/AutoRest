@@ -10,7 +10,7 @@
 
 import * as msRest from "ms-rest";
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
@@ -20,6 +20,7 @@ class AutoRestValidationTest extends msRest.ServiceClient {
   apiVersion: string;
   baseUri: string;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestValidationTest class.
@@ -144,7 +145,7 @@ class AutoRestValidationTest extends msRest.ServiceClient {
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{id}', encodeURIComponent(id.toString()));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('apiVersion=' + encodeURIComponent(this.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -316,7 +317,7 @@ class AutoRestValidationTest extends msRest.ServiceClient {
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{id}', encodeURIComponent(id.toString()));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('apiVersion=' + encodeURIComponent(this.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');

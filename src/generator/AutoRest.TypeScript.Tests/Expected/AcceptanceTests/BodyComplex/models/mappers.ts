@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -34,16 +33,8 @@ internalMappers.ErrorModel = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Basic = {
+export const Basic = {
   required: false,
   serializedName: 'basic',
   type: {
@@ -74,16 +65,8 @@ internalMappers.Basic = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Pet = {
+export const Pet = {
   required: false,
   serializedName: 'pet',
   type: {
@@ -107,16 +90,8 @@ internalMappers.Pet = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Dog = {
+export const Dog = {
   required: false,
   serializedName: 'dog',
   type: {
@@ -147,16 +122,8 @@ internalMappers.Dog = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Cat = {
+export const Cat = {
   required: false,
   serializedName: 'cat',
   type: {
@@ -202,16 +169,8 @@ internalMappers.Cat = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Siamese = {
+export const Siamese = {
   required: false,
   serializedName: 'siamese',
   type: {
@@ -264,16 +223,8 @@ internalMappers.Siamese = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Fish = {
+export const Fish = {
   required: false,
   serializedName: 'Fish',
   type: {
@@ -329,16 +280,8 @@ internalMappers.Fish = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Salmon = {
+export const Salmon = {
   required: false,
   serializedName: 'salmon',
   type: {
@@ -403,16 +346,8 @@ internalMappers.Salmon = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Shark = {
+export const Shark = {
   required: false,
   serializedName: 'shark',
   type: {
@@ -477,16 +412,8 @@ internalMappers.Shark = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Sawshark = {
+export const Sawshark = {
   required: false,
   serializedName: 'sawshark',
   type: {
@@ -558,16 +485,8 @@ internalMappers.Sawshark = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Goblinshark = {
+export const Goblinshark = {
   required: false,
   serializedName: 'goblin',
   type: {
@@ -639,16 +558,8 @@ internalMappers.Goblinshark = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Cookiecuttershark = {
+export const Cookiecuttershark = {
   required: false,
   serializedName: 'cookiecuttershark',
   type: {
@@ -713,16 +624,8 @@ internalMappers.Cookiecuttershark = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.IntWrapper = {
+export const IntWrapper = {
   required: false,
   serializedName: 'int-wrapper',
   type: {
@@ -746,16 +649,8 @@ internalMappers.IntWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.LongWrapper = {
+export const LongWrapper = {
   required: false,
   serializedName: 'long-wrapper',
   type: {
@@ -779,16 +674,8 @@ internalMappers.LongWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.FloatWrapper = {
+export const FloatWrapper = {
   required: false,
   serializedName: 'float-wrapper',
   type: {
@@ -812,16 +699,8 @@ internalMappers.FloatWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.DoubleWrapper = {
+export const DoubleWrapper = {
   required: false,
   serializedName: 'double-wrapper',
   type: {
@@ -845,16 +724,8 @@ internalMappers.DoubleWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.BooleanWrapper = {
+export const BooleanWrapper = {
   required: false,
   serializedName: 'boolean-wrapper',
   type: {
@@ -878,16 +749,8 @@ internalMappers.BooleanWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.StringWrapper = {
+export const StringWrapper = {
   required: false,
   serializedName: 'string-wrapper',
   type: {
@@ -918,16 +781,8 @@ internalMappers.StringWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.DateWrapper = {
+export const DateWrapper = {
   required: false,
   serializedName: 'date-wrapper',
   type: {
@@ -951,16 +806,8 @@ internalMappers.DateWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.DatetimeWrapper = {
+export const DatetimeWrapper = {
   required: false,
   serializedName: 'datetime-wrapper',
   type: {
@@ -984,16 +831,8 @@ internalMappers.DatetimeWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.Datetimerfc1123Wrapper = {
+export const Datetimerfc1123Wrapper = {
   required: false,
   serializedName: 'datetimerfc1123-wrapper',
   type: {
@@ -1017,16 +856,8 @@ internalMappers.Datetimerfc1123Wrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.DurationWrapper = {
+export const DurationWrapper = {
   required: false,
   serializedName: 'duration-wrapper',
   type: {
@@ -1043,16 +874,8 @@ internalMappers.DurationWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.ByteWrapper = {
+export const ByteWrapper = {
   required: false,
   serializedName: 'byte-wrapper',
   type: {
@@ -1069,16 +892,8 @@ internalMappers.ByteWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.ArrayWrapper = {
+export const ArrayWrapper = {
   required: false,
   serializedName: 'array-wrapper',
   type: {
@@ -1102,16 +917,8 @@ internalMappers.ArrayWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.DictionaryWrapper = {
+export const DictionaryWrapper = {
   required: false,
   serializedName: 'dictionary-wrapper',
   type: {
@@ -1135,16 +942,8 @@ internalMappers.DictionaryWrapper = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
-};
 
-internalMappers.ReadonlyObj = {
+export const ReadonlyObj = {
   required: false,
   serializedName: 'readonly-obj',
   type: {
@@ -1169,12 +968,12 @@ internalMappers.ReadonlyObj = {
     }
   }
 };
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
+
+export const discriminators = {
+  'Fish' : Fish,
+  'Fish.salmon' : Salmon,
+  'Fish.shark' : Shark,
+  'Fish.sawshark' : Sawshark,
+  'Fish.goblin' : Goblinshark,
+  'Fish.cookiecuttershark' : Cookiecuttershark
 };
-export const Mappers = internalMappers;

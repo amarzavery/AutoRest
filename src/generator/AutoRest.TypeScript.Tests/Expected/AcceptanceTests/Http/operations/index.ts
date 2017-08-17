@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { HttpFailure } from './httpFailure';
 import { HttpSuccess } from './httpSuccess';
 import { HttpRedirects } from './httpRedirects';

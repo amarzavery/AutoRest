@@ -8,10 +8,8 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestParameterizedCustomHostTestClient } from '../autoRestParameterizedCustomHostTestClient';
 
 const WebResource = msRest.WebResource;
@@ -84,7 +82,7 @@ export class Paths {
     requestUrl = requestUrl.replace('{dnsSuffix}', this.client.dnsSuffix);
     requestUrl = requestUrl.replace('{keyName}', encodeURIComponent(keyName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (keyVersion !== null && keyVersion !== undefined) {
       queryParameters.push('keyVersion=' + encodeURIComponent(keyVersion));
     }

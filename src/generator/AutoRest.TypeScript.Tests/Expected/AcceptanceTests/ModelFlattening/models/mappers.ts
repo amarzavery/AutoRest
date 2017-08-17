@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -43,7 +42,7 @@ internalMappers.ErrorModel = {
   }
 };
 
-internalMappers.Resource = {
+export const Resource = {
   required: false,
   serializedName: 'Resource',
   type: {
@@ -99,7 +98,7 @@ internalMappers.Resource = {
   }
 };
 
-internalMappers.FlattenedProduct = {
+export const FlattenedProduct = {
   required: false,
   serializedName: 'FlattenedProduct',
   type: {
@@ -184,7 +183,7 @@ internalMappers.FlattenedProduct = {
   }
 };
 
-internalMappers.ResourceCollection = {
+export const ResourceCollection = {
   required: false,
   serializedName: 'ResourceCollection',
   type: {
@@ -233,7 +232,7 @@ internalMappers.ResourceCollection = {
   }
 };
 
-internalMappers.BaseProduct = {
+export const BaseProduct = {
   required: false,
   serializedName: 'BaseProduct',
   type: {
@@ -258,7 +257,7 @@ internalMappers.BaseProduct = {
   }
 };
 
-internalMappers.SimpleProduct = {
+export const SimpleProduct = {
   required: false,
   serializedName: 'SimpleProduct',
   type: {
@@ -313,7 +312,7 @@ internalMappers.SimpleProduct = {
   }
 };
 
-internalMappers.GenericUrl = {
+export const GenericUrl = {
   required: false,
   serializedName: 'GenericUrl',
   type: {
@@ -331,7 +330,7 @@ internalMappers.GenericUrl = {
   }
 };
 
-internalMappers.WrappedProduct = {
+export const WrappedProduct = {
   required: false,
   serializedName: 'WrappedProduct',
   type: {
@@ -349,7 +348,7 @@ internalMappers.WrappedProduct = {
   }
 };
 
-internalMappers.ProductWrapper = {
+export const ProductWrapper = {
   required: false,
   serializedName: 'ProductWrapper',
   type: {
@@ -367,7 +366,7 @@ internalMappers.ProductWrapper = {
   }
 };
 
-internalMappers.FlattenParameterGroup = {
+export const FlattenParameterGroup = {
   required: false,
   type: {
     name: 'Composite',
@@ -412,4 +411,3 @@ internalMappers.FlattenParameterGroup = {
     }
   }
 };
-export const Mappers = internalMappers;

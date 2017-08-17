@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.Product = {
+export const Product = {
   required: false,
   serializedName: 'Product',
   type: {
@@ -35,7 +34,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -59,4 +58,3 @@ internalMappers.ErrorModel = {
     }
   }
 };
-export const Mappers = internalMappers;

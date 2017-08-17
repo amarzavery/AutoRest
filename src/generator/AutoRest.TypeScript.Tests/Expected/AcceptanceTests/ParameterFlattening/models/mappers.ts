@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.AvailabilitySetUpdateParameters = {
+export const AvailabilitySetUpdateParameters = {
   required: false,
   serializedName: 'AvailabilitySetUpdateParameters',
   type: {
@@ -34,4 +33,3 @@ internalMappers.AvailabilitySetUpdateParameters = {
     }
   }
 };
-export const Mappers = internalMappers;

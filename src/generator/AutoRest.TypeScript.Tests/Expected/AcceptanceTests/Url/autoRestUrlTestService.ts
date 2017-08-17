@@ -10,7 +10,7 @@
 
 import * as msRest from "ms-rest";
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as operations from "./operations";
 
 const packageName = 'foo';
@@ -35,6 +35,7 @@ class AutoRestUrlTestService extends msRest.ServiceClient {
   queries: operations.Queries;
   pathItems: operations.PathItems;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestUrlTestService class.

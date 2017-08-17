@@ -8,10 +8,8 @@
  * regenerated.
  */
 
-'use strict';
-
 import * as msRest from 'ms-rest';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestDateTimeTestService } from '../autoRestDateTimeTestService';
 
 const WebResource = msRest.WebResource;

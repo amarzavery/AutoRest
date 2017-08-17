@@ -10,7 +10,7 @@
 
 import * as msRest from "ms-rest";
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
@@ -20,6 +20,7 @@ class ComplexModelClient extends msRest.ServiceClient {
   apiVersion: string;
   baseUri: string;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the ComplexModelClient class.
@@ -91,7 +92,7 @@ class ComplexModelClient extends msRest.ServiceClient {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -214,7 +215,7 @@ class ComplexModelClient extends msRest.ServiceClient {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -351,7 +352,7 @@ class ComplexModelClient extends msRest.ServiceClient {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');

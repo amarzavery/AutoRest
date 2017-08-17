@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { BasicOperations } from './basicOperations';
 import { Primitive } from './primitive';
 import { ArrayModel } from './arrayModel';

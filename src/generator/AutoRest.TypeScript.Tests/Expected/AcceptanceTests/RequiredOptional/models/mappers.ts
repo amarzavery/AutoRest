@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -35,7 +34,7 @@ internalMappers.ErrorModel = {
   }
 };
 
-internalMappers.IntWrapper = {
+export const IntWrapper = {
   required: false,
   serializedName: 'int-wrapper',
   type: {
@@ -53,7 +52,7 @@ internalMappers.IntWrapper = {
   }
 };
 
-internalMappers.IntOptionalWrapper = {
+export const IntOptionalWrapper = {
   required: false,
   serializedName: 'int-optional-wrapper',
   type: {
@@ -71,7 +70,7 @@ internalMappers.IntOptionalWrapper = {
   }
 };
 
-internalMappers.StringWrapper = {
+export const StringWrapper = {
   required: false,
   serializedName: 'string-wrapper',
   type: {
@@ -89,7 +88,7 @@ internalMappers.StringWrapper = {
   }
 };
 
-internalMappers.StringOptionalWrapper = {
+export const StringOptionalWrapper = {
   required: false,
   serializedName: 'string-optional-wrapper',
   type: {
@@ -107,7 +106,7 @@ internalMappers.StringOptionalWrapper = {
   }
 };
 
-internalMappers.ArrayWrapper = {
+export const ArrayWrapper = {
   required: false,
   serializedName: 'array-wrapper',
   type: {
@@ -132,7 +131,7 @@ internalMappers.ArrayWrapper = {
   }
 };
 
-internalMappers.ArrayOptionalWrapper = {
+export const ArrayOptionalWrapper = {
   required: false,
   serializedName: 'array-optional-wrapper',
   type: {
@@ -157,7 +156,7 @@ internalMappers.ArrayOptionalWrapper = {
   }
 };
 
-internalMappers.Product = {
+export const Product = {
   required: false,
   serializedName: 'product',
   type: {
@@ -182,7 +181,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.ClassWrapper = {
+export const ClassWrapper = {
   required: false,
   serializedName: 'class-wrapper',
   type: {
@@ -201,7 +200,7 @@ internalMappers.ClassWrapper = {
   }
 };
 
-internalMappers.ClassOptionalWrapper = {
+export const ClassOptionalWrapper = {
   required: false,
   serializedName: 'class-optional-wrapper',
   type: {
@@ -219,4 +218,3 @@ internalMappers.ClassOptionalWrapper = {
     }
   }
 };
-export const Mappers = internalMappers;

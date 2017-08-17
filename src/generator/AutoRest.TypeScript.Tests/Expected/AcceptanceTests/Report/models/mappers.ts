@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -34,4 +33,3 @@ internalMappers.ErrorModel = {
     }
   }
 };
-export const Mappers = internalMappers;

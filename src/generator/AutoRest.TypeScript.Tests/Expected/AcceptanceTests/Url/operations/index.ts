@@ -8,12 +8,6 @@
  * regenerated.
  */
 
-/* jshint latedef:false */
-/* jshint forin:false */
-/* jshint noempty:false */
-
-'use strict';
-
 import { Paths } from './paths';
 import { Queries } from './queries';
 import { PathItems } from './pathItems';

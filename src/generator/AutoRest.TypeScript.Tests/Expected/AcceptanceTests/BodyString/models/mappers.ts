@@ -8,9 +8,8 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -35,7 +34,7 @@ internalMappers.ErrorModel = {
   }
 };
 
-internalMappers.RefColorConstant = {
+export const RefColorConstant = {
   required: false,
   serializedName: 'RefColorConstant',
   type: {
@@ -61,4 +60,3 @@ internalMappers.RefColorConstant = {
     }
   }
 };
-export const Mappers = internalMappers;
