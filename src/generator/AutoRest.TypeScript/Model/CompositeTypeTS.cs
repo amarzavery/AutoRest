@@ -236,7 +236,7 @@ namespace AutoRest.TypeScript.Model
         {
             var modelMapper = this.ConstructMapper(SerializedName, null, false, true);
             var builder = new IndentedStringBuilder("  ");
-            builder.AppendLine("internalMappers.{0} = {{{1}}};", Name, modelMapper);
+            builder.AppendLine("export const {0} = {{{1}}};", Name, modelMapper);
             return builder.ToString();
         }
 

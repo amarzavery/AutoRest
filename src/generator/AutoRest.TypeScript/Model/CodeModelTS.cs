@@ -121,14 +121,14 @@ namespace AutoRest.TypeScript.Model
                             polymorphicType.Name,
                             polymorphicTypes.ElementAt(i).SerializedName);
                         builder.Append(string.Format(CultureInfo.InvariantCulture,
-                        "'{0}' : internalMappers.{1}",
+                        "'{0}' : {1}",
                             discriminatorField,
                             polymorphicTypes.ElementAt(i).Name));
                     }
                     else
                     {
                         builder.Append(string.Format(CultureInfo.InvariantCulture,
-                        "'{0}' : internalMappers.{1}",
+                        "'{0}' : {1}",
                             discriminatorField,
                             polymorphicTypes.ElementAt(i).Name));
                     }

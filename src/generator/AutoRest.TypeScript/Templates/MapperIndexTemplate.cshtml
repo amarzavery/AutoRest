@@ -5,7 +5,6 @@
 @Header(" * ")
  */
 @EmptyLine
-var internalMappers: any = {};
 @foreach (var model in Model.OrderedModelTemplateModels)
 {
 @EmptyLine
@@ -14,9 +13,7 @@ var internalMappers: any = {};
 @if (!string.IsNullOrWhiteSpace(Model.PolymorphicDictionary))
 {
 @EmptyLine
-@:internalMappers.discriminators = {
+@:export const discriminators = {
 @:  @(Model.PolymorphicDictionary)
 @:};
 }
-@EmptyLine
-export const Mappers = internalMappers;

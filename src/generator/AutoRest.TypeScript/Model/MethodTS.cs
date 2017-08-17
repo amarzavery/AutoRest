@@ -664,7 +664,7 @@ namespace AutoRest.TypeScript.Model
                 throw new ArgumentNullException(nameof(builder));
             }
 
-            builder.AppendLine("let queryParameters = [];");
+            builder.AppendLine("let queryParameters: Array<any> = [];");
             foreach (var queryParameter in LogicalParameters
                 .Where(p => p.Location == ParameterLocation.Query))
             {
