@@ -25,7 +25,7 @@ files.forEach(function (file) {
   if (file.length > 0 && file.trim()[0] !== '#') {
     // trim trailing \r if it exists
     file = file.replace('\r', '');
-    args.push('AcceptanceTests/' + file);
+    args.push('./dist/AcceptanceTests/' + file);
   }
 });
 

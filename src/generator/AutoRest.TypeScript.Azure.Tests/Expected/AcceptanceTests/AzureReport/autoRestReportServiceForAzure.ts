@@ -9,7 +9,7 @@
  */
 
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 const WebResource = msRest.WebResource;
@@ -27,6 +27,7 @@ class AutoRestReportServiceForAzure extends msRestAzure.AzureServiceClient {
   generateClientRequestId: boolean;
   baseUri: string;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestReportServiceForAzure class.
@@ -112,7 +113,7 @@ class AutoRestReportServiceForAzure extends msRestAzure.AzureServiceClient {
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'report/azure';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

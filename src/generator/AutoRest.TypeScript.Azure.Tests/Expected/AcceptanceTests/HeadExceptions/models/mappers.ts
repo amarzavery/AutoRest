@@ -12,28 +12,3 @@ import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
-
-export const ErrorModel = {
-  required: false,
-  serializedName: 'Error',
-  type: {
-    name: 'Composite',
-    className: 'ErrorModel',
-    modelProperties: {
-      status: {
-        required: false,
-        serializedName: 'status',
-        type: {
-          name: 'Number'
-        }
-      },
-      message: {
-        required: false,
-        serializedName: 'message',
-        type: {
-          name: 'String'
-        }
-      }
-    }
-  }
-};

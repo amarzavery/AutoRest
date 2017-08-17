@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { MicrosoftAzureTestUrl } from '../microsoftAzureTestUrl';
 
 const WebResource = msRest.WebResource;
@@ -67,7 +67,7 @@ export class Group {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');

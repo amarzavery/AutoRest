@@ -8,9 +8,12 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
-internalMappers.Resource = {
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
+
+export const Resource = {
   required: false,
   serializedName: 'Resource',
   type: {
@@ -66,7 +69,7 @@ internalMappers.Resource = {
   }
 };
 
-internalMappers.Sku = {
+export const Sku = {
   required: false,
   serializedName: 'Sku',
   type: {
@@ -91,7 +94,7 @@ internalMappers.Sku = {
   }
 };
 
-internalMappers.Product = {
+export const Product = {
   required: false,
   serializedName: 'Product',
   type: {
@@ -162,7 +165,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.SubResource = {
+export const SubResource = {
   required: false,
   serializedName: 'SubResource',
   type: {
@@ -181,7 +184,7 @@ internalMappers.SubResource = {
   }
 };
 
-internalMappers.SubProduct = {
+export const SubProduct = {
   required: false,
   serializedName: 'SubProduct',
   type: {
@@ -215,7 +218,7 @@ internalMappers.SubProduct = {
   }
 };
 
-internalMappers.OperationResultError = {
+export const OperationResultError = {
   required: false,
   serializedName: 'OperationResult_error',
   type: {
@@ -240,7 +243,7 @@ internalMappers.OperationResultError = {
   }
 };
 
-internalMappers.OperationResult = {
+export const OperationResult = {
   required: false,
   serializedName: 'OperationResult',
   type: {
@@ -265,5 +268,3 @@ internalMappers.OperationResult = {
     }
   }
 };
-
-export const Mappers = internalMappers;

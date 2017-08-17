@@ -9,7 +9,7 @@
  */
 
 import * as msRest from 'ms-rest';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
 
 const WebResource = msRest.WebResource;
@@ -58,7 +58,7 @@ export class SubscriptionInCredentials {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/method/string/none/path/global/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -156,7 +156,7 @@ export class SubscriptionInCredentials {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/method/string/none/path/global/null/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -256,7 +256,7 @@ export class SubscriptionInCredentials {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/method/string/none/path/globalNotProvided/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -354,7 +354,7 @@ export class SubscriptionInCredentials {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/path/string/none/path/global/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -451,7 +451,7 @@ export class SubscriptionInCredentials {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/swagger/string/none/path/global/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

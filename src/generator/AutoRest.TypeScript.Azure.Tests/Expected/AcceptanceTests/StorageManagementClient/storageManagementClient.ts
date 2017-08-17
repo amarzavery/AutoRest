@@ -9,7 +9,7 @@
  */
 
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 import * as operations from "./operations";
@@ -35,6 +35,7 @@ class StorageManagementClient extends msRestAzure.AzureServiceClient {
   storageAccounts: operations.StorageAccounts;
   usageOperations: operations.UsageOperations;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the StorageManagementClient class.

@@ -8,12 +8,10 @@
  * regenerated.
  */
 
-import { BaseResource } from 'ms-rest-azure';
-import { CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError } from 'ms-rest-azure';
 import * as moment from "moment";
 
-export { BaseResource } from 'ms-rest-azure';
-export { CloudError } from 'ms-rest-azure';
+export { BaseResource, CloudError };
 
 
 /**

@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestPagingTestService } from '../autoRestPagingTestService';
 
 const WebResource = msRest.WebResource;
@@ -54,7 +54,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/single';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -197,7 +197,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -350,7 +350,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/odata';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -516,7 +516,7 @@ export class Paging {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/withpath/{offset}';
     requestUrl = requestUrl.replace('{offset}', encodeURIComponent(offset.toString()));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -632,7 +632,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/retryfirst';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -740,7 +740,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/retrysecond';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -846,7 +846,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/single/failure';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -952,7 +952,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/failure';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -1058,7 +1058,7 @@ export class Paging {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/failureuri';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -1175,7 +1175,7 @@ export class Paging {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/fragment/{tenant}';
     requestUrl = requestUrl.replace('{tenant}', encodeURIComponent(tenant));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api_version=' + encodeURIComponent(apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -1313,7 +1313,7 @@ export class Paging {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/fragmentwithgrouping/{tenant}';
     requestUrl = requestUrl.replace('{tenant}', encodeURIComponent(tenant));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api_version=' + encodeURIComponent(apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -1437,7 +1437,7 @@ export class Paging {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/fragment/{tenant}/{nextLink}';
     requestUrl = requestUrl.replace('{tenant}', encodeURIComponent(tenant));
     requestUrl = requestUrl.replace('{nextLink}', nextLink);
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api_version=' + encodeURIComponent(apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += (requestUrl.indexOf('?') !== -1 ? '&' : '?') + queryParameters.join('&');
@@ -1580,7 +1580,7 @@ export class Paging {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'paging/multiple/fragmentwithgrouping/{tenant}/{nextLink}';
     requestUrl = requestUrl.replace('{nextLink}', nextLink);
     requestUrl = requestUrl.replace('{tenant}', encodeURIComponent(tenant));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api_version=' + encodeURIComponent(apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += (requestUrl.indexOf('?') !== -1 ? '&' : '?') + queryParameters.join('&');

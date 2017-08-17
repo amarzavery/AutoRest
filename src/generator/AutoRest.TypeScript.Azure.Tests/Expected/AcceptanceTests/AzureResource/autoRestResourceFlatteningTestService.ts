@@ -9,7 +9,7 @@
  */
 
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 const WebResource = msRest.WebResource;
@@ -27,6 +27,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
   generateClientRequestId: boolean;
   baseUri: string;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestResourceFlatteningTestService class.
@@ -115,7 +116,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azure/resource-flatten/array';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -236,7 +237,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azure/resource-flatten/array';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -362,7 +363,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azure/resource-flatten/dictionary';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -483,7 +484,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azure/resource-flatten/dictionary';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -627,7 +628,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azure/resource-flatten/resourcecollection';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -734,7 +735,7 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
     // Construct URL
     let baseUrl = this.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azure/resource-flatten/resourcecollection';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

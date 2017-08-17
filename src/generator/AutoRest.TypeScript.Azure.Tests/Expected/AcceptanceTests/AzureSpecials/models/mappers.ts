@@ -8,9 +8,12 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
-internalMappers.ErrorModel = {
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
+
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -42,7 +45,7 @@ internalMappers.ErrorModel = {
   }
 };
 
-internalMappers.OdataFilter = {
+export const OdataFilter = {
   required: false,
   serializedName: 'OdataFilter',
   type: {
@@ -67,7 +70,7 @@ internalMappers.OdataFilter = {
   }
 };
 
-internalMappers.HeaderCustomNamedRequestIdParamGroupingParameters = {
+export const HeaderCustomNamedRequestIdParamGroupingParameters = {
   required: false,
   type: {
     name: 'Composite',
@@ -82,5 +85,3 @@ internalMappers.HeaderCustomNamedRequestIdParamGroupingParameters = {
     }
   }
 };
-
-export const Mappers = internalMappers;

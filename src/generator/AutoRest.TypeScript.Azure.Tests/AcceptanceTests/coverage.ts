@@ -3,43 +3,41 @@
 
 'use strict';
 
-var should = require('should');
-var http = require('http');
-var assert = require('assert');
+import * as should from 'should';
+import * as assert from 'assert';
+import * as msRest from 'ms-rest';
+import * as msRestAzure from 'ms-rest-azure';
 
-var msRest = require('ms-rest');
-var msRestAzure = require('ms-rest-azure');
-
-var reportClient = require('../Expected/AcceptanceTests/AzureReport/autoRestReportServiceForAzure');
+import { AutoRestReportServiceForAzure } from '../Expected/AcceptanceTests/AzureReport/autoRestReportServiceForAzure';
 
 var dummySubscriptionId = 'a878ae02-6106-429z-9397-58091ee45g98';
 var dummyToken = 'dummy12321343423';
-var credentials = new msRestAzure.TokenCredentials(dummyToken);
+var credentials = new msRest.TokenCredentials(dummyToken);
 
-var clientOptions = {};
+var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
 describe('nodejs', function () {
 
   describe('Swagger BAT coverage report', function () {
-    var testClient = new reportClient(credentials, baseUri, clientOptions);
+    var testClient = new AutoRestReportServiceForAzure(credentials, baseUri, clientOptions);
     it('should have 100% coverage for Azure', function (done) {
       testClient.getReport(function (error, result) {
         should.not.exist(error);
         //console.log(`The test coverage for azure is ${JSON.stringify(result)).`);
-        
+
         var total = Object.keys(result).length;
         var passed = 0;
-        Object.keys(result).forEach(function(item) {
+        Object.keys(result).forEach(function (item) {
           if (result[item] > 0) {
             passed++;
           } else {
             console.log('No coverage for scenario: ' + item + '\n');
           }
         });
-        var result = Math.floor((passed / total) * 100);
-        console.log('Passed: ' + passed + ', Total: ' + total + ', coverage: ' + result + '% .');
-        result.should.equal(100);
+        var percentage = Math.floor((passed / total) * 100);
+        console.log('Passed: ' + passed + ', Total: ' + total + ', coverage: ' + percentage + '% .');
+        percentage.should.equal(100);
         done();
       });
     });

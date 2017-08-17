@@ -13,15 +13,3 @@ import { BaseResource, CloudError } from 'ms-rest-azure';
 export { BaseResource, CloudError };
 
 
-/**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
- */
-export interface ErrorModel {
-  status?: number;
-  message?: string;
-}
-

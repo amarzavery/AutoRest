@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { StorageManagementClient } from '../storageManagementClient';
 
 const WebResource = msRest.WebResource;
@@ -72,7 +72,7 @@ export class StorageAccounts {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -246,7 +246,7 @@ export class StorageAccounts {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -302,7 +302,7 @@ export class StorageAccounts {
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{accountName}', encodeURIComponent(accountName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -418,7 +418,7 @@ export class StorageAccounts {
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{accountName}', encodeURIComponent(accountName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -583,7 +583,7 @@ export class StorageAccounts {
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{accountName}', encodeURIComponent(accountName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -724,7 +724,7 @@ export class StorageAccounts {
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{accountName}', encodeURIComponent(accountName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -839,7 +839,7 @@ export class StorageAccounts {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/providers/Microsoft.Storage/storageAccounts';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -962,7 +962,7 @@ export class StorageAccounts {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts';
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -1105,7 +1105,7 @@ export class StorageAccounts {
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{accountName}', encodeURIComponent(accountName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -1266,7 +1266,7 @@ export class StorageAccounts {
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{accountName}', encodeURIComponent(accountName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');

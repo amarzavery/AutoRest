@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AzureCompositeModel } from '../azureCompositeModel';
 
 const WebResource = msRest.WebResource;
@@ -54,7 +54,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/valid';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -176,7 +176,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/valid';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
@@ -283,7 +283,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/invalid';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -390,7 +390,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/empty';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -497,7 +497,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/null';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -604,7 +604,7 @@ export class BasicOperations {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'complex/basic/notprovided';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

@@ -3,20 +3,19 @@
 
 'use strict';
 
-var should = require('should');
-var http = require('http');
-var assert = require('assert');
-var msRest = require('ms-rest');
-var msRestAzure = require('ms-rest-azure');
+import * as should from 'should';
+import * as assert from 'assert';
+import * as msRest from 'ms-rest';
+import * as msRestAzure from 'ms-rest-azure';
 
-var headClient = require('../Expected/AcceptanceTests/Head/autoRestHeadTestService');
-var headExceptionClient = require('../Expected/AcceptanceTests/HeadExceptions/autoRestHeadExceptionTestService');
+import { AutoRestHeadTestService } from '../Expected/AcceptanceTests/Head/autoRestHeadTestService';
+import { AutoRestHeadExceptionTestService } from '../Expected/AcceptanceTests/HeadExceptions/autoRestHeadExceptionTestService';
 
 var dummySubscriptionId = 'a878ae02-6106-429z-9397-58091ee45g98';
 var dummyToken = 'dummy12321343423';
-var credentials = new msRestAzure.TokenCredentials(dummyToken);
+var credentials = new msRest.TokenCredentials(dummyToken);
 
-var clientOptions = {};
+var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
 describe('nodejs', function () {
@@ -28,7 +27,7 @@ describe('nodejs', function () {
       testOptions.requestOptions = { jar: true };
       testOptions.filters = [new msRest.ExponentialRetryPolicyFilter(3, 0, 0, 0)];
       testOptions.noRetryPolicy = true;
-      var testClient = new headClient(credentials, baseUri, clientOptions);
+      var testClient = new AutoRestHeadTestService(credentials, baseUri, clientOptions);
 
       it('should return true for 200 status code', function (done) {
         testClient.httpSuccess.head200(function (error, result) {
@@ -56,11 +55,11 @@ describe('nodejs', function () {
     });
 
     describe('Head Exception Operations', function () {
-      var testOptions = clientOptions;
+      var testOptions: any = clientOptions;
       testOptions.requestOptions = { jar: true };
       testOptions.filters = [new msRest.ExponentialRetryPolicyFilter(3, 0, 0, 0)];
       testOptions.noRetryPolicy = true;
-      var testClient = new headExceptionClient(credentials, baseUri, clientOptions);
+      var testClient = new AutoRestHeadExceptionTestService(credentials, baseUri, clientOptions);
 
       it('should return true for 200 status code', function (done) {
         testClient.headException.head200(function (error, result) {

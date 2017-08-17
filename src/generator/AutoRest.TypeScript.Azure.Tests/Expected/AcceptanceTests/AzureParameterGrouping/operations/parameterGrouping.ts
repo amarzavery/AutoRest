@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestParameterGroupingTestService } from '../autoRestParameterGroupingTestService';
 
 const WebResource = msRest.WebResource;
@@ -106,7 +106,7 @@ export class ParameterGrouping {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/postRequired/{path}';
     requestUrl = requestUrl.replace('{path}', encodeURIComponent(path));
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (query !== null && query !== undefined) {
       queryParameters.push('query=' + encodeURIComponent(query.toString()));
     }
@@ -254,7 +254,7 @@ export class ParameterGrouping {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/postOptional';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (query !== null && query !== undefined) {
       queryParameters.push('query=' + encodeURIComponent(query.toString()));
     }
@@ -409,7 +409,7 @@ export class ParameterGrouping {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/postMultipleParameterGroups';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryOne !== null && queryOne !== undefined) {
       queryParameters.push('query-one=' + encodeURIComponent(queryOne.toString()));
     }
@@ -542,7 +542,7 @@ export class ParameterGrouping {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/sharedParameterGroupObject';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryOne !== null && queryOne !== undefined) {
       queryParameters.push('query-one=' + encodeURIComponent(queryOne.toString()));
     }

@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestLongRunningOperationTestService } from '../autoRestLongRunningOperationTestService';
 
 const WebResource = msRest.WebResource;
@@ -94,7 +94,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -168,7 +168,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -243,7 +243,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -318,7 +318,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -393,7 +393,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -468,7 +468,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -543,7 +543,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -618,7 +618,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -693,7 +693,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -768,7 +768,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -843,7 +843,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -918,7 +918,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -993,7 +993,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1064,7 +1064,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1135,7 +1135,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1202,7 +1202,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1269,7 +1269,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1337,7 +1337,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1405,7 +1405,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1473,7 +1473,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1521,11 +1521,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1592,7 +1590,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1659,7 +1657,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1709,11 +1707,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1763,11 +1759,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1817,11 +1811,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1871,11 +1863,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1925,11 +1915,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1979,11 +1967,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2050,7 +2036,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2108,11 +2094,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2186,7 +2170,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2261,7 +2245,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2336,7 +2320,7 @@ export class LROs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2394,11 +2378,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+    } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2456,11 +2438,9 @@ export class LROs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -2504,7 +2484,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/200/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2634,7 +2614,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/200/succeeded/nostate';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2765,7 +2745,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/202/retry/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2896,7 +2876,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/201/creating/succeeded/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3042,7 +3022,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/200/updating/succeeded/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3173,7 +3153,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/201/created/failed/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3319,7 +3299,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/200/accepted/canceled/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3450,7 +3430,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/put/noheader/202/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3581,7 +3561,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3712,7 +3692,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putasync/noretry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3843,7 +3823,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putasync/retry/failed';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3974,7 +3954,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putasync/noretry/canceled';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4105,7 +4085,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putasync/noheader/201/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4232,7 +4212,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putnonresource/202/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4359,7 +4339,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putnonresourceasync/202/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4495,7 +4475,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putsubresource/202/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4631,7 +4611,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/putsubresourceasync/202/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4754,7 +4734,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/provisioning/202/accepted/200/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4878,7 +4858,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/provisioning/202/deleting/200/failed';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5002,7 +4982,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/provisioning/202/deleting/200/canceled';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5123,7 +5103,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/204/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5216,7 +5196,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/202/retry/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5324,7 +5304,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/202/noretry/204';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5432,7 +5412,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/delete/noheader';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5525,7 +5505,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/deleteasync/noheader/202/204';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5618,7 +5598,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/deleteasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5711,7 +5691,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/deleteasync/noretry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5804,7 +5784,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/deleteasync/retry/failed';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5897,7 +5877,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/deleteasync/retry/canceled';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -5990,7 +5970,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/post/payload/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -6122,7 +6102,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/post/202/retry/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -6237,7 +6217,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/post/202/noretry/204';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -6368,7 +6348,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/postasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -6499,7 +6479,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/postasync/noretry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -6630,7 +6610,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/postasync/retry/failed';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -6746,7 +6726,7 @@ export class LROs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/postasync/retry/canceled';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

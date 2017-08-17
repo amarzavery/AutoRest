@@ -9,7 +9,7 @@
  */
 
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 import * as operations from "./operations";
@@ -19,7 +19,7 @@ const packageVersion = '3.0.0-preview';
 /**
  * AutoRestParameterizedHostTestClientOptions for AutoRestParameterizedHostTestClient.
  */
-interface AutoRestParameterizedHostTestClientOptions extends ServiceClientOptions {
+interface AutoRestParameterizedHostTestClientOptions extends msRestAzure.AzureServiceClientOptions {
   /**
    * @property {string} [host] - A string value that is used as a global part of the parameterized host
    */
@@ -54,6 +54,7 @@ class AutoRestParameterizedHostTestClient extends msRestAzure.AzureServiceClient
   // Operation groups
   paths: operations.Paths;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestParameterizedHostTestClient class.

@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestLongRunningOperationTestService } from '../autoRestLongRunningOperationTestService';
 
 const WebResource = msRest.WebResource;
@@ -96,7 +96,7 @@ export class LRORetrys {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -171,7 +171,7 @@ export class LRORetrys {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -239,7 +239,7 @@ export class LRORetrys {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -289,11 +289,9 @@ export class LRORetrys {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -343,11 +341,9 @@ export class LRORetrys {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -405,11 +401,9 @@ export class LRORetrys {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -467,11 +461,9 @@ export class LRORetrys {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -517,7 +509,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/put/201/creating/succeeded/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -663,7 +655,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/putasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -786,7 +778,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/provisioning/202/accepted/200/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -909,7 +901,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/202/retry/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -1002,7 +994,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/deleteasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -1104,7 +1096,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/post/202/retry/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -1220,7 +1212,7 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/postasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

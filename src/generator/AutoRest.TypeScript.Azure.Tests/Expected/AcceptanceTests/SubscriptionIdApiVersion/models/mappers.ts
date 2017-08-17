@@ -8,9 +8,12 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
-internalMappers.SampleResourceGroup = {
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
+
+export const SampleResourceGroup = {
   required: false,
   serializedName: 'SampleResourceGroup',
   type: {
@@ -35,7 +38,7 @@ internalMappers.SampleResourceGroup = {
   }
 };
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -59,5 +62,3 @@ internalMappers.ErrorModel = {
     }
   }
 };
-
-export const Mappers = internalMappers;

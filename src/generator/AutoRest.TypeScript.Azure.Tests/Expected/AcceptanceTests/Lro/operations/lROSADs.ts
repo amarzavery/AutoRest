@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestLongRunningOperationTestService } from '../autoRestLongRunningOperationTestService';
 
 const WebResource = msRest.WebResource;
@@ -93,7 +93,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -167,7 +167,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -241,7 +241,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -316,7 +316,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -364,11 +364,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -416,11 +414,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -470,11 +466,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -530,11 +524,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -590,11 +582,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -652,11 +642,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -730,7 +718,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -805,7 +793,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -880,7 +868,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -929,11 +917,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -983,11 +969,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1044,11 +1028,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1106,11 +1088,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1184,7 +1164,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1259,7 +1239,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1334,7 +1314,7 @@ export class LROSADs {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1383,11 +1363,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1436,11 +1414,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1490,11 +1466,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1551,11 +1525,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1613,11 +1585,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1675,11 +1645,9 @@ export class LROSADs {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -1722,7 +1690,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/put/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -1867,7 +1835,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/put/201/creating/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2012,7 +1980,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/put/201/creating/400/invalidjson';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2158,7 +2126,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/putasync/retry/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2278,7 +2246,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/delete/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2369,7 +2337,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/delete/202/retry/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2462,7 +2430,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/deleteasync/retry/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2562,7 +2530,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/post/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2676,7 +2644,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/post/202/retry/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2792,7 +2760,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/nonretryerror/postasync/retry/400';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -2907,7 +2875,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/put/201/noprovisioningstatepayload';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3053,7 +3021,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/putasync/retry/nostatus';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3184,7 +3152,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/putasync/retry/nostatuspayload';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3305,7 +3273,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/delete/204/nolocation';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3398,7 +3366,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/deleteasync/retry/nostatus';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3499,7 +3467,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/post/202/nolocation';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3615,7 +3583,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/postasync/retry/nopayload';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3730,7 +3698,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/put/200/invalidjson';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3861,7 +3829,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/putasync/retry/invalidheader';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -3992,7 +3960,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/putasync/retry/invalidjsonpolling';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4113,7 +4081,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/delete/202/retry/invalidheader';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4205,7 +4173,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/deleteasync/retry/invalidheader';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4298,7 +4266,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/deleteasync/retry/invalidjsonpolling';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4399,7 +4367,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/post/202/retry/invalidheader';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4515,7 +4483,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/postasync/retry/invalidheader';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -4631,7 +4599,7 @@ export class LROSADs {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/error/postasync/retry/invalidjsonpolling';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

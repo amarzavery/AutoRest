@@ -10,7 +10,7 @@
 
 import * as msRest from 'ms-rest';
 import * as Models from '../models';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestLongRunningOperationTestService } from '../autoRestLongRunningOperationTestService';
 
 const WebResource = msRest.WebResource;
@@ -97,7 +97,7 @@ export class LROsCustomHeader {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -174,7 +174,7 @@ export class LROsCustomHeader {
         deserializationError.response = msRest.stripResponse(response);
         return Promise.reject(deserializationError);
       }
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -233,11 +233,9 @@ export class LROsCustomHeader {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -297,11 +295,9 @@ export class LROsCustomHeader {
     let operationRes: msRest.HttpOperationResponse;
     try {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
-      let httpRequest = operationRes.request;
-      let response = operationRes.response;
 
       // Deserialize Response
-      } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);
@@ -348,7 +344,7 @@ export class LROsCustomHeader {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/customheader/putasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -481,7 +477,7 @@ export class LROsCustomHeader {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/customheader/put/201/creating/succeeded/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -628,7 +624,7 @@ export class LROsCustomHeader {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/customheader/post/202/retry/200';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }
@@ -746,7 +742,7 @@ export class LROsCustomHeader {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/customheader/postasync/retry/succeeded';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

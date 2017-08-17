@@ -18,12 +18,16 @@
     }
   ],
   "dependencies": {
-    "ms-rest": "^2.2.1",
-    "ms-rest-azure": "^2.2.1",
+    "ms-rest": "amarzavery/ms-rest",
+    "ms-rest-azure": "amarzavery/ms-rest-azure"
+  },
+  "devDependencies": {
     "jshint": "2.9.4",
     "moment": "^2.14.1",
     "mocha": "2.2.5",
-    "should": "5.2.0"
+    "should": "5.2.0",
+    "@types/mocha": "^2.2.41",
+    "@types/should": "^8.3.0"
   },
   "homepage": "https://github.com/Azure/AutoRest/src/generator/AutoRest.NodeJS.Azure.Tests",
   "repository": {

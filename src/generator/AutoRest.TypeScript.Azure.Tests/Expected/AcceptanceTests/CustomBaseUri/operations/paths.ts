@@ -9,7 +9,7 @@
  */
 
 import * as msRest from 'ms-rest';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestParameterizedHostTestClient } from '../autoRestParameterizedHostTestClient';
 
 const WebResource = msRest.WebResource;
@@ -63,7 +63,7 @@ export class Paths {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'customuri';
     requestUrl = requestUrl.replace('{accountName}', accountName);
     requestUrl = requestUrl.replace('{host}', this.client.host);
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (queryParameters.length > 0) {
       requestUrl += '?' + queryParameters.join('&');
     }

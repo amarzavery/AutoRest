@@ -8,9 +8,12 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
-internalMappers.StorageAccountCheckNameAvailabilityParameters = {
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
+
+export const StorageAccountCheckNameAvailabilityParameters = {
   required: false,
   serializedName: 'StorageAccountCheckNameAvailabilityParameters',
   type: {
@@ -36,7 +39,7 @@ internalMappers.StorageAccountCheckNameAvailabilityParameters = {
   }
 };
 
-internalMappers.CheckNameAvailabilityResult = {
+export const CheckNameAvailabilityResult = {
   required: false,
   serializedName: 'CheckNameAvailabilityResult',
   type: {
@@ -69,7 +72,7 @@ internalMappers.CheckNameAvailabilityResult = {
   }
 };
 
-internalMappers.Resource = {
+export const Resource = {
   required: false,
   serializedName: 'Resource',
   type: {
@@ -125,7 +128,7 @@ internalMappers.Resource = {
   }
 };
 
-internalMappers.StorageAccountCreateParameters = {
+export const StorageAccountCreateParameters = {
   required: false,
   serializedName: 'StorageAccountCreateParameters',
   type: {
@@ -189,7 +192,7 @@ internalMappers.StorageAccountCreateParameters = {
   }
 };
 
-internalMappers.Bar = {
+export const Bar = {
   required: false,
   serializedName: 'Bar',
   type: {
@@ -208,7 +211,7 @@ internalMappers.Bar = {
   }
 };
 
-internalMappers.Foo = {
+export const Foo = {
   required: false,
   serializedName: 'Foo',
   type: {
@@ -227,7 +230,7 @@ internalMappers.Foo = {
   }
 };
 
-internalMappers.Endpoints = {
+export const Endpoints = {
   required: false,
   serializedName: 'Endpoints',
   type: {
@@ -275,7 +278,7 @@ internalMappers.Endpoints = {
   }
 };
 
-internalMappers.CustomDomain = {
+export const CustomDomain = {
   required: false,
   serializedName: 'CustomDomain',
   type: {
@@ -300,7 +303,7 @@ internalMappers.CustomDomain = {
   }
 };
 
-internalMappers.StorageAccount = {
+export const StorageAccount = {
   required: false,
   serializedName: 'StorageAccount',
   type: {
@@ -440,7 +443,7 @@ internalMappers.StorageAccount = {
   }
 };
 
-internalMappers.StorageAccountKeys = {
+export const StorageAccountKeys = {
   required: false,
   serializedName: 'StorageAccountKeys',
   type: {
@@ -465,7 +468,7 @@ internalMappers.StorageAccountKeys = {
   }
 };
 
-internalMappers.StorageAccountUpdateParameters = {
+export const StorageAccountUpdateParameters = {
   required: false,
   serializedName: 'StorageAccountUpdateParameters',
   type: {
@@ -537,7 +540,7 @@ internalMappers.StorageAccountUpdateParameters = {
   }
 };
 
-internalMappers.StorageAccountRegenerateKeyParameters = {
+export const StorageAccountRegenerateKeyParameters = {
   required: false,
   serializedName: 'StorageAccountRegenerateKeyParameters',
   type: {
@@ -556,7 +559,7 @@ internalMappers.StorageAccountRegenerateKeyParameters = {
   }
 };
 
-internalMappers.UsageName = {
+export const UsageName = {
   required: false,
   serializedName: 'UsageName',
   type: {
@@ -581,7 +584,7 @@ internalMappers.UsageName = {
   }
 };
 
-internalMappers.Usage = {
+export const Usage = {
   required: false,
   serializedName: 'Usage',
   type: {
@@ -622,7 +625,7 @@ internalMappers.Usage = {
   }
 };
 
-internalMappers.UsageListResult = {
+export const UsageListResult = {
   required: false,
   serializedName: 'UsageListResult',
   type: {
@@ -648,7 +651,7 @@ internalMappers.UsageListResult = {
   }
 };
 
-internalMappers.SubResource = {
+export const SubResource = {
   required: false,
   serializedName: 'SubResource',
   type: {
@@ -666,7 +669,7 @@ internalMappers.SubResource = {
   }
 };
 
-internalMappers.StorageAccountListResult = {
+export const StorageAccountListResult = {
   required: false,
   serializedName: 'StorageAccountListResult',
   type: {
@@ -691,5 +694,3 @@ internalMappers.StorageAccountListResult = {
     }
   }
 };
-
-export const Mappers = internalMappers;

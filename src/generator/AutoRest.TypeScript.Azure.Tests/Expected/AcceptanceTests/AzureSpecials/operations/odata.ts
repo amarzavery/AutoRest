@@ -9,7 +9,7 @@
  */
 
 import * as msRest from 'ms-rest';
-import { Mappers } from '../models/mappers';
+import * as Mappers from '../models/mappers';
 import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
 
 const WebResource = msRest.WebResource;
@@ -73,7 +73,7 @@ export class Odata {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/odata/filter';
-    let queryParameters = [];
+    let queryParameters: Array<any> = [];
     if (filter !== null && filter !== undefined) {
       queryParameters.push('$filter=' + encodeURIComponent(filter));
     }

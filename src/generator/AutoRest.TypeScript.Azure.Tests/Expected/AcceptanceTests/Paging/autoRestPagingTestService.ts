@@ -9,7 +9,7 @@
  */
 
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 import * as operations from "./operations";
@@ -30,6 +30,7 @@ class AutoRestPagingTestService extends msRestAzure.AzureServiceClient {
   // Operation groups
   paging: operations.Paging;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestPagingTestService class.

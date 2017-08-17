@@ -8,9 +8,12 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
-internalMappers.Product = {
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
+
+export const Product = {
   required: false,
   serializedName: 'Product',
   type: {
@@ -57,7 +60,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.CatalogDictionary = {
+export const CatalogDictionary = {
   required: false,
   serializedName: 'CatalogDictionary',
   type: {
@@ -83,7 +86,7 @@ internalMappers.CatalogDictionary = {
   }
 };
 
-internalMappers.CatalogArray = {
+export const CatalogArray = {
   required: false,
   serializedName: 'CatalogArray',
   type: {
@@ -109,7 +112,7 @@ internalMappers.CatalogArray = {
   }
 };
 
-internalMappers.CatalogArrayOfDictionary = {
+export const CatalogArrayOfDictionary = {
   required: false,
   serializedName: 'CatalogArrayOfDictionary',
   type: {
@@ -142,7 +145,7 @@ internalMappers.CatalogArrayOfDictionary = {
   }
 };
 
-internalMappers.CatalogDictionaryOfArray = {
+export const CatalogDictionaryOfArray = {
   required: false,
   serializedName: 'CatalogDictionaryOfArray',
   type: {
@@ -175,7 +178,7 @@ internalMappers.CatalogDictionaryOfArray = {
   }
 };
 
-internalMappers.ErrorModel = {
+export const ErrorModel = {
   required: false,
   serializedName: 'Error',
   type: {
@@ -200,7 +203,7 @@ internalMappers.ErrorModel = {
   }
 };
 
-internalMappers.Basic = {
+export const Basic = {
   required: false,
   serializedName: 'basic',
   type: {
@@ -232,7 +235,7 @@ internalMappers.Basic = {
   }
 };
 
-internalMappers.Pet = {
+export const Pet = {
   required: false,
   serializedName: 'pet',
   type: {
@@ -257,7 +260,7 @@ internalMappers.Pet = {
   }
 };
 
-internalMappers.Dog = {
+export const Dog = {
   required: false,
   serializedName: 'dog',
   type: {
@@ -289,7 +292,7 @@ internalMappers.Dog = {
   }
 };
 
-internalMappers.Cat = {
+export const Cat = {
   required: false,
   serializedName: 'cat',
   type: {
@@ -336,7 +339,7 @@ internalMappers.Cat = {
   }
 };
 
-internalMappers.Siamese = {
+export const Siamese = {
   required: false,
   serializedName: 'siamese',
   type: {
@@ -390,7 +393,7 @@ internalMappers.Siamese = {
   }
 };
 
-internalMappers.Fish = {
+export const Fish = {
   required: false,
   serializedName: 'Fish',
   type: {
@@ -447,7 +450,7 @@ internalMappers.Fish = {
   }
 };
 
-internalMappers.Salmon = {
+export const Salmon = {
   required: false,
   serializedName: 'salmon',
   type: {
@@ -513,7 +516,7 @@ internalMappers.Salmon = {
   }
 };
 
-internalMappers.Shark = {
+export const Shark = {
   required: false,
   serializedName: 'shark',
   type: {
@@ -579,7 +582,7 @@ internalMappers.Shark = {
   }
 };
 
-internalMappers.Sawshark = {
+export const Sawshark = {
   required: false,
   serializedName: 'sawshark',
   type: {
@@ -652,7 +655,7 @@ internalMappers.Sawshark = {
   }
 };
 
-internalMappers.Goblinshark = {
+export const Goblinshark = {
   required: false,
   serializedName: 'goblin',
   type: {
@@ -725,7 +728,7 @@ internalMappers.Goblinshark = {
   }
 };
 
-internalMappers.Cookiecuttershark = {
+export const Cookiecuttershark = {
   required: false,
   serializedName: 'cookiecuttershark',
   type: {
@@ -791,7 +794,7 @@ internalMappers.Cookiecuttershark = {
   }
 };
 
-internalMappers.IntWrapper = {
+export const IntWrapper = {
   required: false,
   serializedName: 'int-wrapper',
   type: {
@@ -816,7 +819,7 @@ internalMappers.IntWrapper = {
   }
 };
 
-internalMappers.LongWrapper = {
+export const LongWrapper = {
   required: false,
   serializedName: 'long-wrapper',
   type: {
@@ -841,7 +844,7 @@ internalMappers.LongWrapper = {
   }
 };
 
-internalMappers.FloatWrapper = {
+export const FloatWrapper = {
   required: false,
   serializedName: 'float-wrapper',
   type: {
@@ -866,7 +869,7 @@ internalMappers.FloatWrapper = {
   }
 };
 
-internalMappers.DoubleWrapper = {
+export const DoubleWrapper = {
   required: false,
   serializedName: 'double-wrapper',
   type: {
@@ -891,7 +894,7 @@ internalMappers.DoubleWrapper = {
   }
 };
 
-internalMappers.BooleanWrapper = {
+export const BooleanWrapper = {
   required: false,
   serializedName: 'boolean-wrapper',
   type: {
@@ -916,7 +919,7 @@ internalMappers.BooleanWrapper = {
   }
 };
 
-internalMappers.StringWrapper = {
+export const StringWrapper = {
   required: false,
   serializedName: 'string-wrapper',
   type: {
@@ -948,7 +951,7 @@ internalMappers.StringWrapper = {
   }
 };
 
-internalMappers.DateWrapper = {
+export const DateWrapper = {
   required: false,
   serializedName: 'date-wrapper',
   type: {
@@ -973,7 +976,7 @@ internalMappers.DateWrapper = {
   }
 };
 
-internalMappers.DatetimeWrapper = {
+export const DatetimeWrapper = {
   required: false,
   serializedName: 'datetime-wrapper',
   type: {
@@ -998,7 +1001,7 @@ internalMappers.DatetimeWrapper = {
   }
 };
 
-internalMappers.Datetimerfc1123Wrapper = {
+export const Datetimerfc1123Wrapper = {
   required: false,
   serializedName: 'datetimerfc1123-wrapper',
   type: {
@@ -1023,7 +1026,7 @@ internalMappers.Datetimerfc1123Wrapper = {
   }
 };
 
-internalMappers.DurationWrapper = {
+export const DurationWrapper = {
   required: false,
   serializedName: 'duration-wrapper',
   type: {
@@ -1041,7 +1044,7 @@ internalMappers.DurationWrapper = {
   }
 };
 
-internalMappers.ByteWrapper = {
+export const ByteWrapper = {
   required: false,
   serializedName: 'byte-wrapper',
   type: {
@@ -1059,7 +1062,7 @@ internalMappers.ByteWrapper = {
   }
 };
 
-internalMappers.ArrayWrapper = {
+export const ArrayWrapper = {
   required: false,
   serializedName: 'array-wrapper',
   type: {
@@ -1084,7 +1087,7 @@ internalMappers.ArrayWrapper = {
   }
 };
 
-internalMappers.DictionaryWrapper = {
+export const DictionaryWrapper = {
   required: false,
   serializedName: 'dictionary-wrapper',
   type: {
@@ -1109,7 +1112,7 @@ internalMappers.DictionaryWrapper = {
   }
 };
 
-internalMappers.ReadonlyObj = {
+export const ReadonlyObj = {
   required: false,
   serializedName: 'readonly-obj',
   type: {
@@ -1135,13 +1138,11 @@ internalMappers.ReadonlyObj = {
   }
 };
 
-internalMappers.discriminators = {
-  'Fish' : internalMappers.Fish,
-  'Fish.salmon' : internalMappers.Salmon,
-  'Fish.shark' : internalMappers.Shark,
-  'Fish.sawshark' : internalMappers.Sawshark,
-  'Fish.goblin' : internalMappers.Goblinshark,
-  'Fish.cookiecuttershark' : internalMappers.Cookiecuttershark
+export const discriminators = {
+  'Fish' : Fish,
+  'Fish.salmon' : Salmon,
+  'Fish.shark' : Shark,
+  'Fish.sawshark' : Sawshark,
+  'Fish.goblin' : Goblinshark,
+  'Fish.cookiecuttershark' : Cookiecuttershark
 };
-
-export const Mappers = internalMappers;

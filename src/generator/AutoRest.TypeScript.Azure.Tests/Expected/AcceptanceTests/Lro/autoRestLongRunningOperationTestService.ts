@@ -9,7 +9,7 @@
  */
 
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 import * as operations from "./operations";
@@ -33,6 +33,7 @@ class AutoRestLongRunningOperationTestService extends msRestAzure.AzureServiceCl
   lROSADs: operations.LROSADs;
   lROsCustomHeader: operations.LROsCustomHeader;
   serializer: msRest.Serializer;
+
   /**
    * @class
    * Initializes a new instance of the AutoRestLongRunningOperationTestService class.

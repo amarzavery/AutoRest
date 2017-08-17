@@ -8,9 +8,12 @@
  * regenerated.
  */
 
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
 
-internalMappers.ProductProperties = {
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
+
+export const ProductProperties = {
   required: false,
   serializedName: 'Product_properties',
   type: {
@@ -35,7 +38,7 @@ internalMappers.ProductProperties = {
   }
 };
 
-internalMappers.Product = {
+export const Product = {
   required: false,
   serializedName: 'Product',
   type: {
@@ -54,7 +57,7 @@ internalMappers.Product = {
   }
 };
 
-internalMappers.OperationResult = {
+export const OperationResult = {
   required: false,
   serializedName: 'OperationResult',
   type: {
@@ -72,7 +75,7 @@ internalMappers.OperationResult = {
   }
 };
 
-internalMappers.PagingGetMultiplePagesOptions = {
+export const PagingGetMultiplePagesOptions = {
   required: false,
   type: {
     name: 'Composite',
@@ -95,7 +98,7 @@ internalMappers.PagingGetMultiplePagesOptions = {
   }
 };
 
-internalMappers.PagingGetOdataMultiplePagesOptions = {
+export const PagingGetOdataMultiplePagesOptions = {
   required: false,
   type: {
     name: 'Composite',
@@ -118,7 +121,7 @@ internalMappers.PagingGetOdataMultiplePagesOptions = {
   }
 };
 
-internalMappers.PagingGetMultiplePagesWithOffsetOptions = {
+export const PagingGetMultiplePagesWithOffsetOptions = {
   required: false,
   type: {
     name: 'Composite',
@@ -147,7 +150,7 @@ internalMappers.PagingGetMultiplePagesWithOffsetOptions = {
   }
 };
 
-internalMappers.CustomParameterGroup = {
+export const CustomParameterGroup = {
   required: false,
   type: {
     name: 'Composite',
@@ -169,7 +172,7 @@ internalMappers.CustomParameterGroup = {
   }
 };
 
-internalMappers.PagingGetMultiplePagesWithOffsetNextOptions = {
+export const PagingGetMultiplePagesWithOffsetNextOptions = {
   required: false,
   type: {
     name: 'Composite',
@@ -192,7 +195,7 @@ internalMappers.PagingGetMultiplePagesWithOffsetNextOptions = {
   }
 };
 
-internalMappers.ProductResult = {
+export const ProductResult = {
   required: false,
   serializedName: 'ProductResult',
   type: {
@@ -225,7 +228,7 @@ internalMappers.ProductResult = {
   }
 };
 
-internalMappers.OdataProductResult = {
+export const OdataProductResult = {
   required: false,
   serializedName: 'OdataProductResult',
   type: {
@@ -257,5 +260,3 @@ internalMappers.OdataProductResult = {
     }
   }
 };
-
-export const Mappers = internalMappers;
