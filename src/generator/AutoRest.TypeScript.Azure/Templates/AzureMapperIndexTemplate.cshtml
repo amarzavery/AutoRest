@@ -8,7 +8,10 @@
 @Header(" * ")
  */
 @EmptyLine
-var internalMappers: any = {};
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+@EmptyLine
+export const CloudError = CloudErrorMapper;
+export const BaseResource = BaseResourceMapper;
 @foreach (var model in Model.OrderedModelTemplateModels)
 {
 @EmptyLine
@@ -22,9 +25,7 @@ var internalMappers: any = {};
 @if (!string.IsNullOrWhiteSpace(Model.PolymorphicDictionary))
 {
 @EmptyLine
-@:internalMappers.discriminators = {
+@:export const discriminators = {
 @:  @(Model.PolymorphicDictionary)
 @:};
 }
-@EmptyLine
-export const Mappers = internalMappers;

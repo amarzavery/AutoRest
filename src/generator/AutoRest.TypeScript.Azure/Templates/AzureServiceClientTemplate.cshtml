@@ -10,7 +10,7 @@
  */
 @EmptyLine
 import * as Models from "./models";
-import { Mappers } from "./models/mappers";
+import * as Mappers from "./models/mappers";
 import * as msRest from "ms-rest";
 import * as msRestAzure from "ms-rest-azure";
 @if (Model.MethodGroupModels.Any()) {
@@ -36,7 +36,7 @@ const packageVersion = '3.0.0-preview';
 @:/**
  @:* @(Model.Name)Options for @(Model.Name).
  @:*/
-@:interface @(Model.Name)Options extends ServiceClientOptions {
+@:interface @(Model.Name)Options extends msRestAzure.AzureServiceClientOptions {
     foreach (var param in optionalParameters)
     {
   @:/**
@@ -65,6 +65,7 @@ foreach (var methodGroup in Model.MethodGroupModels)
 }
 }
   serializer: msRest.Serializer;
+  @EmptyLine
   /**
    * @@class
    * Initializes a new instance of the @Model.Name class.

@@ -43,15 +43,10 @@ namespace AutoRest.TypeScript.Azure
             // Service client
             var serviceClientTemplate = new AzureServiceClientTemplate { Model = codeModel };
             await Write(serviceClientTemplate, codeModel.Name.ToCamelCase() + ".ts");
-
-            //Models
-            if (codeModel.ModelTemplateModels.Any())
-            {
-                var modelIndexTemplate = new AzureModelIndexTemplate { Model = codeModel };
-                await Write(modelIndexTemplate, Path.Combine("models", "index.ts"));
-                var mapperIndexTemplate = new AzureMapperIndexTemplate { Model = codeModel };
-                await Write(mapperIndexTemplate, Path.Combine("models", "mappers.ts"));
-            }
+            var modelIndexTemplate = new AzureModelIndexTemplate { Model = codeModel };
+            await Write(modelIndexTemplate, Path.Combine("models", "index.ts"));
+            var mapperIndexTemplate = new AzureMapperIndexTemplate { Model = codeModel };
+            await Write(mapperIndexTemplate, Path.Combine("models", "mappers.ts"));
 
             //MethodGroups
             if (codeModel.MethodGroupModels.Any())

@@ -52,7 +52,7 @@ namespace AutoRest.TypeScript.Azure.Model
         {
             var modelMapper = this.ConstructMapper(SerializedName, null, true, true);
             var builder = new IndentedStringBuilder("  ");
-            builder.AppendLine("internalMappers.{0} = {{{1}}};", Name, modelMapper);
+            builder.AppendLine("export const {0} = {{{1}}};", Name, modelMapper);
             return builder.ToString();
         }
     }

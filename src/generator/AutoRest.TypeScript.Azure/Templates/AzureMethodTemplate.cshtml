@@ -12,7 +12,7 @@
 }
 else
 {
-    <text>
+<text>
 @EmptyLine
 @(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.Promise))
 async @(Model.Name.ToCamelCase())WithHttpOperationResponse(@(Model.MethodParameterDeclarationTS(true, true))): Promise<msRest.HttpOperationResponse> {
@@ -27,22 +27,25 @@ async @(Model.Name.ToCamelCase())WithHttpOperationResponse(@(Model.MethodParamet
   let operationRes: msRest.HttpOperationResponse;
   try {
     operationRes = await client.getLongRunningOperationResult(initialResult, options);
-    let httpRequest = operationRes.request;
-    let response = operationRes.response;
+@if (Model.ReturnType.Body != null)
+{
+    @:let httpRequest = operationRes.request;
+    @:let response = operationRes.response;
+}
     @EmptyLine
     // Deserialize Response
-    @if (Model.ReturnType.Body != null)
-    {
+@if (Model.ReturnType.Body != null)
+{
     @:@(Model.DeserializeResponse(Model.ReturnType.Body, "operationRes.bodyAsJson"))
-    }
-    @if (Model.ReturnType.Body != null && Model.DefaultResponse.Body != null && !Model.Responses.Any())
-    {
+}
+@if (Model.ReturnType.Body != null && Model.DefaultResponse.Body != null && !Model.Responses.Any())
+{
     @:@(Model.DeserializeResponse(Model.DefaultResponse.Body, "operationRes.bodyAsJson"))
-    }
+}
 } catch (err) {
     return Promise.reject(err);
   }
   return Promise.resolve(operationRes);
 }
-    </text>
+</text>
 }
