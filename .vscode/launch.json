@@ -32,10 +32,42 @@
       "protocol": "inspector",
       "request": "launch",
       "name": "run autorest",
-      "program": "${workspaceRoot}/src/autorest-core/app.js",
+      "program": "${workspaceRoot}/src/autorest-core/dist/app.js",
       "args": [
         "C:/work/github/azure-rest-api-specs/profile/all.md"
       ],
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "name": "debug ts test",
+      "program": "${workspaceRoot}/src/generator/AutoRest.TypeScript.Tests/dist/AcceptanceTests/foo.js",
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "name": "debug ts azure test",
+      "program": "${workspaceRoot}/src/generator/AutoRest.TypeScript.Azure.Tests/dist/AcceptanceTests/foo.js",
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "name": "debug node test",
+      "program": "${workspaceRoot}/src/generator/AutoRest.NodeJS.Tests/AcceptanceTests/foo.js",
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "name": "debug node azure test",
+      "program": "${workspaceRoot}/src/generator/AutoRest.NodeJS.Azure.Tests/AcceptanceTests/foo.js",
       "cwd": "${workspaceRoot}"
     }
   ]
