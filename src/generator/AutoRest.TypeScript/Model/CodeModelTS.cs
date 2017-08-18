@@ -49,6 +49,15 @@ namespace AutoRest.TypeScript.Model
             }
         }
 
+        public string ClientPrefix
+        {
+            get
+            {
+                var clientIndex = Name.Value.IndexOf("Client", 0, StringComparison.CurrentCultureIgnoreCase);
+                return clientIndex > 0 ? Name.Value.Substring(0, clientIndex) : Name.Value;
+            }
+        }
+
         public bool ContainsDurationProperty()
         {
             Core.Model.Property prop = Properties.FirstOrDefault(p =>
