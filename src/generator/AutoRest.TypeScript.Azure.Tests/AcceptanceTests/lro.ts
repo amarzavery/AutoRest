@@ -8,7 +8,7 @@ import * as assert from 'assert';
 import * as msRest from 'ms-rest';
 import * as msRestAzure from 'ms-rest-azure';
 
-import { AutoRestLongRunningOperationTestService, Models } from '../Expected/AcceptanceTests/Lro/autoRestLongRunningOperationTestService';
+import { AutoRestLongRunningOperationTestService, AutoRestLongRunningOperationTestServiceModels } from '../Expected/AcceptanceTests/Lro/autoRestLongRunningOperationTestService';
 
 var dummySubscriptionId = 'a878ae02-6106-429z-9397-58091ee45g98';
 var dummyToken = 'dummy12321343423';
@@ -17,7 +17,7 @@ var credentials = new msRest.TokenCredentials(dummyToken);
 var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
 
   describe('Swagger LRO Happy BAT', function () {
     clientOptions.requestOptions = { jar: true };
@@ -26,7 +26,7 @@ describe('nodejs', function () {
     clientOptions.longRunningOperationRetryTimeout = 0;
 
     var testClient = new AutoRestLongRunningOperationTestService(credentials, baseUri, clientOptions);
-    var product: Models.Product = { location: 'West US' };
+    var product: AutoRestLongRunningOperationTestServiceModels.Product = { location: 'West US' };
     it('should work with Put201CreatingSucceeded200', function (done) {
       testClient.lROs.put201CreatingSucceeded200({ product: product }, function (error, result) {
         should.not.exist(error);
@@ -97,7 +97,7 @@ describe('nodejs', function () {
     });
 
     it('should work with PutNonResource', function (done) {
-      const sku: Models.Sku = {
+      const sku: AutoRestLongRunningOperationTestServiceModels.Sku = {
         'name': 'doesNotMatter', //server will return a fixed faked value anyway
         'id': 'doesNotMatter'
       };
@@ -110,7 +110,7 @@ describe('nodejs', function () {
     });
 
     it('should work with PutAsyncNonResource', function (done) {
-      const sku: Models.Sku = {
+      const sku: AutoRestLongRunningOperationTestServiceModels.Sku = {
         'name': 'doesNotMatter', //server will return a fixed faked value anyway
         'id': 'doesNotMatter'
       };
@@ -306,13 +306,13 @@ describe('nodejs', function () {
       });
     });
 
-    it('>>>>>>>> should work with PostAsyncRetryFailed', function (done) {
+    it('should work with PostAsyncRetryFailed', function (done) {
       testClient.lROs.postAsyncRetryFailed({ product: product }, function (error, result) {
         should.exist(error);
         error.message.should.containEql('Long running operation failed with error: "Internal Server Error".');
-        var errObject = error;
-        //errObject.code.should.be.exactly(500);
-        errObject.message.should.be.exactly('Internal Server Error');
+        var errObject = (error as msRest.RestError).body;
+        errObject.error.code.should.be.exactly(500);
+        errObject.error.message.should.be.exactly('Internal Server Error');
         done();
       });
     });
@@ -420,9 +420,7 @@ describe('nodejs', function () {
     it('should throw on PutAsyncRelativeRetry400', function (done) {
       testClient.lROSADs.putAsyncRelativeRetry400({ product: product }, function (error, result) {
         should.exist(error);
-        //For C# we get "Long running operation failed with status 'BadRequest'
-        //TODO: see whether we can get the parity. Node.js has different exception system.
-        error.message.should.match(/^Long running operation failed with error: "Invalid status code with response body.*/ig);
+        error.message.should.match(/.*Invalid status code with response body "" occurred when polling for operation status.*/ig);
         done();
       });
     });
@@ -493,7 +491,7 @@ describe('nodejs', function () {
     it('should throw on PutAsyncRelativeRetryNoStatus', function (done) {
       testClient.lROSADs.putAsyncRelativeRetryNoStatus({ product: product }, function (error, result) {
         should.exist(error);
-        error.message.should.containEql('The response from long running operation does not contain a body.');
+        error.message.should.containEql('The response "{ }" from long running operation does not contain the status property.');
         done();
       });
     });
@@ -508,7 +506,7 @@ describe('nodejs', function () {
     it('should throw on DeleteAsyncRelativeRetryNoStatus', function (done) {
       testClient.lROSADs.deleteAsyncRelativeRetryNoStatus(function (error, result) {
         should.exist(error);
-        error.message.should.containEql('The response from long running operation does not contain a body.');
+        error.message.should.containEql('The response "{ }" from long running operation does not contain the status property.');
         done();
       });
     });

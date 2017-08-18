@@ -15,7 +15,7 @@ var credentials = new msRest.TokenCredentials(dummyToken);
 var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
 
   describe('Azure Composite Client', function () {
     var testClient = new AzureCompositeModel(credentials, baseUri, clientOptions);

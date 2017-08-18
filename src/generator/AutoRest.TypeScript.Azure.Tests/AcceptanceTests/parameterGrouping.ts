@@ -8,14 +8,14 @@ import * as assert from 'assert';
 import * as msRest from 'ms-rest';
 import * as msRestAzure from 'ms-rest-azure';
 
-import { AutoRestParameterGroupingTestService, Models } from '../Expected/AcceptanceTests/AzureParameterGrouping/autoRestParameterGroupingTestService';
+import { AutoRestParameterGroupingTestService } from '../Expected/AcceptanceTests/AzureParameterGrouping/autoRestParameterGroupingTestService';
 var dummyToken = 'dummy12321343423';
 var credentials = new msRest.TokenCredentials(dummyToken);
 
 var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
   var body = 1234;
   var header = "header";
   var query = 21;
@@ -39,17 +39,6 @@ describe('nodejs', function () {
           response.status.should.equal(200);
           done();
         });
-    });
-
-    it.skip('should reject required parameters with missing required property', function (done) {
-      // testClient.parameterGrouping.postRequired({ path: path },
-      //   function (error, result, request, response) {
-      //     should.exist(error);
-      //     error.message.should.match(/.*cannot be null or undefined.*/);
-      //     should.not.exist(result);
-      //     should.not.exist(response);
-      done();
-      //   });
     });
 
     it('should reject null required parameters', function (done) {

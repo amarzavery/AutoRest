@@ -18,7 +18,7 @@ var credentials = new msRest.TokenCredentials(dummyToken);
 var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
 
   describe('Swagger Head BAT', function () {
 

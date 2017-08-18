@@ -15,12 +15,19 @@ before(function (done) {
   var started = false;
   var out = fs.openSync('./server.log', 'w');
   fs.writeSync(out, 'Test run started at ' + new Date().toISOString() + '\n');
-  child = child_process.spawn(nodeCmd, [__dirname + '/../../../dev/TestServer/server/startup/www']);
+  child = child_process.spawn(nodeCmd, [__dirname + '/../../../../dev/TestServer/server/startup/www']);
 
   child.stdout.on('data', function (data: Buffer) {
     fs.writeSync(out, data.toString('UTF-8'));
     if (data.toString().indexOf('started') > 0) {
       started = true;
+      done();
+    }
+  });
+
+  child.stderr.on('data', (data) => {
+    fs.writeSync(out, data.toString());
+    if (!started) {
       done();
     }
   });

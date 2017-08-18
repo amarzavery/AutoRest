@@ -16,7 +16,7 @@ var credentials = new msRest.TokenCredentials(dummyToken);
 var clientOptions: any = {};
 var baseUri = 'http://localhost:3000';
 
-describe('nodejs', function () {
+describe('typescript', function () {
 
   describe('Azure Swagger Url', function () {
     var testClient = new MicrosoftAzureTestUrl(credentials, dummySubscriptionId, baseUri, clientOptions);

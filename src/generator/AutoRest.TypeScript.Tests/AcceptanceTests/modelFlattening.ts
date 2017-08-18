@@ -10,7 +10,7 @@ import * as msRest from 'ms-rest';
 import moment = require('moment');
 var _ = require('underscore');
 
-import { AutoRestResourceFlatteningTestService, Models } from '../Expected/AcceptanceTests/ModelFlattening/autoRestResourceFlatteningTestService';
+import { AutoRestResourceFlatteningTestService, AutoRestResourceFlatteningTestServiceModels } from '../Expected/AcceptanceTests/ModelFlattening/autoRestResourceFlatteningTestService';
 
 var clientOptions = {};
 var baseUri = 'http://localhost:3000';
@@ -54,8 +54,8 @@ describe('typescript', function () {
 
       it('should put external resource as an array', function (done) {
         var resourceBody = [
-          <Models.Resource>{ "location": "West US", "tags": { "tag1": "value1", "tag2": "value3" }, "pname": "Product1", "flattenedProductType": "Flat" },
-          <Models.Resource>{ "location": "Building 44", "pname": "Product2" }
+          <AutoRestResourceFlatteningTestServiceModels.Resource>{ "location": "West US", "tags": { "tag1": "value1", "tag2": "value3" }, "pname": "Product1", "flattenedProductType": "Flat" },
+          <AutoRestResourceFlatteningTestServiceModels.Resource>{ "location": "Building 44", "pname": "Product2" }
         ];
         testClient.putArray({ resourceArray: resourceBody }, function (error, result) {
           should.not.exist(error);
@@ -94,7 +94,7 @@ describe('typescript', function () {
       });
 
       it('should put external resource as a dictionary', function (done) {
-        var resourceBody: { [propertyName: string]: Models.FlattenedProduct } = {
+        var resourceBody: { [propertyName: string]: AutoRestResourceFlatteningTestServiceModels.FlattenedProduct } = {
           "Resource1": { "location": "West US", "tags": { "tag1": "value1", "tag2": "value3" }, "pname": "Product1", "flattenedProductType": "Flat" },
           "Resource2": { "location": "Building 44", "pname": "Product2", "flattenedProductType": "Flat" }
         };
@@ -164,7 +164,7 @@ describe('typescript', function () {
       });
 
       it('should put external resource as a complex type', function (done) {
-        var resourceBody = <Models.ResourceCollection>{
+        var resourceBody = <AutoRestResourceFlatteningTestServiceModels.ResourceCollection>{
           "arrayofresources": [
             { "location": "West US", "tags": { "tag1": "value1", "tag2": "value3" }, "pname": "Product1", "flattenedProductType": "Flat" },
             { "location": "East US", "pname": "Product2", "flattenedProductType": "Flat" }
@@ -182,7 +182,7 @@ describe('typescript', function () {
       });
 
       it('should put simple product to flatten', function (done) {
-        var resourceBody = <Models.SimpleProduct>{
+        var resourceBody = <AutoRestResourceFlatteningTestServiceModels.SimpleProduct>{
           productId: "123",
           description: "product description",
           maxProductDisplayName: "max name",
@@ -199,7 +199,7 @@ describe('typescript', function () {
       });
 
       it('should post simple product with param flattening', function (done) {
-        var resourceBody = <Models.SimpleProduct>{
+        var resourceBody = <AutoRestResourceFlatteningTestServiceModels.SimpleProduct>{
           productId: "123",
           description: "product description",
           maxProductDisplayName: "max name",
@@ -215,13 +215,13 @@ describe('typescript', function () {
       });
 
       it('should put flattened and grouped product', function (done) {
-        var resourceBody = <Models.SimpleProduct>{
+        var resourceBody = <AutoRestResourceFlatteningTestServiceModels.SimpleProduct>{
           productId: "123",
           description: "product description",
           maxProductDisplayName: "max name",
           odatavalue: "http://foo"
         };
-        var paramGroup = <Models.FlattenParameterGroup>{
+        var paramGroup = <AutoRestResourceFlatteningTestServiceModels.FlattenParameterGroup>{
           productId: "123",
           description: "product description",
           maxProductDisplayName: "max name",

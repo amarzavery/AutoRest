@@ -25,7 +25,7 @@ import { AutoRestDurationTestService } from '../Expected/AcceptanceTests/BodyDur
 import { AutoRestUrlTestService } from '../Expected/AcceptanceTests/Url/autoRestUrlTestService';
 import { AutoRestSwaggerBATFileService } from '../Expected/AcceptanceTests/BodyFile/autoRestSwaggerBATFileService';
 import { AutoRestSwaggerBATArrayService } from '../Expected/AcceptanceTests/BodyArray/autoRestSwaggerBATArrayService';
-import { AutoRestSwaggerBATdictionaryService, Models as dictionaryModels } from '../Expected/AcceptanceTests/BodyDictionary/autoRestSwaggerBATdictionaryService';
+import { AutoRestSwaggerBATdictionaryService, AutoRestSwaggerBATdictionaryServiceModels } from '../Expected/AcceptanceTests/BodyDictionary/autoRestSwaggerBATdictionaryService';
 import { AutoRestHttpInfrastructureTestService } from '../Expected/AcceptanceTests/Http/autoRestHttpInfrastructureTestService';
 import { AutoRestSwaggerBATFormDataService } from '../Expected/AcceptanceTests/BodyFormData/autoRestSwaggerBATFormDataService';
 import { AutoRestParameterizedHostTestClient } from '../Expected/AcceptanceTests/CustomBaseUri/autoRestParameterizedHostTestClient';
@@ -1692,7 +1692,7 @@ describe('nodejs', function () {
         });
 
         it('should get complex items with empty and null values in dictionary', function (done) {
-          var testNull: { [propertyName: string]: dictionaryModels.Widget } = { 0: { 'integer': 1, 'string': '2' }, 1: null, 2: { 'integer': 5, 'string': '6' } };
+          var testNull: { [propertyName: string]: AutoRestSwaggerBATdictionaryServiceModels.Widget } = { 0: { 'integer': 1, 'string': '2' }, 1: null, 2: { 'integer': 5, 'string': '6' } };
           var testEmpty = { 0: { 'integer': 1, 'string': '2' }, 1: {}, 2: { 'integer': 5, 'string': '6' } };
           testClient.dictionary.getComplexItemNull(function (error, result) {
             should.not.exist(error);
@@ -1706,7 +1706,7 @@ describe('nodejs', function () {
         });
 
         it('should get and put valid complex items in dictionaries', function (done) {
-          var testDictionary: { [propertyName: string]: dictionaryModels.Widget } = { 0: { 'integer': 1, 'string': '2' }, 1: { 'integer': 3, 'string': '4' }, 2: { 'integer': 5, 'string': '6' } };
+          var testDictionary: { [propertyName: string]: AutoRestSwaggerBATdictionaryServiceModels.Widget } = { 0: { 'integer': 1, 'string': '2' }, 1: { 'integer': 3, 'string': '4' }, 2: { 'integer': 5, 'string': '6' } };
           testClient.dictionary.getComplexValid(function (error, result) {
             should.not.exist(error);
             assert.deepEqual(result, testDictionary);

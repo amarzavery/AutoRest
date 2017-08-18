@@ -8,7 +8,7 @@ var http = require('http');
 var assert = require('assert');
 import * as msRest from 'ms-rest';
 import * as moment from 'moment';
-import { AutoRestComplexTestService as AutoRestComplexTestService, Models } from '../Expected/AcceptanceTests/BodyComplex/autoRestComplexTestService';
+import { AutoRestComplexTestService as AutoRestComplexTestService, AutoRestComplexTestServiceModels } from '../Expected/AcceptanceTests/BodyComplex/autoRestComplexTestService';
 
 var dummyToken = 'dummy12321343423';
 var credentials = new msRest.TokenCredentials(dummyToken);
@@ -151,7 +151,7 @@ describe('typescript', function () {
           should.not.exist(error);
           assert.deepEqual(result.field, new Date('0001-01-01'));
           assert.deepEqual(result.leap, new Date('2016-02-29'));
-          var complexBody = <Models.DateWrapper>{ 'field': new Date('0001-01-01'), 'leap': new Date('2016-02-29') }
+          var complexBody = <AutoRestComplexTestServiceModels.DateWrapper>{ 'field': new Date('0001-01-01'), 'leap': new Date('2016-02-29') }
           testClient.primitive.putDate(complexBody, function (error, result) {
             should.not.exist(error);
             done();
@@ -403,35 +403,35 @@ describe('typescript', function () {
     });
 
     describe('Complex Types with recursive definitions', function () {
-      var bigfish = <Models.Fish>{
+      var bigfish = <AutoRestComplexTestServiceModels.Fish>{
         'fishtype': 'salmon',
         'location': 'alaska',
         'iswild': true,
         'species': 'king',
         'length': 1,
         'siblings': [
-          <Models.Shark>{
+          <AutoRestComplexTestServiceModels.Shark>{
             'fishtype': 'shark',
             'age': 6,
             'birthday': new Date('2012-01-05T01:00:00Z'),
             'species': 'predator',
             'length': 20,
             'siblings': [
-              <Models.Salmon>{
+              <AutoRestComplexTestServiceModels.Salmon>{
                 'fishtype': 'salmon',
                 'location': 'atlantic',
                 'iswild': true,
                 'species': 'coho',
                 'length': 2,
                 'siblings': [
-                  <Models.Shark>{
+                  <AutoRestComplexTestServiceModels.Shark>{
                     'fishtype': 'shark',
                     'age': 6,
                     'birthday': new Date('2012-01-05T01:00:00Z'),
                     'species': 'predator',
                     'length': 20
                   },
-                  <Models.Sawshark>{
+                  <AutoRestComplexTestServiceModels.Sawshark>{
                     'fishtype': 'sawshark',
                     'age': 105,
                     'birthday': new Date('1900-01-05T01:00:00Z'),
@@ -441,7 +441,7 @@ describe('typescript', function () {
                   }
                 ]
               },
-              <Models.Sawshark>{
+              <AutoRestComplexTestServiceModels.Sawshark>{
                 'fishtype': 'sawshark',
                 'age': 105,
                 'birthday': new Date('1900-01-05T01:00:00Z'),
@@ -452,7 +452,7 @@ describe('typescript', function () {
               }
             ]
           },
-          <Models.Sawshark>{
+          <AutoRestComplexTestServiceModels.Sawshark>{
             'fishtype': 'sawshark',
             'age': 105,
             'birthday': new Date('1900-01-05T01:00:00Z'),

@@ -15,7 +15,7 @@ var credentials = new msRest.TokenCredentials(dummyToken);
 
 var clientOptions: any = {};
 
-describe('nodejs', function () {
+describe('typescript', function () {
   describe('Custom BaseUri Client', function () {
     clientOptions.host = 'host:3000';
     var testClient = new AutoRestParameterizedHostTestClient(credentials, clientOptions);
