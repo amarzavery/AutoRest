@@ -88,4 +88,4 @@ class AutoRestRequiredOptionalTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestRequiredOptionalTestService, Models };
+export { AutoRestRequiredOptionalTestService, Models as AutoRestRequiredOptionalTestServiceModels, Mappers as AutoRestRequiredOptionalTestServiceMappers };

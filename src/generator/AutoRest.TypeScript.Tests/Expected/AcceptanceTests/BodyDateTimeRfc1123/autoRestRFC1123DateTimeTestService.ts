@@ -56,4 +56,4 @@ class AutoRestRFC1123DateTimeTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestRFC1123DateTimeTestService, Models };
+export { AutoRestRFC1123DateTimeTestService, Models as AutoRestRFC1123DateTimeTestServiceModels, Mappers as AutoRestRFC1123DateTimeTestServiceMappers };

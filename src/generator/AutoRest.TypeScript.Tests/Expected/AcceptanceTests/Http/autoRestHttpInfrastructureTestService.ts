@@ -68,4 +68,4 @@ class AutoRestHttpInfrastructureTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestHttpInfrastructureTestService, Models };
+export { AutoRestHttpInfrastructureTestService, Models as AutoRestHttpInfrastructureTestServiceModels, Mappers as AutoRestHttpInfrastructureTestServiceMappers };

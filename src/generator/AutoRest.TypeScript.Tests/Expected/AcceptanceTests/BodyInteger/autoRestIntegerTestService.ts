@@ -56,4 +56,4 @@ class AutoRestIntegerTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestIntegerTestService, Models };
+export { AutoRestIntegerTestService, Models as AutoRestIntegerTestServiceModels, Mappers as AutoRestIntegerTestServiceMappers };

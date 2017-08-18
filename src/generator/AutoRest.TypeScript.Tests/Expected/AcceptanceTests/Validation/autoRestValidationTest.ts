@@ -826,4 +826,4 @@ class AutoRestValidationTest extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestValidationTest, Models };
+export { AutoRestValidationTest, Models as AutoRestValidationTestModels, Mappers as AutoRestValidationTestMappers };

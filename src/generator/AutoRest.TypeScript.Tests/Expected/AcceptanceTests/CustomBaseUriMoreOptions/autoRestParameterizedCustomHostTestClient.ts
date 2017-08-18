@@ -75,4 +75,4 @@ class AutoRestParameterizedCustomHostTestClient extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestParameterizedCustomHostTestClient, Models };
+export { AutoRestParameterizedCustomHostTestClient, Models as AutoRestParameterizedCustomHostTestModels, Mappers as AutoRestParameterizedCustomHostTestMappers };

@@ -609,4 +609,4 @@ class ComplexModelClient extends msRest.ServiceClient {
   }
 }
 
-export { ComplexModelClient, Models };
+export { ComplexModelClient, Models as ComplexModelModels, Mappers as ComplexModelMappers };

@@ -56,4 +56,4 @@ class AutoRestSwaggerBATFormDataService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestSwaggerBATFormDataService, Models };
+export { AutoRestSwaggerBATFormDataService, Models as AutoRestSwaggerBATFormDataServiceModels, Mappers as AutoRestSwaggerBATFormDataServiceMappers };

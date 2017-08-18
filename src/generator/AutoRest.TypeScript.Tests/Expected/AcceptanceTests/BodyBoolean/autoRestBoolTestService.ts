@@ -56,4 +56,4 @@ class AutoRestBoolTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestBoolTestService, Models };
+export { AutoRestBoolTestService, Models as AutoRestBoolTestServiceModels, Mappers as AutoRestBoolTestServiceMappers };

@@ -114,4 +114,4 @@ class AutoRestAzureSpecialParametersTestClient extends msRestAzure.AzureServiceC
   }
 }
 
-export { AutoRestAzureSpecialParametersTestClient, Models };
+export { AutoRestAzureSpecialParametersTestClient, Models as AutoRestAzureSpecialParametersTestModels, Mappers as AutoRestAzureSpecialParametersTestMappers };

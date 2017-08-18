@@ -89,4 +89,4 @@ class AutoRestParameterGroupingTestService extends msRestAzure.AzureServiceClien
   }
 }
 
-export { AutoRestParameterGroupingTestService, Models };
+export { AutoRestParameterGroupingTestService, Models as AutoRestParameterGroupingTestServiceModels, Mappers as AutoRestParameterGroupingTestServiceMappers };

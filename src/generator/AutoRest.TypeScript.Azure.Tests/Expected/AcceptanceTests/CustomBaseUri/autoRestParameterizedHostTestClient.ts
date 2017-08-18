@@ -114,4 +114,4 @@ class AutoRestParameterizedHostTestClient extends msRestAzure.AzureServiceClient
   }
 }
 
-export { AutoRestParameterizedHostTestClient, Models };
+export { AutoRestParameterizedHostTestClient, Models as AutoRestParameterizedHostTestModels, Mappers as AutoRestParameterizedHostTestMappers };

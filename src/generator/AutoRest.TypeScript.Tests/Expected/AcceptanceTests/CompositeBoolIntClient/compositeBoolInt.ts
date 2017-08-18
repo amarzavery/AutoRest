@@ -58,4 +58,4 @@ class CompositeBoolInt extends msRest.ServiceClient {
   }
 }
 
-export { CompositeBoolInt, Models };
+export { CompositeBoolInt, Models as CompositeBoolIntModels, Mappers as CompositeBoolIntMappers };

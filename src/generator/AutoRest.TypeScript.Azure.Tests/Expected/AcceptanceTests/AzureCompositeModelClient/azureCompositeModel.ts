@@ -690,4 +690,4 @@ class AzureCompositeModel extends msRestAzure.AzureServiceClient {
   }
 }
 
-export { AzureCompositeModel, Models };
+export { AzureCompositeModel, Models as AzureCompositeModelModels, Mappers as AzureCompositeModelMappers };

@@ -56,4 +56,4 @@ class AutoRestParameterFlattening extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestParameterFlattening, Models };
+export { AutoRestParameterFlattening, Models as AutoRestParameterFlatteningModels, Mappers as AutoRestParameterFlatteningMappers };

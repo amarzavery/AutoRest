@@ -102,4 +102,4 @@ class StorageManagementClient extends msRestAzure.AzureServiceClient {
   }
 }
 
-export { StorageManagementClient, Models };
+export { StorageManagementClient, Models as StorageManagementModels, Mappers as StorageManagementMappers };

@@ -2380,7 +2380,7 @@ export class LROs {
       operationRes = await client.getLongRunningOperationResult(initialResult, options);
 
       // Deserialize Response
-    } catch (err) {
+  } catch (err) {
       return Promise.reject(err);
     }
     return Promise.resolve(operationRes);

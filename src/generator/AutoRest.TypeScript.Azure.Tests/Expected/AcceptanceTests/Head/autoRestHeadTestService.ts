@@ -89,4 +89,4 @@ class AutoRestHeadTestService extends msRestAzure.AzureServiceClient {
   }
 }
 
-export { AutoRestHeadTestService, Models };
+export { AutoRestHeadTestService, Models as AutoRestHeadTestServiceModels, Mappers as AutoRestHeadTestServiceMappers };

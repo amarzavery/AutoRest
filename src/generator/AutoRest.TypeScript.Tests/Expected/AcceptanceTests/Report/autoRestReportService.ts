@@ -202,4 +202,4 @@ class AutoRestReportService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestReportService, Models };
+export { AutoRestReportService, Models as AutoRestReportServiceModels, Mappers as AutoRestReportServiceMappers };

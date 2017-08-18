@@ -1124,4 +1124,4 @@ class AutoRestResourceFlatteningTestService extends msRestAzure.AzureServiceClie
   }
 }
 
-export { AutoRestResourceFlatteningTestService, Models };
+export { AutoRestResourceFlatteningTestService, Models as AutoRestResourceFlatteningTestServiceModels, Mappers as AutoRestResourceFlatteningTestServiceMappers };

@@ -89,4 +89,4 @@ class AutoRestPagingTestService extends msRestAzure.AzureServiceClient {
   }
 }
 
-export { AutoRestPagingTestService, Models };
+export { AutoRestPagingTestService, Models as AutoRestPagingTestServiceModels, Mappers as AutoRestPagingTestServiceMappers };

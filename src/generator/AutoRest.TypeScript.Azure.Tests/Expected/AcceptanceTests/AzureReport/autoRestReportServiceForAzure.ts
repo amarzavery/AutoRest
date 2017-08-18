@@ -253,4 +253,4 @@ class AutoRestReportServiceForAzure extends msRestAzure.AzureServiceClient {
   }
 }
 
-export { AutoRestReportServiceForAzure, Models };
+export { AutoRestReportServiceForAzure, Models as AutoRestReportServiceForAzureModels, Mappers as AutoRestReportServiceForAzureMappers };

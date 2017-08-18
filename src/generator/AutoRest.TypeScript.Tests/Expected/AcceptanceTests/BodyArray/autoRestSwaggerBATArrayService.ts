@@ -56,4 +56,4 @@ class AutoRestSwaggerBATArrayService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestSwaggerBATArrayService, Models };
+export { AutoRestSwaggerBATArrayService, Models as AutoRestSwaggerBATArrayServiceModels, Mappers as AutoRestSwaggerBATArrayServiceMappers };

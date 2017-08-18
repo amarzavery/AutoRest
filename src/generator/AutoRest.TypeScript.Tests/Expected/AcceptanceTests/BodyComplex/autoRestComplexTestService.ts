@@ -72,4 +72,4 @@ class AutoRestComplexTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestComplexTestService, Models };
+export { AutoRestComplexTestService, Models as AutoRestComplexTestServiceModels, Mappers as AutoRestComplexTestServiceMappers };

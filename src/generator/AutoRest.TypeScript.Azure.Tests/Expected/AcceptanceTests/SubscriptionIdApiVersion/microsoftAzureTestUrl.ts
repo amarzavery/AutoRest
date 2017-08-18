@@ -100,4 +100,4 @@ class MicrosoftAzureTestUrl extends msRestAzure.AzureServiceClient {
   }
 }
 
-export { MicrosoftAzureTestUrl, Models };
+export { MicrosoftAzureTestUrl, Models as MicrosoftAzureTestUrlModels, Mappers as MicrosoftAzureTestUrlMappers };

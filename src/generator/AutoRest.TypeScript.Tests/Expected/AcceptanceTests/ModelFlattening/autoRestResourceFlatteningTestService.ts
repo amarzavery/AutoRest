@@ -1958,4 +1958,4 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestResourceFlatteningTestService, Models };
+export { AutoRestResourceFlatteningTestService, Models as AutoRestResourceFlatteningTestServiceModels, Mappers as AutoRestResourceFlatteningTestServiceMappers };

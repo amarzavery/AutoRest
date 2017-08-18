@@ -95,4 +95,4 @@ class AutoRestLongRunningOperationTestService extends msRestAzure.AzureServiceCl
   }
 }
 
-export { AutoRestLongRunningOperationTestService, Models };
+export { AutoRestLongRunningOperationTestService, Models as AutoRestLongRunningOperationTestServiceModels, Mappers as AutoRestLongRunningOperationTestServiceMappers };

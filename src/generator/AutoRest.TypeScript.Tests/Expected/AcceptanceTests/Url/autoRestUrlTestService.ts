@@ -83,4 +83,4 @@ class AutoRestUrlTestService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestUrlTestService, Models };
+export { AutoRestUrlTestService, Models as AutoRestUrlTestServiceModels, Mappers as AutoRestUrlTestServiceMappers };

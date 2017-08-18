@@ -56,4 +56,4 @@ class AutoRestSwaggerBATHeaderService extends msRest.ServiceClient {
   }
 }
 
-export { AutoRestSwaggerBATHeaderService, Models };
+export { AutoRestSwaggerBATHeaderService, Models as AutoRestSwaggerBATHeaderServiceModels, Mappers as AutoRestSwaggerBATHeaderServiceMappers };
