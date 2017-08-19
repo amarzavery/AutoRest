@@ -6,7 +6,7 @@
 @Header(" * ")
  */
 @EmptyLine
-import { BaseResource, CloudError } from 'ms-rest-azure';
+@Model.ConstructImportForAzureModelIndex();
 @if (Model.ContainsDurationPropertyInModels())
 {
 @:import * as moment from "moment";

@@ -19,6 +19,8 @@ namespace AutoRest.TypeScript.Model
         {
         }
 
+        private string _optionalParameterTypeForClientConstructor;
+
         public bool IsCustomBaseUri => Extensions.ContainsKey(SwaggerExtensions.ParameterizedHostExtension);
 
         [JsonIgnore]
@@ -218,6 +220,19 @@ namespace AutoRest.TypeScript.Model
             {
                 return this.Methods.FirstOrDefault(
                     m => m.Parameters.FirstOrDefault(p => p.ModelType.IsPrimaryType(KnownPrimaryType.TimeSpan)) != null) != null;
+            }
+        }
+
+        public virtual string OptionalParameterTypeForClientConstructor
+        {
+            get
+            {
+                return _optionalParameterTypeForClientConstructor ?? "ServiceClientOptions";
+            }
+
+            set
+            {
+                _optionalParameterTypeForClientConstructor = value;
             }
         }
 

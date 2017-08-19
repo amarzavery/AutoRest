@@ -18,6 +18,9 @@ namespace AutoRest.TypeScript.Azure.Model
             : base()
         {
         }
+
+        private string _optionalParameterTypeForClientConstructor;
+
         [JsonIgnore]
         public override bool IsAzure => true;
 
@@ -25,7 +28,18 @@ namespace AutoRest.TypeScript.Azure.Model
         [JsonIgnore]
         public override IEnumerable<CompositeTypeTS> ModelTemplateModels => ModelTypes.Cast<CompositeTypeTS>().Concat(PageTemplateModels).Where(each => !PageTemplateModels.Any(ptm => ptm.Name.EqualsIgnoreCase(each.Name)));
 
+        public override string OptionalParameterTypeForClientConstructor
+        {
+            get
+            {
+                return _optionalParameterTypeForClientConstructor ?? "AzureServiceClientOptions";
+            }
 
+            set
+            {
+                _optionalParameterTypeForClientConstructor = value;
+            }
+        }
 
         public override CompositeType Add(CompositeType item)
         {
@@ -42,16 +56,16 @@ namespace AutoRest.TypeScript.Azure.Model
 
         public IList<PageCompositeTypeTSa> PageTemplateModels { get; set; } = new List<PageCompositeTypeTSa>();
 
-        public bool shouldOptionsInterfaceBeDeclared
+        public string ConstructImportForAzureModelIndex()
         {
-            get
+            var builder = new IndentedStringBuilder("  ");
+            builder.Append("import { BaseResource, CloudError");
+            if (OptionalParameterTypeForClientConstructor != "AzureServiceClientOptions")
             {
-                List<string> predefinedOptionalParameters = new List<string>() { "apiVersion", "acceptLanguage", "longRunningOperationRetryTimeout", "generateClientRequestId", "rpRegistrationRetryTimeout" };
-                var optionalParameters = this.Properties.Where(
-                    p => (!p.IsRequired || p.IsRequired && !string.IsNullOrEmpty(p.DefaultValue)) 
-                    && !p.IsConstant && !predefinedOptionalParameters.Contains(p.Name));
-                return optionalParameters.Count() > 0;
+                builder.Append(", AzureServiceClientOptions");
             }
+            builder.Append(" } from \"ms-rest-azure\";");
+            return builder.ToString();
         }
     }
 }

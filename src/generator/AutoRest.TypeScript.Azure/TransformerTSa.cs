@@ -7,6 +7,7 @@ using AutoRest.Extensions.Azure;
 using AutoRest.TypeScript.Azure.Model;
 using AutoRest.TypeScript.Model;
 using static AutoRest.Core.Utilities.DependencyInjection;
+using System.Collections.Generic;
 
 namespace AutoRest.TypeScript.Azure
 {
@@ -23,7 +24,7 @@ namespace AutoRest.TypeScript.Azure
             var codeModel = cm as CodeModelTSa;
             if (codeModel == null)
             {
-                throw new InvalidCastException("Code Model is not a nodejs code model.");
+                throw new InvalidCastException("Code Model is not a TypeScript Azure code model.");
             }
 
             // MethodNames are normalized explicitly to provide a consitent method name while 
@@ -32,12 +33,10 @@ namespace AutoRest.TypeScript.Azure
             // Namer.NormalizeMethodNames(serviceClient);
 
             AzureExtensions.NormalizeAzureClientModel(codeModel);
-
             base.TransformCodeModel(codeModel);
-
             NormalizePaginatedMethods(codeModel);
             ExtendAllResourcesToBaseResource(codeModel);
-
+            CreateModelTypeForOptionalClientProperties(codeModel);
             return codeModel;
         }
 
@@ -95,6 +94,33 @@ namespace AutoRest.TypeScript.Azure
                         }
                     }
                 }
+            }
+        }
+
+        public void CreateModelTypeForOptionalClientProperties(CodeModelTSa cm)
+        {
+            List<string> predefinedOptionalProperties = new List<string>() {
+                "requestOptions", "filters", "noRetryPolicy", "apiVersion",
+                "acceptLanguage", "longRunningOperationRetryTimeout",
+                "generateClientRequestId", "rpRegistrationRetryTimeout" };
+            var optionalProperitesOnClient = cm.Properties.Where(
+                p => (!p.IsRequired || p.IsRequired && !string.IsNullOrEmpty(p.DefaultValue))
+                && !p.IsConstant && !predefinedOptionalProperties.Contains(p.Name));
+            if (optionalProperitesOnClient.Count() > 0)
+            {
+                string modelTypeName = cm.Name + "Options";
+                var modelType = new CompositeTypeTS(modelTypeName);
+                modelType.BaseModelType = New<CompositeType>(new { Name = "AzureServiceClientOptions", SerializedName = "AzureServiceClientOptions" });
+                // We could end up having a property that is required but has a default value based on the above condition. If so then make it optional.
+                optionalProperitesOnClient.Where(p => p.IsRequired && !string.IsNullOrEmpty(p.DefaultValue)).ForEach(prop => prop.IsRequired = false);
+                modelType.AddRange(optionalProperitesOnClient);
+                var modelTypeFound = cm.ModelTypes.FirstOrDefault(m => m.Name.EqualsIgnoreCase(modelTypeName));
+                if (modelTypeFound != null)
+                {
+                    cm.Remove(modelTypeFound);
+                }
+                cm.Add(modelType);
+                cm.OptionalParameterTypeForClientConstructor = "Models." + modelTypeName;
             }
         }
     }

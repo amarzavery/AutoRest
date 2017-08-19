@@ -10,7 +10,7 @@ using AutoRest.Core.Utilities;
 using AutoRest.Extensions;
 using AutoRest.TypeScript.Model;
 using static AutoRest.Core.Utilities.DependencyInjection;
-
+using System.Collections.Generic;
 
 namespace AutoRest.TypeScript
 {
@@ -21,13 +21,17 @@ namespace AutoRest.TypeScript
             var codeModel = cm as CodeModelTS;
 
             // we're guaranteed to be in our language-specific context here.
-
             SwaggerExtensions.NormalizeClientModel(codeModel);
             PopulateAdditionalProperties(codeModel);
-
             NormalizeOdataFilterParameter(codeModel);
+            PerformParameterMapping(codeModel);
+            CreateModelTypeForOptionalClientProperties(codeModel);
+            return codeModel;
+        }
 
-            foreach (var method in codeModel.Methods)
+        public void PerformParameterMapping(CodeModelTS cm)
+        {
+            foreach (var method in cm.Methods)
             {
                 foreach (var parameterTransformation in method.InputParameterTransformation)
                 {
@@ -39,7 +43,7 @@ namespace AutoRest.TypeScript
                     {
                         if (parameterMapping.InputParameterProperty != null)
                         {
-                            parameterMapping.InputParameterProperty = 
+                            parameterMapping.InputParameterProperty =
                                 CodeNamer.Instance.GetPropertyName(parameterMapping.InputParameterProperty);
                         }
 
@@ -51,8 +55,25 @@ namespace AutoRest.TypeScript
                     }
                 }
             }
+        }
 
-            return codeModel;
+        public void CreateModelTypeForOptionalClientProperties(CodeModelTS cm)
+        {
+            List<string> predefinedOptionalProperties = new List<string>() { "requestOptions", "filters", "noRetryPolicy" };
+            var optionalProperitesOnClient = cm.Properties.Where(
+                p => (!p.IsRequired || p.IsRequired && !string.IsNullOrEmpty(p.DefaultValue))
+                && !p.IsConstant && !predefinedOptionalProperties.Contains(p.Name));
+            if (optionalProperitesOnClient.Count() > 0)
+            {
+                string modelTypeName = cm.Name + "Options";
+                var modelType = new CompositeTypeTS(modelTypeName);
+                modelType.BaseModelType = New<CompositeType>(new { Name = "ServiceClientOptions", SerializedName = "ServiceClientOptions" });
+                // We could end up having a property that is required but has a default value based on the above condition. If so then make it optional.
+                optionalProperitesOnClient.Where(p => p.IsRequired && !string.IsNullOrEmpty(p.DefaultValue)).ForEach(prop => prop.IsRequired = false);
+                modelType.AddRange(optionalProperitesOnClient);
+                cm.Add(modelType);
+                cm.OptionalParameterTypeForClientConstructor = "Models." + modelTypeName;
+            }
         }
 
         /// <summary>
