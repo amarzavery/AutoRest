@@ -16,27 +16,6 @@ import * as operations from "./operations";
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
-/**
- * AutoRestParameterizedHostTestClientOptions for AutoRestParameterizedHostTestClient.
- */
-interface AutoRestParameterizedHostTestClientOptions extends msRestAzure.AzureServiceClientOptions {
-  /**
-   * @property {string} [host] - A string value that is used as a global part of the parameterized host
-   */
-   host?: string;
-  /**
-   * @property {string} [acceptLanguage] - Gets or sets the preferred language for the response.
-   */
-   acceptLanguage?: string;
-  /**
-   * @property {number} [longRunningOperationRetryTimeout] - Gets or sets the retry timeout in seconds for Long Running Operations. Default value is 30.
-   */
-   longRunningOperationRetryTimeout?: number;
-  /**
-   * @property {boolean} [generateClientRequestId] - When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true.
-   */
-   generateClientRequestId?: boolean;
-}
 
 class AutoRestParameterizedHostTestClient extends msRestAzure.AzureServiceClient {
 
@@ -66,8 +45,8 @@ class AutoRestParameterizedHostTestClient extends msRestAzure.AzureServiceClient
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
@@ -80,7 +59,7 @@ class AutoRestParameterizedHostTestClient extends msRestAzure.AzureServiceClient
    * @param {boolean} [options.generateClientRequestId] - When set to true a unique x-ms-client-request-id value is generated and included in each request. Default is true.
    *
    */
-  constructor(credentials: msRest.ServiceClientCredentials, options?: AutoRestParameterizedHostTestClientOptions) {
+  constructor(credentials: msRest.ServiceClientCredentials, options?: Models.AutoRestParameterizedHostTestClientOptions) {
     if (credentials === null || credentials === undefined) {
       throw new Error('\'credentials\' cannot be null.');
     }

@@ -15,15 +15,6 @@ import * as operations from "./operations";
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
-/**
- * AutoRestParameterizedHostTestClientOptions for AutoRestParameterizedHostTestClient.
- */
-interface AutoRestParameterizedHostTestClientOptions extends msRest.ServiceClientOptions {
-  /**
-   * @property {string} [host] - A string value that is used as a global part of the parameterized host
-   */
-  host?: string;
-}
 
 class AutoRestParameterizedHostTestClient extends msRest.ServiceClient {
   host: string;
@@ -42,15 +33,15 @@ class AutoRestParameterizedHostTestClient extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
    * @param {string} [options.host] - A string value that is used as a global part of the parameterized host
    *
    */
-  constructor(options?: AutoRestParameterizedHostTestClientOptions) {
+  constructor(options?: Models.AutoRestParameterizedHostTestClientOptions) {
 
     if (!options) options = {};
 

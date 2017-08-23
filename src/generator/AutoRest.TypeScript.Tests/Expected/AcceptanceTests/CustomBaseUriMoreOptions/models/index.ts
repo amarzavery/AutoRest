@@ -8,6 +8,7 @@
  * regenerated.
  */
 
+import { ServiceClientOptions } from "ms-rest";
 
 
 /**
@@ -20,4 +21,15 @@
 export interface ErrorModel {
   status?: number;
   message?: string;
+}
+
+/**
+ * @class
+ * Initializes a new instance of the AutoRestParameterizedCustomHostTestClientOptions class.
+ * @constructor
+ * @member {string} [dnsSuffix] A string value that is used as a global part of
+ * the parameterized host. Default value 'host'. Default value: 'host' .
+ */
+export interface AutoRestParameterizedCustomHostTestClientOptions extends ServiceClientOptions {
+  dnsSuffix?: string;
 }

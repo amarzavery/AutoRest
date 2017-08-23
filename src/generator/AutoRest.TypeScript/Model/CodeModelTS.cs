@@ -256,5 +256,16 @@ namespace AutoRest.TypeScript.Model
             }
             return builder.ToString();
         }
+
+        public virtual string ConstructImportForModelIndex()
+        {
+            var builder = new IndentedStringBuilder("  ");
+            
+            if (OptionalParameterTypeForClientConstructor != "ServiceClientOptions")
+            {
+                builder.Append("import { ServiceClientOptions } from \"ms-rest-ts\";");
+            }
+            return builder.ToString();
+        }
     }
 }

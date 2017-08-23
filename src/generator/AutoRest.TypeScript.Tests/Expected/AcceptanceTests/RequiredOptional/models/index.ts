@@ -8,6 +8,7 @@
  * regenerated.
  */
 
+import { ServiceClientOptions } from "ms-rest";
 
 
 /**
@@ -116,4 +117,14 @@ export interface ClassWrapper {
  */
 export interface ClassOptionalWrapper {
   value?: Product;
+}
+
+/**
+ * @class
+ * Initializes a new instance of the AutoRestRequiredOptionalTestServiceOptions class.
+ * @constructor
+ * @member {number} [optionalGlobalQuery] number of items to skip
+ */
+export interface AutoRestRequiredOptionalTestServiceOptions extends ServiceClientOptions {
+  optionalGlobalQuery?: number;
 }

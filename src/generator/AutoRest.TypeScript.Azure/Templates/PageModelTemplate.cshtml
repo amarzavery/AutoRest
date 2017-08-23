@@ -4,12 +4,12 @@
 @using AutoRest.Core.Model
 @using AutoRest.Core.Utilities
 @using AutoRest.TypeScript.Azure.Model
-@inherits AutoRest.Core.Template<AutoRest.TypeScript.Azure.Model.PageCompositeTypeTSa>
+@inherits AutoRest.Core.Template<PageCompositeTypeTSa>
 
+@{var propertyList = new List<AutoRest.Core.Model.Property>(Model.Properties.Where(p => !p.IsConstant)); }
 /**
- * @@class
- * Initializes a new instance of the @(Model.Name) class.
- * @@constructor
+ * @@interface
+ * An interface representing the @(Model.Name).
 @if (!String.IsNullOrEmpty(Model.Summary))
 {
 @WrapComment(" * ", "@summary " + Model.Summary)@:
@@ -20,24 +20,22 @@
 @WrapComment(" * ", Model.Documentation)@:
 @: *
 }
-@foreach (var property in Model.DocumentationPropertyList)
-{
-    if (property.Name.ToLowerInvariant() != "value")
-    {
-
-    @PageCompositeTypeTSa.ConstructPropertyDocumentation(
-                                WrapComment(" * ", "@member {" + PageCompositeTypeTSa.GetPropertyDocumentationType(property)
-                                                                + "} " + PageCompositeTypeTSa.GetPropertyDocumentationName(property)
-                                                    + " " + property.Documentation));
-    }
-}
+ * @@extends Array@(Model.ConstructTSItemTypeName())
  */
 export interface @(Model.Name) extends Array@(Model.ConstructTSItemTypeName()) {
 @{
-    Property prop = Model.Properties.Where(p => p.Name.ToLowerInvariant().Contains("nextlink")).FirstOrDefault();
-    if (prop != null)
-    {
-  @:@(PageCompositeTypeTSa.PropertyTS(prop, true));
-    }
+  foreach (var property in propertyList)
+  {
+      if (property.Name.ToLowerInvariant() != "value")
+      {
+  @:/**
+  @:@(PageCompositeTypeTSa.ConstructPropertyDocumentation(
+                                WrapComment(" * ", "@member {" + property.ModelType.TSType(true)
+                                                                + "} " + PageCompositeTypeTSa.GetPropertyDocumentationName(property)
+                                                    + " " + property.Documentation)));
+   @:*/
+  @:@(PageCompositeTypeTSa.PropertyTS(property, true));
+      }
+  }
  }
 }

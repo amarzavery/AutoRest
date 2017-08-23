@@ -22,7 +22,7 @@ import { AutoRestDateTestService } from '../Expected/AcceptanceTests/BodyDate/au
 import { AutoRestDateTimeTestService } from '../Expected/AcceptanceTests/BodyDateTime/autoRestDateTimeTestService';
 import { AutoRestRFC1123DateTimeTestService } from '../Expected/AcceptanceTests/BodyDateTimeRfc1123/autoRestRFC1123DateTimeTestService';
 import { AutoRestDurationTestService } from '../Expected/AcceptanceTests/BodyDuration/autoRestDurationTestService';
-import { AutoRestUrlTestService } from '../Expected/AcceptanceTests/Url/autoRestUrlTestService';
+import { AutoRestUrlTestService, AutoRestUrlTestServiceModels } from '../Expected/AcceptanceTests/Url/autoRestUrlTestService';
 import { AutoRestSwaggerBATFileService } from '../Expected/AcceptanceTests/BodyFile/autoRestSwaggerBATFileService';
 import { AutoRestSwaggerBATArrayService } from '../Expected/AcceptanceTests/BodyArray/autoRestSwaggerBATArrayService';
 import { AutoRestSwaggerBATdictionaryService, AutoRestSwaggerBATdictionaryServiceModels } from '../Expected/AcceptanceTests/BodyDictionary/autoRestSwaggerBATdictionaryService';
@@ -1871,8 +1871,10 @@ describe('nodejs', function () {
     });
 
     describe('Url Client', function () {
-      var testClient = new AutoRestUrlTestService('globalStringPath', baseUri, clientOptions);
-      testClient.globalStringQuery = 'globalStringQuery';
+      const urlCientOptions: AutoRestUrlTestServiceModels.AutoRestUrlTestServiceOptions = {
+        globalStringQuery: 'globalStringQuery'
+      };
+      var testClient = new AutoRestUrlTestService('globalStringPath', baseUri, urlCientOptions);
       it('should work when path has null, empty, and multi-byte byte values', function (done) {
         testClient.paths.byteNull(null, function (error, result) {
           should.exist(error);

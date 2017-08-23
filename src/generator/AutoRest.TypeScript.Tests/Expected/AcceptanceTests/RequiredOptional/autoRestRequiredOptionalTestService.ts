@@ -15,15 +15,6 @@ import * as operations from "./operations";
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
-/**
- * AutoRestRequiredOptionalTestServiceOptions for AutoRestRequiredOptionalTestService.
- */
-interface AutoRestRequiredOptionalTestServiceOptions extends msRest.ServiceClientOptions {
-  /**
-   * @property {number} [optionalGlobalQuery] - number of items to skip
-   */
-  optionalGlobalQuery?: number;
-}
 
 class AutoRestRequiredOptionalTestService extends msRest.ServiceClient {
   requiredGlobalPath: string;
@@ -51,15 +42,15 @@ class AutoRestRequiredOptionalTestService extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
    * @param {number} [options.optionalGlobalQuery] - number of items to skip
    *
    */
-  constructor(requiredGlobalPath: string, requiredGlobalQuery: string, baseUri?: string, options?: AutoRestRequiredOptionalTestServiceOptions) {
+  constructor(requiredGlobalPath: string, requiredGlobalQuery: string, baseUri?: string, options?: Models.AutoRestRequiredOptionalTestServiceOptions) {
     if (requiredGlobalPath === null || requiredGlobalPath === undefined) {
       throw new Error('\'requiredGlobalPath\' cannot be null.');
     }

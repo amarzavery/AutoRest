@@ -47,6 +47,7 @@ namespace AutoRest
         "azureresourceschema",
         "csharp-simplifier",
         "jsonrpcclient",
+        "php",
         "typescript"
       };
     }
@@ -66,6 +67,7 @@ namespace AutoRest
         case "java":
         case "azureresourceschema":
         case "jsonrpcclient":
+        case "php":
           return await new Generator(plugin, connection, sessionId).Process();
         case "csharp-simplifier":
           return await new CSharpSimplifier(connection, sessionId).Process();

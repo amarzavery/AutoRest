@@ -68,114 +68,10 @@ namespace AutoRest.TypeScript.Model
             }
         }
 
-        public IEnumerable<Core.Model.Property> SerializableProperties
-        {
-            get { return this.Properties.Where(p => !string.IsNullOrEmpty(p.SerializedName)); }
-        }
-
-        private class PropertyWrapper
-        {
-            public Core.Model.Property Property { get; set; }
-            public List<string> RecursiveTypes { get; set; }
-
-            public PropertyWrapper() { RecursiveTypes = new List<string>(); }
-        }
-
-        public IEnumerable<Core.Model.Property> DocumentationPropertyList
-        {
-            get
-            {
-                var traversalStack = new Stack<PropertyWrapper>();
-                var visitedHash = new Dictionary<string, PropertyWrapper>();
-                var retValue = new Stack<Core.Model.Property>();
-
-                foreach (var property in Properties.Where(p => !p.IsConstant))
-                {
-                    var tempWrapper = new PropertyWrapper()
-                    {
-                        Property = property,
-                        RecursiveTypes = new List<string> () { Name }
-                    };
-                    traversalStack.Push(tempWrapper);
-                }
-
-                while (traversalStack.Count() != 0)
-                {
-                    var wrapper = traversalStack.Pop();
-                    if (wrapper.Property.ModelType is CompositeType)
-                    {
-                        if (!visitedHash.ContainsKey(wrapper.Property.Name))
-                        {
-                            if (wrapper.RecursiveTypes.Contains(wrapper.Property.ModelType.Name))
-                            {
-                                retValue.Push(wrapper.Property);
-                            }
-                            else
-                            {
-                                traversalStack.Push(wrapper);
-                                foreach (var subProperty in ((CompositeType)wrapper.Property.ModelType).Properties)
-                                {
-                                    if (subProperty.IsConstant)
-                                    {
-                                        continue;
-                                    }
-                                    var individualProperty = New<Core.Model.Property>();
-                                    // used FixedValue to force the string
-                                    individualProperty.Name.FixedValue = wrapper.Property.Name + "." + subProperty.Name;
-                                    individualProperty.ModelType = subProperty.ModelType;
-                                    individualProperty.Documentation = subProperty.Documentation;
-                                    //Adding the parent type to recursive list
-                                    var recursiveList = new List<string>() { wrapper.Property.ModelType.Name };
-                                    if (subProperty.ModelType is CompositeType)
-                                    {
-                                        //Adding parent's recursive types to the list as well
-                                        recursiveList.AddRange(wrapper.RecursiveTypes);
-                                    }
-                                    var subPropertyWrapper = new PropertyWrapper()
-                                    {
-                                        Property = individualProperty,
-                                        RecursiveTypes = recursiveList
-                                    };
-                                    
-                                    traversalStack.Push(subPropertyWrapper);
-                                }
-                            }
-
-                            visitedHash.Add(wrapper.Property.Name, wrapper);
-                        }
-                        else
-                        {
-                            retValue.Push(wrapper.Property);
-                        }
-                    }
-                    else
-                    {
-                        retValue.Push(wrapper.Property);
-                    }
-                }
-
-                return retValue.ToList();
-            }
-        }
-
         public static string ConstructPropertyDocumentation(string propertyDocumentation)
         {
             var builder = new IndentedStringBuilder("  ");
             return builder.AppendLine(propertyDocumentation).ToString();
-        }
-
-        public bool ContainsPropertiesInSequenceType()
-        {
-            var sample = ComposedProperties.FirstOrDefault(p => 
-            p.ModelType is Core.Model.SequenceType ||
-            p.ModelType is Core.Model.DictionaryType && (p.ModelType as Core.Model.DictionaryType).ValueType is Core.Model.SequenceType);
-            return sample != null;
-        }
-
-        public bool ContainsPropertiesInCompositeType()
-        {
-            var sample = ComposedProperties.FirstOrDefault(p => ContainsCompositeType(p.ModelType));
-            return sample != null;
         }
 
         private bool ContainsCompositeType(IModelType type)
@@ -272,35 +168,6 @@ namespace AutoRest.TypeScript.Model
             return property.DefaultValue.IsNullOrEmpty() ?
                 $"{property.Summary.EnsureEndsWith(".")} {property.Documentation}".Trim() : 
                 $"{property.Summary.EnsureEndsWith(".")} {property.Documentation.EnsureEndsWith(".")} Default value: {property.DefaultValue} .".Trim();
-        }
-
-        /// <summary>
-        /// Provides the type of the property
-        /// </summary>
-        /// <param name="property">Parameter to be documented</param>
-        /// <returns>Parameter name in the correct jsdoc notation</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
-        public static string GetPropertyDocumentationType(Core.Model.Property property)
-        {
-            if (property == null)
-            {
-                throw new ArgumentNullException(nameof(property));
-            }
-            string typeName = "object";
-            if (property.ModelType is PrimaryTypeTS)
-            {
-                typeName = property.ModelType.Name;
-            }
-            else if (property.ModelType is Core.Model.SequenceType)
-            {
-                typeName = "array";
-            }
-            else if (property.ModelType is EnumType)
-            {
-                typeName = "string";
-            }
-
-            return typeName.ToLowerInvariant();
         }
     }
 }

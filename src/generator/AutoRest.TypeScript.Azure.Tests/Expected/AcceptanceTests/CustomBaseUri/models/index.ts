@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import { BaseResource, CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError, AzureServiceClientOptions } from "ms-rest-azure";;
 
 export { BaseResource, CloudError };
 
@@ -23,5 +23,16 @@ export { BaseResource, CloudError };
 export interface ErrorModel {
   status?: number;
   message?: string;
+}
+
+/**
+ * @class
+ * Initializes a new instance of the AutoRestParameterizedHostTestClientOptions class.
+ * @constructor
+ * @member {string} [host] A string value that is used as a global part of the
+ * parameterized host. Default value: 'host' .
+ */
+export interface AutoRestParameterizedHostTestClientOptions extends AzureServiceClientOptions {
+  host?: string;
 }
 

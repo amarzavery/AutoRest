@@ -33,3 +33,21 @@ export const ErrorModel = {
     }
   }
 };
+
+export const AutoRestParameterizedCustomHostTestClientOptions = {
+  required: false,
+  type: {
+    name: 'Composite',
+    className: 'AutoRestParameterizedCustomHostTestClientOptions',
+    modelProperties: {
+      dnsSuffix: {
+        required: false,
+        serializedName: 'dnsSuffix',
+        defaultValue: 'host',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};

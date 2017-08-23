@@ -8,7 +8,7 @@
 @using AutoRest.TypeScript.Templates
 @inherits AutoRest.Core.Template<MethodTS>
 
-@(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.Callback, MethodTS.Language.TypeScript))
+@(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.Callback))
 @(Model.Name.ToCamelCase())(@(Model.MethodParameterDeclarationTS(false, false))): Promise<@(Model.ReturnTypeTSString)>;
 @(Model.Name.ToCamelCase())(@(Model.MethodParameterDeclarationTS(true, false))): Promise<@(Model.ReturnTypeTSString)>;
 @(Model.Name.ToCamelCase())(@(Model.MethodParameterDeclarationWithCallbackTS(includeOptions: false))): void;

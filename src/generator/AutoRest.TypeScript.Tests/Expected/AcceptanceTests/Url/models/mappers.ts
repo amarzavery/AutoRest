@@ -33,3 +33,20 @@ export const ErrorModel = {
     }
   }
 };
+
+export const AutoRestUrlTestServiceOptions = {
+  required: false,
+  type: {
+    name: 'Composite',
+    className: 'AutoRestUrlTestServiceOptions',
+    modelProperties: {
+      globalStringQuery: {
+        required: false,
+        serializedName: 'globalStringQuery',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};

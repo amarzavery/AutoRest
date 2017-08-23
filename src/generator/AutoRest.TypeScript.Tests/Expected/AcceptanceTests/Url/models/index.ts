@@ -8,6 +8,7 @@
  * regenerated.
  */
 
+import { ServiceClientOptions } from "ms-rest";
 
 
 /**
@@ -20,4 +21,14 @@
 export interface ErrorModel {
   status?: number;
   message?: string;
+}
+
+/**
+ * @class
+ * Initializes a new instance of the AutoRestUrlTestServiceOptions class.
+ * @constructor
+ * @member {string} [globalStringQuery] should contain value null
+ */
+export interface AutoRestUrlTestServiceOptions extends ServiceClientOptions {
+  globalStringQuery?: string;
 }

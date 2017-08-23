@@ -218,3 +218,20 @@ export const ClassOptionalWrapper = {
     }
   }
 };
+
+export const AutoRestRequiredOptionalTestServiceOptions = {
+  required: false,
+  type: {
+    name: 'Composite',
+    className: 'AutoRestRequiredOptionalTestServiceOptions',
+    modelProperties: {
+      optionalGlobalQuery: {
+        required: false,
+        serializedName: 'optional-global-query',
+        type: {
+          name: 'Number'
+        }
+      }
+    }
+  }
+};

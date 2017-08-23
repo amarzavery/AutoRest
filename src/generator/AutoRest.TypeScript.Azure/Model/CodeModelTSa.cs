@@ -44,7 +44,7 @@ namespace AutoRest.TypeScript.Azure.Model
         public override CompositeType Add(CompositeType item)
         {
             // Removing all models that contain the extension "x-ms-external", as they will be
-            // generated in TypeScript client runtime for azure - "ms-rest-azure".
+            // generated in TypeScript client runtime for azure - "ms-rest-azure-ts".
             if (item.Extensions.ContainsKey(AzureExtensions.PageableExtension) ||
                 item.Extensions.ContainsKey(AzureExtensions.ExternalExtension))
             {
@@ -56,7 +56,7 @@ namespace AutoRest.TypeScript.Azure.Model
 
         public IList<PageCompositeTypeTSa> PageTemplateModels { get; set; } = new List<PageCompositeTypeTSa>();
 
-        public string ConstructImportForAzureModelIndex()
+        public override string ConstructImportForModelIndex()
         {
             var builder = new IndentedStringBuilder("  ");
             builder.Append("import { BaseResource, CloudError");
@@ -64,7 +64,7 @@ namespace AutoRest.TypeScript.Azure.Model
             {
                 builder.Append(", AzureServiceClientOptions");
             }
-            builder.Append(" } from \"ms-rest-azure\";");
+            builder.Append(" } from \"ms-rest-azure-ts\";");
             return builder.ToString();
         }
     }

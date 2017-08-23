@@ -16,6 +16,7 @@ const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
+
 class AutoRestReportServiceForAzure extends msRestAzure.AzureServiceClient {
 
   credentials: msRest.ServiceClientCredentials;
@@ -41,8 +42,8 @@ class AutoRestReportServiceForAzure extends msRestAzure.AzureServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
