@@ -77,7 +77,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRest.TypeScript", "src\generator\AutoRest.TypeScript\AutoRest.TypeScript.csproj", "{8CE425AC-68B3-4307-A127-CFFFB0BCC960}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRest.TypeScript.Azure", "src\generator\AutoRest.TypeScript.Azure\AutoRest.TypeScript.Azure.csproj", "{626B1B31-CC17-4906-9B37-8E597E3F8C55}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRest.Php", "src\generator\AutoRest.Php\AutoRest.Php.csproj", "{D4F86E5A-02C0-417B-AA33-6FB3477F6C63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRest.Php", "src\generator\AutoRest.Php\AutoRest.Php.csproj", "{D4F86E5A-02C0-417B-AA33-6FB3477F6C63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

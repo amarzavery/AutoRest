@@ -55,8 +55,8 @@ namespace AutoRest.TypeScript.Model
         {
             get
             {
-                var clientIndex = Name.Value.IndexOf("Client", 0, StringComparison.CurrentCultureIgnoreCase);
-                return clientIndex > 0 ? Name.Value.Substring(0, clientIndex) : Name.Value;
+                var clientIndex = Name.IndexOf("Client", 0, StringComparison.CurrentCultureIgnoreCase);
+                return clientIndex > 0 ? Name.Substring(0, clientIndex) : Name;
             }
         }
 
@@ -236,7 +236,7 @@ namespace AutoRest.TypeScript.Model
             }
         }
 
-        public override IEnumerable<string> MyReservedNames => new[] { Name.Value };
+        public override IEnumerable<string> MyReservedNames => new[] { Name };
 
         public string ExportMethodGroupNames()
         {

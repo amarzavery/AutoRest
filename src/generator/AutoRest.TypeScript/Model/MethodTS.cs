@@ -22,7 +22,7 @@ namespace AutoRest.TypeScript.Model
             // methods that have no group name get the client name as their name
             Group.OnGet += groupName =>
             {
-                return groupName.IsNullOrEmpty() ? CodeModel?.Name.Value : groupName;
+                return groupName.IsNullOrEmpty() ? CodeModel?.Name : groupName;
             };
 
             OptionsParameterTemplateModel = (ParameterTS)New<Parameter>(new

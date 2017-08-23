@@ -14,18 +14,13 @@ namespace AutoRest.TypeScript.Model
     {
         protected MethodGroupTS() : base()
         {
-            InitializeProperties();
         }
 
         protected MethodGroupTS(string name): base(name)
         {
-            InitializeProperties();
         }
 
-        protected void InitializeProperties()
-        {
-            NameForProperty.OnGet += value => CodeNamer.Instance.GetPropertyName(TypeName);
-        }
+        public override string NameForProperty => CodeNamer.Instance.GetPropertyName(TypeName);
         [JsonIgnore]
         public IEnumerable<MethodTS> MethodTemplateModels => Methods.Cast<MethodTS>();
 

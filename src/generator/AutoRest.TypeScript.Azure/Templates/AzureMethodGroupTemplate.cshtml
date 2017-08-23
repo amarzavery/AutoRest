@@ -13,7 +13,7 @@ import * as msRest from "ms-rest-ts";
 @:import * as Models from "../models";
 }
 import * as Mappers from "../models/mappers";
-import { @(Model.CodeModel.Name) } from '../@(Model.CodeModel.Name.Value.Substring(0, 1).ToLower() + Model.CodeModel.Name.Value.Substring(1))';
+import { @(Model.CodeModel.Name) } from '../@(Model.CodeModel.Name.Substring(0, 1).ToLower() + Model.CodeModel.Name.Substring(1))';
 @if (Model.ContainsTimeSpan)
 {
 @:import * as moment from "moment";
