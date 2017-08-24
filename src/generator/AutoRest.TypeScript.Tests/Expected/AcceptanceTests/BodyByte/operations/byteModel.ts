@@ -9,7 +9,6 @@
  */
 
 import * as msRest from "ms-rest-ts";
-import * as Models from "../models";
 import * as Mappers from "../models/mappers";
 import { AutoRestSwaggerBATByteService } from "../autoRestSwaggerBATByteService";
 
