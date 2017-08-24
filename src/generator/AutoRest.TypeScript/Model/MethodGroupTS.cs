@@ -47,7 +47,7 @@ namespace AutoRest.TypeScript.Model
             bool result = false;
             foreach(var method in MethodTemplateModels)
             {
-                var parametersToBeScanned = method.LocalParameters;
+                var parametersToBeScanned = method.LocalParameters.Where(l => l.IsRequired);
                 if (!method.OptionsParameterModelType.Name.EqualsIgnoreCase("RequestOptionsBase"))
                 {
                     result = true;
@@ -60,12 +60,11 @@ namespace AutoRest.TypeScript.Model
                 if (result)
                     break;
             }
-            if (result)
-                return result;
-            else
-                return MethodTemplateModels.Any(m => m.ReturnType.Body is CompositeType ||
+            if (!result)
+                result = MethodTemplateModels.Any(m => m.ReturnType.Body is CompositeType ||
                 (m.ReturnType.Body is SequenceType && (m.ReturnType.Body as SequenceType).ElementType is CompositeType) ||
                 (m.ReturnType.Body is DictionaryType && (m.ReturnType.Body as DictionaryType).ValueType is CompositeType));
+            return result;
         }
     }
 }
