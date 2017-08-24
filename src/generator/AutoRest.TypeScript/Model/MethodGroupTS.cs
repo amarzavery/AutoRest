@@ -34,7 +34,7 @@ namespace AutoRest.TypeScript.Model
         {
             get
             {
-                Method method = this.MethodTemplateModels.FirstOrDefault(m => m.Parameters.FirstOrDefault(p =>
+                Method method = MethodTemplateModels.FirstOrDefault(m => m.Parameters.FirstOrDefault(p =>
                     p.ModelType.IsPrimaryType(KnownPrimaryType.TimeSpan) ||
                     (p.ModelType is Core.Model.SequenceType && (p.ModelType as Core.Model.SequenceType).ElementType.IsPrimaryType(KnownPrimaryType.TimeSpan)) ||
                     (p.ModelType is Core.Model.DictionaryType && (p.ModelType as Core.Model.DictionaryType).ValueType.IsPrimaryType(KnownPrimaryType.TimeSpan))) != null);
@@ -44,17 +44,28 @@ namespace AutoRest.TypeScript.Model
 
         public bool ContainsCompositeTypeInParametersOrReturnType()
         {
-            bool parameters = this.MethodTemplateModels.Any(m => m.Parameters.FirstOrDefault(
-                p => p.ModelType is CompositeType ||
-                (p.ModelType is SequenceType && (p.ModelType as SequenceType).ElementType is CompositeType) ||
-                (p.ModelType is DictionaryType && (p.ModelType as DictionaryType).ValueType is CompositeType)) != null);
-            if (!parameters)
+            bool result = false;
+            foreach(var method in MethodTemplateModels)
             {
-                return this.MethodTemplateModels.Any(m => m.ReturnType.Body is CompositeType ||
+                var parametersToBeScanned = method.LocalParameters;
+                if (!method.OptionsParameterModelType.Name.EqualsIgnoreCase("RequestOptionsBase"))
+                {
+                    result = true;
+                    break;
+                }
+                result = parametersToBeScanned.Any(p => p.ModelType is CompositeType ||
+                (p.ModelType is SequenceType && (p.ModelType as SequenceType).ElementType is CompositeType) ||
+                (p.ModelType is DictionaryType && (p.ModelType as DictionaryType).ValueType is CompositeType));
+
+                if (result)
+                    break;
+            }
+            if (result)
+                return result;
+            else
+                return MethodTemplateModels.Any(m => m.ReturnType.Body is CompositeType ||
                 (m.ReturnType.Body is SequenceType && (m.ReturnType.Body as SequenceType).ElementType is CompositeType) ||
                 (m.ReturnType.Body is DictionaryType && (m.ReturnType.Body as DictionaryType).ValueType is CompositeType));
-            }
-            return parameters;
         }
     }
 }

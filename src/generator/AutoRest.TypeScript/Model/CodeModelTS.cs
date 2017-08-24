@@ -252,5 +252,15 @@ namespace AutoRest.TypeScript.Model
         {
             return ModelTemplateModels.Any(m => m != null && m.BaseModelType!= null && m.BaseModelType.Name.EqualsIgnoreCase("RequestOptionsBase"));
         }
+
+        public virtual string ConstructRuntimeImportForModelIndex()
+        {
+            var builder = new IndentedStringBuilder("  ");
+            if (OptionalParameterTypeForClientConstructor != "ServiceClientOptions")
+            {
+                builder.Append("import { ServiceClientOptions } from \"ms-rest-ts\";");
+            }
+            return builder.ToString();
+        }
     }
 }

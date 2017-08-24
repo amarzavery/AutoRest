@@ -56,7 +56,7 @@ namespace AutoRest.TypeScript.Azure.Model
 
         public IList<PageCompositeTypeTSa> PageTemplateModels { get; set; } = new List<PageCompositeTypeTSa>();
 
-        public string ConstructImportForAzureModelIndex()
+        public override string ConstructRuntimeImportForModelIndex()
         {
             var builder = new IndentedStringBuilder("  ");
             builder.Append("import { BaseResource, CloudError");

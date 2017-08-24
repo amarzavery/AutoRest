@@ -26,7 +26,7 @@ export interface @(Model.Name) extends Array@(Model.ConstructTSItemTypeName()) {
 @{
   foreach (var property in propertyList)
   {
-      if (property.Name.ToLowerInvariant() != "value")
+      if (!(property.Name.ToLowerInvariant() == "value" || property.Name.ToLowerInvariant() == "values"))
       {
   @:/**
   @:@(PageCompositeTypeTSa.ConstructPropertyDocumentation(

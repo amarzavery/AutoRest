@@ -5,6 +5,7 @@
 @Header(" * ")
  */
 @EmptyLine
+@Model.ConstructRuntimeImportForModelIndex()
 @if (Model.ContainsDurationPropertyInModels())
 {
 @:import * as moment from "moment";

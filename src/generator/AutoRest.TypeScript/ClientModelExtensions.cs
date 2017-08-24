@@ -245,14 +245,14 @@ namespace AutoRest.TypeScript
                     builder.AppendLine("if(!{0} || !({0} instanceof Date || ", valueReference)
                                                   .Indent()
                                                   .Indent()
-                                                  .AppendLine("(typeof {0}.valueOf() === 'string' && !isNaN(Date.parse({0} as string))))) {{", valueReference);
+                                                  .AppendLine("(typeof ({0} as string).valueOf() === 'string' && !isNaN(Date.parse({0} as string))))) {{", valueReference);
                     return ConstructValidationCheck(builder, requiredTypeErrorMessage, valueReference, primary.Name).ToString();
                 }
 
                 builder = builder.AppendLine("if ({0} && !({0} instanceof Date || ", valueReference)
                                               .Indent()
                                               .Indent()
-                                              .AppendLine("(typeof {0}.valueOf() === 'string' && !isNaN(Date.parse({0} as string))))) {{", valueReference);
+                                              .AppendLine("(typeof ({0} as string).valueOf() === 'string' && !isNaN(Date.parse({0} as string))))) {{", valueReference);
                 return ConstructValidationCheck(builder, typeErrorMessage, valueReference, primary.Name).ToString();
             }
             else if (primary.KnownPrimaryType == KnownPrimaryType.TimeSpan)
