@@ -43,7 +43,7 @@
       "protocol": "inspector",
       "request": "launch",
       "name": "debug ts test",
-      "program": "${workspaceRoot}/src/generator/AutoRest.TypeScript.Tests/dist/AcceptanceTests/foo.js",
+      "program": "${workspaceRoot}/src/generator/AutoRest.TypeScript.Tests/dist/AcceptanceTests/debugTestHelper.js",
       "cwd": "${workspaceRoot}"
     },
     {
@@ -51,7 +51,7 @@
       "protocol": "inspector",
       "request": "launch",
       "name": "debug ts azure test",
-      "program": "${workspaceRoot}/src/generator/AutoRest.TypeScript.Azure.Tests/dist/AcceptanceTests/foo.js",
+      "program": "${workspaceRoot}/src/generator/AutoRest.TypeScript.Azure.Tests/dist/AcceptanceTests/debugTestHelper.js",
       "cwd": "${workspaceRoot}"
     },
     {
@@ -59,7 +59,7 @@
       "protocol": "inspector",
       "request": "launch",
       "name": "debug node test",
-      "program": "${workspaceRoot}/src/generator/AutoRest.NodeJS.Tests/AcceptanceTests/foo.js",
+      "program": "${workspaceRoot}/src/generator/AutoRest.NodeJS.Tests/AcceptanceTests/debugTestHelper.js",
       "cwd": "${workspaceRoot}"
     },
     {
@@ -67,7 +67,7 @@
       "protocol": "inspector",
       "request": "launch",
       "name": "debug node azure test",
-      "program": "${workspaceRoot}/src/generator/AutoRest.NodeJS.Azure.Tests/AcceptanceTests/foo.js",
+      "program": "${workspaceRoot}/src/generator/AutoRest.NodeJS.Azure.Tests/AcceptanceTests/debugTestHelper.js",
       "cwd": "${workspaceRoot}"
     }
   ]
