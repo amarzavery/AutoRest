@@ -26,6 +26,7 @@ namespace AutoRest.TypeScript
             NormalizeOdataFilterParameter(codeModel);
             PerformParameterMapping(codeModel);
             CreateModelTypeForOptionalClientProperties(codeModel);
+            CreateModelTypesForOptionalMethodParameters(codeModel);
             return codeModel;
         }
 
@@ -57,7 +58,7 @@ namespace AutoRest.TypeScript
             }
         }
 
-        public void CreateModelTypeForOptionalClientProperties(CodeModelTS cm)
+        public virtual void CreateModelTypeForOptionalClientProperties(CodeModelTS cm)
         {
             List<string> predefinedOptionalProperties = new List<string>() { "requestOptions", "filters", "noRetryPolicy" };
             var optionalProperitesOnClient = cm.Properties.Where(
@@ -73,6 +74,69 @@ namespace AutoRest.TypeScript
                 modelType.AddRange(optionalProperitesOnClient);
                 cm.Add(modelType);
                 cm.OptionalParameterTypeForClientConstructor = "Models." + modelTypeName;
+            }
+        }
+
+        public virtual void CreateModelTypesForOptionalMethodParameters(CodeModelTS cm)
+        {
+            foreach (var method in cm.Methods)
+            {
+                var optionalParameters = method.Parameters.Where(p => p != null && !p.IsClientProperty && !string.IsNullOrWhiteSpace(p.Name) && !p.IsConstant && !p.IsRequired).ToList();
+                if (optionalParameters!= null && optionalParameters.Count() == 0)
+                {
+                    var optionsParameterTemplateModel = (ParameterTS)New<Parameter>(new
+                    {
+                        Name = "options",
+                        SerializedName = "options",
+                        IsRequired = false,
+                        Documentation = "Optional Parameters.",
+                        Location = ParameterLocation.None,
+                        ModelType = New<CompositeType>(new
+                        {
+                            Name = "RequestOptionsBase",
+                            SerializedName = "RequestOptionsBase",
+                            Documentation = "Optional Parameters."
+                        })
+                    });
+                    method.Add(optionsParameterTemplateModel);
+                }
+                else
+                {
+                    var optionsParameterTemplateModel = (ParameterTS)New<Parameter>(new
+                    {
+                        Name = "options",
+                        SerializedName = "options",
+                        IsRequired = false,
+                        Documentation = "Optional Parameters.",
+                        Location = ParameterLocation.None,
+                        ModelType = New<CompositeType>(new
+                        {
+                            Name = method.Name.ToPascalCase() + "Options",
+                            SerializedName = method.Name.ToPascalCase() + "Options",
+                            Documentation = "Optional Parameters."
+                        })
+                    });
+                    var optionsParameterModelType = ((CompositeType)optionsParameterTemplateModel.ModelType);
+                    optionsParameterModelType.BaseModelType = New<CompositeType>(new { Name = "RequestOptionsBase", SerializedName = "RequestOptionsBase" });
+                    foreach(var optionalParameter in optionalParameters)
+                    {
+                        optionsParameterModelType.Add(New<Core.Model.Property>(new
+                        {
+                            IsReadOnly = false,
+                            Name = optionalParameter.Name,
+                            IsRequired = optionalParameter.IsRequired,
+                            DefaultValue = optionalParameter.DefaultValue,
+                            Documentation = optionalParameter.Documentation,
+                            ModelType = optionalParameter.ModelType,
+                            SerializedName = optionalParameter.SerializedName,
+                            Constraints = optionalParameter.Constraints,
+                            Extensions = optionalParameter.Extensions
+                        }));
+                        method.Remove(optionalParameter);
+                    }
+                    method.Add(optionsParameterTemplateModel);
+                    cm.Add(optionsParameterModelType);
+                }
             }
         }
 

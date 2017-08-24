@@ -9,6 +9,10 @@
 {
 @:import * as moment from "moment";
 }
+@if (Model.IsAnyModelInheritingFromRequestOptionsBase())
+{
+@:import { RequestOptionsBase } from "ms-rest-ts";
+}
 @EmptyLine
 @foreach (var model in Model.OrderedModelTemplateModels) {
 @EmptyLine

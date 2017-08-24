@@ -214,15 +214,6 @@ namespace AutoRest.TypeScript.Model
             }
         }
 
-        public bool ContainsTimeSpan
-        {
-            get
-            {
-                return this.Methods.FirstOrDefault(
-                    m => m.Parameters.FirstOrDefault(p => p.ModelType.IsPrimaryType(KnownPrimaryType.TimeSpan)) != null) != null;
-            }
-        }
-
         public virtual string OptionalParameterTypeForClientConstructor
         {
             get
@@ -255,6 +246,11 @@ namespace AutoRest.TypeScript.Model
                 } 
             }
             return builder.ToString();
+        }
+
+        public bool IsAnyModelInheritingFromRequestOptionsBase()
+        {
+            return ModelTemplateModels.Any(m => m != null && m.BaseModelType!= null && m.BaseModelType.Name.EqualsIgnoreCase("RequestOptionsBase"));
         }
     }
 }

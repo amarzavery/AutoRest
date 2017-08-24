@@ -7,7 +7,7 @@
 @EmptyLine
 @foreach (var methodGroup in Model.MethodGroupModels)
 {
-@:import { @(methodGroup.TypeName) } from './@(methodGroup.TypeName.ToCamelCase())';
+@:import { @(methodGroup.TypeName) } from "./@(methodGroup.TypeName.ToCamelCase())";
 }
 @EmptyLine
 export { @WrapComment("", Model.ExportMethodGroupNames()) };

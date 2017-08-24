@@ -5,16 +5,16 @@
 @Header(" * ")
  */
 @EmptyLine
-import * as msRest from 'ms-rest';
+import * as msRest from "ms-rest-ts";
 @if (Model.ContainsCompositeTypeInParametersOrReturnType())
 {
-@:import * as Models from '../models';
+@:import * as Models from "../models";
 }
-import * as Mappers from '../models/mappers';
-import { @(Model.CodeModel.Name) } from '../@(Model.CodeModel.Name.Value.Substring(0, 1).ToLower() + Model.CodeModel.Name.Value.Substring(1))';
+import * as Mappers from "../models/mappers";
+import { @(Model.CodeModel.Name) } from "../@(Model.CodeModel.Name.Value.Substring(0, 1).ToLower() + Model.CodeModel.Name.Value.Substring(1))";
 @if (Model.ContainsTimeSpan)
 {
-@:import * as moment from 'moment';
+@:import * as moment from "moment";
 }
 @EmptyLine
 const WebResource = msRest.WebResource;

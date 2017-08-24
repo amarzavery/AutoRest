@@ -11,6 +11,10 @@
 {
 @:import * as moment from "moment";
 }
+@if (Model.IsAnyModelInheritingFromRequestOptionsBase())
+{
+@:import { RequestOptionsBase } from "ms-rest-ts";
+}
 @EmptyLine
 export { BaseResource, CloudError };
 @EmptyLine

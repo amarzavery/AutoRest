@@ -8,11 +8,11 @@
 @using AutoRest.TypeScript.Templates
 @inherits AutoRest.Core.Template<MethodTS>
 
-@(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.HttpOperationResponse, MethodTS.Language.TypeScript))
+@(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.HttpOperationResponse))
 async @(Model.Name.ToCamelCase())WithHttpOperationResponse(@(Model.MethodParameterDeclarationTS(true, true))): Promise<msRest.HttpOperationResponse> {
   let client = @(Model.ClientReference);
 
-  @if (((CompositeType)Model.OptionsParameterTemplateModel.ModelType).Properties.Count > 1)
+  @if (Model.OptionsParameterModelType.Properties.Count > 0)
   {
   @:@(Model.BuildOptionalMappings())
   }

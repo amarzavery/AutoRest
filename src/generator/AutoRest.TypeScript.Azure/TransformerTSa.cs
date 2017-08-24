@@ -97,7 +97,7 @@ namespace AutoRest.TypeScript.Azure
             }
         }
 
-        public void CreateModelTypeForOptionalClientProperties(CodeModelTSa cm)
+        public override void CreateModelTypeForOptionalClientProperties(CodeModelTS cm)
         {
             List<string> predefinedOptionalProperties = new List<string>() {
                 "requestOptions", "filters", "noRetryPolicy", "apiVersion",
