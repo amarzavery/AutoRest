@@ -14,7 +14,7 @@ else
 {
 <text>
 @EmptyLine
-@(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.Promise))
+@(Model.GenerateMethodDocumentation(MethodTS.MethodFlavor.HttpOperationResponse))
 async @(Model.Name.ToCamelCase())WithHttpOperationResponse(@(Model.MethodParameterDeclarationTS(true, true))): Promise<msRest.HttpOperationResponse> {
   let client = @(Model.ClientReference);
   // Send request

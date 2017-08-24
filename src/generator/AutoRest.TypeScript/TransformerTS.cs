@@ -111,7 +111,7 @@ namespace AutoRest.TypeScript
                         Location = ParameterLocation.None,
                         ModelType = New<CompositeType>(new
                         {
-                            Name = method.Name.ToPascalCase() + "Options",
+                            Name = method.Group.ToPascalCase() + method.Name.ToPascalCase() + "OptionalParams",
                             SerializedName = method.Name.ToPascalCase() + "Options",
                             Documentation = "Optional Parameters."
                         })
@@ -132,7 +132,6 @@ namespace AutoRest.TypeScript
                             Constraints = optionalParameter.Constraints,
                             Extensions = optionalParameter.Extensions
                         }));
-                        method.Remove(optionalParameter);
                     }
                     method.Add(optionsParameterTemplateModel);
                     cm.Add(optionsParameterModelType);
@@ -141,7 +140,7 @@ namespace AutoRest.TypeScript
         }
 
         /// <summary>
-        ///     Normalize odata filter parameter to PrimaryType.String
+        /// Normalize odata filter parameter to PrimaryType.String
         /// </summary>
         /// <param name="client">Service Client</param>
         public void NormalizeOdataFilterParameter(CodeModelTS client)

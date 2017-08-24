@@ -22,28 +22,11 @@ namespace AutoRest.TypeScript.Model
             {
                 return groupName.IsNullOrEmpty() ? CodeModel?.Name.Value : groupName;
             };
-
-            //OptionsParameterTemplateModel = (ParameterTS)New<Parameter>(new
-            //{
-            //    Name = "options",
-            //    SerializedName = "options",
-            //    IsRequired = false,
-            //    Documentation = "Optional Parameters.",
-            //    Location = ParameterLocation.None,
-            //    ModelType = New<CompositeType>(new
-            //    {
-            //        Name = "Options",
-            //        SerializedName = "Options",
-            //        Documentation = "Optional Parameters."
-            //    })
-            //});
         }
 
         public override void Remove(Parameter item)
         {
             base.Remove(item);
-            // find a Property in OptionsParameterModelType with the same name and remove it.
-            //OptionsParameterModelType.Remove(prop => prop.Name == item.Name);
         }
 
         public enum MethodFlavor
@@ -56,23 +39,6 @@ namespace AutoRest.TypeScript.Model
         public override Parameter Add(Parameter item)
         {
             var parameter = base.Add(item) as ParameterTS;
-
-            //if (parameter.IsLocal && !parameter.IsRequired)
-            //{
-            //    OptionsParameterModelType.Add(New<Core.Model.Property>(new
-            //    {
-            //        IsReadOnly = false,
-            //        Name = parameter.Name,
-            //        IsRequired = parameter.IsRequired,
-            //        DefaultValue = parameter.DefaultValue,
-            //        Documentation = parameter.Documentation,
-            //        ModelType = parameter.ModelType,
-            //        SerializedName = parameter.SerializedName,
-            //        Constraints = parameter.Constraints,
-            //        Extensions = parameter.Extensions
-            //    }));
-            //}
-
             return parameter;
         }
 
@@ -89,7 +55,9 @@ namespace AutoRest.TypeScript.Model
             {
                 return (Parameters.Where(
                     p => p != null && !p.IsClientProperty && 
-                    !string.IsNullOrWhiteSpace(p.Name) && !p.IsConstant && !p.IsRequired).FirstOrDefault(op => op != null) as ParameterTS);
+                    !string.IsNullOrWhiteSpace(p.Name) && !p.IsConstant && !p.IsRequired &&
+                    p.ModelType is CompositeType &&
+                    (p.ModelType.Name.EqualsIgnoreCase(Group + Name + "OptionalParams") || p.ModelType.Name.EqualsIgnoreCase("RequestOptionsBase"))).FirstOrDefault(op => op != null) as ParameterTS);
             }
         }
 
@@ -124,7 +92,7 @@ namespace AutoRest.TypeScript.Model
             get
             {
                 List<string> declarations = new List<string>();
-                foreach (var parameter in LocalParameters)
+                foreach (var parameter in LocalParametersWithOptions)
                 {
                     declarations.Add(parameter.Name);
                 }
@@ -266,16 +234,16 @@ namespace AutoRest.TypeScript.Model
         /// Get the parameters that are actually method parameters in the order they appear in the method signature
         /// exclude global parameters. All the optional parameters are pushed into the second last "options" parameter.
         /// </summary>
-        //[JsonIgnore]
-        //public IEnumerable<ParameterTS> LocalParametersWithOptions
-        //{
-        //    get
-        //    {
-        //        List<ParameterTS> requiredParamsWithOptionsList = LocalParameters.Where(p => p.IsRequired).ToList();
-        //        requiredParamsWithOptionsList.Add(OptionsParameterTemplateModel);
-        //        return requiredParamsWithOptionsList as IEnumerable<ParameterTS>;
-        //    }
-        //}
+        [JsonIgnore]
+        public IEnumerable<ParameterTS> LocalParametersWithOptions
+        {
+            get
+            {
+                List<ParameterTS> requiredParamsWithOptionsList = LocalParameters.Where(p => p.IsRequired).ToList();
+                requiredParamsWithOptionsList.Add(OptionsParameterTemplateModel);
+                return requiredParamsWithOptionsList as IEnumerable<ParameterTS>;
+            }
+        }
 
         public static string ConstructParameterDocumentation(string documentation)
         {
@@ -876,7 +844,6 @@ namespace AutoRest.TypeScript.Model
         /// </summary>
         /// <param name="flavor">Describes the flavor of the method (Callback based, promise based, 
         /// raw httpOperationResponse based) to be documented.</param>
-        /// <param name = "language" > Describes the language in which the method needs to be documented (Javascript (default), TypeScript).</param>
         /// <returns></returns>
         public string GenerateMethodDocumentation(MethodFlavor flavor)
         {
@@ -891,7 +858,8 @@ namespace AutoRest.TypeScript.Model
             {
                 builder.AppendLine(template.WrapComment(" * ", Description)).AppendLine(" *");
             }
-            foreach (var parameter in LocalParameters)
+
+            foreach (var parameter in LocalParametersWithOptions)
             {
                 var paramDoc = $"@param {{{ProvideParameterType(parameter.ModelType, true)}}} {GetParameterDocumentationName(parameter)} {parameter.Documentation}";
                 builder.AppendLine(ConstructParameterDocumentation(template.WrapComment(" * ", paramDoc)));
@@ -903,28 +871,31 @@ namespace AutoRest.TypeScript.Model
                     .AppendLine(" * @resolve {HttpOperationResponse} - The deserialized result object.").AppendLine(" *")
                     .AppendLine(" * @reject {{{0}}} - The error object.", errorType);
             }
-            else if (flavor == MethodFlavor.Callback)
+            else
             {
-                builder.AppendLine(template.WrapComment(" * ", " @param {ServiceCallback} callback - The callback.")).AppendLine(" *")
-                    .AppendLine(template.WrapComment(" * ", " @returns {ServiceCallback} callback(err, result, request, response)")).AppendLine(" *");
+                if (flavor == MethodFlavor.Callback)
+                {
+                    builder.AppendLine(template.WrapComment(" * ", " @param {ServiceCallback} callback - The callback.")).AppendLine(" *")
+                        .AppendLine(template.WrapComment(" * ", " @returns {ServiceCallback} callback(err, result, request, response)")).AppendLine(" *");
+                }
+                else if (flavor == MethodFlavor.Promise)
+                {
+                    builder.AppendLine(template.WrapComment(" * ", " @param {ServiceCallback} [optionalCallback] - The optional callback.")).AppendLine(" *")
+                        .AppendLine(template.WrapComment(" * ", " @returns {ServiceCallback|Promise} If a callback was passed as the last parameter " +
+                        "then it returns the callback else returns a Promise.")).AppendLine(" *")
+                        .AppendLine(" * {Promise} A promise is returned.").AppendLine(" *")
+                        .AppendLine(" *                      @resolve {{{0}}} - The deserialized result object.", ReturnTypeTSString).AppendLine(" *")
+                        .AppendLine(" *                      @reject {Error|ServiceError} - The error object.").AppendLine(" *")
+                        .AppendLine(template.WrapComment(" * ", "{ServiceCallback} optionalCallback(err, result, request, response)")).AppendLine(" *");
+                }
+                builder.AppendLine(" *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.").AppendLine(" *")
+                    .AppendLine(" *                      {{{0}}} [result]   - The deserialized result object if an error did not occur.", ReturnTypeTSString)
+                    .AppendLine(template.WrapComment(" *                      ", ReturnTypeInfo)).AppendLine(" *")
+                    .AppendLine(" *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.").AppendLine(" *")
+                    .AppendLine(" *                      {Response} [response] - The HTTP Response stream if an error did not occur.");
+                    
             }
-            else if (flavor == MethodFlavor.Promise)
-            {
-                builder.AppendLine(template.WrapComment(" * ", " @param {ServiceCallback} [optionalCallback] - The optional callback.")).AppendLine(" *")
-                    .AppendLine(template.WrapComment(" * ", " @returns {ServiceCallback|Promise} If a callback was passed as the last parameter " +
-                    "then it returns the callback else returns a Promise.")).AppendLine(" *")
-                    .AppendLine(" * {Promise} A promise is returned.").AppendLine(" *")
-                    .AppendLine(" *                      @resolve {{{0}}} - The deserialized result object.", ReturnTypeTSString).AppendLine(" *")
-                    .AppendLine(" *                      @reject {Error|ServiceError} - The error object.").AppendLine(" *")
-                    .AppendLine(template.WrapComment(" * ", "{ServiceCallback} optionalCallback(err, result, request, response)")).AppendLine(" *");
-            }
-            builder.AppendLine(" *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.").AppendLine(" *")
-                .AppendLine(" *                      {{{0}}} [result]   - The deserialized result object if an error did not occur.", ReturnTypeTSString)
-                .AppendLine(template.WrapComment(" *                      ", ReturnTypeInfo)).AppendLine(" *")
-                .AppendLine(" *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.").AppendLine(" *")
-                .AppendLine(" *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.")
-                .AppendLine(" */");
-            return builder.ToString();
+            return builder.AppendLine(" */").ToString();
         }
 
         public string BuildResultInitialization(string resultReference)
