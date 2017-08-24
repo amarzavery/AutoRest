@@ -8,32 +8,38 @@
  * regenerated.
  */
 
-import { BaseResource, CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError } from "ms-rest-azure-ts";
 
 export { BaseResource, CloudError };
 
 
 /**
- * @class
- * Initializes a new instance of the SampleResourceGroup class.
- * @constructor
- * @member {string} [name] resource group name 'testgroup101'
- * @member {string} [location] resource group location 'West US'
+ * @interface
+ * An interface representing SampleResourceGroup.
  */
 export interface SampleResourceGroup {
+  /**
+   * @member {string} [name] resource group name 'testgroup101'
+   */
   name?: string;
+  /**
+   * @member {string} [location] resource group location 'West US'
+   */
   location?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [code]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [code]
+   */
   code?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }
 

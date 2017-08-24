@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestHttpInfrastructureTestService } from '../autoRestHttpInfrastructureTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHttpInfrastructureTestService } from "../autoRestHttpInfrastructureTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class HttpRetry {
   /**
    * Return 408 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head408WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head408WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -102,20 +100,15 @@ export class HttpRetry {
   /**
    * Return 500 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPut500OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put500WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put500WithHttpOperationResponse(options?: Models.HttpRetryPut500OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -207,20 +200,15 @@ export class HttpRetry {
   /**
    * Return 500 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPatch500OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch500WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch500WithHttpOperationResponse(options?: Models.HttpRetryPatch500OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -312,18 +300,15 @@ export class HttpRetry {
   /**
    * Return 502 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get502WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get502WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -386,20 +371,15 @@ export class HttpRetry {
   /**
    * Return 503 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPost503OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post503WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post503WithHttpOperationResponse(options?: Models.HttpRetryPost503OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -491,20 +471,15 @@ export class HttpRetry {
   /**
    * Return 503 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryDelete503OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete503WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete503WithHttpOperationResponse(options?: Models.HttpRetryDelete503OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -596,20 +571,15 @@ export class HttpRetry {
   /**
    * Return 504 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPut504OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put504WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put504WithHttpOperationResponse(options?: Models.HttpRetryPut504OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -701,20 +671,15 @@ export class HttpRetry {
   /**
    * Return 504 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPatch504OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch504WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch504WithHttpOperationResponse(options?: Models.HttpRetryPatch504OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -806,10 +771,7 @@ export class HttpRetry {
   /**
    * Return 408 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -817,17 +779,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head408(): Promise<void>;
-  head408(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head408(options: msRest.RequestOptionsBase): Promise<void>;
   head408(callback: msRest.ServiceCallback<void>): void;
-  head408(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head408(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head408(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head408(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -853,12 +815,7 @@ export class HttpRetry {
   /**
    * Return 500 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPut500OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -866,17 +823,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put500(): Promise<void>;
-  put500(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put500(options: Models.HttpRetryPut500OptionalParams): Promise<void>;
   put500(callback: msRest.ServiceCallback<void>): void;
-  put500(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put500(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put500(options: Models.HttpRetryPut500OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put500(options?: Models.HttpRetryPut500OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -902,12 +859,7 @@ export class HttpRetry {
   /**
    * Return 500 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPatch500OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -915,17 +867,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch500(): Promise<void>;
-  patch500(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch500(options: Models.HttpRetryPatch500OptionalParams): Promise<void>;
   patch500(callback: msRest.ServiceCallback<void>): void;
-  patch500(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch500(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch500(options: Models.HttpRetryPatch500OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch500(options?: Models.HttpRetryPatch500OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -951,10 +903,7 @@ export class HttpRetry {
   /**
    * Return 502 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -962,17 +911,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get502(): Promise<void>;
-  get502(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get502(options: msRest.RequestOptionsBase): Promise<void>;
   get502(callback: msRest.ServiceCallback<void>): void;
-  get502(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get502(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get502(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get502(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -998,12 +947,7 @@ export class HttpRetry {
   /**
    * Return 503 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPost503OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1011,17 +955,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post503(): Promise<void>;
-  post503(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post503(options: Models.HttpRetryPost503OptionalParams): Promise<void>;
   post503(callback: msRest.ServiceCallback<void>): void;
-  post503(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post503(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post503(options: Models.HttpRetryPost503OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post503(options?: Models.HttpRetryPost503OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1047,12 +991,7 @@ export class HttpRetry {
   /**
    * Return 503 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryDelete503OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1060,17 +999,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete503(): Promise<void>;
-  delete503(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  delete503(options: Models.HttpRetryDelete503OptionalParams): Promise<void>;
   delete503(callback: msRest.ServiceCallback<void>): void;
-  delete503(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  delete503(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  delete503(options: Models.HttpRetryDelete503OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  delete503(options?: Models.HttpRetryDelete503OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1096,12 +1035,7 @@ export class HttpRetry {
   /**
    * Return 504 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPut504OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1109,17 +1043,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put504(): Promise<void>;
-  put504(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put504(options: Models.HttpRetryPut504OptionalParams): Promise<void>;
   put504(callback: msRest.ServiceCallback<void>): void;
-  put504(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put504(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put504(options: Models.HttpRetryPut504OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put504(options?: Models.HttpRetryPut504OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1145,12 +1079,7 @@ export class HttpRetry {
   /**
    * Return 504 status code, then 200 after retry
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRetryPatch504OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1158,17 +1087,17 @@ export class HttpRetry {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch504(): Promise<void>;
-  patch504(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch504(options: Models.HttpRetryPatch504OptionalParams): Promise<void>;
   patch504(callback: msRest.ServiceCallback<void>): void;
-  patch504(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch504(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch504(options: Models.HttpRetryPatch504OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch504(options?: Models.HttpRetryPatch504OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

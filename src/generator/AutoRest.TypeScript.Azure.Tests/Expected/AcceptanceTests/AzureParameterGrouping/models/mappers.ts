@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -136,6 +136,71 @@ export const ParameterGroupingPostMultiParamGroupsSecondParamGroup = {
         defaultValue: 30,
         type: {
           name: 'Number'
+        }
+      }
+    }
+  }
+};
+
+export const ParameterGroupingPostOptionalOptionalParams = {
+  required: false,
+  serializedName: 'PostOptionalOptions',
+  type: {
+    name: 'Composite',
+    className: 'ParameterGroupingPostOptionalOptionalParams',
+    modelProperties: {
+      parameterGroupingPostOptionalParameters: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'ParameterGroupingPostOptionalParameters'
+        }
+      }
+    }
+  }
+};
+
+export const ParameterGroupingPostMultiParamGroupsOptionalParams = {
+  required: false,
+  serializedName: 'PostMultiParamGroupsOptions',
+  type: {
+    name: 'Composite',
+    className: 'ParameterGroupingPostMultiParamGroupsOptionalParams',
+    modelProperties: {
+      firstParameterGroup: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'FirstParameterGroup'
+        }
+      },
+      parameterGroupingPostMultiParamGroupsSecondParamGroup: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'ParameterGroupingPostMultiParamGroupsSecondParamGroup'
+        }
+      }
+    }
+  }
+};
+
+export const ParameterGroupingPostSharedParameterGroupObjectOptionalParams = {
+  required: false,
+  serializedName: 'PostSharedParameterGroupObjectOptions',
+  type: {
+    name: 'Composite',
+    className: 'ParameterGroupingPostSharedParameterGroupObjectOptionalParams',
+    modelProperties: {
+      firstParameterGroup: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'FirstParameterGroup'
         }
       }
     }

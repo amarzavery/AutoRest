@@ -8,85 +8,157 @@
  * regenerated.
  */
 
-import { BaseResource, CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError } from "ms-rest-azure-ts";
+import { RequestOptionsBase } from "ms-rest-ts";
 
 export { BaseResource, CloudError };
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ParameterGroupingPostRequiredParameters class.
- * @constructor
+ * @interface
+ * An interface representing ParameterGroupingPostRequiredParameters.
  * Additional parameters for the ParameterGrouping_postRequired operation.
  *
- * @member {number} body
- * @member {string} [customHeader]
- * @member {number} [query] Query parameter with default. Default value: 30 .
- * @member {string} path Path parameter
  */
 export interface ParameterGroupingPostRequiredParameters {
+  /**
+   * @member {number} body
+   */
   body: number;
+  /**
+   * @member {string} [customHeader]
+   */
   customHeader?: string;
+  /**
+   * @member {number} [query] Query parameter with default. Default value: 30 .
+   */
   query?: number;
+  /**
+   * @member {string} path Path parameter
+   */
   path: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ParameterGroupingPostOptionalParameters class.
- * @constructor
+ * @interface
+ * An interface representing ParameterGroupingPostOptionalParameters.
  * Additional parameters for the ParameterGrouping_postOptional operation.
  *
- * @member {string} [customHeader]
- * @member {number} [query] Query parameter with default. Default value: 30 .
  */
 export interface ParameterGroupingPostOptionalParameters {
+  /**
+   * @member {string} [customHeader]
+   */
   customHeader?: string;
+  /**
+   * @member {number} [query] Query parameter with default. Default value: 30 .
+   */
   query?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the FirstParameterGroup class.
- * @constructor
+ * @interface
+ * An interface representing FirstParameterGroup.
  * Additional parameters for a set of operations, such as:
  * ParameterGrouping_postMultiParamGroups,
  * ParameterGrouping_postSharedParameterGroupObject.
  *
- * @member {string} [headerOne]
- * @member {number} [queryOne] Query parameter with default. Default value: 30
- * .
  */
 export interface FirstParameterGroup {
+  /**
+   * @member {string} [headerOne]
+   */
   headerOne?: string;
+  /**
+   * @member {number} [queryOne] Query parameter with default. Default value:
+   * 30 .
+   */
   queryOne?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the ParameterGroupingPostMultiParamGroupsSecondParamGroup class.
- * @constructor
+ * @interface
+ * An interface representing ParameterGroupingPostMultiParamGroupsSecondParamGroup.
  * Additional parameters for the ParameterGrouping_postMultiParamGroups
  * operation.
  *
- * @member {string} [headerTwo]
- * @member {number} [queryTwo] Query parameter with default. Default value: 30
- * .
  */
 export interface ParameterGroupingPostMultiParamGroupsSecondParamGroup {
+  /**
+   * @member {string} [headerTwo]
+   */
   headerTwo?: string;
+  /**
+   * @member {number} [queryTwo] Query parameter with default. Default value:
+   * 30 .
+   */
   queryTwo?: number;
+}
+
+/**
+ * @interface
+ * An interface representing ParameterGroupingPostOptionalOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ParameterGroupingPostOptionalOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {ParameterGroupingPostOptionalParameters}
+   * [parameterGroupingPostOptionalParameters] Additional parameters for the
+   * operation
+   */
+  parameterGroupingPostOptionalParameters?: ParameterGroupingPostOptionalParameters;
+}
+
+/**
+ * @interface
+ * An interface representing ParameterGroupingPostMultiParamGroupsOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ParameterGroupingPostMultiParamGroupsOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {FirstParameterGroup} [firstParameterGroup] Additional parameters
+   * for the operation
+   */
+  firstParameterGroup?: FirstParameterGroup;
+  /**
+   * @member {ParameterGroupingPostMultiParamGroupsSecondParamGroup}
+   * [parameterGroupingPostMultiParamGroupsSecondParamGroup] Additional
+   * parameters for the operation
+   */
+  parameterGroupingPostMultiParamGroupsSecondParamGroup?: ParameterGroupingPostMultiParamGroupsSecondParamGroup;
+}
+
+/**
+ * @interface
+ * An interface representing ParameterGroupingPostSharedParameterGroupObjectOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ParameterGroupingPostSharedParameterGroupObjectOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {FirstParameterGroup} [firstParameterGroup] Additional parameters
+   * for the operation
+   */
+  firstParameterGroup?: FirstParameterGroup;
 }
 

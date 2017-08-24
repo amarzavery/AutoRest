@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { MicrosoftAzureTestUrl } from '../microsoftAzureTestUrl';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { MicrosoftAzureTestUrl } from "../microsoftAzureTestUrl";
 
 const WebResource = msRest.WebResource;
 
@@ -31,18 +31,15 @@ export class Group {
    *
    * @param {string} resourceGroupName Resource Group name 'testgroup101'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<SampleResourceGroup>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSampleResourceGroupWithHttpOperationResponse(resourceGroupName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSampleResourceGroupWithHttpOperationResponse(resourceGroupName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -152,10 +149,7 @@ export class Group {
    *
    * @param {string} resourceGroupName Resource Group name 'testgroup101'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -163,18 +157,19 @@ export class Group {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SampleResourceGroup} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SampleResourceGroup} for more information.
+   *                      {Models.SampleResourceGroup} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SampleResourceGroup} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSampleResourceGroup(resourceGroupName: string): Promise<Models.SampleResourceGroup>;
-  getSampleResourceGroup(resourceGroupName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.SampleResourceGroup>;
+  getSampleResourceGroup(resourceGroupName: string, options: msRest.RequestOptionsBase): Promise<Models.SampleResourceGroup>;
   getSampleResourceGroup(resourceGroupName: string, callback: msRest.ServiceCallback<Models.SampleResourceGroup>): void;
-  getSampleResourceGroup(resourceGroupName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SampleResourceGroup>): void;
-  getSampleResourceGroup(resourceGroupName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SampleResourceGroup>): any {
+  getSampleResourceGroup(resourceGroupName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.SampleResourceGroup>): void;
+  getSampleResourceGroup(resourceGroupName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.SampleResourceGroup>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

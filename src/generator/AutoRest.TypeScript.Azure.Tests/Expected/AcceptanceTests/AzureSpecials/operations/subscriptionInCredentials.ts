@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestAzureSpecialParametersTestClient } from "../autoRestAzureSpecialParametersTestClient";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +30,15 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postMethodGlobalValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postMethodGlobalValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -127,18 +125,15 @@ export class SubscriptionInCredentials {
    * subscriptionId to null, and client-side validation should prevent you from
    * making this call
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postMethodGlobalNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postMethodGlobalNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -224,18 +219,15 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postMethodGlobalNotProvidedValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postMethodGlobalNotProvidedValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -325,18 +317,15 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postPathGlobalValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postPathGlobalValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -422,18 +411,15 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postSwaggerGlobalValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postSwaggerGlobalValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -519,10 +505,7 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -530,17 +513,17 @@ export class SubscriptionInCredentials {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postMethodGlobalValid(): Promise<void>;
-  postMethodGlobalValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postMethodGlobalValid(options: msRest.RequestOptionsBase): Promise<void>;
   postMethodGlobalValid(callback: msRest.ServiceCallback<void>): void;
-  postMethodGlobalValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postMethodGlobalValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postMethodGlobalValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  postMethodGlobalValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -568,10 +551,7 @@ export class SubscriptionInCredentials {
    * subscriptionId to null, and client-side validation should prevent you from
    * making this call
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -579,17 +559,17 @@ export class SubscriptionInCredentials {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postMethodGlobalNull(): Promise<void>;
-  postMethodGlobalNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postMethodGlobalNull(options: msRest.RequestOptionsBase): Promise<void>;
   postMethodGlobalNull(callback: msRest.ServiceCallback<void>): void;
-  postMethodGlobalNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postMethodGlobalNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postMethodGlobalNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  postMethodGlobalNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -616,10 +596,7 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -627,17 +604,17 @@ export class SubscriptionInCredentials {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postMethodGlobalNotProvidedValid(): Promise<void>;
-  postMethodGlobalNotProvidedValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postMethodGlobalNotProvidedValid(options: msRest.RequestOptionsBase): Promise<void>;
   postMethodGlobalNotProvidedValid(callback: msRest.ServiceCallback<void>): void;
-  postMethodGlobalNotProvidedValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postMethodGlobalNotProvidedValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postMethodGlobalNotProvidedValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  postMethodGlobalNotProvidedValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -664,10 +641,7 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -675,17 +649,17 @@ export class SubscriptionInCredentials {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postPathGlobalValid(): Promise<void>;
-  postPathGlobalValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postPathGlobalValid(options: msRest.RequestOptionsBase): Promise<void>;
   postPathGlobalValid(callback: msRest.ServiceCallback<void>): void;
-  postPathGlobalValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postPathGlobalValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postPathGlobalValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  postPathGlobalValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -712,10 +686,7 @@ export class SubscriptionInCredentials {
    * POST method with subscriptionId modeled in credentials.  Set the credential
    * subscriptionId to '1234-5678-9012-3456' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -723,17 +694,17 @@ export class SubscriptionInCredentials {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postSwaggerGlobalValid(): Promise<void>;
-  postSwaggerGlobalValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postSwaggerGlobalValid(options: msRest.RequestOptionsBase): Promise<void>;
   postSwaggerGlobalValid(callback: msRest.ServiceCallback<void>): void;
-  postSwaggerGlobalValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postSwaggerGlobalValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postSwaggerGlobalValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  postSwaggerGlobalValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

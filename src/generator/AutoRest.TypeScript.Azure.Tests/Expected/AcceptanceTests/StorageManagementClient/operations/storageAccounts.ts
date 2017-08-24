@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { StorageManagementClient } from '../storageManagementClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { StorageManagementClient } from "../storageManagementClient";
 
 const WebResource = msRest.WebResource;
 
@@ -29,26 +29,20 @@ export class StorageAccounts {
   /**
    * Checks that account name is valid and is not in use.
    *
-   * @param {object} accountName The name of the storage account within the
-   * specified resource group. Storage account names must be between 3 and 24
-   * characters in length and use numbers and lower-case letters only.
+   * @param {StorageAccountCheckNameAvailabilityParameters} accountName The name
+   * of the storage account within the specified resource group. Storage account
+   * names must be between 3 and 24 characters in length and use numbers and
+   * lower-case letters only.
    *
-   * @param {string} accountName.name
-   *
-   * @param {string} [accountName.type]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<CheckNameAvailabilityResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async checkNameAvailabilityWithHttpOperationResponse(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async checkNameAvailabilityWithHttpOperationResponse(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -180,45 +174,18 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} parameters The parameters to provide for the created
-   * account.
+   * @param {StorageAccountCreateParameters} parameters The parameters to provide
+   * for the created account.
    *
-   * @param {string} [parameters.accountType] Gets or sets the account type.
-   * Possible values include: 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS',
-   * 'Standard_RAGRS', 'Premium_LRS'
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {string} parameters.location Resource location
+   * @returns {Promise} A promise is returned
    *
-   * @param {object} [parameters.tags] Resource tags
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {StorageAccount} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccount} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async createWithHttpOperationResponse(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async createWithHttpOperationResponse(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -262,18 +229,15 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async deleteMethodWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteMethodWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -378,18 +342,15 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccount>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getPropertiesWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getPropertiesWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -515,43 +476,19 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} parameters The parameters to update on the account. Note
-   * that only one property can be changed at a time using this API.
+   * @param {StorageAccountUpdateParameters} parameters The parameters to update
+   * on the account. Note that only one property can be changed at a time using
+   * this API.
    *
-   * @param {string} [parameters.accountType] Gets or sets the account type. Note
-   * that StandardZRS and PremiumLRS accounts cannot be changed to other account
-   * types, and other account types cannot be changed to StandardZRS or
-   * PremiumLRS. Possible values include: 'Standard_LRS', 'Standard_ZRS',
-   * 'Standard_GRS', 'Standard_RAGRS', 'Premium_LRS'
-   *
-   * @param {object} [parameters.customDomain] User domain assigned to the
-   * storage account. Name is the CNAME source. Only one custom domain is
-   * supported per storage account at this time. To clear the existing custom
-   * domain, use an empty string for the custom domain name property.
-   *
-   * @param {string} [parameters.customDomain.name] Gets or sets the custom
-   * domain name. Name is the CNAME source.
-   *
-   * @param {boolean} [parameters.customDomain.useSubDomain] Indicates whether
-   * indirect CName validation is enabled. Default value is false. This should
-   * only be set on updates
-   *
-   * @param {string} parameters.location Resource location
-   *
-   * @param {object} [parameters.tags] Resource tags
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccount>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async updateWithHttpOperationResponse(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async updateWithHttpOperationResponse(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -684,18 +621,15 @@ export class StorageAccounts {
    *
    * @param {string} accountName The name of the storage account.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccountKeys>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async listKeysWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async listKeysWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -807,18 +741,15 @@ export class StorageAccounts {
    * Lists all the storage accounts available under the subscription. Note that
    * storage keys are not returned; use the ListKeys operation for this.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccountListResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async listWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async listWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -926,18 +857,15 @@ export class StorageAccounts {
    * @param {string} resourceGroupName The name of the resource group within the
    * user’s subscription.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccountListResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async listByResourceGroupWithHttpOperationResponse(resourceGroupName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async listByResourceGroupWithHttpOperationResponse(resourceGroupName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1051,20 +979,16 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.keyName] Possible values include: 'key1', 'key2'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {StorageAccountsRegenerateKeyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccountKeys>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async regenerateKeyWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: { keyName? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async regenerateKeyWithHttpOperationResponse(resourceGroupName: string, accountName: string, options?: Models.StorageAccountsRegenerateKeyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let keyName = (options && options.keyName !== undefined) ? options.keyName : undefined;
     // Validate
@@ -1212,29 +1136,18 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} parameters The parameters to provide for the created
-   * account.
+   * @param {StorageAccountCreateParameters} parameters The parameters to provide
+   * for the created account.
    *
-   * @param {string} [parameters.accountType] Gets or sets the account type.
-   * Possible values include: 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS',
-   * 'Standard_RAGRS', 'Premium_LRS'
-   *
-   * @param {string} parameters.location Resource location
-   *
-   * @param {object} [parameters.tags] Resource tags
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StorageAccount>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginCreateWithHttpOperationResponse(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginCreateWithHttpOperationResponse(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1362,18 +1275,12 @@ export class StorageAccounts {
   /**
    * Checks that account name is valid and is not in use.
    *
-   * @param {object} accountName The name of the storage account within the
-   * specified resource group. Storage account names must be between 3 and 24
-   * characters in length and use numbers and lower-case letters only.
+   * @param {StorageAccountCheckNameAvailabilityParameters} accountName The name
+   * of the storage account within the specified resource group. Storage account
+   * names must be between 3 and 24 characters in length and use numbers and
+   * lower-case letters only.
    *
-   * @param {string} accountName.name
-   *
-   * @param {string} [accountName.type]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1381,19 +1288,19 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {CheckNameAvailabilityResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link CheckNameAvailabilityResult} for more
+   *                      {Models.CheckNameAvailabilityResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.CheckNameAvailabilityResult} for more
    *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters): Promise<Models.CheckNameAvailabilityResult>;
-  checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.CheckNameAvailabilityResult>;
+  checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options: msRest.RequestOptionsBase): Promise<Models.CheckNameAvailabilityResult>;
   checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, callback: msRest.ServiceCallback<Models.CheckNameAvailabilityResult>): void;
-  checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.CheckNameAvailabilityResult>): void;
-  checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.CheckNameAvailabilityResult>): any {
+  checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.CheckNameAvailabilityResult>): void;
+  checkNameAvailability(accountName: Models.StorageAccountCheckNameAvailabilityParameters, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.CheckNameAvailabilityResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1430,21 +1337,10 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} parameters The parameters to provide for the created
-   * account.
+   * @param {StorageAccountCreateParameters} parameters The parameters to provide
+   * for the created account.
    *
-   * @param {string} [parameters.accountType] Gets or sets the account type.
-   * Possible values include: 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS',
-   * 'Standard_RAGRS', 'Premium_LRS'
-   *
-   * @param {string} parameters.location Resource location
-   *
-   * @param {object} [parameters.tags] Resource tags
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1452,18 +1348,18 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccount} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccount} for more information.
+   *                      {Models.StorageAccount} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccount} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters): Promise<Models.StorageAccount>;
-  create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccount>;
+  create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: msRest.RequestOptionsBase): Promise<Models.StorageAccount>;
   create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
+  create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
+  create(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1496,10 +1392,7 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1507,17 +1400,17 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteMethod(resourceGroupName: string, accountName: string): Promise<void>;
-  deleteMethod(resourceGroupName: string, accountName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteMethod(resourceGroupName: string, accountName: string, options: msRest.RequestOptionsBase): Promise<void>;
   deleteMethod(resourceGroupName: string, accountName: string, callback: msRest.ServiceCallback<void>): void;
-  deleteMethod(resourceGroupName: string, accountName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteMethod(resourceGroupName: string, accountName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteMethod(resourceGroupName: string, accountName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteMethod(resourceGroupName: string, accountName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1552,10 +1445,7 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1563,18 +1453,18 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccount} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccount} for more information.
+   *                      {Models.StorageAccount} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccount} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getProperties(resourceGroupName: string, accountName: string): Promise<Models.StorageAccount>;
-  getProperties(resourceGroupName: string, accountName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccount>;
+  getProperties(resourceGroupName: string, accountName: string, options: msRest.RequestOptionsBase): Promise<Models.StorageAccount>;
   getProperties(resourceGroupName: string, accountName: string, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  getProperties(resourceGroupName: string, accountName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  getProperties(resourceGroupName: string, accountName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
+  getProperties(resourceGroupName: string, accountName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
+  getProperties(resourceGroupName: string, accountName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1615,35 +1505,11 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} parameters The parameters to update on the account. Note
-   * that only one property can be changed at a time using this API.
+   * @param {StorageAccountUpdateParameters} parameters The parameters to update
+   * on the account. Note that only one property can be changed at a time using
+   * this API.
    *
-   * @param {string} [parameters.accountType] Gets or sets the account type. Note
-   * that StandardZRS and PremiumLRS accounts cannot be changed to other account
-   * types, and other account types cannot be changed to StandardZRS or
-   * PremiumLRS. Possible values include: 'Standard_LRS', 'Standard_ZRS',
-   * 'Standard_GRS', 'Standard_RAGRS', 'Premium_LRS'
-   *
-   * @param {object} [parameters.customDomain] User domain assigned to the
-   * storage account. Name is the CNAME source. Only one custom domain is
-   * supported per storage account at this time. To clear the existing custom
-   * domain, use an empty string for the custom domain name property.
-   *
-   * @param {string} [parameters.customDomain.name] Gets or sets the custom
-   * domain name. Name is the CNAME source.
-   *
-   * @param {boolean} [parameters.customDomain.useSubDomain] Indicates whether
-   * indirect CName validation is enabled. Default value is false. This should
-   * only be set on updates
-   *
-   * @param {string} parameters.location Resource location
-   *
-   * @param {object} [parameters.tags] Resource tags
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1651,18 +1517,18 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccount} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccount} for more information.
+   *                      {Models.StorageAccount} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccount} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters): Promise<Models.StorageAccount>;
-  update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccount>;
+  update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options: msRest.RequestOptionsBase): Promise<Models.StorageAccount>;
   update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
+  update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
+  update(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountUpdateParameters, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1693,10 +1559,7 @@ export class StorageAccounts {
    *
    * @param {string} accountName The name of the storage account.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1704,18 +1567,19 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccountKeys} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccountKeys} for more information.
+   *                      {Models.StorageAccountKeys} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccountKeys} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   listKeys(resourceGroupName: string, accountName: string): Promise<Models.StorageAccountKeys>;
-  listKeys(resourceGroupName: string, accountName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccountKeys>;
+  listKeys(resourceGroupName: string, accountName: string, options: msRest.RequestOptionsBase): Promise<Models.StorageAccountKeys>;
   listKeys(resourceGroupName: string, accountName: string, callback: msRest.ServiceCallback<Models.StorageAccountKeys>): void;
-  listKeys(resourceGroupName: string, accountName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccountKeys>): void;
-  listKeys(resourceGroupName: string, accountName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccountKeys>): any {
+  listKeys(resourceGroupName: string, accountName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccountKeys>): void;
+  listKeys(resourceGroupName: string, accountName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccountKeys>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1742,10 +1606,7 @@ export class StorageAccounts {
    * Lists all the storage accounts available under the subscription. Note that
    * storage keys are not returned; use the ListKeys operation for this.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1753,19 +1614,19 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccountListResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccountListResult} for more
+   *                      {Models.StorageAccountListResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccountListResult} for more
    *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   list(): Promise<Models.StorageAccountListResult>;
-  list(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccountListResult>;
+  list(options: msRest.RequestOptionsBase): Promise<Models.StorageAccountListResult>;
   list(callback: msRest.ServiceCallback<Models.StorageAccountListResult>): void;
-  list(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccountListResult>): void;
-  list(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccountListResult>): any {
+  list(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccountListResult>): void;
+  list(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccountListResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1796,10 +1657,7 @@ export class StorageAccounts {
    * @param {string} resourceGroupName The name of the resource group within the
    * user’s subscription.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1807,19 +1665,19 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccountListResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccountListResult} for more
+   *                      {Models.StorageAccountListResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccountListResult} for more
    *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   listByResourceGroup(resourceGroupName: string): Promise<Models.StorageAccountListResult>;
-  listByResourceGroup(resourceGroupName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccountListResult>;
+  listByResourceGroup(resourceGroupName: string, options: msRest.RequestOptionsBase): Promise<Models.StorageAccountListResult>;
   listByResourceGroup(resourceGroupName: string, callback: msRest.ServiceCallback<Models.StorageAccountListResult>): void;
-  listByResourceGroup(resourceGroupName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccountListResult>): void;
-  listByResourceGroup(resourceGroupName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccountListResult>): any {
+  listByResourceGroup(resourceGroupName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccountListResult>): void;
+  listByResourceGroup(resourceGroupName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccountListResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1852,12 +1710,8 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.keyName] Possible values include: 'key1', 'key2'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {StorageAccountsRegenerateKeyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1865,18 +1719,19 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccountKeys} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccountKeys} for more information.
+   *                      {Models.StorageAccountKeys} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccountKeys} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   regenerateKey(resourceGroupName: string, accountName: string): Promise<Models.StorageAccountKeys>;
-  regenerateKey(resourceGroupName: string, accountName: string, options: { keyName? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccountKeys>;
+  regenerateKey(resourceGroupName: string, accountName: string, options: Models.StorageAccountsRegenerateKeyOptionalParams): Promise<Models.StorageAccountKeys>;
   regenerateKey(resourceGroupName: string, accountName: string, callback: msRest.ServiceCallback<Models.StorageAccountKeys>): void;
-  regenerateKey(resourceGroupName: string, accountName: string, options: { keyName? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccountKeys>): void;
-  regenerateKey(resourceGroupName: string, accountName: string, options?: { keyName? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccountKeys>): any {
+  regenerateKey(resourceGroupName: string, accountName: string, options: Models.StorageAccountsRegenerateKeyOptionalParams, callback: msRest.ServiceCallback<Models.StorageAccountKeys>): void;
+  regenerateKey(resourceGroupName: string, accountName: string, options?: Models.StorageAccountsRegenerateKeyOptionalParams, callback?: msRest.ServiceCallback<Models.StorageAccountKeys>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1913,21 +1768,10 @@ export class StorageAccounts {
    * specified resource group. Storage account names must be between 3 and 24
    * characters in length and use numbers and lower-case letters only.
    *
-   * @param {object} parameters The parameters to provide for the created
-   * account.
+   * @param {StorageAccountCreateParameters} parameters The parameters to provide
+   * for the created account.
    *
-   * @param {string} [parameters.accountType] Gets or sets the account type.
-   * Possible values include: 'Standard_LRS', 'Standard_ZRS', 'Standard_GRS',
-   * 'Standard_RAGRS', 'Premium_LRS'
-   *
-   * @param {string} parameters.location Resource location
-   *
-   * @param {object} [parameters.tags] Resource tags
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1935,18 +1779,18 @@ export class StorageAccounts {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StorageAccount} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StorageAccount} for more information.
+   *                      {Models.StorageAccount} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StorageAccount} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters): Promise<Models.StorageAccount>;
-  beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StorageAccount>;
+  beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: msRest.RequestOptionsBase): Promise<Models.StorageAccount>;
   beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
-  beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
+  beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StorageAccount>): void;
+  beginCreate(resourceGroupName: string, accountName: string, parameters: Models.StorageAccountCreateParameters, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StorageAccount>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

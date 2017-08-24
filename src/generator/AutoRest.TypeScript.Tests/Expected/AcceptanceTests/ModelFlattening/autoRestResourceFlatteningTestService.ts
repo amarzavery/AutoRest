@@ -8,13 +8,14 @@
  * regenerated.
  */
 
-import * as msRest from "ms-rest";
+import * as msRest from "ms-rest-ts";
 import * as Models from "./models";
 import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
+
 class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   baseUri: string;
   serializer: msRest.Serializer;
@@ -30,8 +31,8 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
@@ -55,20 +56,16 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put External Resource as an Array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.resourceArray] External Resource as an Array to put
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutArrayOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putArrayWithHttpOperationResponse(options?: { resourceArray? : Models.Resource[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putArrayWithHttpOperationResponse(options?: Models.AutoRestResourceFlatteningTestServicePutArrayOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let resourceArray = (options && options.resourceArray !== undefined) ? options.resourceArray : undefined;
 
@@ -161,18 +158,15 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Get External Resource as an Array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getArrayWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getArrayWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
 
     // Construct URL
@@ -266,20 +260,16 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    * No need to have a route in Express server for this operation. Used to verify
    * the type flattened is not removed if it's referenced in an array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.resourceArray] External Resource as an Array to put
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putWrappedArrayWithHttpOperationResponse(options?: { resourceArray? : Models.WrappedProduct[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putWrappedArrayWithHttpOperationResponse(options?: Models.AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let resourceArray = (options && options.resourceArray !== undefined) ? options.resourceArray : undefined;
 
@@ -373,18 +363,15 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    * No need to have a route in Express server for this operation. Used to verify
    * the type flattened is not removed if it's referenced in an array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getWrappedArrayWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getWrappedArrayWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
 
     // Construct URL
@@ -477,21 +464,16 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put External Resource as a Dictionary
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.resourceDictionary] External Resource as a
-   * Dictionary to put
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDictionaryWithHttpOperationResponse(options?: { resourceDictionary? : { [propertyName: string]: Models.FlattenedProduct }, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDictionaryWithHttpOperationResponse(options?: Models.AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let resourceDictionary = (options && options.resourceDictionary !== undefined) ? options.resourceDictionary : undefined;
 
@@ -584,18 +566,15 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Get External Resource as a Dictionary
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Object>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDictionaryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDictionaryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
 
     // Construct URL
@@ -688,40 +667,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put External Resource as a ResourceCollection
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.resourceComplexObject] External Resource as a
-   * ResourceCollection to put
-   *
-   * @param {object} [options.resourceComplexObject.productresource]
-   *
-   * @param {string} [options.resourceComplexObject.productresource.pname]
-   *
-   * @param {string}
-   * [options.resourceComplexObject.productresource.flattenedProductType]
-   *
-   * @param {string}
-   * [options.resourceComplexObject.productresource.provisioningState]
-   *
-   * @param {object} [options.resourceComplexObject.productresource.tags]
-   *
-   * @param {string} [options.resourceComplexObject.productresource.location]
-   * Resource Location
-   *
-   * @param {array} [options.resourceComplexObject.arrayofresources]
-   *
-   * @param {object} [options.resourceComplexObject.dictionaryofresources]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param
+   * {AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putResourceCollectionWithHttpOperationResponse(options?: { resourceComplexObject? : Models.ResourceCollection, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putResourceCollectionWithHttpOperationResponse(options?: Models.AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let resourceComplexObject = (options && options.resourceComplexObject !== undefined) ? options.resourceComplexObject : undefined;
 
@@ -800,18 +756,15 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Get External Resource as a ResourceCollection
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ResourceCollection>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getResourceCollectionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getResourceCollectionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
 
     // Construct URL
@@ -890,35 +843,16 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put Simple Product with client flattening true on the model
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.simpleBodyProduct] Simple body product to put
-   *
-   * @param {string} options.simpleBodyProduct.maxProductDisplayName Display name
-   * of product.
-   *
-   * @param {string} [options.simpleBodyProduct.genericValue] Generic URL value.
-   *
-   * @param {string} [options.simpleBodyProduct.odatavalue] URL value.
-   *
-   * @param {string} options.simpleBodyProduct.productId Unique identifier
-   * representing a specific product for a given latitude & longitude. For
-   * example, uberX in San Francisco will have a different product_id than uberX
-   * in Los Angeles.
-   *
-   * @param {string} [options.simpleBodyProduct.description] Description of
-   * product.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<SimpleProduct>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putSimpleProductWithHttpOperationResponse(options?: { simpleBodyProduct? : Models.SimpleProduct, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putSimpleProductWithHttpOperationResponse(options?: Models.AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let simpleBodyProduct = (options && options.simpleBodyProduct !== undefined) ? options.simpleBodyProduct : undefined;
 
@@ -1018,24 +952,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    * @param {string} maxProductDisplayName Display name of product.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.description] Description of product.
-   *
-   * @param {string} [options.genericValue] Generic URL value.
-   *
-   * @param {string} [options.odatavalue] URL value.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param
+   * {AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<SimpleProduct>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postFlattenedSimpleProductWithHttpOperationResponse(productId: string, maxProductDisplayName: string, options?: { description? : string, genericValue? : string, odatavalue? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postFlattenedSimpleProductWithHttpOperationResponse(productId: string, maxProductDisplayName: string, options?: Models.AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let description = (options && options.description !== undefined) ? options.description : undefined;
     let genericValue = (options && options.genericValue !== undefined) ? options.genericValue : undefined;
@@ -1165,38 +1092,18 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put Simple Product with client flattening true on the model
    *
-   * @param {object} flattenParameterGroup Additional parameters for the
-   * operation
+   * @param {FlattenParameterGroup} flattenParameterGroup Additional parameters
+   * for the operation
    *
-   * @param {string} flattenParameterGroup.name Product name with value
-   * 'groupproduct'
-   *
-   * @param {string} flattenParameterGroup.productId Unique identifier
-   * representing a specific product for a given latitude & longitude. For
-   * example, uberX in San Francisco will have a different product_id than uberX
-   * in Los Angeles.
-   *
-   * @param {string} [flattenParameterGroup.description] Description of product.
-   *
-   * @param {string} flattenParameterGroup.maxProductDisplayName Display name of
-   * product.
-   *
-   * @param {string} [flattenParameterGroup.genericValue] Generic URL value.
-   *
-   * @param {string} [flattenParameterGroup.odatavalue] URL value.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<SimpleProduct>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putSimpleProductWithGroupingWithHttpOperationResponse(flattenParameterGroup: Models.FlattenParameterGroup, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putSimpleProductWithGroupingWithHttpOperationResponse(flattenParameterGroup: Models.FlattenParameterGroup, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
     // Validate
     try {
@@ -1359,12 +1266,8 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put External Resource as an Array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.resourceArray] External Resource as an Array to put
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutArrayOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1372,17 +1275,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putArray(): Promise<void>;
-  putArray(options: { resourceArray? : Models.Resource[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putArray(options: Models.AutoRestResourceFlatteningTestServicePutArrayOptionalParams): Promise<void>;
   putArray(callback: msRest.ServiceCallback<void>): void;
-  putArray(options: { resourceArray? : Models.Resource[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putArray(options?: { resourceArray? : Models.Resource[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putArray(options: Models.AutoRestResourceFlatteningTestServicePutArrayOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putArray(options?: Models.AutoRestResourceFlatteningTestServicePutArrayOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1408,10 +1311,7 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Get External Resource as an Array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1419,17 +1319,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.FlattenedProduct[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getArray(): Promise<Models.FlattenedProduct[]>;
-  getArray(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.FlattenedProduct[]>;
+  getArray(options: msRest.RequestOptionsBase): Promise<Models.FlattenedProduct[]>;
   getArray(callback: msRest.ServiceCallback<Models.FlattenedProduct[]>): void;
-  getArray(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.FlattenedProduct[]>): void;
-  getArray(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.FlattenedProduct[]>): any {
+  getArray(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.FlattenedProduct[]>): void;
+  getArray(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.FlattenedProduct[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1456,12 +1356,8 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    * No need to have a route in Express server for this operation. Used to verify
    * the type flattened is not removed if it's referenced in an array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.resourceArray] External Resource as an Array to put
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1469,17 +1365,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putWrappedArray(): Promise<void>;
-  putWrappedArray(options: { resourceArray? : Models.WrappedProduct[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putWrappedArray(options: Models.AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams): Promise<void>;
   putWrappedArray(callback: msRest.ServiceCallback<void>): void;
-  putWrappedArray(options: { resourceArray? : Models.WrappedProduct[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putWrappedArray(options?: { resourceArray? : Models.WrappedProduct[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putWrappedArray(options: Models.AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putWrappedArray(options?: Models.AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1506,10 +1402,7 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    * No need to have a route in Express server for this operation. Used to verify
    * the type flattened is not removed if it's referenced in an array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1517,17 +1410,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.ProductWrapper[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getWrappedArray(): Promise<Models.ProductWrapper[]>;
-  getWrappedArray(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductWrapper[]>;
+  getWrappedArray(options: msRest.RequestOptionsBase): Promise<Models.ProductWrapper[]>;
   getWrappedArray(callback: msRest.ServiceCallback<Models.ProductWrapper[]>): void;
-  getWrappedArray(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductWrapper[]>): void;
-  getWrappedArray(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductWrapper[]>): any {
+  getWrappedArray(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductWrapper[]>): void;
+  getWrappedArray(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductWrapper[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1553,13 +1446,8 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put External Resource as a Dictionary
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.resourceDictionary] External Resource as a
-   * Dictionary to put
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1567,17 +1455,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDictionary(): Promise<void>;
-  putDictionary(options: { resourceDictionary? : { [propertyName: string]: Models.FlattenedProduct }, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDictionary(options: Models.AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams): Promise<void>;
   putDictionary(callback: msRest.ServiceCallback<void>): void;
-  putDictionary(options: { resourceDictionary? : { [propertyName: string]: Models.FlattenedProduct }, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDictionary(options?: { resourceDictionary? : { [propertyName: string]: Models.FlattenedProduct }, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDictionary(options: Models.AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putDictionary(options?: Models.AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1603,10 +1491,7 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Get External Resource as a Dictionary
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1614,17 +1499,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Object} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: Models.FlattenedProduct }} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDictionary(): Promise<{ [propertyName: string]: Models.FlattenedProduct }>;
-  getDictionary(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: Models.FlattenedProduct }>;
+  getDictionary(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: Models.FlattenedProduct }>;
   getDictionary(callback: msRest.ServiceCallback<{ [propertyName: string]: Models.FlattenedProduct }>): void;
-  getDictionary(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: Models.FlattenedProduct }>): void;
-  getDictionary(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: Models.FlattenedProduct }>): any {
+  getDictionary(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: Models.FlattenedProduct }>): void;
+  getDictionary(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: Models.FlattenedProduct }>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1650,32 +1535,9 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put External Resource as a ResourceCollection
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.resourceComplexObject] External Resource as a
-   * ResourceCollection to put
-   *
-   * @param {object} [options.resourceComplexObject.productresource]
-   *
-   * @param {string} [options.resourceComplexObject.productresource.pname]
-   *
-   * @param {string}
-   * [options.resourceComplexObject.productresource.flattenedProductType]
-   *
-   * @param {string}
-   * [options.resourceComplexObject.productresource.provisioningState]
-   *
-   * @param {object} [options.resourceComplexObject.productresource.tags]
-   *
-   * @param {string} [options.resourceComplexObject.productresource.location]
-   * Resource Location
-   *
-   * @param {array} [options.resourceComplexObject.arrayofresources]
-   *
-   * @param {object} [options.resourceComplexObject.dictionaryofresources]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param
+   * {AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1683,17 +1545,17 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putResourceCollection(): Promise<void>;
-  putResourceCollection(options: { resourceComplexObject? : Models.ResourceCollection, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putResourceCollection(options: Models.AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams): Promise<void>;
   putResourceCollection(callback: msRest.ServiceCallback<void>): void;
-  putResourceCollection(options: { resourceComplexObject? : Models.ResourceCollection, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putResourceCollection(options?: { resourceComplexObject? : Models.ResourceCollection, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putResourceCollection(options: Models.AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putResourceCollection(options?: Models.AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1719,10 +1581,7 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Get External Resource as a ResourceCollection
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1730,18 +1589,19 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ResourceCollection} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ResourceCollection} for more information.
+   *                      {Models.ResourceCollection} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ResourceCollection} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getResourceCollection(): Promise<Models.ResourceCollection>;
-  getResourceCollection(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ResourceCollection>;
+  getResourceCollection(options: msRest.RequestOptionsBase): Promise<Models.ResourceCollection>;
   getResourceCollection(callback: msRest.ServiceCallback<Models.ResourceCollection>): void;
-  getResourceCollection(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ResourceCollection>): void;
-  getResourceCollection(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ResourceCollection>): any {
+  getResourceCollection(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ResourceCollection>): void;
+  getResourceCollection(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ResourceCollection>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1767,27 +1627,8 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put Simple Product with client flattening true on the model
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.simpleBodyProduct] Simple body product to put
-   *
-   * @param {string} options.simpleBodyProduct.maxProductDisplayName Display name
-   * of product.
-   *
-   * @param {string} [options.simpleBodyProduct.genericValue] Generic URL value.
-   *
-   * @param {string} [options.simpleBodyProduct.odatavalue] URL value.
-   *
-   * @param {string} options.simpleBodyProduct.productId Unique identifier
-   * representing a specific product for a given latitude & longitude. For
-   * example, uberX in San Francisco will have a different product_id than uberX
-   * in Los Angeles.
-   *
-   * @param {string} [options.simpleBodyProduct.description] Description of
-   * product.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1795,18 +1636,18 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SimpleProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SimpleProduct} for more information.
+   *                      {Models.SimpleProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SimpleProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putSimpleProduct(): Promise<Models.SimpleProduct>;
-  putSimpleProduct(options: { simpleBodyProduct? : Models.SimpleProduct, customHeaders? : { [headerName: string]: string; } }): Promise<Models.SimpleProduct>;
+  putSimpleProduct(options: Models.AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams): Promise<Models.SimpleProduct>;
   putSimpleProduct(callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
-  putSimpleProduct(options: { simpleBodyProduct? : Models.SimpleProduct, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
-  putSimpleProduct(options?: { simpleBodyProduct? : Models.SimpleProduct, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SimpleProduct>): any {
+  putSimpleProduct(options: Models.AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
+  putSimpleProduct(options?: Models.AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams, callback?: msRest.ServiceCallback<Models.SimpleProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1838,16 +1679,9 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    * @param {string} maxProductDisplayName Display name of product.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.description] Description of product.
-   *
-   * @param {string} [options.genericValue] Generic URL value.
-   *
-   * @param {string} [options.odatavalue] URL value.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param
+   * {AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1855,18 +1689,18 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SimpleProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SimpleProduct} for more information.
+   *                      {Models.SimpleProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SimpleProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string): Promise<Models.SimpleProduct>;
-  postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, options: { description? : string, genericValue? : string, odatavalue? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.SimpleProduct>;
+  postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, options: Models.AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams): Promise<Models.SimpleProduct>;
   postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
-  postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, options: { description? : string, genericValue? : string, odatavalue? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
-  postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, options?: { description? : string, genericValue? : string, odatavalue? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SimpleProduct>): any {
+  postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, options: Models.AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
+  postFlattenedSimpleProduct(productId: string, maxProductDisplayName: string, options?: Models.AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams, callback?: msRest.ServiceCallback<Models.SimpleProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1892,30 +1726,10 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
   /**
    * Put Simple Product with client flattening true on the model
    *
-   * @param {object} flattenParameterGroup Additional parameters for the
-   * operation
+   * @param {FlattenParameterGroup} flattenParameterGroup Additional parameters
+   * for the operation
    *
-   * @param {string} flattenParameterGroup.name Product name with value
-   * 'groupproduct'
-   *
-   * @param {string} flattenParameterGroup.productId Unique identifier
-   * representing a specific product for a given latitude & longitude. For
-   * example, uberX in San Francisco will have a different product_id than uberX
-   * in Los Angeles.
-   *
-   * @param {string} [flattenParameterGroup.description] Description of product.
-   *
-   * @param {string} flattenParameterGroup.maxProductDisplayName Display name of
-   * product.
-   *
-   * @param {string} [flattenParameterGroup.genericValue] Generic URL value.
-   *
-   * @param {string} [flattenParameterGroup.odatavalue] URL value.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1923,18 +1737,18 @@ class AutoRestResourceFlatteningTestService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SimpleProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SimpleProduct} for more information.
+   *                      {Models.SimpleProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SimpleProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup): Promise<Models.SimpleProduct>;
-  putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.SimpleProduct>;
+  putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, options: msRest.RequestOptionsBase): Promise<Models.SimpleProduct>;
   putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
-  putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
-  putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SimpleProduct>): any {
+  putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.SimpleProduct>): void;
+  putSimpleProductWithGrouping(flattenParameterGroup: Models.FlattenParameterGroup, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.SimpleProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

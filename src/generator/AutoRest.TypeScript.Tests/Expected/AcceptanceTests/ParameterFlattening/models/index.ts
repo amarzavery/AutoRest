@@ -11,11 +11,13 @@
 
 
 /**
- * @class
- * Initializes a new instance of the AvailabilitySetUpdateParameters class.
- * @constructor
- * @member {object} tags A set of tags. A description about the set of tags.
+ * @interface
+ * An interface representing AvailabilitySetUpdateParameters.
  */
 export interface AvailabilitySetUpdateParameters {
+  /**
+   * @member {{ [propertyName: string]: string }} tags A set of tags. A
+   * description about the set of tags.
+   */
   tags: { [propertyName: string]: string };
 }

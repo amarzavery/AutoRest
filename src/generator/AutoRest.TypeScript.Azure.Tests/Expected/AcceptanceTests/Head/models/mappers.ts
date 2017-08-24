@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;

@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -189,6 +189,154 @@ export const PagingGetMultiplePagesWithOffsetNextOptions = {
         defaultValue: 30,
         type: {
           name: 'Number'
+        }
+      }
+    }
+  }
+};
+
+export const PagingGetMultiplePagesOptionalParams = {
+  required: false,
+  serializedName: 'GetMultiplePagesOptions',
+  type: {
+    name: 'Composite',
+    className: 'PagingGetMultiplePagesOptionalParams',
+    modelProperties: {
+      clientRequestId: {
+        required: false,
+        serializedName: 'client-request-id',
+        type: {
+          name: 'String'
+        }
+      },
+      pagingGetMultiplePagesOptions: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'PagingGetMultiplePagesOptions'
+        }
+      }
+    }
+  }
+};
+
+export const PagingGetOdataMultiplePagesOptionalParams = {
+  required: false,
+  serializedName: 'GetOdataMultiplePagesOptions',
+  type: {
+    name: 'Composite',
+    className: 'PagingGetOdataMultiplePagesOptionalParams',
+    modelProperties: {
+      clientRequestId: {
+        required: false,
+        serializedName: 'client-request-id',
+        type: {
+          name: 'String'
+        }
+      },
+      pagingGetOdataMultiplePagesOptions: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'PagingGetOdataMultiplePagesOptions'
+        }
+      }
+    }
+  }
+};
+
+export const PagingGetMultiplePagesWithOffsetOptionalParams = {
+  required: false,
+  serializedName: 'GetMultiplePagesWithOffsetOptions',
+  type: {
+    name: 'Composite',
+    className: 'PagingGetMultiplePagesWithOffsetOptionalParams',
+    modelProperties: {
+      clientRequestId: {
+        required: false,
+        serializedName: 'client-request-id',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const PagingGetMultiplePagesNextOptionalParams = {
+  required: false,
+  serializedName: 'GetMultiplePagesNextOptions',
+  type: {
+    name: 'Composite',
+    className: 'PagingGetMultiplePagesNextOptionalParams',
+    modelProperties: {
+      clientRequestId: {
+        required: false,
+        serializedName: 'client-request-id',
+        type: {
+          name: 'String'
+        }
+      },
+      pagingGetMultiplePagesOptions: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'PagingGetMultiplePagesOptions'
+        }
+      }
+    }
+  }
+};
+
+export const PagingGetOdataMultiplePagesNextOptionalParams = {
+  required: false,
+  serializedName: 'GetOdataMultiplePagesNextOptions',
+  type: {
+    name: 'Composite',
+    className: 'PagingGetOdataMultiplePagesNextOptionalParams',
+    modelProperties: {
+      clientRequestId: {
+        required: false,
+        serializedName: 'client-request-id',
+        type: {
+          name: 'String'
+        }
+      },
+      pagingGetOdataMultiplePagesOptions: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'PagingGetOdataMultiplePagesOptions'
+        }
+      }
+    }
+  }
+};
+
+export const PagingGetMultiplePagesWithOffsetNextOptionalParams = {
+  required: false,
+  serializedName: 'GetMultiplePagesWithOffsetNextOptions',
+  type: {
+    name: 'Composite',
+    className: 'PagingGetMultiplePagesWithOffsetNextOptionalParams',
+    modelProperties: {
+      clientRequestId: {
+        required: false,
+        serializedName: 'client-request-id',
+        type: {
+          name: 'String'
+        }
+      },
+      pagingGetMultiplePagesWithOffsetNextOptions: {
+        required: false,
+        serializedName: '',
+        type: {
+          name: 'Composite',
+          className: 'PagingGetMultiplePagesWithOffsetNextOptions'
         }
       }
     }

@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestUrlTestService } from '../autoRestUrlTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestUrlTestService } from "../autoRestUrlTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class Paths {
   /**
    * Get true Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanTrueWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanTrueWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let boolPath = true;
 
@@ -104,18 +102,15 @@ export class Paths {
   /**
    * Get false Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanFalseWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanFalseWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let boolPath = false;
 
@@ -180,18 +175,15 @@ export class Paths {
   /**
    * Get '1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntOneMillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntOneMillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let intPath = 1000000;
 
@@ -256,18 +248,15 @@ export class Paths {
   /**
    * Get '-1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntNegativeOneMillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntNegativeOneMillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let intPath = -1000000;
 
@@ -332,18 +321,15 @@ export class Paths {
   /**
    * Get '10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getTenBillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getTenBillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let longPath = 10000000000;
 
@@ -408,18 +394,15 @@ export class Paths {
   /**
    * Get '-10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNegativeTenBillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNegativeTenBillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let longPath = -10000000000;
 
@@ -484,18 +467,15 @@ export class Paths {
   /**
    * Get '1.034E+20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async floatScientificPositiveWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async floatScientificPositiveWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let floatPath = 103400000000000000000;
 
@@ -560,18 +540,15 @@ export class Paths {
   /**
    * Get '-1.034E-20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async floatScientificNegativeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async floatScientificNegativeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let floatPath = -1.034e-20;
 
@@ -636,18 +613,15 @@ export class Paths {
   /**
    * Get '9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async doubleDecimalPositiveWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async doubleDecimalPositiveWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let doublePath = 9999999.999;
 
@@ -712,18 +686,15 @@ export class Paths {
   /**
    * Get '-9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async doubleDecimalNegativeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async doubleDecimalNegativeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let doublePath = -9999999.999;
 
@@ -788,18 +759,15 @@ export class Paths {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multi-byte string value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringUnicodeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringUnicodeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringPath = '啊齄丂狛狜隣郎隣兀﨩';
 
@@ -864,18 +832,15 @@ export class Paths {
   /**
    * Get 'begin!*'();:@ &=+$,/?#[]end
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringUrlEncodedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringUrlEncodedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringPath = 'begin!*\'();:@ &=+$,/?#[]end';
 
@@ -940,18 +905,15 @@ export class Paths {
   /**
    * Get ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringPath = '';
 
@@ -1018,18 +980,15 @@ export class Paths {
    *
    * @param {string} stringPath null string value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringNullWithHttpOperationResponse(stringPath: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringNullWithHttpOperationResponse(stringPath: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1104,18 +1063,15 @@ export class Paths {
    * @param {string} enumPath send the value green. Possible values include: 'red
    * color', 'green color', 'blue color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async enumValidWithHttpOperationResponse(enumPath: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async enumValidWithHttpOperationResponse(enumPath: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1195,18 +1151,15 @@ export class Paths {
    * @param {string} enumPath send null should throw. Possible values include:
    * 'red color', 'green color', 'blue color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async enumNullWithHttpOperationResponse(enumPath: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async enumNullWithHttpOperationResponse(enumPath: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1283,21 +1236,18 @@ export class Paths {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte array
    *
-   * @param {buffer} bytePath '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte
+   * @param {Buffer} bytePath '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte
    * array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async byteMultiByteWithHttpOperationResponse(bytePath: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async byteMultiByteWithHttpOperationResponse(bytePath: Buffer, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1369,18 +1319,15 @@ export class Paths {
   /**
    * Get '' as byte array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async byteEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async byteEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bytePath = new Buffer('');
 
@@ -1445,20 +1392,17 @@ export class Paths {
   /**
    * Get null as byte array (should throw)
    *
-   * @param {buffer} bytePath null as byte array (should throw)
+   * @param {Buffer} bytePath null as byte array (should throw)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async byteNullWithHttpOperationResponse(bytePath: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async byteNullWithHttpOperationResponse(bytePath: Buffer, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1530,18 +1474,15 @@ export class Paths {
   /**
    * Get '2012-01-01' as date
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let datePath = new Date('2012-01-01');
 
@@ -1607,25 +1548,22 @@ export class Paths {
    * Get null as date - this should throw or be unusable on the client side,
    * depending on date representation
    *
-   * @param {date} datePath null as date (should throw)
+   * @param {Date | string} datePath null as date (should throw)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateNullWithHttpOperationResponse(datePath: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateNullWithHttpOperationResponse(datePath: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datePath || !(datePath instanceof Date ||
-          (typeof datePath.valueOf() === 'string' && !isNaN(Date.parse(datePath as string))))) {
+          (typeof (datePath as string).valueOf() === 'string' && !isNaN(Date.parse(datePath as string))))) {
             throw new Error('datePath cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1693,18 +1631,15 @@ export class Paths {
   /**
    * Get '2012-01-01T01:01:01Z' as date-time
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateTimeValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateTimeValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let dateTimePath = new Date('2012-01-01T01:01:01Z');
 
@@ -1770,25 +1705,22 @@ export class Paths {
    * Get null as date-time, should be disallowed or throw depending on
    * representation of date-time
    *
-   * @param {date} dateTimePath null as date-time
+   * @param {Date | string} dateTimePath null as date-time
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateTimeNullWithHttpOperationResponse(dateTimePath: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateTimeNullWithHttpOperationResponse(dateTimePath: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!dateTimePath || !(dateTimePath instanceof Date ||
-          (typeof dateTimePath.valueOf() === 'string' && !isNaN(Date.parse(dateTimePath as string))))) {
+          (typeof (dateTimePath as string).valueOf() === 'string' && !isNaN(Date.parse(dateTimePath as string))))) {
             throw new Error('dateTimePath cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1856,20 +1788,17 @@ export class Paths {
   /**
    * Get 'lorem' encoded value as 'bG9yZW0' (base64url)
    *
-   * @param {buffer} base64UrlPath base64url encoded value
+   * @param {Buffer} base64UrlPath base64url encoded value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async base64UrlWithHttpOperationResponse(base64UrlPath: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async base64UrlWithHttpOperationResponse(base64UrlPath: Buffer, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1942,21 +1871,18 @@ export class Paths {
    * Get an array of string ['ArrayPath1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the csv-array format
    *
-   * @param {array} arrayPath an array of string ['ArrayPath1', 'begin!*'();:@
+   * @param {string[]} arrayPath an array of string ['ArrayPath1', 'begin!*'();:@
    * &=+$,/?#[]end' , null, ''] using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayCsvInPathWithHttpOperationResponse(arrayPath: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayCsvInPathWithHttpOperationResponse(arrayPath: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2033,25 +1959,22 @@ export class Paths {
   /**
    * Get the date 2016-04-13 encoded value as '1460505600' (Unix time)
    *
-   * @param {date} unixTimeUrlPath Unix time encoded value
+   * @param {Date | string} unixTimeUrlPath Unix time encoded value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async unixTimeUrlWithHttpOperationResponse(unixTimeUrlPath: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async unixTimeUrlWithHttpOperationResponse(unixTimeUrlPath: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!unixTimeUrlPath || !(unixTimeUrlPath instanceof Date ||
-          (typeof unixTimeUrlPath.valueOf() === 'string' && !isNaN(Date.parse(unixTimeUrlPath as string))))) {
+          (typeof (unixTimeUrlPath as string).valueOf() === 'string' && !isNaN(Date.parse(unixTimeUrlPath as string))))) {
             throw new Error('unixTimeUrlPath cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -2119,10 +2042,7 @@ export class Paths {
   /**
    * Get true Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2130,17 +2050,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanTrue(): Promise<void>;
-  getBooleanTrue(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getBooleanTrue(options: msRest.RequestOptionsBase): Promise<void>;
   getBooleanTrue(callback: msRest.ServiceCallback<void>): void;
-  getBooleanTrue(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getBooleanTrue(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getBooleanTrue(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getBooleanTrue(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2166,10 +2086,7 @@ export class Paths {
   /**
    * Get false Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2177,17 +2094,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanFalse(): Promise<void>;
-  getBooleanFalse(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getBooleanFalse(options: msRest.RequestOptionsBase): Promise<void>;
   getBooleanFalse(callback: msRest.ServiceCallback<void>): void;
-  getBooleanFalse(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getBooleanFalse(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getBooleanFalse(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getBooleanFalse(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2213,10 +2130,7 @@ export class Paths {
   /**
    * Get '1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2224,17 +2138,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntOneMillion(): Promise<void>;
-  getIntOneMillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getIntOneMillion(options: msRest.RequestOptionsBase): Promise<void>;
   getIntOneMillion(callback: msRest.ServiceCallback<void>): void;
-  getIntOneMillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getIntOneMillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getIntOneMillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getIntOneMillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2260,10 +2174,7 @@ export class Paths {
   /**
    * Get '-1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2271,17 +2182,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntNegativeOneMillion(): Promise<void>;
-  getIntNegativeOneMillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getIntNegativeOneMillion(options: msRest.RequestOptionsBase): Promise<void>;
   getIntNegativeOneMillion(callback: msRest.ServiceCallback<void>): void;
-  getIntNegativeOneMillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getIntNegativeOneMillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getIntNegativeOneMillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getIntNegativeOneMillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2307,10 +2218,7 @@ export class Paths {
   /**
    * Get '10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2318,17 +2226,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getTenBillion(): Promise<void>;
-  getTenBillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getTenBillion(options: msRest.RequestOptionsBase): Promise<void>;
   getTenBillion(callback: msRest.ServiceCallback<void>): void;
-  getTenBillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getTenBillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getTenBillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getTenBillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2354,10 +2262,7 @@ export class Paths {
   /**
    * Get '-10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2365,17 +2270,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNegativeTenBillion(): Promise<void>;
-  getNegativeTenBillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getNegativeTenBillion(options: msRest.RequestOptionsBase): Promise<void>;
   getNegativeTenBillion(callback: msRest.ServiceCallback<void>): void;
-  getNegativeTenBillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getNegativeTenBillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getNegativeTenBillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getNegativeTenBillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2401,10 +2306,7 @@ export class Paths {
   /**
    * Get '1.034E+20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2412,17 +2314,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   floatScientificPositive(): Promise<void>;
-  floatScientificPositive(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  floatScientificPositive(options: msRest.RequestOptionsBase): Promise<void>;
   floatScientificPositive(callback: msRest.ServiceCallback<void>): void;
-  floatScientificPositive(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  floatScientificPositive(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  floatScientificPositive(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  floatScientificPositive(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2448,10 +2350,7 @@ export class Paths {
   /**
    * Get '-1.034E-20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2459,17 +2358,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   floatScientificNegative(): Promise<void>;
-  floatScientificNegative(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  floatScientificNegative(options: msRest.RequestOptionsBase): Promise<void>;
   floatScientificNegative(callback: msRest.ServiceCallback<void>): void;
-  floatScientificNegative(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  floatScientificNegative(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  floatScientificNegative(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  floatScientificNegative(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2495,10 +2394,7 @@ export class Paths {
   /**
    * Get '9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2506,17 +2402,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   doubleDecimalPositive(): Promise<void>;
-  doubleDecimalPositive(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  doubleDecimalPositive(options: msRest.RequestOptionsBase): Promise<void>;
   doubleDecimalPositive(callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalPositive(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalPositive(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  doubleDecimalPositive(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  doubleDecimalPositive(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2542,10 +2438,7 @@ export class Paths {
   /**
    * Get '-9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2553,17 +2446,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   doubleDecimalNegative(): Promise<void>;
-  doubleDecimalNegative(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  doubleDecimalNegative(options: msRest.RequestOptionsBase): Promise<void>;
   doubleDecimalNegative(callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalNegative(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalNegative(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  doubleDecimalNegative(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  doubleDecimalNegative(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2589,10 +2482,7 @@ export class Paths {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multi-byte string value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2600,17 +2490,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringUnicode(): Promise<void>;
-  stringUnicode(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringUnicode(options: msRest.RequestOptionsBase): Promise<void>;
   stringUnicode(callback: msRest.ServiceCallback<void>): void;
-  stringUnicode(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringUnicode(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringUnicode(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringUnicode(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2636,10 +2526,7 @@ export class Paths {
   /**
    * Get 'begin!*'();:@ &=+$,/?#[]end
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2647,17 +2534,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringUrlEncoded(): Promise<void>;
-  stringUrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringUrlEncoded(options: msRest.RequestOptionsBase): Promise<void>;
   stringUrlEncoded(callback: msRest.ServiceCallback<void>): void;
-  stringUrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringUrlEncoded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringUrlEncoded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringUrlEncoded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2683,10 +2570,7 @@ export class Paths {
   /**
    * Get ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2694,17 +2578,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringEmpty(): Promise<void>;
-  stringEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringEmpty(options: msRest.RequestOptionsBase): Promise<void>;
   stringEmpty(callback: msRest.ServiceCallback<void>): void;
-  stringEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2732,10 +2616,7 @@ export class Paths {
    *
    * @param {string} stringPath null string value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2743,17 +2624,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringNull(stringPath: string): Promise<void>;
-  stringNull(stringPath: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringNull(stringPath: string, options: msRest.RequestOptionsBase): Promise<void>;
   stringNull(stringPath: string, callback: msRest.ServiceCallback<void>): void;
-  stringNull(stringPath: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringNull(stringPath: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringNull(stringPath: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringNull(stringPath: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2782,10 +2663,7 @@ export class Paths {
    * @param {string} enumPath send the value green. Possible values include: 'red
    * color', 'green color', 'blue color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2793,17 +2671,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   enumValid(enumPath: string): Promise<void>;
-  enumValid(enumPath: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  enumValid(enumPath: string, options: msRest.RequestOptionsBase): Promise<void>;
   enumValid(enumPath: string, callback: msRest.ServiceCallback<void>): void;
-  enumValid(enumPath: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  enumValid(enumPath: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  enumValid(enumPath: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  enumValid(enumPath: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2832,10 +2710,7 @@ export class Paths {
    * @param {string} enumPath send null should throw. Possible values include:
    * 'red color', 'green color', 'blue color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2843,17 +2718,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   enumNull(enumPath: string): Promise<void>;
-  enumNull(enumPath: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  enumNull(enumPath: string, options: msRest.RequestOptionsBase): Promise<void>;
   enumNull(enumPath: string, callback: msRest.ServiceCallback<void>): void;
-  enumNull(enumPath: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  enumNull(enumPath: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  enumNull(enumPath: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  enumNull(enumPath: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2879,13 +2754,10 @@ export class Paths {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte array
    *
-   * @param {buffer} bytePath '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte
+   * @param {Buffer} bytePath '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte
    * array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2893,17 +2765,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   byteMultiByte(bytePath: Buffer): Promise<void>;
-  byteMultiByte(bytePath: Buffer, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  byteMultiByte(bytePath: Buffer, options: msRest.RequestOptionsBase): Promise<void>;
   byteMultiByte(bytePath: Buffer, callback: msRest.ServiceCallback<void>): void;
-  byteMultiByte(bytePath: Buffer, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  byteMultiByte(bytePath: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  byteMultiByte(bytePath: Buffer, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  byteMultiByte(bytePath: Buffer, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2929,10 +2801,7 @@ export class Paths {
   /**
    * Get '' as byte array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2940,17 +2809,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   byteEmpty(): Promise<void>;
-  byteEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  byteEmpty(options: msRest.RequestOptionsBase): Promise<void>;
   byteEmpty(callback: msRest.ServiceCallback<void>): void;
-  byteEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  byteEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  byteEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  byteEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2976,12 +2845,9 @@ export class Paths {
   /**
    * Get null as byte array (should throw)
    *
-   * @param {buffer} bytePath null as byte array (should throw)
+   * @param {Buffer} bytePath null as byte array (should throw)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2989,17 +2855,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   byteNull(bytePath: Buffer): Promise<void>;
-  byteNull(bytePath: Buffer, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  byteNull(bytePath: Buffer, options: msRest.RequestOptionsBase): Promise<void>;
   byteNull(bytePath: Buffer, callback: msRest.ServiceCallback<void>): void;
-  byteNull(bytePath: Buffer, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  byteNull(bytePath: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  byteNull(bytePath: Buffer, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  byteNull(bytePath: Buffer, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3025,10 +2891,7 @@ export class Paths {
   /**
    * Get '2012-01-01' as date
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3036,17 +2899,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateValid(): Promise<void>;
-  dateValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateValid(options: msRest.RequestOptionsBase): Promise<void>;
   dateValid(callback: msRest.ServiceCallback<void>): void;
-  dateValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  dateValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3073,12 +2936,9 @@ export class Paths {
    * Get null as date - this should throw or be unusable on the client side,
    * depending on date representation
    *
-   * @param {date} datePath null as date (should throw)
+   * @param {Date | string} datePath null as date (should throw)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3086,17 +2946,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateNull(datePath: Date | string): Promise<void>;
-  dateNull(datePath: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateNull(datePath: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   dateNull(datePath: Date | string, callback: msRest.ServiceCallback<void>): void;
-  dateNull(datePath: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateNull(datePath: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateNull(datePath: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  dateNull(datePath: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3122,10 +2982,7 @@ export class Paths {
   /**
    * Get '2012-01-01T01:01:01Z' as date-time
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3133,17 +2990,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateTimeValid(): Promise<void>;
-  dateTimeValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateTimeValid(options: msRest.RequestOptionsBase): Promise<void>;
   dateTimeValid(callback: msRest.ServiceCallback<void>): void;
-  dateTimeValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateTimeValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateTimeValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  dateTimeValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3170,12 +3027,9 @@ export class Paths {
    * Get null as date-time, should be disallowed or throw depending on
    * representation of date-time
    *
-   * @param {date} dateTimePath null as date-time
+   * @param {Date | string} dateTimePath null as date-time
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3183,17 +3037,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateTimeNull(dateTimePath: Date | string): Promise<void>;
-  dateTimeNull(dateTimePath: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateTimeNull(dateTimePath: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   dateTimeNull(dateTimePath: Date | string, callback: msRest.ServiceCallback<void>): void;
-  dateTimeNull(dateTimePath: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateTimeNull(dateTimePath: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateTimeNull(dateTimePath: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  dateTimeNull(dateTimePath: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3219,12 +3073,9 @@ export class Paths {
   /**
    * Get 'lorem' encoded value as 'bG9yZW0' (base64url)
    *
-   * @param {buffer} base64UrlPath base64url encoded value
+   * @param {Buffer} base64UrlPath base64url encoded value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3232,17 +3083,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   base64Url(base64UrlPath: Buffer): Promise<void>;
-  base64Url(base64UrlPath: Buffer, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  base64Url(base64UrlPath: Buffer, options: msRest.RequestOptionsBase): Promise<void>;
   base64Url(base64UrlPath: Buffer, callback: msRest.ServiceCallback<void>): void;
-  base64Url(base64UrlPath: Buffer, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  base64Url(base64UrlPath: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  base64Url(base64UrlPath: Buffer, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  base64Url(base64UrlPath: Buffer, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3269,13 +3120,10 @@ export class Paths {
    * Get an array of string ['ArrayPath1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the csv-array format
    *
-   * @param {array} arrayPath an array of string ['ArrayPath1', 'begin!*'();:@
+   * @param {string[]} arrayPath an array of string ['ArrayPath1', 'begin!*'();:@
    * &=+$,/?#[]end' , null, ''] using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3283,17 +3131,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayCsvInPath(arrayPath: string[]): Promise<void>;
-  arrayCsvInPath(arrayPath: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayCsvInPath(arrayPath: string[], options: msRest.RequestOptionsBase): Promise<void>;
   arrayCsvInPath(arrayPath: string[], callback: msRest.ServiceCallback<void>): void;
-  arrayCsvInPath(arrayPath: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayCsvInPath(arrayPath: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayCsvInPath(arrayPath: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  arrayCsvInPath(arrayPath: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3319,12 +3167,9 @@ export class Paths {
   /**
    * Get the date 2016-04-13 encoded value as '1460505600' (Unix time)
    *
-   * @param {date} unixTimeUrlPath Unix time encoded value
+   * @param {Date | string} unixTimeUrlPath Unix time encoded value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3332,17 +3177,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   unixTimeUrl(unixTimeUrlPath: Date | string): Promise<void>;
-  unixTimeUrl(unixTimeUrlPath: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  unixTimeUrl(unixTimeUrlPath: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   unixTimeUrl(unixTimeUrlPath: Date | string, callback: msRest.ServiceCallback<void>): void;
-  unixTimeUrl(unixTimeUrlPath: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  unixTimeUrl(unixTimeUrlPath: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  unixTimeUrl(unixTimeUrlPath: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  unixTimeUrl(unixTimeUrlPath: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

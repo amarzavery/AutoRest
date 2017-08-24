@@ -6,7 +6,7 @@
 import should = require('should');
 import http = require('http');
 import assert = require('assert');
-import * as msRest from 'ms-rest';
+import * as msRest from 'ms-rest-ts';
 import moment = require('moment');
 var _ = require('underscore');
 

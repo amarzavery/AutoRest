@@ -8,10 +8,11 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestDurationTestService } from '../autoRestDurationTestService';
-import * as moment from 'moment';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestDurationTestService } from "../autoRestDurationTestService";
+import * as moment from "moment";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +30,15 @@ export class Duration {
   /**
    * Get null duration value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<moment.Duration>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -124,20 +122,17 @@ export class Duration {
   /**
    * Put a positive duration value
    *
-   * @param {moment.duration} durationBody
+   * @param {moment.Duration} durationBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putPositiveDurationWithHttpOperationResponse(durationBody: moment.Duration, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putPositiveDurationWithHttpOperationResponse(durationBody: moment.Duration, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -228,18 +223,15 @@ export class Duration {
   /**
    * Get a positive duration value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<moment.Duration>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getPositiveDurationWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getPositiveDurationWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -323,18 +315,15 @@ export class Duration {
   /**
    * Get an invalid duration value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<moment.Duration>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -418,10 +407,7 @@ export class Duration {
   /**
    * Get null duration value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -433,13 +419,13 @@ export class Duration {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<moment.Duration>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<moment.Duration>;
+  getNull(options: msRest.RequestOptionsBase): Promise<moment.Duration>;
   getNull(callback: msRest.ServiceCallback<moment.Duration>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<moment.Duration>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<moment.Duration>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<moment.Duration>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<moment.Duration>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -465,12 +451,9 @@ export class Duration {
   /**
    * Put a positive duration value
    *
-   * @param {moment.duration} durationBody
+   * @param {moment.Duration} durationBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -478,17 +461,17 @@ export class Duration {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putPositiveDuration(durationBody: moment.Duration): Promise<void>;
-  putPositiveDuration(durationBody: moment.Duration, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putPositiveDuration(durationBody: moment.Duration, options: msRest.RequestOptionsBase): Promise<void>;
   putPositiveDuration(durationBody: moment.Duration, callback: msRest.ServiceCallback<void>): void;
-  putPositiveDuration(durationBody: moment.Duration, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putPositiveDuration(durationBody: moment.Duration, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putPositiveDuration(durationBody: moment.Duration, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putPositiveDuration(durationBody: moment.Duration, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -514,10 +497,7 @@ export class Duration {
   /**
    * Get a positive duration value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -529,13 +509,13 @@ export class Duration {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getPositiveDuration(): Promise<moment.Duration>;
-  getPositiveDuration(options: { customHeaders? : { [headerName: string]: string; } }): Promise<moment.Duration>;
+  getPositiveDuration(options: msRest.RequestOptionsBase): Promise<moment.Duration>;
   getPositiveDuration(callback: msRest.ServiceCallback<moment.Duration>): void;
-  getPositiveDuration(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<moment.Duration>): void;
-  getPositiveDuration(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<moment.Duration>): any {
+  getPositiveDuration(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<moment.Duration>): void;
+  getPositiveDuration(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<moment.Duration>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -561,10 +541,7 @@ export class Duration {
   /**
    * Get an invalid duration value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -576,13 +553,13 @@ export class Duration {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<moment.Duration>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<moment.Duration>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<moment.Duration>;
   getInvalid(callback: msRest.ServiceCallback<moment.Duration>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<moment.Duration>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<moment.Duration>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<moment.Duration>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<moment.Duration>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

@@ -8,16 +8,65 @@
  * regenerated.
  */
 
+import { RequestOptionsBase } from "ms-rest-ts";
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
+}
+
+/**
+ * @interface
+ * An interface representing HeaderParamStringOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface HeaderParamStringOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [value] Send a post request with header values "The quick
+   * brown fox jumps over the lazy dog" or null or ""
+   */
+  value?: string;
+}
+
+/**
+ * @interface
+ * An interface representing HeaderParamDatetimeRfc1123OptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface HeaderParamDatetimeRfc1123OptionalParams extends RequestOptionsBase {
+  /**
+   * @member {Date} [value] Send a post request with header values "Wed, 01 Jan
+   * 2010 12:34:56 GMT" or "Mon, 01 Jan 0001 00:00:00 GMT"
+   */
+  value?: Date;
+}
+
+/**
+ * @interface
+ * An interface representing HeaderParamEnumOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface HeaderParamEnumOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [value] Send a post request with header values 'GREY'.
+   * Possible values include: 'White', 'black', 'GREY'
+   */
+  value?: string;
 }

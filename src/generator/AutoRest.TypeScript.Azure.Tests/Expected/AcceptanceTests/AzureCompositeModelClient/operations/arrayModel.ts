@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AzureCompositeModel } from '../azureCompositeModel';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AzureCompositeModel } from "../azureCompositeModel";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class ArrayModel {
   /**
    * Get complex types with array property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ArrayWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -136,20 +133,15 @@ export class ArrayModel {
   /**
    * Put complex types with array property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayProperty]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ArrayModelPutValidOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidWithHttpOperationResponse(options?: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidWithHttpOperationResponse(options?: Models.ArrayModelPutValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayProperty = (options && options.arrayProperty !== undefined) ? options.arrayProperty : undefined;
     // Validate
@@ -257,18 +249,15 @@ export class ArrayModel {
   /**
    * Get complex types with array property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ArrayWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -364,20 +353,15 @@ export class ArrayModel {
   /**
    * Put complex types with array property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayProperty]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ArrayModelPutEmptyOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putEmptyWithHttpOperationResponse(options?: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putEmptyWithHttpOperationResponse(options?: Models.ArrayModelPutEmptyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayProperty = (options && options.arrayProperty !== undefined) ? options.arrayProperty : undefined;
     // Validate
@@ -486,18 +470,15 @@ export class ArrayModel {
    * Get complex types with array property while server doesn't provide a
    * response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ArrayWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNotProvidedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNotProvidedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -593,10 +574,7 @@ export class ArrayModel {
   /**
    * Get complex types with array property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -604,18 +582,18 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ArrayWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ArrayWrapper} for more information.
+   *                      {Models.ArrayWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ArrayWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getValid(): Promise<Models.ArrayWrapper>;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ArrayWrapper>;
+  getValid(options: msRest.RequestOptionsBase): Promise<Models.ArrayWrapper>;
   getValid(callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
-  getValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ArrayWrapper>): any {
+  getValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
+  getValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ArrayWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -641,12 +619,7 @@ export class ArrayModel {
   /**
    * Put complex types with array property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayProperty]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ArrayModelPutValidOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -654,17 +627,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValid(): Promise<void>;
-  putValid(options: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValid(options: Models.ArrayModelPutValidOptionalParams): Promise<void>;
   putValid(callback: msRest.ServiceCallback<void>): void;
-  putValid(options: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValid(options?: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValid(options: Models.ArrayModelPutValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putValid(options?: Models.ArrayModelPutValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -690,10 +663,7 @@ export class ArrayModel {
   /**
    * Get complex types with array property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -701,18 +671,18 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ArrayWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ArrayWrapper} for more information.
+   *                      {Models.ArrayWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ArrayWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(): Promise<Models.ArrayWrapper>;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ArrayWrapper>;
+  getEmpty(options: msRest.RequestOptionsBase): Promise<Models.ArrayWrapper>;
   getEmpty(callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
-  getEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ArrayWrapper>): any {
+  getEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
+  getEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ArrayWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -738,12 +708,7 @@ export class ArrayModel {
   /**
    * Put complex types with array property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayProperty]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ArrayModelPutEmptyOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -751,17 +716,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putEmpty(): Promise<void>;
-  putEmpty(options: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putEmpty(options: Models.ArrayModelPutEmptyOptionalParams): Promise<void>;
   putEmpty(callback: msRest.ServiceCallback<void>): void;
-  putEmpty(options: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putEmpty(options?: { arrayProperty? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putEmpty(options: Models.ArrayModelPutEmptyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putEmpty(options?: Models.ArrayModelPutEmptyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -788,10 +753,7 @@ export class ArrayModel {
    * Get complex types with array property while server doesn't provide a
    * response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -799,18 +761,18 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ArrayWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ArrayWrapper} for more information.
+   *                      {Models.ArrayWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ArrayWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNotProvided(): Promise<Models.ArrayWrapper>;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ArrayWrapper>;
+  getNotProvided(options: msRest.RequestOptionsBase): Promise<Models.ArrayWrapper>;
   getNotProvided(callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
-  getNotProvided(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ArrayWrapper>): any {
+  getNotProvided(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ArrayWrapper>): void;
+  getNotProvided(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ArrayWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

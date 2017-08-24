@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AzureCompositeModel } from '../azureCompositeModel';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AzureCompositeModel } from "../azureCompositeModel";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class Dictionary {
   /**
    * Get complex types with dictionary property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DictionaryWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -136,20 +133,15 @@ export class Dictionary {
   /**
    * Put complex types with dictionary property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.defaultProgram]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {DictionaryPutValidOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidWithHttpOperationResponse(options?: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidWithHttpOperationResponse(options?: Models.DictionaryPutValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let defaultProgram = (options && options.defaultProgram !== undefined) ? options.defaultProgram : undefined;
     // Validate
@@ -257,18 +249,15 @@ export class Dictionary {
   /**
    * Get complex types with dictionary property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DictionaryWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -364,20 +353,15 @@ export class Dictionary {
   /**
    * Put complex types with dictionary property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.defaultProgram]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {DictionaryPutEmptyOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putEmptyWithHttpOperationResponse(options?: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putEmptyWithHttpOperationResponse(options?: Models.DictionaryPutEmptyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let defaultProgram = (options && options.defaultProgram !== undefined) ? options.defaultProgram : undefined;
     // Validate
@@ -485,18 +469,15 @@ export class Dictionary {
   /**
    * Get complex types with dictionary property which is null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DictionaryWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -593,18 +574,15 @@ export class Dictionary {
    * Get complex types with dictionary property while server doesn't provide a
    * response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DictionaryWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNotProvidedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNotProvidedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -700,10 +678,7 @@ export class Dictionary {
   /**
    * Get complex types with dictionary property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -711,18 +686,19 @@ export class Dictionary {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DictionaryWrapper} for more information.
+   *                      {Models.DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DictionaryWrapper} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getValid(): Promise<Models.DictionaryWrapper>;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DictionaryWrapper>;
+  getValid(options: msRest.RequestOptionsBase): Promise<Models.DictionaryWrapper>;
   getValid(callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
+  getValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
+  getValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -748,12 +724,7 @@ export class Dictionary {
   /**
    * Put complex types with dictionary property
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.defaultProgram]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {DictionaryPutValidOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -761,17 +732,17 @@ export class Dictionary {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValid(): Promise<void>;
-  putValid(options: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValid(options: Models.DictionaryPutValidOptionalParams): Promise<void>;
   putValid(callback: msRest.ServiceCallback<void>): void;
-  putValid(options: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValid(options?: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValid(options: Models.DictionaryPutValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putValid(options?: Models.DictionaryPutValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -797,10 +768,7 @@ export class Dictionary {
   /**
    * Get complex types with dictionary property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -808,18 +776,19 @@ export class Dictionary {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DictionaryWrapper} for more information.
+   *                      {Models.DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DictionaryWrapper} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(): Promise<Models.DictionaryWrapper>;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DictionaryWrapper>;
+  getEmpty(options: msRest.RequestOptionsBase): Promise<Models.DictionaryWrapper>;
   getEmpty(callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
+  getEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
+  getEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -845,12 +814,7 @@ export class Dictionary {
   /**
    * Put complex types with dictionary property which is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.defaultProgram]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {DictionaryPutEmptyOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -858,17 +822,17 @@ export class Dictionary {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putEmpty(): Promise<void>;
-  putEmpty(options: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putEmpty(options: Models.DictionaryPutEmptyOptionalParams): Promise<void>;
   putEmpty(callback: msRest.ServiceCallback<void>): void;
-  putEmpty(options: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putEmpty(options?: { defaultProgram? : { [propertyName: string]: string }, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putEmpty(options: Models.DictionaryPutEmptyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putEmpty(options?: Models.DictionaryPutEmptyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -894,10 +858,7 @@ export class Dictionary {
   /**
    * Get complex types with dictionary property which is null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -905,18 +866,19 @@ export class Dictionary {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DictionaryWrapper} for more information.
+   *                      {Models.DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DictionaryWrapper} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<Models.DictionaryWrapper>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DictionaryWrapper>;
+  getNull(options: msRest.RequestOptionsBase): Promise<Models.DictionaryWrapper>;
   getNull(callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -943,10 +905,7 @@ export class Dictionary {
    * Get complex types with dictionary property while server doesn't provide a
    * response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -954,18 +913,19 @@ export class Dictionary {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DictionaryWrapper} for more information.
+   *                      {Models.DictionaryWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DictionaryWrapper} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNotProvided(): Promise<Models.DictionaryWrapper>;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DictionaryWrapper>;
+  getNotProvided(options: msRest.RequestOptionsBase): Promise<Models.DictionaryWrapper>;
   getNotProvided(callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
-  getNotProvided(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
+  getNotProvided(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DictionaryWrapper>): void;
+  getNotProvided(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DictionaryWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

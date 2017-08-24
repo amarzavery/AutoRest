@@ -8,6 +8,6 @@
  * regenerated.
  */
 
-import { ByteModel } from './byteModel';
+import { ByteModel } from "./byteModel";
 
 export { ByteModel };

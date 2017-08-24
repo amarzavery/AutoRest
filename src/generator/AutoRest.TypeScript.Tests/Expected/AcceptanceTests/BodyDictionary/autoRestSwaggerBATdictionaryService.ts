@@ -8,13 +8,14 @@
  * regenerated.
  */
 
-import * as msRest from "ms-rest";
+import * as msRest from "ms-rest-ts";
 import * as Models from "./models";
 import * as Mappers from "./models/mappers";
 import * as operations from "./operations";
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
+
 class AutoRestSwaggerBATdictionaryService extends msRest.ServiceClient {
   baseUri: string;
 
@@ -33,8 +34,8 @@ class AutoRestSwaggerBATdictionaryService extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *

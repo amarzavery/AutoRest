@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -214,6 +214,77 @@ export const ResourceCollection = {
                 className: 'FlattenedProduct'
               }
           }
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutArrayOptionalParams = {
+  required: false,
+  serializedName: 'PutArrayOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutArrayOptionalParams',
+    modelProperties: {
+      resourceArray: {
+        required: false,
+        serializedName: 'ResourceArray',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'ResourceElementType',
+              type: {
+                name: 'Composite',
+                className: 'Resource'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams = {
+  required: false,
+  serializedName: 'PutDictionaryOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams',
+    modelProperties: {
+      resourceDictionary: {
+        required: false,
+        serializedName: 'ResourceDictionary',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'FlattenedProductElementType',
+              type: {
+                name: 'Composite',
+                className: 'FlattenedProduct'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams = {
+  required: false,
+  serializedName: 'PutResourceCollectionOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams',
+    modelProperties: {
+      resourceComplexObject: {
+        required: false,
+        serializedName: 'ResourceComplexObject',
+        type: {
+          name: 'Composite',
+          className: 'ResourceCollection'
         }
       }
     }

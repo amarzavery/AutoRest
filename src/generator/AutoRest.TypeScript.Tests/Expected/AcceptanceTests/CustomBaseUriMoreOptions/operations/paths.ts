@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestParameterizedCustomHostTestClient } from '../autoRestParameterizedCustomHostTestClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestParameterizedCustomHostTestClient } from "../autoRestParameterizedCustomHostTestClient";
 
 const WebResource = msRest.WebResource;
 
@@ -34,20 +35,15 @@ export class Paths {
    *
    * @param {string} keyName The key name with value 'key1'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.keyVersion] The key version. Default value 'v1'.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathsGetEmptyOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(vault: string, secret: string, keyName: string, options?: { keyVersion? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(vault: string, secret: string, keyName: string, options?: Models.PathsGetEmptyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let keyVersion = (options && options.keyVersion !== undefined) ? options.keyVersion : 'v1';
     // Validate
@@ -152,12 +148,7 @@ export class Paths {
    *
    * @param {string} keyName The key name with value 'key1'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.keyVersion] The key version. Default value 'v1'.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathsGetEmptyOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -165,17 +156,17 @@ export class Paths {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(vault: string, secret: string, keyName: string): Promise<void>;
-  getEmpty(vault: string, secret: string, keyName: string, options: { keyVersion? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getEmpty(vault: string, secret: string, keyName: string, options: Models.PathsGetEmptyOptionalParams): Promise<void>;
   getEmpty(vault: string, secret: string, keyName: string, callback: msRest.ServiceCallback<void>): void;
-  getEmpty(vault: string, secret: string, keyName: string, options: { keyVersion? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getEmpty(vault: string, secret: string, keyName: string, options?: { keyVersion? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getEmpty(vault: string, secret: string, keyName: string, options: Models.PathsGetEmptyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getEmpty(vault: string, secret: string, keyName: string, options?: Models.PathsGetEmptyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

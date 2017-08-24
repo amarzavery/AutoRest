@@ -18,8 +18,7 @@
     }
   ],
   "dependencies": {
-    "ms-rest": "amarzavery/ms-rest",
-    "ms-rest-azure": "amarzavery/ms-rest-azure"
+    "ms-rest-azure-ts": "amarzavery/ms-rest-azure"
   },
   "devDependencies": {
     "jshint": "2.9.4",

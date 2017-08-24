@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATFormDataService } from '../autoRestSwaggerBATFormDataService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATFormDataService } from "../autoRestSwaggerBATFormDataService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,23 +29,20 @@ export class Formdata {
   /**
    * Upload file
    *
-   * @param {readablestream} fileContent File to upload.
+   * @param {ReadableStream} fileContent File to upload.
    *
    * @param {string} fileName File name to upload. Name has to be spelled exactly
    * as written here.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ReadableStream>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async uploadFileWithHttpOperationResponse(fileContent: ReadableStream, fileName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async uploadFileWithHttpOperationResponse(fileContent: ReadableStream, fileName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -129,20 +127,17 @@ export class Formdata {
   /**
    * Upload file
    *
-   * @param {readablestream} fileContent File to upload.
+   * @param {ReadableStream} fileContent File to upload.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ReadableStream>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async uploadFileViaBodyWithHttpOperationResponse(fileContent: ReadableStream, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async uploadFileViaBodyWithHttpOperationResponse(fileContent: ReadableStream, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -218,15 +213,12 @@ export class Formdata {
   /**
    * Upload file
    *
-   * @param {readablestream} fileContent File to upload.
+   * @param {ReadableStream} fileContent File to upload.
    *
    * @param {string} fileName File name to upload. Name has to be spelled exactly
    * as written here.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -238,13 +230,13 @@ export class Formdata {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   uploadFile(fileContent: ReadableStream, fileName: string): Promise<ReadableStream>;
-  uploadFile(fileContent: ReadableStream, fileName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<ReadableStream>;
+  uploadFile(fileContent: ReadableStream, fileName: string, options: msRest.RequestOptionsBase): Promise<ReadableStream>;
   uploadFile(fileContent: ReadableStream, fileName: string, callback: msRest.ServiceCallback<ReadableStream>): void;
-  uploadFile(fileContent: ReadableStream, fileName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<ReadableStream>): void;
-  uploadFile(fileContent: ReadableStream, fileName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<ReadableStream>): any {
+  uploadFile(fileContent: ReadableStream, fileName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<ReadableStream>): void;
+  uploadFile(fileContent: ReadableStream, fileName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<ReadableStream>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -270,12 +262,9 @@ export class Formdata {
   /**
    * Upload file
    *
-   * @param {readablestream} fileContent File to upload.
+   * @param {ReadableStream} fileContent File to upload.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -287,13 +276,13 @@ export class Formdata {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   uploadFileViaBody(fileContent: ReadableStream): Promise<ReadableStream>;
-  uploadFileViaBody(fileContent: ReadableStream, options: { customHeaders? : { [headerName: string]: string; } }): Promise<ReadableStream>;
+  uploadFileViaBody(fileContent: ReadableStream, options: msRest.RequestOptionsBase): Promise<ReadableStream>;
   uploadFileViaBody(fileContent: ReadableStream, callback: msRest.ServiceCallback<ReadableStream>): void;
-  uploadFileViaBody(fileContent: ReadableStream, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<ReadableStream>): void;
-  uploadFileViaBody(fileContent: ReadableStream, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<ReadableStream>): any {
+  uploadFileViaBody(fileContent: ReadableStream, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<ReadableStream>): void;
+  uploadFileViaBody(fileContent: ReadableStream, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<ReadableStream>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

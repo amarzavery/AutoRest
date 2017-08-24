@@ -9,307 +9,480 @@
  */
 
 import * as moment from "moment";
+import { RequestOptionsBase } from "ms-rest-ts";
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Basic class.
- * @constructor
- * @member {number} [id] Basic Id
- * @member {string} [name] Name property with a very long description that does
- * not fit on a single line and a line break.
- * @member {string} [color] Possible values include: 'cyan', 'Magenta',
- * 'YELLOW', 'blacK'
+ * @interface
+ * An interface representing Basic.
  */
 export interface Basic {
+  /**
+   * @member {number} [id] Basic Id
+   */
   id?: number;
+  /**
+   * @member {string} [name] Name property with a very long description that
+   * does not fit on a single line and a line break.
+   */
   name?: string;
+  /**
+   * @member {string} [color] Possible values include: 'cyan', 'Magenta',
+   * 'YELLOW', 'blacK'
+   */
   color?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Pet class.
- * @constructor
- * @member {number} [id]
- * @member {string} [name]
+ * @interface
+ * An interface representing Pet.
  */
 export interface Pet {
+  /**
+   * @member {number} [id]
+   */
   id?: number;
+  /**
+   * @member {string} [name]
+   */
   name?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Dog class.
- * @constructor
- * @member {string} [food]
+ * @interface
+ * An interface representing Dog.
+ * @extends Pet
  */
 export interface Dog extends Pet {
+  /**
+   * @member {string} [food]
+   */
   food?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Cat class.
- * @constructor
- * @member {string} [color]
- * @member {array} [hates]
+ * @interface
+ * An interface representing Cat.
+ * @extends Pet
  */
 export interface Cat extends Pet {
+  /**
+   * @member {string} [color]
+   */
   color?: string;
+  /**
+   * @member {Dog[]} [hates]
+   */
   hates?: Dog[];
 }
 
 /**
- * @class
- * Initializes a new instance of the Siamese class.
- * @constructor
- * @member {string} [breed]
+ * @interface
+ * An interface representing Siamese.
+ * @extends Cat
  */
 export interface Siamese extends Cat {
+  /**
+   * @member {string} [breed]
+   */
   breed?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Fish class.
- * @constructor
- * @member {string} [species]
- * @member {number} length
- * @member {array} [siblings]
- * @member {string} fishtype Polymorphic Discriminator
+ * @interface
+ * An interface representing Fish.
  */
 export interface Fish {
+  /**
+   * @member {string} [species]
+   */
   species?: string;
+  /**
+   * @member {number} length
+   */
   length: number;
+  /**
+   * @member {Fish[]} [siblings]
+   */
   siblings?: Fish[];
+  /**
+   * @member {string} fishtype Polymorphic Discriminator
+   */
   fishtype: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Salmon class.
- * @constructor
- * @member {string} [location]
- * @member {boolean} [iswild]
+ * @interface
+ * An interface representing Salmon.
+ * @extends Fish
  */
 export interface Salmon extends Fish {
+  /**
+   * @member {string} [location]
+   */
   location?: string;
+  /**
+   * @member {boolean} [iswild]
+   */
   iswild?: boolean;
 }
 
 /**
- * @class
- * Initializes a new instance of the Shark class.
- * @constructor
- * @member {number} [age]
- * @member {date} birthday
+ * @interface
+ * An interface representing Shark.
+ * @extends Fish
  */
 export interface Shark extends Fish {
+  /**
+   * @member {number} [age]
+   */
   age?: number;
+  /**
+   * @member {Date} birthday
+   */
   birthday: Date;
 }
 
 /**
- * @class
- * Initializes a new instance of the Sawshark class.
- * @constructor
- * @member {buffer} [picture]
+ * @interface
+ * An interface representing Sawshark.
+ * @extends Shark
  */
 export interface Sawshark extends Shark {
+  /**
+   * @member {Buffer} [picture]
+   */
   picture?: Buffer;
 }
 
 /**
- * @class
- * Initializes a new instance of the Goblinshark class.
- * @constructor
- * @member {number} [jawsize]
+ * @interface
+ * An interface representing Goblinshark.
+ * @extends Shark
  */
 export interface Goblinshark extends Shark {
+  /**
+   * @member {number} [jawsize]
+   */
   jawsize?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the Cookiecuttershark class.
- * @constructor
+ * @interface
+ * An interface representing Cookiecuttershark.
+ * @extends Shark
  */
 export interface Cookiecuttershark extends Shark {
 }
 
 /**
- * @class
- * Initializes a new instance of the IntWrapper class.
- * @constructor
- * @member {number} [field1]
- * @member {number} [field2]
+ * @interface
+ * An interface representing IntWrapper.
  */
 export interface IntWrapper {
+  /**
+   * @member {number} [field1]
+   */
   field1?: number;
+  /**
+   * @member {number} [field2]
+   */
   field2?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the LongWrapper class.
- * @constructor
- * @member {number} [field1]
- * @member {number} [field2]
+ * @interface
+ * An interface representing LongWrapper.
  */
 export interface LongWrapper {
+  /**
+   * @member {number} [field1]
+   */
   field1?: number;
+  /**
+   * @member {number} [field2]
+   */
   field2?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the FloatWrapper class.
- * @constructor
- * @member {number} [field1]
- * @member {number} [field2]
+ * @interface
+ * An interface representing FloatWrapper.
  */
 export interface FloatWrapper {
+  /**
+   * @member {number} [field1]
+   */
   field1?: number;
+  /**
+   * @member {number} [field2]
+   */
   field2?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the DoubleWrapper class.
- * @constructor
- * @member {number} [field1]
- * @member {number}
- * [field56ZerosAfterTheDotAndNegativeZeroBeforeDotAndThisIsALongFieldNameOnPurpose]
+ * @interface
+ * An interface representing DoubleWrapper.
  */
 export interface DoubleWrapper {
+  /**
+   * @member {number} [field1]
+   */
   field1?: number;
+  /**
+   * @member {number}
+   * [field56ZerosAfterTheDotAndNegativeZeroBeforeDotAndThisIsALongFieldNameOnPurpose]
+   */
   field56ZerosAfterTheDotAndNegativeZeroBeforeDotAndThisIsALongFieldNameOnPurpose?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the BooleanWrapper class.
- * @constructor
- * @member {boolean} [fieldTrue]
- * @member {boolean} [fieldFalse]
+ * @interface
+ * An interface representing BooleanWrapper.
  */
 export interface BooleanWrapper {
+  /**
+   * @member {boolean} [fieldTrue]
+   */
   fieldTrue?: boolean;
+  /**
+   * @member {boolean} [fieldFalse]
+   */
   fieldFalse?: boolean;
 }
 
 /**
- * @class
- * Initializes a new instance of the StringWrapper class.
- * @constructor
- * @member {string} [field]
- * @member {string} [empty]
- * @member {string} [nullProperty]
+ * @interface
+ * An interface representing StringWrapper.
  */
 export interface StringWrapper {
+  /**
+   * @member {string} [field]
+   */
   field?: string;
+  /**
+   * @member {string} [empty]
+   */
   empty?: string;
+  /**
+   * @member {string} [nullProperty]
+   */
   nullProperty?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the DateWrapper class.
- * @constructor
- * @member {date} [field]
- * @member {date} [leap]
+ * @interface
+ * An interface representing DateWrapper.
  */
 export interface DateWrapper {
+  /**
+   * @member {Date} [field]
+   */
   field?: Date;
+  /**
+   * @member {Date} [leap]
+   */
   leap?: Date;
 }
 
 /**
- * @class
- * Initializes a new instance of the DatetimeWrapper class.
- * @constructor
- * @member {date} [field]
- * @member {date} [now]
+ * @interface
+ * An interface representing DatetimeWrapper.
  */
 export interface DatetimeWrapper {
+  /**
+   * @member {Date} [field]
+   */
   field?: Date;
+  /**
+   * @member {Date} [now]
+   */
   now?: Date;
 }
 
 /**
- * @class
- * Initializes a new instance of the Datetimerfc1123Wrapper class.
- * @constructor
- * @member {date} [field]
- * @member {date} [now]
+ * @interface
+ * An interface representing Datetimerfc1123Wrapper.
  */
 export interface Datetimerfc1123Wrapper {
+  /**
+   * @member {Date} [field]
+   */
   field?: Date;
+  /**
+   * @member {Date} [now]
+   */
   now?: Date;
 }
 
 /**
- * @class
- * Initializes a new instance of the DurationWrapper class.
- * @constructor
- * @member {moment.duration} [field]
+ * @interface
+ * An interface representing DurationWrapper.
  */
 export interface DurationWrapper {
+  /**
+   * @member {moment.Duration} [field]
+   */
   field?: moment.Duration;
 }
 
 /**
- * @class
- * Initializes a new instance of the ByteWrapper class.
- * @constructor
- * @member {buffer} [field]
+ * @interface
+ * An interface representing ByteWrapper.
  */
 export interface ByteWrapper {
+  /**
+   * @member {Buffer} [field]
+   */
   field?: Buffer;
 }
 
 /**
- * @class
- * Initializes a new instance of the ArrayWrapper class.
- * @constructor
- * @member {array} [arrayProperty]
+ * @interface
+ * An interface representing ArrayWrapper.
  */
 export interface ArrayWrapper {
+  /**
+   * @member {string[]} [arrayProperty]
+   */
   arrayProperty?: string[];
 }
 
 /**
- * @class
- * Initializes a new instance of the DictionaryWrapper class.
- * @constructor
- * @member {object} [defaultProgram]
+ * @interface
+ * An interface representing DictionaryWrapper.
  */
 export interface DictionaryWrapper {
+  /**
+   * @member {{ [propertyName: string]: string }} [defaultProgram]
+   */
   defaultProgram?: { [propertyName: string]: string };
 }
 
 /**
- * @class
- * Initializes a new instance of the ReadonlyObj class.
- * @constructor
- * @member {string} [id]
- * @member {number} [size]
+ * @interface
+ * An interface representing ReadonlyObj.
  */
 export interface ReadonlyObj {
+  /**
+   * @member {string} [id]
+   */
   readonly id?: string;
+  /**
+   * @member {number} [size]
+   */
+  size?: number;
+}
+
+/**
+ * @interface
+ * An interface representing PrimitivePutDurationOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PrimitivePutDurationOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {moment.Duration} [field]
+   */
+  field?: moment.Duration;
+}
+
+/**
+ * @interface
+ * An interface representing PrimitivePutByteOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PrimitivePutByteOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {Buffer} [field]
+   */
+  field?: Buffer;
+}
+
+/**
+ * @interface
+ * An interface representing ArrayModelPutValidOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ArrayModelPutValidOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string[]} [arrayProperty]
+   */
+  arrayProperty?: string[];
+}
+
+/**
+ * @interface
+ * An interface representing ArrayModelPutEmptyOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ArrayModelPutEmptyOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string[]} [arrayProperty]
+   */
+  arrayProperty?: string[];
+}
+
+/**
+ * @interface
+ * An interface representing DictionaryPutValidOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface DictionaryPutValidOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {{ [propertyName: string]: string }} [defaultProgram]
+   */
+  defaultProgram?: { [propertyName: string]: string };
+}
+
+/**
+ * @interface
+ * An interface representing DictionaryPutEmptyOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface DictionaryPutEmptyOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {{ [propertyName: string]: string }} [defaultProgram]
+   */
+  defaultProgram?: { [propertyName: string]: string };
+}
+
+/**
+ * @interface
+ * An interface representing ReadonlypropertyPutValidOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ReadonlypropertyPutValidOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {number} [size]
+   */
   size?: number;
 }

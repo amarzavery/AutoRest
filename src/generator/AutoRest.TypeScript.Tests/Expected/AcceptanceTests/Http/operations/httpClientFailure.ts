@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestHttpInfrastructureTestService } from '../autoRestHttpInfrastructureTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHttpInfrastructureTestService } from "../autoRestHttpInfrastructureTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head400WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head400WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -115,18 +112,15 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get400WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get400WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -201,20 +195,16 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put400WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put400WithHttpOperationResponse(options?: Models.HttpClientFailurePut400OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -318,20 +308,16 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePatch400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch400WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch400WithHttpOperationResponse(options?: Models.HttpClientFailurePatch400OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -435,20 +421,16 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePost400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post400WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post400WithHttpOperationResponse(options?: Models.HttpClientFailurePost400OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -552,20 +534,16 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailureDelete400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete400WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete400WithHttpOperationResponse(options?: Models.HttpClientFailureDelete400OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -669,18 +647,15 @@ export class HttpClientFailure {
   /**
    * Return 401 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head401WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head401WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -755,18 +730,15 @@ export class HttpClientFailure {
   /**
    * Return 402 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get402WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get402WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -841,18 +813,15 @@ export class HttpClientFailure {
   /**
    * Return 403 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get403WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get403WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -927,20 +896,16 @@ export class HttpClientFailure {
   /**
    * Return 404 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut404OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put404WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put404WithHttpOperationResponse(options?: Models.HttpClientFailurePut404OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1044,20 +1009,16 @@ export class HttpClientFailure {
   /**
    * Return 405 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePatch405OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch405WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch405WithHttpOperationResponse(options?: Models.HttpClientFailurePatch405OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1161,20 +1122,16 @@ export class HttpClientFailure {
   /**
    * Return 406 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePost406OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post406WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post406WithHttpOperationResponse(options?: Models.HttpClientFailurePost406OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1278,20 +1235,16 @@ export class HttpClientFailure {
   /**
    * Return 407 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailureDelete407OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete407WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete407WithHttpOperationResponse(options?: Models.HttpClientFailureDelete407OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1395,20 +1348,16 @@ export class HttpClientFailure {
   /**
    * Return 409 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut409OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put409WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put409WithHttpOperationResponse(options?: Models.HttpClientFailurePut409OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1512,18 +1461,15 @@ export class HttpClientFailure {
   /**
    * Return 410 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head410WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head410WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1598,18 +1544,15 @@ export class HttpClientFailure {
   /**
    * Return 411 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get411WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get411WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1684,18 +1627,15 @@ export class HttpClientFailure {
   /**
    * Return 412 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get412WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get412WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1770,20 +1710,16 @@ export class HttpClientFailure {
   /**
    * Return 413 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut413OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put413WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put413WithHttpOperationResponse(options?: Models.HttpClientFailurePut413OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1887,20 +1823,16 @@ export class HttpClientFailure {
   /**
    * Return 414 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePatch414OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch414WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch414WithHttpOperationResponse(options?: Models.HttpClientFailurePatch414OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -2004,20 +1936,16 @@ export class HttpClientFailure {
   /**
    * Return 415 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePost415OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post415WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post415WithHttpOperationResponse(options?: Models.HttpClientFailurePost415OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -2121,18 +2049,15 @@ export class HttpClientFailure {
   /**
    * Return 416 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get416WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get416WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2207,20 +2132,16 @@ export class HttpClientFailure {
   /**
    * Return 417 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailureDelete417OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete417WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete417WithHttpOperationResponse(options?: Models.HttpClientFailureDelete417OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -2324,18 +2245,15 @@ export class HttpClientFailure {
   /**
    * Return 429 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head429WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head429WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2410,10 +2328,7 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2421,18 +2336,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head400(): Promise<Models.ErrorModel>;
-  head400(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  head400(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   head400(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head400(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head400(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  head400(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  head400(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2458,10 +2373,7 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2469,18 +2381,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get400(): Promise<Models.ErrorModel>;
-  get400(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  get400(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   get400(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get400(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get400(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  get400(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  get400(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2506,12 +2418,8 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2519,18 +2427,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put400(): Promise<Models.ErrorModel>;
-  put400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  put400(options: Models.HttpClientFailurePut400OptionalParams): Promise<Models.ErrorModel>;
   put400(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put400(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  put400(options: Models.HttpClientFailurePut400OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  put400(options?: Models.HttpClientFailurePut400OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2556,12 +2464,8 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePatch400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2569,18 +2473,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch400(): Promise<Models.ErrorModel>;
-  patch400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  patch400(options: Models.HttpClientFailurePatch400OptionalParams): Promise<Models.ErrorModel>;
   patch400(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  patch400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  patch400(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  patch400(options: Models.HttpClientFailurePatch400OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  patch400(options?: Models.HttpClientFailurePatch400OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2606,12 +2510,8 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePost400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2619,18 +2519,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post400(): Promise<Models.ErrorModel>;
-  post400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  post400(options: Models.HttpClientFailurePost400OptionalParams): Promise<Models.ErrorModel>;
   post400(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  post400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  post400(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  post400(options: Models.HttpClientFailurePost400OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  post400(options?: Models.HttpClientFailurePost400OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2656,12 +2556,8 @@ export class HttpClientFailure {
   /**
    * Return 400 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailureDelete400OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2669,18 +2565,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete400(): Promise<Models.ErrorModel>;
-  delete400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  delete400(options: Models.HttpClientFailureDelete400OptionalParams): Promise<Models.ErrorModel>;
   delete400(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  delete400(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  delete400(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  delete400(options: Models.HttpClientFailureDelete400OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  delete400(options?: Models.HttpClientFailureDelete400OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2706,10 +2602,7 @@ export class HttpClientFailure {
   /**
    * Return 401 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2717,18 +2610,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head401(): Promise<Models.ErrorModel>;
-  head401(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  head401(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   head401(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head401(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head401(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  head401(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  head401(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2754,10 +2647,7 @@ export class HttpClientFailure {
   /**
    * Return 402 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2765,18 +2655,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get402(): Promise<Models.ErrorModel>;
-  get402(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  get402(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   get402(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get402(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get402(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  get402(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  get402(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2802,10 +2692,7 @@ export class HttpClientFailure {
   /**
    * Return 403 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2813,18 +2700,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get403(): Promise<Models.ErrorModel>;
-  get403(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  get403(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   get403(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get403(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get403(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  get403(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  get403(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2850,12 +2737,8 @@ export class HttpClientFailure {
   /**
    * Return 404 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut404OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2863,18 +2746,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put404(): Promise<Models.ErrorModel>;
-  put404(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  put404(options: Models.HttpClientFailurePut404OptionalParams): Promise<Models.ErrorModel>;
   put404(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put404(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put404(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  put404(options: Models.HttpClientFailurePut404OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  put404(options?: Models.HttpClientFailurePut404OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2900,12 +2783,8 @@ export class HttpClientFailure {
   /**
    * Return 405 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePatch405OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2913,18 +2792,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch405(): Promise<Models.ErrorModel>;
-  patch405(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  patch405(options: Models.HttpClientFailurePatch405OptionalParams): Promise<Models.ErrorModel>;
   patch405(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  patch405(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  patch405(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  patch405(options: Models.HttpClientFailurePatch405OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  patch405(options?: Models.HttpClientFailurePatch405OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2950,12 +2829,8 @@ export class HttpClientFailure {
   /**
    * Return 406 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePost406OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2963,18 +2838,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post406(): Promise<Models.ErrorModel>;
-  post406(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  post406(options: Models.HttpClientFailurePost406OptionalParams): Promise<Models.ErrorModel>;
   post406(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  post406(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  post406(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  post406(options: Models.HttpClientFailurePost406OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  post406(options?: Models.HttpClientFailurePost406OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3000,12 +2875,8 @@ export class HttpClientFailure {
   /**
    * Return 407 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailureDelete407OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3013,18 +2884,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete407(): Promise<Models.ErrorModel>;
-  delete407(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  delete407(options: Models.HttpClientFailureDelete407OptionalParams): Promise<Models.ErrorModel>;
   delete407(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  delete407(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  delete407(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  delete407(options: Models.HttpClientFailureDelete407OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  delete407(options?: Models.HttpClientFailureDelete407OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3050,12 +2921,8 @@ export class HttpClientFailure {
   /**
    * Return 409 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut409OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3063,18 +2930,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put409(): Promise<Models.ErrorModel>;
-  put409(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  put409(options: Models.HttpClientFailurePut409OptionalParams): Promise<Models.ErrorModel>;
   put409(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put409(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put409(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  put409(options: Models.HttpClientFailurePut409OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  put409(options?: Models.HttpClientFailurePut409OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3100,10 +2967,7 @@ export class HttpClientFailure {
   /**
    * Return 410 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3111,18 +2975,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head410(): Promise<Models.ErrorModel>;
-  head410(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  head410(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   head410(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head410(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head410(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  head410(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  head410(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3148,10 +3012,7 @@ export class HttpClientFailure {
   /**
    * Return 411 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3159,18 +3020,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get411(): Promise<Models.ErrorModel>;
-  get411(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  get411(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   get411(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get411(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get411(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  get411(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  get411(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3196,10 +3057,7 @@ export class HttpClientFailure {
   /**
    * Return 412 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3207,18 +3065,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get412(): Promise<Models.ErrorModel>;
-  get412(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  get412(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   get412(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get412(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get412(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  get412(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  get412(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3244,12 +3102,8 @@ export class HttpClientFailure {
   /**
    * Return 413 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePut413OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3257,18 +3111,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put413(): Promise<Models.ErrorModel>;
-  put413(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  put413(options: Models.HttpClientFailurePut413OptionalParams): Promise<Models.ErrorModel>;
   put413(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put413(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  put413(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  put413(options: Models.HttpClientFailurePut413OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  put413(options?: Models.HttpClientFailurePut413OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3294,12 +3148,8 @@ export class HttpClientFailure {
   /**
    * Return 414 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePatch414OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3307,18 +3157,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch414(): Promise<Models.ErrorModel>;
-  patch414(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  patch414(options: Models.HttpClientFailurePatch414OptionalParams): Promise<Models.ErrorModel>;
   patch414(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  patch414(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  patch414(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  patch414(options: Models.HttpClientFailurePatch414OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  patch414(options?: Models.HttpClientFailurePatch414OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3344,12 +3194,8 @@ export class HttpClientFailure {
   /**
    * Return 415 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailurePost415OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3357,18 +3203,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post415(): Promise<Models.ErrorModel>;
-  post415(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  post415(options: Models.HttpClientFailurePost415OptionalParams): Promise<Models.ErrorModel>;
   post415(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  post415(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  post415(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  post415(options: Models.HttpClientFailurePost415OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  post415(options?: Models.HttpClientFailurePost415OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3394,10 +3240,7 @@ export class HttpClientFailure {
   /**
    * Return 416 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3405,18 +3248,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get416(): Promise<Models.ErrorModel>;
-  get416(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  get416(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   get416(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get416(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  get416(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  get416(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  get416(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3442,12 +3285,8 @@ export class HttpClientFailure {
   /**
    * Return 417 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpClientFailureDelete417OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3455,18 +3294,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete417(): Promise<Models.ErrorModel>;
-  delete417(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  delete417(options: Models.HttpClientFailureDelete417OptionalParams): Promise<Models.ErrorModel>;
   delete417(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  delete417(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  delete417(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  delete417(options: Models.HttpClientFailureDelete417OptionalParams, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  delete417(options?: Models.HttpClientFailureDelete417OptionalParams, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3492,10 +3331,7 @@ export class HttpClientFailure {
   /**
    * Return 429 status code - should be represented in the client as an error
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3503,18 +3339,18 @@ export class HttpClientFailure {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head429(): Promise<Models.ErrorModel>;
-  head429(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  head429(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   head429(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head429(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  head429(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  head429(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  head429(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

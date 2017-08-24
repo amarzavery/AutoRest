@@ -8,6 +8,6 @@
  * regenerated.
  */
 
-import { ParameterGrouping } from './parameterGrouping';
+import { ParameterGrouping } from "./parameterGrouping";
 
 export { ParameterGrouping };

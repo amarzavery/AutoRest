@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestComplexTestService } from '../autoRestComplexTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestComplexTestService } from "../autoRestComplexTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class Polymorphism {
   /**
    * Get complex types that are polymorphic
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Fish>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -118,7 +115,7 @@ export class Polymorphism {
   /**
    * Put complex types that are polymorphic
    *
-   * @param {object} complexBody Please put a salmon that looks like this:
+   * @param {Fish} complexBody Please put a salmon that looks like this:
    * {
    * 'fishtype':'Salmon',
    * 'location':'alaska',
@@ -152,26 +149,15 @@ export class Polymorphism {
    * ]
    * };
    *
-   * @param {string} [complexBody.species]
-   *
-   * @param {number} complexBody.length
-   *
-   * @param {array} [complexBody.siblings]
-   *
-   * @param {string} complexBody.fishtype Polymorphic Discriminator
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidWithHttpOperationResponse(complexBody: Models.Fish, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidWithHttpOperationResponse(complexBody: Models.Fish, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -257,7 +243,7 @@ export class Polymorphism {
    * Put complex types that are polymorphic, attempting to omit required
    * 'birthday' field - the request should not be allowed from the client
    *
-   * @param {object} complexBody Please attempt put a sawshark that looks like
+   * @param {Fish} complexBody Please attempt put a sawshark that looks like
    * this, the client should not allow this data to be sent:
    * {
    * "fishtype": "sawshark",
@@ -285,26 +271,15 @@ export class Polymorphism {
    * ]
    * }
    *
-   * @param {string} [complexBody.species]
-   *
-   * @param {number} complexBody.length
-   *
-   * @param {array} [complexBody.siblings]
-   *
-   * @param {string} complexBody.fishtype Polymorphic Discriminator
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidMissingRequiredWithHttpOperationResponse(complexBody: Models.Fish, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidMissingRequiredWithHttpOperationResponse(complexBody: Models.Fish, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -389,10 +364,7 @@ export class Polymorphism {
   /**
    * Get complex types that are polymorphic
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -400,18 +372,18 @@ export class Polymorphism {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Fish} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Fish} for more information.
+   *                      {Models.Fish} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Fish} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getValid(): Promise<Models.Fish>;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Fish>;
+  getValid(options: msRest.RequestOptionsBase): Promise<Models.Fish>;
   getValid(callback: msRest.ServiceCallback<Models.Fish>): void;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Fish>): void;
-  getValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Fish>): any {
+  getValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Fish>): void;
+  getValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Fish>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -437,7 +409,7 @@ export class Polymorphism {
   /**
    * Put complex types that are polymorphic
    *
-   * @param {object} complexBody Please put a salmon that looks like this:
+   * @param {Fish} complexBody Please put a salmon that looks like this:
    * {
    * 'fishtype':'Salmon',
    * 'location':'alaska',
@@ -471,18 +443,7 @@ export class Polymorphism {
    * ]
    * };
    *
-   * @param {string} [complexBody.species]
-   *
-   * @param {number} complexBody.length
-   *
-   * @param {array} [complexBody.siblings]
-   *
-   * @param {string} complexBody.fishtype Polymorphic Discriminator
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -490,17 +451,17 @@ export class Polymorphism {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValid(complexBody: Models.Fish): Promise<void>;
-  putValid(complexBody: Models.Fish, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValid(complexBody: Models.Fish, options: msRest.RequestOptionsBase): Promise<void>;
   putValid(complexBody: Models.Fish, callback: msRest.ServiceCallback<void>): void;
-  putValid(complexBody: Models.Fish, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValid(complexBody: Models.Fish, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValid(complexBody: Models.Fish, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putValid(complexBody: Models.Fish, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -527,7 +488,7 @@ export class Polymorphism {
    * Put complex types that are polymorphic, attempting to omit required
    * 'birthday' field - the request should not be allowed from the client
    *
-   * @param {object} complexBody Please attempt put a sawshark that looks like
+   * @param {Fish} complexBody Please attempt put a sawshark that looks like
    * this, the client should not allow this data to be sent:
    * {
    * "fishtype": "sawshark",
@@ -555,18 +516,7 @@ export class Polymorphism {
    * ]
    * }
    *
-   * @param {string} [complexBody.species]
-   *
-   * @param {number} complexBody.length
-   *
-   * @param {array} [complexBody.siblings]
-   *
-   * @param {string} complexBody.fishtype Polymorphic Discriminator
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -574,17 +524,17 @@ export class Polymorphism {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValidMissingRequired(complexBody: Models.Fish): Promise<void>;
-  putValidMissingRequired(complexBody: Models.Fish, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValidMissingRequired(complexBody: Models.Fish, options: msRest.RequestOptionsBase): Promise<void>;
   putValidMissingRequired(complexBody: Models.Fish, callback: msRest.ServiceCallback<void>): void;
-  putValidMissingRequired(complexBody: Models.Fish, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValidMissingRequired(complexBody: Models.Fish, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValidMissingRequired(complexBody: Models.Fish, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putValidMissingRequired(complexBody: Models.Fish, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

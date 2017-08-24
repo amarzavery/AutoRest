@@ -411,3 +411,151 @@ export const FlattenParameterGroup = {
     }
   }
 };
+
+export const AutoRestResourceFlatteningTestServicePutArrayOptionalParams = {
+  required: false,
+  serializedName: 'PutArrayOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutArrayOptionalParams',
+    modelProperties: {
+      resourceArray: {
+        required: false,
+        serializedName: 'ResourceArray',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'ResourceElementType',
+              type: {
+                name: 'Composite',
+                className: 'Resource'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams = {
+  required: false,
+  serializedName: 'PutWrappedArrayOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams',
+    modelProperties: {
+      resourceArray: {
+        required: false,
+        serializedName: 'ResourceArray',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'WrappedProductElementType',
+              type: {
+                name: 'Composite',
+                className: 'WrappedProduct'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams = {
+  required: false,
+  serializedName: 'PutDictionaryOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams',
+    modelProperties: {
+      resourceDictionary: {
+        required: false,
+        serializedName: 'ResourceDictionary',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'FlattenedProductElementType',
+              type: {
+                name: 'Composite',
+                className: 'FlattenedProduct'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams = {
+  required: false,
+  serializedName: 'PutResourceCollectionOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams',
+    modelProperties: {
+      resourceComplexObject: {
+        required: false,
+        serializedName: 'ResourceComplexObject',
+        type: {
+          name: 'Composite',
+          className: 'ResourceCollection'
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams = {
+  required: false,
+  serializedName: 'PutSimpleProductOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams',
+    modelProperties: {
+      simpleBodyProduct: {
+        required: false,
+        serializedName: 'SimpleBodyProduct',
+        type: {
+          name: 'Composite',
+          className: 'SimpleProduct'
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams = {
+  required: false,
+  serializedName: 'PostFlattenedSimpleProductOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams',
+    modelProperties: {
+      description: {
+        required: false,
+        serializedName: 'base_product_description',
+        type: {
+          name: 'String'
+        }
+      },
+      genericValue: {
+        required: false,
+        serializedName: 'details.max_product_image.generic_value',
+        type: {
+          name: 'String'
+        }
+      },
+      odatavalue: {
+        required: false,
+        serializedName: 'details.max_product_image.@odata\\.value',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};

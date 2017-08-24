@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestAzureSpecialParametersTestClient } from "../autoRestAzureSpecialParametersTestClient";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +30,15 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * '2.0' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMethodLocalValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMethodLocalValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let apiVersion = '2.0';
     // Validate
@@ -124,21 +122,16 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * null to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.apiVersion] This should appear as a method
-   * parameter, use value null, this should result in no serialized parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ApiVersionLocalGetMethodLocalNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMethodLocalNullWithHttpOperationResponse(options?: { apiVersion? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMethodLocalNullWithHttpOperationResponse(options?: Models.ApiVersionLocalGetMethodLocalNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let apiVersion = (options && options.apiVersion !== undefined) ? options.apiVersion : undefined;
     // Validate
@@ -227,18 +220,15 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * '2.0' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getPathLocalValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getPathLocalValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let apiVersion = '2.0';
     // Validate
@@ -322,18 +312,15 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * '2.0' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSwaggerLocalValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSwaggerLocalValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let apiVersion = '2.0';
     // Validate
@@ -417,10 +404,7 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * '2.0' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -428,17 +412,17 @@ export class ApiVersionLocal {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMethodLocalValid(): Promise<void>;
-  getMethodLocalValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getMethodLocalValid(options: msRest.RequestOptionsBase): Promise<void>;
   getMethodLocalValid(callback: msRest.ServiceCallback<void>): void;
-  getMethodLocalValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getMethodLocalValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getMethodLocalValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getMethodLocalValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -465,13 +449,8 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * null to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.apiVersion] This should appear as a method
-   * parameter, use value null, this should result in no serialized parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ApiVersionLocalGetMethodLocalNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -479,17 +458,17 @@ export class ApiVersionLocal {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMethodLocalNull(): Promise<void>;
-  getMethodLocalNull(options: { apiVersion? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getMethodLocalNull(options: Models.ApiVersionLocalGetMethodLocalNullOptionalParams): Promise<void>;
   getMethodLocalNull(callback: msRest.ServiceCallback<void>): void;
-  getMethodLocalNull(options: { apiVersion? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getMethodLocalNull(options?: { apiVersion? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getMethodLocalNull(options: Models.ApiVersionLocalGetMethodLocalNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getMethodLocalNull(options?: Models.ApiVersionLocalGetMethodLocalNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -516,10 +495,7 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * '2.0' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -527,17 +503,17 @@ export class ApiVersionLocal {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getPathLocalValid(): Promise<void>;
-  getPathLocalValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getPathLocalValid(options: msRest.RequestOptionsBase): Promise<void>;
   getPathLocalValid(callback: msRest.ServiceCallback<void>): void;
-  getPathLocalValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getPathLocalValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getPathLocalValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getPathLocalValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -564,10 +540,7 @@ export class ApiVersionLocal {
    * Get method with api-version modeled in the method.  pass in api-version =
    * '2.0' to succeed
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -575,17 +548,17 @@ export class ApiVersionLocal {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSwaggerLocalValid(): Promise<void>;
-  getSwaggerLocalValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getSwaggerLocalValid(options: msRest.RequestOptionsBase): Promise<void>;
   getSwaggerLocalValid(callback: msRest.ServiceCallback<void>): void;
-  getSwaggerLocalValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getSwaggerLocalValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getSwaggerLocalValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getSwaggerLocalValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

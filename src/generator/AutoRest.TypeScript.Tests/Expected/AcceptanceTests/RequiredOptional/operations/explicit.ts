@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestRequiredOptionalTestService } from '../autoRestRequiredOptionalTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestRequiredOptionalTestService } from "../autoRestRequiredOptionalTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -32,18 +32,15 @@ export class Explicit {
    *
    * @param {number} bodyParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredIntegerParameterWithHttpOperationResponse(bodyParameter: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredIntegerParameterWithHttpOperationResponse(bodyParameter: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -146,20 +143,16 @@ export class Explicit {
   /**
    * Test explicitly optional integer. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalIntegerParameterOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalIntegerParameterWithHttpOperationResponse(options?: { bodyParameter? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalIntegerParameterWithHttpOperationResponse(options?: Models.ExplicitPostOptionalIntegerParameterOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bodyParameter = (options && options.bodyParameter !== undefined) ? options.bodyParameter : undefined;
     // Validate
@@ -255,18 +248,15 @@ export class Explicit {
    *
    * @param {number} value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredIntegerPropertyWithHttpOperationResponse(value: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredIntegerPropertyWithHttpOperationResponse(value: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -369,20 +359,16 @@ export class Explicit {
    * Test explicitly optional integer. Please put a valid int-wrapper with
    * 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.value]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalIntegerPropertyOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalIntegerPropertyWithHttpOperationResponse(options?: { value? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalIntegerPropertyWithHttpOperationResponse(options?: Models.ExplicitPostOptionalIntegerPropertyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
     // Validate
@@ -476,18 +462,15 @@ export class Explicit {
    *
    * @param {number} headerParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredIntegerHeaderWithHttpOperationResponse(headerParameter: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredIntegerHeaderWithHttpOperationResponse(headerParameter: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -574,20 +557,16 @@ export class Explicit {
    * Test explicitly optional integer. Please put a header 'headerParameter' =>
    * null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.headerParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalIntegerHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalIntegerHeaderWithHttpOperationResponse(options?: { headerParameter? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalIntegerHeaderWithHttpOperationResponse(options?: Models.ExplicitPostOptionalIntegerHeaderOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let headerParameter = (options && options.headerParameter !== undefined) ? options.headerParameter : undefined;
     // Validate
@@ -665,18 +644,15 @@ export class Explicit {
    *
    * @param {string} bodyParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredStringParameterWithHttpOperationResponse(bodyParameter: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredStringParameterWithHttpOperationResponse(bodyParameter: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -779,20 +755,16 @@ export class Explicit {
   /**
    * Test explicitly optional string. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalStringParameterOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalStringParameterWithHttpOperationResponse(options?: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalStringParameterWithHttpOperationResponse(options?: Models.ExplicitPostOptionalStringParameterOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bodyParameter = (options && options.bodyParameter !== undefined) ? options.bodyParameter : undefined;
     // Validate
@@ -888,18 +860,15 @@ export class Explicit {
    *
    * @param {string} value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredStringPropertyWithHttpOperationResponse(value: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredStringPropertyWithHttpOperationResponse(value: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1002,20 +971,16 @@ export class Explicit {
    * Test explicitly optional integer. Please put a valid string-wrapper with
    * 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.value]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalStringPropertyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalStringPropertyWithHttpOperationResponse(options?: { value? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalStringPropertyWithHttpOperationResponse(options?: Models.ExplicitPostOptionalStringPropertyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
     // Validate
@@ -1109,18 +1074,15 @@ export class Explicit {
    *
    * @param {string} headerParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredStringHeaderWithHttpOperationResponse(headerParameter: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredStringHeaderWithHttpOperationResponse(headerParameter: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1207,20 +1169,16 @@ export class Explicit {
    * Test explicitly optional string. Please put a header 'headerParameter' =>
    * null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalStringHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalStringHeaderWithHttpOperationResponse(options?: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalStringHeaderWithHttpOperationResponse(options?: Models.ExplicitPostOptionalStringHeaderOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bodyParameter = (options && options.bodyParameter !== undefined) ? options.bodyParameter : undefined;
     // Validate
@@ -1296,24 +1254,17 @@ export class Explicit {
    * Test explicitly required complex object. Please put null and the client
    * library should throw before the request is sent.
    *
-   * @param {object} bodyParameter
+   * @param {Product} bodyParameter
    *
-   * @param {number} bodyParameter.id
-   *
-   * @param {string} [bodyParameter.name]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredClassParameterWithHttpOperationResponse(bodyParameter: Models.Product, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredClassParameterWithHttpOperationResponse(bodyParameter: Models.Product, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1410,24 +1361,16 @@ export class Explicit {
   /**
    * Test explicitly optional complex object. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.bodyParameter]
-   *
-   * @param {number} options.bodyParameter.id
-   *
-   * @param {string} [options.bodyParameter.name]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalClassParameterOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalClassParameterWithHttpOperationResponse(options?: { bodyParameter? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalClassParameterWithHttpOperationResponse(options?: Models.ExplicitPostOptionalClassParameterOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bodyParameter = (options && options.bodyParameter !== undefined) ? options.bodyParameter : undefined;
 
@@ -1507,24 +1450,17 @@ export class Explicit {
    * with 'value' = null and the client library should throw before the request
    * is sent.
    *
-   * @param {object} value
+   * @param {Product} value
    *
-   * @param {number} value.id
-   *
-   * @param {string} [value.name]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredClassPropertyWithHttpOperationResponse(value: Models.Product, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredClassPropertyWithHttpOperationResponse(value: Models.Product, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1627,24 +1563,16 @@ export class Explicit {
    * Test explicitly optional complex object. Please put a valid class-wrapper
    * with 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.value]
-   *
-   * @param {number} options.value.id
-   *
-   * @param {string} [options.value.name]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalClassPropertyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalClassPropertyWithHttpOperationResponse(options?: { value? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalClassPropertyWithHttpOperationResponse(options?: Models.ExplicitPostOptionalClassPropertyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
   let bodyParameter: any
@@ -1728,20 +1656,17 @@ export class Explicit {
    * Test explicitly required array. Please put null and the client library
    * should throw before the request is sent.
    *
-   * @param {array} bodyParameter
+   * @param {string[]} bodyParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredArrayParameterWithHttpOperationResponse(bodyParameter: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredArrayParameterWithHttpOperationResponse(bodyParameter: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1856,20 +1781,16 @@ export class Explicit {
   /**
    * Test explicitly optional array. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalArrayParameterOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalArrayParameterWithHttpOperationResponse(options?: { bodyParameter? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalArrayParameterWithHttpOperationResponse(options?: Models.ExplicitPostOptionalArrayParameterOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bodyParameter = (options && options.bodyParameter !== undefined) ? options.bodyParameter : undefined;
     // Validate
@@ -1974,20 +1895,17 @@ export class Explicit {
    * 'value' = null and the client library should throw before the request is
    * sent.
    *
-   * @param {array} value
+   * @param {string[]} value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredArrayPropertyWithHttpOperationResponse(value: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredArrayPropertyWithHttpOperationResponse(value: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2095,20 +2013,16 @@ export class Explicit {
    * Test explicitly optional array. Please put a valid array-wrapper with
    * 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.value]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalArrayPropertyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalArrayPropertyWithHttpOperationResponse(options?: { value? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalArrayPropertyWithHttpOperationResponse(options?: Models.ExplicitPostOptionalArrayPropertyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
     // Validate
@@ -2204,20 +2118,17 @@ export class Explicit {
    * Test explicitly required array. Please put a header 'headerParameter' =>
    * null and the client library should throw before the request is sent.
    *
-   * @param {array} headerParameter
+   * @param {string[]} headerParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredArrayHeaderWithHttpOperationResponse(headerParameter: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredArrayHeaderWithHttpOperationResponse(headerParameter: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2309,20 +2220,16 @@ export class Explicit {
    * Test explicitly optional integer. Please put a header 'headerParameter' =>
    * null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.headerParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalArrayHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalArrayHeaderWithHttpOperationResponse(options?: { headerParameter? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalArrayHeaderWithHttpOperationResponse(options?: Models.ExplicitPostOptionalArrayHeaderOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let headerParameter = (options && options.headerParameter !== undefined) ? options.headerParameter : undefined;
     // Validate
@@ -2404,10 +2311,7 @@ export class Explicit {
    *
    * @param {number} bodyParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2415,18 +2319,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredIntegerParameter(bodyParameter: number): Promise<Models.ErrorModel>;
-  postRequiredIntegerParameter(bodyParameter: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredIntegerParameter(bodyParameter: number, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredIntegerParameter(bodyParameter: number, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredIntegerParameter(bodyParameter: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredIntegerParameter(bodyParameter: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredIntegerParameter(bodyParameter: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredIntegerParameter(bodyParameter: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2452,12 +2356,8 @@ export class Explicit {
   /**
    * Test explicitly optional integer. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalIntegerParameterOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2465,17 +2365,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalIntegerParameter(): Promise<void>;
-  postOptionalIntegerParameter(options: { bodyParameter? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalIntegerParameter(options: Models.ExplicitPostOptionalIntegerParameterOptionalParams): Promise<void>;
   postOptionalIntegerParameter(callback: msRest.ServiceCallback<void>): void;
-  postOptionalIntegerParameter(options: { bodyParameter? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalIntegerParameter(options?: { bodyParameter? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalIntegerParameter(options: Models.ExplicitPostOptionalIntegerParameterOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalIntegerParameter(options?: Models.ExplicitPostOptionalIntegerParameterOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2505,10 +2405,7 @@ export class Explicit {
    *
    * @param {number} value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2516,18 +2413,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredIntegerProperty(value: number): Promise<Models.ErrorModel>;
-  postRequiredIntegerProperty(value: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredIntegerProperty(value: number, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredIntegerProperty(value: number, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredIntegerProperty(value: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredIntegerProperty(value: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredIntegerProperty(value: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredIntegerProperty(value: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2554,12 +2451,8 @@ export class Explicit {
    * Test explicitly optional integer. Please put a valid int-wrapper with
    * 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.value]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalIntegerPropertyOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2567,17 +2460,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalIntegerProperty(): Promise<void>;
-  postOptionalIntegerProperty(options: { value? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalIntegerProperty(options: Models.ExplicitPostOptionalIntegerPropertyOptionalParams): Promise<void>;
   postOptionalIntegerProperty(callback: msRest.ServiceCallback<void>): void;
-  postOptionalIntegerProperty(options: { value? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalIntegerProperty(options?: { value? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalIntegerProperty(options: Models.ExplicitPostOptionalIntegerPropertyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalIntegerProperty(options?: Models.ExplicitPostOptionalIntegerPropertyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2606,10 +2499,7 @@ export class Explicit {
    *
    * @param {number} headerParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2617,18 +2507,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredIntegerHeader(headerParameter: number): Promise<Models.ErrorModel>;
-  postRequiredIntegerHeader(headerParameter: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredIntegerHeader(headerParameter: number, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredIntegerHeader(headerParameter: number, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredIntegerHeader(headerParameter: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredIntegerHeader(headerParameter: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredIntegerHeader(headerParameter: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredIntegerHeader(headerParameter: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2655,12 +2545,8 @@ export class Explicit {
    * Test explicitly optional integer. Please put a header 'headerParameter' =>
    * null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.headerParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalIntegerHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2668,17 +2554,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalIntegerHeader(): Promise<void>;
-  postOptionalIntegerHeader(options: { headerParameter? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalIntegerHeader(options: Models.ExplicitPostOptionalIntegerHeaderOptionalParams): Promise<void>;
   postOptionalIntegerHeader(callback: msRest.ServiceCallback<void>): void;
-  postOptionalIntegerHeader(options: { headerParameter? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalIntegerHeader(options?: { headerParameter? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalIntegerHeader(options: Models.ExplicitPostOptionalIntegerHeaderOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalIntegerHeader(options?: Models.ExplicitPostOptionalIntegerHeaderOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2707,10 +2593,7 @@ export class Explicit {
    *
    * @param {string} bodyParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2718,18 +2601,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredStringParameter(bodyParameter: string): Promise<Models.ErrorModel>;
-  postRequiredStringParameter(bodyParameter: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredStringParameter(bodyParameter: string, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredStringParameter(bodyParameter: string, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredStringParameter(bodyParameter: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredStringParameter(bodyParameter: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredStringParameter(bodyParameter: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredStringParameter(bodyParameter: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2755,12 +2638,8 @@ export class Explicit {
   /**
    * Test explicitly optional string. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalStringParameterOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2768,17 +2647,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalStringParameter(): Promise<void>;
-  postOptionalStringParameter(options: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalStringParameter(options: Models.ExplicitPostOptionalStringParameterOptionalParams): Promise<void>;
   postOptionalStringParameter(callback: msRest.ServiceCallback<void>): void;
-  postOptionalStringParameter(options: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalStringParameter(options?: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalStringParameter(options: Models.ExplicitPostOptionalStringParameterOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalStringParameter(options?: Models.ExplicitPostOptionalStringParameterOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2808,10 +2687,7 @@ export class Explicit {
    *
    * @param {string} value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2819,18 +2695,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredStringProperty(value: string): Promise<Models.ErrorModel>;
-  postRequiredStringProperty(value: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredStringProperty(value: string, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredStringProperty(value: string, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredStringProperty(value: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredStringProperty(value: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredStringProperty(value: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredStringProperty(value: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2857,12 +2733,8 @@ export class Explicit {
    * Test explicitly optional integer. Please put a valid string-wrapper with
    * 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.value]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalStringPropertyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2870,17 +2742,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalStringProperty(): Promise<void>;
-  postOptionalStringProperty(options: { value? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalStringProperty(options: Models.ExplicitPostOptionalStringPropertyOptionalParams): Promise<void>;
   postOptionalStringProperty(callback: msRest.ServiceCallback<void>): void;
-  postOptionalStringProperty(options: { value? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalStringProperty(options?: { value? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalStringProperty(options: Models.ExplicitPostOptionalStringPropertyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalStringProperty(options?: Models.ExplicitPostOptionalStringPropertyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2909,10 +2781,7 @@ export class Explicit {
    *
    * @param {string} headerParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2920,18 +2789,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredStringHeader(headerParameter: string): Promise<Models.ErrorModel>;
-  postRequiredStringHeader(headerParameter: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredStringHeader(headerParameter: string, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredStringHeader(headerParameter: string, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredStringHeader(headerParameter: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredStringHeader(headerParameter: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredStringHeader(headerParameter: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredStringHeader(headerParameter: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2958,12 +2827,8 @@ export class Explicit {
    * Test explicitly optional string. Please put a header 'headerParameter' =>
    * null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalStringHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2971,17 +2836,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalStringHeader(): Promise<void>;
-  postOptionalStringHeader(options: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalStringHeader(options: Models.ExplicitPostOptionalStringHeaderOptionalParams): Promise<void>;
   postOptionalStringHeader(callback: msRest.ServiceCallback<void>): void;
-  postOptionalStringHeader(options: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalStringHeader(options?: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalStringHeader(options: Models.ExplicitPostOptionalStringHeaderOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalStringHeader(options?: Models.ExplicitPostOptionalStringHeaderOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3008,16 +2873,9 @@ export class Explicit {
    * Test explicitly required complex object. Please put null and the client
    * library should throw before the request is sent.
    *
-   * @param {object} bodyParameter
+   * @param {Product} bodyParameter
    *
-   * @param {number} bodyParameter.id
-   *
-   * @param {string} [bodyParameter.name]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3025,18 +2883,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredClassParameter(bodyParameter: Models.Product): Promise<Models.ErrorModel>;
-  postRequiredClassParameter(bodyParameter: Models.Product, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredClassParameter(bodyParameter: Models.Product, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredClassParameter(bodyParameter: Models.Product, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredClassParameter(bodyParameter: Models.Product, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredClassParameter(bodyParameter: Models.Product, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredClassParameter(bodyParameter: Models.Product, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredClassParameter(bodyParameter: Models.Product, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3062,16 +2920,8 @@ export class Explicit {
   /**
    * Test explicitly optional complex object. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.bodyParameter]
-   *
-   * @param {number} options.bodyParameter.id
-   *
-   * @param {string} [options.bodyParameter.name]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalClassParameterOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3079,17 +2929,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalClassParameter(): Promise<void>;
-  postOptionalClassParameter(options: { bodyParameter? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalClassParameter(options: Models.ExplicitPostOptionalClassParameterOptionalParams): Promise<void>;
   postOptionalClassParameter(callback: msRest.ServiceCallback<void>): void;
-  postOptionalClassParameter(options: { bodyParameter? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalClassParameter(options?: { bodyParameter? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalClassParameter(options: Models.ExplicitPostOptionalClassParameterOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalClassParameter(options?: Models.ExplicitPostOptionalClassParameterOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3117,16 +2967,9 @@ export class Explicit {
    * with 'value' = null and the client library should throw before the request
    * is sent.
    *
-   * @param {object} value
+   * @param {Product} value
    *
-   * @param {number} value.id
-   *
-   * @param {string} [value.name]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3134,18 +2977,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredClassProperty(value: Models.Product): Promise<Models.ErrorModel>;
-  postRequiredClassProperty(value: Models.Product, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredClassProperty(value: Models.Product, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredClassProperty(value: Models.Product, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredClassProperty(value: Models.Product, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredClassProperty(value: Models.Product, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredClassProperty(value: Models.Product, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredClassProperty(value: Models.Product, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3172,16 +3015,8 @@ export class Explicit {
    * Test explicitly optional complex object. Please put a valid class-wrapper
    * with 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.value]
-   *
-   * @param {number} options.value.id
-   *
-   * @param {string} [options.value.name]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalClassPropertyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3189,17 +3024,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalClassProperty(): Promise<void>;
-  postOptionalClassProperty(options: { value? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalClassProperty(options: Models.ExplicitPostOptionalClassPropertyOptionalParams): Promise<void>;
   postOptionalClassProperty(callback: msRest.ServiceCallback<void>): void;
-  postOptionalClassProperty(options: { value? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalClassProperty(options?: { value? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalClassProperty(options: Models.ExplicitPostOptionalClassPropertyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalClassProperty(options?: Models.ExplicitPostOptionalClassPropertyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3226,12 +3061,9 @@ export class Explicit {
    * Test explicitly required array. Please put null and the client library
    * should throw before the request is sent.
    *
-   * @param {array} bodyParameter
+   * @param {string[]} bodyParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3239,18 +3071,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredArrayParameter(bodyParameter: string[]): Promise<Models.ErrorModel>;
-  postRequiredArrayParameter(bodyParameter: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredArrayParameter(bodyParameter: string[], options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredArrayParameter(bodyParameter: string[], callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredArrayParameter(bodyParameter: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredArrayParameter(bodyParameter: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredArrayParameter(bodyParameter: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredArrayParameter(bodyParameter: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3276,12 +3108,8 @@ export class Explicit {
   /**
    * Test explicitly optional array. Please put null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalArrayParameterOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3289,17 +3117,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalArrayParameter(): Promise<void>;
-  postOptionalArrayParameter(options: { bodyParameter? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalArrayParameter(options: Models.ExplicitPostOptionalArrayParameterOptionalParams): Promise<void>;
   postOptionalArrayParameter(callback: msRest.ServiceCallback<void>): void;
-  postOptionalArrayParameter(options: { bodyParameter? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalArrayParameter(options?: { bodyParameter? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalArrayParameter(options: Models.ExplicitPostOptionalArrayParameterOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalArrayParameter(options?: Models.ExplicitPostOptionalArrayParameterOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3327,12 +3155,9 @@ export class Explicit {
    * 'value' = null and the client library should throw before the request is
    * sent.
    *
-   * @param {array} value
+   * @param {string[]} value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3340,18 +3165,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredArrayProperty(value: string[]): Promise<Models.ErrorModel>;
-  postRequiredArrayProperty(value: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredArrayProperty(value: string[], options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredArrayProperty(value: string[], callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredArrayProperty(value: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredArrayProperty(value: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredArrayProperty(value: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredArrayProperty(value: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3378,12 +3203,8 @@ export class Explicit {
    * Test explicitly optional array. Please put a valid array-wrapper with
    * 'value' = null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.value]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalArrayPropertyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3391,17 +3212,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalArrayProperty(): Promise<void>;
-  postOptionalArrayProperty(options: { value? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalArrayProperty(options: Models.ExplicitPostOptionalArrayPropertyOptionalParams): Promise<void>;
   postOptionalArrayProperty(callback: msRest.ServiceCallback<void>): void;
-  postOptionalArrayProperty(options: { value? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalArrayProperty(options?: { value? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalArrayProperty(options: Models.ExplicitPostOptionalArrayPropertyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalArrayProperty(options?: Models.ExplicitPostOptionalArrayPropertyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3428,12 +3249,9 @@ export class Explicit {
    * Test explicitly required array. Please put a header 'headerParameter' =>
    * null and the client library should throw before the request is sent.
    *
-   * @param {array} headerParameter
+   * @param {string[]} headerParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3441,18 +3259,18 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequiredArrayHeader(headerParameter: string[]): Promise<Models.ErrorModel>;
-  postRequiredArrayHeader(headerParameter: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  postRequiredArrayHeader(headerParameter: string[], options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   postRequiredArrayHeader(headerParameter: string[], callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredArrayHeader(headerParameter: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  postRequiredArrayHeader(headerParameter: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  postRequiredArrayHeader(headerParameter: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  postRequiredArrayHeader(headerParameter: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3479,12 +3297,8 @@ export class Explicit {
    * Test explicitly optional integer. Please put a header 'headerParameter' =>
    * null.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.headerParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ExplicitPostOptionalArrayHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3492,17 +3306,17 @@ export class Explicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptionalArrayHeader(): Promise<void>;
-  postOptionalArrayHeader(options: { headerParameter? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptionalArrayHeader(options: Models.ExplicitPostOptionalArrayHeaderOptionalParams): Promise<void>;
   postOptionalArrayHeader(callback: msRest.ServiceCallback<void>): void;
-  postOptionalArrayHeader(options: { headerParameter? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptionalArrayHeader(options?: { headerParameter? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptionalArrayHeader(options: Models.ExplicitPostOptionalArrayHeaderOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptionalArrayHeader(options?: Models.ExplicitPostOptionalArrayHeaderOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

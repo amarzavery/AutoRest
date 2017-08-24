@@ -198,3 +198,69 @@ export const ErrorModel = {
     }
   }
 };
+
+export const ComplexModelClientCreateOptionalParams = {
+  required: false,
+  serializedName: 'CreateOptions',
+  type: {
+    name: 'Composite',
+    className: 'ComplexModelClientCreateOptionalParams',
+    modelProperties: {
+      productDictionaryOfArray: {
+        required: false,
+        serializedName: 'productDictionaryOfArray',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'ArrayElementType',
+              type: {
+                name: 'Sequence',
+                element: {
+                    required: false,
+                    serializedName: 'ProductElementType',
+                    type: {
+                      name: 'Composite',
+                      className: 'Product'
+                    }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ComplexModelClientUpdateOptionalParams = {
+  required: false,
+  serializedName: 'UpdateOptions',
+  type: {
+    name: 'Composite',
+    className: 'ComplexModelClientUpdateOptionalParams',
+    modelProperties: {
+      productArrayOfDictionary: {
+        required: false,
+        serializedName: 'productArrayOfDictionary',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'ObjectElementType',
+              type: {
+                name: 'Dictionary',
+                value: {
+                    required: false,
+                    serializedName: 'ProductElementType',
+                    type: {
+                      name: 'Composite',
+                      className: 'Product'
+                    }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+};

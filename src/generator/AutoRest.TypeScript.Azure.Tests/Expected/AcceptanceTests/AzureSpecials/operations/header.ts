@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestAzureSpecialParametersTestClient } from "../autoRestAzureSpecialParametersTestClient";
 
 const WebResource = msRest.WebResource;
 
@@ -32,18 +32,15 @@ export class Header {
    *
    * @param {string} fooClientRequestId The fooRequestId
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async customNamedRequestIdWithHttpOperationResponse(fooClientRequestId: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async customNamedRequestIdWithHttpOperationResponse(fooClientRequestId: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -131,25 +128,19 @@ export class Header {
    * Send foo-client-request-id = 9C4D50EE-2D56-4CD3-8152-34347DC9F2B0 in the
    * header of the request, via a parameter group
    *
-   * @param {object} headerCustomNamedRequestIdParamGroupingParameters Additional
-   * parameters for the operation
+   * @param {HeaderCustomNamedRequestIdParamGroupingParameters}
+   * headerCustomNamedRequestIdParamGroupingParameters Additional parameters for
+   * the operation
    *
-   * @param {string}
-   * headerCustomNamedRequestIdParamGroupingParameters.fooClientRequestId The
-   * fooRequestId
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async customNamedRequestIdParamGroupingWithHttpOperationResponse(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async customNamedRequestIdParamGroupingWithHttpOperationResponse(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -251,18 +242,15 @@ export class Header {
    *
    * @param {string} fooClientRequestId The fooRequestId
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async customNamedRequestIdHeadWithHttpOperationResponse(fooClientRequestId: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async customNamedRequestIdHeadWithHttpOperationResponse(fooClientRequestId: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -353,10 +341,7 @@ export class Header {
    *
    * @param {string} fooClientRequestId The fooRequestId
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -364,17 +349,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   customNamedRequestId(fooClientRequestId: string): Promise<void>;
-  customNamedRequestId(fooClientRequestId: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  customNamedRequestId(fooClientRequestId: string, options: msRest.RequestOptionsBase): Promise<void>;
   customNamedRequestId(fooClientRequestId: string, callback: msRest.ServiceCallback<void>): void;
-  customNamedRequestId(fooClientRequestId: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  customNamedRequestId(fooClientRequestId: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  customNamedRequestId(fooClientRequestId: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  customNamedRequestId(fooClientRequestId: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -401,17 +386,11 @@ export class Header {
    * Send foo-client-request-id = 9C4D50EE-2D56-4CD3-8152-34347DC9F2B0 in the
    * header of the request, via a parameter group
    *
-   * @param {object} headerCustomNamedRequestIdParamGroupingParameters Additional
-   * parameters for the operation
+   * @param {HeaderCustomNamedRequestIdParamGroupingParameters}
+   * headerCustomNamedRequestIdParamGroupingParameters Additional parameters for
+   * the operation
    *
-   * @param {string}
-   * headerCustomNamedRequestIdParamGroupingParameters.fooClientRequestId The
-   * fooRequestId
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -419,17 +398,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters): Promise<void>;
-  customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options: msRest.RequestOptionsBase): Promise<void>;
   customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, callback: msRest.ServiceCallback<void>): void;
-  customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  customNamedRequestIdParamGrouping(headerCustomNamedRequestIdParamGroupingParameters: Models.HeaderCustomNamedRequestIdParamGroupingParameters, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -458,10 +437,7 @@ export class Header {
    *
    * @param {string} fooClientRequestId The fooRequestId
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -473,13 +449,13 @@ export class Header {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   customNamedRequestIdHead(fooClientRequestId: string): Promise<boolean>;
-  customNamedRequestIdHead(fooClientRequestId: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  customNamedRequestIdHead(fooClientRequestId: string, options: msRest.RequestOptionsBase): Promise<boolean>;
   customNamedRequestIdHead(fooClientRequestId: string, callback: msRest.ServiceCallback<boolean>): void;
-  customNamedRequestIdHead(fooClientRequestId: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  customNamedRequestIdHead(fooClientRequestId: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  customNamedRequestIdHead(fooClientRequestId: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  customNamedRequestIdHead(fooClientRequestId: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

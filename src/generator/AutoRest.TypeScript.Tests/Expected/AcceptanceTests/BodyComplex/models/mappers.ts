@@ -969,6 +969,160 @@ export const ReadonlyObj = {
   }
 };
 
+export const PrimitivePutDurationOptionalParams = {
+  required: false,
+  serializedName: 'PutDurationOptions',
+  type: {
+    name: 'Composite',
+    className: 'PrimitivePutDurationOptionalParams',
+    modelProperties: {
+      field: {
+        required: false,
+        serializedName: 'field',
+        type: {
+          name: 'TimeSpan'
+        }
+      }
+    }
+  }
+};
+
+export const PrimitivePutByteOptionalParams = {
+  required: false,
+  serializedName: 'PutByteOptions',
+  type: {
+    name: 'Composite',
+    className: 'PrimitivePutByteOptionalParams',
+    modelProperties: {
+      field: {
+        required: false,
+        serializedName: 'field',
+        type: {
+          name: 'ByteArray'
+        }
+      }
+    }
+  }
+};
+
+export const ArrayModelPutValidOptionalParams = {
+  required: false,
+  serializedName: 'PutValidOptions',
+  type: {
+    name: 'Composite',
+    className: 'ArrayModelPutValidOptionalParams',
+    modelProperties: {
+      arrayProperty: {
+        required: false,
+        serializedName: 'array',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ArrayModelPutEmptyOptionalParams = {
+  required: false,
+  serializedName: 'PutEmptyOptions',
+  type: {
+    name: 'Composite',
+    className: 'ArrayModelPutEmptyOptionalParams',
+    modelProperties: {
+      arrayProperty: {
+        required: false,
+        serializedName: 'array',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DictionaryPutValidOptionalParams = {
+  required: false,
+  serializedName: 'PutValidOptions',
+  type: {
+    name: 'Composite',
+    className: 'DictionaryPutValidOptionalParams',
+    modelProperties: {
+      defaultProgram: {
+        required: false,
+        serializedName: 'defaultProgram',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DictionaryPutEmptyOptionalParams = {
+  required: false,
+  serializedName: 'PutEmptyOptions',
+  type: {
+    name: 'Composite',
+    className: 'DictionaryPutEmptyOptionalParams',
+    modelProperties: {
+      defaultProgram: {
+        required: false,
+        serializedName: 'defaultProgram',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ReadonlypropertyPutValidOptionalParams = {
+  required: false,
+  serializedName: 'PutValidOptions',
+  type: {
+    name: 'Composite',
+    className: 'ReadonlypropertyPutValidOptionalParams',
+    modelProperties: {
+      size: {
+        required: false,
+        serializedName: 'size',
+        type: {
+          name: 'Number'
+        }
+      }
+    }
+  }
+};
+
 export const discriminators = {
   'Fish' : Fish,
   'Fish.salmon' : Salmon,

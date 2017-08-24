@@ -8,47 +8,109 @@
  * regenerated.
  */
 
-import { BaseResource, CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError } from "ms-rest-azure-ts";
+import { RequestOptionsBase } from "ms-rest-ts";
 
 export { BaseResource, CloudError };
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {number} [constantId]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {number} [constantId]
+   */
   constantId?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the OdataFilter class.
- * @constructor
- * @member {number} [id]
- * @member {string} [name]
+ * @interface
+ * An interface representing OdataFilter.
  */
 export interface OdataFilter {
+  /**
+   * @member {number} [id]
+   */
   id?: number;
+  /**
+   * @member {string} [name]
+   */
   name?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the HeaderCustomNamedRequestIdParamGroupingParameters class.
- * @constructor
+ * @interface
+ * An interface representing HeaderCustomNamedRequestIdParamGroupingParameters.
  * Additional parameters for the Header_customNamedRequestIdParamGrouping
  * operation.
  *
- * @member {string} fooClientRequestId The fooRequestId
  */
 export interface HeaderCustomNamedRequestIdParamGroupingParameters {
+  /**
+   * @member {string} fooClientRequestId The fooRequestId
+   */
   fooClientRequestId: string;
+}
+
+/**
+ * @interface
+ * An interface representing ApiVersionLocalGetMethodLocalNullOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface ApiVersionLocalGetMethodLocalNullOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [apiVersion] This should appear as a method parameter,
+   * use value null, this should result in no serialized parameter
+   */
+  apiVersion?: string;
+}
+
+/**
+ * @interface
+ * An interface representing SkipUrlEncodingGetMethodQueryNullOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface SkipUrlEncodingGetMethodQueryNullOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [q1] Unencoded query parameter with value null
+   */
+  q1?: string;
+}
+
+/**
+ * @interface
+ * An interface representing OdataGetWithFilterOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface OdataGetWithFilterOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [filter] The filter parameter with value '$filter=id gt 5
+   * and name eq 'foo''.
+   */
+  filter?: string;
+  /**
+   * @member {number} [top] The top parameter with value 10.
+   */
+  top?: number;
+  /**
+   * @member {string} [orderby] The orderby parameter with value id.
+   */
+  orderby?: string;
 }
 

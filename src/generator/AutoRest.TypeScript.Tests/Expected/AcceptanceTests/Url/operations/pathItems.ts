@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestUrlTestService } from '../autoRestUrlTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestUrlTestService } from "../autoRestUrlTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -37,24 +38,16 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain value
-   * 'localStringQuery'
-   *
-   * @param {string} [options.pathItemStringQuery] A string value
-   * 'pathItemStringQuery' that appears as a query parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetAllWithValuesOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getAllWithValuesWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getAllWithValuesWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetAllWithValuesOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let localStringQuery = (options && options.localStringQuery !== undefined) ? options.localStringQuery : undefined;
     let pathItemStringQuery = (options && options.pathItemStringQuery !== undefined) ? options.pathItemStringQuery : undefined;
@@ -166,24 +159,16 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain value
-   * 'localStringQuery'
-   *
-   * @param {string} [options.pathItemStringQuery] A string value
-   * 'pathItemStringQuery' that appears as a query parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetGlobalQueryNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getGlobalQueryNullWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getGlobalQueryNullWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetGlobalQueryNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let localStringQuery = (options && options.localStringQuery !== undefined) ? options.localStringQuery : undefined;
     let pathItemStringQuery = (options && options.pathItemStringQuery !== undefined) ? options.pathItemStringQuery : undefined;
@@ -295,23 +280,16 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain null value
-   *
-   * @param {string} [options.pathItemStringQuery] A string value
-   * 'pathItemStringQuery' that appears as a query parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetGlobalAndLocalQueryNullOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getGlobalAndLocalQueryNullWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getGlobalAndLocalQueryNullWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetGlobalAndLocalQueryNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let localStringQuery = (options && options.localStringQuery !== undefined) ? options.localStringQuery : undefined;
     let pathItemStringQuery = (options && options.pathItemStringQuery !== undefined) ? options.pathItemStringQuery : undefined;
@@ -423,22 +401,16 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain value null
-   *
-   * @param {string} [options.pathItemStringQuery] should contain value null
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetLocalPathItemQueryNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalPathItemQueryNullWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalPathItemQueryNullWithHttpOperationResponse(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetLocalPathItemQueryNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let localStringQuery = (options && options.localStringQuery !== undefined) ? options.localStringQuery : undefined;
     let pathItemStringQuery = (options && options.pathItemStringQuery !== undefined) ? options.pathItemStringQuery : undefined;
@@ -551,16 +523,8 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain value
-   * 'localStringQuery'
-   *
-   * @param {string} [options.pathItemStringQuery] A string value
-   * 'pathItemStringQuery' that appears as a query parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetAllWithValuesOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -568,17 +532,17 @@ export class PathItems {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getAllWithValues(localStringPath: string, pathItemStringPath: string): Promise<void>;
-  getAllWithValues(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getAllWithValues(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetAllWithValuesOptionalParams): Promise<void>;
   getAllWithValues(localStringPath: string, pathItemStringPath: string, callback: msRest.ServiceCallback<void>): void;
-  getAllWithValues(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getAllWithValues(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getAllWithValues(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetAllWithValuesOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getAllWithValues(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetAllWithValuesOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -612,16 +576,8 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain value
-   * 'localStringQuery'
-   *
-   * @param {string} [options.pathItemStringQuery] A string value
-   * 'pathItemStringQuery' that appears as a query parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetGlobalQueryNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -629,17 +585,17 @@ export class PathItems {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getGlobalQueryNull(localStringPath: string, pathItemStringPath: string): Promise<void>;
-  getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetGlobalQueryNullOptionalParams): Promise<void>;
   getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, callback: msRest.ServiceCallback<void>): void;
-  getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetGlobalQueryNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getGlobalQueryNull(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetGlobalQueryNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -673,15 +629,8 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain null value
-   *
-   * @param {string} [options.pathItemStringQuery] A string value
-   * 'pathItemStringQuery' that appears as a query parameter
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetGlobalAndLocalQueryNullOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -689,17 +638,17 @@ export class PathItems {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string): Promise<void>;
-  getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetGlobalAndLocalQueryNullOptionalParams): Promise<void>;
   getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, callback: msRest.ServiceCallback<void>): void;
-  getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetGlobalAndLocalQueryNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getGlobalAndLocalQueryNull(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetGlobalAndLocalQueryNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -733,14 +682,8 @@ export class PathItems {
    * @param {string} pathItemStringPath A string value 'pathItemStringPath' that
    * appears in the path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.localStringQuery] should contain value null
-   *
-   * @param {string} [options.pathItemStringQuery] should contain value null
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PathItemsGetLocalPathItemQueryNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -748,17 +691,17 @@ export class PathItems {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string): Promise<void>;
-  getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetLocalPathItemQueryNullOptionalParams): Promise<void>;
   getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, callback: msRest.ServiceCallback<void>): void;
-  getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, options: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, options?: { localStringQuery? : string, pathItemStringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, options: Models.PathItemsGetLocalPathItemQueryNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getLocalPathItemQueryNull(localStringPath: string, pathItemStringPath: string, options?: Models.PathItemsGetLocalPathItemQueryNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

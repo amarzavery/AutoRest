@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestHttpInfrastructureTestService } from '../autoRestHttpInfrastructureTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHttpInfrastructureTestService } from "../autoRestHttpInfrastructureTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model204NoModelDefaultError200ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model204NoModelDefaultError200ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -118,18 +115,15 @@ export class MultipleResponses {
   /**
    * Send a 204 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model204NoModelDefaultError204ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model204NoModelDefaultError204ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -207,18 +201,15 @@ export class MultipleResponses {
   /**
    * Send a 201 response with valid payload: {'statusCode': '201'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model204NoModelDefaultError201InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model204NoModelDefaultError201InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -296,18 +287,15 @@ export class MultipleResponses {
   /**
    * Send a 202 response with no payload:
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model204NoModelDefaultError202NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model204NoModelDefaultError202NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -386,18 +374,15 @@ export class MultipleResponses {
    * Send a 400 response with valid error payload: {'status': 400, 'message':
    * 'client error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model204NoModelDefaultError400ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model204NoModelDefaultError400ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -475,18 +460,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model201ModelDefaultError200ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model201ModelDefaultError200ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -580,18 +562,15 @@ export class MultipleResponses {
    * Send a 201 response with valid payload: {'statusCode': '201',
    * 'textStatusCode': 'Created'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model201ModelDefaultError201ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model201ModelDefaultError201ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -685,18 +664,15 @@ export class MultipleResponses {
    * Send a 400 response with valid payload: {'code': '400', 'message': 'client
    * error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200Model201ModelDefaultError400ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200Model201ModelDefaultError400ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -789,18 +765,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Object>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA201ModelC404ModelDDefaultError200ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA201ModelC404ModelDDefaultError200ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -908,18 +881,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'httpCode': '201'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Object>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA201ModelC404ModelDDefaultError201ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA201ModelC404ModelDDefaultError201ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1027,18 +997,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'httpStatusCode': '404'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Object>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA201ModelC404ModelDDefaultError404ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA201ModelC404ModelDDefaultError404ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1147,18 +1114,15 @@ export class MultipleResponses {
    * Send a 400 response with valid payload: {'code': '400', 'message': 'client
    * error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Object>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA201ModelC404ModelDDefaultError400ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA201ModelC404ModelDDefaultError400ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1266,18 +1230,15 @@ export class MultipleResponses {
   /**
    * Send a 202 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultError202NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultError202NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1340,18 +1301,15 @@ export class MultipleResponses {
   /**
    * Send a 204 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultError204NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultError204NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1415,18 +1373,15 @@ export class MultipleResponses {
    * Send a 400 response with valid payload: {'code': '400', 'message': 'client
    * error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultError400ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultError400ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1489,18 +1444,15 @@ export class MultipleResponses {
   /**
    * Send a 202 response with an unexpected payload {'property': 'value'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultNone202InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultNone202InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1559,18 +1511,15 @@ export class MultipleResponses {
   /**
    * Send a 204 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultNone204NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultNone204NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1629,18 +1578,15 @@ export class MultipleResponses {
   /**
    * Send a 400 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultNone400NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultNone400NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1699,18 +1645,15 @@ export class MultipleResponses {
   /**
    * Send a 400 response with an unexpected payload {'property': 'value'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get202None204NoneDefaultNone400InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get202None204NoneDefaultNone400InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1769,18 +1712,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultModelA200ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultModelA200ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1855,18 +1795,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultModelA200NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultModelA200NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1941,18 +1878,15 @@ export class MultipleResponses {
   /**
    * Send a 400 response with valid payload: {'statusCode': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultModelA400ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultModelA400ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2027,18 +1961,15 @@ export class MultipleResponses {
   /**
    * Send a 400 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultModelA400NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultModelA400NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2113,18 +2044,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with invalid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultNone200InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultNone200InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2183,18 +2111,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultNone200NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultNone200NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2253,18 +2178,15 @@ export class MultipleResponses {
   /**
    * Send a 400 response with valid payload: {'statusCode': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultNone400InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultNone400InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2323,18 +2245,15 @@ export class MultipleResponses {
   /**
    * Send a 400 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDefaultNone400NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDefaultNone400NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2394,18 +2313,15 @@ export class MultipleResponses {
    * Send a 200 response with no payload, when a payload is expected - client
    * should return a null object of thde type for model A
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA200NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA200NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2479,18 +2395,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with payload {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA200ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA200ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2564,18 +2477,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with invalid payload {'statusCodeInvalid': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA200InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA200InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2650,18 +2560,15 @@ export class MultipleResponses {
    * Send a 400 response with no payload client should treat as an http error
    * with no error model
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA400NoneWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA400NoneWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2735,18 +2642,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with payload {'statusCode': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA400ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA400ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2820,18 +2724,15 @@ export class MultipleResponses {
   /**
    * Send a 200 response with invalid payload {'statusCodeInvalid': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA400InvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA400InvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2905,18 +2806,15 @@ export class MultipleResponses {
   /**
    * Send a 202 response with payload {'statusCode': '202'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<A>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200ModelA202ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200ModelA202ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2990,10 +2888,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3001,18 +2896,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model204NoModelDefaultError200Valid(): Promise<Models.A>;
-  get200Model204NoModelDefaultError200Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model204NoModelDefaultError200Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model204NoModelDefaultError200Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError200Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError200Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model204NoModelDefaultError200Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model204NoModelDefaultError200Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3038,10 +2933,7 @@ export class MultipleResponses {
   /**
    * Send a 204 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3049,18 +2941,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model204NoModelDefaultError204Valid(): Promise<Models.A>;
-  get200Model204NoModelDefaultError204Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model204NoModelDefaultError204Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model204NoModelDefaultError204Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError204Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError204Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model204NoModelDefaultError204Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model204NoModelDefaultError204Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3086,10 +2978,7 @@ export class MultipleResponses {
   /**
    * Send a 201 response with valid payload: {'statusCode': '201'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3097,18 +2986,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model204NoModelDefaultError201Invalid(): Promise<Models.A>;
-  get200Model204NoModelDefaultError201Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model204NoModelDefaultError201Invalid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model204NoModelDefaultError201Invalid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError201Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError201Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model204NoModelDefaultError201Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model204NoModelDefaultError201Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3134,10 +3023,7 @@ export class MultipleResponses {
   /**
    * Send a 202 response with no payload:
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3145,18 +3031,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model204NoModelDefaultError202None(): Promise<Models.A>;
-  get200Model204NoModelDefaultError202None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model204NoModelDefaultError202None(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model204NoModelDefaultError202None(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError202None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError202None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model204NoModelDefaultError202None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model204NoModelDefaultError202None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3183,10 +3069,7 @@ export class MultipleResponses {
    * Send a 400 response with valid error payload: {'status': 400, 'message':
    * 'client error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3194,18 +3077,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model204NoModelDefaultError400Valid(): Promise<Models.A>;
-  get200Model204NoModelDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model204NoModelDefaultError400Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model204NoModelDefaultError400Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model204NoModelDefaultError400Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model204NoModelDefaultError400Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model204NoModelDefaultError400Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3231,10 +3114,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3242,18 +3122,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model201ModelDefaultError200Valid(): Promise<Models.A>;
-  get200Model201ModelDefaultError200Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model201ModelDefaultError200Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model201ModelDefaultError200Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model201ModelDefaultError200Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model201ModelDefaultError200Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model201ModelDefaultError200Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model201ModelDefaultError200Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3280,10 +3160,7 @@ export class MultipleResponses {
    * Send a 201 response with valid payload: {'statusCode': '201',
    * 'textStatusCode': 'Created'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3291,18 +3168,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model201ModelDefaultError201Valid(): Promise<Models.A>;
-  get200Model201ModelDefaultError201Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model201ModelDefaultError201Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model201ModelDefaultError201Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model201ModelDefaultError201Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model201ModelDefaultError201Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model201ModelDefaultError201Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model201ModelDefaultError201Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3329,10 +3206,7 @@ export class MultipleResponses {
    * Send a 400 response with valid payload: {'code': '400', 'message': 'client
    * error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3340,18 +3214,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200Model201ModelDefaultError400Valid(): Promise<Models.A>;
-  get200Model201ModelDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200Model201ModelDefaultError400Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200Model201ModelDefaultError400Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model201ModelDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200Model201ModelDefaultError400Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200Model201ModelDefaultError400Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200Model201ModelDefaultError400Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3377,10 +3251,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3388,17 +3259,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Object} [result]   - The deserialized result object if an error did not occur.
+   *                      {any} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA201ModelC404ModelDDefaultError200Valid(): Promise<any>;
-  get200ModelA201ModelC404ModelDDefaultError200Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<any>;
+  get200ModelA201ModelC404ModelDDefaultError200Valid(options: msRest.RequestOptionsBase): Promise<any>;
   get200ModelA201ModelC404ModelDDefaultError200Valid(callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError200Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError200Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<any>): any {
+  get200ModelA201ModelC404ModelDDefaultError200Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<any>): void;
+  get200ModelA201ModelC404ModelDDefaultError200Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<any>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3424,10 +3295,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'httpCode': '201'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3435,17 +3303,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Object} [result]   - The deserialized result object if an error did not occur.
+   *                      {any} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA201ModelC404ModelDDefaultError201Valid(): Promise<any>;
-  get200ModelA201ModelC404ModelDDefaultError201Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<any>;
+  get200ModelA201ModelC404ModelDDefaultError201Valid(options: msRest.RequestOptionsBase): Promise<any>;
   get200ModelA201ModelC404ModelDDefaultError201Valid(callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError201Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError201Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<any>): any {
+  get200ModelA201ModelC404ModelDDefaultError201Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<any>): void;
+  get200ModelA201ModelC404ModelDDefaultError201Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<any>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3471,10 +3339,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'httpStatusCode': '404'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3482,17 +3347,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Object} [result]   - The deserialized result object if an error did not occur.
+   *                      {any} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA201ModelC404ModelDDefaultError404Valid(): Promise<any>;
-  get200ModelA201ModelC404ModelDDefaultError404Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<any>;
+  get200ModelA201ModelC404ModelDDefaultError404Valid(options: msRest.RequestOptionsBase): Promise<any>;
   get200ModelA201ModelC404ModelDDefaultError404Valid(callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError404Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError404Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<any>): any {
+  get200ModelA201ModelC404ModelDDefaultError404Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<any>): void;
+  get200ModelA201ModelC404ModelDDefaultError404Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<any>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3519,10 +3384,7 @@ export class MultipleResponses {
    * Send a 400 response with valid payload: {'code': '400', 'message': 'client
    * error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3530,17 +3392,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Object} [result]   - The deserialized result object if an error did not occur.
+   *                      {any} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA201ModelC404ModelDDefaultError400Valid(): Promise<any>;
-  get200ModelA201ModelC404ModelDDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<any>;
+  get200ModelA201ModelC404ModelDDefaultError400Valid(options: msRest.RequestOptionsBase): Promise<any>;
   get200ModelA201ModelC404ModelDDefaultError400Valid(callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<any>): void;
-  get200ModelA201ModelC404ModelDDefaultError400Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<any>): any {
+  get200ModelA201ModelC404ModelDDefaultError400Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<any>): void;
+  get200ModelA201ModelC404ModelDDefaultError400Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<any>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3566,10 +3428,7 @@ export class MultipleResponses {
   /**
    * Send a 202 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3577,17 +3436,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultError202None(): Promise<void>;
-  get202None204NoneDefaultError202None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultError202None(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultError202None(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultError202None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultError202None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultError202None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultError202None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3613,10 +3472,7 @@ export class MultipleResponses {
   /**
    * Send a 204 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3624,17 +3480,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultError204None(): Promise<void>;
-  get202None204NoneDefaultError204None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultError204None(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultError204None(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultError204None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultError204None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultError204None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultError204None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3661,10 +3517,7 @@ export class MultipleResponses {
    * Send a 400 response with valid payload: {'code': '400', 'message': 'client
    * error'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3672,17 +3525,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultError400Valid(): Promise<void>;
-  get202None204NoneDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultError400Valid(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultError400Valid(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultError400Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultError400Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultError400Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultError400Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3708,10 +3561,7 @@ export class MultipleResponses {
   /**
    * Send a 202 response with an unexpected payload {'property': 'value'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3719,17 +3569,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultNone202Invalid(): Promise<void>;
-  get202None204NoneDefaultNone202Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultNone202Invalid(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultNone202Invalid(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone202Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone202Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultNone202Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultNone202Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3755,10 +3605,7 @@ export class MultipleResponses {
   /**
    * Send a 204 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3766,17 +3613,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultNone204None(): Promise<void>;
-  get202None204NoneDefaultNone204None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultNone204None(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultNone204None(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone204None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone204None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultNone204None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultNone204None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3802,10 +3649,7 @@ export class MultipleResponses {
   /**
    * Send a 400 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3813,17 +3657,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultNone400None(): Promise<void>;
-  get202None204NoneDefaultNone400None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultNone400None(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultNone400None(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone400None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone400None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultNone400None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultNone400None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3849,10 +3693,7 @@ export class MultipleResponses {
   /**
    * Send a 400 response with an unexpected payload {'property': 'value'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3860,17 +3701,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get202None204NoneDefaultNone400Invalid(): Promise<void>;
-  get202None204NoneDefaultNone400Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get202None204NoneDefaultNone400Invalid(options: msRest.RequestOptionsBase): Promise<void>;
   get202None204NoneDefaultNone400Invalid(callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone400Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get202None204NoneDefaultNone400Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get202None204NoneDefaultNone400Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get202None204NoneDefaultNone400Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3896,10 +3737,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with valid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3907,18 +3745,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultModelA200Valid(): Promise<Models.A>;
-  getDefaultModelA200Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  getDefaultModelA200Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   getDefaultModelA200Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA200Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA200Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  getDefaultModelA200Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  getDefaultModelA200Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3944,10 +3782,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3955,18 +3790,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultModelA200None(): Promise<Models.A>;
-  getDefaultModelA200None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  getDefaultModelA200None(options: msRest.RequestOptionsBase): Promise<Models.A>;
   getDefaultModelA200None(callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA200None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA200None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  getDefaultModelA200None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  getDefaultModelA200None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3992,10 +3827,7 @@ export class MultipleResponses {
   /**
    * Send a 400 response with valid payload: {'statusCode': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4003,18 +3835,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultModelA400Valid(): Promise<Models.A>;
-  getDefaultModelA400Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  getDefaultModelA400Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   getDefaultModelA400Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA400Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA400Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  getDefaultModelA400Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  getDefaultModelA400Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4040,10 +3872,7 @@ export class MultipleResponses {
   /**
    * Send a 400 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4051,18 +3880,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultModelA400None(): Promise<Models.A>;
-  getDefaultModelA400None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  getDefaultModelA400None(options: msRest.RequestOptionsBase): Promise<Models.A>;
   getDefaultModelA400None(callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA400None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  getDefaultModelA400None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  getDefaultModelA400None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  getDefaultModelA400None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4088,10 +3917,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with invalid payload: {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4099,17 +3925,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultNone200Invalid(): Promise<void>;
-  getDefaultNone200Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getDefaultNone200Invalid(options: msRest.RequestOptionsBase): Promise<void>;
   getDefaultNone200Invalid(callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone200Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone200Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getDefaultNone200Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getDefaultNone200Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4135,10 +3961,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4146,17 +3969,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultNone200None(): Promise<void>;
-  getDefaultNone200None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getDefaultNone200None(options: msRest.RequestOptionsBase): Promise<void>;
   getDefaultNone200None(callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone200None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone200None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getDefaultNone200None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getDefaultNone200None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4182,10 +4005,7 @@ export class MultipleResponses {
   /**
    * Send a 400 response with valid payload: {'statusCode': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4193,17 +4013,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultNone400Invalid(): Promise<void>;
-  getDefaultNone400Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getDefaultNone400Invalid(options: msRest.RequestOptionsBase): Promise<void>;
   getDefaultNone400Invalid(callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone400Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone400Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getDefaultNone400Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getDefaultNone400Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4229,10 +4049,7 @@ export class MultipleResponses {
   /**
    * Send a 400 response with no payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4240,17 +4057,17 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDefaultNone400None(): Promise<void>;
-  getDefaultNone400None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getDefaultNone400None(options: msRest.RequestOptionsBase): Promise<void>;
   getDefaultNone400None(callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone400None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getDefaultNone400None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getDefaultNone400None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getDefaultNone400None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4277,10 +4094,7 @@ export class MultipleResponses {
    * Send a 200 response with no payload, when a payload is expected - client
    * should return a null object of thde type for model A
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4288,18 +4102,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA200None(): Promise<Models.A>;
-  get200ModelA200None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA200None(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA200None(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA200None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA200None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA200None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA200None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4325,10 +4139,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with payload {'statusCode': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4336,18 +4147,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA200Valid(): Promise<Models.A>;
-  get200ModelA200Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA200Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA200Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA200Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA200Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA200Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA200Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4373,10 +4184,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with invalid payload {'statusCodeInvalid': '200'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4384,18 +4192,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA200Invalid(): Promise<Models.A>;
-  get200ModelA200Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA200Invalid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA200Invalid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA200Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA200Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA200Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA200Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4422,10 +4230,7 @@ export class MultipleResponses {
    * Send a 400 response with no payload client should treat as an http error
    * with no error model
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4433,18 +4238,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA400None(): Promise<Models.A>;
-  get200ModelA400None(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA400None(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA400None(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA400None(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA400None(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA400None(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA400None(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4470,10 +4275,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with payload {'statusCode': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4481,18 +4283,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA400Valid(): Promise<Models.A>;
-  get200ModelA400Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA400Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA400Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA400Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA400Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA400Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA400Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4518,10 +4320,7 @@ export class MultipleResponses {
   /**
    * Send a 200 response with invalid payload {'statusCodeInvalid': '400'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4529,18 +4328,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA400Invalid(): Promise<Models.A>;
-  get200ModelA400Invalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA400Invalid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA400Invalid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA400Invalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA400Invalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA400Invalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA400Invalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4566,10 +4365,7 @@ export class MultipleResponses {
   /**
    * Send a 202 response with payload {'statusCode': '202'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4577,18 +4373,18 @@ export class MultipleResponses {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {A} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link A} for more information.
+   *                      {Models.A} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.A} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200ModelA202Valid(): Promise<Models.A>;
-  get200ModelA202Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.A>;
+  get200ModelA202Valid(options: msRest.RequestOptionsBase): Promise<Models.A>;
   get200ModelA202Valid(callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA202Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.A>): void;
-  get200ModelA202Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.A>): any {
+  get200ModelA202Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.A>): void;
+  get200ModelA202Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.A>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

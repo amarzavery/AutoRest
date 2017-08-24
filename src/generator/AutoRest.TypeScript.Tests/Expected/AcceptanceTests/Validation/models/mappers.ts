@@ -192,3 +192,41 @@ export const ErrorModel = {
     }
   }
 };
+
+export const AutoRestValidationTestValidationOfBodyOptionalParams = {
+  required: false,
+  serializedName: 'ValidationOfBodyOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestValidationTestValidationOfBodyOptionalParams',
+    modelProperties: {
+      body: {
+        required: false,
+        serializedName: 'body',
+        type: {
+          name: 'Composite',
+          className: 'Product'
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestValidationTestPostWithConstantInBodyOptionalParams = {
+  required: false,
+  serializedName: 'PostWithConstantInBodyOptions',
+  type: {
+    name: 'Composite',
+    className: 'AutoRestValidationTestPostWithConstantInBodyOptionalParams',
+    modelProperties: {
+      body: {
+        required: false,
+        serializedName: 'body',
+        type: {
+          name: 'Composite',
+          className: 'Product'
+        }
+      }
+    }
+  }
+};

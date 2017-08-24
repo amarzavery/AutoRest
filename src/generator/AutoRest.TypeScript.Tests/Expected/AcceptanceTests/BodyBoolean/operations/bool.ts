@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestBoolTestService } from '../autoRestBoolTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestBoolTestService } from "../autoRestBoolTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class Bool {
   /**
    * Get true Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getTrueWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getTrueWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -125,18 +123,15 @@ export class Bool {
    *
    * @param {boolean} boolBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putTrueWithHttpOperationResponse(boolBody: boolean, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putTrueWithHttpOperationResponse(boolBody: boolean, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -227,18 +222,15 @@ export class Bool {
   /**
    * Get false Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFalseWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFalseWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -324,18 +316,15 @@ export class Bool {
    *
    * @param {boolean} boolBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putFalseWithHttpOperationResponse(boolBody: boolean, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putFalseWithHttpOperationResponse(boolBody: boolean, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -426,18 +415,15 @@ export class Bool {
   /**
    * Get null Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -521,18 +507,15 @@ export class Bool {
   /**
    * Get invalid Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -616,10 +599,7 @@ export class Bool {
   /**
    * Get true Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -631,13 +611,13 @@ export class Bool {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getTrue(): Promise<boolean>;
-  getTrue(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getTrue(options: msRest.RequestOptionsBase): Promise<boolean>;
   getTrue(callback: msRest.ServiceCallback<boolean>): void;
-  getTrue(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getTrue(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getTrue(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getTrue(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -665,10 +645,7 @@ export class Bool {
    *
    * @param {boolean} boolBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -676,17 +653,17 @@ export class Bool {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putTrue(boolBody: boolean): Promise<void>;
-  putTrue(boolBody: boolean, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putTrue(boolBody: boolean, options: msRest.RequestOptionsBase): Promise<void>;
   putTrue(boolBody: boolean, callback: msRest.ServiceCallback<void>): void;
-  putTrue(boolBody: boolean, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putTrue(boolBody: boolean, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putTrue(boolBody: boolean, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putTrue(boolBody: boolean, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -712,10 +689,7 @@ export class Bool {
   /**
    * Get false Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -727,13 +701,13 @@ export class Bool {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFalse(): Promise<boolean>;
-  getFalse(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getFalse(options: msRest.RequestOptionsBase): Promise<boolean>;
   getFalse(callback: msRest.ServiceCallback<boolean>): void;
-  getFalse(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getFalse(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getFalse(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getFalse(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -761,10 +735,7 @@ export class Bool {
    *
    * @param {boolean} boolBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -772,17 +743,17 @@ export class Bool {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putFalse(boolBody: boolean): Promise<void>;
-  putFalse(boolBody: boolean, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putFalse(boolBody: boolean, options: msRest.RequestOptionsBase): Promise<void>;
   putFalse(boolBody: boolean, callback: msRest.ServiceCallback<void>): void;
-  putFalse(boolBody: boolean, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putFalse(boolBody: boolean, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putFalse(boolBody: boolean, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putFalse(boolBody: boolean, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -808,10 +779,7 @@ export class Bool {
   /**
    * Get null Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -823,13 +791,13 @@ export class Bool {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<boolean>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getNull(options: msRest.RequestOptionsBase): Promise<boolean>;
   getNull(callback: msRest.ServiceCallback<boolean>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -855,10 +823,7 @@ export class Bool {
   /**
    * Get invalid Boolean value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -870,13 +835,13 @@ export class Bool {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<boolean>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<boolean>;
   getInvalid(callback: msRest.ServiceCallback<boolean>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

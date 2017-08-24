@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AzureCompositeModel } from '../azureCompositeModel';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AzureCompositeModel } from "../azureCompositeModel";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class BasicOperations {
   /**
    * Get complex type {id: 2, name: 'abc', color: 'YELLOW'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Basic>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -136,29 +133,17 @@ export class BasicOperations {
   /**
    * Please put {id: 2, name: 'abc', color: 'Magenta'}
    *
-   * @param {object} complexBody Please put {id: 2, name: 'abc', color:
-   * 'Magenta'}
+   * @param {Basic} complexBody Please put {id: 2, name: 'abc', color: 'Magenta'}
    *
-   * @param {number} [complexBody.id] Basic Id
-   *
-   * @param {string} [complexBody.name] Name property with a very long
-   * description that does not fit on a single line and a line break.
-   *
-   * @param {string} [complexBody.color] Possible values include: 'cyan',
-   * 'Magenta', 'YELLOW', 'blacK'
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidWithHttpOperationResponse(complexBody: Models.Basic, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidWithHttpOperationResponse(complexBody: Models.Basic, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let apiVersion = '2016-02-29';
     // Validate
@@ -258,18 +243,15 @@ export class BasicOperations {
   /**
    * Get a basic complex type that is invalid for the local strong type
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Basic>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -365,18 +347,15 @@ export class BasicOperations {
   /**
    * Get a basic complex type that is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Basic>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -472,18 +451,15 @@ export class BasicOperations {
   /**
    * Get a basic complex type whose properties are null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Basic>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -579,18 +555,15 @@ export class BasicOperations {
   /**
    * Get a basic complex type while the server doesn't provide a response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Basic>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNotProvidedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNotProvidedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -686,10 +659,7 @@ export class BasicOperations {
   /**
    * Get complex type {id: 2, name: 'abc', color: 'YELLOW'}
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -697,18 +667,18 @@ export class BasicOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Basic} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Basic} for more information.
+   *                      {Models.Basic} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Basic} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getValid(): Promise<Models.Basic>;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Basic>;
+  getValid(options: msRest.RequestOptionsBase): Promise<Models.Basic>;
   getValid(callback: msRest.ServiceCallback<Models.Basic>): void;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Basic>): void;
-  getValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Basic>): any {
+  getValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Basic>): void;
+  getValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Basic>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -734,21 +704,9 @@ export class BasicOperations {
   /**
    * Please put {id: 2, name: 'abc', color: 'Magenta'}
    *
-   * @param {object} complexBody Please put {id: 2, name: 'abc', color:
-   * 'Magenta'}
+   * @param {Basic} complexBody Please put {id: 2, name: 'abc', color: 'Magenta'}
    *
-   * @param {number} [complexBody.id] Basic Id
-   *
-   * @param {string} [complexBody.name] Name property with a very long
-   * description that does not fit on a single line and a line break.
-   *
-   * @param {string} [complexBody.color] Possible values include: 'cyan',
-   * 'Magenta', 'YELLOW', 'blacK'
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -756,17 +714,17 @@ export class BasicOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValid(complexBody: Models.Basic): Promise<void>;
-  putValid(complexBody: Models.Basic, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValid(complexBody: Models.Basic, options: msRest.RequestOptionsBase): Promise<void>;
   putValid(complexBody: Models.Basic, callback: msRest.ServiceCallback<void>): void;
-  putValid(complexBody: Models.Basic, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValid(complexBody: Models.Basic, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValid(complexBody: Models.Basic, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putValid(complexBody: Models.Basic, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -792,10 +750,7 @@ export class BasicOperations {
   /**
    * Get a basic complex type that is invalid for the local strong type
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -803,18 +758,18 @@ export class BasicOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Basic} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Basic} for more information.
+   *                      {Models.Basic} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Basic} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<Models.Basic>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Basic>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<Models.Basic>;
   getInvalid(callback: msRest.ServiceCallback<Models.Basic>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Basic>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Basic>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Basic>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Basic>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -840,10 +795,7 @@ export class BasicOperations {
   /**
    * Get a basic complex type that is empty
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -851,18 +803,18 @@ export class BasicOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Basic} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Basic} for more information.
+   *                      {Models.Basic} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Basic} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(): Promise<Models.Basic>;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Basic>;
+  getEmpty(options: msRest.RequestOptionsBase): Promise<Models.Basic>;
   getEmpty(callback: msRest.ServiceCallback<Models.Basic>): void;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Basic>): void;
-  getEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Basic>): any {
+  getEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Basic>): void;
+  getEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Basic>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -888,10 +840,7 @@ export class BasicOperations {
   /**
    * Get a basic complex type whose properties are null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -899,18 +848,18 @@ export class BasicOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Basic} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Basic} for more information.
+   *                      {Models.Basic} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Basic} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<Models.Basic>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Basic>;
+  getNull(options: msRest.RequestOptionsBase): Promise<Models.Basic>;
   getNull(callback: msRest.ServiceCallback<Models.Basic>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Basic>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Basic>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Basic>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Basic>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -936,10 +885,7 @@ export class BasicOperations {
   /**
    * Get a basic complex type while the server doesn't provide a response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -947,18 +893,18 @@ export class BasicOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Basic} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Basic} for more information.
+   *                      {Models.Basic} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Basic} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNotProvided(): Promise<Models.Basic>;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Basic>;
+  getNotProvided(options: msRest.RequestOptionsBase): Promise<Models.Basic>;
   getNotProvided(callback: msRest.ServiceCallback<Models.Basic>): void;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Basic>): void;
-  getNotProvided(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Basic>): any {
+  getNotProvided(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Basic>): void;
+  getNotProvided(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Basic>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

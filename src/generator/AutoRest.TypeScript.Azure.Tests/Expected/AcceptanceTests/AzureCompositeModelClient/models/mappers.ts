@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -1127,6 +1127,226 @@ export const ReadonlyObj = {
           name: 'String'
         }
       },
+      size: {
+        required: false,
+        serializedName: 'size',
+        type: {
+          name: 'Number'
+        }
+      }
+    }
+  }
+};
+
+export const AzureCompositeModelCreateOptionalParams = {
+  required: false,
+  serializedName: 'CreateOptions',
+  type: {
+    name: 'Composite',
+    className: 'AzureCompositeModelCreateOptionalParams',
+    modelProperties: {
+      productDictionaryOfArray: {
+        required: false,
+        serializedName: 'productDictionaryOfArray',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'ArrayElementType',
+              type: {
+                name: 'Sequence',
+                element: {
+                    required: false,
+                    serializedName: 'ProductElementType',
+                    type: {
+                      name: 'Composite',
+                      className: 'Product'
+                    }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const AzureCompositeModelUpdateOptionalParams = {
+  required: false,
+  serializedName: 'UpdateOptions',
+  type: {
+    name: 'Composite',
+    className: 'AzureCompositeModelUpdateOptionalParams',
+    modelProperties: {
+      productArrayOfDictionary: {
+        required: false,
+        serializedName: 'productArrayOfDictionary',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'ObjectElementType',
+              type: {
+                name: 'Dictionary',
+                value: {
+                    required: false,
+                    serializedName: 'ProductElementType',
+                    type: {
+                      name: 'Composite',
+                      className: 'Product'
+                    }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const PrimitivePutDurationOptionalParams = {
+  required: false,
+  serializedName: 'PutDurationOptions',
+  type: {
+    name: 'Composite',
+    className: 'PrimitivePutDurationOptionalParams',
+    modelProperties: {
+      field: {
+        required: false,
+        serializedName: 'field',
+        type: {
+          name: 'TimeSpan'
+        }
+      }
+    }
+  }
+};
+
+export const PrimitivePutByteOptionalParams = {
+  required: false,
+  serializedName: 'PutByteOptions',
+  type: {
+    name: 'Composite',
+    className: 'PrimitivePutByteOptionalParams',
+    modelProperties: {
+      field: {
+        required: false,
+        serializedName: 'field',
+        type: {
+          name: 'ByteArray'
+        }
+      }
+    }
+  }
+};
+
+export const ArrayModelPutValidOptionalParams = {
+  required: false,
+  serializedName: 'PutValidOptions',
+  type: {
+    name: 'Composite',
+    className: 'ArrayModelPutValidOptionalParams',
+    modelProperties: {
+      arrayProperty: {
+        required: false,
+        serializedName: 'array',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ArrayModelPutEmptyOptionalParams = {
+  required: false,
+  serializedName: 'PutEmptyOptions',
+  type: {
+    name: 'Composite',
+    className: 'ArrayModelPutEmptyOptionalParams',
+    modelProperties: {
+      arrayProperty: {
+        required: false,
+        serializedName: 'array',
+        type: {
+          name: 'Sequence',
+          element: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DictionaryPutValidOptionalParams = {
+  required: false,
+  serializedName: 'PutValidOptions',
+  type: {
+    name: 'Composite',
+    className: 'DictionaryPutValidOptionalParams',
+    modelProperties: {
+      defaultProgram: {
+        required: false,
+        serializedName: 'defaultProgram',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const DictionaryPutEmptyOptionalParams = {
+  required: false,
+  serializedName: 'PutEmptyOptions',
+  type: {
+    name: 'Composite',
+    className: 'DictionaryPutEmptyOptionalParams',
+    modelProperties: {
+      defaultProgram: {
+        required: false,
+        serializedName: 'defaultProgram',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'stringElementType',
+              type: {
+                name: 'String'
+              }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ReadonlypropertyPutValidOptionalParams = {
+  required: false,
+  serializedName: 'PutValidOptions',
+  type: {
+    name: 'Composite',
+    className: 'ReadonlypropertyPutValidOptionalParams',
+    modelProperties: {
       size: {
         required: false,
         serializedName: 'size',

@@ -60,3 +60,39 @@ export const RefColorConstant = {
     }
   }
 };
+
+export const StringPutNullOptionalParams = {
+  required: false,
+  serializedName: 'PutNullOptions',
+  type: {
+    name: 'Composite',
+    className: 'StringPutNullOptionalParams',
+    modelProperties: {
+      stringBody: {
+        required: false,
+        serializedName: 'stringBody',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const EnumModelPutReferencedConstantOptionalParams = {
+  required: false,
+  serializedName: 'PutReferencedConstantOptions',
+  type: {
+    name: 'Composite',
+    className: 'EnumModelPutReferencedConstantOptionalParams',
+    modelProperties: {
+      field1: {
+        required: false,
+        serializedName: 'field1',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};

@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestComplexTestService } from '../autoRestComplexTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestComplexTestService } from "../autoRestComplexTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class Inheritance {
   /**
    * Get complex types that extend others
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Siamese>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -118,29 +115,20 @@ export class Inheritance {
   /**
    * Put complex types that extend others
    *
-   * @param {object} complexBody Please put a siamese with id=2, name="Siameee",
+   * @param {Siamese} complexBody Please put a siamese with id=2, name="Siameee",
    * color=green, breed=persion, which hates 2 dogs, the 1st one named "Potato"
    * with id=1 and food="tomato", and the 2nd one named "Tomato" with id=-1 and
    * food="french fries".
    *
-   * @param {string} [complexBody.breed]
-   *
-   * @param {string} [complexBody.color]
-   *
-   * @param {array} [complexBody.hates]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidWithHttpOperationResponse(complexBody: Models.Siamese, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidWithHttpOperationResponse(complexBody: Models.Siamese, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -225,10 +213,7 @@ export class Inheritance {
   /**
    * Get complex types that extend others
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -236,18 +221,18 @@ export class Inheritance {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Siamese} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Siamese} for more information.
+   *                      {Models.Siamese} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Siamese} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getValid(): Promise<Models.Siamese>;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Siamese>;
+  getValid(options: msRest.RequestOptionsBase): Promise<Models.Siamese>;
   getValid(callback: msRest.ServiceCallback<Models.Siamese>): void;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Siamese>): void;
-  getValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Siamese>): any {
+  getValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Siamese>): void;
+  getValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Siamese>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -273,21 +258,12 @@ export class Inheritance {
   /**
    * Put complex types that extend others
    *
-   * @param {object} complexBody Please put a siamese with id=2, name="Siameee",
+   * @param {Siamese} complexBody Please put a siamese with id=2, name="Siameee",
    * color=green, breed=persion, which hates 2 dogs, the 1st one named "Potato"
    * with id=1 and food="tomato", and the 2nd one named "Tomato" with id=-1 and
    * food="french fries".
    *
-   * @param {string} [complexBody.breed]
-   *
-   * @param {string} [complexBody.color]
-   *
-   * @param {array} [complexBody.hates]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -295,17 +271,17 @@ export class Inheritance {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValid(complexBody: Models.Siamese): Promise<void>;
-  putValid(complexBody: Models.Siamese, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValid(complexBody: Models.Siamese, options: msRest.RequestOptionsBase): Promise<void>;
   putValid(complexBody: Models.Siamese, callback: msRest.ServiceCallback<void>): void;
-  putValid(complexBody: Models.Siamese, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValid(complexBody: Models.Siamese, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValid(complexBody: Models.Siamese, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putValid(complexBody: Models.Siamese, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

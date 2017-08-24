@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestUrlTestService } from '../autoRestUrlTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestUrlTestService } from "../autoRestUrlTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class Queries {
   /**
    * Get true Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanTrueWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanTrueWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let boolQuery = true;
 
@@ -108,18 +106,15 @@ export class Queries {
   /**
    * Get false Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanFalseWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanFalseWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let boolQuery = false;
 
@@ -188,20 +183,15 @@ export class Queries {
   /**
    * Get null Boolean value on query (query string should be absent)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.boolQuery] null boolean value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesGetBooleanNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanNullWithHttpOperationResponse(options?: { boolQuery? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanNullWithHttpOperationResponse(options?: Models.QueriesGetBooleanNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let boolQuery = (options && options.boolQuery !== undefined) ? options.boolQuery : undefined;
     // Validate
@@ -280,18 +270,15 @@ export class Queries {
   /**
    * Get '1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntOneMillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntOneMillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let intQuery = 1000000;
 
@@ -360,18 +347,15 @@ export class Queries {
   /**
    * Get '-1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntNegativeOneMillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntNegativeOneMillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let intQuery = -1000000;
 
@@ -440,20 +424,15 @@ export class Queries {
   /**
    * Get null integer value (no query parameter)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.intQuery] null integer value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesGetIntNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntNullWithHttpOperationResponse(options?: { intQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntNullWithHttpOperationResponse(options?: Models.QueriesGetIntNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let intQuery = (options && options.intQuery !== undefined) ? options.intQuery : undefined;
     // Validate
@@ -532,18 +511,15 @@ export class Queries {
   /**
    * Get '10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getTenBillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getTenBillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let longQuery = 10000000000;
 
@@ -612,18 +588,15 @@ export class Queries {
   /**
    * Get '-10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNegativeTenBillionWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNegativeTenBillionWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let longQuery = -10000000000;
 
@@ -692,20 +665,15 @@ export class Queries {
   /**
    * Get 'null 64 bit integer value (no query param in uri)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.longQuery] null 64 bit integer value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesGetLongNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLongNullWithHttpOperationResponse(options?: { longQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLongNullWithHttpOperationResponse(options?: Models.QueriesGetLongNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let longQuery = (options && options.longQuery !== undefined) ? options.longQuery : undefined;
     // Validate
@@ -784,18 +752,15 @@ export class Queries {
   /**
    * Get '1.034E+20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async floatScientificPositiveWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async floatScientificPositiveWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let floatQuery = 103400000000000000000;
 
@@ -864,18 +829,15 @@ export class Queries {
   /**
    * Get '-1.034E-20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async floatScientificNegativeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async floatScientificNegativeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let floatQuery = -1.034e-20;
 
@@ -944,20 +906,15 @@ export class Queries {
   /**
    * Get null numeric value (no query parameter)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.floatQuery] null numeric value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesFloatNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async floatNullWithHttpOperationResponse(options?: { floatQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async floatNullWithHttpOperationResponse(options?: Models.QueriesFloatNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let floatQuery = (options && options.floatQuery !== undefined) ? options.floatQuery : undefined;
     // Validate
@@ -1036,18 +993,15 @@ export class Queries {
   /**
    * Get '9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async doubleDecimalPositiveWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async doubleDecimalPositiveWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let doubleQuery = 9999999.999;
 
@@ -1116,18 +1070,15 @@ export class Queries {
   /**
    * Get '-9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async doubleDecimalNegativeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async doubleDecimalNegativeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let doubleQuery = -9999999.999;
 
@@ -1196,20 +1147,15 @@ export class Queries {
   /**
    * Get null numeric value (no query parameter)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.doubleQuery] null numeric value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesDoubleNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async doubleNullWithHttpOperationResponse(options?: { doubleQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async doubleNullWithHttpOperationResponse(options?: Models.QueriesDoubleNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let doubleQuery = (options && options.doubleQuery !== undefined) ? options.doubleQuery : undefined;
     // Validate
@@ -1288,18 +1234,15 @@ export class Queries {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multi-byte string value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringUnicodeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringUnicodeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringQuery = '啊齄丂狛狜隣郎隣兀﨩';
 
@@ -1368,18 +1311,15 @@ export class Queries {
   /**
    * Get 'begin!*'();:@ &=+$,/?#[]end
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringUrlEncodedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringUrlEncodedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringQuery = 'begin!*\'();:@ &=+$,/?#[]end';
 
@@ -1448,18 +1388,15 @@ export class Queries {
   /**
    * Get ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringQuery = '';
 
@@ -1528,20 +1465,15 @@ export class Queries {
   /**
    * Get null (no query parameter in url)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.stringQuery] null string value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesStringNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async stringNullWithHttpOperationResponse(options?: { stringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async stringNullWithHttpOperationResponse(options?: Models.QueriesStringNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringQuery = (options && options.stringQuery !== undefined) ? options.stringQuery : undefined;
     // Validate
@@ -1620,21 +1552,15 @@ export class Queries {
   /**
    * Get using uri with query parameter 'green color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.enumQuery] 'green color' enum value. Possible
-   * values include: 'red color', 'green color', 'blue color'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesEnumValidOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async enumValidWithHttpOperationResponse(options?: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async enumValidWithHttpOperationResponse(options?: Models.QueriesEnumValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let enumQuery = (options && options.enumQuery !== undefined) ? options.enumQuery : undefined;
     // Validate
@@ -1716,21 +1642,15 @@ export class Queries {
   /**
    * Get null (no query parameter in url)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.enumQuery] null string value. Possible values
-   * include: 'red color', 'green color', 'blue color'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesEnumNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async enumNullWithHttpOperationResponse(options?: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async enumNullWithHttpOperationResponse(options?: Models.QueriesEnumNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let enumQuery = (options && options.enumQuery !== undefined) ? options.enumQuery : undefined;
     // Validate
@@ -1812,21 +1732,15 @@ export class Queries {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {buffer} [options.byteQuery] '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8
-   * encoded byte array
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesByteMultiByteOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async byteMultiByteWithHttpOperationResponse(options?: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async byteMultiByteWithHttpOperationResponse(options?: Models.QueriesByteMultiByteOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let byteQuery = (options && options.byteQuery !== undefined) ? options.byteQuery : undefined;
     // Validate
@@ -1905,18 +1819,15 @@ export class Queries {
   /**
    * Get '' as byte array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async byteEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async byteEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let byteQuery = new Buffer('');
 
@@ -1985,21 +1896,15 @@ export class Queries {
   /**
    * Get null as byte array (no query parameters in uri)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {buffer} [options.byteQuery] null as byte array (no query parameters
-   * in uri)
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesByteNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async byteNullWithHttpOperationResponse(options?: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async byteNullWithHttpOperationResponse(options?: Models.QueriesByteNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let byteQuery = (options && options.byteQuery !== undefined) ? options.byteQuery : undefined;
     // Validate
@@ -2078,18 +1983,15 @@ export class Queries {
   /**
    * Get '2012-01-01' as date
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let dateQuery = new Date('2012-01-01');
 
@@ -2158,26 +2060,21 @@ export class Queries {
   /**
    * Get null as date - this should result in no query parameters in uri
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {date} [options.dateQuery] null as date (no query parameters in uri)
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesDateNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateNullWithHttpOperationResponse(options?: { dateQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateNullWithHttpOperationResponse(options?: Models.QueriesDateNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let dateQuery = (options && options.dateQuery !== undefined) ? options.dateQuery : undefined;
     // Validate
     try {
       if (dateQuery && !(dateQuery instanceof Date ||
-          (typeof dateQuery.valueOf() === 'string' && !isNaN(Date.parse(dateQuery as string))))) {
+          (typeof (dateQuery as string).valueOf() === 'string' && !isNaN(Date.parse(dateQuery as string))))) {
             throw new Error('dateQuery must be of type date.');
           }
     } catch (error) {
@@ -2251,18 +2148,15 @@ export class Queries {
   /**
    * Get '2012-01-01T01:01:01Z' as date-time
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateTimeValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateTimeValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let dateTimeQuery = new Date('2012-01-01T01:01:01Z');
 
@@ -2331,27 +2225,21 @@ export class Queries {
   /**
    * Get null as date-time, should result in no query parameters in uri
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {date} [options.dateTimeQuery] null as date-time (no query
-   * parameters)
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesDateTimeNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async dateTimeNullWithHttpOperationResponse(options?: { dateTimeQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async dateTimeNullWithHttpOperationResponse(options?: Models.QueriesDateTimeNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let dateTimeQuery = (options && options.dateTimeQuery !== undefined) ? options.dateTimeQuery : undefined;
     // Validate
     try {
       if (dateTimeQuery && !(dateTimeQuery instanceof Date ||
-          (typeof dateTimeQuery.valueOf() === 'string' && !isNaN(Date.parse(dateTimeQuery as string))))) {
+          (typeof (dateTimeQuery as string).valueOf() === 'string' && !isNaN(Date.parse(dateTimeQuery as string))))) {
             throw new Error('dateTimeQuery must be of type date.');
           }
     } catch (error) {
@@ -2426,21 +2314,16 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the csv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringCsvValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayStringCsvValidWithHttpOperationResponse(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayStringCsvValidWithHttpOperationResponse(options?: Models.QueriesArrayStringCsvValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayQuery = (options && options.arrayQuery !== undefined) ? options.arrayQuery : undefined;
     // Validate
@@ -2523,21 +2406,16 @@ export class Queries {
   /**
    * Get a null array of string using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] a null array of string using the
-   * csv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringCsvNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayStringCsvNullWithHttpOperationResponse(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayStringCsvNullWithHttpOperationResponse(options?: Models.QueriesArrayStringCsvNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayQuery = (options && options.arrayQuery !== undefined) ? options.arrayQuery : undefined;
     // Validate
@@ -2620,21 +2498,16 @@ export class Queries {
   /**
    * Get an empty array [] of string using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an empty array [] of string using the
-   * csv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringCsvEmptyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayStringCsvEmptyWithHttpOperationResponse(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayStringCsvEmptyWithHttpOperationResponse(options?: Models.QueriesArrayStringCsvEmptyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayQuery = (options && options.arrayQuery !== undefined) ? options.arrayQuery : undefined;
     // Validate
@@ -2718,21 +2591,16 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the ssv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the ssv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringSsvValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayStringSsvValidWithHttpOperationResponse(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayStringSsvValidWithHttpOperationResponse(options?: Models.QueriesArrayStringSsvValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayQuery = (options && options.arrayQuery !== undefined) ? options.arrayQuery : undefined;
     // Validate
@@ -2816,21 +2684,16 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the tsv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the tsv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringTsvValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayStringTsvValidWithHttpOperationResponse(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayStringTsvValidWithHttpOperationResponse(options?: Models.QueriesArrayStringTsvValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayQuery = (options && options.arrayQuery !== undefined) ? options.arrayQuery : undefined;
     // Validate
@@ -2914,21 +2777,16 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the pipes-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the pipes-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringPipesValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async arrayStringPipesValidWithHttpOperationResponse(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async arrayStringPipesValidWithHttpOperationResponse(options?: Models.QueriesArrayStringPipesValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let arrayQuery = (options && options.arrayQuery !== undefined) ? options.arrayQuery : undefined;
     // Validate
@@ -3011,10 +2869,7 @@ export class Queries {
   /**
    * Get true Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3022,17 +2877,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanTrue(): Promise<void>;
-  getBooleanTrue(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getBooleanTrue(options: msRest.RequestOptionsBase): Promise<void>;
   getBooleanTrue(callback: msRest.ServiceCallback<void>): void;
-  getBooleanTrue(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getBooleanTrue(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getBooleanTrue(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getBooleanTrue(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3058,10 +2913,7 @@ export class Queries {
   /**
    * Get false Boolean value on path
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3069,17 +2921,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanFalse(): Promise<void>;
-  getBooleanFalse(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getBooleanFalse(options: msRest.RequestOptionsBase): Promise<void>;
   getBooleanFalse(callback: msRest.ServiceCallback<void>): void;
-  getBooleanFalse(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getBooleanFalse(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getBooleanFalse(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getBooleanFalse(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3105,12 +2957,7 @@ export class Queries {
   /**
    * Get null Boolean value on query (query string should be absent)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.boolQuery] null boolean value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesGetBooleanNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3118,17 +2965,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanNull(): Promise<void>;
-  getBooleanNull(options: { boolQuery? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getBooleanNull(options: Models.QueriesGetBooleanNullOptionalParams): Promise<void>;
   getBooleanNull(callback: msRest.ServiceCallback<void>): void;
-  getBooleanNull(options: { boolQuery? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getBooleanNull(options?: { boolQuery? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getBooleanNull(options: Models.QueriesGetBooleanNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getBooleanNull(options?: Models.QueriesGetBooleanNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3154,10 +3001,7 @@ export class Queries {
   /**
    * Get '1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3165,17 +3009,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntOneMillion(): Promise<void>;
-  getIntOneMillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getIntOneMillion(options: msRest.RequestOptionsBase): Promise<void>;
   getIntOneMillion(callback: msRest.ServiceCallback<void>): void;
-  getIntOneMillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getIntOneMillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getIntOneMillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getIntOneMillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3201,10 +3045,7 @@ export class Queries {
   /**
    * Get '-1000000' integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3212,17 +3053,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntNegativeOneMillion(): Promise<void>;
-  getIntNegativeOneMillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getIntNegativeOneMillion(options: msRest.RequestOptionsBase): Promise<void>;
   getIntNegativeOneMillion(callback: msRest.ServiceCallback<void>): void;
-  getIntNegativeOneMillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getIntNegativeOneMillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getIntNegativeOneMillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getIntNegativeOneMillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3248,12 +3089,7 @@ export class Queries {
   /**
    * Get null integer value (no query parameter)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.intQuery] null integer value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesGetIntNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3261,17 +3097,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntNull(): Promise<void>;
-  getIntNull(options: { intQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getIntNull(options: Models.QueriesGetIntNullOptionalParams): Promise<void>;
   getIntNull(callback: msRest.ServiceCallback<void>): void;
-  getIntNull(options: { intQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getIntNull(options?: { intQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getIntNull(options: Models.QueriesGetIntNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getIntNull(options?: Models.QueriesGetIntNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3297,10 +3133,7 @@ export class Queries {
   /**
    * Get '10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3308,17 +3141,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getTenBillion(): Promise<void>;
-  getTenBillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getTenBillion(options: msRest.RequestOptionsBase): Promise<void>;
   getTenBillion(callback: msRest.ServiceCallback<void>): void;
-  getTenBillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getTenBillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getTenBillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getTenBillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3344,10 +3177,7 @@ export class Queries {
   /**
    * Get '-10000000000' 64 bit integer value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3355,17 +3185,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNegativeTenBillion(): Promise<void>;
-  getNegativeTenBillion(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getNegativeTenBillion(options: msRest.RequestOptionsBase): Promise<void>;
   getNegativeTenBillion(callback: msRest.ServiceCallback<void>): void;
-  getNegativeTenBillion(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getNegativeTenBillion(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getNegativeTenBillion(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getNegativeTenBillion(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3391,12 +3221,7 @@ export class Queries {
   /**
    * Get 'null 64 bit integer value (no query param in uri)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.longQuery] null 64 bit integer value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesGetLongNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3404,17 +3229,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLongNull(): Promise<void>;
-  getLongNull(options: { longQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getLongNull(options: Models.QueriesGetLongNullOptionalParams): Promise<void>;
   getLongNull(callback: msRest.ServiceCallback<void>): void;
-  getLongNull(options: { longQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getLongNull(options?: { longQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getLongNull(options: Models.QueriesGetLongNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getLongNull(options?: Models.QueriesGetLongNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3440,10 +3265,7 @@ export class Queries {
   /**
    * Get '1.034E+20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3451,17 +3273,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   floatScientificPositive(): Promise<void>;
-  floatScientificPositive(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  floatScientificPositive(options: msRest.RequestOptionsBase): Promise<void>;
   floatScientificPositive(callback: msRest.ServiceCallback<void>): void;
-  floatScientificPositive(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  floatScientificPositive(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  floatScientificPositive(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  floatScientificPositive(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3487,10 +3309,7 @@ export class Queries {
   /**
    * Get '-1.034E-20' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3498,17 +3317,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   floatScientificNegative(): Promise<void>;
-  floatScientificNegative(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  floatScientificNegative(options: msRest.RequestOptionsBase): Promise<void>;
   floatScientificNegative(callback: msRest.ServiceCallback<void>): void;
-  floatScientificNegative(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  floatScientificNegative(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  floatScientificNegative(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  floatScientificNegative(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3534,12 +3353,7 @@ export class Queries {
   /**
    * Get null numeric value (no query parameter)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.floatQuery] null numeric value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesFloatNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3547,17 +3361,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   floatNull(): Promise<void>;
-  floatNull(options: { floatQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  floatNull(options: Models.QueriesFloatNullOptionalParams): Promise<void>;
   floatNull(callback: msRest.ServiceCallback<void>): void;
-  floatNull(options: { floatQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  floatNull(options?: { floatQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  floatNull(options: Models.QueriesFloatNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  floatNull(options?: Models.QueriesFloatNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3583,10 +3397,7 @@ export class Queries {
   /**
    * Get '9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3594,17 +3405,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   doubleDecimalPositive(): Promise<void>;
-  doubleDecimalPositive(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  doubleDecimalPositive(options: msRest.RequestOptionsBase): Promise<void>;
   doubleDecimalPositive(callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalPositive(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalPositive(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  doubleDecimalPositive(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  doubleDecimalPositive(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3630,10 +3441,7 @@ export class Queries {
   /**
    * Get '-9999999.999' numeric value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3641,17 +3449,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   doubleDecimalNegative(): Promise<void>;
-  doubleDecimalNegative(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  doubleDecimalNegative(options: msRest.RequestOptionsBase): Promise<void>;
   doubleDecimalNegative(callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalNegative(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  doubleDecimalNegative(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  doubleDecimalNegative(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  doubleDecimalNegative(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3677,12 +3485,7 @@ export class Queries {
   /**
    * Get null numeric value (no query parameter)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.doubleQuery] null numeric value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesDoubleNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3690,17 +3493,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   doubleNull(): Promise<void>;
-  doubleNull(options: { doubleQuery? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  doubleNull(options: Models.QueriesDoubleNullOptionalParams): Promise<void>;
   doubleNull(callback: msRest.ServiceCallback<void>): void;
-  doubleNull(options: { doubleQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  doubleNull(options?: { doubleQuery? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  doubleNull(options: Models.QueriesDoubleNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  doubleNull(options?: Models.QueriesDoubleNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3726,10 +3529,7 @@ export class Queries {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multi-byte string value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3737,17 +3537,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringUnicode(): Promise<void>;
-  stringUnicode(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringUnicode(options: msRest.RequestOptionsBase): Promise<void>;
   stringUnicode(callback: msRest.ServiceCallback<void>): void;
-  stringUnicode(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringUnicode(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringUnicode(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringUnicode(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3773,10 +3573,7 @@ export class Queries {
   /**
    * Get 'begin!*'();:@ &=+$,/?#[]end
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3784,17 +3581,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringUrlEncoded(): Promise<void>;
-  stringUrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringUrlEncoded(options: msRest.RequestOptionsBase): Promise<void>;
   stringUrlEncoded(callback: msRest.ServiceCallback<void>): void;
-  stringUrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringUrlEncoded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringUrlEncoded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringUrlEncoded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3820,10 +3617,7 @@ export class Queries {
   /**
    * Get ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3831,17 +3625,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringEmpty(): Promise<void>;
-  stringEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringEmpty(options: msRest.RequestOptionsBase): Promise<void>;
   stringEmpty(callback: msRest.ServiceCallback<void>): void;
-  stringEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  stringEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3867,12 +3661,7 @@ export class Queries {
   /**
    * Get null (no query parameter in url)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.stringQuery] null string value
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesStringNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3880,17 +3669,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   stringNull(): Promise<void>;
-  stringNull(options: { stringQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  stringNull(options: Models.QueriesStringNullOptionalParams): Promise<void>;
   stringNull(callback: msRest.ServiceCallback<void>): void;
-  stringNull(options: { stringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  stringNull(options?: { stringQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  stringNull(options: Models.QueriesStringNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  stringNull(options?: Models.QueriesStringNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3916,13 +3705,7 @@ export class Queries {
   /**
    * Get using uri with query parameter 'green color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.enumQuery] 'green color' enum value. Possible
-   * values include: 'red color', 'green color', 'blue color'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesEnumValidOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3930,17 +3713,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   enumValid(): Promise<void>;
-  enumValid(options: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  enumValid(options: Models.QueriesEnumValidOptionalParams): Promise<void>;
   enumValid(callback: msRest.ServiceCallback<void>): void;
-  enumValid(options: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  enumValid(options?: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  enumValid(options: Models.QueriesEnumValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  enumValid(options?: Models.QueriesEnumValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3966,13 +3749,7 @@ export class Queries {
   /**
    * Get null (no query parameter in url)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.enumQuery] null string value. Possible values
-   * include: 'red color', 'green color', 'blue color'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesEnumNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3980,17 +3757,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   enumNull(): Promise<void>;
-  enumNull(options: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  enumNull(options: Models.QueriesEnumNullOptionalParams): Promise<void>;
   enumNull(callback: msRest.ServiceCallback<void>): void;
-  enumNull(options: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  enumNull(options?: { enumQuery? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  enumNull(options: Models.QueriesEnumNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  enumNull(options?: Models.QueriesEnumNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4016,13 +3793,7 @@ export class Queries {
   /**
    * Get '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8 encoded byte array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {buffer} [options.byteQuery] '啊齄丂狛狜隣郎隣兀﨩' multibyte value as utf-8
-   * encoded byte array
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesByteMultiByteOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4030,17 +3801,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   byteMultiByte(): Promise<void>;
-  byteMultiByte(options: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  byteMultiByte(options: Models.QueriesByteMultiByteOptionalParams): Promise<void>;
   byteMultiByte(callback: msRest.ServiceCallback<void>): void;
-  byteMultiByte(options: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  byteMultiByte(options?: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  byteMultiByte(options: Models.QueriesByteMultiByteOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  byteMultiByte(options?: Models.QueriesByteMultiByteOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4066,10 +3837,7 @@ export class Queries {
   /**
    * Get '' as byte array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4077,17 +3845,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   byteEmpty(): Promise<void>;
-  byteEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  byteEmpty(options: msRest.RequestOptionsBase): Promise<void>;
   byteEmpty(callback: msRest.ServiceCallback<void>): void;
-  byteEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  byteEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  byteEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  byteEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4113,13 +3881,7 @@ export class Queries {
   /**
    * Get null as byte array (no query parameters in uri)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {buffer} [options.byteQuery] null as byte array (no query parameters
-   * in uri)
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesByteNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4127,17 +3889,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   byteNull(): Promise<void>;
-  byteNull(options: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  byteNull(options: Models.QueriesByteNullOptionalParams): Promise<void>;
   byteNull(callback: msRest.ServiceCallback<void>): void;
-  byteNull(options: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  byteNull(options?: { byteQuery? : Buffer, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  byteNull(options: Models.QueriesByteNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  byteNull(options?: Models.QueriesByteNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4163,10 +3925,7 @@ export class Queries {
   /**
    * Get '2012-01-01' as date
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4174,17 +3933,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateValid(): Promise<void>;
-  dateValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateValid(options: msRest.RequestOptionsBase): Promise<void>;
   dateValid(callback: msRest.ServiceCallback<void>): void;
-  dateValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  dateValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4210,12 +3969,7 @@ export class Queries {
   /**
    * Get null as date - this should result in no query parameters in uri
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {date} [options.dateQuery] null as date (no query parameters in uri)
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesDateNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4223,17 +3977,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateNull(): Promise<void>;
-  dateNull(options: { dateQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateNull(options: Models.QueriesDateNullOptionalParams): Promise<void>;
   dateNull(callback: msRest.ServiceCallback<void>): void;
-  dateNull(options: { dateQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateNull(options?: { dateQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateNull(options: Models.QueriesDateNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  dateNull(options?: Models.QueriesDateNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4259,10 +4013,7 @@ export class Queries {
   /**
    * Get '2012-01-01T01:01:01Z' as date-time
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4270,17 +4021,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateTimeValid(): Promise<void>;
-  dateTimeValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateTimeValid(options: msRest.RequestOptionsBase): Promise<void>;
   dateTimeValid(callback: msRest.ServiceCallback<void>): void;
-  dateTimeValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateTimeValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateTimeValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  dateTimeValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4306,13 +4057,7 @@ export class Queries {
   /**
    * Get null as date-time, should result in no query parameters in uri
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {date} [options.dateTimeQuery] null as date-time (no query
-   * parameters)
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesDateTimeNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4320,17 +4065,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   dateTimeNull(): Promise<void>;
-  dateTimeNull(options: { dateTimeQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  dateTimeNull(options: Models.QueriesDateTimeNullOptionalParams): Promise<void>;
   dateTimeNull(callback: msRest.ServiceCallback<void>): void;
-  dateTimeNull(options: { dateTimeQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  dateTimeNull(options?: { dateTimeQuery? : Date | string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  dateTimeNull(options: Models.QueriesDateTimeNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  dateTimeNull(options?: Models.QueriesDateTimeNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4357,13 +4102,8 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the csv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringCsvValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4371,17 +4111,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayStringCsvValid(): Promise<void>;
-  arrayStringCsvValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayStringCsvValid(options: Models.QueriesArrayStringCsvValidOptionalParams): Promise<void>;
   arrayStringCsvValid(callback: msRest.ServiceCallback<void>): void;
-  arrayStringCsvValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayStringCsvValid(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayStringCsvValid(options: Models.QueriesArrayStringCsvValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  arrayStringCsvValid(options?: Models.QueriesArrayStringCsvValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4407,13 +4147,8 @@ export class Queries {
   /**
    * Get a null array of string using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] a null array of string using the
-   * csv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringCsvNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4421,17 +4156,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayStringCsvNull(): Promise<void>;
-  arrayStringCsvNull(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayStringCsvNull(options: Models.QueriesArrayStringCsvNullOptionalParams): Promise<void>;
   arrayStringCsvNull(callback: msRest.ServiceCallback<void>): void;
-  arrayStringCsvNull(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayStringCsvNull(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayStringCsvNull(options: Models.QueriesArrayStringCsvNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  arrayStringCsvNull(options?: Models.QueriesArrayStringCsvNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4457,13 +4192,8 @@ export class Queries {
   /**
    * Get an empty array [] of string using the csv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an empty array [] of string using the
-   * csv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringCsvEmptyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4471,17 +4201,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayStringCsvEmpty(): Promise<void>;
-  arrayStringCsvEmpty(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayStringCsvEmpty(options: Models.QueriesArrayStringCsvEmptyOptionalParams): Promise<void>;
   arrayStringCsvEmpty(callback: msRest.ServiceCallback<void>): void;
-  arrayStringCsvEmpty(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayStringCsvEmpty(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayStringCsvEmpty(options: Models.QueriesArrayStringCsvEmptyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  arrayStringCsvEmpty(options?: Models.QueriesArrayStringCsvEmptyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4508,13 +4238,8 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the ssv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the ssv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringSsvValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4522,17 +4247,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayStringSsvValid(): Promise<void>;
-  arrayStringSsvValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayStringSsvValid(options: Models.QueriesArrayStringSsvValidOptionalParams): Promise<void>;
   arrayStringSsvValid(callback: msRest.ServiceCallback<void>): void;
-  arrayStringSsvValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayStringSsvValid(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayStringSsvValid(options: Models.QueriesArrayStringSsvValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  arrayStringSsvValid(options?: Models.QueriesArrayStringSsvValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4559,13 +4284,8 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the tsv-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the tsv-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringTsvValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4573,17 +4293,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayStringTsvValid(): Promise<void>;
-  arrayStringTsvValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayStringTsvValid(options: Models.QueriesArrayStringTsvValidOptionalParams): Promise<void>;
   arrayStringTsvValid(callback: msRest.ServiceCallback<void>): void;
-  arrayStringTsvValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayStringTsvValid(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayStringTsvValid(options: Models.QueriesArrayStringTsvValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  arrayStringTsvValid(options?: Models.QueriesArrayStringTsvValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4610,13 +4330,8 @@ export class Queries {
    * Get an array of string ['ArrayQuery1', 'begin!*'();:@ &=+$,/?#[]end' , null,
    * ''] using the pipes-array format
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.arrayQuery] an array of string ['ArrayQuery1',
-   * 'begin!*'();:@ &=+$,/?#[]end' , null, ''] using the pipes-array format
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {QueriesArrayStringPipesValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4624,17 +4339,17 @@ export class Queries {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   arrayStringPipesValid(): Promise<void>;
-  arrayStringPipesValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  arrayStringPipesValid(options: Models.QueriesArrayStringPipesValidOptionalParams): Promise<void>;
   arrayStringPipesValid(callback: msRest.ServiceCallback<void>): void;
-  arrayStringPipesValid(options: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  arrayStringPipesValid(options?: { arrayQuery? : string[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  arrayStringPipesValid(options: Models.QueriesArrayStringPipesValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  arrayStringPipesValid(options?: Models.QueriesArrayStringPipesValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

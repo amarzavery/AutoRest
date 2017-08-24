@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATService } from '../autoRestSwaggerBATService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATService } from "../autoRestSwaggerBATService";
 
 const WebResource = msRest.WebResource;
 
@@ -30,18 +30,15 @@ export class EnumModel {
    * Get enum value 'red color' from enumeration of 'red color', 'green-color',
    * 'blue_color'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Colors>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNotExpandableWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNotExpandableWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -130,18 +127,15 @@ export class EnumModel {
    * @param {string} stringBody Possible values include: 'red color',
    * 'green-color', 'blue_color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putNotExpandableWithHttpOperationResponse(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putNotExpandableWithHttpOperationResponse(stringBody: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -239,18 +233,15 @@ export class EnumModel {
    * Get enum value 'red color' from enumeration of 'red color', 'green-color',
    * 'blue_color'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Colors>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getReferencedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getReferencedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -339,18 +330,15 @@ export class EnumModel {
    * @param {string} enumStringBody Possible values include: 'red color',
    * 'green-color', 'blue_color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putReferencedWithHttpOperationResponse(enumStringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putReferencedWithHttpOperationResponse(enumStringBody: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -447,18 +435,15 @@ export class EnumModel {
   /**
    * Get value 'green-color' from the constant.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<RefColorConstant>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getReferencedConstantWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getReferencedConstantWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -536,20 +521,16 @@ export class EnumModel {
   /**
    * Sends value 'green-color' from a constant
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.field1] Sample string.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {EnumModelPutReferencedConstantOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putReferencedConstantWithHttpOperationResponse(options?: { field1? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putReferencedConstantWithHttpOperationResponse(options?: Models.EnumModelPutReferencedConstantOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let field1 = (options && options.field1 !== undefined) ? options.field1 : undefined;
     // Validate
@@ -645,10 +626,7 @@ export class EnumModel {
    * Get enum value 'red color' from enumeration of 'red color', 'green-color',
    * 'blue_color'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -656,19 +634,19 @@ export class EnumModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Colors} [result]   - The deserialized result object if an error did not occur.
+   *                      {string} [result]   - The deserialized result object if an error did not occur.
    *                      Possible values for result are - red color,
    *                      green-color, blue_color.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNotExpandable(): Promise<string>;
-  getNotExpandable(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getNotExpandable(options: msRest.RequestOptionsBase): Promise<string>;
   getNotExpandable(callback: msRest.ServiceCallback<string>): void;
-  getNotExpandable(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getNotExpandable(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getNotExpandable(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getNotExpandable(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -698,10 +676,7 @@ export class EnumModel {
    * @param {string} stringBody Possible values include: 'red color',
    * 'green-color', 'blue_color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -709,17 +684,17 @@ export class EnumModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putNotExpandable(stringBody: string): Promise<void>;
-  putNotExpandable(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putNotExpandable(stringBody: string, options: msRest.RequestOptionsBase): Promise<void>;
   putNotExpandable(stringBody: string, callback: msRest.ServiceCallback<void>): void;
-  putNotExpandable(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putNotExpandable(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putNotExpandable(stringBody: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putNotExpandable(stringBody: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -746,10 +721,7 @@ export class EnumModel {
    * Get enum value 'red color' from enumeration of 'red color', 'green-color',
    * 'blue_color'.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -757,19 +729,19 @@ export class EnumModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Colors} [result]   - The deserialized result object if an error did not occur.
+   *                      {string} [result]   - The deserialized result object if an error did not occur.
    *                      Possible values for result are - red color,
    *                      green-color, blue_color.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getReferenced(): Promise<string>;
-  getReferenced(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getReferenced(options: msRest.RequestOptionsBase): Promise<string>;
   getReferenced(callback: msRest.ServiceCallback<string>): void;
-  getReferenced(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getReferenced(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getReferenced(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getReferenced(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -799,10 +771,7 @@ export class EnumModel {
    * @param {string} enumStringBody Possible values include: 'red color',
    * 'green-color', 'blue_color'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -810,17 +779,17 @@ export class EnumModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putReferenced(enumStringBody: string): Promise<void>;
-  putReferenced(enumStringBody: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putReferenced(enumStringBody: string, options: msRest.RequestOptionsBase): Promise<void>;
   putReferenced(enumStringBody: string, callback: msRest.ServiceCallback<void>): void;
-  putReferenced(enumStringBody: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putReferenced(enumStringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putReferenced(enumStringBody: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putReferenced(enumStringBody: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -846,10 +815,7 @@ export class EnumModel {
   /**
    * Get value 'green-color' from the constant.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -857,18 +823,19 @@ export class EnumModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {RefColorConstant} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link RefColorConstant} for more information.
+   *                      {Models.RefColorConstant} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.RefColorConstant} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getReferencedConstant(): Promise<Models.RefColorConstant>;
-  getReferencedConstant(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.RefColorConstant>;
+  getReferencedConstant(options: msRest.RequestOptionsBase): Promise<Models.RefColorConstant>;
   getReferencedConstant(callback: msRest.ServiceCallback<Models.RefColorConstant>): void;
-  getReferencedConstant(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.RefColorConstant>): void;
-  getReferencedConstant(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.RefColorConstant>): any {
+  getReferencedConstant(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.RefColorConstant>): void;
+  getReferencedConstant(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.RefColorConstant>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -894,12 +861,8 @@ export class EnumModel {
   /**
    * Sends value 'green-color' from a constant
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.field1] Sample string.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {EnumModelPutReferencedConstantOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -907,17 +870,17 @@ export class EnumModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putReferencedConstant(): Promise<void>;
-  putReferencedConstant(options: { field1? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putReferencedConstant(options: Models.EnumModelPutReferencedConstantOptionalParams): Promise<void>;
   putReferencedConstant(callback: msRest.ServiceCallback<void>): void;
-  putReferencedConstant(options: { field1? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putReferencedConstant(options?: { field1? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putReferencedConstant(options: Models.EnumModelPutReferencedConstantOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putReferencedConstant(options?: Models.EnumModelPutReferencedConstantOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

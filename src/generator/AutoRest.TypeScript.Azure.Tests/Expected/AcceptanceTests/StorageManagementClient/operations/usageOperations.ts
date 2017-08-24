@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { StorageManagementClient } from '../storageManagementClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { StorageManagementClient } from "../storageManagementClient";
 
 const WebResource = msRest.WebResource;
 
@@ -30,18 +30,15 @@ export class UsageOperations {
    * Gets the current usage count and the limit for the resources under the
    * subscription.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<UsageListResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async listWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async listWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -145,10 +142,7 @@ export class UsageOperations {
    * Gets the current usage count and the limit for the resources under the
    * subscription.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -156,18 +150,19 @@ export class UsageOperations {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {UsageListResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link UsageListResult} for more information.
+   *                      {Models.UsageListResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.UsageListResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   list(): Promise<Models.UsageListResult>;
-  list(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.UsageListResult>;
+  list(options: msRest.RequestOptionsBase): Promise<Models.UsageListResult>;
   list(callback: msRest.ServiceCallback<Models.UsageListResult>): void;
-  list(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.UsageListResult>): void;
-  list(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.UsageListResult>): any {
+  list(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.UsageListResult>): void;
+  list(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.UsageListResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

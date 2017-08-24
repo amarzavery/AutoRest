@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestLongRunningOperationTestService } from '../autoRestLongRunningOperationTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestLongRunningOperationTestService } from "../autoRestLongRunningOperationTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -31,42 +31,15 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that contains ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut200SucceededOptionalParams} [options] Optional Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put200SucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put200SucceededWithHttpOperationResponse(options?: Models.LROsPut200SucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -105,42 +78,16 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that does not contain ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut200SucceededNoStateOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put200SucceededNoStateWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put200SucceededNoStateWithHttpOperationResponse(options?: Models.LROsPut200SucceededNoStateOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -180,42 +127,15 @@ export class LROs {
    * a location header that points to a polling URL that returns a 200 and an
    * entity that doesn't contains ProvisioningState
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut202Retry200OptionalParams} [options] Optional Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put202Retry200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put202Retry200WithHttpOperationResponse(options?: Models.LROsPut202Retry200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -255,42 +175,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut201CreatingSucceeded200OptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put201CreatingSucceeded200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put201CreatingSucceeded200WithHttpOperationResponse(options?: Models.LROsPut201CreatingSucceeded200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -330,42 +224,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Updating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut200UpdatingSucceeded204OptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put200UpdatingSucceeded204WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put200UpdatingSucceeded204WithHttpOperationResponse(options?: Models.LROsPut200UpdatingSucceeded204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -405,42 +273,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Created’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut201CreatingFailed200OptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put201CreatingFailed200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put201CreatingFailed200WithHttpOperationResponse(options?: Models.LROsPut201CreatingFailed200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -480,42 +322,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPut200Acceptedcanceled200OptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async put200Acceptedcanceled200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put200Acceptedcanceled200WithHttpOperationResponse(options?: Models.LROsPut200Acceptedcanceled200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -555,42 +371,15 @@ export class LROs {
    * location header. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutNoHeaderInRetryOptionalParams} [options] Optional Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putNoHeaderInRetryWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putNoHeaderInRetryWithHttpOperationResponse(options?: Models.LROsPutNoHeaderInRetryOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -630,42 +419,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncRetrySucceededWithHttpOperationResponse(options?: Models.LROsPutAsyncRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -705,42 +468,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncNoRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncNoRetrySucceededWithHttpOperationResponse(options?: Models.LROsPutAsyncNoRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -780,42 +517,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncRetryFailedWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncRetryFailedWithHttpOperationResponse(options?: Models.LROsPutAsyncRetryFailedOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -855,42 +566,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncNoRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncNoRetrycanceledWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncNoRetrycanceledWithHttpOperationResponse(options?: Models.LROsPutAsyncNoRetrycanceledOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -930,42 +615,16 @@ export class LROs {
    * Azure-AsyncOperation header. Subsequent calls to operation status do not
    * contain Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncNoHeaderInRetryOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncNoHeaderInRetryWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncNoHeaderInRetryWithHttpOperationResponse(options?: Models.LROsPutAsyncNoHeaderInRetryOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1003,40 +662,15 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutNonResourceOptionalParams} [options] Optional Parameters.
    *
-   * @param {object} [options.sku] sku to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.sku.name]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Sku} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putNonResourceWithHttpOperationResponse(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putNonResourceWithHttpOperationResponse(options?: Models.LROsPutNonResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1074,40 +708,16 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncNonResourceOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.sku] Sku to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.sku.name]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Sku} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncNonResourceWithHttpOperationResponse(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncNonResourceWithHttpOperationResponse(options?: Models.LROsPutAsyncNonResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1145,36 +755,15 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutSubResourceOptionalParams} [options] Optional Parameters.
    *
-   * @param {string} [options.provisioningState]
+   * @returns {Promise} A promise is returned
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {SubProduct} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SubProduct} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putSubResourceWithHttpOperationResponse(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putSubResourceWithHttpOperationResponse(options?: Models.LROsPutSubResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1212,36 +801,16 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPutAsyncSubResourceOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {string} [options.provisioningState]
+   * @returns {Promise} A promise is returned
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {SubProduct} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SubProduct} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async putAsyncSubResourceWithHttpOperationResponse(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putAsyncSubResourceWithHttpOperationResponse(options?: Models.LROsPutAsyncSubResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1282,34 +851,15 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteProvisioning202Accepted200SucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteProvisioning202Accepted200SucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1350,34 +900,15 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteProvisioning202DeletingFailed200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteProvisioning202DeletingFailed200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1418,34 +949,15 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteProvisioning202Deletingcanceled200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteProvisioning202Deletingcanceled200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1483,33 +995,15 @@ export class LROs {
   /**
    * Long running delete succeeds and returns right away
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async delete204SucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete204SucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1535,34 +1029,15 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async delete202Retry200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete202Retry200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1602,34 +1077,15 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async delete202NoRetry204WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete202NoRetry204WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1669,33 +1125,15 @@ export class LROs {
    * initial request. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteNoHeaderInRetryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteNoHeaderInRetryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1721,33 +1159,15 @@ export class LROs {
    * in the initial request. Subsequent calls to operation status do not contain
    * Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteAsyncNoHeaderInRetryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteAsyncNoHeaderInRetryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1773,33 +1193,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteAsyncRetrySucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteAsyncRetrySucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1825,33 +1227,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteAsyncNoRetrySucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteAsyncNoRetrySucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1877,33 +1261,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteAsyncRetryFailedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteAsyncRetryFailedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1929,33 +1295,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async deleteAsyncRetrycanceledWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async deleteAsyncRetrycanceledWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -1981,34 +1329,15 @@ export class LROs {
    * with 'Location' header. Poll returns a 200 with a response body after
    * success.
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @returns {Promise} A promise is returned
    *
-   * @param {function} [optionalCallback] - The optional callback.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Sku} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async post200WithPayloadWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post200WithPayloadWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2048,41 +1377,15 @@ export class LROs {
    * with 'Location' and 'Retry-After' headers, Polls return a 200 with a
    * response body after success
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPost202Retry200OptionalParams} [options] Optional Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async post202Retry200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post202Retry200WithHttpOperationResponse(options?: Models.LROsPost202Retry200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2107,42 +1410,15 @@ export class LROs {
    * Long running post request, service returns a 202 to the initial request,
    * with 'Location' header, 204 with noresponse body after success
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPost202NoRetry204OptionalParams} [options] Optional Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async post202NoRetry204WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post202NoRetry204WithHttpOperationResponse(options?: Models.LROsPost202NoRetry204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2182,42 +1458,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPostAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async postAsyncRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postAsyncRetrySucceededWithHttpOperationResponse(options?: Models.LROsPostAsyncRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2257,42 +1507,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPostAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {Product} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {object} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async postAsyncNoRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postAsyncNoRetrySucceededWithHttpOperationResponse(options?: Models.LROsPostAsyncNoRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2332,41 +1556,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPostAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async postAsyncRetryFailedWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postAsyncRetryFailedWithHttpOperationResponse(options?: Models.LROsPostAsyncRetryFailedOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2392,41 +1591,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
+   * @param {LROsPostAsyncRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
-   * @param {object} [options.product] Product to put
+   * @returns {Promise} A promise is returned
    *
-   * @param {string} [options.product.provisioningState]
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
-   *
-   * @param {function} [optionalCallback] - The optional callback.
-   *
-   * @returns {function|Promise} If a callback was passed as the last parameter
-   * then it returns the callback else returns a Promise.
-   *
-   * {Promise} A promise is returned
-   *
-   *                      @resolve {null} - The deserialized result object.
-   *
-   *                      @reject {Error} - The error object.
-   *
-   * {function} optionalCallback(err, result, request, response)
-   *
-   *                      {Error}  err        - The Error object if an error occurred, null otherwise.
-   *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
-   *
-   *                      {object} [request]  - The HTTP Request object if an error did not occur.
-   *
-   *                      {stream} [response] - The HTTP Response stream if an error did not occur.
+   * @reject {Error|ServiceError} - The error object.
    */
-  async postAsyncRetrycanceledWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postAsyncRetrycanceledWithHttpOperationResponse(options?: Models.LROsPostAsyncRetrycanceledOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Send request
     let initialResult: msRest.HttpOperationResponse;
@@ -2450,26 +1624,16 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that contains ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200SucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut200SucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut200SucceededWithHttpOperationResponse(options?: Models.LROsBeginPut200SucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -2580,26 +1744,16 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that does not contain ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200SucceededNoStateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut200SucceededNoStateWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut200SucceededNoStateWithHttpOperationResponse(options?: Models.LROsBeginPut200SucceededNoStateOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -2711,26 +1865,16 @@ export class LROs {
    * a location header that points to a polling URL that returns a 200 and an
    * entity that doesn't contains ProvisioningState
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut202Retry200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut202Retry200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut202Retry200WithHttpOperationResponse(options?: Models.LROsBeginPut202Retry200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -2842,26 +1986,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut201CreatingSucceeded200OptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut201CreatingSucceeded200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut201CreatingSucceeded200WithHttpOperationResponse(options?: Models.LROsBeginPut201CreatingSucceeded200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -2988,26 +2122,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Updating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200UpdatingSucceeded204OptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut200UpdatingSucceeded204WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut200UpdatingSucceeded204WithHttpOperationResponse(options?: Models.LROsBeginPut200UpdatingSucceeded204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3119,26 +2243,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Created’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut201CreatingFailed200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut201CreatingFailed200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut201CreatingFailed200WithHttpOperationResponse(options?: Models.LROsBeginPut201CreatingFailed200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3265,26 +2379,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200Acceptedcanceled200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPut200Acceptedcanceled200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPut200Acceptedcanceled200WithHttpOperationResponse(options?: Models.LROsBeginPut200Acceptedcanceled200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3396,26 +2500,16 @@ export class LROs {
    * location header. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutNoHeaderInRetryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutNoHeaderInRetryWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutNoHeaderInRetryWithHttpOperationResponse(options?: Models.LROsBeginPutNoHeaderInRetryOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3527,26 +2621,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncRetrySucceededWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3658,26 +2742,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncNoRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncNoRetrySucceededWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncNoRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3789,26 +2863,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncRetryFailedWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncRetryFailedWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncRetryFailedOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -3920,26 +2984,16 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNoRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncNoRetrycanceledWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncNoRetrycanceledWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncNoRetrycanceledOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -4051,26 +3105,16 @@ export class LROs {
    * Azure-AsyncOperation header. Subsequent calls to operation status do not
    * contain Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNoHeaderInRetryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncNoHeaderInRetryWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncNoHeaderInRetryWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncNoHeaderInRetryOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -4180,24 +3224,16 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.sku] sku to put
-   *
-   * @param {string} [options.sku.name]
-   *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutNonResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Sku>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutNonResourceWithHttpOperationResponse(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutNonResourceWithHttpOperationResponse(options?: Models.LROsBeginPutNonResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let sku = (options && options.sku !== undefined) ? options.sku : undefined;
     // Validate
@@ -4307,24 +3343,16 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.sku] Sku to put
-   *
-   * @param {string} [options.sku.name]
-   *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNonResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Sku>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncNonResourceWithHttpOperationResponse(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncNonResourceWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncNonResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let sku = (options && options.sku !== undefined) ? options.sku : undefined;
     // Validate
@@ -4434,20 +3462,16 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.provisioningState]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutSubResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<SubProduct>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutSubResourceWithHttpOperationResponse(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutSubResourceWithHttpOperationResponse(options?: Models.LROsBeginPutSubResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let provisioningState = (options && options.provisioningState !== undefined) ? options.provisioningState : undefined;
     // Validate
@@ -4570,20 +3594,16 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.provisioningState]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncSubResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<SubProduct>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPutAsyncSubResourceWithHttpOperationResponse(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPutAsyncSubResourceWithHttpOperationResponse(options?: Models.LROsBeginPutAsyncSubResourceOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let provisioningState = (options && options.provisioningState !== undefined) ? options.provisioningState : undefined;
     // Validate
@@ -4709,18 +3729,15 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteProvisioning202Accepted200SucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteProvisioning202Accepted200SucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -4833,18 +3850,15 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteProvisioning202DeletingFailed200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteProvisioning202DeletingFailed200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -4957,18 +3971,15 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteProvisioning202Deletingcanceled200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteProvisioning202Deletingcanceled200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5078,18 +4089,15 @@ export class LROs {
   /**
    * Long running delete succeeds and returns right away
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDelete204SucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDelete204SucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5171,18 +4179,15 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDelete202Retry200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDelete202Retry200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5279,18 +4284,15 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDelete202NoRetry204WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDelete202NoRetry204WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5387,18 +4389,15 @@ export class LROs {
    * initial request. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteNoHeaderInRetryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteNoHeaderInRetryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5480,18 +4479,15 @@ export class LROs {
    * in the initial request. Subsequent calls to operation status do not contain
    * Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteAsyncNoHeaderInRetryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteAsyncNoHeaderInRetryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5573,18 +4569,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteAsyncRetrySucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteAsyncRetrySucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5666,18 +4659,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteAsyncNoRetrySucceededWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteAsyncNoRetrySucceededWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5759,18 +4749,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteAsyncRetryFailedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteAsyncRetryFailedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5852,18 +4839,15 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginDeleteAsyncRetrycanceledWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginDeleteAsyncRetrycanceledWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -5945,18 +4929,15 @@ export class LROs {
    * with 'Location' header. Poll returns a 200 with a response body after
    * success.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Sku>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPost200WithPayloadWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPost200WithPayloadWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -6068,26 +5049,16 @@ export class LROs {
    * with 'Location' and 'Retry-After' headers, Polls return a 200 with a
    * response body after success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPost202Retry200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPost202Retry200WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPost202Retry200WithHttpOperationResponse(options?: Models.LROsBeginPost202Retry200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -6183,26 +5154,16 @@ export class LROs {
    * Long running post request, service returns a 202 to the initial request,
    * with 'Location' header, 204 with noresponse body after success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPost202NoRetry204OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPost202NoRetry204WithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPost202NoRetry204WithHttpOperationResponse(options?: Models.LROsBeginPost202NoRetry204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -6314,26 +5275,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPostAsyncRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPostAsyncRetrySucceededWithHttpOperationResponse(options?: Models.LROsBeginPostAsyncRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -6445,26 +5396,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPostAsyncNoRetrySucceededWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPostAsyncNoRetrySucceededWithHttpOperationResponse(options?: Models.LROsBeginPostAsyncNoRetrySucceededOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -6576,26 +5517,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPostAsyncRetryFailedWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPostAsyncRetryFailedWithHttpOperationResponse(options?: Models.LROsBeginPostAsyncRetryFailedOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -6692,26 +5623,16 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async beginPostAsyncRetrycanceledWithHttpOperationResponse(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async beginPostAsyncRetrycanceledWithHttpOperationResponse(options?: Models.LROsBeginPostAsyncRetrycanceledOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let product = (options && options.product !== undefined) ? options.product : undefined;
     // Validate
@@ -6807,18 +5728,7 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that contains ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut200SucceededOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -6826,18 +5736,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put200Succeeded(): Promise<Models.Product>;
-  put200Succeeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put200Succeeded(options: Models.LROsPut200SucceededOptionalParams): Promise<Models.Product>;
   put200Succeeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  put200Succeeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put200Succeeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put200Succeeded(options: Models.LROsPut200SucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put200Succeeded(options?: Models.LROsPut200SucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -6864,18 +5774,8 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that does not contain ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut200SucceededNoStateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -6883,18 +5783,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put200SucceededNoState(): Promise<Models.Product>;
-  put200SucceededNoState(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put200SucceededNoState(options: Models.LROsPut200SucceededNoStateOptionalParams): Promise<Models.Product>;
   put200SucceededNoState(callback: msRest.ServiceCallback<Models.Product>): void;
-  put200SucceededNoState(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put200SucceededNoState(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put200SucceededNoState(options: Models.LROsPut200SucceededNoStateOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put200SucceededNoState(options?: Models.LROsPut200SucceededNoStateOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -6922,18 +5822,7 @@ export class LROs {
    * a location header that points to a polling URL that returns a 200 and an
    * entity that doesn't contains ProvisioningState
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut202Retry200OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -6941,18 +5830,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put202Retry200(): Promise<Models.Product>;
-  put202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put202Retry200(options: Models.LROsPut202Retry200OptionalParams): Promise<Models.Product>;
   put202Retry200(callback: msRest.ServiceCallback<Models.Product>): void;
-  put202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put202Retry200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put202Retry200(options: Models.LROsPut202Retry200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put202Retry200(options?: Models.LROsPut202Retry200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -6980,18 +5869,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut201CreatingSucceeded200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -6999,18 +5878,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put201CreatingSucceeded200(): Promise<Models.Product>;
-  put201CreatingSucceeded200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put201CreatingSucceeded200(options: Models.LROsPut201CreatingSucceeded200OptionalParams): Promise<Models.Product>;
   put201CreatingSucceeded200(callback: msRest.ServiceCallback<Models.Product>): void;
-  put201CreatingSucceeded200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put201CreatingSucceeded200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put201CreatingSucceeded200(options: Models.LROsPut201CreatingSucceeded200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put201CreatingSucceeded200(options?: Models.LROsPut201CreatingSucceeded200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7038,18 +5917,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Updating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut200UpdatingSucceeded204OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7057,18 +5926,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put200UpdatingSucceeded204(): Promise<Models.Product>;
-  put200UpdatingSucceeded204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put200UpdatingSucceeded204(options: Models.LROsPut200UpdatingSucceeded204OptionalParams): Promise<Models.Product>;
   put200UpdatingSucceeded204(callback: msRest.ServiceCallback<Models.Product>): void;
-  put200UpdatingSucceeded204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put200UpdatingSucceeded204(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put200UpdatingSucceeded204(options: Models.LROsPut200UpdatingSucceeded204OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put200UpdatingSucceeded204(options?: Models.LROsPut200UpdatingSucceeded204OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7096,18 +5965,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Created’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut201CreatingFailed200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7115,18 +5974,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put201CreatingFailed200(): Promise<Models.Product>;
-  put201CreatingFailed200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put201CreatingFailed200(options: Models.LROsPut201CreatingFailed200OptionalParams): Promise<Models.Product>;
   put201CreatingFailed200(callback: msRest.ServiceCallback<Models.Product>): void;
-  put201CreatingFailed200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put201CreatingFailed200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put201CreatingFailed200(options: Models.LROsPut201CreatingFailed200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put201CreatingFailed200(options?: Models.LROsPut201CreatingFailed200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7154,18 +6013,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPut200Acceptedcanceled200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7173,18 +6022,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put200Acceptedcanceled200(): Promise<Models.Product>;
-  put200Acceptedcanceled200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  put200Acceptedcanceled200(options: Models.LROsPut200Acceptedcanceled200OptionalParams): Promise<Models.Product>;
   put200Acceptedcanceled200(callback: msRest.ServiceCallback<Models.Product>): void;
-  put200Acceptedcanceled200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  put200Acceptedcanceled200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  put200Acceptedcanceled200(options: Models.LROsPut200Acceptedcanceled200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  put200Acceptedcanceled200(options?: Models.LROsPut200Acceptedcanceled200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7212,18 +6061,7 @@ export class LROs {
    * location header. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutNoHeaderInRetryOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7231,18 +6069,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putNoHeaderInRetry(): Promise<Models.Product>;
-  putNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  putNoHeaderInRetry(options: Models.LROsPutNoHeaderInRetryOptionalParams): Promise<Models.Product>;
   putNoHeaderInRetry(callback: msRest.ServiceCallback<Models.Product>): void;
-  putNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  putNoHeaderInRetry(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  putNoHeaderInRetry(options: Models.LROsPutNoHeaderInRetryOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  putNoHeaderInRetry(options?: Models.LROsPutNoHeaderInRetryOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7270,18 +6108,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7289,18 +6117,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncRetrySucceeded(): Promise<Models.Product>;
-  putAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  putAsyncRetrySucceeded(options: Models.LROsPutAsyncRetrySucceededOptionalParams): Promise<Models.Product>;
   putAsyncRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  putAsyncRetrySucceeded(options: Models.LROsPutAsyncRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  putAsyncRetrySucceeded(options?: Models.LROsPutAsyncRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7328,18 +6156,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7347,18 +6165,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncNoRetrySucceeded(): Promise<Models.Product>;
-  putAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  putAsyncNoRetrySucceeded(options: Models.LROsPutAsyncNoRetrySucceededOptionalParams): Promise<Models.Product>;
   putAsyncNoRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncNoRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  putAsyncNoRetrySucceeded(options: Models.LROsPutAsyncNoRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  putAsyncNoRetrySucceeded(options?: Models.LROsPutAsyncNoRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7386,18 +6204,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7405,18 +6213,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncRetryFailed(): Promise<Models.Product>;
-  putAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  putAsyncRetryFailed(options: Models.LROsPutAsyncRetryFailedOptionalParams): Promise<Models.Product>;
   putAsyncRetryFailed(callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncRetryFailed(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  putAsyncRetryFailed(options: Models.LROsPutAsyncRetryFailedOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  putAsyncRetryFailed(options?: Models.LROsPutAsyncRetryFailedOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7444,18 +6252,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncNoRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7463,18 +6261,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncNoRetrycanceled(): Promise<Models.Product>;
-  putAsyncNoRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  putAsyncNoRetrycanceled(options: Models.LROsPutAsyncNoRetrycanceledOptionalParams): Promise<Models.Product>;
   putAsyncNoRetrycanceled(callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncNoRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncNoRetrycanceled(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  putAsyncNoRetrycanceled(options: Models.LROsPutAsyncNoRetrycanceledOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  putAsyncNoRetrycanceled(options?: Models.LROsPutAsyncNoRetrycanceledOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7502,18 +6300,8 @@ export class LROs {
    * Azure-AsyncOperation header. Subsequent calls to operation status do not
    * contain Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncNoHeaderInRetryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7521,18 +6309,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncNoHeaderInRetry(): Promise<Models.Product>;
-  putAsyncNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  putAsyncNoHeaderInRetry(options: Models.LROsPutAsyncNoHeaderInRetryOptionalParams): Promise<Models.Product>;
   putAsyncNoHeaderInRetry(callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  putAsyncNoHeaderInRetry(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  putAsyncNoHeaderInRetry(options: Models.LROsPutAsyncNoHeaderInRetryOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  putAsyncNoHeaderInRetry(options?: Models.LROsPutAsyncNoHeaderInRetryOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7558,16 +6346,7 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.sku] sku to put
-   *
-   * @param {string} [options.sku.name]
-   *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutNonResourceOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7575,18 +6354,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Sku} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
+   *                      {Models.Sku} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Sku} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putNonResource(): Promise<Models.Sku>;
-  putNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Sku>;
+  putNonResource(options: Models.LROsPutNonResourceOptionalParams): Promise<Models.Sku>;
   putNonResource(callback: msRest.ServiceCallback<Models.Sku>): void;
-  putNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Sku>): void;
-  putNonResource(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Sku>): any {
+  putNonResource(options: Models.LROsPutNonResourceOptionalParams, callback: msRest.ServiceCallback<Models.Sku>): void;
+  putNonResource(options?: Models.LROsPutNonResourceOptionalParams, callback?: msRest.ServiceCallback<Models.Sku>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7612,16 +6391,8 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.sku] Sku to put
-   *
-   * @param {string} [options.sku.name]
-   *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncNonResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7629,18 +6400,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Sku} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
+   *                      {Models.Sku} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Sku} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncNonResource(): Promise<Models.Sku>;
-  putAsyncNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Sku>;
+  putAsyncNonResource(options: Models.LROsPutAsyncNonResourceOptionalParams): Promise<Models.Sku>;
   putAsyncNonResource(callback: msRest.ServiceCallback<Models.Sku>): void;
-  putAsyncNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Sku>): void;
-  putAsyncNonResource(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Sku>): any {
+  putAsyncNonResource(options: Models.LROsPutAsyncNonResourceOptionalParams, callback: msRest.ServiceCallback<Models.Sku>): void;
+  putAsyncNonResource(options?: Models.LROsPutAsyncNonResourceOptionalParams, callback?: msRest.ServiceCallback<Models.Sku>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7666,12 +6437,7 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.provisioningState]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutSubResourceOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7679,18 +6445,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SubProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SubProduct} for more information.
+   *                      {Models.SubProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SubProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putSubResource(): Promise<Models.SubProduct>;
-  putSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.SubProduct>;
+  putSubResource(options: Models.LROsPutSubResourceOptionalParams): Promise<Models.SubProduct>;
   putSubResource(callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  putSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  putSubResource(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
+  putSubResource(options: Models.LROsPutSubResourceOptionalParams, callback: msRest.ServiceCallback<Models.SubProduct>): void;
+  putSubResource(options?: Models.LROsPutSubResourceOptionalParams, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7716,12 +6482,8 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.provisioningState]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPutAsyncSubResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7729,18 +6491,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SubProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SubProduct} for more information.
+   *                      {Models.SubProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SubProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putAsyncSubResource(): Promise<Models.SubProduct>;
-  putAsyncSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.SubProduct>;
+  putAsyncSubResource(options: Models.LROsPutAsyncSubResourceOptionalParams): Promise<Models.SubProduct>;
   putAsyncSubResource(callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  putAsyncSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  putAsyncSubResource(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
+  putAsyncSubResource(options: Models.LROsPutAsyncSubResourceOptionalParams, callback: msRest.ServiceCallback<Models.SubProduct>): void;
+  putAsyncSubResource(options?: Models.LROsPutAsyncSubResourceOptionalParams, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7769,10 +6531,7 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7780,18 +6539,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteProvisioning202Accepted200Succeeded(): Promise<Models.Product>;
-  deleteProvisioning202Accepted200Succeeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  deleteProvisioning202Accepted200Succeeded(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   deleteProvisioning202Accepted200Succeeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  deleteProvisioning202Accepted200Succeeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  deleteProvisioning202Accepted200Succeeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  deleteProvisioning202Accepted200Succeeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  deleteProvisioning202Accepted200Succeeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7820,10 +6579,7 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7831,18 +6587,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteProvisioning202DeletingFailed200(): Promise<Models.Product>;
-  deleteProvisioning202DeletingFailed200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  deleteProvisioning202DeletingFailed200(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   deleteProvisioning202DeletingFailed200(callback: msRest.ServiceCallback<Models.Product>): void;
-  deleteProvisioning202DeletingFailed200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  deleteProvisioning202DeletingFailed200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  deleteProvisioning202DeletingFailed200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  deleteProvisioning202DeletingFailed200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7871,10 +6627,7 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7882,18 +6635,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteProvisioning202Deletingcanceled200(): Promise<Models.Product>;
-  deleteProvisioning202Deletingcanceled200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  deleteProvisioning202Deletingcanceled200(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   deleteProvisioning202Deletingcanceled200(callback: msRest.ServiceCallback<Models.Product>): void;
-  deleteProvisioning202Deletingcanceled200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  deleteProvisioning202Deletingcanceled200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  deleteProvisioning202Deletingcanceled200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  deleteProvisioning202Deletingcanceled200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7919,10 +6672,7 @@ export class LROs {
   /**
    * Long running delete succeeds and returns right away
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7930,17 +6680,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete204Succeeded(): Promise<void>;
-  delete204Succeeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  delete204Succeeded(options: msRest.RequestOptionsBase): Promise<void>;
   delete204Succeeded(callback: msRest.ServiceCallback<void>): void;
-  delete204Succeeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  delete204Succeeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  delete204Succeeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  delete204Succeeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7968,10 +6718,7 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7979,18 +6726,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete202Retry200(): Promise<Models.Product>;
-  delete202Retry200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  delete202Retry200(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   delete202Retry200(callback: msRest.ServiceCallback<Models.Product>): void;
-  delete202Retry200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  delete202Retry200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  delete202Retry200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  delete202Retry200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8018,10 +6765,7 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8029,18 +6773,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete202NoRetry204(): Promise<Models.Product>;
-  delete202NoRetry204(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  delete202NoRetry204(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   delete202NoRetry204(callback: msRest.ServiceCallback<Models.Product>): void;
-  delete202NoRetry204(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  delete202NoRetry204(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  delete202NoRetry204(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  delete202NoRetry204(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8068,10 +6812,7 @@ export class LROs {
    * initial request. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8079,17 +6820,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteNoHeaderInRetry(): Promise<void>;
-  deleteNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteNoHeaderInRetry(options: msRest.RequestOptionsBase): Promise<void>;
   deleteNoHeaderInRetry(callback: msRest.ServiceCallback<void>): void;
-  deleteNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteNoHeaderInRetry(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteNoHeaderInRetry(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteNoHeaderInRetry(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8117,10 +6858,7 @@ export class LROs {
    * in the initial request. Subsequent calls to operation status do not contain
    * Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8128,17 +6866,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteAsyncNoHeaderInRetry(): Promise<void>;
-  deleteAsyncNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteAsyncNoHeaderInRetry(options: msRest.RequestOptionsBase): Promise<void>;
   deleteAsyncNoHeaderInRetry(callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncNoHeaderInRetry(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteAsyncNoHeaderInRetry(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteAsyncNoHeaderInRetry(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8166,10 +6904,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8177,17 +6912,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteAsyncRetrySucceeded(): Promise<void>;
-  deleteAsyncRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteAsyncRetrySucceeded(options: msRest.RequestOptionsBase): Promise<void>;
   deleteAsyncRetrySucceeded(callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncRetrySucceeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteAsyncRetrySucceeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteAsyncRetrySucceeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8215,10 +6950,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8226,17 +6958,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteAsyncNoRetrySucceeded(): Promise<void>;
-  deleteAsyncNoRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteAsyncNoRetrySucceeded(options: msRest.RequestOptionsBase): Promise<void>;
   deleteAsyncNoRetrySucceeded(callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncNoRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncNoRetrySucceeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteAsyncNoRetrySucceeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteAsyncNoRetrySucceeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8264,10 +6996,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8275,17 +7004,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteAsyncRetryFailed(): Promise<void>;
-  deleteAsyncRetryFailed(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteAsyncRetryFailed(options: msRest.RequestOptionsBase): Promise<void>;
   deleteAsyncRetryFailed(callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncRetryFailed(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncRetryFailed(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteAsyncRetryFailed(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteAsyncRetryFailed(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8313,10 +7042,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8324,17 +7050,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   deleteAsyncRetrycanceled(): Promise<void>;
-  deleteAsyncRetrycanceled(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  deleteAsyncRetrycanceled(options: msRest.RequestOptionsBase): Promise<void>;
   deleteAsyncRetrycanceled(callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncRetrycanceled(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  deleteAsyncRetrycanceled(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  deleteAsyncRetrycanceled(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteAsyncRetrycanceled(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8362,10 +7088,7 @@ export class LROs {
    * with 'Location' header. Poll returns a 200 with a response body after
    * success.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8373,18 +7096,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Sku} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
+   *                      {Models.Sku} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Sku} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post200WithPayload(): Promise<Models.Sku>;
-  post200WithPayload(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Sku>;
+  post200WithPayload(options: msRest.RequestOptionsBase): Promise<Models.Sku>;
   post200WithPayload(callback: msRest.ServiceCallback<Models.Sku>): void;
-  post200WithPayload(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Sku>): void;
-  post200WithPayload(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Sku>): any {
+  post200WithPayload(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Sku>): void;
+  post200WithPayload(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Sku>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8412,18 +7135,7 @@ export class LROs {
    * with 'Location' and 'Retry-After' headers, Polls return a 200 with a
    * response body after success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPost202Retry200OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8431,17 +7143,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post202Retry200(): Promise<void>;
-  post202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post202Retry200(options: Models.LROsPost202Retry200OptionalParams): Promise<void>;
   post202Retry200(callback: msRest.ServiceCallback<void>): void;
-  post202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post202Retry200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post202Retry200(options: Models.LROsPost202Retry200OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post202Retry200(options?: Models.LROsPost202Retry200OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8468,18 +7180,7 @@ export class LROs {
    * Long running post request, service returns a 202 to the initial request,
    * with 'Location' header, 204 with noresponse body after success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPost202NoRetry204OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8487,18 +7188,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post202NoRetry204(): Promise<Models.Product>;
-  post202NoRetry204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  post202NoRetry204(options: Models.LROsPost202NoRetry204OptionalParams): Promise<Models.Product>;
   post202NoRetry204(callback: msRest.ServiceCallback<Models.Product>): void;
-  post202NoRetry204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  post202NoRetry204(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  post202NoRetry204(options: Models.LROsPost202NoRetry204OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  post202NoRetry204(options?: Models.LROsPost202NoRetry204OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8526,18 +7227,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPostAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8545,18 +7236,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postAsyncRetrySucceeded(): Promise<Models.Product>;
-  postAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  postAsyncRetrySucceeded(options: Models.LROsPostAsyncRetrySucceededOptionalParams): Promise<Models.Product>;
   postAsyncRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  postAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  postAsyncRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  postAsyncRetrySucceeded(options: Models.LROsPostAsyncRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  postAsyncRetrySucceeded(options?: Models.LROsPostAsyncRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8584,18 +7275,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPostAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8603,18 +7284,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postAsyncNoRetrySucceeded(): Promise<Models.Product>;
-  postAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  postAsyncNoRetrySucceeded(options: Models.LROsPostAsyncNoRetrySucceededOptionalParams): Promise<Models.Product>;
   postAsyncNoRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  postAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  postAsyncNoRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  postAsyncNoRetrySucceeded(options: Models.LROsPostAsyncNoRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  postAsyncNoRetrySucceeded(options?: Models.LROsPostAsyncNoRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8642,18 +7323,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPostAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8661,17 +7332,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postAsyncRetryFailed(): Promise<void>;
-  postAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postAsyncRetryFailed(options: Models.LROsPostAsyncRetryFailedOptionalParams): Promise<void>;
   postAsyncRetryFailed(callback: msRest.ServiceCallback<void>): void;
-  postAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postAsyncRetryFailed(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postAsyncRetryFailed(options: Models.LROsPostAsyncRetryFailedOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postAsyncRetryFailed(options?: Models.LROsPostAsyncRetryFailedOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8699,18 +7370,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsPostAsyncRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8718,17 +7379,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postAsyncRetrycanceled(): Promise<void>;
-  postAsyncRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postAsyncRetrycanceled(options: Models.LROsPostAsyncRetrycanceledOptionalParams): Promise<void>;
   postAsyncRetrycanceled(callback: msRest.ServiceCallback<void>): void;
-  postAsyncRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postAsyncRetrycanceled(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postAsyncRetrycanceled(options: Models.LROsPostAsyncRetrycanceledOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postAsyncRetrycanceled(options?: Models.LROsPostAsyncRetrycanceledOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8755,18 +7416,8 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that contains ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200SucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8774,18 +7425,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut200Succeeded(): Promise<Models.Product>;
-  beginPut200Succeeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut200Succeeded(options: Models.LROsBeginPut200SucceededOptionalParams): Promise<Models.Product>;
   beginPut200Succeeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200Succeeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200Succeeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut200Succeeded(options: Models.LROsBeginPut200SucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut200Succeeded(options?: Models.LROsBeginPut200SucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8812,18 +7463,8 @@ export class LROs {
    * Long running put request, service returns a 200 to the initial request, with
    * an entity that does not contain ProvisioningState=’Succeeded’.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200SucceededNoStateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8831,18 +7472,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut200SucceededNoState(): Promise<Models.Product>;
-  beginPut200SucceededNoState(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut200SucceededNoState(options: Models.LROsBeginPut200SucceededNoStateOptionalParams): Promise<Models.Product>;
   beginPut200SucceededNoState(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200SucceededNoState(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200SucceededNoState(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut200SucceededNoState(options: Models.LROsBeginPut200SucceededNoStateOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut200SucceededNoState(options?: Models.LROsBeginPut200SucceededNoStateOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8870,18 +7511,8 @@ export class LROs {
    * a location header that points to a polling URL that returns a 200 and an
    * entity that doesn't contains ProvisioningState
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut202Retry200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8889,18 +7520,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut202Retry200(): Promise<Models.Product>;
-  beginPut202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut202Retry200(options: Models.LROsBeginPut202Retry200OptionalParams): Promise<Models.Product>;
   beginPut202Retry200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut202Retry200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut202Retry200(options: Models.LROsBeginPut202Retry200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut202Retry200(options?: Models.LROsBeginPut202Retry200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8928,18 +7559,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut201CreatingSucceeded200OptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8947,18 +7568,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut201CreatingSucceeded200(): Promise<Models.Product>;
-  beginPut201CreatingSucceeded200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut201CreatingSucceeded200(options: Models.LROsBeginPut201CreatingSucceeded200OptionalParams): Promise<Models.Product>;
   beginPut201CreatingSucceeded200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut201CreatingSucceeded200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut201CreatingSucceeded200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut201CreatingSucceeded200(options: Models.LROsBeginPut201CreatingSucceeded200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut201CreatingSucceeded200(options?: Models.LROsBeginPut201CreatingSucceeded200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8986,18 +7607,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Updating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200UpdatingSucceeded204OptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9005,18 +7616,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut200UpdatingSucceeded204(): Promise<Models.Product>;
-  beginPut200UpdatingSucceeded204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut200UpdatingSucceeded204(options: Models.LROsBeginPut200UpdatingSucceeded204OptionalParams): Promise<Models.Product>;
   beginPut200UpdatingSucceeded204(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200UpdatingSucceeded204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200UpdatingSucceeded204(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut200UpdatingSucceeded204(options: Models.LROsBeginPut200UpdatingSucceeded204OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut200UpdatingSucceeded204(options?: Models.LROsBeginPut200UpdatingSucceeded204OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9044,18 +7655,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Created’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut201CreatingFailed200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9063,18 +7664,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut201CreatingFailed200(): Promise<Models.Product>;
-  beginPut201CreatingFailed200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut201CreatingFailed200(options: Models.LROsBeginPut201CreatingFailed200OptionalParams): Promise<Models.Product>;
   beginPut201CreatingFailed200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut201CreatingFailed200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut201CreatingFailed200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut201CreatingFailed200(options: Models.LROsBeginPut201CreatingFailed200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut201CreatingFailed200(options?: Models.LROsBeginPut201CreatingFailed200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9102,18 +7703,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’.  Polls return this
    * value until the last poll returns a ‘200’ with ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPut200Acceptedcanceled200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9121,18 +7712,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPut200Acceptedcanceled200(): Promise<Models.Product>;
-  beginPut200Acceptedcanceled200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPut200Acceptedcanceled200(options: Models.LROsBeginPut200Acceptedcanceled200OptionalParams): Promise<Models.Product>;
   beginPut200Acceptedcanceled200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200Acceptedcanceled200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPut200Acceptedcanceled200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPut200Acceptedcanceled200(options: Models.LROsBeginPut200Acceptedcanceled200OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPut200Acceptedcanceled200(options?: Models.LROsBeginPut200Acceptedcanceled200OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9160,18 +7751,8 @@ export class LROs {
    * location header. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutNoHeaderInRetryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9179,18 +7760,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutNoHeaderInRetry(): Promise<Models.Product>;
-  beginPutNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPutNoHeaderInRetry(options: Models.LROsBeginPutNoHeaderInRetryOptionalParams): Promise<Models.Product>;
   beginPutNoHeaderInRetry(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutNoHeaderInRetry(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPutNoHeaderInRetry(options: Models.LROsBeginPutNoHeaderInRetryOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPutNoHeaderInRetry(options?: Models.LROsBeginPutNoHeaderInRetryOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9218,18 +7799,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9237,18 +7808,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncRetrySucceeded(): Promise<Models.Product>;
-  beginPutAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPutAsyncRetrySucceeded(options: Models.LROsBeginPutAsyncRetrySucceededOptionalParams): Promise<Models.Product>;
   beginPutAsyncRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPutAsyncRetrySucceeded(options: Models.LROsBeginPutAsyncRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPutAsyncRetrySucceeded(options?: Models.LROsBeginPutAsyncRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9276,18 +7847,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9295,18 +7856,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncNoRetrySucceeded(): Promise<Models.Product>;
-  beginPutAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPutAsyncNoRetrySucceeded(options: Models.LROsBeginPutAsyncNoRetrySucceededOptionalParams): Promise<Models.Product>;
   beginPutAsyncNoRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncNoRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPutAsyncNoRetrySucceeded(options: Models.LROsBeginPutAsyncNoRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPutAsyncNoRetrySucceeded(options?: Models.LROsBeginPutAsyncNoRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9334,18 +7895,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9353,18 +7904,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncRetryFailed(): Promise<Models.Product>;
-  beginPutAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPutAsyncRetryFailed(options: Models.LROsBeginPutAsyncRetryFailedOptionalParams): Promise<Models.Product>;
   beginPutAsyncRetryFailed(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncRetryFailed(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPutAsyncRetryFailed(options: Models.LROsBeginPutAsyncRetryFailedOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPutAsyncRetryFailed(options?: Models.LROsBeginPutAsyncRetryFailedOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9392,18 +7943,8 @@ export class LROs {
    * an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNoRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9411,18 +7952,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncNoRetrycanceled(): Promise<Models.Product>;
-  beginPutAsyncNoRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPutAsyncNoRetrycanceled(options: Models.LROsBeginPutAsyncNoRetrycanceledOptionalParams): Promise<Models.Product>;
   beginPutAsyncNoRetrycanceled(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncNoRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncNoRetrycanceled(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPutAsyncNoRetrycanceled(options: Models.LROsBeginPutAsyncNoRetrycanceledOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPutAsyncNoRetrycanceled(options?: Models.LROsBeginPutAsyncNoRetrycanceledOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9450,18 +7991,8 @@ export class LROs {
    * Azure-AsyncOperation header. Subsequent calls to operation status do not
    * contain Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNoHeaderInRetryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9469,18 +8000,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncNoHeaderInRetry(): Promise<Models.Product>;
-  beginPutAsyncNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPutAsyncNoHeaderInRetry(options: Models.LROsBeginPutAsyncNoHeaderInRetryOptionalParams): Promise<Models.Product>;
   beginPutAsyncNoHeaderInRetry(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncNoHeaderInRetry(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPutAsyncNoHeaderInRetry(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPutAsyncNoHeaderInRetry(options: Models.LROsBeginPutAsyncNoHeaderInRetryOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPutAsyncNoHeaderInRetry(options?: Models.LROsBeginPutAsyncNoHeaderInRetryOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9506,16 +8037,8 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.sku] sku to put
-   *
-   * @param {string} [options.sku.name]
-   *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutNonResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9523,18 +8046,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Sku} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
+   *                      {Models.Sku} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Sku} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutNonResource(): Promise<Models.Sku>;
-  beginPutNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Sku>;
+  beginPutNonResource(options: Models.LROsBeginPutNonResourceOptionalParams): Promise<Models.Sku>;
   beginPutNonResource(callback: msRest.ServiceCallback<Models.Sku>): void;
-  beginPutNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Sku>): void;
-  beginPutNonResource(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Sku>): any {
+  beginPutNonResource(options: Models.LROsBeginPutNonResourceOptionalParams, callback: msRest.ServiceCallback<Models.Sku>): void;
+  beginPutNonResource(options?: Models.LROsBeginPutNonResourceOptionalParams, callback?: msRest.ServiceCallback<Models.Sku>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9560,16 +8083,8 @@ export class LROs {
   /**
    * Long running put request with non resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.sku] Sku to put
-   *
-   * @param {string} [options.sku.name]
-   *
-   * @param {string} [options.sku.id]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncNonResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9577,18 +8092,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Sku} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
+   *                      {Models.Sku} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Sku} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncNonResource(): Promise<Models.Sku>;
-  beginPutAsyncNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Sku>;
+  beginPutAsyncNonResource(options: Models.LROsBeginPutAsyncNonResourceOptionalParams): Promise<Models.Sku>;
   beginPutAsyncNonResource(callback: msRest.ServiceCallback<Models.Sku>): void;
-  beginPutAsyncNonResource(options: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Sku>): void;
-  beginPutAsyncNonResource(options?: { sku? : Models.Sku, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Sku>): any {
+  beginPutAsyncNonResource(options: Models.LROsBeginPutAsyncNonResourceOptionalParams, callback: msRest.ServiceCallback<Models.Sku>): void;
+  beginPutAsyncNonResource(options?: Models.LROsBeginPutAsyncNonResourceOptionalParams, callback?: msRest.ServiceCallback<Models.Sku>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9614,12 +8129,8 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.provisioningState]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutSubResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9627,18 +8138,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SubProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SubProduct} for more information.
+   *                      {Models.SubProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SubProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutSubResource(): Promise<Models.SubProduct>;
-  beginPutSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.SubProduct>;
+  beginPutSubResource(options: Models.LROsBeginPutSubResourceOptionalParams): Promise<Models.SubProduct>;
   beginPutSubResource(callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  beginPutSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  beginPutSubResource(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
+  beginPutSubResource(options: Models.LROsBeginPutSubResourceOptionalParams, callback: msRest.ServiceCallback<Models.SubProduct>): void;
+  beginPutSubResource(options?: Models.LROsBeginPutSubResourceOptionalParams, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9664,12 +8175,8 @@ export class LROs {
   /**
    * Long running put request with sub resource.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.provisioningState]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPutAsyncSubResourceOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9677,18 +8184,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {SubProduct} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link SubProduct} for more information.
+   *                      {Models.SubProduct} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.SubProduct} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPutAsyncSubResource(): Promise<Models.SubProduct>;
-  beginPutAsyncSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.SubProduct>;
+  beginPutAsyncSubResource(options: Models.LROsBeginPutAsyncSubResourceOptionalParams): Promise<Models.SubProduct>;
   beginPutAsyncSubResource(callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  beginPutAsyncSubResource(options: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.SubProduct>): void;
-  beginPutAsyncSubResource(options?: { provisioningState? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
+  beginPutAsyncSubResource(options: Models.LROsBeginPutAsyncSubResourceOptionalParams, callback: msRest.ServiceCallback<Models.SubProduct>): void;
+  beginPutAsyncSubResource(options?: Models.LROsBeginPutAsyncSubResourceOptionalParams, callback?: msRest.ServiceCallback<Models.SubProduct>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9717,10 +8224,7 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9728,18 +8232,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteProvisioning202Accepted200Succeeded(): Promise<Models.Product>;
-  beginDeleteProvisioning202Accepted200Succeeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginDeleteProvisioning202Accepted200Succeeded(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   beginDeleteProvisioning202Accepted200Succeeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDeleteProvisioning202Accepted200Succeeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDeleteProvisioning202Accepted200Succeeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginDeleteProvisioning202Accepted200Succeeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginDeleteProvisioning202Accepted200Succeeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9768,10 +8272,7 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Failed’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9779,18 +8280,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteProvisioning202DeletingFailed200(): Promise<Models.Product>;
-  beginDeleteProvisioning202DeletingFailed200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginDeleteProvisioning202DeletingFailed200(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   beginDeleteProvisioning202DeletingFailed200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDeleteProvisioning202DeletingFailed200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDeleteProvisioning202DeletingFailed200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginDeleteProvisioning202DeletingFailed200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginDeleteProvisioning202DeletingFailed200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9819,10 +8320,7 @@ export class LROs {
    * this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Canceled’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9830,18 +8328,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteProvisioning202Deletingcanceled200(): Promise<Models.Product>;
-  beginDeleteProvisioning202Deletingcanceled200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginDeleteProvisioning202Deletingcanceled200(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   beginDeleteProvisioning202Deletingcanceled200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDeleteProvisioning202Deletingcanceled200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDeleteProvisioning202Deletingcanceled200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginDeleteProvisioning202Deletingcanceled200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginDeleteProvisioning202Deletingcanceled200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9867,10 +8365,7 @@ export class LROs {
   /**
    * Long running delete succeeds and returns right away
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9878,17 +8373,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDelete204Succeeded(): Promise<void>;
-  beginDelete204Succeeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDelete204Succeeded(options: msRest.RequestOptionsBase): Promise<void>;
   beginDelete204Succeeded(callback: msRest.ServiceCallback<void>): void;
-  beginDelete204Succeeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDelete204Succeeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDelete204Succeeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDelete204Succeeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9916,10 +8411,7 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9927,18 +8419,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDelete202Retry200(): Promise<Models.Product>;
-  beginDelete202Retry200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginDelete202Retry200(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   beginDelete202Retry200(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDelete202Retry200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDelete202Retry200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginDelete202Retry200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginDelete202Retry200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9966,10 +8458,7 @@ export class LROs {
    * Polls return this value until the last poll returns a ‘200’ with
    * ProvisioningState=’Succeeded’
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9977,18 +8466,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDelete202NoRetry204(): Promise<Models.Product>;
-  beginDelete202NoRetry204(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginDelete202NoRetry204(options: msRest.RequestOptionsBase): Promise<Models.Product>;
   beginDelete202NoRetry204(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDelete202NoRetry204(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginDelete202NoRetry204(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginDelete202NoRetry204(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginDelete202NoRetry204(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10016,10 +8505,7 @@ export class LROs {
    * initial request. Subsequent calls to operation status do not contain
    * location header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10027,17 +8513,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteNoHeaderInRetry(): Promise<void>;
-  beginDeleteNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDeleteNoHeaderInRetry(options: msRest.RequestOptionsBase): Promise<void>;
   beginDeleteNoHeaderInRetry(callback: msRest.ServiceCallback<void>): void;
-  beginDeleteNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDeleteNoHeaderInRetry(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDeleteNoHeaderInRetry(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDeleteNoHeaderInRetry(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10065,10 +8551,7 @@ export class LROs {
    * in the initial request. Subsequent calls to operation status do not contain
    * Azure-AsyncOperation header.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10076,17 +8559,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteAsyncNoHeaderInRetry(): Promise<void>;
-  beginDeleteAsyncNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDeleteAsyncNoHeaderInRetry(options: msRest.RequestOptionsBase): Promise<void>;
   beginDeleteAsyncNoHeaderInRetry(callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncNoHeaderInRetry(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncNoHeaderInRetry(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDeleteAsyncNoHeaderInRetry(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDeleteAsyncNoHeaderInRetry(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10114,10 +8597,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10125,17 +8605,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteAsyncRetrySucceeded(): Promise<void>;
-  beginDeleteAsyncRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDeleteAsyncRetrySucceeded(options: msRest.RequestOptionsBase): Promise<void>;
   beginDeleteAsyncRetrySucceeded(callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncRetrySucceeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDeleteAsyncRetrySucceeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDeleteAsyncRetrySucceeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10163,10 +8643,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10174,17 +8651,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteAsyncNoRetrySucceeded(): Promise<void>;
-  beginDeleteAsyncNoRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDeleteAsyncNoRetrySucceeded(options: msRest.RequestOptionsBase): Promise<void>;
   beginDeleteAsyncNoRetrySucceeded(callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncNoRetrySucceeded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncNoRetrySucceeded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDeleteAsyncNoRetrySucceeded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDeleteAsyncNoRetrySucceeded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10212,10 +8689,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10223,17 +8697,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteAsyncRetryFailed(): Promise<void>;
-  beginDeleteAsyncRetryFailed(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDeleteAsyncRetryFailed(options: msRest.RequestOptionsBase): Promise<void>;
   beginDeleteAsyncRetryFailed(callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncRetryFailed(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncRetryFailed(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDeleteAsyncRetryFailed(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDeleteAsyncRetryFailed(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10261,10 +8735,7 @@ export class LROs {
    * Poll the endpoint indicated in the Azure-AsyncOperation header for operation
    * status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10272,17 +8743,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginDeleteAsyncRetrycanceled(): Promise<void>;
-  beginDeleteAsyncRetrycanceled(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginDeleteAsyncRetrycanceled(options: msRest.RequestOptionsBase): Promise<void>;
   beginDeleteAsyncRetrycanceled(callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncRetrycanceled(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginDeleteAsyncRetrycanceled(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginDeleteAsyncRetrycanceled(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  beginDeleteAsyncRetrycanceled(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10310,10 +8781,7 @@ export class LROs {
    * with 'Location' header. Poll returns a 200 with a response body after
    * success.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10321,18 +8789,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Sku} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Sku} for more information.
+   *                      {Models.Sku} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Sku} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPost200WithPayload(): Promise<Models.Sku>;
-  beginPost200WithPayload(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Sku>;
+  beginPost200WithPayload(options: msRest.RequestOptionsBase): Promise<Models.Sku>;
   beginPost200WithPayload(callback: msRest.ServiceCallback<Models.Sku>): void;
-  beginPost200WithPayload(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Sku>): void;
-  beginPost200WithPayload(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Sku>): any {
+  beginPost200WithPayload(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Sku>): void;
+  beginPost200WithPayload(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Sku>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10360,18 +8828,8 @@ export class LROs {
    * with 'Location' and 'Retry-After' headers, Polls return a 200 with a
    * response body after success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPost202Retry200OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10379,17 +8837,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPost202Retry200(): Promise<void>;
-  beginPost202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginPost202Retry200(options: Models.LROsBeginPost202Retry200OptionalParams): Promise<void>;
   beginPost202Retry200(callback: msRest.ServiceCallback<void>): void;
-  beginPost202Retry200(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginPost202Retry200(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginPost202Retry200(options: Models.LROsBeginPost202Retry200OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  beginPost202Retry200(options?: Models.LROsBeginPost202Retry200OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10416,18 +8874,8 @@ export class LROs {
    * Long running post request, service returns a 202 to the initial request,
    * with 'Location' header, 204 with noresponse body after success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPost202NoRetry204OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10435,18 +8883,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPost202NoRetry204(): Promise<Models.Product>;
-  beginPost202NoRetry204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPost202NoRetry204(options: Models.LROsBeginPost202NoRetry204OptionalParams): Promise<Models.Product>;
   beginPost202NoRetry204(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPost202NoRetry204(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPost202NoRetry204(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPost202NoRetry204(options: Models.LROsBeginPost202NoRetry204OptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPost202NoRetry204(options?: Models.LROsBeginPost202NoRetry204OptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10474,18 +8922,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10493,18 +8931,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPostAsyncRetrySucceeded(): Promise<Models.Product>;
-  beginPostAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPostAsyncRetrySucceeded(options: Models.LROsBeginPostAsyncRetrySucceededOptionalParams): Promise<Models.Product>;
   beginPostAsyncRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPostAsyncRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPostAsyncRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPostAsyncRetrySucceeded(options: Models.LROsBeginPostAsyncRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPostAsyncRetrySucceeded(options?: Models.LROsBeginPostAsyncRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10532,18 +8970,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncNoRetrySucceededOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10551,18 +8979,18 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPostAsyncNoRetrySucceeded(): Promise<Models.Product>;
-  beginPostAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  beginPostAsyncNoRetrySucceeded(options: Models.LROsBeginPostAsyncNoRetrySucceededOptionalParams): Promise<Models.Product>;
   beginPostAsyncNoRetrySucceeded(callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPostAsyncNoRetrySucceeded(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  beginPostAsyncNoRetrySucceeded(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  beginPostAsyncNoRetrySucceeded(options: Models.LROsBeginPostAsyncNoRetrySucceededOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  beginPostAsyncNoRetrySucceeded(options?: Models.LROsBeginPostAsyncNoRetrySucceededOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10590,18 +9018,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncRetryFailedOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10609,17 +9027,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPostAsyncRetryFailed(): Promise<void>;
-  beginPostAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginPostAsyncRetryFailed(options: Models.LROsBeginPostAsyncRetryFailedOptionalParams): Promise<void>;
   beginPostAsyncRetryFailed(callback: msRest.ServiceCallback<void>): void;
-  beginPostAsyncRetryFailed(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginPostAsyncRetryFailed(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginPostAsyncRetryFailed(options: Models.LROsBeginPostAsyncRetryFailedOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  beginPostAsyncRetryFailed(options?: Models.LROsBeginPostAsyncRetryFailedOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10647,18 +9065,8 @@ export class LROs {
    * with an entity that contains ProvisioningState=’Creating’. Poll the endpoint
    * indicated in the Azure-AsyncOperation header for operation status
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.product] Product to put
-   *
-   * @param {string} [options.product.provisioningState]
-   *
-   * @param {object} [options.product.tags]
-   *
-   * @param {string} [options.product.location] Resource Location
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {LROsBeginPostAsyncRetrycanceledOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10666,17 +9074,17 @@ export class LROs {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   beginPostAsyncRetrycanceled(): Promise<void>;
-  beginPostAsyncRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  beginPostAsyncRetrycanceled(options: Models.LROsBeginPostAsyncRetrycanceledOptionalParams): Promise<void>;
   beginPostAsyncRetrycanceled(callback: msRest.ServiceCallback<void>): void;
-  beginPostAsyncRetrycanceled(options: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  beginPostAsyncRetrycanceled(options?: { product? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  beginPostAsyncRetrycanceled(options: Models.LROsBeginPostAsyncRetrycanceledOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  beginPostAsyncRetrycanceled(options?: Models.LROsBeginPostAsyncRetrycanceledOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

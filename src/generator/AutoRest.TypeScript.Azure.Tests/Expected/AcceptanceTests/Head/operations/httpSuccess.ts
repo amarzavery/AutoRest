@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestHeadTestService } from '../autoRestHeadTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHeadTestService } from "../autoRestHeadTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class HttpSuccess {
   /**
    * Return 200 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -120,18 +118,15 @@ export class HttpSuccess {
   /**
    * Return 204 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head204WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head204WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -212,18 +207,15 @@ export class HttpSuccess {
   /**
    * Return 404 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head404WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head404WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -304,10 +296,7 @@ export class HttpSuccess {
   /**
    * Return 200 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -319,13 +308,13 @@ export class HttpSuccess {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head200(): Promise<boolean>;
-  head200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  head200(options: msRest.RequestOptionsBase): Promise<boolean>;
   head200(callback: msRest.ServiceCallback<boolean>): void;
-  head200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  head200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  head200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  head200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -351,10 +340,7 @@ export class HttpSuccess {
   /**
    * Return 204 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -366,13 +352,13 @@ export class HttpSuccess {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head204(): Promise<boolean>;
-  head204(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  head204(options: msRest.RequestOptionsBase): Promise<boolean>;
   head204(callback: msRest.ServiceCallback<boolean>): void;
-  head204(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  head204(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  head204(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  head204(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -398,10 +384,7 @@ export class HttpSuccess {
   /**
    * Return 404 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -413,13 +396,13 @@ export class HttpSuccess {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head404(): Promise<boolean>;
-  head404(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  head404(options: msRest.RequestOptionsBase): Promise<boolean>;
   head404(callback: msRest.ServiceCallback<boolean>): void;
-  head404(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  head404(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  head404(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  head404(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

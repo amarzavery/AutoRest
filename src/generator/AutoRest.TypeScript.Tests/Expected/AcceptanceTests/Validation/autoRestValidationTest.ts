@@ -8,13 +8,14 @@
  * regenerated.
  */
 
-import * as msRest from "ms-rest";
+import * as msRest from "ms-rest-ts";
 import * as Models from "./models";
 import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
+
 class AutoRestValidationTest extends msRest.ServiceClient {
   subscriptionId: string;
   apiVersion: string;
@@ -36,8 +37,8 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
@@ -74,18 +75,15 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    * @param {number} id Required int multiple of 10 from 100 to 1000.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async validationOfMethodParametersWithHttpOperationResponse(resourceGroupName: string, id: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async validationOfMethodParametersWithHttpOperationResponse(resourceGroupName: string, id: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
     // Validate
     try {
@@ -228,35 +226,16 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    * @param {number} id Required int multiple of 10 from 100 to 1000.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.body]
-   *
-   * @param {array} [options.body.displayNames] Non required array of unique
-   * items from 0 to 6 elements.
-   *
-   * @param {number} [options.body.capacity] Non required int betwen 0 and 100
-   * exclusive.
-   *
-   * @param {string} [options.body.image] Image URL representing the product.
-   *
-   * @param {object} options.body.child
-   *
-   * @param {number} [options.body.child.count] Count
-   *
-   * @param {string} [options.body.constStringAsEnum] Constant string as Enum.
-   * Possible values include: 'constant_string_as_enum'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestValidationTestValidationOfBodyOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async validationOfBodyWithHttpOperationResponse(resourceGroupName: string, id: number, options?: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async validationOfBodyWithHttpOperationResponse(resourceGroupName: string, id: number, options?: Models.AutoRestValidationTestValidationOfBodyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let body = (options && options.body !== undefined) ? options.body : undefined;
     // Validate
@@ -407,18 +386,15 @@ class AutoRestValidationTest extends msRest.ServiceClient {
   // methods on the client.
 
   /**
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getWithConstantInPathWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getWithConstantInPathWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let constantParam = 'constant';
 
@@ -478,35 +454,16 @@ class AutoRestValidationTest extends msRest.ServiceClient {
   // methods on the client.
 
   /**
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.body]
-   *
-   * @param {array} [options.body.displayNames] Non required array of unique
-   * items from 0 to 6 elements.
-   *
-   * @param {number} [options.body.capacity] Non required int betwen 0 and 100
-   * exclusive.
-   *
-   * @param {string} [options.body.image] Image URL representing the product.
-   *
-   * @param {object} options.body.child
-   *
-   * @param {number} [options.body.child.count] Count
-   *
-   * @param {string} [options.body.constStringAsEnum] Constant string as Enum.
-   * Possible values include: 'constant_string_as_enum'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestValidationTestPostWithConstantInBodyOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Product>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postWithConstantInBodyWithHttpOperationResponse(options?: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postWithConstantInBodyWithHttpOperationResponse(options?: Models.AutoRestValidationTestPostWithConstantInBodyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let body = (options && options.body !== undefined) ? options.body : undefined;
     let constantParam = 'constant';
@@ -602,10 +559,7 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    * @param {number} id Required int multiple of 10 from 100 to 1000.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -613,18 +567,18 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   validationOfMethodParameters(resourceGroupName: string, id: number): Promise<Models.Product>;
-  validationOfMethodParameters(resourceGroupName: string, id: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  validationOfMethodParameters(resourceGroupName: string, id: number, options: msRest.RequestOptionsBase): Promise<Models.Product>;
   validationOfMethodParameters(resourceGroupName: string, id: number, callback: msRest.ServiceCallback<Models.Product>): void;
-  validationOfMethodParameters(resourceGroupName: string, id: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  validationOfMethodParameters(resourceGroupName: string, id: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  validationOfMethodParameters(resourceGroupName: string, id: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product>): void;
+  validationOfMethodParameters(resourceGroupName: string, id: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -655,27 +609,8 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    * @param {number} id Required int multiple of 10 from 100 to 1000.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.body]
-   *
-   * @param {array} [options.body.displayNames] Non required array of unique
-   * items from 0 to 6 elements.
-   *
-   * @param {number} [options.body.capacity] Non required int betwen 0 and 100
-   * exclusive.
-   *
-   * @param {string} [options.body.image] Image URL representing the product.
-   *
-   * @param {object} options.body.child
-   *
-   * @param {number} [options.body.child.count] Count
-   *
-   * @param {string} [options.body.constStringAsEnum] Constant string as Enum.
-   * Possible values include: 'constant_string_as_enum'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestValidationTestValidationOfBodyOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -683,18 +618,18 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   validationOfBody(resourceGroupName: string, id: number): Promise<Models.Product>;
-  validationOfBody(resourceGroupName: string, id: number, options: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  validationOfBody(resourceGroupName: string, id: number, options: Models.AutoRestValidationTestValidationOfBodyOptionalParams): Promise<Models.Product>;
   validationOfBody(resourceGroupName: string, id: number, callback: msRest.ServiceCallback<Models.Product>): void;
-  validationOfBody(resourceGroupName: string, id: number, options: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  validationOfBody(resourceGroupName: string, id: number, options?: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  validationOfBody(resourceGroupName: string, id: number, options: Models.AutoRestValidationTestValidationOfBodyOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  validationOfBody(resourceGroupName: string, id: number, options?: Models.AutoRestValidationTestValidationOfBodyOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -718,10 +653,7 @@ class AutoRestValidationTest extends msRest.ServiceClient {
   }
 
   /**
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -729,17 +661,17 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getWithConstantInPath(): Promise<void>;
-  getWithConstantInPath(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getWithConstantInPath(options: msRest.RequestOptionsBase): Promise<void>;
   getWithConstantInPath(callback: msRest.ServiceCallback<void>): void;
-  getWithConstantInPath(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getWithConstantInPath(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getWithConstantInPath(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getWithConstantInPath(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -763,27 +695,8 @@ class AutoRestValidationTest extends msRest.ServiceClient {
   }
 
   /**
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.body]
-   *
-   * @param {array} [options.body.displayNames] Non required array of unique
-   * items from 0 to 6 elements.
-   *
-   * @param {number} [options.body.capacity] Non required int betwen 0 and 100
-   * exclusive.
-   *
-   * @param {string} [options.body.image] Image URL representing the product.
-   *
-   * @param {object} options.body.child
-   *
-   * @param {number} [options.body.child.count] Count
-   *
-   * @param {string} [options.body.constStringAsEnum] Constant string as Enum.
-   * Possible values include: 'constant_string_as_enum'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {AutoRestValidationTestPostWithConstantInBodyOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -791,18 +704,18 @@ class AutoRestValidationTest extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Product} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Product} for more information.
+   *                      {Models.Product} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Product} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postWithConstantInBody(): Promise<Models.Product>;
-  postWithConstantInBody(options: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product>;
+  postWithConstantInBody(options: Models.AutoRestValidationTestPostWithConstantInBodyOptionalParams): Promise<Models.Product>;
   postWithConstantInBody(callback: msRest.ServiceCallback<Models.Product>): void;
-  postWithConstantInBody(options: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product>): void;
-  postWithConstantInBody(options?: { body? : Models.Product, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product>): any {
+  postWithConstantInBody(options: Models.AutoRestValidationTestPostWithConstantInBodyOptionalParams, callback: msRest.ServiceCallback<Models.Product>): void;
+  postWithConstantInBody(options?: Models.AutoRestValidationTestPostWithConstantInBodyOptionalParams, callback?: msRest.ServiceCallback<Models.Product>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

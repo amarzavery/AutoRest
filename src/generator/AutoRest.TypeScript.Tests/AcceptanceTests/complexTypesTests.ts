@@ -6,7 +6,7 @@
 var should = require('should');
 var http = require('http');
 var assert = require('assert');
-import * as msRest from 'ms-rest';
+import * as msRest from 'ms-rest-ts';
 import * as moment from 'moment';
 import { AutoRestComplexTestService as AutoRestComplexTestService, AutoRestComplexTestServiceModels } from '../Expected/AcceptanceTests/BodyComplex/autoRestComplexTestService';
 

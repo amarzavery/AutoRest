@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestHttpInfrastructureTestService } from '../autoRestHttpInfrastructureTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHttpInfrastructureTestService } from "../autoRestHttpInfrastructureTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class HttpFailure {
   /**
    * Get empty error form server
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyErrorWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyErrorWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -123,18 +121,15 @@ export class HttpFailure {
   /**
    * Get empty error form server
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNoModelErrorWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNoModelErrorWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -214,18 +209,15 @@ export class HttpFailure {
   /**
    * Get empty response from server
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNoModelEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNoModelEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -305,10 +297,7 @@ export class HttpFailure {
   /**
    * Get empty error form server
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -320,13 +309,13 @@ export class HttpFailure {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmptyError(): Promise<boolean>;
-  getEmptyError(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getEmptyError(options: msRest.RequestOptionsBase): Promise<boolean>;
   getEmptyError(callback: msRest.ServiceCallback<boolean>): void;
-  getEmptyError(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getEmptyError(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getEmptyError(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getEmptyError(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -352,10 +341,7 @@ export class HttpFailure {
   /**
    * Get empty error form server
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -367,13 +353,13 @@ export class HttpFailure {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNoModelError(): Promise<boolean>;
-  getNoModelError(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getNoModelError(options: msRest.RequestOptionsBase): Promise<boolean>;
   getNoModelError(callback: msRest.ServiceCallback<boolean>): void;
-  getNoModelError(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getNoModelError(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getNoModelError(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getNoModelError(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -399,10 +385,7 @@ export class HttpFailure {
   /**
    * Get empty response from server
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -414,13 +397,13 @@ export class HttpFailure {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNoModelEmpty(): Promise<boolean>;
-  getNoModelEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  getNoModelEmpty(options: msRest.RequestOptionsBase): Promise<boolean>;
   getNoModelEmpty(callback: msRest.ServiceCallback<boolean>): void;
-  getNoModelEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  getNoModelEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  getNoModelEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  getNoModelEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

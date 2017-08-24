@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestDateTimeTestService } from '../autoRestDateTimeTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestDateTimeTestService } from "../autoRestDateTimeTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class Datetime {
   /**
    * Get null datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -123,18 +121,15 @@ export class Datetime {
   /**
    * Get invalid datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -218,18 +213,15 @@ export class Datetime {
   /**
    * Get overflow datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getOverflowWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getOverflowWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -313,18 +305,15 @@ export class Datetime {
   /**
    * Get underflow datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUnderflowWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUnderflowWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -408,25 +397,22 @@ export class Datetime {
   /**
    * Put max datetime value 9999-12-31T23:59:59.9999999Z
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putUtcMaxDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putUtcMaxDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datetimeBody || !(datetimeBody instanceof Date ||
-          (typeof datetimeBody.valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
+          (typeof (datetimeBody as string).valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
             throw new Error('datetimeBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -513,18 +499,15 @@ export class Datetime {
   /**
    * Get max datetime value 9999-12-31t23:59:59.9999999z
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUtcLowercaseMaxDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUtcLowercaseMaxDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -608,18 +591,15 @@ export class Datetime {
   /**
    * Get max datetime value 9999-12-31T23:59:59.9999999Z
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUtcUppercaseMaxDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUtcUppercaseMaxDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -704,25 +684,22 @@ export class Datetime {
    * Put max datetime value with positive numoffset
    * 9999-12-31t23:59:59.9999999+14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putLocalPositiveOffsetMaxDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putLocalPositiveOffsetMaxDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datetimeBody || !(datetimeBody instanceof Date ||
-          (typeof datetimeBody.valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
+          (typeof (datetimeBody as string).valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
             throw new Error('datetimeBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -810,18 +787,15 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31t23:59:59.9999999+14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalPositiveOffsetLowercaseMaxDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalPositiveOffsetLowercaseMaxDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -906,18 +880,15 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31T23:59:59.9999999+14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalPositiveOffsetUppercaseMaxDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalPositiveOffsetUppercaseMaxDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1002,25 +973,22 @@ export class Datetime {
    * Put max datetime value with positive numoffset
    * 9999-12-31t23:59:59.9999999-14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putLocalNegativeOffsetMaxDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putLocalNegativeOffsetMaxDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datetimeBody || !(datetimeBody instanceof Date ||
-          (typeof datetimeBody.valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
+          (typeof (datetimeBody as string).valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
             throw new Error('datetimeBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1108,18 +1076,15 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31T23:59:59.9999999-14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalNegativeOffsetUppercaseMaxDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalNegativeOffsetUppercaseMaxDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1204,18 +1169,15 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31t23:59:59.9999999-14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalNegativeOffsetLowercaseMaxDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalNegativeOffsetLowercaseMaxDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1299,25 +1261,22 @@ export class Datetime {
   /**
    * Put min datetime value 0001-01-01T00:00:00Z
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putUtcMinDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putUtcMinDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datetimeBody || !(datetimeBody instanceof Date ||
-          (typeof datetimeBody.valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
+          (typeof (datetimeBody as string).valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
             throw new Error('datetimeBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1404,18 +1363,15 @@ export class Datetime {
   /**
    * Get min datetime value 0001-01-01T00:00:00Z
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUtcMinDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUtcMinDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1499,25 +1455,22 @@ export class Datetime {
   /**
    * Put min datetime value 0001-01-01T00:00:00+14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putLocalPositiveOffsetMinDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putLocalPositiveOffsetMinDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datetimeBody || !(datetimeBody instanceof Date ||
-          (typeof datetimeBody.valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
+          (typeof (datetimeBody as string).valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
             throw new Error('datetimeBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1604,18 +1557,15 @@ export class Datetime {
   /**
    * Get min datetime value 0001-01-01T00:00:00+14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalPositiveOffsetMinDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalPositiveOffsetMinDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1699,25 +1649,22 @@ export class Datetime {
   /**
    * Put min datetime value 0001-01-01T00:00:00-14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putLocalNegativeOffsetMinDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putLocalNegativeOffsetMinDateTimeWithHttpOperationResponse(datetimeBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!datetimeBody || !(datetimeBody instanceof Date ||
-          (typeof datetimeBody.valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
+          (typeof (datetimeBody as string).valueOf() === 'string' && !isNaN(Date.parse(datetimeBody as string))))) {
             throw new Error('datetimeBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1804,18 +1751,15 @@ export class Datetime {
   /**
    * Get min datetime value 0001-01-01T00:00:00-14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLocalNegativeOffsetMinDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLocalNegativeOffsetMinDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1899,10 +1843,7 @@ export class Datetime {
   /**
    * Get null datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1914,13 +1855,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<Date>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getNull(options: msRest.RequestOptionsBase): Promise<Date>;
   getNull(callback: msRest.ServiceCallback<Date>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1946,10 +1887,7 @@ export class Datetime {
   /**
    * Get invalid datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1961,13 +1899,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<Date>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<Date>;
   getInvalid(callback: msRest.ServiceCallback<Date>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1993,10 +1931,7 @@ export class Datetime {
   /**
    * Get overflow datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2008,13 +1943,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getOverflow(): Promise<Date>;
-  getOverflow(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getOverflow(options: msRest.RequestOptionsBase): Promise<Date>;
   getOverflow(callback: msRest.ServiceCallback<Date>): void;
-  getOverflow(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getOverflow(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getOverflow(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getOverflow(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2040,10 +1975,7 @@ export class Datetime {
   /**
    * Get underflow datetime value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2055,13 +1987,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUnderflow(): Promise<Date>;
-  getUnderflow(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getUnderflow(options: msRest.RequestOptionsBase): Promise<Date>;
   getUnderflow(callback: msRest.ServiceCallback<Date>): void;
-  getUnderflow(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getUnderflow(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getUnderflow(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getUnderflow(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2087,12 +2019,9 @@ export class Datetime {
   /**
    * Put max datetime value 9999-12-31T23:59:59.9999999Z
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2100,17 +2029,17 @@ export class Datetime {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putUtcMaxDateTime(datetimeBody: Date | string): Promise<void>;
-  putUtcMaxDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putUtcMaxDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putUtcMaxDateTime(datetimeBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putUtcMaxDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putUtcMaxDateTime(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putUtcMaxDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putUtcMaxDateTime(datetimeBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2136,10 +2065,7 @@ export class Datetime {
   /**
    * Get max datetime value 9999-12-31t23:59:59.9999999z
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2151,13 +2077,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUtcLowercaseMaxDateTime(): Promise<Date>;
-  getUtcLowercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getUtcLowercaseMaxDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getUtcLowercaseMaxDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getUtcLowercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getUtcLowercaseMaxDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getUtcLowercaseMaxDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getUtcLowercaseMaxDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2183,10 +2109,7 @@ export class Datetime {
   /**
    * Get max datetime value 9999-12-31T23:59:59.9999999Z
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2198,13 +2121,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUtcUppercaseMaxDateTime(): Promise<Date>;
-  getUtcUppercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getUtcUppercaseMaxDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getUtcUppercaseMaxDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getUtcUppercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getUtcUppercaseMaxDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getUtcUppercaseMaxDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getUtcUppercaseMaxDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2231,12 +2154,9 @@ export class Datetime {
    * Put max datetime value with positive numoffset
    * 9999-12-31t23:59:59.9999999+14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2244,17 +2164,17 @@ export class Datetime {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string): Promise<void>;
-  putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putLocalPositiveOffsetMaxDateTime(datetimeBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2281,10 +2201,7 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31t23:59:59.9999999+14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2296,13 +2213,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalPositiveOffsetLowercaseMaxDateTime(): Promise<Date>;
-  getLocalPositiveOffsetLowercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getLocalPositiveOffsetLowercaseMaxDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getLocalPositiveOffsetLowercaseMaxDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getLocalPositiveOffsetLowercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getLocalPositiveOffsetLowercaseMaxDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getLocalPositiveOffsetLowercaseMaxDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getLocalPositiveOffsetLowercaseMaxDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2329,10 +2246,7 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31T23:59:59.9999999+14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2344,13 +2258,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalPositiveOffsetUppercaseMaxDateTime(): Promise<Date>;
-  getLocalPositiveOffsetUppercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getLocalPositiveOffsetUppercaseMaxDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getLocalPositiveOffsetUppercaseMaxDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getLocalPositiveOffsetUppercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getLocalPositiveOffsetUppercaseMaxDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getLocalPositiveOffsetUppercaseMaxDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getLocalPositiveOffsetUppercaseMaxDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2377,12 +2291,9 @@ export class Datetime {
    * Put max datetime value with positive numoffset
    * 9999-12-31t23:59:59.9999999-14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2390,17 +2301,17 @@ export class Datetime {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string): Promise<void>;
-  putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putLocalNegativeOffsetMaxDateTime(datetimeBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2427,10 +2338,7 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31T23:59:59.9999999-14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2442,13 +2350,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalNegativeOffsetUppercaseMaxDateTime(): Promise<Date>;
-  getLocalNegativeOffsetUppercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getLocalNegativeOffsetUppercaseMaxDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getLocalNegativeOffsetUppercaseMaxDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getLocalNegativeOffsetUppercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getLocalNegativeOffsetUppercaseMaxDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getLocalNegativeOffsetUppercaseMaxDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getLocalNegativeOffsetUppercaseMaxDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2475,10 +2383,7 @@ export class Datetime {
    * Get max datetime value with positive num offset
    * 9999-12-31t23:59:59.9999999-14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2490,13 +2395,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalNegativeOffsetLowercaseMaxDateTime(): Promise<Date>;
-  getLocalNegativeOffsetLowercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getLocalNegativeOffsetLowercaseMaxDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getLocalNegativeOffsetLowercaseMaxDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getLocalNegativeOffsetLowercaseMaxDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getLocalNegativeOffsetLowercaseMaxDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getLocalNegativeOffsetLowercaseMaxDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getLocalNegativeOffsetLowercaseMaxDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2522,12 +2427,9 @@ export class Datetime {
   /**
    * Put min datetime value 0001-01-01T00:00:00Z
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2535,17 +2437,17 @@ export class Datetime {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putUtcMinDateTime(datetimeBody: Date | string): Promise<void>;
-  putUtcMinDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putUtcMinDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putUtcMinDateTime(datetimeBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putUtcMinDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putUtcMinDateTime(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putUtcMinDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putUtcMinDateTime(datetimeBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2571,10 +2473,7 @@ export class Datetime {
   /**
    * Get min datetime value 0001-01-01T00:00:00Z
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2586,13 +2485,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUtcMinDateTime(): Promise<Date>;
-  getUtcMinDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getUtcMinDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getUtcMinDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getUtcMinDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getUtcMinDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getUtcMinDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getUtcMinDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2618,12 +2517,9 @@ export class Datetime {
   /**
    * Put min datetime value 0001-01-01T00:00:00+14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2631,17 +2527,17 @@ export class Datetime {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string): Promise<void>;
-  putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putLocalPositiveOffsetMinDateTime(datetimeBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2667,10 +2563,7 @@ export class Datetime {
   /**
    * Get min datetime value 0001-01-01T00:00:00+14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2682,13 +2575,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalPositiveOffsetMinDateTime(): Promise<Date>;
-  getLocalPositiveOffsetMinDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getLocalPositiveOffsetMinDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getLocalPositiveOffsetMinDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getLocalPositiveOffsetMinDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getLocalPositiveOffsetMinDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getLocalPositiveOffsetMinDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getLocalPositiveOffsetMinDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2714,12 +2607,9 @@ export class Datetime {
   /**
    * Put min datetime value 0001-01-01T00:00:00-14:00
    *
-   * @param {date} datetimeBody
+   * @param {Date | string} datetimeBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2727,17 +2617,17 @@ export class Datetime {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string): Promise<void>;
-  putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putLocalNegativeOffsetMinDateTime(datetimeBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2763,10 +2653,7 @@ export class Datetime {
   /**
    * Get min datetime value 0001-01-01T00:00:00-14:00
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2778,13 +2665,13 @@ export class Datetime {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLocalNegativeOffsetMinDateTime(): Promise<Date>;
-  getLocalNegativeOffsetMinDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getLocalNegativeOffsetMinDateTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getLocalNegativeOffsetMinDateTime(callback: msRest.ServiceCallback<Date>): void;
-  getLocalNegativeOffsetMinDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getLocalNegativeOffsetMinDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getLocalNegativeOffsetMinDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getLocalNegativeOffsetMinDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

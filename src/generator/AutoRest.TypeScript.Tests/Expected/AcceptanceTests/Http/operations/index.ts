@@ -8,13 +8,13 @@
  * regenerated.
  */
 
-import { HttpFailure } from './httpFailure';
-import { HttpSuccess } from './httpSuccess';
-import { HttpRedirects } from './httpRedirects';
-import { HttpClientFailure } from './httpClientFailure';
-import { HttpServerFailure } from './httpServerFailure';
-import { HttpRetry } from './httpRetry';
-import { MultipleResponses } from './multipleResponses';
+import { HttpFailure } from "./httpFailure";
+import { HttpSuccess } from "./httpSuccess";
+import { HttpRedirects } from "./httpRedirects";
+import { HttpClientFailure } from "./httpClientFailure";
+import { HttpServerFailure } from "./httpServerFailure";
+import { HttpRetry } from "./httpRetry";
+import { MultipleResponses } from "./multipleResponses";
 
 export { HttpFailure, HttpSuccess, HttpRedirects, HttpClientFailure, HttpServerFailure,
 HttpRetry, MultipleResponses };

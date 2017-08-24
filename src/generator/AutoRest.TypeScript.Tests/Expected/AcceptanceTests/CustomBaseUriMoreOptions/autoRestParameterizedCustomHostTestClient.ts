@@ -8,22 +8,13 @@
  * regenerated.
  */
 
-import * as msRest from "ms-rest";
+import * as msRest from "ms-rest-ts";
 import * as Models from "./models";
 import * as Mappers from "./models/mappers";
 import * as operations from "./operations";
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
-/**
- * AutoRestParameterizedCustomHostTestClientOptions for AutoRestParameterizedCustomHostTestClient.
- */
-interface AutoRestParameterizedCustomHostTestClientOptions extends msRest.ServiceClientOptions {
-  /**
-   * @property {string} [dnsSuffix] - A string value that is used as a global part of the parameterized host. Default value 'host'.
-   */
-  dnsSuffix?: string;
-}
 
 class AutoRestParameterizedCustomHostTestClient extends msRest.ServiceClient {
   subscriptionId: string;
@@ -45,15 +36,15 @@ class AutoRestParameterizedCustomHostTestClient extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
    * @param {string} [options.dnsSuffix] - A string value that is used as a global part of the parameterized host. Default value 'host'.
    *
    */
-  constructor(subscriptionId: string, options?: AutoRestParameterizedCustomHostTestClientOptions) {
+  constructor(subscriptionId: string, options?: Models.AutoRestParameterizedCustomHostTestClientOptions) {
     if (subscriptionId === null || subscriptionId === undefined) {
       throw new Error('\'subscriptionId\' cannot be null.');
     }

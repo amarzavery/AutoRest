@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -78,6 +78,74 @@ export const HeaderCustomNamedRequestIdParamGroupingParameters = {
     modelProperties: {
       fooClientRequestId: {
         required: true,
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const ApiVersionLocalGetMethodLocalNullOptionalParams = {
+  required: false,
+  serializedName: 'GetMethodLocalNullOptions',
+  type: {
+    name: 'Composite',
+    className: 'ApiVersionLocalGetMethodLocalNullOptionalParams',
+    modelProperties: {
+      apiVersion: {
+        required: false,
+        serializedName: 'api-version',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const SkipUrlEncodingGetMethodQueryNullOptionalParams = {
+  required: false,
+  serializedName: 'GetMethodQueryNullOptions',
+  type: {
+    name: 'Composite',
+    className: 'SkipUrlEncodingGetMethodQueryNullOptionalParams',
+    modelProperties: {
+      q1: {
+        required: false,
+        serializedName: 'q1',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const OdataGetWithFilterOptionalParams = {
+  required: false,
+  serializedName: 'GetWithFilterOptions',
+  type: {
+    name: 'Composite',
+    className: 'OdataGetWithFilterOptionalParams',
+    modelProperties: {
+      filter: {
+        required: false,
+        serializedName: '$filter',
+        type: {
+          name: 'String'
+        }
+      },
+      top: {
+        required: false,
+        serializedName: '$top',
+        type: {
+          name: 'Number'
+        }
+      },
+      orderby: {
+        required: false,
+        serializedName: '$orderby',
         type: {
           name: 'String'
         }

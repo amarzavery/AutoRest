@@ -8,13 +8,14 @@
  * regenerated.
  */
 
-import * as msRest from "ms-rest";
+import * as msRest from "ms-rest-ts";
 import * as Models from "./models";
 import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
+
 class AutoRestReportService extends msRest.ServiceClient {
   baseUri: string;
   serializer: msRest.Serializer;
@@ -30,8 +31,8 @@ class AutoRestReportService extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
@@ -55,18 +56,15 @@ class AutoRestReportService extends msRest.ServiceClient {
   /**
    * Get test coverage report
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Object>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getReportWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getReportWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
 
     // Construct URL
@@ -157,10 +155,7 @@ class AutoRestReportService extends msRest.ServiceClient {
   /**
    * Get test coverage report
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -168,17 +163,17 @@ class AutoRestReportService extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Object} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: number }} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getReport(): Promise<{ [propertyName: string]: number }>;
-  getReport(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: number }>;
+  getReport(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: number }>;
   getReport(callback: msRest.ServiceCallback<{ [propertyName: string]: number }>): void;
-  getReport(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: number }>): void;
-  getReport(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: number }>): any {
+  getReport(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: number }>): void;
+  getReport(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: number }>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

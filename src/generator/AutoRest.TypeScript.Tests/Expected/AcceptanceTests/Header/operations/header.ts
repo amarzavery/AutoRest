@@ -8,10 +8,11 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATHeaderService } from '../autoRestSwaggerBATHeaderService';
-import * as moment from 'moment';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATHeaderService } from "../autoRestSwaggerBATHeaderService";
+import * as moment from "moment";
 
 const WebResource = msRest.WebResource;
 
@@ -32,18 +33,15 @@ export class Header {
    * @param {string} userAgent Send a post request with header value
    * "User-Agent": "overwrite"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramExistingKeyWithHttpOperationResponse(userAgent: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramExistingKeyWithHttpOperationResponse(userAgent: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -117,18 +115,15 @@ export class Header {
   /**
    * Get a response with header value "User-Agent": "overwrite"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseExistingKeyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseExistingKeyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -194,18 +189,15 @@ export class Header {
    * @param {string} contentType Send a post request with header value
    * "Content-Type": "text/html"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramProtectedKeyWithHttpOperationResponse(contentType: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramProtectedKeyWithHttpOperationResponse(contentType: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -279,18 +271,15 @@ export class Header {
   /**
    * Get a response with header value "Content-Type": "text/html"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseProtectedKeyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseProtectedKeyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -359,18 +348,15 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 1 or -2
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramIntegerWithHttpOperationResponse(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramIntegerWithHttpOperationResponse(scenario: string, value: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -453,18 +439,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseIntegerWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseIntegerWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -544,18 +527,15 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 105 or -2
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramLongWithHttpOperationResponse(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramLongWithHttpOperationResponse(scenario: string, value: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -638,18 +618,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseLongWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseLongWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -729,18 +706,15 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 0.07 or -3.0
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramFloatWithHttpOperationResponse(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramFloatWithHttpOperationResponse(scenario: string, value: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -823,18 +797,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseFloatWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseFloatWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -914,18 +885,15 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 7e120 or -3.0
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramDoubleWithHttpOperationResponse(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramDoubleWithHttpOperationResponse(scenario: string, value: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1008,18 +976,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseDoubleWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseDoubleWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1099,18 +1064,15 @@ export class Header {
    *
    * @param {boolean} value Send a post request with header values true or false
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramBoolWithHttpOperationResponse(scenario: string, value: boolean, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramBoolWithHttpOperationResponse(scenario: string, value: boolean, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1193,18 +1155,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "true" or "false"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseBoolWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseBoolWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1283,21 +1242,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.value] Send a post request with header values "The
-   * quick brown fox jumps over the lazy dog" or null or ""
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HeaderParamStringOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramStringWithHttpOperationResponse(scenario: string, options?: { value? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramStringWithHttpOperationResponse(scenario: string, options?: Models.HeaderParamStringOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
     // Validate
@@ -1382,18 +1335,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseStringWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseStringWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1471,21 +1421,18 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {date} value Send a post request with header values "2010-01-01" or
-   * "0001-01-01"
+   * @param {Date | string} value Send a post request with header values
+   * "2010-01-01" or "0001-01-01"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramDateWithHttpOperationResponse(scenario: string, value: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramDateWithHttpOperationResponse(scenario: string, value: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1493,7 +1440,7 @@ export class Header {
         throw new Error('scenario cannot be null or undefined and it must be of type string.');
       }
       if(!value || !(value instanceof Date ||
-          (typeof value.valueOf() === 'string' && !isNaN(Date.parse(value as string))))) {
+          (typeof (value as string).valueOf() === 'string' && !isNaN(Date.parse(value as string))))) {
             throw new Error('value cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1569,18 +1516,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseDateWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseDateWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1658,21 +1602,18 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {date} value Send a post request with header values
+   * @param {Date | string} value Send a post request with header values
    * "2010-01-01T12:34:56Z" or "0001-01-01T00:00:00Z"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramDatetimeWithHttpOperationResponse(scenario: string, value: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramDatetimeWithHttpOperationResponse(scenario: string, value: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1680,7 +1621,7 @@ export class Header {
         throw new Error('scenario cannot be null or undefined and it must be of type string.');
       }
       if(!value || !(value instanceof Date ||
-          (typeof value.valueOf() === 'string' && !isNaN(Date.parse(value as string))))) {
+          (typeof (value as string).valueOf() === 'string' && !isNaN(Date.parse(value as string))))) {
             throw new Error('value cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1757,18 +1698,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseDatetimeWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseDatetimeWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1847,21 +1785,16 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {date} [options.value] Send a post request with header values "Wed,
-   * 01 Jan 2010 12:34:56 GMT" or "Mon, 01 Jan 0001 00:00:00 GMT"
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HeaderParamDatetimeRfc1123OptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramDatetimeRfc1123WithHttpOperationResponse(scenario: string, options?: { value? : Date | string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramDatetimeRfc1123WithHttpOperationResponse(scenario: string, options?: Models.HeaderParamDatetimeRfc1123OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
     // Validate
@@ -1870,7 +1803,7 @@ export class Header {
         throw new Error('scenario cannot be null or undefined and it must be of type string.');
       }
       if (value && !(value instanceof Date ||
-          (typeof value.valueOf() === 'string' && !isNaN(Date.parse(value as string))))) {
+          (typeof (value as string).valueOf() === 'string' && !isNaN(Date.parse(value as string))))) {
             throw new Error('value must be of type date.');
           }
     } catch (error) {
@@ -1947,18 +1880,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseDatetimeRfc1123WithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseDatetimeRfc1123WithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2036,21 +1966,18 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {moment.duration} value Send a post request with header values
+   * @param {moment.Duration} value Send a post request with header values
    * "P123DT22H14M12.011S"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramDurationWithHttpOperationResponse(scenario: string, value: moment.Duration, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramDurationWithHttpOperationResponse(scenario: string, value: moment.Duration, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2133,18 +2060,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseDurationWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseDurationWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2222,20 +2146,17 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {buffer} value Send a post request with header values "啊齄丂狛狜隣郎隣兀﨩"
+   * @param {Buffer} value Send a post request with header values "啊齄丂狛狜隣郎隣兀﨩"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramByteWithHttpOperationResponse(scenario: string, value: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramByteWithHttpOperationResponse(scenario: string, value: Buffer, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2318,18 +2239,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseByteWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseByteWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2407,21 +2325,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.value] Send a post request with header values
-   * 'GREY'. Possible values include: 'White', 'black', 'GREY'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HeaderParamEnumOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async paramEnumWithHttpOperationResponse(scenario: string, options?: { value? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async paramEnumWithHttpOperationResponse(scenario: string, options?: Models.HeaderParamEnumOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let value = (options && options.value !== undefined) ? options.value : undefined;
     // Validate
@@ -2508,18 +2420,15 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async responseEnumWithHttpOperationResponse(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async responseEnumWithHttpOperationResponse(scenario: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2594,18 +2503,15 @@ export class Header {
    * Send x-ms-client-request-id = 9C4D50EE-2D56-4CD3-8152-34347DC9F2B0 in the
    * header of the request
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async customRequestIdWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async customRequestIdWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2671,10 +2577,7 @@ export class Header {
    * @param {string} userAgent Send a post request with header value
    * "User-Agent": "overwrite"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2682,17 +2585,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramExistingKey(userAgent: string): Promise<void>;
-  paramExistingKey(userAgent: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramExistingKey(userAgent: string, options: msRest.RequestOptionsBase): Promise<void>;
   paramExistingKey(userAgent: string, callback: msRest.ServiceCallback<void>): void;
-  paramExistingKey(userAgent: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramExistingKey(userAgent: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramExistingKey(userAgent: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramExistingKey(userAgent: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2718,10 +2621,7 @@ export class Header {
   /**
    * Get a response with header value "User-Agent": "overwrite"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2729,17 +2629,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseExistingKey(): Promise<void>;
-  responseExistingKey(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseExistingKey(options: msRest.RequestOptionsBase): Promise<void>;
   responseExistingKey(callback: msRest.ServiceCallback<void>): void;
-  responseExistingKey(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseExistingKey(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseExistingKey(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseExistingKey(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2768,10 +2668,7 @@ export class Header {
    * @param {string} contentType Send a post request with header value
    * "Content-Type": "text/html"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2779,17 +2676,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramProtectedKey(contentType: string): Promise<void>;
-  paramProtectedKey(contentType: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramProtectedKey(contentType: string, options: msRest.RequestOptionsBase): Promise<void>;
   paramProtectedKey(contentType: string, callback: msRest.ServiceCallback<void>): void;
-  paramProtectedKey(contentType: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramProtectedKey(contentType: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramProtectedKey(contentType: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramProtectedKey(contentType: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2815,10 +2712,7 @@ export class Header {
   /**
    * Get a response with header value "Content-Type": "text/html"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2826,17 +2720,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseProtectedKey(): Promise<void>;
-  responseProtectedKey(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseProtectedKey(options: msRest.RequestOptionsBase): Promise<void>;
   responseProtectedKey(callback: msRest.ServiceCallback<void>): void;
-  responseProtectedKey(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseProtectedKey(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseProtectedKey(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseProtectedKey(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2868,10 +2762,7 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 1 or -2
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2879,17 +2770,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramInteger(scenario: string, value: number): Promise<void>;
-  paramInteger(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramInteger(scenario: string, value: number, options: msRest.RequestOptionsBase): Promise<void>;
   paramInteger(scenario: string, value: number, callback: msRest.ServiceCallback<void>): void;
-  paramInteger(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramInteger(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramInteger(scenario: string, value: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramInteger(scenario: string, value: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2918,10 +2809,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2929,17 +2817,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseInteger(scenario: string): Promise<void>;
-  responseInteger(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseInteger(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseInteger(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseInteger(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseInteger(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseInteger(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseInteger(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2971,10 +2859,7 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 105 or -2
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2982,17 +2867,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramLong(scenario: string, value: number): Promise<void>;
-  paramLong(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramLong(scenario: string, value: number, options: msRest.RequestOptionsBase): Promise<void>;
   paramLong(scenario: string, value: number, callback: msRest.ServiceCallback<void>): void;
-  paramLong(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramLong(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramLong(scenario: string, value: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramLong(scenario: string, value: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3021,10 +2906,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3032,17 +2914,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseLong(scenario: string): Promise<void>;
-  responseLong(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseLong(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseLong(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseLong(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseLong(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseLong(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseLong(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3074,10 +2956,7 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 0.07 or -3.0
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3085,17 +2964,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramFloat(scenario: string, value: number): Promise<void>;
-  paramFloat(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramFloat(scenario: string, value: number, options: msRest.RequestOptionsBase): Promise<void>;
   paramFloat(scenario: string, value: number, callback: msRest.ServiceCallback<void>): void;
-  paramFloat(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramFloat(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramFloat(scenario: string, value: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramFloat(scenario: string, value: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3124,10 +3003,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3135,17 +3011,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseFloat(scenario: string): Promise<void>;
-  responseFloat(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseFloat(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseFloat(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseFloat(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseFloat(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseFloat(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseFloat(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3177,10 +3053,7 @@ export class Header {
    *
    * @param {number} value Send a post request with header values 7e120 or -3.0
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3188,17 +3061,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramDouble(scenario: string, value: number): Promise<void>;
-  paramDouble(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramDouble(scenario: string, value: number, options: msRest.RequestOptionsBase): Promise<void>;
   paramDouble(scenario: string, value: number, callback: msRest.ServiceCallback<void>): void;
-  paramDouble(scenario: string, value: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramDouble(scenario: string, value: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramDouble(scenario: string, value: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramDouble(scenario: string, value: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3227,10 +3100,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "positive" or "negative"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3238,17 +3108,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseDouble(scenario: string): Promise<void>;
-  responseDouble(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseDouble(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseDouble(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseDouble(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseDouble(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseDouble(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseDouble(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3280,10 +3150,7 @@ export class Header {
    *
    * @param {boolean} value Send a post request with header values true or false
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3291,17 +3158,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramBool(scenario: string, value: boolean): Promise<void>;
-  paramBool(scenario: string, value: boolean, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramBool(scenario: string, value: boolean, options: msRest.RequestOptionsBase): Promise<void>;
   paramBool(scenario: string, value: boolean, callback: msRest.ServiceCallback<void>): void;
-  paramBool(scenario: string, value: boolean, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramBool(scenario: string, value: boolean, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramBool(scenario: string, value: boolean, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramBool(scenario: string, value: boolean, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3330,10 +3197,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "true" or "false"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3341,17 +3205,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseBool(scenario: string): Promise<void>;
-  responseBool(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseBool(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseBool(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseBool(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseBool(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseBool(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseBool(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3382,13 +3246,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.value] Send a post request with header values "The
-   * quick brown fox jumps over the lazy dog" or null or ""
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HeaderParamStringOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3396,17 +3254,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramString(scenario: string): Promise<void>;
-  paramString(scenario: string, options: { value? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramString(scenario: string, options: Models.HeaderParamStringOptionalParams): Promise<void>;
   paramString(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  paramString(scenario: string, options: { value? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramString(scenario: string, options?: { value? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramString(scenario: string, options: Models.HeaderParamStringOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  paramString(scenario: string, options?: Models.HeaderParamStringOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3436,10 +3294,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3447,17 +3302,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseString(scenario: string): Promise<void>;
-  responseString(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseString(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseString(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseString(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseString(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseString(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseString(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3487,13 +3342,10 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {date} value Send a post request with header values "2010-01-01" or
-   * "0001-01-01"
+   * @param {Date | string} value Send a post request with header values
+   * "2010-01-01" or "0001-01-01"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3501,17 +3353,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramDate(scenario: string, value: Date | string): Promise<void>;
-  paramDate(scenario: string, value: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramDate(scenario: string, value: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   paramDate(scenario: string, value: Date | string, callback: msRest.ServiceCallback<void>): void;
-  paramDate(scenario: string, value: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramDate(scenario: string, value: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramDate(scenario: string, value: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramDate(scenario: string, value: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3540,10 +3392,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3551,17 +3400,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseDate(scenario: string): Promise<void>;
-  responseDate(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseDate(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseDate(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseDate(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseDate(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseDate(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseDate(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3591,13 +3440,10 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {date} value Send a post request with header values
+   * @param {Date | string} value Send a post request with header values
    * "2010-01-01T12:34:56Z" or "0001-01-01T00:00:00Z"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3605,17 +3451,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramDatetime(scenario: string, value: Date | string): Promise<void>;
-  paramDatetime(scenario: string, value: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramDatetime(scenario: string, value: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   paramDatetime(scenario: string, value: Date | string, callback: msRest.ServiceCallback<void>): void;
-  paramDatetime(scenario: string, value: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramDatetime(scenario: string, value: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramDatetime(scenario: string, value: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramDatetime(scenario: string, value: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3645,10 +3491,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3656,17 +3499,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseDatetime(scenario: string): Promise<void>;
-  responseDatetime(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseDatetime(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseDatetime(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseDatetime(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseDatetime(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseDatetime(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseDatetime(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3697,13 +3540,8 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {date} [options.value] Send a post request with header values "Wed,
-   * 01 Jan 2010 12:34:56 GMT" or "Mon, 01 Jan 0001 00:00:00 GMT"
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HeaderParamDatetimeRfc1123OptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3711,17 +3549,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramDatetimeRfc1123(scenario: string): Promise<void>;
-  paramDatetimeRfc1123(scenario: string, options: { value? : Date | string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramDatetimeRfc1123(scenario: string, options: Models.HeaderParamDatetimeRfc1123OptionalParams): Promise<void>;
   paramDatetimeRfc1123(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  paramDatetimeRfc1123(scenario: string, options: { value? : Date | string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramDatetimeRfc1123(scenario: string, options?: { value? : Date | string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramDatetimeRfc1123(scenario: string, options: Models.HeaderParamDatetimeRfc1123OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  paramDatetimeRfc1123(scenario: string, options?: Models.HeaderParamDatetimeRfc1123OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3751,10 +3589,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "min"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3762,17 +3597,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseDatetimeRfc1123(scenario: string): Promise<void>;
-  responseDatetimeRfc1123(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseDatetimeRfc1123(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseDatetimeRfc1123(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseDatetimeRfc1123(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseDatetimeRfc1123(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseDatetimeRfc1123(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseDatetimeRfc1123(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3802,13 +3637,10 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {moment.duration} value Send a post request with header values
+   * @param {moment.Duration} value Send a post request with header values
    * "P123DT22H14M12.011S"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3816,17 +3648,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramDuration(scenario: string, value: moment.Duration): Promise<void>;
-  paramDuration(scenario: string, value: moment.Duration, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramDuration(scenario: string, value: moment.Duration, options: msRest.RequestOptionsBase): Promise<void>;
   paramDuration(scenario: string, value: moment.Duration, callback: msRest.ServiceCallback<void>): void;
-  paramDuration(scenario: string, value: moment.Duration, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramDuration(scenario: string, value: moment.Duration, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramDuration(scenario: string, value: moment.Duration, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramDuration(scenario: string, value: moment.Duration, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3855,10 +3687,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3866,17 +3695,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseDuration(scenario: string): Promise<void>;
-  responseDuration(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseDuration(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseDuration(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseDuration(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseDuration(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseDuration(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseDuration(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3906,12 +3735,9 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {buffer} value Send a post request with header values "啊齄丂狛狜隣郎隣兀﨩"
+   * @param {Buffer} value Send a post request with header values "啊齄丂狛狜隣郎隣兀﨩"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3919,17 +3745,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramByte(scenario: string, value: Buffer): Promise<void>;
-  paramByte(scenario: string, value: Buffer, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramByte(scenario: string, value: Buffer, options: msRest.RequestOptionsBase): Promise<void>;
   paramByte(scenario: string, value: Buffer, callback: msRest.ServiceCallback<void>): void;
-  paramByte(scenario: string, value: Buffer, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramByte(scenario: string, value: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramByte(scenario: string, value: Buffer, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  paramByte(scenario: string, value: Buffer, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3958,10 +3784,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3969,17 +3792,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseByte(scenario: string): Promise<void>;
-  responseByte(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseByte(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseByte(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseByte(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseByte(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseByte(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseByte(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4009,13 +3832,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.value] Send a post request with header values
-   * 'GREY'. Possible values include: 'White', 'black', 'GREY'
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HeaderParamEnumOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4023,17 +3840,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   paramEnum(scenario: string): Promise<void>;
-  paramEnum(scenario: string, options: { value? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  paramEnum(scenario: string, options: Models.HeaderParamEnumOptionalParams): Promise<void>;
   paramEnum(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  paramEnum(scenario: string, options: { value? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  paramEnum(scenario: string, options?: { value? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  paramEnum(scenario: string, options: Models.HeaderParamEnumOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  paramEnum(scenario: string, options?: Models.HeaderParamEnumOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4062,10 +3879,7 @@ export class Header {
    * @param {string} scenario Send a post request with header values "scenario":
    * "valid" or "null" or "empty"
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4073,17 +3887,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   responseEnum(scenario: string): Promise<void>;
-  responseEnum(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  responseEnum(scenario: string, options: msRest.RequestOptionsBase): Promise<void>;
   responseEnum(scenario: string, callback: msRest.ServiceCallback<void>): void;
-  responseEnum(scenario: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  responseEnum(scenario: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  responseEnum(scenario: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  responseEnum(scenario: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -4110,10 +3924,7 @@ export class Header {
    * Send x-ms-client-request-id = 9C4D50EE-2D56-4CD3-8152-34347DC9F2B0 in the
    * header of the request
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -4121,17 +3932,17 @@ export class Header {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   customRequestId(): Promise<void>;
-  customRequestId(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  customRequestId(options: msRest.RequestOptionsBase): Promise<void>;
   customRequestId(callback: msRest.ServiceCallback<void>): void;
-  customRequestId(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  customRequestId(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  customRequestId(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  customRequestId(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

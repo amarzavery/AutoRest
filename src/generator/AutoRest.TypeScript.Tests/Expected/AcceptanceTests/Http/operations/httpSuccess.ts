@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestHttpInfrastructureTestService } from '../autoRestHttpInfrastructureTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHttpInfrastructureTestService } from "../autoRestHttpInfrastructureTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class HttpSuccess {
   /**
    * Return 200 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -102,18 +100,15 @@ export class HttpSuccess {
   /**
    * Get 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<boolean>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get200WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get200WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -197,20 +192,15 @@ export class HttpSuccess {
   /**
    * Put boolean value true returning 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut200OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put200WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put200WithHttpOperationResponse(options?: Models.HttpSuccessPut200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -302,20 +292,15 @@ export class HttpSuccess {
   /**
    * Patch true Boolean value in request returning 200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPatch200OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch200WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch200WithHttpOperationResponse(options?: Models.HttpSuccessPatch200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -407,20 +392,15 @@ export class HttpSuccess {
   /**
    * Post bollean value true in request that returns a 200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost200OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post200WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post200WithHttpOperationResponse(options?: Models.HttpSuccessPost200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -512,20 +492,15 @@ export class HttpSuccess {
   /**
    * Delete simple boolean value true returns 200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessDelete200OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete200WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete200WithHttpOperationResponse(options?: Models.HttpSuccessDelete200OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -617,20 +592,15 @@ export class HttpSuccess {
   /**
    * Put true Boolean value in request returns 201
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut201OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put201WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put201WithHttpOperationResponse(options?: Models.HttpSuccessPut201OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -722,20 +692,15 @@ export class HttpSuccess {
   /**
    * Post true Boolean value in request returns 201 (Created)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost201OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post201WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post201WithHttpOperationResponse(options?: Models.HttpSuccessPost201OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -827,20 +792,15 @@ export class HttpSuccess {
   /**
    * Put true Boolean value in request returns 202 (Accepted)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut202OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put202WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put202WithHttpOperationResponse(options?: Models.HttpSuccessPut202OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -932,20 +892,15 @@ export class HttpSuccess {
   /**
    * Patch true Boolean value in request returns 202
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPatch202OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch202WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch202WithHttpOperationResponse(options?: Models.HttpSuccessPatch202OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1037,20 +992,15 @@ export class HttpSuccess {
   /**
    * Post true Boolean value in request returns 202 (Accepted)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost202OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post202WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post202WithHttpOperationResponse(options?: Models.HttpSuccessPost202OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1142,20 +1092,15 @@ export class HttpSuccess {
   /**
    * Delete true Boolean value in request returns 202 (accepted)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessDelete202OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete202WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete202WithHttpOperationResponse(options?: Models.HttpSuccessDelete202OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1247,18 +1192,15 @@ export class HttpSuccess {
   /**
    * Return 204 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head204WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head204WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1321,20 +1263,15 @@ export class HttpSuccess {
   /**
    * Put true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut204OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put204WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put204WithHttpOperationResponse(options?: Models.HttpSuccessPut204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1426,20 +1363,15 @@ export class HttpSuccess {
   /**
    * Patch true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPatch204OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch204WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch204WithHttpOperationResponse(options?: Models.HttpSuccessPatch204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1531,20 +1463,15 @@ export class HttpSuccess {
   /**
    * Post true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost204OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post204WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post204WithHttpOperationResponse(options?: Models.HttpSuccessPost204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1636,20 +1563,15 @@ export class HttpSuccess {
   /**
    * Delete true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessDelete204OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete204WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete204WithHttpOperationResponse(options?: Models.HttpSuccessDelete204OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1741,18 +1663,15 @@ export class HttpSuccess {
   /**
    * Return 404 status code
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head404WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head404WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1815,10 +1734,7 @@ export class HttpSuccess {
   /**
    * Return 200 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1826,17 +1742,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head200(): Promise<void>;
-  head200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head200(options: msRest.RequestOptionsBase): Promise<void>;
   head200(callback: msRest.ServiceCallback<void>): void;
-  head200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1862,10 +1778,7 @@ export class HttpSuccess {
   /**
    * Get 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1877,13 +1790,13 @@ export class HttpSuccess {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get200(): Promise<boolean>;
-  get200(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean>;
+  get200(options: msRest.RequestOptionsBase): Promise<boolean>;
   get200(callback: msRest.ServiceCallback<boolean>): void;
-  get200(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean>): void;
-  get200(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean>): any {
+  get200(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean>): void;
+  get200(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1909,12 +1822,7 @@ export class HttpSuccess {
   /**
    * Put boolean value true returning 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut200OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1922,17 +1830,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put200(): Promise<void>;
-  put200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put200(options: Models.HttpSuccessPut200OptionalParams): Promise<void>;
   put200(callback: msRest.ServiceCallback<void>): void;
-  put200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put200(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put200(options: Models.HttpSuccessPut200OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put200(options?: Models.HttpSuccessPut200OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1958,12 +1866,7 @@ export class HttpSuccess {
   /**
    * Patch true Boolean value in request returning 200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPatch200OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1971,17 +1874,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch200(): Promise<void>;
-  patch200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch200(options: Models.HttpSuccessPatch200OptionalParams): Promise<void>;
   patch200(callback: msRest.ServiceCallback<void>): void;
-  patch200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch200(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch200(options: Models.HttpSuccessPatch200OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch200(options?: Models.HttpSuccessPatch200OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2007,12 +1910,7 @@ export class HttpSuccess {
   /**
    * Post bollean value true in request that returns a 200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost200OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2020,17 +1918,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post200(): Promise<void>;
-  post200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post200(options: Models.HttpSuccessPost200OptionalParams): Promise<void>;
   post200(callback: msRest.ServiceCallback<void>): void;
-  post200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post200(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post200(options: Models.HttpSuccessPost200OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post200(options?: Models.HttpSuccessPost200OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2056,12 +1954,7 @@ export class HttpSuccess {
   /**
    * Delete simple boolean value true returns 200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessDelete200OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2069,17 +1962,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete200(): Promise<void>;
-  delete200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  delete200(options: Models.HttpSuccessDelete200OptionalParams): Promise<void>;
   delete200(callback: msRest.ServiceCallback<void>): void;
-  delete200(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  delete200(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  delete200(options: Models.HttpSuccessDelete200OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  delete200(options?: Models.HttpSuccessDelete200OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2105,12 +1998,7 @@ export class HttpSuccess {
   /**
    * Put true Boolean value in request returns 201
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut201OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2118,17 +2006,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put201(): Promise<void>;
-  put201(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put201(options: Models.HttpSuccessPut201OptionalParams): Promise<void>;
   put201(callback: msRest.ServiceCallback<void>): void;
-  put201(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put201(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put201(options: Models.HttpSuccessPut201OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put201(options?: Models.HttpSuccessPut201OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2154,12 +2042,7 @@ export class HttpSuccess {
   /**
    * Post true Boolean value in request returns 201 (Created)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost201OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2167,17 +2050,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post201(): Promise<void>;
-  post201(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post201(options: Models.HttpSuccessPost201OptionalParams): Promise<void>;
   post201(callback: msRest.ServiceCallback<void>): void;
-  post201(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post201(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post201(options: Models.HttpSuccessPost201OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post201(options?: Models.HttpSuccessPost201OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2203,12 +2086,7 @@ export class HttpSuccess {
   /**
    * Put true Boolean value in request returns 202 (Accepted)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut202OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2216,17 +2094,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put202(): Promise<void>;
-  put202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put202(options: Models.HttpSuccessPut202OptionalParams): Promise<void>;
   put202(callback: msRest.ServiceCallback<void>): void;
-  put202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put202(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put202(options: Models.HttpSuccessPut202OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put202(options?: Models.HttpSuccessPut202OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2252,12 +2130,7 @@ export class HttpSuccess {
   /**
    * Patch true Boolean value in request returns 202
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPatch202OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2265,17 +2138,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch202(): Promise<void>;
-  patch202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch202(options: Models.HttpSuccessPatch202OptionalParams): Promise<void>;
   patch202(callback: msRest.ServiceCallback<void>): void;
-  patch202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch202(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch202(options: Models.HttpSuccessPatch202OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch202(options?: Models.HttpSuccessPatch202OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2301,12 +2174,7 @@ export class HttpSuccess {
   /**
    * Post true Boolean value in request returns 202 (Accepted)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost202OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2314,17 +2182,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post202(): Promise<void>;
-  post202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post202(options: Models.HttpSuccessPost202OptionalParams): Promise<void>;
   post202(callback: msRest.ServiceCallback<void>): void;
-  post202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post202(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post202(options: Models.HttpSuccessPost202OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post202(options?: Models.HttpSuccessPost202OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2350,12 +2218,7 @@ export class HttpSuccess {
   /**
    * Delete true Boolean value in request returns 202 (accepted)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessDelete202OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2363,17 +2226,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete202(): Promise<void>;
-  delete202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  delete202(options: Models.HttpSuccessDelete202OptionalParams): Promise<void>;
   delete202(callback: msRest.ServiceCallback<void>): void;
-  delete202(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  delete202(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  delete202(options: Models.HttpSuccessDelete202OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  delete202(options?: Models.HttpSuccessDelete202OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2399,10 +2262,7 @@ export class HttpSuccess {
   /**
    * Return 204 status code if successful
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2410,17 +2270,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head204(): Promise<void>;
-  head204(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head204(options: msRest.RequestOptionsBase): Promise<void>;
   head204(callback: msRest.ServiceCallback<void>): void;
-  head204(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head204(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head204(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head204(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2446,12 +2306,7 @@ export class HttpSuccess {
   /**
    * Put true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPut204OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2459,17 +2314,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put204(): Promise<void>;
-  put204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put204(options: Models.HttpSuccessPut204OptionalParams): Promise<void>;
   put204(callback: msRest.ServiceCallback<void>): void;
-  put204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put204(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put204(options: Models.HttpSuccessPut204OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put204(options?: Models.HttpSuccessPut204OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2495,12 +2350,7 @@ export class HttpSuccess {
   /**
    * Patch true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPatch204OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2508,17 +2358,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch204(): Promise<void>;
-  patch204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch204(options: Models.HttpSuccessPatch204OptionalParams): Promise<void>;
   patch204(callback: msRest.ServiceCallback<void>): void;
-  patch204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch204(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch204(options: Models.HttpSuccessPatch204OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch204(options?: Models.HttpSuccessPatch204OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2544,12 +2394,7 @@ export class HttpSuccess {
   /**
    * Post true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessPost204OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2557,17 +2402,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post204(): Promise<void>;
-  post204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post204(options: Models.HttpSuccessPost204OptionalParams): Promise<void>;
   post204(callback: msRest.ServiceCallback<void>): void;
-  post204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post204(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post204(options: Models.HttpSuccessPost204OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post204(options?: Models.HttpSuccessPost204OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2593,12 +2438,7 @@ export class HttpSuccess {
   /**
    * Delete true Boolean value in request returns 204 (no content)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpSuccessDelete204OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2606,17 +2446,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete204(): Promise<void>;
-  delete204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  delete204(options: Models.HttpSuccessDelete204OptionalParams): Promise<void>;
   delete204(callback: msRest.ServiceCallback<void>): void;
-  delete204(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  delete204(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  delete204(options: Models.HttpSuccessDelete204OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  delete204(options?: Models.HttpSuccessDelete204OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2642,10 +2482,7 @@ export class HttpSuccess {
   /**
    * Return 404 status code
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2653,17 +2490,17 @@ export class HttpSuccess {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head404(): Promise<void>;
-  head404(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head404(options: msRest.RequestOptionsBase): Promise<void>;
   head404(callback: msRest.ServiceCallback<void>): void;
-  head404(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head404(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head404(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head404(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

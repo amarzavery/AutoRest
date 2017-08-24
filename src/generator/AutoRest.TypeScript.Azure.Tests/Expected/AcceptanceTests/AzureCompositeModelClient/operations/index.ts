@@ -8,14 +8,14 @@
  * regenerated.
  */
 
-import { BasicOperations } from './basicOperations';
-import { Primitive } from './primitive';
-import { ArrayModel } from './arrayModel';
-import { Dictionary } from './dictionary';
-import { Inheritance } from './inheritance';
-import { Polymorphism } from './polymorphism';
-import { Polymorphicrecursive } from './polymorphicrecursive';
-import { Readonlyproperty } from './readonlyproperty';
+import { BasicOperations } from "./basicOperations";
+import { Primitive } from "./primitive";
+import { ArrayModel } from "./arrayModel";
+import { Dictionary } from "./dictionary";
+import { Inheritance } from "./inheritance";
+import { Polymorphism } from "./polymorphism";
+import { Polymorphicrecursive } from "./polymorphicrecursive";
+import { Readonlyproperty } from "./readonlyproperty";
 
 export { BasicOperations, Primitive, ArrayModel, Dictionary, Inheritance, Polymorphism,
 Polymorphicrecursive, Readonlyproperty };

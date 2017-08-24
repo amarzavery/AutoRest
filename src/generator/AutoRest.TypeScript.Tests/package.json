@@ -15,7 +15,7 @@
     }
   ],
   "dependencies": {
-    "ms-rest": "amarzavery/ms-rest"
+    "ms-rest-ts": "amarzavery/ms-rest"
   },
   "devDependencies": {
     "tslint": "^2.5.1",

@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATFileService } from '../autoRestSwaggerBATFileService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATFileService } from "../autoRestSwaggerBATFileService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class Files {
   /**
    * Get file
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ReadableStream>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFileWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFileWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -105,18 +103,15 @@ export class Files {
   /**
    * Get a large file
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ReadableStream>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFileLargeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFileLargeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -182,18 +177,15 @@ export class Files {
   /**
    * Get empty file
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ReadableStream>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyFileWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyFileWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -259,10 +251,7 @@ export class Files {
   /**
    * Get file
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -274,13 +263,13 @@ export class Files {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFile(): Promise<ReadableStream>;
-  getFile(options: { customHeaders? : { [headerName: string]: string; } }): Promise<ReadableStream>;
+  getFile(options: msRest.RequestOptionsBase): Promise<ReadableStream>;
   getFile(callback: msRest.ServiceCallback<ReadableStream>): void;
-  getFile(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<ReadableStream>): void;
-  getFile(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<ReadableStream>): any {
+  getFile(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<ReadableStream>): void;
+  getFile(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<ReadableStream>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -306,10 +295,7 @@ export class Files {
   /**
    * Get a large file
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -321,13 +307,13 @@ export class Files {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFileLarge(): Promise<ReadableStream>;
-  getFileLarge(options: { customHeaders? : { [headerName: string]: string; } }): Promise<ReadableStream>;
+  getFileLarge(options: msRest.RequestOptionsBase): Promise<ReadableStream>;
   getFileLarge(callback: msRest.ServiceCallback<ReadableStream>): void;
-  getFileLarge(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<ReadableStream>): void;
-  getFileLarge(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<ReadableStream>): any {
+  getFileLarge(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<ReadableStream>): void;
+  getFileLarge(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<ReadableStream>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -353,10 +339,7 @@ export class Files {
   /**
    * Get empty file
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -368,13 +351,13 @@ export class Files {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmptyFile(): Promise<ReadableStream>;
-  getEmptyFile(options: { customHeaders? : { [headerName: string]: string; } }): Promise<ReadableStream>;
+  getEmptyFile(options: msRest.RequestOptionsBase): Promise<ReadableStream>;
   getEmptyFile(callback: msRest.ServiceCallback<ReadableStream>): void;
-  getEmptyFile(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<ReadableStream>): void;
-  getEmptyFile(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<ReadableStream>): any {
+  getEmptyFile(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<ReadableStream>): void;
+  getEmptyFile(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<ReadableStream>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

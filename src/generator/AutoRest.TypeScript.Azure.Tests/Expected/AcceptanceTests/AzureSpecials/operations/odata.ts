@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestAzureSpecialParametersTestClient } from "../autoRestAzureSpecialParametersTestClient";
 
 const WebResource = msRest.WebResource;
 
@@ -29,25 +30,15 @@ export class Odata {
    * Specify filter parameter with value '$filter=id gt 5 and name eq
    * 'foo'&$orderby=id&$top=10'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.filter] The filter parameter with value '$filter=id
-   * gt 5 and name eq 'foo''.
-   *
-   * @param {number} [options.top] The top parameter with value 10.
-   *
-   * @param {string} [options.orderby] The orderby parameter with value id.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {OdataGetWithFilterOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getWithFilterWithHttpOperationResponse(options?: { filter? : string, top? : number, orderby? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getWithFilterWithHttpOperationResponse(options?: Models.OdataGetWithFilterOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let filter = (options && options.filter !== undefined) ? options.filter : undefined;
     let top = (options && options.top !== undefined) ? options.top : undefined;
@@ -150,17 +141,7 @@ export class Odata {
    * Specify filter parameter with value '$filter=id gt 5 and name eq
    * 'foo'&$orderby=id&$top=10'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.filter] The filter parameter with value '$filter=id
-   * gt 5 and name eq 'foo''.
-   *
-   * @param {number} [options.top] The top parameter with value 10.
-   *
-   * @param {string} [options.orderby] The orderby parameter with value id.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {OdataGetWithFilterOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -168,17 +149,17 @@ export class Odata {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getWithFilter(): Promise<void>;
-  getWithFilter(options: { filter? : string, top? : number, orderby? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getWithFilter(options: Models.OdataGetWithFilterOptionalParams): Promise<void>;
   getWithFilter(callback: msRest.ServiceCallback<void>): void;
-  getWithFilter(options: { filter? : string, top? : number, orderby? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getWithFilter(options?: { filter? : string, top? : number, orderby? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getWithFilter(options: Models.OdataGetWithFilterOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getWithFilter(options?: Models.OdataGetWithFilterOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

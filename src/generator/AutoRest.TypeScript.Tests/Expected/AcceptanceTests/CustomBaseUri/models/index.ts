@@ -8,16 +8,33 @@
  * regenerated.
  */
 
+import { ServiceClientOptions } from "ms-rest-ts";
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestParameterizedHostTestClientOptions.
+ * @extends ServiceClientOptions
+ */
+export interface AutoRestParameterizedHostTestClientOptions extends ServiceClientOptions {
+  /**
+   * @member {string} [host] A string value that is used as a global part of
+   * the parameterized host. Default value: 'host' .
+   */
+  host?: string;
 }

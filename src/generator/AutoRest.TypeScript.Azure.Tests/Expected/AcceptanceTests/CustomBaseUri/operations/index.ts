@@ -8,6 +8,6 @@
  * regenerated.
  */
 
-import { Paths } from './paths';
+import { Paths } from "./paths";
 
 export { Paths };

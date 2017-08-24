@@ -8,13 +8,14 @@
  * regenerated.
  */
 
-import * as msRest from "ms-rest";
+import * as msRest from "ms-rest-ts";
 import * as Models from "./models";
 import * as Mappers from "./models/mappers";
 const WebResource = msRest.WebResource;
 
 const packageName = 'foo';
 const packageVersion = '3.0.0-preview';
+
 class ComplexModelClient extends msRest.ServiceClient {
   subscriptionId: string;
   apiVersion: string;
@@ -32,8 +33,8 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
    *
-   * @param {object} [options.requestOptions] - Options for the underlying request object
-   * {@link https://github.com/request/request#requestoptions-callback Options doc}
+   * @param {object} [options.requestOptions] - The request options. Detailed info can be found at
+   * {@link https://github.github.io/fetch/#Request Options doc}
    *
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
@@ -65,18 +66,15 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {string} resourceGroupName Resource Group ID.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<CatalogArray>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async listWithHttpOperationResponse(resourceGroupName: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async listWithHttpOperationResponse(resourceGroupName: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this;
     // Validate
     try {
@@ -176,21 +174,16 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {string} resourceGroupName Resource Group ID.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.productDictionaryOfArray] Dictionary of Array of
-   * product
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ComplexModelClientCreateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<CatalogDictionary>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async createWithHttpOperationResponse(subscriptionId: string, resourceGroupName: string, options?: { productDictionaryOfArray? : { [propertyName: string]: Models.Product[] }, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async createWithHttpOperationResponse(subscriptionId: string, resourceGroupName: string, options?: Models.ComplexModelClientCreateOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let productDictionaryOfArray = (options && options.productDictionaryOfArray !== undefined) ? options.productDictionaryOfArray : undefined;
     // Validate
@@ -313,21 +306,16 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {string} resourceGroupName Resource Group ID.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.productArrayOfDictionary] Array of dictionary of
-   * products
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ComplexModelClientUpdateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<CatalogArray>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async updateWithHttpOperationResponse(subscriptionId: string, resourceGroupName: string, options?: { productArrayOfDictionary? : { [propertyName: string]: Models.Product }[], customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async updateWithHttpOperationResponse(subscriptionId: string, resourceGroupName: string, options?: Models.ComplexModelClientUpdateOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this;
     let productArrayOfDictionary = (options && options.productArrayOfDictionary !== undefined) ? options.productArrayOfDictionary : undefined;
     // Validate
@@ -449,10 +437,7 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {string} resourceGroupName Resource Group ID.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -460,18 +445,18 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {CatalogArray} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link CatalogArray} for more information.
+   *                      {Models.CatalogArray} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.CatalogArray} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   list(resourceGroupName: string): Promise<Models.CatalogArray>;
-  list(resourceGroupName: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.CatalogArray>;
+  list(resourceGroupName: string, options: msRest.RequestOptionsBase): Promise<Models.CatalogArray>;
   list(resourceGroupName: string, callback: msRest.ServiceCallback<Models.CatalogArray>): void;
-  list(resourceGroupName: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.CatalogArray>): void;
-  list(resourceGroupName: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.CatalogArray>): any {
+  list(resourceGroupName: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.CatalogArray>): void;
+  list(resourceGroupName: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.CatalogArray>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -503,13 +488,8 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {string} resourceGroupName Resource Group ID.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.productDictionaryOfArray] Dictionary of Array of
-   * product
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ComplexModelClientCreateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -517,18 +497,19 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {CatalogDictionary} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link CatalogDictionary} for more information.
+   *                      {Models.CatalogDictionary} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.CatalogDictionary} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   create(subscriptionId: string, resourceGroupName: string): Promise<Models.CatalogDictionary>;
-  create(subscriptionId: string, resourceGroupName: string, options: { productDictionaryOfArray? : { [propertyName: string]: Models.Product[] }, customHeaders? : { [headerName: string]: string; } }): Promise<Models.CatalogDictionary>;
+  create(subscriptionId: string, resourceGroupName: string, options: Models.ComplexModelClientCreateOptionalParams): Promise<Models.CatalogDictionary>;
   create(subscriptionId: string, resourceGroupName: string, callback: msRest.ServiceCallback<Models.CatalogDictionary>): void;
-  create(subscriptionId: string, resourceGroupName: string, options: { productDictionaryOfArray? : { [propertyName: string]: Models.Product[] }, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.CatalogDictionary>): void;
-  create(subscriptionId: string, resourceGroupName: string, options?: { productDictionaryOfArray? : { [propertyName: string]: Models.Product[] }, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.CatalogDictionary>): any {
+  create(subscriptionId: string, resourceGroupName: string, options: Models.ComplexModelClientCreateOptionalParams, callback: msRest.ServiceCallback<Models.CatalogDictionary>): void;
+  create(subscriptionId: string, resourceGroupName: string, options?: Models.ComplexModelClientCreateOptionalParams, callback?: msRest.ServiceCallback<Models.CatalogDictionary>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -560,13 +541,8 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    * @param {string} resourceGroupName Resource Group ID.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {array} [options.productArrayOfDictionary] Array of dictionary of
-   * products
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ComplexModelClientUpdateOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -574,18 +550,18 @@ class ComplexModelClient extends msRest.ServiceClient {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {CatalogArray} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link CatalogArray} for more information.
+   *                      {Models.CatalogArray} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.CatalogArray} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   update(subscriptionId: string, resourceGroupName: string): Promise<Models.CatalogArray>;
-  update(subscriptionId: string, resourceGroupName: string, options: { productArrayOfDictionary? : { [propertyName: string]: Models.Product }[], customHeaders? : { [headerName: string]: string; } }): Promise<Models.CatalogArray>;
+  update(subscriptionId: string, resourceGroupName: string, options: Models.ComplexModelClientUpdateOptionalParams): Promise<Models.CatalogArray>;
   update(subscriptionId: string, resourceGroupName: string, callback: msRest.ServiceCallback<Models.CatalogArray>): void;
-  update(subscriptionId: string, resourceGroupName: string, options: { productArrayOfDictionary? : { [propertyName: string]: Models.Product }[], customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.CatalogArray>): void;
-  update(subscriptionId: string, resourceGroupName: string, options?: { productArrayOfDictionary? : { [propertyName: string]: Models.Product }[], customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.CatalogArray>): any {
+  update(subscriptionId: string, resourceGroupName: string, options: Models.ComplexModelClientUpdateOptionalParams, callback: msRest.ServiceCallback<Models.CatalogArray>): void;
+  update(subscriptionId: string, resourceGroupName: string, options?: Models.ComplexModelClientUpdateOptionalParams, callback?: msRest.ServiceCallback<Models.CatalogArray>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

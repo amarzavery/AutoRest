@@ -8,6 +8,6 @@
  * regenerated.
  */
 
-import { HttpSuccess } from './httpSuccess';
+import { HttpSuccess } from "./httpSuccess";
 
 export { HttpSuccess };

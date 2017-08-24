@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestRequiredOptionalTestService } from '../autoRestRequiredOptionalTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestRequiredOptionalTestService } from "../autoRestRequiredOptionalTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -31,18 +31,15 @@ export class Implicit {
    *
    * @param {string} pathParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getRequiredPathWithHttpOperationResponse(pathParameter: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getRequiredPathWithHttpOperationResponse(pathParameter: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -126,20 +123,16 @@ export class Implicit {
   /**
    * Test implicitly optional query parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.queryParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ImplicitPutOptionalQueryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putOptionalQueryWithHttpOperationResponse(options?: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putOptionalQueryWithHttpOperationResponse(options?: Models.ImplicitPutOptionalQueryOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let queryParameter = (options && options.queryParameter !== undefined) ? options.queryParameter : undefined;
     // Validate
@@ -218,20 +211,16 @@ export class Implicit {
   /**
    * Test implicitly optional header parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.queryParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ImplicitPutOptionalHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putOptionalHeaderWithHttpOperationResponse(options?: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putOptionalHeaderWithHttpOperationResponse(options?: Models.ImplicitPutOptionalHeaderOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let queryParameter = (options && options.queryParameter !== undefined) ? options.queryParameter : undefined;
     // Validate
@@ -306,20 +295,16 @@ export class Implicit {
   /**
    * Test implicitly optional body parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ImplicitPutOptionalBodyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putOptionalBodyWithHttpOperationResponse(options?: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putOptionalBodyWithHttpOperationResponse(options?: Models.ImplicitPutOptionalBodyOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let bodyParameter = (options && options.bodyParameter !== undefined) ? options.bodyParameter : undefined;
     // Validate
@@ -411,18 +396,15 @@ export class Implicit {
   /**
    * Test implicitly required path parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getRequiredGlobalPathWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getRequiredGlobalPathWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -506,18 +488,15 @@ export class Implicit {
   /**
    * Test implicitly required query parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getRequiredGlobalQueryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getRequiredGlobalQueryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -605,18 +584,15 @@ export class Implicit {
   /**
    * Test implicitly optional query parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ErrorModel>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getOptionalGlobalQueryWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getOptionalGlobalQueryWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -708,10 +684,7 @@ export class Implicit {
    *
    * @param {string} pathParameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -719,18 +692,18 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getRequiredPath(pathParameter: string): Promise<Models.ErrorModel>;
-  getRequiredPath(pathParameter: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  getRequiredPath(pathParameter: string, options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   getRequiredPath(pathParameter: string, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getRequiredPath(pathParameter: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getRequiredPath(pathParameter: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  getRequiredPath(pathParameter: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  getRequiredPath(pathParameter: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -756,12 +729,8 @@ export class Implicit {
   /**
    * Test implicitly optional query parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.queryParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ImplicitPutOptionalQueryOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -769,17 +738,17 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putOptionalQuery(): Promise<void>;
-  putOptionalQuery(options: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putOptionalQuery(options: Models.ImplicitPutOptionalQueryOptionalParams): Promise<void>;
   putOptionalQuery(callback: msRest.ServiceCallback<void>): void;
-  putOptionalQuery(options: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putOptionalQuery(options?: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putOptionalQuery(options: Models.ImplicitPutOptionalQueryOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putOptionalQuery(options?: Models.ImplicitPutOptionalQueryOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -805,12 +774,8 @@ export class Implicit {
   /**
    * Test implicitly optional header parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.queryParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ImplicitPutOptionalHeaderOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -818,17 +783,17 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putOptionalHeader(): Promise<void>;
-  putOptionalHeader(options: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putOptionalHeader(options: Models.ImplicitPutOptionalHeaderOptionalParams): Promise<void>;
   putOptionalHeader(callback: msRest.ServiceCallback<void>): void;
-  putOptionalHeader(options: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putOptionalHeader(options?: { queryParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putOptionalHeader(options: Models.ImplicitPutOptionalHeaderOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putOptionalHeader(options?: Models.ImplicitPutOptionalHeaderOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -854,12 +819,8 @@ export class Implicit {
   /**
    * Test implicitly optional body parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.bodyParameter]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ImplicitPutOptionalBodyOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -867,17 +828,17 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putOptionalBody(): Promise<void>;
-  putOptionalBody(options: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putOptionalBody(options: Models.ImplicitPutOptionalBodyOptionalParams): Promise<void>;
   putOptionalBody(callback: msRest.ServiceCallback<void>): void;
-  putOptionalBody(options: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putOptionalBody(options?: { bodyParameter? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putOptionalBody(options: Models.ImplicitPutOptionalBodyOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putOptionalBody(options?: Models.ImplicitPutOptionalBodyOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -903,10 +864,7 @@ export class Implicit {
   /**
    * Test implicitly required path parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -914,18 +872,18 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getRequiredGlobalPath(): Promise<Models.ErrorModel>;
-  getRequiredGlobalPath(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  getRequiredGlobalPath(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   getRequiredGlobalPath(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getRequiredGlobalPath(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getRequiredGlobalPath(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  getRequiredGlobalPath(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  getRequiredGlobalPath(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -951,10 +909,7 @@ export class Implicit {
   /**
    * Test implicitly required query parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -962,18 +917,18 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getRequiredGlobalQuery(): Promise<Models.ErrorModel>;
-  getRequiredGlobalQuery(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  getRequiredGlobalQuery(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   getRequiredGlobalQuery(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getRequiredGlobalQuery(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getRequiredGlobalQuery(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  getRequiredGlobalQuery(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  getRequiredGlobalQuery(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -999,10 +954,7 @@ export class Implicit {
   /**
    * Test implicitly optional query parameter
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1010,18 +962,18 @@ export class Implicit {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ErrorModel} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ErrorModel} for more information.
+   *                      {Models.ErrorModel} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ErrorModel} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getOptionalGlobalQuery(): Promise<Models.ErrorModel>;
-  getOptionalGlobalQuery(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ErrorModel>;
+  getOptionalGlobalQuery(options: msRest.RequestOptionsBase): Promise<Models.ErrorModel>;
   getOptionalGlobalQuery(callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getOptionalGlobalQuery(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
-  getOptionalGlobalQuery(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
+  getOptionalGlobalQuery(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ErrorModel>): void;
+  getOptionalGlobalQuery(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ErrorModel>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

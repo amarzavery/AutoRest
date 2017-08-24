@@ -11,25 +11,31 @@
 
 
 /**
- * @class
- * Initializes a new instance of the Product class.
- * @constructor
- * @member {number} [integer]
- * @member {string} [string]
+ * @interface
+ * An interface representing Product.
  */
 export interface Product {
+  /**
+   * @member {number} [integer]
+   */
   integer?: number;
+  /**
+   * @member {string} [string]
+   */
   string?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }

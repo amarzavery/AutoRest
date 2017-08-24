@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestComplexTestService } from '../autoRestComplexTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestComplexTestService } from "../autoRestComplexTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class Readonlyproperty {
   /**
    * Get complex types that have readonly properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ReadonlyObj>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -118,20 +115,16 @@ export class Readonlyproperty {
   /**
    * Put complex types that have readonly properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.size]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ReadonlypropertyPutValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putValidWithHttpOperationResponse(options?: { size? : number, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putValidWithHttpOperationResponse(options?: Models.ReadonlypropertyPutValidOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let size = (options && options.size !== undefined) ? options.size : undefined;
     // Validate
@@ -226,10 +219,7 @@ export class Readonlyproperty {
   /**
    * Get complex types that have readonly properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -237,18 +227,18 @@ export class Readonlyproperty {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ReadonlyObj} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ReadonlyObj} for more information.
+   *                      {Models.ReadonlyObj} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ReadonlyObj} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getValid(): Promise<Models.ReadonlyObj>;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ReadonlyObj>;
+  getValid(options: msRest.RequestOptionsBase): Promise<Models.ReadonlyObj>;
   getValid(callback: msRest.ServiceCallback<Models.ReadonlyObj>): void;
-  getValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ReadonlyObj>): void;
-  getValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ReadonlyObj>): any {
+  getValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ReadonlyObj>): void;
+  getValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ReadonlyObj>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -274,12 +264,8 @@ export class Readonlyproperty {
   /**
    * Put complex types that have readonly properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {number} [options.size]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ReadonlypropertyPutValidOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -287,17 +273,17 @@ export class Readonlyproperty {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putValid(): Promise<void>;
-  putValid(options: { size? : number, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putValid(options: Models.ReadonlypropertyPutValidOptionalParams): Promise<void>;
   putValid(callback: msRest.ServiceCallback<void>): void;
-  putValid(options: { size? : number, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putValid(options?: { size? : number, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putValid(options: Models.ReadonlypropertyPutValidOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putValid(options?: Models.ReadonlypropertyPutValidOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

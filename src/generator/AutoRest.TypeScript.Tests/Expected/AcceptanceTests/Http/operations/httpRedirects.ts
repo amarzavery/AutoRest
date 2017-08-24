@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestHttpInfrastructureTestService } from '../autoRestHttpInfrastructureTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestHttpInfrastructureTestService } from "../autoRestHttpInfrastructureTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class HttpRedirects {
   /**
    * Return 300 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head300WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head300WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -102,18 +100,15 @@ export class HttpRedirects {
   /**
    * Return 300 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get300WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get300WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -204,18 +199,15 @@ export class HttpRedirects {
   /**
    * Return 301 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head301WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head301WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -278,18 +270,15 @@ export class HttpRedirects {
   /**
    * Return 301 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get301WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get301WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -354,20 +343,15 @@ export class HttpRedirects {
    * automatically redirected, but should return the received 301 to the caller
    * for evaluation
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPut301OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put301WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put301WithHttpOperationResponse(options?: Models.HttpRedirectsPut301OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -459,18 +443,15 @@ export class HttpRedirects {
   /**
    * Return 302 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head302WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head302WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -533,18 +514,15 @@ export class HttpRedirects {
   /**
    * Return 302 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get302WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get302WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -609,20 +587,15 @@ export class HttpRedirects {
    * automatically redirected, but should return the received 302 to the caller
    * for evaluation
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPatch302OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch302WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch302WithHttpOperationResponse(options?: Models.HttpRedirectsPatch302OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -715,20 +688,15 @@ export class HttpRedirects {
    * Post true Boolean value in request returns 303.  This request should be
    * automatically redirected usign a get, ultimately returning a 200 status code
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPost303OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post303WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post303WithHttpOperationResponse(options?: Models.HttpRedirectsPost303OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -820,18 +788,15 @@ export class HttpRedirects {
   /**
    * Redirect with 307, resulting in a 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async head307WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async head307WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -894,18 +859,15 @@ export class HttpRedirects {
   /**
    * Redirect get with 307, resulting in a 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async get307WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async get307WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -968,20 +930,15 @@ export class HttpRedirects {
   /**
    * Put redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPut307OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async put307WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async put307WithHttpOperationResponse(options?: Models.HttpRedirectsPut307OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1073,20 +1030,15 @@ export class HttpRedirects {
   /**
    * Patch redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPatch307OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async patch307WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async patch307WithHttpOperationResponse(options?: Models.HttpRedirectsPatch307OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1178,20 +1130,15 @@ export class HttpRedirects {
   /**
    * Post redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPost307OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async post307WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async post307WithHttpOperationResponse(options?: Models.HttpRedirectsPost307OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1283,20 +1230,15 @@ export class HttpRedirects {
   /**
    * Delete redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsDelete307OptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async delete307WithHttpOperationResponse(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async delete307WithHttpOperationResponse(options?: Models.HttpRedirectsDelete307OptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let booleanValue = (options && options.booleanValue !== undefined) ? options.booleanValue : undefined;
     // Validate
@@ -1388,10 +1330,7 @@ export class HttpRedirects {
   /**
    * Return 300 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1399,17 +1338,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head300(): Promise<void>;
-  head300(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head300(options: msRest.RequestOptionsBase): Promise<void>;
   head300(callback: msRest.ServiceCallback<void>): void;
-  head300(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head300(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head300(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head300(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1435,10 +1374,7 @@ export class HttpRedirects {
   /**
    * Return 300 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1446,17 +1382,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get300(): Promise<string[]>;
-  get300(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[]>;
+  get300(options: msRest.RequestOptionsBase): Promise<string[]>;
   get300(callback: msRest.ServiceCallback<string[]>): void;
-  get300(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[]>): void;
-  get300(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[]>): any {
+  get300(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[]>): void;
+  get300(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1482,10 +1418,7 @@ export class HttpRedirects {
   /**
    * Return 301 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1493,17 +1426,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head301(): Promise<void>;
-  head301(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head301(options: msRest.RequestOptionsBase): Promise<void>;
   head301(callback: msRest.ServiceCallback<void>): void;
-  head301(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head301(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head301(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head301(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1529,10 +1462,7 @@ export class HttpRedirects {
   /**
    * Return 301 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1540,17 +1470,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get301(): Promise<void>;
-  get301(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get301(options: msRest.RequestOptionsBase): Promise<void>;
   get301(callback: msRest.ServiceCallback<void>): void;
-  get301(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get301(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get301(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get301(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1578,12 +1508,7 @@ export class HttpRedirects {
    * automatically redirected, but should return the received 301 to the caller
    * for evaluation
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPut301OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1591,17 +1516,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put301(): Promise<void>;
-  put301(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put301(options: Models.HttpRedirectsPut301OptionalParams): Promise<void>;
   put301(callback: msRest.ServiceCallback<void>): void;
-  put301(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put301(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put301(options: Models.HttpRedirectsPut301OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put301(options?: Models.HttpRedirectsPut301OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1627,10 +1552,7 @@ export class HttpRedirects {
   /**
    * Return 302 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1638,17 +1560,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head302(): Promise<void>;
-  head302(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head302(options: msRest.RequestOptionsBase): Promise<void>;
   head302(callback: msRest.ServiceCallback<void>): void;
-  head302(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head302(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head302(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head302(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1674,10 +1596,7 @@ export class HttpRedirects {
   /**
    * Return 302 status code and redirect to /http/success/200
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1685,17 +1604,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get302(): Promise<void>;
-  get302(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get302(options: msRest.RequestOptionsBase): Promise<void>;
   get302(callback: msRest.ServiceCallback<void>): void;
-  get302(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get302(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get302(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get302(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1723,12 +1642,7 @@ export class HttpRedirects {
    * automatically redirected, but should return the received 302 to the caller
    * for evaluation
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPatch302OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1736,17 +1650,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch302(): Promise<void>;
-  patch302(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch302(options: Models.HttpRedirectsPatch302OptionalParams): Promise<void>;
   patch302(callback: msRest.ServiceCallback<void>): void;
-  patch302(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch302(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch302(options: Models.HttpRedirectsPatch302OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch302(options?: Models.HttpRedirectsPatch302OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1773,12 +1687,7 @@ export class HttpRedirects {
    * Post true Boolean value in request returns 303.  This request should be
    * automatically redirected usign a get, ultimately returning a 200 status code
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPost303OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1786,17 +1695,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post303(): Promise<void>;
-  post303(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post303(options: Models.HttpRedirectsPost303OptionalParams): Promise<void>;
   post303(callback: msRest.ServiceCallback<void>): void;
-  post303(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post303(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post303(options: Models.HttpRedirectsPost303OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post303(options?: Models.HttpRedirectsPost303OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1822,10 +1731,7 @@ export class HttpRedirects {
   /**
    * Redirect with 307, resulting in a 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1833,17 +1739,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   head307(): Promise<void>;
-  head307(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  head307(options: msRest.RequestOptionsBase): Promise<void>;
   head307(callback: msRest.ServiceCallback<void>): void;
-  head307(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  head307(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  head307(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  head307(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1869,10 +1775,7 @@ export class HttpRedirects {
   /**
    * Redirect get with 307, resulting in a 200 success
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1880,17 +1783,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   get307(): Promise<void>;
-  get307(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  get307(options: msRest.RequestOptionsBase): Promise<void>;
   get307(callback: msRest.ServiceCallback<void>): void;
-  get307(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  get307(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  get307(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  get307(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1916,12 +1819,7 @@ export class HttpRedirects {
   /**
    * Put redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPut307OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1929,17 +1827,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   put307(): Promise<void>;
-  put307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  put307(options: Models.HttpRedirectsPut307OptionalParams): Promise<void>;
   put307(callback: msRest.ServiceCallback<void>): void;
-  put307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  put307(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  put307(options: Models.HttpRedirectsPut307OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  put307(options?: Models.HttpRedirectsPut307OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1965,12 +1863,7 @@ export class HttpRedirects {
   /**
    * Patch redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPatch307OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1978,17 +1871,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   patch307(): Promise<void>;
-  patch307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  patch307(options: Models.HttpRedirectsPatch307OptionalParams): Promise<void>;
   patch307(callback: msRest.ServiceCallback<void>): void;
-  patch307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  patch307(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  patch307(options: Models.HttpRedirectsPatch307OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  patch307(options?: Models.HttpRedirectsPatch307OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2014,12 +1907,7 @@ export class HttpRedirects {
   /**
    * Post redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsPost307OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2027,17 +1915,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   post307(): Promise<void>;
-  post307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  post307(options: Models.HttpRedirectsPost307OptionalParams): Promise<void>;
   post307(callback: msRest.ServiceCallback<void>): void;
-  post307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  post307(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  post307(options: Models.HttpRedirectsPost307OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  post307(options?: Models.HttpRedirectsPost307OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2063,12 +1951,7 @@ export class HttpRedirects {
   /**
    * Delete redirected with 307, resulting in a 200 after redirect
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {boolean} [options.booleanValue] Simple boolean value true
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {HttpRedirectsDelete307OptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2076,17 +1959,17 @@ export class HttpRedirects {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   delete307(): Promise<void>;
-  delete307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  delete307(options: Models.HttpRedirectsDelete307OptionalParams): Promise<void>;
   delete307(callback: msRest.ServiceCallback<void>): void;
-  delete307(options: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  delete307(options?: { booleanValue? : boolean, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  delete307(options: Models.HttpRedirectsDelete307OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  delete307(options?: Models.HttpRedirectsDelete307OptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

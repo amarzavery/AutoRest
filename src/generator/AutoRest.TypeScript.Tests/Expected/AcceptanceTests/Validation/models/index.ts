@@ -8,24 +8,25 @@
  * regenerated.
  */
 
+import { RequestOptionsBase } from "ms-rest-ts";
 
 
 /**
- * @class
- * Initializes a new instance of the ChildProduct class.
- * @constructor
+ * @interface
+ * An interface representing ChildProduct.
  * The product documentation.
  *
- * @member {number} [count] Count
  */
 export interface ChildProduct {
+  /**
+   * @member {number} [count] Count
+   */
   count?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the ConstantProduct class.
- * @constructor
+ * @interface
+ * An interface representing ConstantProduct.
  * The product documentation.
  *
  */
@@ -33,38 +34,79 @@ export interface ConstantProduct {
 }
 
 /**
- * @class
- * Initializes a new instance of the Product class.
- * @constructor
+ * @interface
+ * An interface representing Product.
  * The product documentation.
  *
- * @member {array} [displayNames] Non required array of unique items from 0 to
- * 6 elements.
- * @member {number} [capacity] Non required int betwen 0 and 100 exclusive.
- * @member {string} [image] Image URL representing the product.
- * @member {object} child
- * @member {number} [child.count] Count
- * @member {string} [constStringAsEnum] Constant string as Enum. Possible
- * values include: 'constant_string_as_enum'
  */
 export interface Product {
+  /**
+   * @member {string[]} [displayNames] Non required array of unique items from
+   * 0 to 6 elements.
+   */
   displayNames?: string[];
+  /**
+   * @member {number} [capacity] Non required int betwen 0 and 100 exclusive.
+   */
   capacity?: number;
+  /**
+   * @member {string} [image] Image URL representing the product.
+   */
   image?: string;
+  /**
+   * @member {ChildProduct} child
+   */
   child: ChildProduct;
+  /**
+   * @member {string} [constStringAsEnum] Constant string as Enum. Possible
+   * values include: 'constant_string_as_enum'
+   */
   constStringAsEnum?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [code]
- * @member {string} [message]
- * @member {string} [fields]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [code]
+   */
   code?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
+  /**
+   * @member {string} [fields]
+   */
   fields?: string;
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestValidationTestValidationOfBodyOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestValidationTestValidationOfBodyOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {Product} [body]
+   */
+  body?: Product;
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestValidationTestPostWithConstantInBodyOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestValidationTestPostWithConstantInBodyOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {Product} [body]
+   */
+  body?: Product;
 }

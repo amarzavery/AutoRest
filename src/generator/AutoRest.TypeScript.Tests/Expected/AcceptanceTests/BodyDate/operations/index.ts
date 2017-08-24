@@ -8,6 +8,6 @@
  * regenerated.
  */
 
-import { DateModel } from './dateModel';
+import { DateModel } from "./dateModel";
 
 export { DateModel };

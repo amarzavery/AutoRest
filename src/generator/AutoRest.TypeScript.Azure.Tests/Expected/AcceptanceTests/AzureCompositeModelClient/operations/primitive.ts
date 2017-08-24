@@ -8,11 +8,11 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AzureCompositeModel } from '../azureCompositeModel';
-import * as moment from 'moment';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AzureCompositeModel } from "../azureCompositeModel";
+import * as moment from "moment";
 
 const WebResource = msRest.WebResource;
 
@@ -30,18 +30,15 @@ export class Primitive {
   /**
    * Get complex types with integer properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<IntWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -137,24 +134,17 @@ export class Primitive {
   /**
    * Put complex types with integer properties
    *
-   * @param {object} complexBody Please put -1 and 2
+   * @param {IntWrapper} complexBody Please put -1 and 2
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number} [complexBody.field2]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putIntWithHttpOperationResponse(complexBody: Models.IntWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putIntWithHttpOperationResponse(complexBody: Models.IntWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -252,18 +242,15 @@ export class Primitive {
   /**
    * Get complex types with long properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<LongWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLongWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLongWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -359,24 +346,17 @@ export class Primitive {
   /**
    * Put complex types with long properties
    *
-   * @param {object} complexBody Please put 1099511627775 and -999511627788
+   * @param {LongWrapper} complexBody Please put 1099511627775 and -999511627788
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number} [complexBody.field2]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putLongWithHttpOperationResponse(complexBody: Models.LongWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putLongWithHttpOperationResponse(complexBody: Models.LongWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -474,18 +454,15 @@ export class Primitive {
   /**
    * Get complex types with float properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<FloatWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFloatWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFloatWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -581,24 +558,17 @@ export class Primitive {
   /**
    * Put complex types with float properties
    *
-   * @param {object} complexBody Please put 1.05 and -0.003
+   * @param {FloatWrapper} complexBody Please put 1.05 and -0.003
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number} [complexBody.field2]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putFloatWithHttpOperationResponse(complexBody: Models.FloatWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putFloatWithHttpOperationResponse(complexBody: Models.FloatWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -696,18 +666,15 @@ export class Primitive {
   /**
    * Get complex types with double properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DoubleWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDoubleWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDoubleWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -803,26 +770,18 @@ export class Primitive {
   /**
    * Put complex types with double properties
    *
-   * @param {object} complexBody Please put 3e-100 and
+   * @param {DoubleWrapper} complexBody Please put 3e-100 and
    * -0.000000000000000000000000000000000000000000000000000000005
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number}
-   * [complexBody.field56ZerosAfterTheDotAndNegativeZeroBeforeDotAndThisIsALongFieldNameOnPurpose]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDoubleWithHttpOperationResponse(complexBody: Models.DoubleWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDoubleWithHttpOperationResponse(complexBody: Models.DoubleWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -920,18 +879,15 @@ export class Primitive {
   /**
    * Get complex types with bool properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<BooleanWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBoolWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBoolWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1027,24 +983,17 @@ export class Primitive {
   /**
    * Put complex types with bool properties
    *
-   * @param {object} complexBody Please put true and false
+   * @param {BooleanWrapper} complexBody Please put true and false
    *
-   * @param {boolean} [complexBody.fieldTrue]
-   *
-   * @param {boolean} [complexBody.fieldFalse]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBoolWithHttpOperationResponse(complexBody: Models.BooleanWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBoolWithHttpOperationResponse(complexBody: Models.BooleanWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1142,18 +1091,15 @@ export class Primitive {
   /**
    * Get complex types with string properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<StringWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getStringWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getStringWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1249,26 +1195,17 @@ export class Primitive {
   /**
    * Put complex types with string properties
    *
-   * @param {object} complexBody Please put 'goodrequest', '', and null
+   * @param {StringWrapper} complexBody Please put 'goodrequest', '', and null
    *
-   * @param {string} [complexBody.field]
-   *
-   * @param {string} [complexBody.empty]
-   *
-   * @param {string} [complexBody.nullProperty]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putStringWithHttpOperationResponse(complexBody: Models.StringWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putStringWithHttpOperationResponse(complexBody: Models.StringWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1366,18 +1303,15 @@ export class Primitive {
   /**
    * Get complex types with date properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DateWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1473,24 +1407,17 @@ export class Primitive {
   /**
    * Put complex types with date properties
    *
-   * @param {object} complexBody Please put '0001-01-01' and '2016-02-29'
+   * @param {DateWrapper} complexBody Please put '0001-01-01' and '2016-02-29'
    *
-   * @param {date} [complexBody.field]
-   *
-   * @param {date} [complexBody.leap]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDateWithHttpOperationResponse(complexBody: Models.DateWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDateWithHttpOperationResponse(complexBody: Models.DateWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1588,18 +1515,15 @@ export class Primitive {
   /**
    * Get complex types with datetime properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DatetimeWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1695,25 +1619,18 @@ export class Primitive {
   /**
    * Put complex types with datetime properties
    *
-   * @param {object} complexBody Please put '0001-01-01T12:00:00-04:00' and
-   * '2015-05-18T11:38:00-08:00'
+   * @param {DatetimeWrapper} complexBody Please put '0001-01-01T12:00:00-04:00'
+   * and '2015-05-18T11:38:00-08:00'
    *
-   * @param {date} [complexBody.field]
-   *
-   * @param {date} [complexBody.now]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDateTimeWithHttpOperationResponse(complexBody: Models.DatetimeWrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDateTimeWithHttpOperationResponse(complexBody: Models.DatetimeWrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1811,18 +1728,15 @@ export class Primitive {
   /**
    * Get complex types with datetimeRfc1123 properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Datetimerfc1123Wrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateTimeRfc1123WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateTimeRfc1123WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1918,25 +1832,18 @@ export class Primitive {
   /**
    * Put complex types with datetimeRfc1123 properties
    *
-   * @param {object} complexBody Please put 'Mon, 01 Jan 0001 12:00:00 GMT' and
-   * 'Mon, 18 May 2015 11:38:00 GMT'
+   * @param {Datetimerfc1123Wrapper} complexBody Please put 'Mon, 01 Jan 0001
+   * 12:00:00 GMT' and 'Mon, 18 May 2015 11:38:00 GMT'
    *
-   * @param {date} [complexBody.field]
-   *
-   * @param {date} [complexBody.now]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDateTimeRfc1123WithHttpOperationResponse(complexBody: Models.Datetimerfc1123Wrapper, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDateTimeRfc1123WithHttpOperationResponse(complexBody: Models.Datetimerfc1123Wrapper, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2034,18 +1941,15 @@ export class Primitive {
   /**
    * Get complex types with duration properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<DurationWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDurationWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDurationWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2141,20 +2045,15 @@ export class Primitive {
   /**
    * Put complex types with duration properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {moment.duration} [options.field]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PrimitivePutDurationOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDurationWithHttpOperationResponse(options?: { field? : moment.Duration, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDurationWithHttpOperationResponse(options?: Models.PrimitivePutDurationOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let field = (options && options.field !== undefined) ? options.field : undefined;
     // Validate
@@ -2258,18 +2157,15 @@ export class Primitive {
   /**
    * Get complex types with byte properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ByteWrapper>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getByteWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getByteWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2365,20 +2261,15 @@ export class Primitive {
   /**
    * Put complex types with byte properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {buffer} [options.field]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PrimitivePutByteOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putByteWithHttpOperationResponse(options?: { field? : Buffer, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putByteWithHttpOperationResponse(options?: Models.PrimitivePutByteOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let field = (options && options.field !== undefined) ? options.field : undefined;
     // Validate
@@ -2482,10 +2373,7 @@ export class Primitive {
   /**
    * Get complex types with integer properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2493,18 +2381,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {IntWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link IntWrapper} for more information.
+   *                      {Models.IntWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.IntWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInt(): Promise<Models.IntWrapper>;
-  getInt(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.IntWrapper>;
+  getInt(options: msRest.RequestOptionsBase): Promise<Models.IntWrapper>;
   getInt(callback: msRest.ServiceCallback<Models.IntWrapper>): void;
-  getInt(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.IntWrapper>): void;
-  getInt(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.IntWrapper>): any {
+  getInt(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.IntWrapper>): void;
+  getInt(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.IntWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2530,16 +2418,9 @@ export class Primitive {
   /**
    * Put complex types with integer properties
    *
-   * @param {object} complexBody Please put -1 and 2
+   * @param {IntWrapper} complexBody Please put -1 and 2
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number} [complexBody.field2]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2547,17 +2428,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putInt(complexBody: Models.IntWrapper): Promise<void>;
-  putInt(complexBody: Models.IntWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putInt(complexBody: Models.IntWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putInt(complexBody: Models.IntWrapper, callback: msRest.ServiceCallback<void>): void;
-  putInt(complexBody: Models.IntWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putInt(complexBody: Models.IntWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putInt(complexBody: Models.IntWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putInt(complexBody: Models.IntWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2583,10 +2464,7 @@ export class Primitive {
   /**
    * Get complex types with long properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2594,18 +2472,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {LongWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link LongWrapper} for more information.
+   *                      {Models.LongWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.LongWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLong(): Promise<Models.LongWrapper>;
-  getLong(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.LongWrapper>;
+  getLong(options: msRest.RequestOptionsBase): Promise<Models.LongWrapper>;
   getLong(callback: msRest.ServiceCallback<Models.LongWrapper>): void;
-  getLong(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.LongWrapper>): void;
-  getLong(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.LongWrapper>): any {
+  getLong(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.LongWrapper>): void;
+  getLong(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.LongWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2631,16 +2509,9 @@ export class Primitive {
   /**
    * Put complex types with long properties
    *
-   * @param {object} complexBody Please put 1099511627775 and -999511627788
+   * @param {LongWrapper} complexBody Please put 1099511627775 and -999511627788
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number} [complexBody.field2]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2648,17 +2519,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putLong(complexBody: Models.LongWrapper): Promise<void>;
-  putLong(complexBody: Models.LongWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putLong(complexBody: Models.LongWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putLong(complexBody: Models.LongWrapper, callback: msRest.ServiceCallback<void>): void;
-  putLong(complexBody: Models.LongWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putLong(complexBody: Models.LongWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putLong(complexBody: Models.LongWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putLong(complexBody: Models.LongWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2684,10 +2555,7 @@ export class Primitive {
   /**
    * Get complex types with float properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2695,18 +2563,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {FloatWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link FloatWrapper} for more information.
+   *                      {Models.FloatWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.FloatWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFloat(): Promise<Models.FloatWrapper>;
-  getFloat(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.FloatWrapper>;
+  getFloat(options: msRest.RequestOptionsBase): Promise<Models.FloatWrapper>;
   getFloat(callback: msRest.ServiceCallback<Models.FloatWrapper>): void;
-  getFloat(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.FloatWrapper>): void;
-  getFloat(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.FloatWrapper>): any {
+  getFloat(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.FloatWrapper>): void;
+  getFloat(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.FloatWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2732,16 +2600,9 @@ export class Primitive {
   /**
    * Put complex types with float properties
    *
-   * @param {object} complexBody Please put 1.05 and -0.003
+   * @param {FloatWrapper} complexBody Please put 1.05 and -0.003
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number} [complexBody.field2]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2749,17 +2610,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putFloat(complexBody: Models.FloatWrapper): Promise<void>;
-  putFloat(complexBody: Models.FloatWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putFloat(complexBody: Models.FloatWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putFloat(complexBody: Models.FloatWrapper, callback: msRest.ServiceCallback<void>): void;
-  putFloat(complexBody: Models.FloatWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putFloat(complexBody: Models.FloatWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putFloat(complexBody: Models.FloatWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putFloat(complexBody: Models.FloatWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2785,10 +2646,7 @@ export class Primitive {
   /**
    * Get complex types with double properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2796,18 +2654,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DoubleWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DoubleWrapper} for more information.
+   *                      {Models.DoubleWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DoubleWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDouble(): Promise<Models.DoubleWrapper>;
-  getDouble(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DoubleWrapper>;
+  getDouble(options: msRest.RequestOptionsBase): Promise<Models.DoubleWrapper>;
   getDouble(callback: msRest.ServiceCallback<Models.DoubleWrapper>): void;
-  getDouble(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DoubleWrapper>): void;
-  getDouble(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DoubleWrapper>): any {
+  getDouble(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DoubleWrapper>): void;
+  getDouble(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DoubleWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2833,18 +2691,10 @@ export class Primitive {
   /**
    * Put complex types with double properties
    *
-   * @param {object} complexBody Please put 3e-100 and
+   * @param {DoubleWrapper} complexBody Please put 3e-100 and
    * -0.000000000000000000000000000000000000000000000000000000005
    *
-   * @param {number} [complexBody.field1]
-   *
-   * @param {number}
-   * [complexBody.field56ZerosAfterTheDotAndNegativeZeroBeforeDotAndThisIsALongFieldNameOnPurpose]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2852,17 +2702,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDouble(complexBody: Models.DoubleWrapper): Promise<void>;
-  putDouble(complexBody: Models.DoubleWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDouble(complexBody: Models.DoubleWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putDouble(complexBody: Models.DoubleWrapper, callback: msRest.ServiceCallback<void>): void;
-  putDouble(complexBody: Models.DoubleWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDouble(complexBody: Models.DoubleWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDouble(complexBody: Models.DoubleWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDouble(complexBody: Models.DoubleWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2888,10 +2738,7 @@ export class Primitive {
   /**
    * Get complex types with bool properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2899,18 +2746,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {BooleanWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link BooleanWrapper} for more information.
+   *                      {Models.BooleanWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.BooleanWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBool(): Promise<Models.BooleanWrapper>;
-  getBool(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.BooleanWrapper>;
+  getBool(options: msRest.RequestOptionsBase): Promise<Models.BooleanWrapper>;
   getBool(callback: msRest.ServiceCallback<Models.BooleanWrapper>): void;
-  getBool(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.BooleanWrapper>): void;
-  getBool(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.BooleanWrapper>): any {
+  getBool(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.BooleanWrapper>): void;
+  getBool(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.BooleanWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2936,16 +2783,9 @@ export class Primitive {
   /**
    * Put complex types with bool properties
    *
-   * @param {object} complexBody Please put true and false
+   * @param {BooleanWrapper} complexBody Please put true and false
    *
-   * @param {boolean} [complexBody.fieldTrue]
-   *
-   * @param {boolean} [complexBody.fieldFalse]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2953,17 +2793,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBool(complexBody: Models.BooleanWrapper): Promise<void>;
-  putBool(complexBody: Models.BooleanWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBool(complexBody: Models.BooleanWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putBool(complexBody: Models.BooleanWrapper, callback: msRest.ServiceCallback<void>): void;
-  putBool(complexBody: Models.BooleanWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBool(complexBody: Models.BooleanWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBool(complexBody: Models.BooleanWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBool(complexBody: Models.BooleanWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2989,10 +2829,7 @@ export class Primitive {
   /**
    * Get complex types with string properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3000,18 +2837,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {StringWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link StringWrapper} for more information.
+   *                      {Models.StringWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.StringWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getString(): Promise<Models.StringWrapper>;
-  getString(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.StringWrapper>;
+  getString(options: msRest.RequestOptionsBase): Promise<Models.StringWrapper>;
   getString(callback: msRest.ServiceCallback<Models.StringWrapper>): void;
-  getString(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.StringWrapper>): void;
-  getString(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.StringWrapper>): any {
+  getString(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.StringWrapper>): void;
+  getString(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.StringWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3037,18 +2874,9 @@ export class Primitive {
   /**
    * Put complex types with string properties
    *
-   * @param {object} complexBody Please put 'goodrequest', '', and null
+   * @param {StringWrapper} complexBody Please put 'goodrequest', '', and null
    *
-   * @param {string} [complexBody.field]
-   *
-   * @param {string} [complexBody.empty]
-   *
-   * @param {string} [complexBody.nullProperty]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3056,17 +2884,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putString(complexBody: Models.StringWrapper): Promise<void>;
-  putString(complexBody: Models.StringWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putString(complexBody: Models.StringWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putString(complexBody: Models.StringWrapper, callback: msRest.ServiceCallback<void>): void;
-  putString(complexBody: Models.StringWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putString(complexBody: Models.StringWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putString(complexBody: Models.StringWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putString(complexBody: Models.StringWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3092,10 +2920,7 @@ export class Primitive {
   /**
    * Get complex types with date properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3103,18 +2928,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DateWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DateWrapper} for more information.
+   *                      {Models.DateWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DateWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDate(): Promise<Models.DateWrapper>;
-  getDate(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DateWrapper>;
+  getDate(options: msRest.RequestOptionsBase): Promise<Models.DateWrapper>;
   getDate(callback: msRest.ServiceCallback<Models.DateWrapper>): void;
-  getDate(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DateWrapper>): void;
-  getDate(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DateWrapper>): any {
+  getDate(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DateWrapper>): void;
+  getDate(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DateWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3140,16 +2965,9 @@ export class Primitive {
   /**
    * Put complex types with date properties
    *
-   * @param {object} complexBody Please put '0001-01-01' and '2016-02-29'
+   * @param {DateWrapper} complexBody Please put '0001-01-01' and '2016-02-29'
    *
-   * @param {date} [complexBody.field]
-   *
-   * @param {date} [complexBody.leap]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3157,17 +2975,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDate(complexBody: Models.DateWrapper): Promise<void>;
-  putDate(complexBody: Models.DateWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDate(complexBody: Models.DateWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putDate(complexBody: Models.DateWrapper, callback: msRest.ServiceCallback<void>): void;
-  putDate(complexBody: Models.DateWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDate(complexBody: Models.DateWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDate(complexBody: Models.DateWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDate(complexBody: Models.DateWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3193,10 +3011,7 @@ export class Primitive {
   /**
    * Get complex types with datetime properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3204,18 +3019,19 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DatetimeWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DatetimeWrapper} for more information.
+   *                      {Models.DatetimeWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DatetimeWrapper} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateTime(): Promise<Models.DatetimeWrapper>;
-  getDateTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DatetimeWrapper>;
+  getDateTime(options: msRest.RequestOptionsBase): Promise<Models.DatetimeWrapper>;
   getDateTime(callback: msRest.ServiceCallback<Models.DatetimeWrapper>): void;
-  getDateTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DatetimeWrapper>): void;
-  getDateTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DatetimeWrapper>): any {
+  getDateTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DatetimeWrapper>): void;
+  getDateTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DatetimeWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3241,17 +3057,10 @@ export class Primitive {
   /**
    * Put complex types with datetime properties
    *
-   * @param {object} complexBody Please put '0001-01-01T12:00:00-04:00' and
-   * '2015-05-18T11:38:00-08:00'
+   * @param {DatetimeWrapper} complexBody Please put '0001-01-01T12:00:00-04:00'
+   * and '2015-05-18T11:38:00-08:00'
    *
-   * @param {date} [complexBody.field]
-   *
-   * @param {date} [complexBody.now]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3259,17 +3068,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDateTime(complexBody: Models.DatetimeWrapper): Promise<void>;
-  putDateTime(complexBody: Models.DatetimeWrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDateTime(complexBody: Models.DatetimeWrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putDateTime(complexBody: Models.DatetimeWrapper, callback: msRest.ServiceCallback<void>): void;
-  putDateTime(complexBody: Models.DatetimeWrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDateTime(complexBody: Models.DatetimeWrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDateTime(complexBody: Models.DatetimeWrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDateTime(complexBody: Models.DatetimeWrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3295,10 +3104,7 @@ export class Primitive {
   /**
    * Get complex types with datetimeRfc1123 properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3306,19 +3112,19 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Datetimerfc1123Wrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link Datetimerfc1123Wrapper} for more
+   *                      {Models.Datetimerfc1123Wrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.Datetimerfc1123Wrapper} for more
    *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateTimeRfc1123(): Promise<Models.Datetimerfc1123Wrapper>;
-  getDateTimeRfc1123(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Datetimerfc1123Wrapper>;
+  getDateTimeRfc1123(options: msRest.RequestOptionsBase): Promise<Models.Datetimerfc1123Wrapper>;
   getDateTimeRfc1123(callback: msRest.ServiceCallback<Models.Datetimerfc1123Wrapper>): void;
-  getDateTimeRfc1123(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Datetimerfc1123Wrapper>): void;
-  getDateTimeRfc1123(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Datetimerfc1123Wrapper>): any {
+  getDateTimeRfc1123(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Datetimerfc1123Wrapper>): void;
+  getDateTimeRfc1123(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Datetimerfc1123Wrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3344,17 +3150,10 @@ export class Primitive {
   /**
    * Put complex types with datetimeRfc1123 properties
    *
-   * @param {object} complexBody Please put 'Mon, 01 Jan 0001 12:00:00 GMT' and
-   * 'Mon, 18 May 2015 11:38:00 GMT'
+   * @param {Datetimerfc1123Wrapper} complexBody Please put 'Mon, 01 Jan 0001
+   * 12:00:00 GMT' and 'Mon, 18 May 2015 11:38:00 GMT'
    *
-   * @param {date} [complexBody.field]
-   *
-   * @param {date} [complexBody.now]
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3362,17 +3161,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper): Promise<void>;
-  putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, options: msRest.RequestOptionsBase): Promise<void>;
   putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, callback: msRest.ServiceCallback<void>): void;
-  putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDateTimeRfc1123(complexBody: Models.Datetimerfc1123Wrapper, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3398,10 +3197,7 @@ export class Primitive {
   /**
    * Get complex types with duration properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3409,18 +3205,19 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {DurationWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link DurationWrapper} for more information.
+   *                      {Models.DurationWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.DurationWrapper} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDuration(): Promise<Models.DurationWrapper>;
-  getDuration(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.DurationWrapper>;
+  getDuration(options: msRest.RequestOptionsBase): Promise<Models.DurationWrapper>;
   getDuration(callback: msRest.ServiceCallback<Models.DurationWrapper>): void;
-  getDuration(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.DurationWrapper>): void;
-  getDuration(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.DurationWrapper>): any {
+  getDuration(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.DurationWrapper>): void;
+  getDuration(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.DurationWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3446,12 +3243,7 @@ export class Primitive {
   /**
    * Put complex types with duration properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {moment.duration} [options.field]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PrimitivePutDurationOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3459,17 +3251,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDuration(): Promise<void>;
-  putDuration(options: { field? : moment.Duration, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDuration(options: Models.PrimitivePutDurationOptionalParams): Promise<void>;
   putDuration(callback: msRest.ServiceCallback<void>): void;
-  putDuration(options: { field? : moment.Duration, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDuration(options?: { field? : moment.Duration, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDuration(options: Models.PrimitivePutDurationOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putDuration(options?: Models.PrimitivePutDurationOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3495,10 +3287,7 @@ export class Primitive {
   /**
    * Get complex types with byte properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3506,18 +3295,18 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ByteWrapper} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ByteWrapper} for more information.
+   *                      {Models.ByteWrapper} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ByteWrapper} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getByte(): Promise<Models.ByteWrapper>;
-  getByte(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ByteWrapper>;
+  getByte(options: msRest.RequestOptionsBase): Promise<Models.ByteWrapper>;
   getByte(callback: msRest.ServiceCallback<Models.ByteWrapper>): void;
-  getByte(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ByteWrapper>): void;
-  getByte(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ByteWrapper>): any {
+  getByte(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ByteWrapper>): void;
+  getByte(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ByteWrapper>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3543,12 +3332,7 @@ export class Primitive {
   /**
    * Put complex types with byte properties
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {buffer} [options.field]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PrimitivePutByteOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3556,17 +3340,17 @@ export class Primitive {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putByte(): Promise<void>;
-  putByte(options: { field? : Buffer, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putByte(options: Models.PrimitivePutByteOptionalParams): Promise<void>;
   putByte(callback: msRest.ServiceCallback<void>): void;
-  putByte(options: { field? : Buffer, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putByte(options?: { field? : Buffer, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putByte(options: Models.PrimitivePutByteOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putByte(options?: Models.PrimitivePutByteOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

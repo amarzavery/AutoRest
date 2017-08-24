@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATService } from '../autoRestSwaggerBATService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATService } from "../autoRestSwaggerBATService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class String {
   /**
    * Get null string value value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<enum>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -123,20 +121,15 @@ export class String {
   /**
    * Set string value null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.stringBody] Possible values include: ''
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {StringPutNullOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putNullWithHttpOperationResponse(options?: { stringBody? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putNullWithHttpOperationResponse(options?: Models.StringPutNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let stringBody = (options && options.stringBody !== undefined) ? options.stringBody : undefined;
     // Validate
@@ -228,18 +221,15 @@ export class String {
   /**
    * Get empty string value value ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<enum>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -325,18 +315,15 @@ export class String {
    *
    * @param {string} stringBody Possible values include: ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putEmptyWithHttpOperationResponse(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putEmptyWithHttpOperationResponse(stringBody: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -428,18 +415,15 @@ export class String {
    * Get mbcs string value
    * '啊齄丂狛狜隣郎隣兀﨩ˊ▇█〞〡￤℡㈱‐ー﹡﹢﹫、〓ⅰⅹ⒈€㈠㈩ⅠⅫ！￣ぁんァヶΑ︴АЯаяāɡㄅㄩ─╋︵﹄︻︱︳︴ⅰⅹɑɡ〇〾⿻⺁䜣€ '
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<enum>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMbcsWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMbcsWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -527,18 +511,15 @@ export class String {
    * @param {string} stringBody Possible values include:
    * '啊齄丂狛狜隣郎隣兀﨩ˊ▇█〞〡￤℡㈱‐ー﹡﹢﹫、〓ⅰⅹ⒈€㈠㈩ⅠⅫ！￣ぁんァヶΑ︴АЯаяāɡㄅㄩ─╋︵﹄︻︱︳︴ⅰⅹɑɡ〇〾⿻⺁䜣€ '
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putMbcsWithHttpOperationResponse(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putMbcsWithHttpOperationResponse(stringBody: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -631,18 +612,15 @@ export class String {
    * '<tab><space><space>Now is the time for all good men to come to the aid of
    * their country<tab><space><space>'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<enum>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getWhitespaceWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getWhitespaceWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -731,18 +709,15 @@ export class String {
    * @param {string} stringBody Possible values include: '    Now is the time for
    * all good men to come to the aid of their country    '
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putWhitespaceWithHttpOperationResponse(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putWhitespaceWithHttpOperationResponse(stringBody: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -833,18 +808,15 @@ export class String {
   /**
    * Get String value when no string value is sent in response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<string>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNotProvidedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNotProvidedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -928,18 +900,15 @@ export class String {
   /**
    * Get value that is base64 encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBase64EncodedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBase64EncodedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1023,18 +992,15 @@ export class String {
   /**
    * Get value that is base64url encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBase64UrlEncodedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBase64UrlEncodedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1118,20 +1084,17 @@ export class String {
   /**
    * Put value that is base64url encoded
    *
-   * @param {buffer} stringBody
+   * @param {Buffer} stringBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBase64UrlEncodedWithHttpOperationResponse(stringBody: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBase64UrlEncodedWithHttpOperationResponse(stringBody: Buffer, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1222,18 +1185,15 @@ export class String {
   /**
    * Get null value that is expected to be base64url encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullBase64UrlEncodedWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullBase64UrlEncodedWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1317,10 +1277,7 @@ export class String {
   /**
    * Get null string value value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1328,17 +1285,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {enum} [result]   - The deserialized result object if an error did not occur.
+   *                      {string} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<string>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getNull(options: msRest.RequestOptionsBase): Promise<string>;
   getNull(callback: msRest.ServiceCallback<string>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1364,12 +1321,7 @@ export class String {
   /**
    * Set string value null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.stringBody] Possible values include: ''
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {StringPutNullOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1377,17 +1329,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putNull(): Promise<void>;
-  putNull(options: { stringBody? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putNull(options: Models.StringPutNullOptionalParams): Promise<void>;
   putNull(callback: msRest.ServiceCallback<void>): void;
-  putNull(options: { stringBody? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putNull(options?: { stringBody? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putNull(options: Models.StringPutNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  putNull(options?: Models.StringPutNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1413,10 +1365,7 @@ export class String {
   /**
    * Get empty string value value ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1424,17 +1373,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {enum} [result]   - The deserialized result object if an error did not occur.
+   *                      {string} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(): Promise<string>;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getEmpty(options: msRest.RequestOptionsBase): Promise<string>;
   getEmpty(callback: msRest.ServiceCallback<string>): void;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1462,10 +1411,7 @@ export class String {
    *
    * @param {string} stringBody Possible values include: ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1473,17 +1419,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putEmpty(stringBody: string): Promise<void>;
-  putEmpty(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putEmpty(stringBody: string, options: msRest.RequestOptionsBase): Promise<void>;
   putEmpty(stringBody: string, callback: msRest.ServiceCallback<void>): void;
-  putEmpty(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putEmpty(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putEmpty(stringBody: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putEmpty(stringBody: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1510,10 +1456,7 @@ export class String {
    * Get mbcs string value
    * '啊齄丂狛狜隣郎隣兀﨩ˊ▇█〞〡￤℡㈱‐ー﹡﹢﹫、〓ⅰⅹ⒈€㈠㈩ⅠⅫ！￣ぁんァヶΑ︴АЯаяāɡㄅㄩ─╋︵﹄︻︱︳︴ⅰⅹɑɡ〇〾⿻⺁䜣€ '
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1521,17 +1464,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {enum} [result]   - The deserialized result object if an error did not occur.
+   *                      {string} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMbcs(): Promise<string>;
-  getMbcs(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getMbcs(options: msRest.RequestOptionsBase): Promise<string>;
   getMbcs(callback: msRest.ServiceCallback<string>): void;
-  getMbcs(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getMbcs(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getMbcs(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getMbcs(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1561,10 +1504,7 @@ export class String {
    * @param {string} stringBody Possible values include:
    * '啊齄丂狛狜隣郎隣兀﨩ˊ▇█〞〡￤℡㈱‐ー﹡﹢﹫、〓ⅰⅹ⒈€㈠㈩ⅠⅫ！￣ぁんァヶΑ︴АЯаяāɡㄅㄩ─╋︵﹄︻︱︳︴ⅰⅹɑɡ〇〾⿻⺁䜣€ '
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1572,17 +1512,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putMbcs(stringBody: string): Promise<void>;
-  putMbcs(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putMbcs(stringBody: string, options: msRest.RequestOptionsBase): Promise<void>;
   putMbcs(stringBody: string, callback: msRest.ServiceCallback<void>): void;
-  putMbcs(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putMbcs(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putMbcs(stringBody: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putMbcs(stringBody: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1610,10 +1550,7 @@ export class String {
    * '<tab><space><space>Now is the time for all good men to come to the aid of
    * their country<tab><space><space>'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1621,17 +1558,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {enum} [result]   - The deserialized result object if an error did not occur.
+   *                      {string} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getWhitespace(): Promise<string>;
-  getWhitespace(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getWhitespace(options: msRest.RequestOptionsBase): Promise<string>;
   getWhitespace(callback: msRest.ServiceCallback<string>): void;
-  getWhitespace(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getWhitespace(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getWhitespace(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getWhitespace(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1662,10 +1599,7 @@ export class String {
    * @param {string} stringBody Possible values include: '    Now is the time for
    * all good men to come to the aid of their country    '
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1673,17 +1607,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putWhitespace(stringBody: string): Promise<void>;
-  putWhitespace(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putWhitespace(stringBody: string, options: msRest.RequestOptionsBase): Promise<void>;
   putWhitespace(stringBody: string, callback: msRest.ServiceCallback<void>): void;
-  putWhitespace(stringBody: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putWhitespace(stringBody: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putWhitespace(stringBody: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putWhitespace(stringBody: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1709,10 +1643,7 @@ export class String {
   /**
    * Get String value when no string value is sent in response payload
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1724,13 +1655,13 @@ export class String {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNotProvided(): Promise<string>;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string>;
+  getNotProvided(options: msRest.RequestOptionsBase): Promise<string>;
   getNotProvided(callback: msRest.ServiceCallback<string>): void;
-  getNotProvided(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string>): void;
-  getNotProvided(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string>): any {
+  getNotProvided(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string>): void;
+  getNotProvided(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1756,10 +1687,7 @@ export class String {
   /**
    * Get value that is base64 encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1771,13 +1699,13 @@ export class String {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBase64Encoded(): Promise<Buffer>;
-  getBase64Encoded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getBase64Encoded(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getBase64Encoded(callback: msRest.ServiceCallback<Buffer>): void;
-  getBase64Encoded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getBase64Encoded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getBase64Encoded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getBase64Encoded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1803,10 +1731,7 @@ export class String {
   /**
    * Get value that is base64url encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1818,13 +1743,13 @@ export class String {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBase64UrlEncoded(): Promise<Buffer>;
-  getBase64UrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getBase64UrlEncoded(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getBase64UrlEncoded(callback: msRest.ServiceCallback<Buffer>): void;
-  getBase64UrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getBase64UrlEncoded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getBase64UrlEncoded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getBase64UrlEncoded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1850,12 +1775,9 @@ export class String {
   /**
    * Put value that is base64url encoded
    *
-   * @param {buffer} stringBody
+   * @param {Buffer} stringBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1863,17 +1785,17 @@ export class String {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBase64UrlEncoded(stringBody: Buffer): Promise<void>;
-  putBase64UrlEncoded(stringBody: Buffer, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBase64UrlEncoded(stringBody: Buffer, options: msRest.RequestOptionsBase): Promise<void>;
   putBase64UrlEncoded(stringBody: Buffer, callback: msRest.ServiceCallback<void>): void;
-  putBase64UrlEncoded(stringBody: Buffer, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBase64UrlEncoded(stringBody: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBase64UrlEncoded(stringBody: Buffer, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBase64UrlEncoded(stringBody: Buffer, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1899,10 +1821,7 @@ export class String {
   /**
    * Get null value that is expected to be base64url encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1914,13 +1833,13 @@ export class String {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNullBase64UrlEncoded(): Promise<Buffer>;
-  getNullBase64UrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getNullBase64UrlEncoded(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getNullBase64UrlEncoded(callback: msRest.ServiceCallback<Buffer>): void;
-  getNullBase64UrlEncoded(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getNullBase64UrlEncoded(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getNullBase64UrlEncoded(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getNullBase64UrlEncoded(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -663,6 +663,25 @@ export const SubResource = {
         serializedName: 'id',
         type: {
           name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const StorageAccountsRegenerateKeyOptionalParams = {
+  required: false,
+  serializedName: 'RegenerateKeyOptions',
+  type: {
+    name: 'Composite',
+    className: 'StorageAccountsRegenerateKeyOptionalParams',
+    modelProperties: {
+      keyName: {
+        required: false,
+        serializedName: 'keyName',
+        type: {
+          name: 'Enum',
+          allowedValues: [ 'key1', 'key2' ]
         }
       }
     }

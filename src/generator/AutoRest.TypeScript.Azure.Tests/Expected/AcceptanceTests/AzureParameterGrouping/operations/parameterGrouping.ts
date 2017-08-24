@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestParameterGroupingTestService } from '../autoRestParameterGroupingTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestParameterGroupingTestService } from "../autoRestParameterGroupingTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,30 +29,19 @@ export class ParameterGrouping {
   /**
    * Post a bunch of required parameters grouped
    *
-   * @param {object} parameterGroupingPostRequiredParameters Additional
-   * parameters for the operation
+   * @param {ParameterGroupingPostRequiredParameters}
+   * parameterGroupingPostRequiredParameters Additional parameters for the
+   * operation
    *
-   * @param {number} parameterGroupingPostRequiredParameters.body
-   *
-   * @param {string} [parameterGroupingPostRequiredParameters.customHeader]
-   *
-   * @param {number} [parameterGroupingPostRequiredParameters.query] Query
-   * parameter with default
-   *
-   * @param {string} parameterGroupingPostRequiredParameters.path Path parameter
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postRequiredWithHttpOperationResponse(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postRequiredWithHttpOperationResponse(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -199,27 +188,16 @@ export class ParameterGrouping {
   /**
    * Post a bunch of optional parameters grouped
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.parameterGroupingPostOptionalParameters] Additional
-   * parameters for the operation
-   *
-   * @param {string}
-   * [options.parameterGroupingPostOptionalParameters.customHeader]
-   *
-   * @param {number} [options.parameterGroupingPostOptionalParameters.query]
-   * Query parameter with default
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ParameterGroupingPostOptionalOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postOptionalWithHttpOperationResponse(options?: { parameterGroupingPostOptionalParameters? : Models.ParameterGroupingPostOptionalParameters, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postOptionalWithHttpOperationResponse(options?: Models.ParameterGroupingPostOptionalOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let parameterGroupingPostOptionalParameters = (options && options.parameterGroupingPostOptionalParameters !== undefined) ? options.parameterGroupingPostOptionalParameters : undefined;
     // Validate
@@ -327,37 +305,16 @@ export class ParameterGrouping {
   /**
    * Post parameters from multiple different parameter groups
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.firstParameterGroup] Additional parameters for the
-   * operation
-   *
-   * @param {string} [options.firstParameterGroup.headerOne]
-   *
-   * @param {number} [options.firstParameterGroup.queryOne] Query parameter with
-   * default
-   *
-   * @param {object}
-   * [options.parameterGroupingPostMultiParamGroupsSecondParamGroup] Additional
-   * parameters for the operation
-   *
-   * @param {string}
-   * [options.parameterGroupingPostMultiParamGroupsSecondParamGroup.headerTwo]
-   *
-   * @param {number}
-   * [options.parameterGroupingPostMultiParamGroupsSecondParamGroup.queryTwo]
-   * Query parameter with default
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ParameterGroupingPostMultiParamGroupsOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postMultiParamGroupsWithHttpOperationResponse(options?: { firstParameterGroup? : Models.FirstParameterGroup, parameterGroupingPostMultiParamGroupsSecondParamGroup? : Models.ParameterGroupingPostMultiParamGroupsSecondParamGroup, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postMultiParamGroupsWithHttpOperationResponse(options?: Models.ParameterGroupingPostMultiParamGroupsOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let firstParameterGroup = (options && options.firstParameterGroup !== undefined) ? options.firstParameterGroup : undefined;
     let parameterGroupingPostMultiParamGroupsSecondParamGroup = (options && options.parameterGroupingPostMultiParamGroupsSecondParamGroup !== undefined) ? options.parameterGroupingPostMultiParamGroupsSecondParamGroup : undefined;
@@ -488,26 +445,16 @@ export class ParameterGrouping {
   /**
    * Post parameters with a shared parameter group object
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.firstParameterGroup] Additional parameters for the
-   * operation
-   *
-   * @param {string} [options.firstParameterGroup.headerOne]
-   *
-   * @param {number} [options.firstParameterGroup.queryOne] Query parameter with
-   * default
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ParameterGroupingPostSharedParameterGroupObjectOptionalParams}
+   * [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async postSharedParameterGroupObjectWithHttpOperationResponse(options?: { firstParameterGroup? : Models.FirstParameterGroup, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async postSharedParameterGroupObjectWithHttpOperationResponse(options?: Models.ParameterGroupingPostSharedParameterGroupObjectOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let firstParameterGroup = (options && options.firstParameterGroup !== undefined) ? options.firstParameterGroup : undefined;
     // Validate
@@ -615,22 +562,11 @@ export class ParameterGrouping {
   /**
    * Post a bunch of required parameters grouped
    *
-   * @param {object} parameterGroupingPostRequiredParameters Additional
-   * parameters for the operation
+   * @param {ParameterGroupingPostRequiredParameters}
+   * parameterGroupingPostRequiredParameters Additional parameters for the
+   * operation
    *
-   * @param {number} parameterGroupingPostRequiredParameters.body
-   *
-   * @param {string} [parameterGroupingPostRequiredParameters.customHeader]
-   *
-   * @param {number} [parameterGroupingPostRequiredParameters.query] Query
-   * parameter with default
-   *
-   * @param {string} parameterGroupingPostRequiredParameters.path Path parameter
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -638,17 +574,17 @@ export class ParameterGrouping {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters): Promise<void>;
-  postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options: msRest.RequestOptionsBase): Promise<void>;
   postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, callback: msRest.ServiceCallback<void>): void;
-  postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  postRequired(parameterGroupingPostRequiredParameters: Models.ParameterGroupingPostRequiredParameters, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -674,19 +610,8 @@ export class ParameterGrouping {
   /**
    * Post a bunch of optional parameters grouped
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.parameterGroupingPostOptionalParameters] Additional
-   * parameters for the operation
-   *
-   * @param {string}
-   * [options.parameterGroupingPostOptionalParameters.customHeader]
-   *
-   * @param {number} [options.parameterGroupingPostOptionalParameters.query]
-   * Query parameter with default
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ParameterGroupingPostOptionalOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -694,17 +619,17 @@ export class ParameterGrouping {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postOptional(): Promise<void>;
-  postOptional(options: { parameterGroupingPostOptionalParameters? : Models.ParameterGroupingPostOptionalParameters, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postOptional(options: Models.ParameterGroupingPostOptionalOptionalParams): Promise<void>;
   postOptional(callback: msRest.ServiceCallback<void>): void;
-  postOptional(options: { parameterGroupingPostOptionalParameters? : Models.ParameterGroupingPostOptionalParameters, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postOptional(options?: { parameterGroupingPostOptionalParameters? : Models.ParameterGroupingPostOptionalParameters, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postOptional(options: Models.ParameterGroupingPostOptionalOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postOptional(options?: Models.ParameterGroupingPostOptionalOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -730,29 +655,8 @@ export class ParameterGrouping {
   /**
    * Post parameters from multiple different parameter groups
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.firstParameterGroup] Additional parameters for the
-   * operation
-   *
-   * @param {string} [options.firstParameterGroup.headerOne]
-   *
-   * @param {number} [options.firstParameterGroup.queryOne] Query parameter with
-   * default
-   *
-   * @param {object}
-   * [options.parameterGroupingPostMultiParamGroupsSecondParamGroup] Additional
-   * parameters for the operation
-   *
-   * @param {string}
-   * [options.parameterGroupingPostMultiParamGroupsSecondParamGroup.headerTwo]
-   *
-   * @param {number}
-   * [options.parameterGroupingPostMultiParamGroupsSecondParamGroup.queryTwo]
-   * Query parameter with default
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ParameterGroupingPostMultiParamGroupsOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -760,17 +664,17 @@ export class ParameterGrouping {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postMultiParamGroups(): Promise<void>;
-  postMultiParamGroups(options: { firstParameterGroup? : Models.FirstParameterGroup, parameterGroupingPostMultiParamGroupsSecondParamGroup? : Models.ParameterGroupingPostMultiParamGroupsSecondParamGroup, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postMultiParamGroups(options: Models.ParameterGroupingPostMultiParamGroupsOptionalParams): Promise<void>;
   postMultiParamGroups(callback: msRest.ServiceCallback<void>): void;
-  postMultiParamGroups(options: { firstParameterGroup? : Models.FirstParameterGroup, parameterGroupingPostMultiParamGroupsSecondParamGroup? : Models.ParameterGroupingPostMultiParamGroupsSecondParamGroup, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postMultiParamGroups(options?: { firstParameterGroup? : Models.FirstParameterGroup, parameterGroupingPostMultiParamGroupsSecondParamGroup? : Models.ParameterGroupingPostMultiParamGroupsSecondParamGroup, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postMultiParamGroups(options: Models.ParameterGroupingPostMultiParamGroupsOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postMultiParamGroups(options?: Models.ParameterGroupingPostMultiParamGroupsOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -796,18 +700,8 @@ export class ParameterGrouping {
   /**
    * Post parameters with a shared parameter group object
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.firstParameterGroup] Additional parameters for the
-   * operation
-   *
-   * @param {string} [options.firstParameterGroup.headerOne]
-   *
-   * @param {number} [options.firstParameterGroup.queryOne] Query parameter with
-   * default
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {ParameterGroupingPostSharedParameterGroupObjectOptionalParams}
+   * [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -815,17 +709,17 @@ export class ParameterGrouping {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   postSharedParameterGroupObject(): Promise<void>;
-  postSharedParameterGroupObject(options: { firstParameterGroup? : Models.FirstParameterGroup, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  postSharedParameterGroupObject(options: Models.ParameterGroupingPostSharedParameterGroupObjectOptionalParams): Promise<void>;
   postSharedParameterGroupObject(callback: msRest.ServiceCallback<void>): void;
-  postSharedParameterGroupObject(options: { firstParameterGroup? : Models.FirstParameterGroup, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  postSharedParameterGroupObject(options?: { firstParameterGroup? : Models.FirstParameterGroup, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  postSharedParameterGroupObject(options: Models.ParameterGroupingPostSharedParameterGroupObjectOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  postSharedParameterGroupObject(options?: Models.ParameterGroupingPostSharedParameterGroupObjectOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

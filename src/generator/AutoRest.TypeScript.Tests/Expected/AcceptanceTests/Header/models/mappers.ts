@@ -33,3 +33,58 @@ export const ErrorModel = {
     }
   }
 };
+
+export const HeaderParamStringOptionalParams = {
+  required: false,
+  serializedName: 'ParamStringOptions',
+  type: {
+    name: 'Composite',
+    className: 'HeaderParamStringOptionalParams',
+    modelProperties: {
+      value: {
+        required: false,
+        serializedName: 'value',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const HeaderParamDatetimeRfc1123OptionalParams = {
+  required: false,
+  serializedName: 'ParamDatetimeRfc1123Options',
+  type: {
+    name: 'Composite',
+    className: 'HeaderParamDatetimeRfc1123OptionalParams',
+    modelProperties: {
+      value: {
+        required: false,
+        serializedName: 'value',
+        type: {
+          name: 'DateTimeRfc1123'
+        }
+      }
+    }
+  }
+};
+
+export const HeaderParamEnumOptionalParams = {
+  required: false,
+  serializedName: 'ParamEnumOptions',
+  type: {
+    name: 'Composite',
+    className: 'HeaderParamEnumOptionalParams',
+    modelProperties: {
+      value: {
+        required: false,
+        serializedName: 'value',
+        type: {
+          name: 'Enum',
+          allowedValues: [ 'White', 'black', 'GREY' ]
+        }
+      }
+    }
+  }
+};

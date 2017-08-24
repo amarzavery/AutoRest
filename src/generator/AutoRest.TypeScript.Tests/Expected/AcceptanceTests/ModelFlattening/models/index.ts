@@ -8,168 +8,309 @@
  * regenerated.
  */
 
+import { RequestOptionsBase } from "ms-rest-ts";
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
- * @member {object} [parentError]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
+  /**
+   * @member {ErrorModel} [parentError]
+   */
   parentError?: ErrorModel;
 }
 
 /**
- * @class
- * Initializes a new instance of the Resource class.
- * @constructor
- * @member {string} [id] Resource Id
- * @member {string} [type] Resource Type
- * @member {object} [tags]
- * @member {string} [location] Resource Location
- * @member {string} [name] Resource Name
+ * @interface
+ * An interface representing Resource.
  */
 export interface Resource {
+  /**
+   * @member {string} [id] Resource Id
+   */
   readonly id?: string;
+  /**
+   * @member {string} [type] Resource Type
+   */
   readonly type?: string;
+  /**
+   * @member {{ [propertyName: string]: string }} [tags]
+   */
   tags?: { [propertyName: string]: string };
+  /**
+   * @member {string} [location] Resource Location
+   */
   location?: string;
+  /**
+   * @member {string} [name] Resource Name
+   */
   readonly name?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the FlattenedProduct class.
- * @constructor
+ * @interface
+ * An interface representing FlattenedProduct.
  * Flattened product.
  *
- * @member {string} [pname]
- * @member {string} [flattenedProductType]
- * @member {string} [provisioningStateValues] Possible values include:
- * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
- * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- * @member {string} [provisioningState]
+ * @extends Resource
  */
 export interface FlattenedProduct extends Resource {
+  /**
+   * @member {string} [pname]
+   */
   pname?: string;
+  /**
+   * @member {string} [flattenedProductType]
+   */
   flattenedProductType?: string;
+  /**
+   * @member {string} [provisioningStateValues] Possible values include:
+   * 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating', 'Created',
+   * 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+   */
   readonly provisioningStateValues?: string;
+  /**
+   * @member {string} [provisioningState]
+   */
   provisioningState?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ResourceCollection class.
- * @constructor
- * @member {object} [productresource]
- * @member {string} [productresource.pname]
- * @member {string} [productresource.flattenedProductType]
- * @member {string} [productresource.provisioningStateValues] Possible values
- * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
- * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
- * @member {string} [productresource.provisioningState]
- * @member {array} [arrayofresources]
- * @member {object} [dictionaryofresources]
+ * @interface
+ * An interface representing ResourceCollection.
  */
 export interface ResourceCollection {
+  /**
+   * @member {FlattenedProduct} [productresource]
+   */
   productresource?: FlattenedProduct;
+  /**
+   * @member {FlattenedProduct[]} [arrayofresources]
+   */
   arrayofresources?: FlattenedProduct[];
+  /**
+   * @member {{ [propertyName: string]: FlattenedProduct }}
+   * [dictionaryofresources]
+   */
   dictionaryofresources?: { [propertyName: string]: FlattenedProduct };
 }
 
 /**
- * @class
- * Initializes a new instance of the BaseProduct class.
- * @constructor
+ * @interface
+ * An interface representing BaseProduct.
  * The product documentation.
  *
- * @member {string} productId Unique identifier representing a specific product
- * for a given latitude & longitude. For example, uberX in San Francisco will
- * have a different product_id than uberX in Los Angeles.
- * @member {string} [description] Description of product.
  */
 export interface BaseProduct {
+  /**
+   * @member {string} productId Unique identifier representing a specific
+   * product for a given latitude & longitude. For example, uberX in San
+   * Francisco will have a different product_id than uberX in Los Angeles.
+   */
   productId: string;
+  /**
+   * @member {string} [description] Description of product.
+   */
   description?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the SimpleProduct class.
- * @constructor
+ * @interface
+ * An interface representing SimpleProduct.
  * The product documentation.
  *
- * @member {string} maxProductDisplayName Display name of product.
- * @member {string} [genericValue] Generic URL value.
- * @member {string} [odatavalue] URL value.
+ * @extends BaseProduct
  */
 export interface SimpleProduct extends BaseProduct {
+  /**
+   * @member {string} maxProductDisplayName Display name of product.
+   */
   maxProductDisplayName: string;
+  /**
+   * @member {string} [genericValue] Generic URL value.
+   */
   genericValue?: string;
+  /**
+   * @member {string} [odatavalue] URL value.
+   */
   odatavalue?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the GenericUrl class.
- * @constructor
+ * @interface
+ * An interface representing GenericUrl.
  * The Generic URL.
  *
- * @member {string} [genericValue] Generic URL value.
  */
 export interface GenericUrl {
+  /**
+   * @member {string} [genericValue] Generic URL value.
+   */
   genericValue?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the WrappedProduct class.
- * @constructor
+ * @interface
+ * An interface representing WrappedProduct.
  * The wrapped produc.
  *
- * @member {string} [value] the product value
  */
 export interface WrappedProduct {
+  /**
+   * @member {string} [value] the product value
+   */
   value?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ProductWrapper class.
- * @constructor
+ * @interface
+ * An interface representing ProductWrapper.
  * The wrapped produc.
  *
- * @member {string} [value] the product value
  */
 export interface ProductWrapper {
+  /**
+   * @member {string} [value] the product value
+   */
   value?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the FlattenParameterGroup class.
- * @constructor
+ * @interface
+ * An interface representing FlattenParameterGroup.
  * Additional parameters for the putSimpleProductWithGrouping operation.
  *
- * @member {string} name Product name with value 'groupproduct'
- * @member {string} productId Unique identifier representing a specific product
- * for a given latitude & longitude. For example, uberX in San Francisco will
- * have a different product_id than uberX in Los Angeles.
- * @member {string} [description] Description of product.
- * @member {string} maxProductDisplayName Display name of product.
- * @member {string} [genericValue] Generic URL value.
- * @member {string} [odatavalue] URL value.
  */
 export interface FlattenParameterGroup {
+  /**
+   * @member {string} name Product name with value 'groupproduct'
+   */
   name: string;
+  /**
+   * @member {string} productId Unique identifier representing a specific
+   * product for a given latitude & longitude. For example, uberX in San
+   * Francisco will have a different product_id than uberX in Los Angeles.
+   */
   productId: string;
+  /**
+   * @member {string} [description] Description of product.
+   */
   description?: string;
+  /**
+   * @member {string} maxProductDisplayName Display name of product.
+   */
   maxProductDisplayName: string;
+  /**
+   * @member {string} [genericValue] Generic URL value.
+   */
   genericValue?: string;
+  /**
+   * @member {string} [odatavalue] URL value.
+   */
+  odatavalue?: string;
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutArrayOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutArrayOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {Resource[]} [resourceArray] External Resource as an Array to put
+   */
+  resourceArray?: Resource[];
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutWrappedArrayOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {WrappedProduct[]} [resourceArray] External Resource as an Array
+   * to put
+   */
+  resourceArray?: WrappedProduct[];
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {{ [propertyName: string]: FlattenedProduct }}
+   * [resourceDictionary] External Resource as a Dictionary to put
+   */
+  resourceDictionary?: { [propertyName: string]: FlattenedProduct };
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {ResourceCollection} [resourceComplexObject] External Resource as
+   * a ResourceCollection to put
+   */
+  resourceComplexObject?: ResourceCollection;
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutSimpleProductOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {SimpleProduct} [simpleBodyProduct] Simple body product to put
+   */
+  simpleBodyProduct?: SimpleProduct;
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePostFlattenedSimpleProductOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [description] Description of product.
+   */
+  description?: string;
+  /**
+   * @member {string} [genericValue] Generic URL value.
+   */
+  genericValue?: string;
+  /**
+   * @member {string} [odatavalue] URL value.
+   */
   odatavalue?: string;
 }

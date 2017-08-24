@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestAzureSpecialParametersTestClient } from '../autoRestAzureSpecialParametersTestClient';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestAzureSpecialParametersTestClient } from "../autoRestAzureSpecialParametersTestClient";
 
 const WebResource = msRest.WebResource;
 
@@ -31,18 +32,15 @@ export class SkipUrlEncoding {
    * @param {string} unencodedPathParam Unencoded path parameter with value
    * 'path1/path2/path3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMethodPathValidWithHttpOperationResponse(unencodedPathParam: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMethodPathValidWithHttpOperationResponse(unencodedPathParam: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -130,18 +128,15 @@ export class SkipUrlEncoding {
    * @param {string} unencodedPathParam Unencoded path parameter with value
    * 'path1/path2/path3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getPathPathValidWithHttpOperationResponse(unencodedPathParam: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getPathPathValidWithHttpOperationResponse(unencodedPathParam: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -226,18 +221,15 @@ export class SkipUrlEncoding {
   /**
    * Get method with unencoded path parameter with value 'path1/path2/path3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSwaggerPathValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSwaggerPathValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let unencodedPathParam = 'path1/path2/path3';
     // Validate
@@ -324,18 +316,15 @@ export class SkipUrlEncoding {
    * @param {string} q1 Unencoded query parameter with value
    * 'value1&q2=value2&q3=value3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMethodQueryValidWithHttpOperationResponse(q1: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMethodQueryValidWithHttpOperationResponse(q1: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -420,20 +409,16 @@ export class SkipUrlEncoding {
   /**
    * Get method with unencoded query parameter with value null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.q1] Unencoded query parameter with value null
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {SkipUrlEncodingGetMethodQueryNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMethodQueryNullWithHttpOperationResponse(options?: { q1? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMethodQueryNullWithHttpOperationResponse(options?: Models.SkipUrlEncodingGetMethodQueryNullOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let q1 = (options && options.q1 !== undefined) ? options.q1 : undefined;
     // Validate
@@ -525,18 +510,15 @@ export class SkipUrlEncoding {
    * @param {string} q1 Unencoded query parameter with value
    * 'value1&q2=value2&q3=value3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getPathQueryValidWithHttpOperationResponse(q1: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getPathQueryValidWithHttpOperationResponse(q1: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -622,18 +604,15 @@ export class SkipUrlEncoding {
    * Get method with unencoded query parameter with value
    * 'value1&q2=value2&q3=value3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSwaggerQueryValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSwaggerQueryValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let q1 = 'value1&q2=value2&q3=value3';
     // Validate
@@ -719,10 +698,7 @@ export class SkipUrlEncoding {
    * @param {string} unencodedPathParam Unencoded path parameter with value
    * 'path1/path2/path3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -730,17 +706,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMethodPathValid(unencodedPathParam: string): Promise<void>;
-  getMethodPathValid(unencodedPathParam: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getMethodPathValid(unencodedPathParam: string, options: msRest.RequestOptionsBase): Promise<void>;
   getMethodPathValid(unencodedPathParam: string, callback: msRest.ServiceCallback<void>): void;
-  getMethodPathValid(unencodedPathParam: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getMethodPathValid(unencodedPathParam: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getMethodPathValid(unencodedPathParam: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getMethodPathValid(unencodedPathParam: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -769,10 +745,7 @@ export class SkipUrlEncoding {
    * @param {string} unencodedPathParam Unencoded path parameter with value
    * 'path1/path2/path3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -780,17 +753,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getPathPathValid(unencodedPathParam: string): Promise<void>;
-  getPathPathValid(unencodedPathParam: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getPathPathValid(unencodedPathParam: string, options: msRest.RequestOptionsBase): Promise<void>;
   getPathPathValid(unencodedPathParam: string, callback: msRest.ServiceCallback<void>): void;
-  getPathPathValid(unencodedPathParam: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getPathPathValid(unencodedPathParam: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getPathPathValid(unencodedPathParam: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getPathPathValid(unencodedPathParam: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -816,10 +789,7 @@ export class SkipUrlEncoding {
   /**
    * Get method with unencoded path parameter with value 'path1/path2/path3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -827,17 +797,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSwaggerPathValid(): Promise<void>;
-  getSwaggerPathValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getSwaggerPathValid(options: msRest.RequestOptionsBase): Promise<void>;
   getSwaggerPathValid(callback: msRest.ServiceCallback<void>): void;
-  getSwaggerPathValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getSwaggerPathValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getSwaggerPathValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getSwaggerPathValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -867,10 +837,7 @@ export class SkipUrlEncoding {
    * @param {string} q1 Unencoded query parameter with value
    * 'value1&q2=value2&q3=value3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -878,17 +845,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMethodQueryValid(q1: string): Promise<void>;
-  getMethodQueryValid(q1: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getMethodQueryValid(q1: string, options: msRest.RequestOptionsBase): Promise<void>;
   getMethodQueryValid(q1: string, callback: msRest.ServiceCallback<void>): void;
-  getMethodQueryValid(q1: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getMethodQueryValid(q1: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getMethodQueryValid(q1: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getMethodQueryValid(q1: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -914,12 +881,8 @@ export class SkipUrlEncoding {
   /**
    * Get method with unencoded query parameter with value null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.q1] Unencoded query parameter with value null
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {SkipUrlEncodingGetMethodQueryNullOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -927,17 +890,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMethodQueryNull(): Promise<void>;
-  getMethodQueryNull(options: { q1? : string, customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getMethodQueryNull(options: Models.SkipUrlEncodingGetMethodQueryNullOptionalParams): Promise<void>;
   getMethodQueryNull(callback: msRest.ServiceCallback<void>): void;
-  getMethodQueryNull(options: { q1? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getMethodQueryNull(options?: { q1? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getMethodQueryNull(options: Models.SkipUrlEncodingGetMethodQueryNullOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  getMethodQueryNull(options?: Models.SkipUrlEncodingGetMethodQueryNullOptionalParams, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -967,10 +930,7 @@ export class SkipUrlEncoding {
    * @param {string} q1 Unencoded query parameter with value
    * 'value1&q2=value2&q3=value3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -978,17 +938,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getPathQueryValid(q1: string): Promise<void>;
-  getPathQueryValid(q1: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getPathQueryValid(q1: string, options: msRest.RequestOptionsBase): Promise<void>;
   getPathQueryValid(q1: string, callback: msRest.ServiceCallback<void>): void;
-  getPathQueryValid(q1: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getPathQueryValid(q1: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getPathQueryValid(q1: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getPathQueryValid(q1: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1015,10 +975,7 @@ export class SkipUrlEncoding {
    * Get method with unencoded query parameter with value
    * 'value1&q2=value2&q3=value3'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1026,17 +983,17 @@ export class SkipUrlEncoding {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSwaggerQueryValid(): Promise<void>;
-  getSwaggerQueryValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  getSwaggerQueryValid(options: msRest.RequestOptionsBase): Promise<void>;
   getSwaggerQueryValid(callback: msRest.ServiceCallback<void>): void;
-  getSwaggerQueryValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  getSwaggerQueryValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  getSwaggerQueryValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  getSwaggerQueryValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

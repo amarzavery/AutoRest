@@ -8,26 +8,59 @@
  * regenerated.
  */
 
+import { RequestOptionsBase } from "ms-rest-ts";
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the RefColorConstant class.
- * @constructor
- * @member {string} [field1] Sample string.
+ * @interface
+ * An interface representing RefColorConstant.
  */
 export interface RefColorConstant {
+  /**
+   * @member {string} [field1] Sample string.
+   */
+  field1?: string;
+}
+
+/**
+ * @interface
+ * An interface representing StringPutNullOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface StringPutNullOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [stringBody] Possible values include: ''
+   */
+  stringBody?: string;
+}
+
+/**
+ * @interface
+ * An interface representing EnumModelPutReferencedConstantOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface EnumModelPutReferencedConstantOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [field1] Sample string.
+   */
   field1?: string;
 }

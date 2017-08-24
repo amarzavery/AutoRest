@@ -8,6 +8,6 @@
  * regenerated.
  */
 
-import { Bool } from './bool';
+import { Bool } from "./bool";
 
 export { Bool };

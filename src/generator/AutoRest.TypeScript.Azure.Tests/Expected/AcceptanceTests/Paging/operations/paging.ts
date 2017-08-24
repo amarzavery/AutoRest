@@ -8,10 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestPagingTestService } from '../autoRestPagingTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestPagingTestService } from "../autoRestPagingTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -29,18 +29,15 @@ export class Paging {
   /**
    * A paging operation that finishes on the first call without a nextlink
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSinglePagesWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSinglePagesWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -135,30 +132,15 @@ export class Paging {
   /**
    * A paging operation that includes a nextLink that has 10 pages
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.maxresults] Sets the
-   * maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesOptionalParams} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesWithHttpOperationResponse(options?: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesWithHttpOperationResponse(options?: Models.PagingGetMultiplePagesOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let clientRequestId = (options && options.clientRequestId !== undefined) ? options.clientRequestId : undefined;
     let pagingGetMultiplePagesOptions = (options && options.pagingGetMultiplePagesOptions !== undefined) ? options.pagingGetMultiplePagesOptions : undefined;
@@ -288,30 +270,16 @@ export class Paging {
    * A paging operation that includes a nextLink in odata format that has 10
    * pages
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetOdataMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.maxresults] Sets
-   * the maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.timeout] Sets
-   * the maximum time that the server can spend processing the request, in
-   * seconds. The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetOdataMultiplePagesOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<OdataProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getOdataMultiplePagesWithHttpOperationResponse(options?: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getOdataMultiplePagesWithHttpOperationResponse(options?: Models.PagingGetOdataMultiplePagesOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let clientRequestId = (options && options.clientRequestId !== undefined) ? options.clientRequestId : undefined;
     let pagingGetOdataMultiplePagesOptions = (options && options.pagingGetOdataMultiplePagesOptions !== undefined) ? options.pagingGetOdataMultiplePagesOptions : undefined;
@@ -440,33 +408,20 @@ export class Paging {
   /**
    * A paging operation that includes a nextLink that has 10 pages
    *
-   * @param {object} pagingGetMultiplePagesWithOffsetOptions Additional
-   * parameters for the operation
+   * @param {PagingGetMultiplePagesWithOffsetOptions}
+   * pagingGetMultiplePagesWithOffsetOptions Additional parameters for the
+   * operation
    *
-   * @param {number} [pagingGetMultiplePagesWithOffsetOptions.maxresults] Sets
-   * the maximum number of items to return in the response.
-   *
-   * @param {number} pagingGetMultiplePagesWithOffsetOptions.offset Offset of
-   * return value
-   *
-   * @param {number} [pagingGetMultiplePagesWithOffsetOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesWithOffsetOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesWithOffsetWithHttpOperationResponse(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options?: { clientRequestId? : string, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesWithOffsetWithHttpOperationResponse(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options?: Models.PagingGetMultiplePagesWithOffsetOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let clientRequestId = (options && options.clientRequestId !== undefined) ? options.clientRequestId : undefined;
     // Validate
@@ -607,18 +562,15 @@ export class Paging {
    * A paging operation that fails on the first call with 500 and then retries
    * and then get a response including a nextLink that has 10 pages
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesRetryFirstWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesRetryFirstWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -715,18 +667,15 @@ export class Paging {
    * 2nd call fails first with 500. The client should retry and finish all 10
    * pages eventually.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesRetrySecondWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesRetrySecondWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -821,18 +770,15 @@ export class Paging {
   /**
    * A paging operation that receives a 400 on the first call
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSinglePagesFailureWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSinglePagesFailureWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -927,18 +873,15 @@ export class Paging {
   /**
    * A paging operation that receives a 400 on the second call
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesFailureWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesFailureWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1033,18 +976,15 @@ export class Paging {
   /**
    * A paging operation that receives an invalid nextLink
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesFailureUriWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesFailureUriWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1143,18 +1083,15 @@ export class Paging {
    *
    * @param {string} tenant Sets the tenant to use.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<OdataProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesFragmentNextLinkWithHttpOperationResponse(apiVersion: string, tenant: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesFragmentNextLinkWithHttpOperationResponse(apiVersion: string, tenant: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1258,24 +1195,18 @@ export class Paging {
    * A paging operation that doesn't return a full URL, just a fragment with
    * parameters grouped
    *
-   * @param {object} customParameterGroup Additional parameters for the operation
+   * @param {CustomParameterGroup} customParameterGroup Additional parameters for
+   * the operation
    *
-   * @param {string} customParameterGroup.apiVersion Sets the api version to use.
-   *
-   * @param {string} customParameterGroup.tenant Sets the tenant to use.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<OdataProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesFragmentWithGroupingNextLinkWithHttpOperationResponse(customParameterGroup: Models.CustomParameterGroup, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesFragmentWithGroupingNextLinkWithHttpOperationResponse(customParameterGroup: Models.CustomParameterGroup, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1401,18 +1332,15 @@ export class Paging {
    *
    * @param {string} nextLink Next link for list operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<OdataProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async nextFragmentWithHttpOperationResponse(apiVersion: string, tenant: string, nextLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async nextFragmentWithHttpOperationResponse(apiVersion: string, tenant: string, nextLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1521,24 +1449,18 @@ export class Paging {
    *
    * @param {string} nextLink Next link for list operation.
    *
-   * @param {object} customParameterGroup Additional parameters for the operation
+   * @param {CustomParameterGroup} customParameterGroup Additional parameters for
+   * the operation
    *
-   * @param {string} customParameterGroup.apiVersion Sets the api version to use.
-   *
-   * @param {string} customParameterGroup.tenant Sets the tenant to use.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<OdataProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async nextFragmentWithGroupingWithHttpOperationResponse(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async nextFragmentWithGroupingWithHttpOperationResponse(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1665,18 +1587,15 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSinglePagesNextWithHttpOperationResponse(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSinglePagesNextWithHttpOperationResponse(nextPageLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1773,30 +1692,16 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.maxresults] Sets the
-   * maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesNextOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesNextWithHttpOperationResponse(nextPageLink: string, options?: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesNextWithHttpOperationResponse(nextPageLink: string, options?: Models.PagingGetMultiplePagesNextOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let clientRequestId = (options && options.clientRequestId !== undefined) ? options.clientRequestId : undefined;
     let pagingGetMultiplePagesOptions = (options && options.pagingGetMultiplePagesOptions !== undefined) ? options.pagingGetMultiplePagesOptions : undefined;
@@ -1928,30 +1833,16 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetOdataMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.maxresults] Sets
-   * the maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.timeout] Sets
-   * the maximum time that the server can spend processing the request, in
-   * seconds. The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetOdataMultiplePagesNextOptionalParams} [options] Optional
+   * Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<OdataProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getOdataMultiplePagesNextWithHttpOperationResponse(nextPageLink: string, options?: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getOdataMultiplePagesNextWithHttpOperationResponse(nextPageLink: string, options?: Models.PagingGetOdataMultiplePagesNextOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let clientRequestId = (options && options.clientRequestId !== undefined) ? options.clientRequestId : undefined;
     let pagingGetOdataMultiplePagesOptions = (options && options.pagingGetOdataMultiplePagesOptions !== undefined) ? options.pagingGetOdataMultiplePagesOptions : undefined;
@@ -2082,32 +1973,16 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetMultiplePagesWithOffsetNextOptions]
-   * Additional parameters for the operation
-   *
-   * @param {number}
-   * [options.pagingGetMultiplePagesWithOffsetNextOptions.maxresults] Sets the
-   * maximum number of items to return in the response.
-   *
-   * @param {number}
-   * [options.pagingGetMultiplePagesWithOffsetNextOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesWithOffsetNextOptionalParams} [options]
+   * Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesWithOffsetNextWithHttpOperationResponse(nextPageLink: string, options?: { clientRequestId? : string, pagingGetMultiplePagesWithOffsetNextOptions? : Models.PagingGetMultiplePagesWithOffsetNextOptions, customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesWithOffsetNextWithHttpOperationResponse(nextPageLink: string, options?: Models.PagingGetMultiplePagesWithOffsetNextOptionalParams): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     let clientRequestId = (options && options.clientRequestId !== undefined) ? options.clientRequestId : undefined;
     let pagingGetMultiplePagesWithOffsetNextOptions = (options && options.pagingGetMultiplePagesWithOffsetNextOptions !== undefined) ? options.pagingGetMultiplePagesWithOffsetNextOptions : undefined;
@@ -2239,18 +2114,15 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesRetryFirstNextWithHttpOperationResponse(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesRetryFirstNextWithHttpOperationResponse(nextPageLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2349,18 +2221,15 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesRetrySecondNextWithHttpOperationResponse(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesRetrySecondNextWithHttpOperationResponse(nextPageLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2457,18 +2326,15 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSinglePagesFailureNextWithHttpOperationResponse(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSinglePagesFailureNextWithHttpOperationResponse(nextPageLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2565,18 +2431,15 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesFailureNextWithHttpOperationResponse(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesFailureNextWithHttpOperationResponse(nextPageLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2673,18 +2536,15 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<ProductResult>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getMultiplePagesFailureUriNextWithHttpOperationResponse(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getMultiplePagesFailureUriNextWithHttpOperationResponse(nextPageLink: string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2778,10 +2638,7 @@ export class Paging {
   /**
    * A paging operation that finishes on the first call without a nextlink
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2789,18 +2646,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSinglePages(): Promise<Models.ProductResult>;
-  getSinglePages(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getSinglePages(options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getSinglePages(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePages(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePages(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getSinglePages(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getSinglePages(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2826,22 +2683,7 @@ export class Paging {
   /**
    * A paging operation that includes a nextLink that has 10 pages
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.maxresults] Sets the
-   * maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesOptionalParams} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2849,18 +2691,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePages(): Promise<Models.ProductResult>;
-  getMultiplePages(options: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePages(options: Models.PagingGetMultiplePagesOptionalParams): Promise<Models.ProductResult>;
   getMultiplePages(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePages(options: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePages(options?: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePages(options: Models.PagingGetMultiplePagesOptionalParams, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePages(options?: Models.PagingGetMultiplePagesOptionalParams, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2887,22 +2729,8 @@ export class Paging {
    * A paging operation that includes a nextLink in odata format that has 10
    * pages
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetOdataMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.maxresults] Sets
-   * the maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.timeout] Sets
-   * the maximum time that the server can spend processing the request, in
-   * seconds. The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetOdataMultiplePagesOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2910,18 +2738,19 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {OdataProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link OdataProductResult} for more information.
+   *                      {Models.OdataProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.OdataProductResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getOdataMultiplePages(): Promise<Models.OdataProductResult>;
-  getOdataMultiplePages(options: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<Models.OdataProductResult>;
+  getOdataMultiplePages(options: Models.PagingGetOdataMultiplePagesOptionalParams): Promise<Models.OdataProductResult>;
   getOdataMultiplePages(callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getOdataMultiplePages(options: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getOdataMultiplePages(options?: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
+  getOdataMultiplePages(options: Models.PagingGetOdataMultiplePagesOptionalParams, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
+  getOdataMultiplePages(options?: Models.PagingGetOdataMultiplePagesOptionalParams, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2947,25 +2776,12 @@ export class Paging {
   /**
    * A paging operation that includes a nextLink that has 10 pages
    *
-   * @param {object} pagingGetMultiplePagesWithOffsetOptions Additional
-   * parameters for the operation
+   * @param {PagingGetMultiplePagesWithOffsetOptions}
+   * pagingGetMultiplePagesWithOffsetOptions Additional parameters for the
+   * operation
    *
-   * @param {number} [pagingGetMultiplePagesWithOffsetOptions.maxresults] Sets
-   * the maximum number of items to return in the response.
-   *
-   * @param {number} pagingGetMultiplePagesWithOffsetOptions.offset Offset of
-   * return value
-   *
-   * @param {number} [pagingGetMultiplePagesWithOffsetOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesWithOffsetOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2973,18 +2789,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions): Promise<Models.ProductResult>;
-  getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options: { clientRequestId? : string, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options: Models.PagingGetMultiplePagesWithOffsetOptionalParams): Promise<Models.ProductResult>;
   getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options: { clientRequestId? : string, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options?: { clientRequestId? : string, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options: Models.PagingGetMultiplePagesWithOffsetOptionalParams, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesWithOffset(pagingGetMultiplePagesWithOffsetOptions: Models.PagingGetMultiplePagesWithOffsetOptions, options?: Models.PagingGetMultiplePagesWithOffsetOptionalParams, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3011,10 +2827,7 @@ export class Paging {
    * A paging operation that fails on the first call with 500 and then retries
    * and then get a response including a nextLink that has 10 pages
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3022,18 +2835,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesRetryFirst(): Promise<Models.ProductResult>;
-  getMultiplePagesRetryFirst(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesRetryFirst(options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesRetryFirst(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetryFirst(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetryFirst(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesRetryFirst(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesRetryFirst(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3061,10 +2874,7 @@ export class Paging {
    * 2nd call fails first with 500. The client should retry and finish all 10
    * pages eventually.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3072,18 +2882,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesRetrySecond(): Promise<Models.ProductResult>;
-  getMultiplePagesRetrySecond(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesRetrySecond(options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesRetrySecond(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetrySecond(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetrySecond(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesRetrySecond(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesRetrySecond(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3109,10 +2919,7 @@ export class Paging {
   /**
    * A paging operation that receives a 400 on the first call
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3120,18 +2927,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSinglePagesFailure(): Promise<Models.ProductResult>;
-  getSinglePagesFailure(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getSinglePagesFailure(options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getSinglePagesFailure(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePagesFailure(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePagesFailure(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getSinglePagesFailure(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getSinglePagesFailure(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3157,10 +2964,7 @@ export class Paging {
   /**
    * A paging operation that receives a 400 on the second call
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3168,18 +2972,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesFailure(): Promise<Models.ProductResult>;
-  getMultiplePagesFailure(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesFailure(options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesFailure(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailure(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailure(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesFailure(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesFailure(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3205,10 +3009,7 @@ export class Paging {
   /**
    * A paging operation that receives an invalid nextLink
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3216,18 +3017,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesFailureUri(): Promise<Models.ProductResult>;
-  getMultiplePagesFailureUri(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesFailureUri(options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesFailureUri(callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailureUri(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailureUri(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesFailureUri(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesFailureUri(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3257,10 +3058,7 @@ export class Paging {
    *
    * @param {string} tenant Sets the tenant to use.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3268,18 +3066,19 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {OdataProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link OdataProductResult} for more information.
+   *                      {Models.OdataProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.OdataProductResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string): Promise<Models.OdataProductResult>;
-  getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.OdataProductResult>;
+  getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, options: msRest.RequestOptionsBase): Promise<Models.OdataProductResult>;
   getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
+  getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
+  getMultiplePagesFragmentNextLink(apiVersion: string, tenant: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3306,16 +3105,10 @@ export class Paging {
    * A paging operation that doesn't return a full URL, just a fragment with
    * parameters grouped
    *
-   * @param {object} customParameterGroup Additional parameters for the operation
+   * @param {CustomParameterGroup} customParameterGroup Additional parameters for
+   * the operation
    *
-   * @param {string} customParameterGroup.apiVersion Sets the api version to use.
-   *
-   * @param {string} customParameterGroup.tenant Sets the tenant to use.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3323,18 +3116,19 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {OdataProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link OdataProductResult} for more information.
+   *                      {Models.OdataProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.OdataProductResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup): Promise<Models.OdataProductResult>;
-  getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.OdataProductResult>;
+  getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, options: msRest.RequestOptionsBase): Promise<Models.OdataProductResult>;
   getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
+  getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
+  getMultiplePagesFragmentWithGroupingNextLink(customParameterGroup: Models.CustomParameterGroup, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3366,10 +3160,7 @@ export class Paging {
    *
    * @param {string} nextLink Next link for list operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3377,18 +3168,19 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {OdataProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link OdataProductResult} for more information.
+   *                      {Models.OdataProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.OdataProductResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   nextFragment(apiVersion: string, tenant: string, nextLink: string): Promise<Models.OdataProductResult>;
-  nextFragment(apiVersion: string, tenant: string, nextLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.OdataProductResult>;
+  nextFragment(apiVersion: string, tenant: string, nextLink: string, options: msRest.RequestOptionsBase): Promise<Models.OdataProductResult>;
   nextFragment(apiVersion: string, tenant: string, nextLink: string, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  nextFragment(apiVersion: string, tenant: string, nextLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  nextFragment(apiVersion: string, tenant: string, nextLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
+  nextFragment(apiVersion: string, tenant: string, nextLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
+  nextFragment(apiVersion: string, tenant: string, nextLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3416,16 +3208,10 @@ export class Paging {
    *
    * @param {string} nextLink Next link for list operation.
    *
-   * @param {object} customParameterGroup Additional parameters for the operation
+   * @param {CustomParameterGroup} customParameterGroup Additional parameters for
+   * the operation
    *
-   * @param {string} customParameterGroup.apiVersion Sets the api version to use.
-   *
-   * @param {string} customParameterGroup.tenant Sets the tenant to use.
-   *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3433,18 +3219,19 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {OdataProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link OdataProductResult} for more information.
+   *                      {Models.OdataProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.OdataProductResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup): Promise<Models.OdataProductResult>;
-  nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.OdataProductResult>;
+  nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options: msRest.RequestOptionsBase): Promise<Models.OdataProductResult>;
   nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
+  nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
+  nextFragmentWithGrouping(nextLink: string, customParameterGroup: Models.CustomParameterGroup, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3473,10 +3260,7 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3484,18 +3268,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSinglePagesNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getSinglePagesNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getSinglePagesNext(nextPageLink: string, options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getSinglePagesNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePagesNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePagesNext(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getSinglePagesNext(nextPageLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getSinglePagesNext(nextPageLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3524,22 +3308,8 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.maxresults] Sets the
-   * maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetMultiplePagesOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesNextOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3547,18 +3317,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getMultiplePagesNext(nextPageLink: string, options: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesNext(nextPageLink: string, options: Models.PagingGetMultiplePagesNextOptionalParams): Promise<Models.ProductResult>;
   getMultiplePagesNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesNext(nextPageLink: string, options: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesNext(nextPageLink: string, options?: { clientRequestId? : string, pagingGetMultiplePagesOptions? : Models.PagingGetMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesNext(nextPageLink: string, options: Models.PagingGetMultiplePagesNextOptionalParams, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesNext(nextPageLink: string, options?: Models.PagingGetMultiplePagesNextOptionalParams, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3588,22 +3358,8 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetOdataMultiplePagesOptions] Additional
-   * parameters for the operation
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.maxresults] Sets
-   * the maximum number of items to return in the response.
-   *
-   * @param {number} [options.pagingGetOdataMultiplePagesOptions.timeout] Sets
-   * the maximum time that the server can spend processing the request, in
-   * seconds. The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetOdataMultiplePagesNextOptionalParams} [options] Optional
+   * Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3611,18 +3367,19 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {OdataProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link OdataProductResult} for more information.
+   *                      {Models.OdataProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.OdataProductResult} for more
+   *                      information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getOdataMultiplePagesNext(nextPageLink: string): Promise<Models.OdataProductResult>;
-  getOdataMultiplePagesNext(nextPageLink: string, options: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }): Promise<Models.OdataProductResult>;
+  getOdataMultiplePagesNext(nextPageLink: string, options: Models.PagingGetOdataMultiplePagesNextOptionalParams): Promise<Models.OdataProductResult>;
   getOdataMultiplePagesNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getOdataMultiplePagesNext(nextPageLink: string, options: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
-  getOdataMultiplePagesNext(nextPageLink: string, options?: { clientRequestId? : string, pagingGetOdataMultiplePagesOptions? : Models.PagingGetOdataMultiplePagesOptions, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
+  getOdataMultiplePagesNext(nextPageLink: string, options: Models.PagingGetOdataMultiplePagesNextOptionalParams, callback: msRest.ServiceCallback<Models.OdataProductResult>): void;
+  getOdataMultiplePagesNext(nextPageLink: string, options?: Models.PagingGetOdataMultiplePagesNextOptionalParams, callback?: msRest.ServiceCallback<Models.OdataProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3651,24 +3408,8 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {string} [options.clientRequestId]
-   *
-   * @param {object} [options.pagingGetMultiplePagesWithOffsetNextOptions]
-   * Additional parameters for the operation
-   *
-   * @param {number}
-   * [options.pagingGetMultiplePagesWithOffsetNextOptions.maxresults] Sets the
-   * maximum number of items to return in the response.
-   *
-   * @param {number}
-   * [options.pagingGetMultiplePagesWithOffsetNextOptions.timeout] Sets the
-   * maximum time that the server can spend processing the request, in seconds.
-   * The default is 30 seconds.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {PagingGetMultiplePagesWithOffsetNextOptionalParams} [options]
+   * Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3676,18 +3417,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesWithOffsetNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getMultiplePagesWithOffsetNext(nextPageLink: string, options: { clientRequestId? : string, pagingGetMultiplePagesWithOffsetNextOptions? : Models.PagingGetMultiplePagesWithOffsetNextOptions, customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesWithOffsetNext(nextPageLink: string, options: Models.PagingGetMultiplePagesWithOffsetNextOptionalParams): Promise<Models.ProductResult>;
   getMultiplePagesWithOffsetNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesWithOffsetNext(nextPageLink: string, options: { clientRequestId? : string, pagingGetMultiplePagesWithOffsetNextOptions? : Models.PagingGetMultiplePagesWithOffsetNextOptions, customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesWithOffsetNext(nextPageLink: string, options?: { clientRequestId? : string, pagingGetMultiplePagesWithOffsetNextOptions? : Models.PagingGetMultiplePagesWithOffsetNextOptions, customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesWithOffsetNext(nextPageLink: string, options: Models.PagingGetMultiplePagesWithOffsetNextOptionalParams, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesWithOffsetNext(nextPageLink: string, options?: Models.PagingGetMultiplePagesWithOffsetNextOptionalParams, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3717,10 +3458,7 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3728,18 +3466,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesRetryFirstNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getMultiplePagesRetryFirstNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesRetryFirstNext(nextPageLink: string, options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesRetryFirstNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetryFirstNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetryFirstNext(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesRetryFirstNext(nextPageLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesRetryFirstNext(nextPageLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3770,10 +3508,7 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3781,18 +3516,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesRetrySecondNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getMultiplePagesRetrySecondNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesRetrySecondNext(nextPageLink: string, options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesRetrySecondNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetrySecondNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesRetrySecondNext(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesRetrySecondNext(nextPageLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesRetrySecondNext(nextPageLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3821,10 +3556,7 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3832,18 +3564,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSinglePagesFailureNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getSinglePagesFailureNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getSinglePagesFailureNext(nextPageLink: string, options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getSinglePagesFailureNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePagesFailureNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getSinglePagesFailureNext(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getSinglePagesFailureNext(nextPageLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getSinglePagesFailureNext(nextPageLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3872,10 +3604,7 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3883,18 +3612,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesFailureNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getMultiplePagesFailureNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesFailureNext(nextPageLink: string, options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesFailureNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailureNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailureNext(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesFailureNext(nextPageLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesFailureNext(nextPageLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3923,10 +3652,7 @@ export class Paging {
    * @param {string} nextPageLink The NextLink from the previous successful call
    * to List operation.
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3934,18 +3660,18 @@ export class Paging {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {ProductResult} [result]   - The deserialized result object if an error did not occur.
-   *                      See {@link ProductResult} for more information.
+   *                      {Models.ProductResult} [result]   - The deserialized result object if an error did not occur.
+   *                      See {@link Models.ProductResult} for more information.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getMultiplePagesFailureUriNext(nextPageLink: string): Promise<Models.ProductResult>;
-  getMultiplePagesFailureUriNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.ProductResult>;
+  getMultiplePagesFailureUriNext(nextPageLink: string, options: msRest.RequestOptionsBase): Promise<Models.ProductResult>;
   getMultiplePagesFailureUriNext(nextPageLink: string, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailureUriNext(nextPageLink: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.ProductResult>): void;
-  getMultiplePagesFailureUriNext(nextPageLink: string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
+  getMultiplePagesFailureUriNext(nextPageLink: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProductResult>): void;
+  getMultiplePagesFailureUriNext(nextPageLink: string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.ProductResult>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

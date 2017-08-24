@@ -8,152 +8,287 @@
  * regenerated.
  */
 
-import { BaseResource, CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError } from "ms-rest-azure-ts";
+import { RequestOptionsBase } from "ms-rest-ts";
 
 export { BaseResource, CloudError };
 
 
 /**
- * @class
- * Initializes a new instance of the ProductProperties class.
- * @constructor
- * @member {number} [id]
- * @member {string} [name]
+ * @interface
+ * An interface representing ProductProperties.
  */
 export interface ProductProperties {
+  /**
+   * @member {number} [id]
+   */
   id?: number;
+  /**
+   * @member {string} [name]
+   */
   name?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Product class.
- * @constructor
- * @member {object} [properties]
- * @member {number} [properties.id]
- * @member {string} [properties.name]
+ * @interface
+ * An interface representing Product.
  */
 export interface Product {
+  /**
+   * @member {ProductProperties} [properties]
+   */
   properties?: ProductProperties;
 }
 
 /**
- * @class
- * Initializes a new instance of the OperationResult class.
- * @constructor
- * @member {string} [status] The status of the request. Possible values
- * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
- * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+ * @interface
+ * An interface representing OperationResult.
  */
 export interface OperationResult {
+  /**
+   * @member {string} [status] The status of the request. Possible values
+   * include: 'Succeeded', 'Failed', 'canceled', 'Accepted', 'Creating',
+   * 'Created', 'Updating', 'Updated', 'Deleting', 'Deleted', 'OK'
+   */
   status?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the PagingGetMultiplePagesOptions class.
- * @constructor
+ * @interface
+ * An interface representing PagingGetMultiplePagesOptions.
  * Additional parameters for the Paging_getMultiplePages operation.
  *
- * @member {number} [maxresults] Sets the maximum number of items to return in
- * the response.
- * @member {number} [timeout] Sets the maximum time that the server can spend
- * processing the request, in seconds. The default is 30 seconds. Default
- * value: 30 .
  */
 export interface PagingGetMultiplePagesOptions {
+  /**
+   * @member {number} [maxresults] Sets the maximum number of items to return
+   * in the response.
+   */
   maxresults?: number;
+  /**
+   * @member {number} [timeout] Sets the maximum time that the server can spend
+   * processing the request, in seconds. The default is 30 seconds. Default
+   * value: 30 .
+   */
   timeout?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the PagingGetOdataMultiplePagesOptions class.
- * @constructor
+ * @interface
+ * An interface representing PagingGetOdataMultiplePagesOptions.
  * Additional parameters for the Paging_getOdataMultiplePages operation.
  *
- * @member {number} [maxresults] Sets the maximum number of items to return in
- * the response.
- * @member {number} [timeout] Sets the maximum time that the server can spend
- * processing the request, in seconds. The default is 30 seconds. Default
- * value: 30 .
  */
 export interface PagingGetOdataMultiplePagesOptions {
+  /**
+   * @member {number} [maxresults] Sets the maximum number of items to return
+   * in the response.
+   */
   maxresults?: number;
+  /**
+   * @member {number} [timeout] Sets the maximum time that the server can spend
+   * processing the request, in seconds. The default is 30 seconds. Default
+   * value: 30 .
+   */
   timeout?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the PagingGetMultiplePagesWithOffsetOptions class.
- * @constructor
+ * @interface
+ * An interface representing PagingGetMultiplePagesWithOffsetOptions.
  * Additional parameters for the Paging_getMultiplePagesWithOffset operation.
  *
- * @member {number} [maxresults] Sets the maximum number of items to return in
- * the response.
- * @member {number} offset Offset of return value
- * @member {number} [timeout] Sets the maximum time that the server can spend
- * processing the request, in seconds. The default is 30 seconds. Default
- * value: 30 .
  */
 export interface PagingGetMultiplePagesWithOffsetOptions {
+  /**
+   * @member {number} [maxresults] Sets the maximum number of items to return
+   * in the response.
+   */
   maxresults?: number;
+  /**
+   * @member {number} offset Offset of return value
+   */
   offset: number;
+  /**
+   * @member {number} [timeout] Sets the maximum time that the server can spend
+   * processing the request, in seconds. The default is 30 seconds. Default
+   * value: 30 .
+   */
   timeout?: number;
 }
 
 /**
- * @class
- * Initializes a new instance of the CustomParameterGroup class.
- * @constructor
+ * @interface
+ * An interface representing CustomParameterGroup.
  * Additional parameters for a set of operations, such as:
  * Paging_getMultiplePagesFragmentWithGroupingNextLink,
  * Paging_nextFragmentWithGrouping.
  *
- * @member {string} apiVersion Sets the api version to use.
- * @member {string} tenant Sets the tenant to use.
  */
 export interface CustomParameterGroup {
+  /**
+   * @member {string} apiVersion Sets the api version to use.
+   */
   apiVersion: string;
+  /**
+   * @member {string} tenant Sets the tenant to use.
+   */
   tenant: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the PagingGetMultiplePagesWithOffsetNextOptions class.
- * @constructor
+ * @interface
+ * An interface representing PagingGetMultiplePagesWithOffsetNextOptions.
  * Additional parameters for the getMultiplePagesWithOffsetNext operation.
  *
- * @member {number} [maxresults] Sets the maximum number of items to return in
- * the response.
- * @member {number} [timeout] Sets the maximum time that the server can spend
- * processing the request, in seconds. The default is 30 seconds. Default
- * value: 30 .
  */
 export interface PagingGetMultiplePagesWithOffsetNextOptions {
+  /**
+   * @member {number} [maxresults] Sets the maximum number of items to return
+   * in the response.
+   */
   maxresults?: number;
+  /**
+   * @member {number} [timeout] Sets the maximum time that the server can spend
+   * processing the request, in seconds. The default is 30 seconds. Default
+   * value: 30 .
+   */
   timeout?: number;
+}
+
+/**
+ * @interface
+ * An interface representing PagingGetMultiplePagesOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PagingGetMultiplePagesOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [clientRequestId]
+   */
+  clientRequestId?: string;
+  /**
+   * @member {PagingGetMultiplePagesOptions} [pagingGetMultiplePagesOptions]
+   * Additional parameters for the operation
+   */
+  pagingGetMultiplePagesOptions?: PagingGetMultiplePagesOptions;
+}
+
+/**
+ * @interface
+ * An interface representing PagingGetOdataMultiplePagesOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PagingGetOdataMultiplePagesOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [clientRequestId]
+   */
+  clientRequestId?: string;
+  /**
+   * @member {PagingGetOdataMultiplePagesOptions}
+   * [pagingGetOdataMultiplePagesOptions] Additional parameters for the
+   * operation
+   */
+  pagingGetOdataMultiplePagesOptions?: PagingGetOdataMultiplePagesOptions;
+}
+
+/**
+ * @interface
+ * An interface representing PagingGetMultiplePagesWithOffsetOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PagingGetMultiplePagesWithOffsetOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [clientRequestId]
+   */
+  clientRequestId?: string;
+}
+
+/**
+ * @interface
+ * An interface representing PagingGetMultiplePagesNextOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PagingGetMultiplePagesNextOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [clientRequestId]
+   */
+  clientRequestId?: string;
+  /**
+   * @member {PagingGetMultiplePagesOptions} [pagingGetMultiplePagesOptions]
+   * Additional parameters for the operation
+   */
+  pagingGetMultiplePagesOptions?: PagingGetMultiplePagesOptions;
+}
+
+/**
+ * @interface
+ * An interface representing PagingGetOdataMultiplePagesNextOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PagingGetOdataMultiplePagesNextOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [clientRequestId]
+   */
+  clientRequestId?: string;
+  /**
+   * @member {PagingGetOdataMultiplePagesOptions}
+   * [pagingGetOdataMultiplePagesOptions] Additional parameters for the
+   * operation
+   */
+  pagingGetOdataMultiplePagesOptions?: PagingGetOdataMultiplePagesOptions;
+}
+
+/**
+ * @interface
+ * An interface representing PagingGetMultiplePagesWithOffsetNextOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface PagingGetMultiplePagesWithOffsetNextOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {string} [clientRequestId]
+   */
+  clientRequestId?: string;
+  /**
+   * @member {PagingGetMultiplePagesWithOffsetNextOptions}
+   * [pagingGetMultiplePagesWithOffsetNextOptions] Additional parameters for
+   * the operation
+   */
+  pagingGetMultiplePagesWithOffsetNextOptions?: PagingGetMultiplePagesWithOffsetNextOptions;
 }
 
 
 /**
- * @class
- * Initializes a new instance of the ProductResult class.
- * @constructor
- * @member {array} [values]
- * @member {string} [nextLink]
+ * @interface
+ * An interface representing the ProductResult.
+ * @extends Array<Product>
  */
 export interface ProductResult extends Array<Product> {
+  /**
+   * @member {string} [nextLink]
+   */
   nextLink?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the OdataProductResult class.
- * @constructor
- * @member {array} [values]
- * @member {string} [odatanextLink]
+ * @interface
+ * An interface representing the OdataProductResult.
+ * @extends Array<Product>
  */
 export interface OdataProductResult extends Array<Product> {
+  /**
+   * @member {string} [odatanextLink]
+   */
   odatanextLink?: string;
 }

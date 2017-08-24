@@ -8,71 +8,138 @@
  * regenerated.
  */
 
-import { BaseResource, CloudError } from 'ms-rest-azure';
+import { BaseResource, CloudError } from "ms-rest-azure-ts";
+import { RequestOptionsBase } from "ms-rest-ts";
 
 export { BaseResource, CloudError };
 
 
 /**
- * @class
- * Initializes a new instance of the ErrorModel class.
- * @constructor
- * @member {number} [status]
- * @member {string} [message]
+ * @interface
+ * An interface representing ErrorModel.
  */
 export interface ErrorModel {
+  /**
+   * @member {number} [status]
+   */
   status?: number;
+  /**
+   * @member {string} [message]
+   */
   message?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the Resource class.
- * @constructor
+ * @interface
+ * An interface representing Resource.
  * Some resource
  *
- * @member {string} [id] Resource Id
- * @member {string} [type] Resource Type
- * @member {object} [tags]
- * @member {string} [location] Resource Location
- * @member {string} [name] Resource Name
+ * @extends BaseResource
  */
 export interface Resource extends BaseResource {
+  /**
+   * @member {string} [id] Resource Id
+   */
   readonly id?: string;
+  /**
+   * @member {string} [type] Resource Type
+   */
   readonly type?: string;
+  /**
+   * @member {{ [propertyName: string]: string }} [tags]
+   */
   tags?: { [propertyName: string]: string };
+  /**
+   * @member {string} [location] Resource Location
+   */
   location?: string;
+  /**
+   * @member {string} [name] Resource Name
+   */
   readonly name?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the FlattenedProduct class.
- * @constructor
- * @member {string} [pname]
- * @member {number} [lsize]
- * @member {string} [provisioningState]
+ * @interface
+ * An interface representing FlattenedProduct.
+ * @extends Resource
  */
 export interface FlattenedProduct extends Resource {
+  /**
+   * @member {string} [pname]
+   */
   pname?: string;
+  /**
+   * @member {number} [lsize]
+   */
   lsize?: number;
+  /**
+   * @member {string} [provisioningState]
+   */
   provisioningState?: string;
 }
 
 /**
- * @class
- * Initializes a new instance of the ResourceCollection class.
- * @constructor
- * @member {object} [productresource]
- * @member {string} [productresource.pname]
- * @member {number} [productresource.lsize]
- * @member {string} [productresource.provisioningState]
- * @member {array} [arrayofresources]
- * @member {object} [dictionaryofresources]
+ * @interface
+ * An interface representing ResourceCollection.
  */
 export interface ResourceCollection {
+  /**
+   * @member {FlattenedProduct} [productresource]
+   */
   productresource?: FlattenedProduct;
+  /**
+   * @member {FlattenedProduct[]} [arrayofresources]
+   */
   arrayofresources?: FlattenedProduct[];
+  /**
+   * @member {{ [propertyName: string]: FlattenedProduct }}
+   * [dictionaryofresources]
+   */
   dictionaryofresources?: { [propertyName: string]: FlattenedProduct };
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutArrayOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutArrayOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {Resource[]} [resourceArray] External Resource as an Array to put
+   */
+  resourceArray?: Resource[];
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutDictionaryOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {{ [propertyName: string]: FlattenedProduct }}
+   * [resourceDictionary] External Resource as a Dictionary to put
+   */
+  resourceDictionary?: { [propertyName: string]: FlattenedProduct };
+}
+
+/**
+ * @interface
+ * An interface representing AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams.
+ * Optional Parameters.
+ *
+ * @extends RequestOptionsBase
+ */
+export interface AutoRestResourceFlatteningTestServicePutResourceCollectionOptionalParams extends RequestOptionsBase {
+  /**
+   * @member {ResourceCollection} [resourceComplexObject] External Resource as
+   * a ResourceCollection to put
+   */
+  resourceComplexObject?: ResourceCollection;
 }
 

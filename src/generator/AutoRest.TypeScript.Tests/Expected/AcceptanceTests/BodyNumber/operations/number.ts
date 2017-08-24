@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestNumberTestService } from '../autoRestNumberTestService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestNumberTestService } from "../autoRestNumberTestService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class Number {
   /**
    * Get null Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -123,18 +121,15 @@ export class Number {
   /**
    * Get invalid float Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidFloatWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidFloatWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -218,18 +213,15 @@ export class Number {
   /**
    * Get invalid double Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidDoubleWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidDoubleWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -313,18 +305,15 @@ export class Number {
   /**
    * Get invalid decimal Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -410,18 +399,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigFloatWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigFloatWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -512,18 +498,15 @@ export class Number {
   /**
    * Get big float value 3.402823e+20
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigFloatWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigFloatWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -609,18 +592,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigDoubleWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigDoubleWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -711,18 +691,15 @@ export class Number {
   /**
    * Get big double value 2.5976931e+101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigDoubleWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigDoubleWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -808,18 +785,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigDoublePositiveDecimalWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigDoublePositiveDecimalWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -910,18 +884,15 @@ export class Number {
   /**
    * Get big double value 99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigDoublePositiveDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigDoublePositiveDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1007,18 +978,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigDoubleNegativeDecimalWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigDoubleNegativeDecimalWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1109,18 +1077,15 @@ export class Number {
   /**
    * Get big double value -99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigDoubleNegativeDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigDoubleNegativeDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1206,18 +1171,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigDecimalWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigDecimalWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1308,18 +1270,15 @@ export class Number {
   /**
    * Get big decimal value 2.5976931e+101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1405,18 +1364,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigDecimalPositiveDecimalWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigDecimalPositiveDecimalWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1507,18 +1463,15 @@ export class Number {
   /**
    * Get big decimal value 99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigDecimalPositiveDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigDecimalPositiveDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1604,18 +1557,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBigDecimalNegativeDecimalWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBigDecimalNegativeDecimalWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1706,18 +1656,15 @@ export class Number {
   /**
    * Get big decimal value -99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBigDecimalNegativeDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBigDecimalNegativeDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1803,18 +1750,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putSmallFloatWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putSmallFloatWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1905,18 +1849,15 @@ export class Number {
   /**
    * Get big double value 3.402823e-20
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSmallFloatWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSmallFloatWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2002,18 +1943,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putSmallDoubleWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putSmallDoubleWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2104,18 +2042,15 @@ export class Number {
   /**
    * Get big double value 2.5976931e-101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSmallDoubleWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSmallDoubleWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2201,18 +2136,15 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putSmallDecimalWithHttpOperationResponse(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putSmallDecimalWithHttpOperationResponse(numberBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2303,18 +2235,15 @@ export class Number {
   /**
    * Get small decimal value 2.5976931e-101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getSmallDecimalWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getSmallDecimalWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2398,10 +2327,7 @@ export class Number {
   /**
    * Get null Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2413,13 +2339,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<number>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getNull(options: msRest.RequestOptionsBase): Promise<number>;
   getNull(callback: msRest.ServiceCallback<number>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2445,10 +2371,7 @@ export class Number {
   /**
    * Get invalid float Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2460,13 +2383,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalidFloat(): Promise<number>;
-  getInvalidFloat(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getInvalidFloat(options: msRest.RequestOptionsBase): Promise<number>;
   getInvalidFloat(callback: msRest.ServiceCallback<number>): void;
-  getInvalidFloat(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getInvalidFloat(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getInvalidFloat(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getInvalidFloat(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2492,10 +2415,7 @@ export class Number {
   /**
    * Get invalid double Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2507,13 +2427,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalidDouble(): Promise<number>;
-  getInvalidDouble(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getInvalidDouble(options: msRest.RequestOptionsBase): Promise<number>;
   getInvalidDouble(callback: msRest.ServiceCallback<number>): void;
-  getInvalidDouble(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getInvalidDouble(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getInvalidDouble(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getInvalidDouble(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2539,10 +2459,7 @@ export class Number {
   /**
    * Get invalid decimal Number value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2554,13 +2471,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalidDecimal(): Promise<number>;
-  getInvalidDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getInvalidDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getInvalidDecimal(callback: msRest.ServiceCallback<number>): void;
-  getInvalidDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getInvalidDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getInvalidDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getInvalidDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2588,10 +2505,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2599,17 +2513,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigFloat(numberBody: number): Promise<void>;
-  putBigFloat(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigFloat(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigFloat(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigFloat(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigFloat(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigFloat(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigFloat(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2635,10 +2549,7 @@ export class Number {
   /**
    * Get big float value 3.402823e+20
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2650,13 +2561,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigFloat(): Promise<number>;
-  getBigFloat(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigFloat(options: msRest.RequestOptionsBase): Promise<number>;
   getBigFloat(callback: msRest.ServiceCallback<number>): void;
-  getBigFloat(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigFloat(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigFloat(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigFloat(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2684,10 +2595,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2695,17 +2603,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigDouble(numberBody: number): Promise<void>;
-  putBigDouble(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigDouble(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigDouble(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigDouble(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigDouble(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigDouble(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigDouble(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2731,10 +2639,7 @@ export class Number {
   /**
    * Get big double value 2.5976931e+101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2746,13 +2651,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigDouble(): Promise<number>;
-  getBigDouble(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigDouble(options: msRest.RequestOptionsBase): Promise<number>;
   getBigDouble(callback: msRest.ServiceCallback<number>): void;
-  getBigDouble(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigDouble(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigDouble(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigDouble(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2780,10 +2685,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2791,17 +2693,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigDoublePositiveDecimal(numberBody: number): Promise<void>;
-  putBigDoublePositiveDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigDoublePositiveDecimal(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigDoublePositiveDecimal(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigDoublePositiveDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigDoublePositiveDecimal(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigDoublePositiveDecimal(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigDoublePositiveDecimal(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2827,10 +2729,7 @@ export class Number {
   /**
    * Get big double value 99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2842,13 +2741,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigDoublePositiveDecimal(): Promise<number>;
-  getBigDoublePositiveDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigDoublePositiveDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getBigDoublePositiveDecimal(callback: msRest.ServiceCallback<number>): void;
-  getBigDoublePositiveDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigDoublePositiveDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigDoublePositiveDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigDoublePositiveDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2876,10 +2775,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2887,17 +2783,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigDoubleNegativeDecimal(numberBody: number): Promise<void>;
-  putBigDoubleNegativeDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigDoubleNegativeDecimal(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigDoubleNegativeDecimal(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigDoubleNegativeDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigDoubleNegativeDecimal(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigDoubleNegativeDecimal(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigDoubleNegativeDecimal(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2923,10 +2819,7 @@ export class Number {
   /**
    * Get big double value -99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2938,13 +2831,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigDoubleNegativeDecimal(): Promise<number>;
-  getBigDoubleNegativeDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigDoubleNegativeDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getBigDoubleNegativeDecimal(callback: msRest.ServiceCallback<number>): void;
-  getBigDoubleNegativeDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigDoubleNegativeDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigDoubleNegativeDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigDoubleNegativeDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2972,10 +2865,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2983,17 +2873,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigDecimal(numberBody: number): Promise<void>;
-  putBigDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigDecimal(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigDecimal(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigDecimal(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigDecimal(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigDecimal(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3019,10 +2909,7 @@ export class Number {
   /**
    * Get big decimal value 2.5976931e+101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3034,13 +2921,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigDecimal(): Promise<number>;
-  getBigDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getBigDecimal(callback: msRest.ServiceCallback<number>): void;
-  getBigDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3068,10 +2955,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3079,17 +2963,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigDecimalPositiveDecimal(numberBody: number): Promise<void>;
-  putBigDecimalPositiveDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigDecimalPositiveDecimal(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigDecimalPositiveDecimal(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigDecimalPositiveDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigDecimalPositiveDecimal(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigDecimalPositiveDecimal(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigDecimalPositiveDecimal(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3115,10 +2999,7 @@ export class Number {
   /**
    * Get big decimal value 99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3130,13 +3011,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigDecimalPositiveDecimal(): Promise<number>;
-  getBigDecimalPositiveDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigDecimalPositiveDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getBigDecimalPositiveDecimal(callback: msRest.ServiceCallback<number>): void;
-  getBigDecimalPositiveDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigDecimalPositiveDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigDecimalPositiveDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigDecimalPositiveDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3164,10 +3045,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3175,17 +3053,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBigDecimalNegativeDecimal(numberBody: number): Promise<void>;
-  putBigDecimalNegativeDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBigDecimalNegativeDecimal(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putBigDecimalNegativeDecimal(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putBigDecimalNegativeDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBigDecimalNegativeDecimal(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBigDecimalNegativeDecimal(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBigDecimalNegativeDecimal(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3211,10 +3089,7 @@ export class Number {
   /**
    * Get big decimal value -99999999.99
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3226,13 +3101,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBigDecimalNegativeDecimal(): Promise<number>;
-  getBigDecimalNegativeDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getBigDecimalNegativeDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getBigDecimalNegativeDecimal(callback: msRest.ServiceCallback<number>): void;
-  getBigDecimalNegativeDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getBigDecimalNegativeDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getBigDecimalNegativeDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getBigDecimalNegativeDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3260,10 +3135,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3271,17 +3143,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putSmallFloat(numberBody: number): Promise<void>;
-  putSmallFloat(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putSmallFloat(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putSmallFloat(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putSmallFloat(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putSmallFloat(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putSmallFloat(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putSmallFloat(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3307,10 +3179,7 @@ export class Number {
   /**
    * Get big double value 3.402823e-20
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3322,13 +3191,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSmallFloat(): Promise<number>;
-  getSmallFloat(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getSmallFloat(options: msRest.RequestOptionsBase): Promise<number>;
   getSmallFloat(callback: msRest.ServiceCallback<number>): void;
-  getSmallFloat(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getSmallFloat(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getSmallFloat(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getSmallFloat(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3356,10 +3225,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3367,17 +3233,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putSmallDouble(numberBody: number): Promise<void>;
-  putSmallDouble(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putSmallDouble(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putSmallDouble(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putSmallDouble(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putSmallDouble(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putSmallDouble(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putSmallDouble(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3403,10 +3269,7 @@ export class Number {
   /**
    * Get big double value 2.5976931e-101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3418,13 +3281,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSmallDouble(): Promise<number>;
-  getSmallDouble(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getSmallDouble(options: msRest.RequestOptionsBase): Promise<number>;
   getSmallDouble(callback: msRest.ServiceCallback<number>): void;
-  getSmallDouble(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getSmallDouble(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getSmallDouble(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getSmallDouble(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3452,10 +3315,7 @@ export class Number {
    *
    * @param {number} numberBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3463,17 +3323,17 @@ export class Number {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putSmallDecimal(numberBody: number): Promise<void>;
-  putSmallDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putSmallDecimal(numberBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putSmallDecimal(numberBody: number, callback: msRest.ServiceCallback<void>): void;
-  putSmallDecimal(numberBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putSmallDecimal(numberBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putSmallDecimal(numberBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putSmallDecimal(numberBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -3499,10 +3359,7 @@ export class Number {
   /**
    * Get small decimal value 2.5976931e-101
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -3514,13 +3371,13 @@ export class Number {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getSmallDecimal(): Promise<number>;
-  getSmallDecimal(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getSmallDecimal(options: msRest.RequestOptionsBase): Promise<number>;
   getSmallDecimal(callback: msRest.ServiceCallback<number>): void;
-  getSmallDecimal(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getSmallDecimal(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getSmallDecimal(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getSmallDecimal(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

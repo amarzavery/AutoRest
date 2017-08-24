@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATByteService } from '../autoRestSwaggerBATByteService';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATByteService } from "../autoRestSwaggerBATByteService";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class ByteModel {
   /**
    * Get null byte value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -123,18 +121,15 @@ export class ByteModel {
   /**
    * Get empty byte value ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -218,18 +213,15 @@ export class ByteModel {
   /**
    * Get non-ascii byte string hex(FF FE FD FC FB FA F9 F8 F7 F6)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNonAsciiWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNonAsciiWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -313,21 +305,18 @@ export class ByteModel {
   /**
    * Put non-ascii byte string hex(FF FE FD FC FB FA F9 F8 F7 F6)
    *
-   * @param {buffer} byteBody Base64-encoded non-ascii byte string hex(FF FE FD
+   * @param {Buffer} byteBody Base64-encoded non-ascii byte string hex(FF FE FD
    * FC FB FA F9 F8 F7 F6)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putNonAsciiWithHttpOperationResponse(byteBody: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putNonAsciiWithHttpOperationResponse(byteBody: Buffer, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -418,18 +407,15 @@ export class ByteModel {
   /**
    * Get invalid byte value ':::SWAGGER::::'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Buffer>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -513,10 +499,7 @@ export class ByteModel {
   /**
    * Get null byte value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -528,13 +511,13 @@ export class ByteModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<Buffer>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getNull(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getNull(callback: msRest.ServiceCallback<Buffer>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -560,10 +543,7 @@ export class ByteModel {
   /**
    * Get empty byte value ''
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -575,13 +555,13 @@ export class ByteModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(): Promise<Buffer>;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getEmpty(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getEmpty(callback: msRest.ServiceCallback<Buffer>): void;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -607,10 +587,7 @@ export class ByteModel {
   /**
    * Get non-ascii byte string hex(FF FE FD FC FB FA F9 F8 F7 F6)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -622,13 +599,13 @@ export class ByteModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNonAscii(): Promise<Buffer>;
-  getNonAscii(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getNonAscii(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getNonAscii(callback: msRest.ServiceCallback<Buffer>): void;
-  getNonAscii(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getNonAscii(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getNonAscii(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getNonAscii(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -654,13 +631,10 @@ export class ByteModel {
   /**
    * Put non-ascii byte string hex(FF FE FD FC FB FA F9 F8 F7 F6)
    *
-   * @param {buffer} byteBody Base64-encoded non-ascii byte string hex(FF FE FD
+   * @param {Buffer} byteBody Base64-encoded non-ascii byte string hex(FF FE FD
    * FC FB FA F9 F8 F7 F6)
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -668,17 +642,17 @@ export class ByteModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putNonAscii(byteBody: Buffer): Promise<void>;
-  putNonAscii(byteBody: Buffer, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putNonAscii(byteBody: Buffer, options: msRest.RequestOptionsBase): Promise<void>;
   putNonAscii(byteBody: Buffer, callback: msRest.ServiceCallback<void>): void;
-  putNonAscii(byteBody: Buffer, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putNonAscii(byteBody: Buffer, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putNonAscii(byteBody: Buffer, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putNonAscii(byteBody: Buffer, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -704,10 +678,7 @@ export class ByteModel {
   /**
    * Get invalid byte value ':::SWAGGER::::'
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -719,13 +690,13 @@ export class ByteModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<Buffer>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<Buffer>;
   getInvalid(callback: msRest.ServiceCallback<Buffer>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

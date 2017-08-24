@@ -8,9 +8,10 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Mappers from '../models/mappers';
-import { CompositeBoolInt } from '../compositeBoolInt';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { CompositeBoolInt } from "../compositeBoolInt";
 
 const WebResource = msRest.WebResource;
 
@@ -28,18 +29,15 @@ export class IntModel {
   /**
    * Get null Int value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -123,18 +121,15 @@ export class IntModel {
   /**
    * Get invalid Int value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -218,18 +213,15 @@ export class IntModel {
   /**
    * Get overflow Int32 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getOverflowInt32WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getOverflowInt32WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -313,18 +305,15 @@ export class IntModel {
   /**
    * Get underflow Int32 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUnderflowInt32WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUnderflowInt32WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -408,18 +397,15 @@ export class IntModel {
   /**
    * Get overflow Int64 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getOverflowInt64WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getOverflowInt64WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -503,18 +489,15 @@ export class IntModel {
   /**
    * Get underflow Int64 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<number>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUnderflowInt64WithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUnderflowInt64WithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -600,18 +583,15 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putMax32WithHttpOperationResponse(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putMax32WithHttpOperationResponse(intBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -704,18 +684,15 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putMax64WithHttpOperationResponse(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putMax64WithHttpOperationResponse(intBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -808,18 +785,15 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putMin32WithHttpOperationResponse(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putMin32WithHttpOperationResponse(intBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -912,18 +886,15 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putMin64WithHttpOperationResponse(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putMin64WithHttpOperationResponse(intBody: number, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1014,18 +985,15 @@ export class IntModel {
   /**
    * Get datetime encoded as Unix time value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUnixTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUnixTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1109,25 +1077,22 @@ export class IntModel {
   /**
    * Put datetime encoded as Unix time
    *
-   * @param {date} intBody
+   * @param {Date | string} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putUnixTimeDateWithHttpOperationResponse(intBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putUnixTimeDateWithHttpOperationResponse(intBody: Date | string, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
       if(!intBody || !(intBody instanceof Date ||
-          (typeof intBody.valueOf() === 'string' && !isNaN(Date.parse(intBody as string))))) {
+          (typeof (intBody as string).valueOf() === 'string' && !isNaN(Date.parse(intBody as string))))) {
             throw new Error('intBody cannot be null or undefined and it must be of type date.');
           }
     } catch (error) {
@@ -1214,18 +1179,15 @@ export class IntModel {
   /**
    * Get invalid Unix time value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidUnixTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidUnixTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1309,18 +1271,15 @@ export class IntModel {
   /**
    * Get null Unix time value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Date>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullUnixTimeWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullUnixTimeWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1404,10 +1363,7 @@ export class IntModel {
   /**
    * Get null Int value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1419,13 +1375,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<number>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getNull(options: msRest.RequestOptionsBase): Promise<number>;
   getNull(callback: msRest.ServiceCallback<number>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1451,10 +1407,7 @@ export class IntModel {
   /**
    * Get invalid Int value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1466,13 +1419,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<number>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<number>;
   getInvalid(callback: msRest.ServiceCallback<number>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1498,10 +1451,7 @@ export class IntModel {
   /**
    * Get overflow Int32 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1513,13 +1463,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getOverflowInt32(): Promise<number>;
-  getOverflowInt32(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getOverflowInt32(options: msRest.RequestOptionsBase): Promise<number>;
   getOverflowInt32(callback: msRest.ServiceCallback<number>): void;
-  getOverflowInt32(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getOverflowInt32(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getOverflowInt32(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getOverflowInt32(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1545,10 +1495,7 @@ export class IntModel {
   /**
    * Get underflow Int32 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1560,13 +1507,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUnderflowInt32(): Promise<number>;
-  getUnderflowInt32(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getUnderflowInt32(options: msRest.RequestOptionsBase): Promise<number>;
   getUnderflowInt32(callback: msRest.ServiceCallback<number>): void;
-  getUnderflowInt32(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getUnderflowInt32(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getUnderflowInt32(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getUnderflowInt32(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1592,10 +1539,7 @@ export class IntModel {
   /**
    * Get overflow Int64 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1607,13 +1551,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getOverflowInt64(): Promise<number>;
-  getOverflowInt64(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getOverflowInt64(options: msRest.RequestOptionsBase): Promise<number>;
   getOverflowInt64(callback: msRest.ServiceCallback<number>): void;
-  getOverflowInt64(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getOverflowInt64(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getOverflowInt64(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getOverflowInt64(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1639,10 +1583,7 @@ export class IntModel {
   /**
    * Get underflow Int64 value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1654,13 +1595,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUnderflowInt64(): Promise<number>;
-  getUnderflowInt64(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number>;
+  getUnderflowInt64(options: msRest.RequestOptionsBase): Promise<number>;
   getUnderflowInt64(callback: msRest.ServiceCallback<number>): void;
-  getUnderflowInt64(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number>): void;
-  getUnderflowInt64(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number>): any {
+  getUnderflowInt64(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number>): void;
+  getUnderflowInt64(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1688,10 +1629,7 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1699,17 +1637,17 @@ export class IntModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putMax32(intBody: number): Promise<void>;
-  putMax32(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putMax32(intBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putMax32(intBody: number, callback: msRest.ServiceCallback<void>): void;
-  putMax32(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putMax32(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putMax32(intBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putMax32(intBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1737,10 +1675,7 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1748,17 +1683,17 @@ export class IntModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putMax64(intBody: number): Promise<void>;
-  putMax64(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putMax64(intBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putMax64(intBody: number, callback: msRest.ServiceCallback<void>): void;
-  putMax64(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putMax64(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putMax64(intBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putMax64(intBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1786,10 +1721,7 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1797,17 +1729,17 @@ export class IntModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putMin32(intBody: number): Promise<void>;
-  putMin32(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putMin32(intBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putMin32(intBody: number, callback: msRest.ServiceCallback<void>): void;
-  putMin32(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putMin32(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putMin32(intBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putMin32(intBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1835,10 +1767,7 @@ export class IntModel {
    *
    * @param {number} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1846,17 +1775,17 @@ export class IntModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putMin64(intBody: number): Promise<void>;
-  putMin64(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putMin64(intBody: number, options: msRest.RequestOptionsBase): Promise<void>;
   putMin64(intBody: number, callback: msRest.ServiceCallback<void>): void;
-  putMin64(intBody: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putMin64(intBody: number, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putMin64(intBody: number, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putMin64(intBody: number, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1882,10 +1811,7 @@ export class IntModel {
   /**
    * Get datetime encoded as Unix time value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1897,13 +1823,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUnixTime(): Promise<Date>;
-  getUnixTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getUnixTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getUnixTime(callback: msRest.ServiceCallback<Date>): void;
-  getUnixTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getUnixTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getUnixTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getUnixTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1929,12 +1855,9 @@ export class IntModel {
   /**
    * Put datetime encoded as Unix time
    *
-   * @param {date} intBody
+   * @param {Date | string} intBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1942,17 +1865,17 @@ export class IntModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putUnixTimeDate(intBody: Date | string): Promise<void>;
-  putUnixTimeDate(intBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putUnixTimeDate(intBody: Date | string, options: msRest.RequestOptionsBase): Promise<void>;
   putUnixTimeDate(intBody: Date | string, callback: msRest.ServiceCallback<void>): void;
-  putUnixTimeDate(intBody: Date | string, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putUnixTimeDate(intBody: Date | string, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putUnixTimeDate(intBody: Date | string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putUnixTimeDate(intBody: Date | string, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -1978,10 +1901,7 @@ export class IntModel {
   /**
    * Get invalid Unix time value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -1993,13 +1913,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalidUnixTime(): Promise<Date>;
-  getInvalidUnixTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getInvalidUnixTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getInvalidUnixTime(callback: msRest.ServiceCallback<Date>): void;
-  getInvalidUnixTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getInvalidUnixTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getInvalidUnixTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getInvalidUnixTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -2025,10 +1945,7 @@ export class IntModel {
   /**
    * Get null Unix time value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -2040,13 +1957,13 @@ export class IntModel {
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNullUnixTime(): Promise<Date>;
-  getNullUnixTime(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date>;
+  getNullUnixTime(options: msRest.RequestOptionsBase): Promise<Date>;
   getNullUnixTime(callback: msRest.ServiceCallback<Date>): void;
-  getNullUnixTime(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date>): void;
-  getNullUnixTime(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date>): any {
+  getNullUnixTime(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date>): void;
+  getNullUnixTime(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;

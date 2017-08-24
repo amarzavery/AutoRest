@@ -8,7 +8,7 @@
  * regenerated.
  */
 
-import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure";
+import {CloudErrorMapper, BaseResourceMapper } from "ms-rest-azure-ts";
 
 export const CloudError = CloudErrorMapper;
 export const BaseResource = BaseResourceMapper;
@@ -30,6 +30,24 @@ export const ErrorModel = {
       message: {
         required: false,
         serializedName: 'message',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const AutoRestParameterizedHostTestClientOptions = {
+  required: false,
+  type: {
+    name: 'Composite',
+    className: 'AutoRestParameterizedHostTestClientOptions',
+    modelProperties: {
+      host: {
+        required: false,
+        serializedName: 'host',
+        defaultValue: 'host',
         type: {
           name: 'String'
         }

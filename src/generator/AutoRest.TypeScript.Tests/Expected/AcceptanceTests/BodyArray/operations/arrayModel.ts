@@ -8,11 +8,11 @@
  * regenerated.
  */
 
-import * as msRest from 'ms-rest';
-import * as Models from '../models';
-import * as Mappers from '../models/mappers';
-import { AutoRestSwaggerBATArrayService } from '../autoRestSwaggerBATArrayService';
-import * as moment from 'moment';
+import * as msRest from "ms-rest-ts";
+import * as Models from "../models";
+import * as Mappers from "../models/mappers";
+import { AutoRestSwaggerBATArrayService } from "../autoRestSwaggerBATArrayService";
+import * as moment from "moment";
 
 const WebResource = msRest.WebResource;
 
@@ -30,18 +30,15 @@ export class ArrayModel {
   /**
    * Get null array value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -132,18 +129,15 @@ export class ArrayModel {
   /**
    * Get invalid array [1, 2, 3
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -234,18 +228,15 @@ export class ArrayModel {
   /**
    * Get empty array value []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -336,20 +327,17 @@ export class ArrayModel {
   /**
    * Set array value empty []
    *
-   * @param {array} arrayBody
+   * @param {string[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putEmptyWithHttpOperationResponse(arrayBody: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putEmptyWithHttpOperationResponse(arrayBody: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -452,18 +440,15 @@ export class ArrayModel {
   /**
    * Get boolean array value [true, false, false, true]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanTfftWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanTfftWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -554,20 +539,17 @@ export class ArrayModel {
   /**
    * Set array value empty [true, false, false, true]
    *
-   * @param {array} arrayBody
+   * @param {boolean[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putBooleanTfftWithHttpOperationResponse(arrayBody: boolean[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putBooleanTfftWithHttpOperationResponse(arrayBody: boolean[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -670,18 +652,15 @@ export class ArrayModel {
   /**
    * Get boolean array value [true, null, false]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -772,18 +751,15 @@ export class ArrayModel {
   /**
    * Get boolean array value [true, 'boolean', false]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBooleanInvalidStringWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBooleanInvalidStringWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -874,18 +850,15 @@ export class ArrayModel {
   /**
    * Get integer array value [1, -1, 3, 300]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntegerValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntegerValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -976,20 +949,17 @@ export class ArrayModel {
   /**
    * Set array value empty [1, -1, 3, 300]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putIntegerValidWithHttpOperationResponse(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putIntegerValidWithHttpOperationResponse(arrayBody: number[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1092,18 +1062,15 @@ export class ArrayModel {
   /**
    * Get integer array value [1, null, 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1194,18 +1161,15 @@ export class ArrayModel {
   /**
    * Get integer array value [1, 'integer', 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getIntInvalidStringWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getIntInvalidStringWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1296,18 +1260,15 @@ export class ArrayModel {
   /**
    * Get integer array value [1, -1, 3, 300]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLongValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLongValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1398,20 +1359,17 @@ export class ArrayModel {
   /**
    * Set array value empty [1, -1, 3, 300]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putLongValidWithHttpOperationResponse(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putLongValidWithHttpOperationResponse(arrayBody: number[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1514,18 +1472,15 @@ export class ArrayModel {
   /**
    * Get long array value [1, null, 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLongInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLongInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1616,18 +1571,15 @@ export class ArrayModel {
   /**
    * Get long array value [1, 'integer', 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getLongInvalidStringWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getLongInvalidStringWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1718,18 +1670,15 @@ export class ArrayModel {
   /**
    * Get float array value [0, -0.01, 1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFloatValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFloatValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -1820,20 +1769,17 @@ export class ArrayModel {
   /**
    * Set array value [0, -0.01, 1.2e20]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putFloatValidWithHttpOperationResponse(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putFloatValidWithHttpOperationResponse(arrayBody: number[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -1936,18 +1882,15 @@ export class ArrayModel {
   /**
    * Get float array value [0.0, null, -1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFloatInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFloatInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2038,18 +1981,15 @@ export class ArrayModel {
   /**
    * Get boolean array value [1.0, 'number', 0.0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getFloatInvalidStringWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getFloatInvalidStringWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2140,18 +2080,15 @@ export class ArrayModel {
   /**
    * Get float array value [0, -0.01, 1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDoubleValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDoubleValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2242,20 +2179,17 @@ export class ArrayModel {
   /**
    * Set array value [0, -0.01, 1.2e20]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDoubleValidWithHttpOperationResponse(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDoubleValidWithHttpOperationResponse(arrayBody: number[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2358,18 +2292,15 @@ export class ArrayModel {
   /**
    * Get float array value [0.0, null, -1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDoubleInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDoubleInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2460,18 +2391,15 @@ export class ArrayModel {
   /**
    * Get boolean array value [1.0, 'number', 0.0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDoubleInvalidStringWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDoubleInvalidStringWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2562,18 +2490,15 @@ export class ArrayModel {
   /**
    * Get string array value ['foo1', 'foo2', 'foo3']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getStringValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getStringValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2664,20 +2589,17 @@ export class ArrayModel {
   /**
    * Set array value ['foo1', 'foo2', 'foo3']
    *
-   * @param {array} arrayBody
+   * @param {string[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putStringValidWithHttpOperationResponse(arrayBody: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putStringValidWithHttpOperationResponse(arrayBody: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -2780,18 +2702,15 @@ export class ArrayModel {
   /**
    * Get string array value ['foo', null, 'foo2']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getStringWithNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getStringWithNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2882,18 +2801,15 @@ export class ArrayModel {
   /**
    * Get string array value ['foo', 123, 'foo2']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getStringWithInvalidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getStringWithInvalidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -2986,18 +2902,15 @@ export class ArrayModel {
    * 'd1399005-30f7-40d6-8da6-dd7c89ad34db',
    * 'f42f6aa1-a5bc-4ddf-907e-5f915de43205']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUuidValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUuidValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -3090,20 +3003,17 @@ export class ArrayModel {
    * 'd1399005-30f7-40d6-8da6-dd7c89ad34db',
    * 'f42f6aa1-a5bc-4ddf-907e-5f915de43205']
    *
-   * @param {array} arrayBody
+   * @param {string[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putUuidValidWithHttpOperationResponse(arrayBody: string[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putUuidValidWithHttpOperationResponse(arrayBody: string[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -3206,18 +3116,15 @@ export class ArrayModel {
   /**
    * Get uuid array value ['6dcc7237-45fe-45c4-8a6b-3a8a3f625652', 'foo']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getUuidInvalidCharsWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getUuidInvalidCharsWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -3308,18 +3215,15 @@ export class ArrayModel {
   /**
    * Get integer array value ['2000-12-01', '1980-01-02', '1492-10-12']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -3410,20 +3314,17 @@ export class ArrayModel {
   /**
    * Set array value  ['2000-12-01', '1980-01-02', '1492-10-12']
    *
-   * @param {array} arrayBody
+   * @param {Array<Date> | Array<string>} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDateValidWithHttpOperationResponse(arrayBody: Array<Date> | Array<string>, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDateValidWithHttpOperationResponse(arrayBody: Array<Date> | Array<string>, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -3432,7 +3333,7 @@ export class ArrayModel {
       }
       for (let i = 0; i < arrayBody.length; i++) {
         if (arrayBody[i] && !(arrayBody[i] instanceof Date ||
-            (typeof arrayBody[i].valueOf() === 'string' && !isNaN(Date.parse(arrayBody[i] as string))))) {
+            (typeof (arrayBody[i] as string).valueOf() === 'string' && !isNaN(Date.parse(arrayBody[i] as string))))) {
               throw new Error('arrayBody[i] must be of type date.');
             }
       }
@@ -3527,18 +3428,15 @@ export class ArrayModel {
   /**
    * Get date array value ['2012-01-01', null, '1776-07-04']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -3629,18 +3527,15 @@ export class ArrayModel {
   /**
    * Get date array value ['2011-03-22', 'date']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateInvalidCharsWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateInvalidCharsWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -3732,18 +3627,15 @@ export class ArrayModel {
    * Get date-time array value ['2000-12-01t00:00:01z',
    * '1980-01-02T00:11:35+01:00', '1492-10-12T10:15:01-08:00']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateTimeValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateTimeValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -3835,20 +3727,17 @@ export class ArrayModel {
    * Set array value  ['2000-12-01t00:00:01z', '1980-01-02T00:11:35+01:00',
    * '1492-10-12T10:15:01-08:00']
    *
-   * @param {array} arrayBody
+   * @param {Array<Date> | Array<string>} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDateTimeValidWithHttpOperationResponse(arrayBody: Array<Date> | Array<string>, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDateTimeValidWithHttpOperationResponse(arrayBody: Array<Date> | Array<string>, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -3857,7 +3746,7 @@ export class ArrayModel {
       }
       for (let i = 0; i < arrayBody.length; i++) {
         if (arrayBody[i] && !(arrayBody[i] instanceof Date ||
-            (typeof arrayBody[i].valueOf() === 'string' && !isNaN(Date.parse(arrayBody[i] as string))))) {
+            (typeof (arrayBody[i] as string).valueOf() === 'string' && !isNaN(Date.parse(arrayBody[i] as string))))) {
               throw new Error('arrayBody[i] must be of type date.');
             }
       }
@@ -3952,18 +3841,15 @@ export class ArrayModel {
   /**
    * Get date array value ['2000-12-01t00:00:01z', null]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateTimeInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateTimeInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -4054,18 +3940,15 @@ export class ArrayModel {
   /**
    * Get date array value ['2000-12-01t00:00:01z', 'date-time']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateTimeInvalidCharsWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateTimeInvalidCharsWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -4157,18 +4040,15 @@ export class ArrayModel {
    * Get date-time array value ['Fri, 01 Dec 2000 00:00:01 GMT', 'Wed, 02 Jan
    * 1980 00:11:35 GMT', 'Wed, 12 Oct 1492 10:15:01 GMT']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDateTimeRfc1123ValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDateTimeRfc1123ValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -4260,20 +4140,17 @@ export class ArrayModel {
    * Set array value  ['Fri, 01 Dec 2000 00:00:01 GMT', 'Wed, 02 Jan 1980
    * 00:11:35 GMT', 'Wed, 12 Oct 1492 10:15:01 GMT']
    *
-   * @param {array} arrayBody
+   * @param {Array<Date> | Array<string>} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDateTimeRfc1123ValidWithHttpOperationResponse(arrayBody: Array<Date> | Array<string>, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDateTimeRfc1123ValidWithHttpOperationResponse(arrayBody: Array<Date> | Array<string>, options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -4282,7 +4159,7 @@ export class ArrayModel {
       }
       for (let i = 0; i < arrayBody.length; i++) {
         if (arrayBody[i] && !(arrayBody[i] instanceof Date ||
-            (typeof arrayBody[i].valueOf() === 'string' && !isNaN(Date.parse(arrayBody[i] as string))))) {
+            (typeof (arrayBody[i] as string).valueOf() === 'string' && !isNaN(Date.parse(arrayBody[i] as string))))) {
               throw new Error('arrayBody[i] must be of type date.');
             }
       }
@@ -4377,18 +4254,15 @@ export class ArrayModel {
   /**
    * Get duration array value ['P123DT22H14M12.011S', 'P5DT1H0M0S']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDurationValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDurationValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -4479,20 +4353,17 @@ export class ArrayModel {
   /**
    * Set array value  ['P123DT22H14M12.011S', 'P5DT1H0M0S']
    *
-   * @param {array} arrayBody
+   * @param {moment.Duration[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDurationValidWithHttpOperationResponse(arrayBody: moment.Duration[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDurationValidWithHttpOperationResponse(arrayBody: moment.Duration[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -4596,18 +4467,15 @@ export class ArrayModel {
    * Get byte array value [hex(FF FF FF FA), hex(01 02 03), hex (25, 29, 43)]
    * with each item encoded in base64
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getByteValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getByteValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -4699,20 +4567,17 @@ export class ArrayModel {
    * Put the array value [hex(FF FF FF FA), hex(01 02 03), hex (25, 29, 43)] with
    * each elementencoded in base 64
    *
-   * @param {array} arrayBody
+   * @param {Buffer[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putByteValidWithHttpOperationResponse(arrayBody: Buffer[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putByteValidWithHttpOperationResponse(arrayBody: Buffer[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -4816,18 +4681,15 @@ export class ArrayModel {
    * Get byte array value [hex(AB, AC, AD), null] with the first item base64
    * encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getByteInvalidNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getByteInvalidNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -4919,18 +4781,15 @@ export class ArrayModel {
    * Get array value ['a string that gets encoded with base64url', 'test string'
    * 'Lorem ipsum'] with the items base64url encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getBase64UrlWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getBase64UrlWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5021,18 +4880,15 @@ export class ArrayModel {
   /**
    * Get array of complex type null value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getComplexNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getComplexNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5124,18 +4980,15 @@ export class ArrayModel {
   /**
    * Get empty array of complex type []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getComplexEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getComplexEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5228,18 +5081,15 @@ export class ArrayModel {
    * Get array of complex type with null item [{'integer': 1 'string': '2'},
    * null, {'integer': 5, 'string': '6'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getComplexItemNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getComplexItemNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5332,18 +5182,15 @@ export class ArrayModel {
    * Get array of complex type with empty item [{'integer': 1 'string': '2'}, {},
    * {'integer': 5, 'string': '6'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getComplexItemEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getComplexItemEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5436,18 +5283,15 @@ export class ArrayModel {
    * Get array of complex type with [{'integer': 1 'string': '2'}, {'integer': 3,
    * 'string': '4'}, {'integer': 5, 'string': '6'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getComplexValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getComplexValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5540,20 +5384,17 @@ export class ArrayModel {
    * Put an array of complex type with values [{'integer': 1 'string': '2'},
    * {'integer': 3, 'string': '4'}, {'integer': 5, 'string': '6'}]
    *
-   * @param {array} arrayBody
+   * @param {Product[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putComplexValidWithHttpOperationResponse(arrayBody: Models.Product[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putComplexValidWithHttpOperationResponse(arrayBody: Models.Product[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5644,18 +5485,15 @@ export class ArrayModel {
   /**
    * Get a null array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getArrayNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getArrayNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5753,18 +5591,15 @@ export class ArrayModel {
   /**
    * Get an empty array []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getArrayEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getArrayEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5862,18 +5697,15 @@ export class ArrayModel {
   /**
    * Get an array of array of strings [['1', '2', '3'], null, ['7', '8', '9']]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getArrayItemNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getArrayItemNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -5971,18 +5803,15 @@ export class ArrayModel {
   /**
    * Get an array of array of strings [['1', '2', '3'], [], ['7', '8', '9']]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getArrayItemEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getArrayItemEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6081,18 +5910,15 @@ export class ArrayModel {
    * Get an array of array of strings [['1', '2', '3'], ['4', '5', '6'], ['7',
    * '8', '9']]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getArrayValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getArrayValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6191,20 +6017,17 @@ export class ArrayModel {
    * Put An array of array of strings [['1', '2', '3'], ['4', '5', '6'], ['7',
    * '8', '9']]
    *
-   * @param {array} arrayBody
+   * @param {string[][]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putArrayValidWithHttpOperationResponse(arrayBody: string[][], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putArrayValidWithHttpOperationResponse(arrayBody: string[][], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -6318,18 +6141,15 @@ export class ArrayModel {
   /**
    * Get an array of Dictionaries with value null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDictionaryNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDictionaryNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6427,18 +6247,15 @@ export class ArrayModel {
   /**
    * Get an array of Dictionaries of type <string, string> with value []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDictionaryEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDictionaryEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6538,18 +6355,15 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, null, {'7': 'seven', '8': 'eight', '9':
    * 'nine'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDictionaryItemNullWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDictionaryItemNullWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6649,18 +6463,15 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, {}, {'7': 'seven', '8': 'eight', '9':
    * 'nine'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDictionaryItemEmptyWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDictionaryItemEmptyWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6760,18 +6571,15 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, {'4': 'four', '5': 'five', '6': 'six'},
    * {'7': 'seven', '8': 'eight', '9': 'nine'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<Array>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async getDictionaryValidWithHttpOperationResponse(options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async getDictionaryValidWithHttpOperationResponse(options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
 
     // Construct URL
@@ -6871,20 +6679,17 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, {'4': 'four', '5': 'five', '6': 'six'},
    * {'7': 'seven', '8': 'eight', '9': 'nine'}]
    *
-   * @param {array} arrayBody
+   * @param {{ [propertyName: string]: string }[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @returns {Promise} A promise is returned
    *
-   * @resolve {HttpOperationResponse<null>} - The deserialized result object.
+   * @resolve {HttpOperationResponse} - The deserialized result object.
    *
    * @reject {Error|ServiceError} - The error object.
    */
-  async putDictionaryValidWithHttpOperationResponse(arrayBody: { [propertyName: string]: string }[], options?: { customHeaders? : { [headerName: string]: string; } }): Promise<msRest.HttpOperationResponse> {
+  async putDictionaryValidWithHttpOperationResponse(arrayBody: { [propertyName: string]: string }[], options?: msRest.RequestOptionsBase): Promise<msRest.HttpOperationResponse> {
     let client = this.client;
     // Validate
     try {
@@ -6998,10 +6803,7 @@ export class ArrayModel {
   /**
    * Get null array value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7009,17 +6811,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getNull(): Promise<number[]>;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getNull(options: msRest.RequestOptionsBase): Promise<number[]>;
   getNull(callback: msRest.ServiceCallback<number[]>): void;
-  getNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7045,10 +6847,7 @@ export class ArrayModel {
   /**
    * Get invalid array [1, 2, 3
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7056,17 +6855,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getInvalid(): Promise<number[]>;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getInvalid(options: msRest.RequestOptionsBase): Promise<number[]>;
   getInvalid(callback: msRest.ServiceCallback<number[]>): void;
-  getInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7092,10 +6891,7 @@ export class ArrayModel {
   /**
    * Get empty array value []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7103,17 +6899,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getEmpty(): Promise<number[]>;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getEmpty(options: msRest.RequestOptionsBase): Promise<number[]>;
   getEmpty(callback: msRest.ServiceCallback<number[]>): void;
-  getEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7139,12 +6935,9 @@ export class ArrayModel {
   /**
    * Set array value empty []
    *
-   * @param {array} arrayBody
+   * @param {string[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7152,17 +6945,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putEmpty(arrayBody: string[]): Promise<void>;
-  putEmpty(arrayBody: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putEmpty(arrayBody: string[], options: msRest.RequestOptionsBase): Promise<void>;
   putEmpty(arrayBody: string[], callback: msRest.ServiceCallback<void>): void;
-  putEmpty(arrayBody: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putEmpty(arrayBody: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putEmpty(arrayBody: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putEmpty(arrayBody: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7188,10 +6981,7 @@ export class ArrayModel {
   /**
    * Get boolean array value [true, false, false, true]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7199,17 +6989,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {boolean[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanTfft(): Promise<boolean[]>;
-  getBooleanTfft(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean[]>;
+  getBooleanTfft(options: msRest.RequestOptionsBase): Promise<boolean[]>;
   getBooleanTfft(callback: msRest.ServiceCallback<boolean[]>): void;
-  getBooleanTfft(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean[]>): void;
-  getBooleanTfft(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean[]>): any {
+  getBooleanTfft(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean[]>): void;
+  getBooleanTfft(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7235,12 +7025,9 @@ export class ArrayModel {
   /**
    * Set array value empty [true, false, false, true]
    *
-   * @param {array} arrayBody
+   * @param {boolean[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7248,17 +7035,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putBooleanTfft(arrayBody: boolean[]): Promise<void>;
-  putBooleanTfft(arrayBody: boolean[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putBooleanTfft(arrayBody: boolean[], options: msRest.RequestOptionsBase): Promise<void>;
   putBooleanTfft(arrayBody: boolean[], callback: msRest.ServiceCallback<void>): void;
-  putBooleanTfft(arrayBody: boolean[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putBooleanTfft(arrayBody: boolean[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putBooleanTfft(arrayBody: boolean[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putBooleanTfft(arrayBody: boolean[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7284,10 +7071,7 @@ export class ArrayModel {
   /**
    * Get boolean array value [true, null, false]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7295,17 +7079,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {boolean[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanInvalidNull(): Promise<boolean[]>;
-  getBooleanInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean[]>;
+  getBooleanInvalidNull(options: msRest.RequestOptionsBase): Promise<boolean[]>;
   getBooleanInvalidNull(callback: msRest.ServiceCallback<boolean[]>): void;
-  getBooleanInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean[]>): void;
-  getBooleanInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean[]>): any {
+  getBooleanInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean[]>): void;
+  getBooleanInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7331,10 +7115,7 @@ export class ArrayModel {
   /**
    * Get boolean array value [true, 'boolean', false]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7342,17 +7123,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {boolean[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBooleanInvalidString(): Promise<boolean[]>;
-  getBooleanInvalidString(options: { customHeaders? : { [headerName: string]: string; } }): Promise<boolean[]>;
+  getBooleanInvalidString(options: msRest.RequestOptionsBase): Promise<boolean[]>;
   getBooleanInvalidString(callback: msRest.ServiceCallback<boolean[]>): void;
-  getBooleanInvalidString(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<boolean[]>): void;
-  getBooleanInvalidString(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<boolean[]>): any {
+  getBooleanInvalidString(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<boolean[]>): void;
+  getBooleanInvalidString(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<boolean[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7378,10 +7159,7 @@ export class ArrayModel {
   /**
    * Get integer array value [1, -1, 3, 300]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7389,17 +7167,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntegerValid(): Promise<number[]>;
-  getIntegerValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getIntegerValid(options: msRest.RequestOptionsBase): Promise<number[]>;
   getIntegerValid(callback: msRest.ServiceCallback<number[]>): void;
-  getIntegerValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getIntegerValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getIntegerValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getIntegerValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7425,12 +7203,9 @@ export class ArrayModel {
   /**
    * Set array value empty [1, -1, 3, 300]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7438,17 +7213,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putIntegerValid(arrayBody: number[]): Promise<void>;
-  putIntegerValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putIntegerValid(arrayBody: number[], options: msRest.RequestOptionsBase): Promise<void>;
   putIntegerValid(arrayBody: number[], callback: msRest.ServiceCallback<void>): void;
-  putIntegerValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putIntegerValid(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putIntegerValid(arrayBody: number[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putIntegerValid(arrayBody: number[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7474,10 +7249,7 @@ export class ArrayModel {
   /**
    * Get integer array value [1, null, 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7485,17 +7257,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntInvalidNull(): Promise<number[]>;
-  getIntInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getIntInvalidNull(options: msRest.RequestOptionsBase): Promise<number[]>;
   getIntInvalidNull(callback: msRest.ServiceCallback<number[]>): void;
-  getIntInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getIntInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getIntInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getIntInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7521,10 +7293,7 @@ export class ArrayModel {
   /**
    * Get integer array value [1, 'integer', 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7532,17 +7301,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getIntInvalidString(): Promise<number[]>;
-  getIntInvalidString(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getIntInvalidString(options: msRest.RequestOptionsBase): Promise<number[]>;
   getIntInvalidString(callback: msRest.ServiceCallback<number[]>): void;
-  getIntInvalidString(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getIntInvalidString(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getIntInvalidString(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getIntInvalidString(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7568,10 +7337,7 @@ export class ArrayModel {
   /**
    * Get integer array value [1, -1, 3, 300]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7579,17 +7345,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLongValid(): Promise<number[]>;
-  getLongValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getLongValid(options: msRest.RequestOptionsBase): Promise<number[]>;
   getLongValid(callback: msRest.ServiceCallback<number[]>): void;
-  getLongValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getLongValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getLongValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getLongValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7615,12 +7381,9 @@ export class ArrayModel {
   /**
    * Set array value empty [1, -1, 3, 300]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7628,17 +7391,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putLongValid(arrayBody: number[]): Promise<void>;
-  putLongValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putLongValid(arrayBody: number[], options: msRest.RequestOptionsBase): Promise<void>;
   putLongValid(arrayBody: number[], callback: msRest.ServiceCallback<void>): void;
-  putLongValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putLongValid(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putLongValid(arrayBody: number[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putLongValid(arrayBody: number[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7664,10 +7427,7 @@ export class ArrayModel {
   /**
    * Get long array value [1, null, 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7675,17 +7435,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLongInvalidNull(): Promise<number[]>;
-  getLongInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getLongInvalidNull(options: msRest.RequestOptionsBase): Promise<number[]>;
   getLongInvalidNull(callback: msRest.ServiceCallback<number[]>): void;
-  getLongInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getLongInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getLongInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getLongInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7711,10 +7471,7 @@ export class ArrayModel {
   /**
    * Get long array value [1, 'integer', 0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7722,17 +7479,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getLongInvalidString(): Promise<number[]>;
-  getLongInvalidString(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getLongInvalidString(options: msRest.RequestOptionsBase): Promise<number[]>;
   getLongInvalidString(callback: msRest.ServiceCallback<number[]>): void;
-  getLongInvalidString(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getLongInvalidString(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getLongInvalidString(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getLongInvalidString(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7758,10 +7515,7 @@ export class ArrayModel {
   /**
    * Get float array value [0, -0.01, 1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7769,17 +7523,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFloatValid(): Promise<number[]>;
-  getFloatValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getFloatValid(options: msRest.RequestOptionsBase): Promise<number[]>;
   getFloatValid(callback: msRest.ServiceCallback<number[]>): void;
-  getFloatValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getFloatValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getFloatValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getFloatValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7805,12 +7559,9 @@ export class ArrayModel {
   /**
    * Set array value [0, -0.01, 1.2e20]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7818,17 +7569,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putFloatValid(arrayBody: number[]): Promise<void>;
-  putFloatValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putFloatValid(arrayBody: number[], options: msRest.RequestOptionsBase): Promise<void>;
   putFloatValid(arrayBody: number[], callback: msRest.ServiceCallback<void>): void;
-  putFloatValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putFloatValid(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putFloatValid(arrayBody: number[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putFloatValid(arrayBody: number[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7854,10 +7605,7 @@ export class ArrayModel {
   /**
    * Get float array value [0.0, null, -1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7865,17 +7613,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFloatInvalidNull(): Promise<number[]>;
-  getFloatInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getFloatInvalidNull(options: msRest.RequestOptionsBase): Promise<number[]>;
   getFloatInvalidNull(callback: msRest.ServiceCallback<number[]>): void;
-  getFloatInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getFloatInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getFloatInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getFloatInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7901,10 +7649,7 @@ export class ArrayModel {
   /**
    * Get boolean array value [1.0, 'number', 0.0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7912,17 +7657,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getFloatInvalidString(): Promise<number[]>;
-  getFloatInvalidString(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getFloatInvalidString(options: msRest.RequestOptionsBase): Promise<number[]>;
   getFloatInvalidString(callback: msRest.ServiceCallback<number[]>): void;
-  getFloatInvalidString(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getFloatInvalidString(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getFloatInvalidString(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getFloatInvalidString(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7948,10 +7693,7 @@ export class ArrayModel {
   /**
    * Get float array value [0, -0.01, 1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -7959,17 +7701,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDoubleValid(): Promise<number[]>;
-  getDoubleValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getDoubleValid(options: msRest.RequestOptionsBase): Promise<number[]>;
   getDoubleValid(callback: msRest.ServiceCallback<number[]>): void;
-  getDoubleValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getDoubleValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getDoubleValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getDoubleValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -7995,12 +7737,9 @@ export class ArrayModel {
   /**
    * Set array value [0, -0.01, 1.2e20]
    *
-   * @param {array} arrayBody
+   * @param {number[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8008,17 +7747,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDoubleValid(arrayBody: number[]): Promise<void>;
-  putDoubleValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDoubleValid(arrayBody: number[], options: msRest.RequestOptionsBase): Promise<void>;
   putDoubleValid(arrayBody: number[], callback: msRest.ServiceCallback<void>): void;
-  putDoubleValid(arrayBody: number[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDoubleValid(arrayBody: number[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDoubleValid(arrayBody: number[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDoubleValid(arrayBody: number[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8044,10 +7783,7 @@ export class ArrayModel {
   /**
    * Get float array value [0.0, null, -1.2e20]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8055,17 +7791,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDoubleInvalidNull(): Promise<number[]>;
-  getDoubleInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getDoubleInvalidNull(options: msRest.RequestOptionsBase): Promise<number[]>;
   getDoubleInvalidNull(callback: msRest.ServiceCallback<number[]>): void;
-  getDoubleInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getDoubleInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getDoubleInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getDoubleInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8091,10 +7827,7 @@ export class ArrayModel {
   /**
    * Get boolean array value [1.0, 'number', 0.0]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8102,17 +7835,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {number[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDoubleInvalidString(): Promise<number[]>;
-  getDoubleInvalidString(options: { customHeaders? : { [headerName: string]: string; } }): Promise<number[]>;
+  getDoubleInvalidString(options: msRest.RequestOptionsBase): Promise<number[]>;
   getDoubleInvalidString(callback: msRest.ServiceCallback<number[]>): void;
-  getDoubleInvalidString(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<number[]>): void;
-  getDoubleInvalidString(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<number[]>): any {
+  getDoubleInvalidString(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<number[]>): void;
+  getDoubleInvalidString(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<number[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8138,10 +7871,7 @@ export class ArrayModel {
   /**
    * Get string array value ['foo1', 'foo2', 'foo3']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8149,17 +7879,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getStringValid(): Promise<string[]>;
-  getStringValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[]>;
+  getStringValid(options: msRest.RequestOptionsBase): Promise<string[]>;
   getStringValid(callback: msRest.ServiceCallback<string[]>): void;
-  getStringValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[]>): void;
-  getStringValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[]>): any {
+  getStringValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[]>): void;
+  getStringValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8185,12 +7915,9 @@ export class ArrayModel {
   /**
    * Set array value ['foo1', 'foo2', 'foo3']
    *
-   * @param {array} arrayBody
+   * @param {string[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8198,17 +7925,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putStringValid(arrayBody: string[]): Promise<void>;
-  putStringValid(arrayBody: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putStringValid(arrayBody: string[], options: msRest.RequestOptionsBase): Promise<void>;
   putStringValid(arrayBody: string[], callback: msRest.ServiceCallback<void>): void;
-  putStringValid(arrayBody: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putStringValid(arrayBody: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putStringValid(arrayBody: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putStringValid(arrayBody: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8234,10 +7961,7 @@ export class ArrayModel {
   /**
    * Get string array value ['foo', null, 'foo2']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8245,17 +7969,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getStringWithNull(): Promise<string[]>;
-  getStringWithNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[]>;
+  getStringWithNull(options: msRest.RequestOptionsBase): Promise<string[]>;
   getStringWithNull(callback: msRest.ServiceCallback<string[]>): void;
-  getStringWithNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[]>): void;
-  getStringWithNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[]>): any {
+  getStringWithNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[]>): void;
+  getStringWithNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8281,10 +8005,7 @@ export class ArrayModel {
   /**
    * Get string array value ['foo', 123, 'foo2']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8292,17 +8013,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getStringWithInvalid(): Promise<string[]>;
-  getStringWithInvalid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[]>;
+  getStringWithInvalid(options: msRest.RequestOptionsBase): Promise<string[]>;
   getStringWithInvalid(callback: msRest.ServiceCallback<string[]>): void;
-  getStringWithInvalid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[]>): void;
-  getStringWithInvalid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[]>): any {
+  getStringWithInvalid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[]>): void;
+  getStringWithInvalid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8330,10 +8051,7 @@ export class ArrayModel {
    * 'd1399005-30f7-40d6-8da6-dd7c89ad34db',
    * 'f42f6aa1-a5bc-4ddf-907e-5f915de43205']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8341,17 +8059,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUuidValid(): Promise<string[]>;
-  getUuidValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[]>;
+  getUuidValid(options: msRest.RequestOptionsBase): Promise<string[]>;
   getUuidValid(callback: msRest.ServiceCallback<string[]>): void;
-  getUuidValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[]>): void;
-  getUuidValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[]>): any {
+  getUuidValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[]>): void;
+  getUuidValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8379,12 +8097,9 @@ export class ArrayModel {
    * 'd1399005-30f7-40d6-8da6-dd7c89ad34db',
    * 'f42f6aa1-a5bc-4ddf-907e-5f915de43205']
    *
-   * @param {array} arrayBody
+   * @param {string[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8392,17 +8107,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putUuidValid(arrayBody: string[]): Promise<void>;
-  putUuidValid(arrayBody: string[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putUuidValid(arrayBody: string[], options: msRest.RequestOptionsBase): Promise<void>;
   putUuidValid(arrayBody: string[], callback: msRest.ServiceCallback<void>): void;
-  putUuidValid(arrayBody: string[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putUuidValid(arrayBody: string[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putUuidValid(arrayBody: string[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putUuidValid(arrayBody: string[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8428,10 +8143,7 @@ export class ArrayModel {
   /**
    * Get uuid array value ['6dcc7237-45fe-45c4-8a6b-3a8a3f625652', 'foo']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8439,17 +8151,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getUuidInvalidChars(): Promise<string[]>;
-  getUuidInvalidChars(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[]>;
+  getUuidInvalidChars(options: msRest.RequestOptionsBase): Promise<string[]>;
   getUuidInvalidChars(callback: msRest.ServiceCallback<string[]>): void;
-  getUuidInvalidChars(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[]>): void;
-  getUuidInvalidChars(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[]>): any {
+  getUuidInvalidChars(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[]>): void;
+  getUuidInvalidChars(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8475,10 +8187,7 @@ export class ArrayModel {
   /**
    * Get integer array value ['2000-12-01', '1980-01-02', '1492-10-12']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8486,17 +8195,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateValid(): Promise<Date[] | string[]>;
-  getDateValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateValid(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateValid(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8522,12 +8231,9 @@ export class ArrayModel {
   /**
    * Set array value  ['2000-12-01', '1980-01-02', '1492-10-12']
    *
-   * @param {array} arrayBody
+   * @param {Array<Date> | Array<string>} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8535,17 +8241,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDateValid(arrayBody: Array<Date> | Array<string>): Promise<void>;
-  putDateValid(arrayBody: Array<Date> | Array<string>, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDateValid(arrayBody: Array<Date> | Array<string>, options: msRest.RequestOptionsBase): Promise<void>;
   putDateValid(arrayBody: Array<Date> | Array<string>, callback: msRest.ServiceCallback<void>): void;
-  putDateValid(arrayBody: Array<Date> | Array<string>, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDateValid(arrayBody: Array<Date> | Array<string>, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDateValid(arrayBody: Array<Date> | Array<string>, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDateValid(arrayBody: Array<Date> | Array<string>, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8571,10 +8277,7 @@ export class ArrayModel {
   /**
    * Get date array value ['2012-01-01', null, '1776-07-04']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8582,17 +8285,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateInvalidNull(): Promise<Date[] | string[]>;
-  getDateInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateInvalidNull(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateInvalidNull(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8618,10 +8321,7 @@ export class ArrayModel {
   /**
    * Get date array value ['2011-03-22', 'date']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8629,17 +8329,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateInvalidChars(): Promise<Date[] | string[]>;
-  getDateInvalidChars(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateInvalidChars(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateInvalidChars(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateInvalidChars(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateInvalidChars(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateInvalidChars(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateInvalidChars(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8666,10 +8366,7 @@ export class ArrayModel {
    * Get date-time array value ['2000-12-01t00:00:01z',
    * '1980-01-02T00:11:35+01:00', '1492-10-12T10:15:01-08:00']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8677,17 +8374,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateTimeValid(): Promise<Date[] | string[]>;
-  getDateTimeValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateTimeValid(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateTimeValid(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateTimeValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateTimeValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8714,12 +8411,9 @@ export class ArrayModel {
    * Set array value  ['2000-12-01t00:00:01z', '1980-01-02T00:11:35+01:00',
    * '1492-10-12T10:15:01-08:00']
    *
-   * @param {array} arrayBody
+   * @param {Array<Date> | Array<string>} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8727,17 +8421,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDateTimeValid(arrayBody: Array<Date> | Array<string>): Promise<void>;
-  putDateTimeValid(arrayBody: Array<Date> | Array<string>, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDateTimeValid(arrayBody: Array<Date> | Array<string>, options: msRest.RequestOptionsBase): Promise<void>;
   putDateTimeValid(arrayBody: Array<Date> | Array<string>, callback: msRest.ServiceCallback<void>): void;
-  putDateTimeValid(arrayBody: Array<Date> | Array<string>, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDateTimeValid(arrayBody: Array<Date> | Array<string>, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDateTimeValid(arrayBody: Array<Date> | Array<string>, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDateTimeValid(arrayBody: Array<Date> | Array<string>, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8763,10 +8457,7 @@ export class ArrayModel {
   /**
    * Get date array value ['2000-12-01t00:00:01z', null]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8774,17 +8465,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateTimeInvalidNull(): Promise<Date[] | string[]>;
-  getDateTimeInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateTimeInvalidNull(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateTimeInvalidNull(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateTimeInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateTimeInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8810,10 +8501,7 @@ export class ArrayModel {
   /**
    * Get date array value ['2000-12-01t00:00:01z', 'date-time']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8821,17 +8509,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateTimeInvalidChars(): Promise<Date[] | string[]>;
-  getDateTimeInvalidChars(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateTimeInvalidChars(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateTimeInvalidChars(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeInvalidChars(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeInvalidChars(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateTimeInvalidChars(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateTimeInvalidChars(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8858,10 +8546,7 @@ export class ArrayModel {
    * Get date-time array value ['Fri, 01 Dec 2000 00:00:01 GMT', 'Wed, 02 Jan
    * 1980 00:11:35 GMT', 'Wed, 12 Oct 1492 10:15:01 GMT']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8869,17 +8554,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Date[] | string[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDateTimeRfc1123Valid(): Promise<Date[] | string[]>;
-  getDateTimeRfc1123Valid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Date[] | string[]>;
+  getDateTimeRfc1123Valid(options: msRest.RequestOptionsBase): Promise<Date[] | string[]>;
   getDateTimeRfc1123Valid(callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeRfc1123Valid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Date[] | string[]>): void;
-  getDateTimeRfc1123Valid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
+  getDateTimeRfc1123Valid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Date[] | string[]>): void;
+  getDateTimeRfc1123Valid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Date[] | string[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8906,12 +8591,9 @@ export class ArrayModel {
    * Set array value  ['Fri, 01 Dec 2000 00:00:01 GMT', 'Wed, 02 Jan 1980
    * 00:11:35 GMT', 'Wed, 12 Oct 1492 10:15:01 GMT']
    *
-   * @param {array} arrayBody
+   * @param {Array<Date> | Array<string>} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8919,17 +8601,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>): Promise<void>;
-  putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, options: msRest.RequestOptionsBase): Promise<void>;
   putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, callback: msRest.ServiceCallback<void>): void;
-  putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDateTimeRfc1123Valid(arrayBody: Array<Date> | Array<string>, options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -8955,10 +8637,7 @@ export class ArrayModel {
   /**
    * Get duration array value ['P123DT22H14M12.011S', 'P5DT1H0M0S']
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -8966,17 +8645,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {moment.Duration[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDurationValid(): Promise<moment.Duration[]>;
-  getDurationValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<moment.Duration[]>;
+  getDurationValid(options: msRest.RequestOptionsBase): Promise<moment.Duration[]>;
   getDurationValid(callback: msRest.ServiceCallback<moment.Duration[]>): void;
-  getDurationValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<moment.Duration[]>): void;
-  getDurationValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<moment.Duration[]>): any {
+  getDurationValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<moment.Duration[]>): void;
+  getDurationValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<moment.Duration[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9002,12 +8681,9 @@ export class ArrayModel {
   /**
    * Set array value  ['P123DT22H14M12.011S', 'P5DT1H0M0S']
    *
-   * @param {array} arrayBody
+   * @param {moment.Duration[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9015,17 +8691,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDurationValid(arrayBody: moment.Duration[]): Promise<void>;
-  putDurationValid(arrayBody: moment.Duration[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDurationValid(arrayBody: moment.Duration[], options: msRest.RequestOptionsBase): Promise<void>;
   putDurationValid(arrayBody: moment.Duration[], callback: msRest.ServiceCallback<void>): void;
-  putDurationValid(arrayBody: moment.Duration[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDurationValid(arrayBody: moment.Duration[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDurationValid(arrayBody: moment.Duration[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDurationValid(arrayBody: moment.Duration[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9052,10 +8728,7 @@ export class ArrayModel {
    * Get byte array value [hex(FF FF FF FA), hex(01 02 03), hex (25, 29, 43)]
    * with each item encoded in base64
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9063,17 +8736,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Buffer[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getByteValid(): Promise<Buffer[]>;
-  getByteValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer[]>;
+  getByteValid(options: msRest.RequestOptionsBase): Promise<Buffer[]>;
   getByteValid(callback: msRest.ServiceCallback<Buffer[]>): void;
-  getByteValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer[]>): void;
-  getByteValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer[]>): any {
+  getByteValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer[]>): void;
+  getByteValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9100,12 +8773,9 @@ export class ArrayModel {
    * Put the array value [hex(FF FF FF FA), hex(01 02 03), hex (25, 29, 43)] with
    * each elementencoded in base 64
    *
-   * @param {array} arrayBody
+   * @param {Buffer[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9113,17 +8783,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putByteValid(arrayBody: Buffer[]): Promise<void>;
-  putByteValid(arrayBody: Buffer[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putByteValid(arrayBody: Buffer[], options: msRest.RequestOptionsBase): Promise<void>;
   putByteValid(arrayBody: Buffer[], callback: msRest.ServiceCallback<void>): void;
-  putByteValid(arrayBody: Buffer[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putByteValid(arrayBody: Buffer[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putByteValid(arrayBody: Buffer[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putByteValid(arrayBody: Buffer[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9150,10 +8820,7 @@ export class ArrayModel {
    * Get byte array value [hex(AB, AC, AD), null] with the first item base64
    * encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9161,17 +8828,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Buffer[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getByteInvalidNull(): Promise<Buffer[]>;
-  getByteInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer[]>;
+  getByteInvalidNull(options: msRest.RequestOptionsBase): Promise<Buffer[]>;
   getByteInvalidNull(callback: msRest.ServiceCallback<Buffer[]>): void;
-  getByteInvalidNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer[]>): void;
-  getByteInvalidNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer[]>): any {
+  getByteInvalidNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer[]>): void;
+  getByteInvalidNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9198,10 +8865,7 @@ export class ArrayModel {
    * Get array value ['a string that gets encoded with base64url', 'test string'
    * 'Lorem ipsum'] with the items base64url encoded
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9209,17 +8873,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Buffer[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getBase64Url(): Promise<Buffer[]>;
-  getBase64Url(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Buffer[]>;
+  getBase64Url(options: msRest.RequestOptionsBase): Promise<Buffer[]>;
   getBase64Url(callback: msRest.ServiceCallback<Buffer[]>): void;
-  getBase64Url(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Buffer[]>): void;
-  getBase64Url(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Buffer[]>): any {
+  getBase64Url(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Buffer[]>): void;
+  getBase64Url(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Buffer[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9245,10 +8909,7 @@ export class ArrayModel {
   /**
    * Get array of complex type null value
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9256,17 +8917,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.Product[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getComplexNull(): Promise<Models.Product[]>;
-  getComplexNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product[]>;
+  getComplexNull(options: msRest.RequestOptionsBase): Promise<Models.Product[]>;
   getComplexNull(callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product[]>): any {
+  getComplexNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product[]>): void;
+  getComplexNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9292,10 +8953,7 @@ export class ArrayModel {
   /**
    * Get empty array of complex type []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9303,17 +8961,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.Product[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getComplexEmpty(): Promise<Models.Product[]>;
-  getComplexEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product[]>;
+  getComplexEmpty(options: msRest.RequestOptionsBase): Promise<Models.Product[]>;
   getComplexEmpty(callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product[]>): any {
+  getComplexEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product[]>): void;
+  getComplexEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9340,10 +8998,7 @@ export class ArrayModel {
    * Get array of complex type with null item [{'integer': 1 'string': '2'},
    * null, {'integer': 5, 'string': '6'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9351,17 +9006,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.Product[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getComplexItemNull(): Promise<Models.Product[]>;
-  getComplexItemNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product[]>;
+  getComplexItemNull(options: msRest.RequestOptionsBase): Promise<Models.Product[]>;
   getComplexItemNull(callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexItemNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexItemNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product[]>): any {
+  getComplexItemNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product[]>): void;
+  getComplexItemNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9388,10 +9043,7 @@ export class ArrayModel {
    * Get array of complex type with empty item [{'integer': 1 'string': '2'}, {},
    * {'integer': 5, 'string': '6'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9399,17 +9051,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.Product[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getComplexItemEmpty(): Promise<Models.Product[]>;
-  getComplexItemEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product[]>;
+  getComplexItemEmpty(options: msRest.RequestOptionsBase): Promise<Models.Product[]>;
   getComplexItemEmpty(callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexItemEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexItemEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product[]>): any {
+  getComplexItemEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product[]>): void;
+  getComplexItemEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9436,10 +9088,7 @@ export class ArrayModel {
    * Get array of complex type with [{'integer': 1 'string': '2'}, {'integer': 3,
    * 'string': '4'}, {'integer': 5, 'string': '6'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9447,17 +9096,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {Models.Product[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getComplexValid(): Promise<Models.Product[]>;
-  getComplexValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<Models.Product[]>;
+  getComplexValid(options: msRest.RequestOptionsBase): Promise<Models.Product[]>;
   getComplexValid(callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<Models.Product[]>): void;
-  getComplexValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<Models.Product[]>): any {
+  getComplexValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.Product[]>): void;
+  getComplexValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<Models.Product[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9484,12 +9133,9 @@ export class ArrayModel {
    * Put an array of complex type with values [{'integer': 1 'string': '2'},
    * {'integer': 3, 'string': '4'}, {'integer': 5, 'string': '6'}]
    *
-   * @param {array} arrayBody
+   * @param {Product[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9497,17 +9143,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putComplexValid(arrayBody: Models.Product[]): Promise<void>;
-  putComplexValid(arrayBody: Models.Product[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putComplexValid(arrayBody: Models.Product[], options: msRest.RequestOptionsBase): Promise<void>;
   putComplexValid(arrayBody: Models.Product[], callback: msRest.ServiceCallback<void>): void;
-  putComplexValid(arrayBody: Models.Product[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putComplexValid(arrayBody: Models.Product[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putComplexValid(arrayBody: Models.Product[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putComplexValid(arrayBody: Models.Product[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9533,10 +9179,7 @@ export class ArrayModel {
   /**
    * Get a null array
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9544,17 +9187,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[][]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getArrayNull(): Promise<string[][]>;
-  getArrayNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[][]>;
+  getArrayNull(options: msRest.RequestOptionsBase): Promise<string[][]>;
   getArrayNull(callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[][]>): any {
+  getArrayNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[][]>): void;
+  getArrayNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[][]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9580,10 +9223,7 @@ export class ArrayModel {
   /**
    * Get an empty array []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9591,17 +9231,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[][]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getArrayEmpty(): Promise<string[][]>;
-  getArrayEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[][]>;
+  getArrayEmpty(options: msRest.RequestOptionsBase): Promise<string[][]>;
   getArrayEmpty(callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[][]>): any {
+  getArrayEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[][]>): void;
+  getArrayEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[][]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9627,10 +9267,7 @@ export class ArrayModel {
   /**
    * Get an array of array of strings [['1', '2', '3'], null, ['7', '8', '9']]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9638,17 +9275,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[][]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getArrayItemNull(): Promise<string[][]>;
-  getArrayItemNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[][]>;
+  getArrayItemNull(options: msRest.RequestOptionsBase): Promise<string[][]>;
   getArrayItemNull(callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayItemNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayItemNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[][]>): any {
+  getArrayItemNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[][]>): void;
+  getArrayItemNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[][]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9674,10 +9311,7 @@ export class ArrayModel {
   /**
    * Get an array of array of strings [['1', '2', '3'], [], ['7', '8', '9']]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9685,17 +9319,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[][]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getArrayItemEmpty(): Promise<string[][]>;
-  getArrayItemEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[][]>;
+  getArrayItemEmpty(options: msRest.RequestOptionsBase): Promise<string[][]>;
   getArrayItemEmpty(callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayItemEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayItemEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[][]>): any {
+  getArrayItemEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[][]>): void;
+  getArrayItemEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[][]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9722,10 +9356,7 @@ export class ArrayModel {
    * Get an array of array of strings [['1', '2', '3'], ['4', '5', '6'], ['7',
    * '8', '9']]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9733,17 +9364,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {string[][]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getArrayValid(): Promise<string[][]>;
-  getArrayValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<string[][]>;
+  getArrayValid(options: msRest.RequestOptionsBase): Promise<string[][]>;
   getArrayValid(callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<string[][]>): void;
-  getArrayValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<string[][]>): any {
+  getArrayValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<string[][]>): void;
+  getArrayValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<string[][]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9770,12 +9401,9 @@ export class ArrayModel {
    * Put An array of array of strings [['1', '2', '3'], ['4', '5', '6'], ['7',
    * '8', '9']]
    *
-   * @param {array} arrayBody
+   * @param {string[][]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9783,17 +9411,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putArrayValid(arrayBody: string[][]): Promise<void>;
-  putArrayValid(arrayBody: string[][], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putArrayValid(arrayBody: string[][], options: msRest.RequestOptionsBase): Promise<void>;
   putArrayValid(arrayBody: string[][], callback: msRest.ServiceCallback<void>): void;
-  putArrayValid(arrayBody: string[][], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putArrayValid(arrayBody: string[][], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putArrayValid(arrayBody: string[][], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putArrayValid(arrayBody: string[][], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9819,10 +9447,7 @@ export class ArrayModel {
   /**
    * Get an array of Dictionaries with value null
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9830,17 +9455,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: string }[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDictionaryNull(): Promise<{ [propertyName: string]: string }[]>;
-  getDictionaryNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: string }[]>;
+  getDictionaryNull(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: string }[]>;
   getDictionaryNull(callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
+  getDictionaryNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
+  getDictionaryNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9866,10 +9491,7 @@ export class ArrayModel {
   /**
    * Get an array of Dictionaries of type <string, string> with value []
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9877,17 +9499,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: string }[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDictionaryEmpty(): Promise<{ [propertyName: string]: string }[]>;
-  getDictionaryEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: string }[]>;
+  getDictionaryEmpty(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: string }[]>;
   getDictionaryEmpty(callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
+  getDictionaryEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
+  getDictionaryEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9915,10 +9537,7 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, null, {'7': 'seven', '8': 'eight', '9':
    * 'nine'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9926,17 +9545,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: string }[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDictionaryItemNull(): Promise<{ [propertyName: string]: string }[]>;
-  getDictionaryItemNull(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: string }[]>;
+  getDictionaryItemNull(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: string }[]>;
   getDictionaryItemNull(callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryItemNull(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryItemNull(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
+  getDictionaryItemNull(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
+  getDictionaryItemNull(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -9964,10 +9583,7 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, {}, {'7': 'seven', '8': 'eight', '9':
    * 'nine'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -9975,17 +9591,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: string }[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDictionaryItemEmpty(): Promise<{ [propertyName: string]: string }[]>;
-  getDictionaryItemEmpty(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: string }[]>;
+  getDictionaryItemEmpty(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: string }[]>;
   getDictionaryItemEmpty(callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryItemEmpty(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryItemEmpty(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
+  getDictionaryItemEmpty(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
+  getDictionaryItemEmpty(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10013,10 +9629,7 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, {'4': 'four', '5': 'five', '6': 'six'},
    * {'7': 'seven', '8': 'eight', '9': 'nine'}]
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10024,17 +9637,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {Array} [result]   - The deserialized result object if an error did not occur.
+   *                      {{ [propertyName: string]: string }[]} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   getDictionaryValid(): Promise<{ [propertyName: string]: string }[]>;
-  getDictionaryValid(options: { customHeaders? : { [headerName: string]: string; } }): Promise<{ [propertyName: string]: string }[]>;
+  getDictionaryValid(options: msRest.RequestOptionsBase): Promise<{ [propertyName: string]: string }[]>;
   getDictionaryValid(callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryValid(options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
-  getDictionaryValid(options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
+  getDictionaryValid(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): void;
+  getDictionaryValid(options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<{ [propertyName: string]: string }[]>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
@@ -10062,12 +9675,9 @@ export class ArrayModel {
    * 'one', '2': 'two', '3': 'three'}, {'4': 'four', '5': 'five', '6': 'six'},
    * {'7': 'seven', '8': 'eight', '9': 'nine'}]
    *
-   * @param {array} arrayBody
+   * @param {{ [propertyName: string]: string }[]} arrayBody
    *
-   * @param {object} [options] Optional Parameters.
-   *
-   * @param {object} [options.customHeaders] Headers that will be added to the
-   * request
+   * @param {RequestOptionsBase} [options] Optional Parameters.
    *
    * @param {ServiceCallback} callback - The callback.
    *
@@ -10075,17 +9685,17 @@ export class ArrayModel {
    *
    *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
    *
-   *                      {null} [result]   - The deserialized result object if an error did not occur.
+   *                      {void} [result]   - The deserialized result object if an error did not occur.
    *
    *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
    *
-   *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+   *                      {Response} [response] - The HTTP Response stream if an error did not occur.
    */
   putDictionaryValid(arrayBody: { [propertyName: string]: string }[]): Promise<void>;
-  putDictionaryValid(arrayBody: { [propertyName: string]: string }[], options: { customHeaders? : { [headerName: string]: string; } }): Promise<void>;
+  putDictionaryValid(arrayBody: { [propertyName: string]: string }[], options: msRest.RequestOptionsBase): Promise<void>;
   putDictionaryValid(arrayBody: { [propertyName: string]: string }[], callback: msRest.ServiceCallback<void>): void;
-  putDictionaryValid(arrayBody: { [propertyName: string]: string }[], options: { customHeaders? : { [headerName: string]: string; } }, callback: msRest.ServiceCallback<void>): void;
-  putDictionaryValid(arrayBody: { [propertyName: string]: string }[], options?: { customHeaders? : { [headerName: string]: string; } }, callback?: msRest.ServiceCallback<void>): any {
+  putDictionaryValid(arrayBody: { [propertyName: string]: string }[], options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  putDictionaryValid(arrayBody: { [propertyName: string]: string }[], options?: msRest.RequestOptionsBase, callback?: msRest.ServiceCallback<void>): any {
     if (!callback && typeof options === 'function') {
       callback = options;
       options = undefined;
