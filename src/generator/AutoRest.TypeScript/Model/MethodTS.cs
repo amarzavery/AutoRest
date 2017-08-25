@@ -495,15 +495,15 @@ namespace AutoRest.TypeScript.Model
         /// <param name="builder">The string builder for url construction</param>
         private void AddQueryParametersToUrl(string variableName, IndentedStringBuilder builder)
         {
-            builder.AppendLine("if (queryParameters.length > 0) {")
+            builder.AppendLine("if (queryParamsArray.length > 0) {")
                 .Indent();
             if (this.Extensions.ContainsKey("nextLinkMethod") && (bool)this.Extensions["nextLinkMethod"])
             {
-                builder.AppendLine("{0} += ({0}.indexOf('?') !== -1 ? '&' : '?') + queryParameters.join('&');", variableName);
+                builder.AppendLine("{0} += ({0}.indexOf('?') !== -1 ? '&' : '?') + queryParamsArray.join('&');", variableName);
             }
             else
             {
-                builder.AppendLine("{0} += '?' + queryParameters.join('&');", variableName);
+                builder.AppendLine("{0} += '?' + queryParamsArray.join('&');", variableName);
             }
 
             builder.Outdent().AppendLine("}");
@@ -519,7 +519,7 @@ namespace AutoRest.TypeScript.Model
         }
 
         /// <summary>
-        /// Genrate code to build an array of query parameter strings in a variable named 'queryParameters'.  The 
+        /// Genrate code to build an array of query parameter strings in a variable named 'queryParamsArray'.  The 
         /// array should contain one string element for each query parameter of the form 'key=value'
         /// </summary>
         /// <param name="builder">The stringbuilder for url construction</param>
@@ -530,14 +530,14 @@ namespace AutoRest.TypeScript.Model
                 throw new ArgumentNullException(nameof(builder));
             }
 
-            builder.AppendLine("let queryParameters: Array<any> = [];");
+            builder.AppendLine("let queryParamsArray: Array<any> = [];");
             foreach (var queryParameter in LogicalParameters
                 .Where(p => p.Location == ParameterLocation.Query))
             {
-                var queryAddFormat = "queryParameters.push('{0}=' + encodeURIComponent({1}));";
+                var queryAddFormat = "queryParamsArray.push('{0}=' + encodeURIComponent({1}));";
                 if (queryParameter.SkipUrlEncoding())
                 {
-                    queryAddFormat = "queryParameters.push('{0}=' + {1});";
+                    queryAddFormat = "queryParamsArray.push('{0}=' + {1});";
                 }
                 if (!queryParameter.IsRequired)
                 {

@@ -21,13 +21,13 @@ namespace AutoRest.TypeScript
             "enum"
         };
         /// <summary>
-        ///     Initializes a new instance of CSharpCodeNamingFramework.
+        ///     Initializes a new instance of TypeScriptCodeNamingFramework.
         /// </summary>
         public CodeNamerTS()
         {
             ReservedWords.AddRange(new[]
             {
-                "array", "await", "abstract", "boolean", "buffer",
+                "arguments", "array", "await", "abstract", "boolean", "buffer",
                 "break", "byte", "case", "catch", "char", "class",
                 "const", "continue", "debugger", "default", "delete",
                 "do", "double", "date", "else", "enum", "error",
