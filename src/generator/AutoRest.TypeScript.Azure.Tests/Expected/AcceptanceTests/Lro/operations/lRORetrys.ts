@@ -342,9 +342,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/put/201/creating/succeeded/200';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -478,9 +478,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/putasync/retry/succeeded';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -598,9 +598,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/provisioning/202/accepted/200/succeeded';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -718,9 +718,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/delete/202/retry/200';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -808,9 +808,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/deleteasync/retry/succeeded';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -900,9 +900,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/post/202/retry/200';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1006,9 +1006,9 @@ export class LRORetrys {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'lro/retryerror/postasync/retry/succeeded';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

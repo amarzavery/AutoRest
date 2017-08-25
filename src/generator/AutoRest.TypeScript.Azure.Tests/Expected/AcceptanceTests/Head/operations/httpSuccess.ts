@@ -50,9 +50,9 @@ export class HttpSuccess {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'http/success/200';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -139,9 +139,9 @@ export class HttpSuccess {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'http/success/204';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -228,9 +228,9 @@ export class HttpSuccess {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'http/success/404';
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

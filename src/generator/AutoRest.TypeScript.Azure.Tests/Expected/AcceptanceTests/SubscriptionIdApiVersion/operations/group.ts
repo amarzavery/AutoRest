@@ -64,10 +64,10 @@ export class Group {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(this.client.apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(this.client.apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

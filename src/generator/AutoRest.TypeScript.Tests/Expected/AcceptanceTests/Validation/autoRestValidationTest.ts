@@ -143,10 +143,10 @@ class AutoRestValidationTest extends msRest.ServiceClient {
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{id}', encodeURIComponent(id.toString()));
-    let queryParameters: Array<any> = [];
-    queryParameters.push('apiVersion=' + encodeURIComponent(this.apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('apiVersion=' + encodeURIComponent(this.apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -296,10 +296,10 @@ class AutoRestValidationTest extends msRest.ServiceClient {
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
     requestUrl = requestUrl.replace('{id}', encodeURIComponent(id.toString()));
-    let queryParameters: Array<any> = [];
-    queryParameters.push('apiVersion=' + encodeURIComponent(this.apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('apiVersion=' + encodeURIComponent(this.apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

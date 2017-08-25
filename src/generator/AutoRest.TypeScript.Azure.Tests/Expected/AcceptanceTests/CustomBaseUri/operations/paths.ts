@@ -60,9 +60,9 @@ export class Paths {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'customuri';
     requestUrl = requestUrl.replace('{accountName}', accountName);
     requestUrl = requestUrl.replace('{host}', this.client.host);
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

@@ -81,18 +81,18 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
-      queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
+      queryParamsArray.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
     if (pathItemStringQuery !== null && pathItemStringQuery !== undefined) {
-      queryParameters.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
+      queryParamsArray.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
     }
     if (this.client.globalStringQuery !== null && this.client.globalStringQuery !== undefined) {
-      queryParameters.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
+      queryParamsArray.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -202,18 +202,18 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
-      queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
+      queryParamsArray.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
     if (pathItemStringQuery !== null && pathItemStringQuery !== undefined) {
-      queryParameters.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
+      queryParamsArray.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
     }
     if (this.client.globalStringQuery !== null && this.client.globalStringQuery !== undefined) {
-      queryParameters.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
+      queryParamsArray.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -323,18 +323,18 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
-      queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
+      queryParamsArray.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
     if (pathItemStringQuery !== null && pathItemStringQuery !== undefined) {
-      queryParameters.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
+      queryParamsArray.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
     }
     if (this.client.globalStringQuery !== null && this.client.globalStringQuery !== undefined) {
-      queryParameters.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
+      queryParamsArray.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -444,18 +444,18 @@ export class PathItems {
     requestUrl = requestUrl.replace('{localStringPath}', encodeURIComponent(localStringPath));
     requestUrl = requestUrl.replace('{pathItemStringPath}', encodeURIComponent(pathItemStringPath));
     requestUrl = requestUrl.replace('{globalStringPath}', encodeURIComponent(this.client.globalStringPath));
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (localStringQuery !== null && localStringQuery !== undefined) {
-      queryParameters.push('localStringQuery=' + encodeURIComponent(localStringQuery));
+      queryParamsArray.push('localStringQuery=' + encodeURIComponent(localStringQuery));
     }
     if (pathItemStringQuery !== null && pathItemStringQuery !== undefined) {
-      queryParameters.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
+      queryParamsArray.push('pathItemStringQuery=' + encodeURIComponent(pathItemStringQuery));
     }
     if (this.client.globalStringQuery !== null && this.client.globalStringQuery !== undefined) {
-      queryParameters.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
+      queryParamsArray.push('globalStringQuery=' + encodeURIComponent(this.client.globalStringQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

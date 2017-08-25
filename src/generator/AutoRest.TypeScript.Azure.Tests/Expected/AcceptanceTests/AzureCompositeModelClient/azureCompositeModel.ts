@@ -145,10 +145,10 @@ class AzureCompositeModel extends msRestAzure.AzureServiceClient {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -273,10 +273,10 @@ class AzureCompositeModel extends msRestAzure.AzureServiceClient {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -415,10 +415,10 @@ class AzureCompositeModel extends msRestAzure.AzureServiceClient {
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/Microsoft.Cache/Redis';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
     requestUrl = requestUrl.replace('{resourceGroupName}', encodeURIComponent(resourceGroupName));
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

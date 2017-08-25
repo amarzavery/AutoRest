@@ -58,9 +58,9 @@ export class SubscriptionInMethod {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/method/string/none/path/local/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -155,9 +155,9 @@ export class SubscriptionInMethod {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/method/string/none/path/local/null/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -252,9 +252,9 @@ export class SubscriptionInMethod {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/path/string/none/path/local/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -349,9 +349,9 @@ export class SubscriptionInMethod {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/subscriptionId/swagger/string/none/path/local/1234-5678-9012-3456/{subscriptionId}';
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(subscriptionId));
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

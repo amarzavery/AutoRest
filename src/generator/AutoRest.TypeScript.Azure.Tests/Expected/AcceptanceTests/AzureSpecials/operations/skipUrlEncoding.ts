@@ -58,9 +58,9 @@ export class SkipUrlEncoding {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/method/path/valid/{unencodedPathParam}';
     requestUrl = requestUrl.replace('{unencodedPathParam}', unencodedPathParam);
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -154,9 +154,9 @@ export class SkipUrlEncoding {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/path/path/valid/{unencodedPathParam}';
     requestUrl = requestUrl.replace('{unencodedPathParam}', unencodedPathParam);
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -245,9 +245,9 @@ export class SkipUrlEncoding {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/swagger/path/valid/{unencodedPathParam}';
     requestUrl = requestUrl.replace('{unencodedPathParam}', unencodedPathParam);
-    let queryParameters: Array<any> = [];
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -341,10 +341,10 @@ export class SkipUrlEncoding {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/method/query/valid';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('q1=' + q1);
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('q1=' + q1);
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -436,12 +436,12 @@ export class SkipUrlEncoding {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/method/query/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (q1 !== null && q1 !== undefined) {
-      queryParameters.push('q1=' + q1);
+      queryParamsArray.push('q1=' + q1);
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -535,10 +535,10 @@ export class SkipUrlEncoding {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/path/query/valid';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('q1=' + q1);
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('q1=' + q1);
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -627,10 +627,10 @@ export class SkipUrlEncoding {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/skipUrlEncoding/swagger/query/valid';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('q1=' + q1);
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('q1=' + q1);
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

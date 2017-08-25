@@ -78,12 +78,12 @@ export class Paths {
     requestUrl = requestUrl.replace('{dnsSuffix}', this.client.dnsSuffix);
     requestUrl = requestUrl.replace('{keyName}', encodeURIComponent(keyName));
     requestUrl = requestUrl.replace('{subscriptionId}', encodeURIComponent(this.client.subscriptionId));
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (keyVersion !== null && keyVersion !== undefined) {
-      queryParameters.push('keyVersion=' + encodeURIComponent(keyVersion));
+      queryParamsArray.push('keyVersion=' + encodeURIComponent(keyVersion));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

@@ -53,10 +53,10 @@ export class ApiVersionLocal {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/apiVersion/method/string/none/query/local/2.0';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -149,12 +149,12 @@ export class ApiVersionLocal {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/apiVersion/method/string/none/query/local/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (apiVersion !== null && apiVersion !== undefined) {
-      queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
+      queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -243,10 +243,10 @@ export class ApiVersionLocal {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/apiVersion/path/string/none/query/local/2.0';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -335,10 +335,10 @@ export class ApiVersionLocal {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/apiVersion/swagger/string/none/query/local/2.0';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('api-version=' + encodeURIComponent(apiVersion));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('api-version=' + encodeURIComponent(apiVersion));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

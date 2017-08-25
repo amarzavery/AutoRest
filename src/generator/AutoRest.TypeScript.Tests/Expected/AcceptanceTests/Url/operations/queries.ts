@@ -44,10 +44,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/bool/true';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('boolQuery=' + encodeURIComponent(boolQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('boolQuery=' + encodeURIComponent(boolQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -121,10 +121,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/bool/false';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('boolQuery=' + encodeURIComponent(boolQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('boolQuery=' + encodeURIComponent(boolQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -206,12 +206,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/bool/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (boolQuery !== null && boolQuery !== undefined) {
-      queryParameters.push('boolQuery=' + encodeURIComponent(boolQuery.toString()));
+      queryParamsArray.push('boolQuery=' + encodeURIComponent(boolQuery.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -285,10 +285,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/int/1000000';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('intQuery=' + encodeURIComponent(intQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('intQuery=' + encodeURIComponent(intQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -362,10 +362,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/int/-1000000';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('intQuery=' + encodeURIComponent(intQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('intQuery=' + encodeURIComponent(intQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -447,12 +447,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/int/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (intQuery !== null && intQuery !== undefined) {
-      queryParameters.push('intQuery=' + encodeURIComponent(intQuery.toString()));
+      queryParamsArray.push('intQuery=' + encodeURIComponent(intQuery.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -526,10 +526,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/long/10000000000';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('longQuery=' + encodeURIComponent(longQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('longQuery=' + encodeURIComponent(longQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -603,10 +603,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/long/-10000000000';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('longQuery=' + encodeURIComponent(longQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('longQuery=' + encodeURIComponent(longQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -688,12 +688,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/long/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (longQuery !== null && longQuery !== undefined) {
-      queryParameters.push('longQuery=' + encodeURIComponent(longQuery.toString()));
+      queryParamsArray.push('longQuery=' + encodeURIComponent(longQuery.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -767,10 +767,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/float/1.034E+20';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('floatQuery=' + encodeURIComponent(floatQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('floatQuery=' + encodeURIComponent(floatQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -844,10 +844,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/float/-1.034E-20';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('floatQuery=' + encodeURIComponent(floatQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('floatQuery=' + encodeURIComponent(floatQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -929,12 +929,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/float/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (floatQuery !== null && floatQuery !== undefined) {
-      queryParameters.push('floatQuery=' + encodeURIComponent(floatQuery.toString()));
+      queryParamsArray.push('floatQuery=' + encodeURIComponent(floatQuery.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1008,10 +1008,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/double/9999999.999';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('doubleQuery=' + encodeURIComponent(doubleQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('doubleQuery=' + encodeURIComponent(doubleQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1085,10 +1085,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/double/-9999999.999';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('doubleQuery=' + encodeURIComponent(doubleQuery.toString()));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('doubleQuery=' + encodeURIComponent(doubleQuery.toString()));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1170,12 +1170,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/double/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (doubleQuery !== null && doubleQuery !== undefined) {
-      queryParameters.push('doubleQuery=' + encodeURIComponent(doubleQuery.toString()));
+      queryParamsArray.push('doubleQuery=' + encodeURIComponent(doubleQuery.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1249,10 +1249,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/string/unicode/';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('stringQuery=' + encodeURIComponent(stringQuery));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('stringQuery=' + encodeURIComponent(stringQuery));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1326,10 +1326,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/string/begin%21%2A%27%28%29%3B%3A%40%20%26%3D%2B%24%2C%2F%3F%23%5B%5Dend';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('stringQuery=' + encodeURIComponent(stringQuery));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('stringQuery=' + encodeURIComponent(stringQuery));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1403,10 +1403,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/string/empty';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('stringQuery=' + encodeURIComponent(stringQuery));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('stringQuery=' + encodeURIComponent(stringQuery));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1488,12 +1488,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/string/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (stringQuery !== null && stringQuery !== undefined) {
-      queryParameters.push('stringQuery=' + encodeURIComponent(stringQuery));
+      queryParamsArray.push('stringQuery=' + encodeURIComponent(stringQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1578,12 +1578,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/enum/green%20color';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (enumQuery !== null && enumQuery !== undefined) {
-      queryParameters.push('enumQuery=' + encodeURIComponent(enumQuery));
+      queryParamsArray.push('enumQuery=' + encodeURIComponent(enumQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1668,12 +1668,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/enum/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (enumQuery !== null && enumQuery !== undefined) {
-      queryParameters.push('enumQuery=' + encodeURIComponent(enumQuery));
+      queryParamsArray.push('enumQuery=' + encodeURIComponent(enumQuery));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1755,12 +1755,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/byte/multibyte';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (byteQuery !== null && byteQuery !== undefined) {
-      queryParameters.push('byteQuery=' + encodeURIComponent(msRest.serializeObject(byteQuery)));
+      queryParamsArray.push('byteQuery=' + encodeURIComponent(msRest.serializeObject(byteQuery)));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1834,10 +1834,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/byte/empty';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('byteQuery=' + encodeURIComponent(msRest.serializeObject(byteQuery)));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('byteQuery=' + encodeURIComponent(msRest.serializeObject(byteQuery)));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1919,12 +1919,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/byte/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (byteQuery !== null && byteQuery !== undefined) {
-      queryParameters.push('byteQuery=' + encodeURIComponent(msRest.serializeObject(byteQuery)));
+      queryParamsArray.push('byteQuery=' + encodeURIComponent(msRest.serializeObject(byteQuery)));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -1998,10 +1998,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/date/2012-01-01';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('dateQuery=' + encodeURIComponent(msRest.serializeObject(dateQuery).replace(/[Tt].*[Zz]/, '')));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('dateQuery=' + encodeURIComponent(msRest.serializeObject(dateQuery).replace(/[Tt].*[Zz]/, '')));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2084,12 +2084,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/date/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (dateQuery !== null && dateQuery !== undefined) {
-      queryParameters.push('dateQuery=' + encodeURIComponent(msRest.serializeObject(dateQuery).replace(/[Tt].*[Zz]/, '')));
+      queryParamsArray.push('dateQuery=' + encodeURIComponent(msRest.serializeObject(dateQuery).replace(/[Tt].*[Zz]/, '')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2163,10 +2163,10 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/datetime/2012-01-01T01%3A01%3A01Z';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('dateTimeQuery=' + encodeURIComponent(msRest.serializeObject(dateTimeQuery)));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('dateTimeQuery=' + encodeURIComponent(msRest.serializeObject(dateTimeQuery)));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2249,12 +2249,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/datetime/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (dateTimeQuery !== null && dateTimeQuery !== undefined) {
-      queryParameters.push('dateTimeQuery=' + encodeURIComponent(msRest.serializeObject(dateTimeQuery)));
+      queryParamsArray.push('dateTimeQuery=' + encodeURIComponent(msRest.serializeObject(dateTimeQuery)));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2342,12 +2342,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/array/csv/string/valid';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (arrayQuery !== null && arrayQuery !== undefined) {
-      queryParameters.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(',')));
+      queryParamsArray.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(',')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2434,12 +2434,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/array/csv/string/null';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (arrayQuery !== null && arrayQuery !== undefined) {
-      queryParameters.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(',')));
+      queryParamsArray.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(',')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2526,12 +2526,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/array/csv/string/empty';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (arrayQuery !== null && arrayQuery !== undefined) {
-      queryParameters.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(',')));
+      queryParamsArray.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(',')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2619,12 +2619,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/array/ssv/string/valid';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (arrayQuery !== null && arrayQuery !== undefined) {
-      queryParameters.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(' ')));
+      queryParamsArray.push('arrayQuery=' + encodeURIComponent(arrayQuery.join(' ')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2712,12 +2712,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/array/tsv/string/valid';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (arrayQuery !== null && arrayQuery !== undefined) {
-      queryParameters.push('arrayQuery=' + encodeURIComponent(arrayQuery.join('	')));
+      queryParamsArray.push('arrayQuery=' + encodeURIComponent(arrayQuery.join('	')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -2805,12 +2805,12 @@ export class Queries {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'queries/array/pipes/string/valid';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (arrayQuery !== null && arrayQuery !== undefined) {
-      queryParameters.push('arrayQuery=' + encodeURIComponent(arrayQuery.join('|')));
+      queryParamsArray.push('arrayQuery=' + encodeURIComponent(arrayQuery.join('|')));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

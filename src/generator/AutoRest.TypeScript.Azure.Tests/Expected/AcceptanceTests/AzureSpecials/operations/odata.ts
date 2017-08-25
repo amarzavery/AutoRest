@@ -64,18 +64,18 @@ export class Odata {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'azurespecials/odata/filter';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (filter !== null && filter !== undefined) {
-      queryParameters.push('$filter=' + encodeURIComponent(filter));
+      queryParamsArray.push('$filter=' + encodeURIComponent(filter));
     }
     if (top !== null && top !== undefined) {
-      queryParameters.push('$top=' + encodeURIComponent(top.toString()));
+      queryParamsArray.push('$top=' + encodeURIComponent(top.toString()));
     }
     if (orderby !== null && orderby !== undefined) {
-      queryParameters.push('$orderby=' + encodeURIComponent(orderby));
+      queryParamsArray.push('$orderby=' + encodeURIComponent(orderby));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

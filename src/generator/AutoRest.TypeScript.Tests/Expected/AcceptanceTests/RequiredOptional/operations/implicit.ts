@@ -147,12 +147,12 @@ export class Implicit {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'reqopt/implicit/optional/query';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (queryParameter !== null && queryParameter !== undefined) {
-      queryParameters.push('queryParameter=' + encodeURIComponent(queryParameter));
+      queryParamsArray.push('queryParameter=' + encodeURIComponent(queryParameter));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -510,10 +510,10 @@ export class Implicit {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'reqopt/global/required/query';
-    let queryParameters: Array<any> = [];
-    queryParameters.push('required-global-query=' + encodeURIComponent(this.client.requiredGlobalQuery));
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    let queryParamsArray: Array<any> = [];
+    queryParamsArray.push('required-global-query=' + encodeURIComponent(this.client.requiredGlobalQuery));
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -606,12 +606,12 @@ export class Implicit {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'reqopt/global/optional/query';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (this.client.optionalGlobalQuery !== null && this.client.optionalGlobalQuery !== undefined) {
-      queryParameters.push('optional-global-query=' + encodeURIComponent(this.client.optionalGlobalQuery.toString()));
+      queryParamsArray.push('optional-global-query=' + encodeURIComponent(this.client.optionalGlobalQuery.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects

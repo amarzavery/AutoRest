@@ -95,12 +95,12 @@ export class ParameterGrouping {
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/postRequired/{path}';
     requestUrl = requestUrl.replace('{path}', encodeURIComponent(path));
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (query !== null && query !== undefined) {
-      queryParameters.push('query=' + encodeURIComponent(query.toString()));
+      queryParamsArray.push('query=' + encodeURIComponent(query.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -232,12 +232,12 @@ export class ParameterGrouping {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/postOptional';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (query !== null && query !== undefined) {
-      queryParameters.push('query=' + encodeURIComponent(query.toString()));
+      queryParamsArray.push('query=' + encodeURIComponent(query.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -366,15 +366,15 @@ export class ParameterGrouping {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/postMultipleParameterGroups';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (queryOne !== null && queryOne !== undefined) {
-      queryParameters.push('query-one=' + encodeURIComponent(queryOne.toString()));
+      queryParamsArray.push('query-one=' + encodeURIComponent(queryOne.toString()));
     }
     if (queryTwo !== null && queryTwo !== undefined) {
-      queryParameters.push('query-two=' + encodeURIComponent(queryTwo.toString()));
+      queryParamsArray.push('query-two=' + encodeURIComponent(queryTwo.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
@@ -489,12 +489,12 @@ export class ParameterGrouping {
     // Construct URL
     let baseUrl = this.client.baseUri;
     let requestUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'parameterGrouping/sharedParameterGroupObject';
-    let queryParameters: Array<any> = [];
+    let queryParamsArray: Array<any> = [];
     if (queryOne !== null && queryOne !== undefined) {
-      queryParameters.push('query-one=' + encodeURIComponent(queryOne.toString()));
+      queryParamsArray.push('query-one=' + encodeURIComponent(queryOne.toString()));
     }
-    if (queryParameters.length > 0) {
-      requestUrl += '?' + queryParameters.join('&');
+    if (queryParamsArray.length > 0) {
+      requestUrl += '?' + queryParamsArray.join('&');
     }
 
     // Create HTTP transport objects
